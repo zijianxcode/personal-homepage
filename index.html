@@ -1,418 +1,279 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YOUR NAME | Your Title</title>
+    <title>aspera ad astra</title>
 
-    <meta name="description" content="YOUR NAME - Personal portfolio showcasing career, projects, and skills.">
-    <meta name="keywords" content="Portfolio, Developer, Designer, Creative">
-    <meta name="author" content="YOUR NAME">
+    <meta name="description" content="Experience designer exploring the intersection of human-centered design and intelligent systems.">
+    <meta name="author" content="aspera ad astra">
     <meta name="robots" content="index, follow">
 
     <meta property="og:type" content="website">
-    <meta property="og:title" content="YOUR NAME | Your Title">
-    <meta property="og:description" content="Personal portfolio showcasing career, projects, and skills.">
-    <meta property="og:locale" content="zh_CN">
-    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:title" content="aspera ad astra">
+    <meta property="og:description" content="Experience designer exploring the intersection of human-centered design and intelligent systems.">
 
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="YOUR NAME | Your Title">
-
-    <meta name="theme-color" content="#050505">
+    <meta name="theme-color" content="#0a0a0a">
     <link rel="icon" type="image/png" href="Assets/img/favicon.png">
     <link rel="apple-touch-icon" href="Assets/img/favicon.png">
 
-    <link rel="stylesheet" as="style" crossorigin
-        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="Assets/css/style.css">
 </head>
 
-<body data-lang="cn" data-theme="dark">
+<body data-lang="en">
 
     <!-- Particle Background -->
     <div id="canvas-container"></div>
 
-    <!-- Language Switch -->
-    <nav class="lang-switch reveal">
-        <svg class="globe-icon" viewBox="0 0 24 24">
-            <path fill="currentColor"
-                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
-        </svg>
-        <button class="lang-btn active" onclick="setLang('cn')">CN</button>
-        <span class="divider">/</span>
-        <button class="lang-btn" onclick="setLang('en')">EN</button>
-    </nav>
-
-    <!-- Theme Toggle -->
-    <button id="theme-toggle" class="theme-toggle">Light Mode</button>
-
-    <!-- Social Links -->
-    <div class="social-links reveal">
-        <a href="https://github.com/zijianxcode" target="_blank" title="GitHub">
-            <svg class="social-icon" viewBox="0 0 24 24">
-                <path
-                    d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z" />
-            </svg>
-        </a>
-    </div>
-
-    <!-- ==================== HERO SECTION ==================== -->
-    <section class="hero-section" id="hero">
-        <div class="career-timer reveal" id="career-timer">
-            <div class="relevance-message" id="relevance-message">RELEVANCE</div>
-            <div class="timer-numbers timer-row">
-                <span class="timer-year">26Y</span><span class="timer-month">02M</span><span class="timer-day">22D</span><span
-                    class="timer-time">000000</span><span class="timer-ms">000</span>
+    <!-- ==================== HEADER / NAV ==================== -->
+    <header class="site-header">
+        <nav class="nav-links">
+            <a href="#work" class="nav-link active" data-tab="work">Work</a>
+            <a href="#info" class="nav-link" data-tab="info">Info</a>
+            <a href="#things" class="nav-link" data-tab="things">Things</a>
+        </nav>
+        <div class="nav-right">
+            <div class="lang-switch">
+                <button class="lang-btn" data-lang="en">EN</button>
+                <span class="lang-divider">/</span>
+                <button class="lang-btn" data-lang="cn">CN</button>
             </div>
+            <a href="#work" class="brand-name" data-tab="work">zijian</a>
         </div>
+    </header>
 
-        <div class="hero-content reveal">
-            <h1 class="hero-name">
-                <span class="hero-name-first">aspera</span>
-                <span class="hero-name-last">ad astra</span>
-            </h1>
+    <!-- ==================== WORK TAB ==================== -->
+    <main class="tab-panel active" id="work">
+        <section class="work-hero">
+            <p class="hero-bio lang-en">An interdisciplinary designer fascinated by the connections that bring people together. Influenced by empathy and movement, I explore the invisible components of language, the visible components of thought, and the thread between the two through interactive experience design.</p>
+            <p class="hero-bio lang-cn">一名跨学科设计师，痴迷于那些凝聚人心的联结。<br>受共情与动态思维的启发，我透过交互体验设计，<br>探寻语言的无形内核、思想的显性表达，以及二者之间的纽带。</p>
+        </section>
 
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <span class="lang-cn">项目</span>
-                    <span class="lang-en">Projects</span>
-                    <span class="stat-number" id="stat-projects">0</span>
+        <section class="work-list">
+            <a class="work-item" href="#">
+                <span class="work-name lang-en">Coming Soon</span>
+                <span class="work-name lang-cn">即将上线</span>
+                <span class="work-type lang-en">Project Portfolio</span>
+                <span class="work-type lang-cn">项目作品集</span>
+            </a>
+            <a class="work-item" href="#">
+                <span class="work-name lang-en">Coming Soon</span>
+                <span class="work-name lang-cn">即将上线</span>
+                <span class="work-type lang-en">Case Study</span>
+                <span class="work-type lang-cn">案例研究</span>
+            </a>
+            <a class="work-item" href="#">
+                <span class="work-name lang-en">Coming Soon</span>
+                <span class="work-name lang-cn">即将上线</span>
+                <span class="work-type lang-en">Research</span>
+                <span class="work-type lang-cn">学术研究</span>
+            </a>
+            <a class="work-item" href="#">
+                <span class="work-name lang-en">Coming Soon</span>
+                <span class="work-name lang-cn">即将上线</span>
+                <span class="work-type lang-en">Design System</span>
+                <span class="work-type lang-cn">设计系统</span>
+            </a>
+            <a class="work-item" href="#">
+                <span class="work-name lang-en">Coming Soon</span>
+                <span class="work-name lang-cn">即将上线</span>
+                <span class="work-type lang-en">Interaction Design</span>
+                <span class="work-type lang-cn">交互设计</span>
+            </a>
+            <a class="work-item" href="#">
+                <span class="work-name lang-en">Coming Soon</span>
+                <span class="work-name lang-cn">即将上线</span>
+                <span class="work-type lang-en">Game UX</span>
+                <span class="work-type lang-cn">游戏体验设计</span>
+            </a>
+        </section>
+    </main>
+
+    <!-- ==================== INFO TAB ==================== -->
+    <main class="tab-panel" id="info">
+        <section class="info-hero">
+            <h1 class="display-name">aspera<br>ad astra</h1>
+        </section>
+
+        <section class="info-top">
+            <div class="info-bio">
+                <p class="lang-en">A multidisciplinary designer with roots in visual design and interaction — holds a PhD in Intelligent Experience Design from Kookmin University. Previously led UX design for game products at NetEase Games and consumer/enterprise products at NetEase Hangzhou. Passionate about bridging the gap between design thinking and intelligent systems.</p>
+                <p class="lang-cn">一位扎根于视觉设计与交互领域的跨学科设计师——已获国民大学智能体验设计博士学位。此前曾在网易游戏主导游戏产品的用户体验设计，并在网易杭州研究院负责 C 端与 B 端产品设计。致力于弥合设计思维与智能系统之间的鸿沟。</p>
+            </div>
+
+            <div class="info-contact">
+                <p class="contact-cta lang-en">Let's connect.</p>
+                <p class="contact-cta lang-cn">联系我</p>
+                <a href="mailto:ff12zzj@163.com" class="contact-link">→ ff12zzj@163.com</a>
+                <a href="tel:+8618257199757" class="contact-link">→ +86 18257199757</a>
+                <a href="https://github.com/zijianxcode" target="_blank" class="contact-link">→ github.com/zijianxcode</a>
+            </div>
+        </section>
+
+        <section class="info-section">
+            <h2 class="section-label lang-en">Experiences</h2>
+            <h2 class="section-label lang-cn">工作经历</h2>
+            <div class="exp-list">
+                <div class="exp-item">
+                    <a class="exp-name lang-en" href="#">Guangzhou Academy of Fine Arts</a>
+                    <a class="exp-name lang-cn" href="#">广州美术学院</a>
+                    <span class="exp-role lang-en">Guest Lecturer</span>
+                    <span class="exp-role lang-cn">特聘讲师</span>
+                    <span class="exp-date">2022</span>
+                </div>
+                <div class="exp-item">
+                    <a class="exp-name lang-en" href="#">NetEase Games</a>
+                    <a class="exp-name lang-cn" href="#">网易游戏 / 网易互娱</a>
+                    <span class="exp-role lang-en">Interactive Entertainment · UX · Game Design</span>
+                    <span class="exp-role lang-cn">UX · 游戏设计 · 交互体验</span>
+                    <span class="exp-date">2019 – 2022</span>
+                </div>
+                <div class="exp-item">
+                    <a class="exp-name lang-en" href="#">NetEase Inc.</a>
+                    <a class="exp-name lang-cn" href="#">网易网络有限公司</a>
+                    <span class="exp-role lang-en">Hangzhou · IA · Interaction Design · UX</span>
+                    <span class="exp-role lang-cn">杭州研究院 · 信息架构 · 交互设计 · 用户体验</span>
+                    <span class="exp-date">2015 – 2019</span>
+                </div>
+                <div class="exp-item">
+                    <a class="exp-name lang-en" href="#">Shenzhen Dingdian Brand Design</a>
+                    <a class="exp-name lang-cn" href="#">深圳鼎典品牌设计</a>
+                    <span class="exp-role lang-en">Graphic Design</span>
+                    <span class="exp-role lang-cn">平面设计</span>
+                    <span class="exp-date">2012 – 2013</span>
+                </div>
+                <div class="exp-item">
+                    <a class="exp-name" href="#">Typographic.</a>
+                    <span class="exp-role lang-en">Book Design · Advertising · Branding</span>
+                    <span class="exp-role lang-cn">书籍装帧 · 广告设计 · 品牌设计</span>
+                    <span class="exp-date">2011 – 2012</span>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="hero-subtitle reveal" id="hero-subtitle">
-            <span class="lang-cn" id="subtitle-cn">星尘编织者</span>
-            <span class="lang-en" id="subtitle-en">Stardust Weaver</span>
-        </div>
+        <section class="info-section">
+            <h2 class="section-label lang-en">Selected Projects</h2>
+            <h2 class="section-label lang-cn">项目经历</h2>
+            <div class="projects-group">
+                <h3 class="projects-group-title lang-en">NetEase Games <span class="projects-group-date">2019 – 2022</span></h3>
+                <h3 class="projects-group-title lang-cn">网易互娱 <span class="projects-group-date">2019 – 2022</span></h3>
+                <ul class="projects-list lang-en">
+                    <li>Fantasy Westward Journey — "Returning Players" & "Alchemy System" optimization</li>
+                    <li>Harry Potter — "Returning Players" feature planning & design</li>
+                    <li>Justice Mobile (Chu Liu Xiang) — In-game store system redesign</li>
+                    <li>Revelation Mobile — New player acquisition & first purchase design</li>
+                </ul>
+                <ul class="projects-list lang-cn">
+                    <li>《梦幻西游》"老玩家召回"、"炼金系统"版本优化与升级</li>
+                    <li>《哈利波特》"老玩家召回"功能策划与设计</li>
+                    <li>《一梦江湖（楚留香）》游戏内商店系统升级设计</li>
+                    <li>《天谕》新玩家拉新和首充功能设计</li>
+                </ul>
+            </div>
+            <div class="projects-group">
+                <h3 class="projects-group-title lang-en">NetEase Hangzhou · Consumer <span class="projects-group-date">2015 – 2019</span></h3>
+                <h3 class="projects-group-title lang-cn">网易杭州研究院 · C 端产品 <span class="projects-group-date">2015 – 2019</span></h3>
+                <ul class="projects-list lang-en">
+                    <li>NetEase Kaola — Brand overall upgrade & app homepage design</li>
+                    <li>NetEase Cloud Music — App experience upgrade</li>
+                </ul>
+                <ul class="projects-list lang-cn">
+                    <li>网易考拉 — 品牌整体升级及 App 首页设计</li>
+                    <li>网易云音乐 — App 体验升级</li>
+                </ul>
+            </div>
+            <div class="projects-group">
+                <h3 class="projects-group-title lang-en">NetEase Hangzhou · Enterprise <span class="projects-group-date">2015 – 2019</span></h3>
+                <h3 class="projects-group-title lang-cn">网易杭州研究院 · B 端产品 <span class="projects-group-date">2015 – 2019</span></h3>
+                <ul class="projects-list lang-en">
+                    <li>NetEase Shufan — PaaS platform client design</li>
+                    <li>NetEase Qiyu — SaaS system client design</li>
+                    <li>NetEase Yunshang — SaaS system client design</li>
+                    <li>Internal data systems — APM, CDN, internal purchasing platform</li>
+                </ul>
+                <ul class="projects-list lang-cn">
+                    <li>网易数帆 — PaaS 平台客户端设计</li>
+                    <li>网易七鱼 — SaaS 系统客户端设计</li>
+                    <li>网易云商 — SaaS 系统客户端设计</li>
+                    <li>网易内部数据系统 — APM 平台、CDN 平台、内购平台</li>
+                </ul>
+            </div>
+            <div class="projects-group">
+                <h3 class="projects-group-title lang-en">UEDC Design Team <span class="projects-group-date">2015 – 2019</span></h3>
+                <h3 class="projects-group-title lang-cn">UEDC 设计团队 <span class="projects-group-date">2015 – 2019</span></h3>
+                <ul class="projects-list lang-en">
+                    <li>UEDC WeChat official account — planning & operation</li>
+                    <li>Design Monthly — planning & editing</li>
+                    <li>"Craftsmanship" publication — planning & editing</li>
+                    <li>Design task management system — product design</li>
+                </ul>
+                <ul class="projects-list lang-cn">
+                    <li>网易 UEDC 公众号策划和运营</li>
+                    <li>网易设计月刊 — 策划和编辑</li>
+                    <li>网易出版物《匠心》— 策划和编辑</li>
+                    <li>网易设计任务管理系统产品设计</li>
+                </ul>
+            </div>
+        </section>
 
-        <div class="scroll-hint">
-            <span class="lang-cn">向下滚动探索</span>
-            <span class="lang-en">Scroll to explore</span>
-            <div class="scroll-arrow"></div>
-        </div>
+        <section class="info-section">
+            <h2 class="section-label lang-en">Education</h2>
+            <h2 class="section-label lang-cn">教育背景</h2>
+            <div class="edu-list">
+                <div class="edu-item">
+                    <div class="edu-header">
+                        <span class="edu-school lang-en">Kookmin University</span>
+                        <span class="edu-school lang-cn">国民大学</span>
+                        <span class="edu-date">2023 – 2025</span>
+                    </div>
+                    <span class="edu-degree lang-en">PhD, Intelligent Experience Design</span>
+                    <span class="edu-degree lang-cn">智能体验设计 · 博士</span>
+                </div>
+                <div class="edu-item">
+                    <div class="edu-header">
+                        <span class="edu-school lang-en">Kookmin University</span>
+                        <span class="edu-school lang-cn">国民大学</span>
+                        <span class="edu-date">2013 – 2015</span>
+                    </div>
+                    <span class="edu-degree lang-en">MFA, Interaction Design</span>
+                    <span class="edu-degree lang-cn">交互设计 · 硕士</span>
+                </div>
+                <div class="edu-item">
+                    <div class="edu-header">
+                        <span class="edu-school lang-en">Hongik University</span>
+                        <span class="edu-school lang-cn">弘益大学</span>
+                        <span class="edu-date">2008 – 2011</span>
+                    </div>
+                    <span class="edu-degree lang-en">BFA, Visual Design</span>
+                    <span class="edu-degree lang-cn">视觉设计 · 本科</span>
+                </div>
+            </div>
+        </section>
+    </main>
 
-        <div class="hero-contact reveal">
-            <div class="contact-row">
-                <span class="contact-label">
-                    <span class="lang-cn">电话</span>
-                    <span class="lang-en">Mobile</span>
-                </span>
-                <a href="tel:+8618257199757">+86 18257199757</a>
+    <!-- ==================== THINGS TAB ==================== -->
+    <main class="tab-panel" id="things">
+        <section class="things-section">
+            <h2 class="things-title">数字与体验</h2>
+            <div class="things-list">
+                <a class="things-link" href="https://my.feishu.cn/file/EYujb3FOeo5oiZx5h8ocz4q3nPf?from=from_copylink" target="_blank">
+                    <span class="things-link-name">交互与体验设计入门</span>
+                    <span class="things-link-arrow">→</span>
+                </a>
             </div>
-            <div class="contact-row">
-                <span class="contact-label">Email</span>
-                <a href="mailto:ff12zzj@163.com">ff12zzj@163.com</a>
-            </div>
-            <div class="contact-row">
-                <span class="contact-label">GitHub</span>
-                <a href="https://github.com/zijianxcode" target="_blank">github.com/zijianxcode</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== CAREER HISTORY ==================== -->
-    <section class="content-section" id="career">
-        <div class="section-display-title reveal">CAREER<br>HISTORY</div>
-        <div class="timeline">
-            <div class="timeline-item reveal">
-                <span class="timeline-year">2008 ~ 2011</span>
-                <h3 class="timeline-title">
-                    <span class="lang-cn">弘益大学 视觉设计 - 本科</span>
-                    <span class="lang-en">Hongik University / Visual Design - Bachelor</span>
-                </h3>
-            </div>
-            <div class="timeline-item reveal">
-                <span class="timeline-year">2011 ~ 2012</span>
-                <h3 class="timeline-title">
-                    <span class="lang-cn">Typographic. / 书籍装帧·广告设计·品牌设计</span>
-                    <span class="lang-en">Typographic. / Book Design · Advertising · Branding</span>
-                </h3>
-            </div>
-            <div class="timeline-item reveal">
-                <span class="timeline-year">2013 ~ 2015</span>
-                <h3 class="timeline-title">
-                    <span class="lang-cn">国民大学 交互设计 - 硕士</span>
-                    <span class="lang-en">Kookmin University / Interaction Design - Master</span>
-                </h3>
-            </div>
-            <div class="timeline-item reveal">
-                <span class="timeline-year">2015 ~ 2019</span>
-                <h3 class="timeline-title">
-                    <span class="lang-cn">网易网络有限公司 / 杭州研究院·信息架构·交互设计·用户体验</span>
-                    <span class="lang-en">NetEase Inc. / Hangzhou Lab · IA · Interaction Design · UX</span>
-                </h3>
-            </div>
-            <div class="timeline-item reveal">
-                <span class="timeline-year">2019 ~ 2022</span>
-                <h3 class="timeline-title">
-                    <span class="lang-cn">网易游戏 / 网易互娱 UX·游戏设计·交互体验</span>
-                    <span class="lang-en">NetEase Games / Interactive Entertainment UX · Game Design</span>
-                </h3>
-            </div>
-            <div class="timeline-item reveal">
-                <span class="timeline-year">2023 ~ 2025</span>
-                <h3 class="timeline-title">
-                    <span class="lang-cn">国民大学 智能体验设计 - 博士</span>
-                    <span class="lang-en">Kookmin University / Intelligent Experience Design - PhD</span>
-                </h3>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== PROJECT HISTORY ==================== -->
-    <section class="content-section" id="projects">
-        <div class="section-display-title reveal">PROJECT<br>HISTORY</div>
-
-        <div class="project-group reveal">
-            <div class="project-year">
-                <span class="project-year-range">2022</span>
-                <span class="project-year-team">
-                    <span class="lang-cn">广州美术学院</span>
-                    <span class="lang-en">Guangzhou Academy of Fine Arts</span>
-                </span>
-                <span class="project-year-type">
-                    <span class="lang-cn">特聘讲师</span>
-                    <span class="lang-en">Guest Lecturer</span>
-                </span>
-            </div>
-            <ul class="project-list">
-                <li>
-                    <span class="lang-cn">工业设计学院 智能与体验 / 系列课程《游戏化设计思维理论与实践》</span>
-                    <span class="lang-en">School of Industrial Design / Course: "Gamification Design Thinking: Theory & Practice"</span>
-                </li>
-            </ul>
-        </div>
-
-        <div class="project-group reveal">
-            <div class="project-year">
-                <span class="project-year-range">2019 ~ 2022</span>
-                <span class="project-year-team">
-                    <span class="lang-cn">网易互娱</span>
-                    <span class="lang-en">NetEase Games</span>
-                </span>
-                <span class="project-year-type">
-                    <span class="lang-cn">游戏产品方向</span>
-                    <span class="lang-en">Game Products</span>
-                </span>
-            </div>
-            <ul class="project-list">
-                <li>
-                    <span class="lang-cn">《梦幻西游》"老玩家召回"、"炼金系统"版本优化与升级</span>
-                    <span class="lang-en">Fantasy Westward Journey - "Returning Players" & "Alchemy System" optimization</span>
-                </li>
-                <li>
-                    <span class="lang-cn">《哈利波特》"老玩家召回"功能策划与设计</span>
-                    <span class="lang-en">Harry Potter - "Returning Players" feature planning & design</span>
-                </li>
-                <li>
-                    <span class="lang-cn">《一梦江湖（楚留香）》游戏内商店系统升级设计</span>
-                    <span class="lang-en">Justice Mobile (Chu Liu Xiang) - In-game store system redesign</span>
-                </li>
-                <li>
-                    <span class="lang-cn">《天谕》新玩家拉新和首充功能设计</span>
-                    <span class="lang-en">Revelation Mobile - New player acquisition & first purchase design</span>
-                </li>
-            </ul>
-        </div>
-
-        <div class="project-group reveal">
-            <div class="project-year">
-                <span class="project-year-range">2015 ~ 2019</span>
-                <span class="project-year-team">
-                    <span class="lang-cn">网易杭州研究院</span>
-                    <span class="lang-en">NetEase Hangzhou Lab</span>
-                </span>
-                <span class="project-year-type">
-                    <span class="lang-cn">C端产品</span>
-                    <span class="lang-en">Consumer Products</span>
-                </span>
-            </div>
-            <ul class="project-list">
-                <li>
-                    <span class="lang-cn">网易考拉品牌整体升级</span>
-                    <span class="lang-en">NetEase Kaola brand overall upgrade</span>
-                </li>
-                <li>
-                    <span class="lang-cn">网易考拉 App 首页以及流量运营中心产品设计</span>
-                    <span class="lang-en">NetEase Kaola App homepage & traffic operation center design</span>
-                </li>
-                <li>
-                    <span class="lang-cn">网易云音乐 App 体验升级</span>
-                    <span class="lang-en">NetEase Cloud Music App experience upgrade</span>
-                </li>
-            </ul>
-        </div>
-
-        <div class="project-group reveal">
-            <div class="project-year">
-                <span class="project-year-range">2015 ~ 2019</span>
-                <span class="project-year-team">
-                    <span class="lang-cn">网易杭州研究院</span>
-                    <span class="lang-en">NetEase Hangzhou Lab</span>
-                </span>
-                <span class="project-year-type">
-                    <span class="lang-cn">B端产品</span>
-                    <span class="lang-en">Enterprise Products</span>
-                </span>
-            </div>
-            <ul class="project-list">
-                <li>
-                    <span class="lang-cn">网易数帆（原网易私有云）PaaS 平台客户端设计</span>
-                    <span class="lang-en">NetEase Shufan (Private Cloud) PaaS platform client design</span>
-                </li>
-                <li>
-                    <span class="lang-cn">网易七鱼 SaaS 系统客户端设计</span>
-                    <span class="lang-en">NetEase Qiyu SaaS system client design</span>
-                </li>
-                <li>
-                    <span class="lang-cn">网易云商 SaaS 系统客户端设计</span>
-                    <span class="lang-en">NetEase Yunshang SaaS system client design</span>
-                </li>
-                <li>
-                    <span class="lang-cn">网易内部数据系统设计：APM 平台、CDN 平台、网易内购等</span>
-                    <span class="lang-en">NetEase internal data systems: APM, CDN, internal purchasing platform</span>
-                </li>
-            </ul>
-        </div>
-
-        <div class="project-group reveal">
-            <div class="project-year">
-                <span class="project-year-range">2015 ~ 2019</span>
-                <span class="project-year-team">
-                    <span class="lang-cn">UEDC 设计团队</span>
-                    <span class="lang-en">UEDC Design Team</span>
-                </span>
-                <span class="project-year-type">
-                    <span class="lang-cn">运营和管理</span>
-                    <span class="lang-en">Operations & Management</span>
-                </span>
-            </div>
-            <ul class="project-list">
-                <li>
-                    <span class="lang-cn">网易 UEDC 公众号策划和运营</span>
-                    <span class="lang-en">NetEase UEDC WeChat official account planning & operation</span>
-                </li>
-                <li>
-                    <span class="lang-cn">网易设计月刊 策划和编辑</span>
-                    <span class="lang-en">NetEase Design Monthly - planning & editing</span>
-                </li>
-                <li>
-                    <span class="lang-cn">网易出版物《匠心》策划和编辑</span>
-                    <span class="lang-en">NetEase publication "Craftsmanship" - planning & editing</span>
-                </li>
-                <li>
-                    <span class="lang-cn">网易设计任务管理系统产品设计</span>
-                    <span class="lang-en">NetEase design task management system product design</span>
-                </li>
-            </ul>
-        </div>
-
-        <div class="project-group reveal">
-            <div class="project-year">
-                <span class="project-year-range">2012 ~ 2013</span>
-                <span class="project-year-team">
-                    <span class="lang-cn">深圳鼎典品牌设计</span>
-                    <span class="lang-en">Shenzhen Dingdian Brand Design</span>
-                </span>
-                <span class="project-year-type">
-                    <span class="lang-cn">平面设计</span>
-                    <span class="lang-en">Graphic Design</span>
-                </span>
-            </div>
-            <ul class="project-list">
-                <li>
-                    <span class="lang-cn">品牌 VI、CI 相关平面设计</span>
-                    <span class="lang-en">Brand VI & CI graphic design</span>
-                </li>
-            </ul>
-        </div>
-
-    </section>
-
-    <!-- ==================== BLOG ==================== -->
-    <section class="content-section" id="blog">
-        <div class="section-header reveal">
-            <div class="section-title-wrapper" id="blog-title-wrapper">
-                <h2 class="section-title-fallback" id="blog-text-fallback">
-                    <span class="lang-cn">博客文章</span>
-                    <span class="lang-en">BLOG</span>
-                </h2>
-            </div>
-        </div>
-
-        <div class="blog-list">
-            <a class="blog-item reveal" href="https://yourblog.com/post-1" target="_blank">
-                <span class="blog-date">2024.06</span>
-                <span class="blog-title">
-                    <span class="lang-cn">如何用原生 JS 实现粒子动画效果</span>
-                    <span class="lang-en">How to Build Particle Animations with Vanilla JS</span>
-                </span>
-                <span class="blog-arrow">&rarr;</span>
-            </a>
-            <a class="blog-item reveal" href="https://yourblog.com/post-2" target="_blank">
-                <span class="blog-date">2024.03</span>
-                <span class="blog-title">
-                    <span class="lang-cn">我的 2023 年技术总结与反思</span>
-                    <span class="lang-en">My 2023 Tech Year in Review</span>
-                </span>
-                <span class="blog-arrow">&rarr;</span>
-            </a>
-            <a class="blog-item reveal" href="https://yourblog.com/post-3" target="_blank">
-                <span class="blog-date">2023.11</span>
-                <span class="blog-title">
-                    <span class="lang-cn">从零搭建现代前端工程化体系</span>
-                    <span class="lang-en">Building a Modern Frontend Engineering Pipeline from Scratch</span>
-                </span>
-                <span class="blog-arrow">&rarr;</span>
-            </a>
-        </div>
-    </section>
-
-    <!-- ==================== CONTACT ==================== -->
-    <section class="content-section" id="contact">
-        <div class="section-header reveal">
-            <div class="section-title-wrapper" id="contact-title-wrapper">
-                <h2 class="section-title-fallback" id="contact-text-fallback">
-                    <span class="lang-cn">联系方式</span>
-                    <span class="lang-en">CONTACT</span>
-                </h2>
-            </div>
-        </div>
-
-        <div class="contact-grid reveal">
-            <div class="contact-card">
-                <span class="contact-card-label">
-                    <span class="lang-cn">电话</span>
-                    <span class="lang-en">Mobile</span>
-                </span>
-                <a href="tel:+8618257199757">+86 18257199757</a>
-            </div>
-            <div class="contact-card">
-                <span class="contact-card-label">Email</span>
-                <a href="mailto:ff12zzj@163.com">ff12zzj@163.com</a>
-            </div>
-            <div class="contact-card">
-                <span class="contact-card-label">GitHub</span>
-                <a href="https://github.com/zijianxcode" target="_blank">github.com/zijianxcode</a>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- ==================== FOOTER ==================== -->
     <footer class="site-footer">
-        <div class="footer-content">
-            <span>&copy; 2025 YOUR NAME. All Rights Reserved.</span>
-        </div>
+        <span id="copyright">© 2025</span>
     </footer>
 
-    <!-- Scripts -->
     <script src="Assets/js/script.js"></script>
 </body>
 
