@@ -5,3 +5,4 @@ Thumbs.db
 .env.local
 .cloudbase-deploy
 node_modules
+dist

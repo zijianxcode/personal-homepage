@@ -5,7 +5,7 @@
   "description": "Static personal homepage",
   "scripts": {
     "deploy": "mkdir -p .cloudbase-deploy && cp index.html .cloudbase-deploy/ && cp -r Assets .cloudbase-deploy/ && tcb hosting deploy .cloudbase-deploy .",
-    "build": "echo 'Static site, no build step.'"
+    "build": "mkdir -p dist && cp index.html dist/ && cp -r Assets dist/"
   },
   "devDependencies": {
     "@cloudbase/cli": "^2.12.2"
