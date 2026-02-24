@@ -346,17 +346,20 @@ a:hover {
     flex-direction: column;
 }
 
+/* 与 info-top 一致：左栏 + 80px 间距 + 280px 右栏，年份列左缘与「联系我」左缘对齐 */
 .exp-item {
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr 80px 280px;
     align-items: baseline;
     padding: 14px 0;
-    gap: 24px 40px;
+    gap: 0;
 }
 
-.exp-item .exp-name,
-.exp-item .exp-role {
+.exp-title-row {
     grid-column: 1;
+    display: flex;
+    align-items: baseline;
+    gap: 24px;
 }
 
 .exp-item .exp-name {
@@ -364,6 +367,7 @@ a:hover {
     font-weight: 700;
     color: var(--text);
     text-decoration: none;
+    flex-shrink: 0;
 }
 
 .exp-item .exp-name:hover {
@@ -374,17 +378,17 @@ a:hover {
     font-size: 14px;
     color: var(--text-muted);
     font-weight: 400;
+    text-align: left;
+    flex-shrink: 0;
 }
 
 .exp-date {
-    grid-column: 2;
-    grid-row: 1 / -1;
+    grid-column: 3;
     align-self: center;
     font-size: 14px;
     color: var(--text-muted);
     font-weight: 400;
-    text-align: right;
-    min-width: 100px;
+    text-align: left;
 }
 
 /* ============================================
@@ -443,38 +447,47 @@ a:hover {
 .edu-list {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 0;
 }
 
+/* 与工作经历一致：1fr 80px 280px，年份与「联系我」左缘对齐 */
 .edu-item {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
+    display: grid;
+    grid-template-columns: 1fr 80px 280px;
+    align-items: baseline;
+    padding: 14px 0;
+    gap: 0;
 }
 
-.edu-header {
+.edu-title-row {
+    grid-column: 1;
     display: flex;
-    justify-content: space-between;
     align-items: baseline;
+    gap: 24px;
 }
 
 .edu-school {
     font-size: 16px;
     font-weight: 700;
     color: var(--text);
-}
-
-.edu-date {
-    font-size: 14px;
-    color: var(--text-muted);
-    font-weight: 400;
+    flex-shrink: 0;
 }
 
 .edu-degree {
     font-size: 14px;
     color: var(--text-muted);
     font-weight: 400;
-    line-height: 1.6;
+    text-align: left;
+    flex-shrink: 0;
+}
+
+.edu-date {
+    grid-column: 3;
+    align-self: center;
+    font-size: 14px;
+    color: var(--text-muted);
+    font-weight: 400;
+    text-align: left;
 }
 
 /* ============================================
@@ -629,16 +642,30 @@ a:hover {
         gap: 4px 8px;
     }
 
-    .exp-item .exp-date {
+    .exp-title-row {
         grid-column: 1;
-        grid-row: auto;
-        text-align: left;
-        min-width: 0;
+        flex-wrap: wrap;
+        gap: 4px 8px;
     }
 
-    .edu-header {
-        flex-direction: column;
-        gap: 0;
+    .exp-item .exp-date {
+        grid-column: 1;
+        text-align: left;
+    }
+
+    .edu-item {
+        grid-template-columns: 1fr;
+        gap: 4px 8px;
+    }
+
+    .edu-title-row {
+        grid-column: 1;
+        flex-wrap: wrap;
+        gap: 4px 8px;
+    }
+
+    .edu-date {
+        grid-column: 1;
     }
 
     .construction-page {
