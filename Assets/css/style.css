@@ -347,37 +347,44 @@ a:hover {
 }
 
 .exp-item {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto;
     align-items: baseline;
     padding: 14px 0;
-    gap: 16px;
+    gap: 24px 40px;
 }
 
-.exp-name {
+.exp-item .exp-name,
+.exp-item .exp-role {
+    grid-column: 1;
+}
+
+.exp-item .exp-name {
     font-size: 16px;
     font-weight: 700;
     color: var(--text);
     text-decoration: none;
-    flex-shrink: 0;
 }
 
-.exp-name:hover {
+.exp-item .exp-name:hover {
     opacity: 0.6;
 }
 
-.exp-role {
+.exp-item .exp-role {
     font-size: 14px;
     color: var(--text-muted);
     font-weight: 400;
-    flex: 1;
 }
 
 .exp-date {
+    grid-column: 2;
+    grid-row: 1 / -1;
+    align-self: center;
     font-size: 14px;
     color: var(--text-muted);
     font-weight: 400;
-    flex-shrink: 0;
     text-align: right;
+    min-width: 100px;
 }
 
 /* ============================================
@@ -618,13 +625,15 @@ a:hover {
     }
 
     .exp-item {
-        flex-wrap: wrap;
-        gap: 4px 16px;
+        grid-template-columns: 1fr;
+        gap: 4px 8px;
     }
 
-    .exp-role {
-        order: 3;
-        flex-basis: 100%;
+    .exp-item .exp-date {
+        grid-column: 1;
+        grid-row: auto;
+        text-align: left;
+        min-width: 0;
     }
 
     .edu-header {
