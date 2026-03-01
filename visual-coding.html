@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Coding — zijian</title>
+
+    <meta name="description" content="Visual Coding projects by zijian — interactive experiments at the intersection of design and code.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0a0a0a">
+    <link rel="icon" type="image/png" href="Assets/img/favicon.png">
+    <link rel="apple-touch-icon" href="Assets/img/favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="Assets/css/style.css">
+</head>
+
+<body data-lang="en">
+
+    <!-- Particle Background -->
+    <div id="canvas-container"></div>
+
+    <!-- ==================== HEADER / NAV ==================== -->
+    <header class="site-header">
+        <nav class="nav-links">
+            <a href="index.html#work" class="nav-link">Work</a>
+            <a href="index.html#info" class="nav-link">Info</a>
+            <a href="index.html#things" class="nav-link">Things</a>
+        </nav>
+        <div class="nav-right">
+            <div class="lang-switch">
+                <button class="lang-btn" data-lang="en">EN</button>
+                <span class="lang-divider">/</span>
+                <button class="lang-btn" data-lang="cn">CN</button>
+            </div>
+            <a href="index.html#work" class="brand-name">zijian</a>
+        </div>
+    </header>
+
+    <!-- ==================== MAIN ==================== -->
+    <main class="vc-page">
+
+        <section class="vc-hero">
+            <a href="index.html#work" class="vc-back">← Work</a>
+            <h1 class="vc-title">VISUAL CODING</h1>
+        </section>
+
+        <!-- ==================== PROJECT GRID ==================== -->
+        <section class="vc-grid-section">
+            <div class="vc-grid">
+
+                <!-- 01 · Floating Clock -->
+                <a class="vc-card" href="projects/floating-clock.html">
+                    <div class="vc-card-media vc-card-media--live">
+                        <iframe
+                            src="projects/floating-clock.html"
+                            class="vc-card-iframe"
+                            scrolling="no"
+                            tabindex="-1"
+                            title="Floating Clock Preview"
+                        ></iframe>
+                    </div>
+                    <div class="vc-card-info">
+                        <span class="vc-card-title lang-en">Floating Clock</span>
+                        <span class="vc-card-title lang-cn">浮动时钟</span>
+                        <span class="vc-card-desc lang-en">3D Physics · Three.js · WebGL</span>
+                        <span class="vc-card-desc lang-cn">物理碰撞 · Three.js · WebGL</span>
+                    </div>
+                </a>
+
+                <!-- 在此继续添加更多项目 card -->
+
+            </div>
+        </section>
+        <!-- ==================== / PROJECT GRID ==================== -->
+
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="site-footer">
+        <span id="copyright">© 2025</span>
+    </footer>
+
+    <script src="Assets/js/vc-page.js"></script>
+</body>
+
+</html>

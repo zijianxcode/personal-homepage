@@ -246,6 +246,29 @@ a:hover {
     opacity: 0.6;
 }
 
+/* Visual Coding — 字符级扰动与自愈 */
+.work-item--vc {
+    overflow: visible;
+}
+
+.work-item--vc:hover {
+    opacity: 1;
+}
+
+.work-item--vc .work-type {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+.char-unit {
+    display: inline-block;
+    transition: transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1),
+                color 0.35s ease,
+                opacity 0.35s ease;
+    will-change: transform;
+}
+
 .work-name {
     font-size: 28px;
     font-weight: 400;
@@ -408,12 +431,17 @@ a:hover {
     font-weight: 700;
     color: var(--text);
     margin-bottom: 12px;
+    display: flex;
+    align-items: baseline;
 }
 
 .projects-group-date {
     font-weight: 400;
     color: var(--text-muted);
     font-size: 14px;
+    margin-left: auto;
+    width: 280px;
+    flex-shrink: 0;
 }
 
 .projects-list {
@@ -668,6 +696,11 @@ a:hover {
         grid-column: 1;
     }
 
+    .projects-group-date {
+        margin-left: 16px;
+        width: auto;
+    }
+
     .construction-page {
         padding: 40px 20px;
     }
@@ -708,5 +741,169 @@ a:hover {
 
     .section-label {
         font-size: 16px;
+    }
+}
+
+/* ============================================
+   Visual Coding Sub-page
+   ============================================ */
+
+.vc-page {
+    padding-top: var(--header-height);
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+
+.vc-hero {
+    padding: 48px 60px 40px;
+}
+
+.vc-back {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text-muted);
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 24px;
+    transition: color 0.3s ease;
+    letter-spacing: 0.01em;
+}
+
+.vc-back:hover {
+    color: var(--text);
+    opacity: 1;
+}
+
+.vc-title {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: clamp(32px, 6vw, 72px);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--text);
+    line-height: 1;
+}
+
+/* Grid section — hidden when empty */
+.vc-grid-section {
+    padding: 0 60px 120px;
+}
+
+.vc-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+}
+
+.vc-grid:empty {
+    display: none;
+}
+
+.vc-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: var(--text);
+    overflow: hidden;
+    transition: opacity 0.3s ease;
+}
+
+.vc-card:hover {
+    opacity: 0.75;
+}
+
+.vc-card-media {
+    aspect-ratio: 1 / 1;
+    background: rgba(255, 255, 255, 0.06);
+    overflow: hidden;
+    position: relative;
+}
+
+.vc-card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.vc-card:hover .vc-card-media img {
+    transform: scale(1.04);
+}
+
+/* Live iframe preview thumbnail */
+.vc-card-media--live {
+    pointer-events: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.vc-card-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    pointer-events: none;
+    display: block;
+}
+
+.vc-card:hover .vc-card-media--live {
+    opacity: 0.85;
+}
+
+/* overlay 防止 iframe 拦截点击 */
+.vc-card-media--live::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.vc-card-info {
+    padding: 14px 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.vc-card-title {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: 0.01em;
+}
+
+.vc-card-desc {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--text-muted);
+    letter-spacing: 0.01em;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .vc-hero {
+        padding: 32px 20px 28px;
+    }
+
+    .vc-grid-section {
+        padding: 0 20px 80px;
+    }
+
+    .vc-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .vc-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1px;
     }
 }

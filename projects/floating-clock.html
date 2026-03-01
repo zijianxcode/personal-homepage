@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Floating Clock — zijian</title>
+    <link rel="icon" type="image/png" href="../Assets/img/favicon.png">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: #000;
+            overflow: hidden;
+            font-family: 'Courier New', monospace;
+        }
+
+        canvas { display: block; }
+
+        .description-container {
+            position: absolute;
+            left: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 280px;
+            color: #ffffff;
+            font-size: 12px;
+            line-height: 1.6;
+            z-index: 10;
+            mix-blend-mode: difference;
+        }
+
+        @media (max-width: 768px) {
+            .description-container { display: none; }
+        }
+
+        .title {
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+            color: #ff0000;
+            transition: color 0.1s ease;
+        }
+
+        .description {
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 8px;
+        }
+
+        .time-display {
+            font-size: 14px;
+            letter-spacing: 4px;
+            color: rgba(255,255,255,0.8);
+            margin-top: 16px;
+        }
+
+        /* back button */
+        .back-btn {
+            position: absolute;
+            top: 24px;
+            right: 32px;
+            z-index: 20;
+            font-family: 'Courier New', monospace;
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: rgba(255,255,255,0.4);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .back-btn:hover { color: rgba(255,255,255,0.9); }
+    </style>
+</head>
+
+<body>
+    <a class="back-btn" href="../visual-coding.html">← VISUAL CODING</a>
+
+    <div class="description-container">
+        <div class="title">FLOATING CLOCK</div>
+        <p class="description">
+            Free-floating 3D typography.<br>
+            Physics-based collision with<br>
+            Fresnel rim lighting effect.
+        </p>
+        <div class="time-display" id="timeDisplay">000000</div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/FontLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/geometries/TextGeometry.js"></script>
+    <script>
+        let scene, camera, renderer;
+        let digitMeshes = [null, null, null, null, null, null];
+        let digitShaders = [null, null, null, null, null, null];
+        let shapeMeshes = [null, null, null, null];
+        let shapeShaders = [null, null, null, null];
+        let loadedFont = null;
+        let currentDigits = ['0', '0', '0', '0', '0', '0'];
+
+        const TOTAL_OBJECTS = 10;
+        const FONT_URL = 'https://cdn.jsdelivr.net/npm/three@0.128.0/examples/fonts/helvetiker_bold.typeface.json';
+
+        const BASE_WIDTH = 1920;
+        let scaleFactor = 1.0;
+        function updateScaleFactor() {
+            const w = window.innerWidth;
+            if (w < 768) {
+                scaleFactor = 0.4 + (w / 768) * 0.2;
+            } else {
+                scaleFactor = Math.min(w / BASE_WIDTH, 1.0);
+            }
+        }
+        updateScaleFactor();
+
+        let positions = [];
+        let velocities = [];
+        let radii = [];
+
+        const FRICTION = 0.999;
+        const RESTITUTION = 0.85;
+        const REPULSION_FORCE = 0.0005;
+        const MIN_DISTANCE = 2.5;
+        const WALL_MARGIN = 0.5;
+
+        let rotationX = [];
+        let rotationY = [];
+        let rotationSpeedX = [];
+        let rotationSpeedY = [];
+
+        for (let i = 0; i < TOTAL_OBJECTS; i++) {
+            positions.push([(Math.random() - 0.5) * 10, (Math.random() - 0.5) * 6]);
+            velocities.push([(Math.random() - 0.5) * 0.03, (Math.random() - 0.5) * 0.03]);
+            radii.push((i < 6 ? 1.2 : 0.9) * scaleFactor);
+            rotationX.push((Math.random() - 0.5) * Math.PI * 0.5);
+            rotationY.push((Math.random() - 0.5) * Math.PI * 0.5);
+            rotationSpeedX.push((Math.random() - 0.5) * 0.06);
+            rotationSpeedY.push((Math.random() - 0.5) * 0.08);
+        }
+
+        const colorThemes = [
+            { name: 'RED',     base: [0.1,0.0,0.0],  rim: [1.0,0.0,0.0],  beam: [1.0,0.2,0.2],  ui: '#ff0000' },
+            { name: 'ORANGE',  base: [0.1,0.05,0.0], rim: [1.0,0.5,0.0],  beam: [1.0,0.6,0.2],  ui: '#ff8800' },
+            { name: 'YELLOW',  base: [0.1,0.1,0.0],  rim: [1.0,1.0,0.0],  beam: [1.0,1.0,0.3],  ui: '#ffdd00' },
+            { name: 'GREEN',   base: [0.0,0.08,0.02],rim: [0.0,1.0,0.4],  beam: [0.2,1.0,0.5],  ui: '#00ff88' },
+            { name: 'CYAN',    base: [0.0,0.08,0.1], rim: [0.0,1.0,1.0],  beam: [0.2,1.0,1.0],  ui: '#00ffff' },
+            { name: 'BLUE',    base: [0.0,0.0,0.1],  rim: [0.0,0.4,1.0],  beam: [0.3,0.5,1.0],  ui: '#0088ff' },
+            { name: 'VIOLET',  base: [0.05,0.0,0.1], rim: [0.6,0.0,1.0],  beam: [0.7,0.3,1.0],  ui: '#aa44ff' },
+            { name: 'MAGENTA', base: [0.1,0.0,0.08], rim: [1.0,0.0,0.8],  beam: [1.0,0.3,0.9],  ui: '#ff44dd' },
+            { name: 'PINK',    base: [0.1,0.03,0.05],rim: [1.0,0.4,0.6],  beam: [1.0,0.5,0.7],  ui: '#ff88aa' },
+            { name: 'WHITE',   base: [0.08,0.08,0.08],rim:[1.0,1.0,1.0],  beam: [1.0,1.0,1.0],  ui: '#ffffff' }
+        ];
+
+        let currentThemeIndex = 0;
+        let targetThemeIndex = 0;
+        let themeTransitionProgress = 1.0;
+        const THEME_TRANSITION_DURATION = 2.0;
+        let lastThemeChangeTime = 0;
+        const THEME_CHANGE_INTERVAL = 5;
+
+        function lerpColor(a, b, t) {
+            return [a[0]+(b[0]-a[0])*t, a[1]+(b[1]-a[1])*t, a[2]+(b[2]-a[2])*t];
+        }
+        function easeInOutCubic(t) {
+            return t < 0.5 ? 4*t*t*t : 1-Math.pow(-2*t+2,3)/2;
+        }
+        function startThemeTransition(nextIndex) {
+            if (themeTransitionProgress < 1.0) currentThemeIndex = targetThemeIndex;
+            targetThemeIndex = nextIndex % colorThemes.length;
+            themeTransitionProgress = 0.0;
+            lastThemeChangeTime = Date.now() / 1000;
+        }
+        function jumpToNextTheme() {
+            let nextIndex;
+            do { nextIndex = Math.floor(Math.random() * colorThemes.length); }
+            while (nextIndex === targetThemeIndex && colorThemes.length > 1);
+            startThemeTransition(nextIndex);
+        }
+        function updateThemeColors(deltaTime) {
+            const currentTime = Date.now() / 1000;
+            if (themeTransitionProgress >= 1.0 && currentTime - lastThemeChangeTime >= THEME_CHANGE_INTERVAL) {
+                jumpToNextTheme();
+            }
+            if (themeTransitionProgress < 1.0) {
+                themeTransitionProgress += deltaTime / THEME_TRANSITION_DURATION;
+                themeTransitionProgress = Math.min(1.0, themeTransitionProgress);
+            }
+            const easedT = easeInOutCubic(themeTransitionProgress);
+            const fromTheme = colorThemes[currentThemeIndex];
+            const toTheme = colorThemes[targetThemeIndex];
+            const currentBase = lerpColor(fromTheme.base, toTheme.base, easedT);
+            const currentRim  = lerpColor(fromTheme.rim,  toTheme.rim,  easedT);
+            const currentBeam = lerpColor(fromTheme.beam, toTheme.beam, easedT);
+
+            for (let i = 0; i < 6; i++) {
+                if (digitShaders[i]) {
+                    digitShaders[i].uniforms.uBaseColor.value.setRGB(...currentBase);
+                    digitShaders[i].uniforms.uRimColor.value.setRGB(...currentRim);
+                    digitShaders[i].uniforms.uBeamColor.value.setRGB(...currentBeam);
+                }
+            }
+            for (let i = 0; i < 4; i++) {
+                if (shapeShaders[i]) {
+                    shapeShaders[i].uniforms.uBaseColor.value.setRGB(...currentBase);
+                    shapeShaders[i].uniforms.uRimColor.value.setRGB(...currentRim);
+                    shapeShaders[i].uniforms.uBeamColor.value.setRGB(...currentBeam);
+                }
+            }
+            const titleEl = document.querySelector('.title');
+            if (titleEl) {
+                const r1=parseInt(fromTheme.ui.slice(1,3),16), g1=parseInt(fromTheme.ui.slice(3,5),16), b1=parseInt(fromTheme.ui.slice(5,7),16);
+                const r2=parseInt(toTheme.ui.slice(1,3),16),  g2=parseInt(toTheme.ui.slice(3,5),16),  b2=parseInt(toTheme.ui.slice(5,7),16);
+                const r=Math.round(r1+(r2-r1)*easedT), g=Math.round(g1+(g2-g1)*easedT), b=Math.round(b1+(b2-b1)*easedT);
+                titleEl.style.color = `rgb(${r},${g},${b})`;
+            }
+            if (themeTransitionProgress >= 1.0 && currentThemeIndex !== targetThemeIndex) {
+                currentThemeIndex = targetThemeIndex;
+            }
+        }
+
+        document.addEventListener('click', jumpToNextTheme);
+        document.addEventListener('touchend', jumpToNextTheme, { passive: true });
+
+        function updatePhysics() {
+            const w = window.innerWidth, h = window.innerHeight;
+            const fov = 45 * Math.PI / 180;
+            const camZ = camera ? camera.position.z : 10;
+            const worldHeight = 2 * Math.tan(fov / 2) * camZ;
+            const worldWidth = worldHeight * (w / h);
+            const halfW = worldWidth / 2 - WALL_MARGIN;
+            const halfH = worldHeight / 2 - WALL_MARGIN;
+
+            for (let i = 0; i < TOTAL_OBJECTS; i++) {
+                positions[i][0] += velocities[i][0];
+                positions[i][1] += velocities[i][1];
+                velocities[i][0] *= FRICTION;
+                velocities[i][1] *= FRICTION;
+            }
+            for (let i = 0; i < TOTAL_OBJECTS; i++) {
+                const r = radii[i];
+                if (positions[i][0]-r < -halfW) { positions[i][0]=-halfW+r; velocities[i][0]=Math.abs(velocities[i][0])*RESTITUTION; }
+                if (positions[i][0]+r >  halfW) { positions[i][0]= halfW-r; velocities[i][0]=-Math.abs(velocities[i][0])*RESTITUTION; }
+                if (positions[i][1]-r < -halfH) { positions[i][1]=-halfH+r; velocities[i][1]=Math.abs(velocities[i][1])*RESTITUTION; }
+                if (positions[i][1]+r >  halfH) { positions[i][1]= halfH-r; velocities[i][1]=-Math.abs(velocities[i][1])*RESTITUTION; }
+            }
+            for (let i = 0; i < TOTAL_OBJECTS; i++) {
+                for (let j = i+1; j < TOTAL_OBJECTS; j++) {
+                    const dx=positions[j][0]-positions[i][0], dy=positions[j][1]-positions[i][1];
+                    const dist=Math.sqrt(dx*dx+dy*dy), minDist=radii[i]+radii[j];
+                    if (dist < minDist && dist > 0.01) {
+                        const nx=dx/dist, ny=dy/dist, overlap=(minDist-dist)/2;
+                        positions[i][0]-=nx*overlap; positions[i][1]-=ny*overlap;
+                        positions[j][0]+=nx*overlap; positions[j][1]+=ny*overlap;
+                        const dvx=velocities[i][0]-velocities[j][0], dvy=velocities[i][1]-velocities[j][1];
+                        const dvDotN=dvx*nx+dvy*ny;
+                        if (dvDotN > 0) {
+                            velocities[i][0]-=dvDotN*nx*RESTITUTION; velocities[i][1]-=dvDotN*ny*RESTITUTION;
+                            velocities[j][0]+=dvDotN*nx*RESTITUTION; velocities[j][1]+=dvDotN*ny*RESTITUTION;
+                        }
+                    }
+                    if (dist < MIN_DISTANCE && dist > 0.01) {
+                        const force=REPULSION_FORCE*(1-dist/MIN_DISTANCE), nx=dx/dist, ny=dy/dist;
+                        velocities[i][0]-=nx*force; velocities[i][1]-=ny*force;
+                        velocities[j][0]+=nx*force; velocities[j][1]+=ny*force;
+                    }
+                }
+            }
+            for (let i = 0; i < 6; i++) { if (digitMeshes[i]) { digitMeshes[i].position.x=positions[i][0]; digitMeshes[i].position.y=positions[i][1]; } }
+            for (let i = 0; i < 4; i++) { if (shapeMeshes[i]) { shapeMeshes[i].position.x=positions[6+i][0]; shapeMeshes[i].position.y=positions[6+i][1]; } }
+        }
+
+        const LOOP_DURATION = 1.5;
+        const SCAN_RANGE = 4.0;
+        const isMobile = window.innerWidth < 768;
+
+        function init() {
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color(0x000000);
+            camera = new THREE.PerspectiveCamera(45, window.innerWidth/window.innerHeight, 0.1, 1000);
+            camera.position.set(0, 0, isMobile ? 12 : 10);
+            camera.lookAt(0, 0, 0);
+            renderer = new THREE.WebGLRenderer({ antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            document.body.appendChild(renderer.domElement);
+            const fontLoader = new THREE.FontLoader();
+            fontLoader.load(FONT_URL, function(font) {
+                loadedFont = font;
+                createClock();
+                lastThemeChangeTime = Date.now() / 1000;
+                animate();
+            });
+            window.addEventListener('resize', onWindowResize);
+        }
+
+        function createScanningMaterial() {
+            return new THREE.ShaderMaterial({
+                uniforms: {
+                    uTime: { value: 0.0 },
+                    uLightY: { value: 3.0 },
+                    uBaseColor: { value: new THREE.Color(0.1, 0.0, 0.0) },
+                    uRimColor:  { value: new THREE.Color(1.0, 0.0, 0.0) },
+                    uBeamColor: { value: new THREE.Color(1.0, 0.2, 0.2) },
+                    uOpacity:   { value: 1.0 }
+                },
+                vertexShader: `
+                    varying vec3 vWorldPos; varying vec3 vNormal; varying vec3 vViewDir; varying float vY;
+                    void main() {
+                        vec4 worldPos = modelMatrix * vec4(position, 1.0);
+                        vWorldPos = worldPos.xyz;
+                        vNormal = normalize(normalMatrix * normal);
+                        vViewDir = normalize(cameraPosition - worldPos.xyz);
+                        vY = position.y;
+                        gl_Position = projectionMatrix * viewMatrix * worldPos;
+                    }`,
+                fragmentShader: `
+                    uniform float uTime; uniform float uLightY;
+                    uniform vec3 uBaseColor; uniform vec3 uRimColor; uniform vec3 uBeamColor; uniform float uOpacity;
+                    varying vec3 vWorldPos; varying vec3 vNormal; varying vec3 vViewDir; varying float vY;
+                    void main() {
+                        vec3 normal = normalize(vNormal); vec3 viewDir = normalize(vViewDir);
+                        float distY = vY - uLightY;
+                        float beam = exp(-distY * distY * 2.0);
+                        float tail = smoothstep(1.5, -0.5, distY) * smoothstep(-1.5, 0.5, distY);
+                        float intensity = beam * 1.5 + tail * 0.2;
+                        float fresnel = 1.0 - max(0.0, dot(viewDir, normal));
+                        fresnel = pow(fresnel, 2.5);
+                        float verticalProgress = smoothstep(1.0, -1.0, uLightY);
+                        vec3 colWhite = vec3(1.0); vec3 colDarkRed = uBaseColor; vec3 colBrightRed = uBeamColor;
+                        vec3 dynamicBeam;
+                        if (verticalProgress < 0.3) dynamicBeam = colWhite;
+                        else if (verticalProgress < 0.4) dynamicBeam = mix(colWhite, colDarkRed, (verticalProgress-0.3)/0.1);
+                        else if (verticalProgress < 0.8) dynamicBeam = colDarkRed;
+                        else if (verticalProgress < 0.9) dynamicBeam = mix(colDarkRed, colBrightRed, (verticalProgress-0.8)/0.1);
+                        else dynamicBeam = colBrightRed;
+                        vec3 base = uBaseColor * intensity;
+                        vec3 rim  = uRimColor * fresnel * (intensity + 0.1);
+                        vec3 beamColor = dynamicBeam * beam * 0.8;
+                        gl_FragColor = vec4(base + rim + beamColor, uOpacity);
+                    }`,
+                side: THREE.FrontSide, transparent: true, depthWrite: true
+            });
+        }
+
+        function createTextMesh(text, material) {
+            const segments = isMobile ? 16 : 32, bevelSegs = isMobile ? 4 : 8;
+            const scaledSize = 2.0 * scaleFactor, scaledHeight = 0.5 * scaleFactor, scaledBevel = 0.08 * scaleFactor;
+            const geometry = new THREE.TextGeometry(text, {
+                font: loadedFont, size: scaledSize, height: scaledHeight,
+                curveSegments: segments, bevelEnabled: true,
+                bevelThickness: scaledBevel, bevelSize: scaledBevel, bevelSegments: bevelSegs
+            });
+            geometry.computeBoundingBox();
+            const center = new THREE.Vector3();
+            geometry.boundingBox.getCenter(center);
+            geometry.translate(-center.x, -center.y, -center.z);
+            return new THREE.Mesh(geometry, material);
+        }
+
+        function createClock() {
+            const now = new Date();
+            const h = String(now.getHours()).padStart(2,'0');
+            const m = String(now.getMinutes()).padStart(2,'0');
+            const s = String(now.getSeconds()).padStart(2,'0');
+            currentDigits = [h[0],h[1],m[0],m[1],s[0],s[1]];
+            for (let i = 0; i < 6; i++) {
+                digitShaders[i] = createScanningMaterial();
+                digitMeshes[i] = createTextMesh(currentDigits[i], digitShaders[i]);
+                digitMeshes[i].position.x = positions[i][0];
+                digitMeshes[i].position.y = positions[i][1];
+                scene.add(digitMeshes[i]);
+            }
+            createShapes();
+            updateTimeDisplay();
+        }
+
+        function createShapes() {
+            const s = scaleFactor;
+            for (let i = 0; i < 4; i++) {
+                shapeShaders[i] = createScanningMaterial();
+                let mesh;
+                if (i === 1) mesh = createWireframePolyhedron(new THREE.OctahedronGeometry(0.9*s), 0.05*s, shapeShaders[i]);
+                else if (i === 3) mesh = createWireframePolyhedron(new THREE.IcosahedronGeometry(0.8*s), 0.04*s, shapeShaders[i]);
+                else {
+                    let geometry = i === 0 ? new THREE.SphereGeometry(0.8*s,32,32) : new THREE.TorusGeometry(0.6*s,0.25*s,16,48);
+                    geometry.computeBoundingBox();
+                    const center = new THREE.Vector3();
+                    geometry.boundingBox.getCenter(center);
+                    geometry.translate(-center.x,-center.y,-center.z);
+                    mesh = new THREE.Mesh(geometry, shapeShaders[i]);
+                }
+                mesh.position.x = positions[6+i][0];
+                mesh.position.y = positions[6+i][1];
+                shapeMeshes[i] = mesh;
+                scene.add(mesh);
+            }
+        }
+
+        function createWireframePolyhedron(geometry, tubeRadius, material) {
+            const group = new THREE.Group();
+            const posAttr = geometry.getAttribute('position');
+            const edgeSet = new Set(), edges = [], vertices = [], vertexMap = new Map();
+            for (let i = 0; i < posAttr.count; i++) {
+                const x=posAttr.getX(i), y=posAttr.getY(i), z=posAttr.getZ(i);
+                const key=`${x.toFixed(5)},${y.toFixed(5)},${z.toFixed(5)}`;
+                if (!vertexMap.has(key)) { vertexMap.set(key, vertices.length); vertices.push(new THREE.Vector3(x,y,z)); }
+            }
+            for (let i = 0; i < posAttr.count; i += 3) {
+                const getVI = (idx) => { const x=posAttr.getX(idx),y=posAttr.getY(idx),z=posAttr.getZ(idx); return vertexMap.get(`${x.toFixed(5)},${y.toFixed(5)},${z.toFixed(5)}`); };
+                const a=getVI(i), b=getVI(i+1), c=getVI(i+2);
+                [[a,b],[b,c],[c,a]].forEach(([v1,v2]) => { const key=v1<v2?`${v1}-${v2}`:`${v2}-${v1}`; if (!edgeSet.has(key)) { edgeSet.add(key); edges.push([v1,v2]); } });
+            }
+            edges.forEach(([v1,v2]) => {
+                const p1=vertices[v1], p2=vertices[v2];
+                const direction=new THREE.Vector3().subVectors(p2,p1), length=direction.length();
+                const midpoint=new THREE.Vector3().addVectors(p1,p2).multiplyScalar(0.5);
+                const cyl=new THREE.Mesh(new THREE.CylinderGeometry(tubeRadius,tubeRadius,length,8), material);
+                cyl.position.copy(midpoint);
+                cyl.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0), direction.clone().normalize());
+                group.add(cyl);
+            });
+            vertices.forEach(pos => {
+                const sphere=new THREE.Mesh(new THREE.SphereGeometry(tubeRadius*1.2,8,8), material);
+                sphere.position.copy(pos); group.add(sphere);
+            });
+            geometry.dispose();
+            return group;
+        }
+
+        function updateTimeDisplay() {
+            const display = document.getElementById('timeDisplay');
+            if (display) display.textContent = currentDigits.join('');
+        }
+
+        function updateTimeText() {
+            const now = new Date();
+            const h=String(now.getHours()).padStart(2,'0'), m=String(now.getMinutes()).padStart(2,'0'), s=String(now.getSeconds()).padStart(2,'0');
+            const newDigits = [h[0],h[1],m[0],m[1],s[0],s[1]];
+            for (let i = 0; i < 6; i++) {
+                if (newDigits[i] !== currentDigits[i]) { updateDigitMesh(i, newDigits[i]); currentDigits[i] = newDigits[i]; }
+            }
+            updateTimeDisplay();
+        }
+
+        function updateDigitMesh(index, digit) {
+            const oldMesh = digitMeshes[index];
+            const pos=oldMesh.position.clone(), rot=oldMesh.rotation.clone(), scl=oldMesh.scale.clone();
+            scene.remove(oldMesh);
+            if (oldMesh.geometry) oldMesh.geometry.dispose();
+            const newMesh = createTextMesh(digit, digitShaders[index]);
+            newMesh.position.copy(pos); newMesh.rotation.copy(rot); newMesh.scale.copy(scl);
+            digitMeshes[index] = newMesh;
+            scene.add(newMesh);
+        }
+
+        let startTime = Date.now(), lastFrameTime = Date.now();
+
+        function animate() {
+            requestAnimationFrame(animate);
+            const now = Date.now(), deltaTime=(now-lastFrameTime)/1000; lastFrameTime=now;
+            const time = (now-startTime)/1000;
+            updateThemeColors(deltaTime);
+            updatePhysics();
+            updateTimeText();
+            for (let i = 0; i < 6; i++) {
+                if (!digitShaders[i] || !digitMeshes[i]) continue;
+                const offset=i*0.08;
+                let t=((time+offset)%LOOP_DURATION)/LOOP_DURATION;
+                t=1.0-Math.pow(1.0-t,4.0);
+                digitShaders[i].uniforms.uTime.value=time;
+                digitShaders[i].uniforms.uLightY.value=SCAN_RANGE-(t*SCAN_RANGE*2);
+                rotationX[i]+=rotationSpeedX[i]*0.016; rotationY[i]+=rotationSpeedY[i]*0.016;
+                digitMeshes[i].rotation.x=rotationX[i]; digitMeshes[i].rotation.y=rotationY[i];
+                digitMeshes[i].rotation.z=Math.sin(time*0.3+i*0.3)*0.03;
+            }
+            for (let i = 0; i < 4; i++) {
+                if (!shapeShaders[i] || !shapeMeshes[i]) continue;
+                const offset=(6+i)*0.12;
+                let t=((time+offset)%LOOP_DURATION)/LOOP_DURATION;
+                t=1.0-Math.pow(1.0-t,4.0);
+                shapeShaders[i].uniforms.uTime.value=time;
+                shapeShaders[i].uniforms.uLightY.value=SCAN_RANGE-(t*SCAN_RANGE*2);
+                const idx=6+i;
+                rotationX[idx]+=rotationSpeedX[idx]*0.016; rotationY[idx]+=rotationSpeedY[idx]*0.016;
+                shapeMeshes[i].rotation.x=rotationX[idx]; shapeMeshes[i].rotation.y=rotationY[idx];
+                shapeMeshes[i].rotation.z=Math.sin(time*0.5+i*0.5)*0.1;
+            }
+            renderer.render(scene, camera);
+        }
+
+        function onWindowResize() {
+            camera.aspect = window.innerWidth/window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            const oldScale=scaleFactor; updateScaleFactor();
+            for (let i = 0; i < TOTAL_OBJECTS; i++) radii[i]=(radii[i]/oldScale)*scaleFactor;
+            camera.position.z = window.innerWidth < 768 ? 12 : 10;
+        }
+
+        init();
+    </script>
+</body>
+</html>

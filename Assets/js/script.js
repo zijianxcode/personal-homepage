@@ -144,8 +144,276 @@
     };
 
     // ==========================================
+    // TextScramble — 三阶段：等待期 / 乱码期 / 完成
+    // HTML-aware：保留内部 HTML 标签，仅对文本节点乱码
+    // ==========================================
+
+    var SCRAMBLE_CHARS = '!<>-_\\/[]{}—=+*^?#';
+    var SCRAMBLE_REFRESH_PROB = 0.28;
+    var SCRAMBLE_COLORS = ['#ff3333', '#00ff41', '#4d9fff', '#ffe600', '#ff8800', '#ff44cc', '#00e5ff'];
+    var SCRAMBLE_COLOR_PROB = 0.38;
+
+    function TextScramble(el, options) {
+        if (!el) return;
+        this.el = el;
+        this.options = options || {};
+        this.chars = [];
+        this._segments = [];
+        this.frame = 0;
+        this.rafId = null;
+        this.done = false;
+        this._init();
+    }
+
+    // 将 innerHTML 解析为 text / tag 两类 segment，仅 text 参与乱码
+    TextScramble.prototype._init = function () {
+        var html = this.el.innerHTML;
+        var waitMax = this.options.waitMax != null ? this.options.waitMax : 40;
+        var scrambleDuration = this.options.scrambleDuration != null ? this.options.scrambleDuration : 25;
+        var tagRegex = /<[^>]+>/g;
+        var lastIdx = 0;
+        var match;
+        this.chars = [];
+        this._segments = [];
+
+        while ((match = tagRegex.exec(html)) !== null) {
+            if (match.index > lastIdx) {
+                this._pushTextSeg(html.slice(lastIdx, match.index), waitMax, scrambleDuration);
+            }
+            this._segments.push({ type: 'tag', content: match[0] });
+            lastIdx = tagRegex.lastIndex;
+        }
+        if (lastIdx < html.length) {
+            this._pushTextSeg(html.slice(lastIdx), waitMax, scrambleDuration);
+        }
+    };
+
+    TextScramble.prototype._pushTextSeg = function (text, waitMax, scrambleDuration) {
+        var charStart = this.chars.length;
+        for (var i = 0; i < text.length; i++) {
+            var s = Math.floor(Math.random() * (waitMax + 1));
+            this.chars.push({ target: text[i], start: s, end: s + scrambleDuration, display: '', color: null });
+        }
+        this._segments.push({ type: 'text', charStart: charStart, charCount: text.length });
+    };
+
+    TextScramble.prototype._randomChar = function () {
+        return SCRAMBLE_CHARS[Math.floor(Math.random() * SCRAMBLE_CHARS.length)];
+    };
+
+    // 乱码字符可能含 < > &，渲染时转义避免破坏 DOM
+    TextScramble.prototype._esc = function (ch) {
+        if (ch === '<') return '&lt;';
+        if (ch === '>') return '&gt;';
+        if (ch === '&') return '&amp;';
+        return ch;
+    };
+
+    TextScramble.prototype._render = function () {
+        var html = '';
+        for (var s = 0; s < this._segments.length; s++) {
+            var seg = this._segments[s];
+            if (seg.type === 'tag') {
+                html += seg.content;
+            } else {
+                for (var i = seg.charStart; i < seg.charStart + seg.charCount; i++) {
+                    var c = this.chars[i];
+                    var ch = this._esc(c.display);
+                    if (c.color) {
+                        html += '<span style="color:' + c.color + ';font-style:normal">' + ch + '</span>';
+                    } else {
+                        html += ch;
+                    }
+                }
+            }
+        }
+        this.el.innerHTML = html;
+    };
+
+    TextScramble.prototype._tick = function () {
+        var self = this;
+
+        // 每隔一帧才推进逻辑，实现 50% 降速
+        this._skipToggle = !this._skipToggle;
+        if (this._skipToggle) {
+            this.rafId = requestAnimationFrame(function () { self._tick(); });
+            return;
+        }
+
+        this.frame++;
+        var anyActive = false;
+
+        for (var i = 0; i < this.chars.length; i++) {
+            var c = this.chars[i];
+            if (this.frame < c.start) {
+                c.display = '';
+                c.color = null;
+            } else if (this.frame >= c.end) {
+                c.display = c.target;
+                c.color = null;
+            } else {
+                anyActive = true;
+                if (c.display === '' || Math.random() < SCRAMBLE_REFRESH_PROB) {
+                    c.display = this._randomChar();
+                    // 随机决定是否赋予科技感颜色
+                    c.color = Math.random() < SCRAMBLE_COLOR_PROB
+                        ? SCRAMBLE_COLORS[Math.floor(Math.random() * SCRAMBLE_COLORS.length)]
+                        : null;
+                }
+            }
+        }
+
+        this._render();
+
+        if (anyActive || this.frame < this._maxEnd()) {
+            this.rafId = requestAnimationFrame(function () { self._tick(); });
+        } else {
+            this.done = true;
+        }
+    };
+
+    TextScramble.prototype._maxEnd = function () {
+        var max = 0;
+        for (var i = 0; i < this.chars.length; i++) {
+            if (this.chars[i].end > max) max = this.chars[i].end;
+        }
+        return max;
+    };
+
+    TextScramble.prototype.start = function () {
+        var self = this;
+        if (this.rafId) cancelAnimationFrame(this.rafId);
+        this.frame = 0;
+        this.done = false;
+        this._skipToggle = false;
+        var waitMax = this.options.waitMax != null ? this.options.waitMax : 40;
+        var scrambleDuration = this.options.scrambleDuration != null ? this.options.scrambleDuration : 25;
+        for (var i = 0; i < this.chars.length; i++) {
+            var c = this.chars[i];
+            c.start = Math.floor(Math.random() * (waitMax + 1));
+            c.end = c.start + scrambleDuration;
+            c.display = '';
+            c.color = null;
+        }
+        this._render();
+        this.rafId = requestAnimationFrame(function () { self._tick(); });
+    };
+
+    TextScramble.prototype.destroy = function () {
+        if (this.rafId) {
+            cancelAnimationFrame(this.rafId);
+            this.rafId = null;
+        }
+    };
+
+    // ==========================================
+    // Visual Coding — 字符级颗粒化扰动与自愈
+    // 静(正常) → 动(hover 散开) → 回(离开弹性归位)
+    // ==========================================
+
+    function initVisualCodingEffect() {
+        var item = document.querySelector('.work-item--vc');
+        if (!item) return;
+
+        var typeEls = item.querySelectorAll('.work-type');
+
+        // 将每个字符包裹为独立 span（保留空格宽度）
+        typeEls.forEach(function (el) {
+            var chars = el.textContent.split('');
+            el.innerHTML = chars.map(function (ch) {
+                if (ch === ' ') {
+                    return '<span class="char-unit" style="width:0.28em;"> </span>';
+                }
+                return '<span class="char-unit">' + ch + '</span>';
+            }).join('');
+        });
+
+        item.addEventListener('mouseenter', function () {
+            typeEls.forEach(function (el) {
+                var spans = el.querySelectorAll('.char-unit');
+                var n = spans.length;
+                spans.forEach(function (span, i) {
+                    var delay = i * 22;
+                    var tx = (Math.random() - 0.5) * 18;
+                    var ty = (Math.random() - 0.5) * 28;
+                    var rot = (Math.random() - 0.5) * 22;
+                    var color = SCRAMBLE_COLORS[Math.floor(Math.random() * SCRAMBLE_COLORS.length)];
+                    span.style.transitionDelay = delay + 'ms';
+                    span.style.transform = 'translate(' + tx + 'px, ' + ty + 'px) rotate(' + rot + 'deg)';
+                    span.style.color = color;
+                    span.style.opacity = '0.85';
+                });
+            });
+        });
+
+        item.addEventListener('mouseleave', function () {
+            typeEls.forEach(function (el) {
+                var spans = el.querySelectorAll('.char-unit');
+                var n = spans.length;
+                spans.forEach(function (span, i) {
+                    // 反向交错归位，最后散开的最先回来
+                    var delay = (n - 1 - i) * 18;
+                    span.style.transitionDelay = delay + 'ms';
+                    span.style.transform = '';
+                    span.style.color = '';
+                    span.style.opacity = '';
+                });
+            });
+        });
+    }
+
+    // ==========================================
+    // Info 分区滚动触发 TextScramble
+    // 仅在元素进入视口时播放，且每个元素只播放一次
+    // 语言切换时：display:none 的元素不触发，切换后进入视口再触发
+    // ==========================================
+
+    function initInfoSectionScramble() {
+        if (!('IntersectionObserver' in window)) return;
+
+        var selectors = [
+            '#info .info-section .section-label',
+            '#info .exp-item .exp-name',
+            '#info .exp-item .exp-role',
+            '#info .exp-item .exp-date',
+            '#info .projects-group-title',
+            '#info .projects-list li',
+            '#info .edu-item .edu-school',
+            '#info .edu-item .edu-degree',
+            '#info .edu-item .edu-date'
+        ].join(', ');
+
+        var els = document.querySelectorAll(selectors);
+
+        // 预先创建实例（此时记录原始内容，但不播放）
+        els.forEach(function (el) {
+            el._scramble = new TextScramble(el, { waitMax: 30, scrambleDuration: 20 });
+        });
+
+        var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (!entry.isIntersecting) return;
+                var el = entry.target;
+                if (el.dataset.scrambleDone) return;
+                el.dataset.scrambleDone = '1';
+                observer.unobserve(el);
+                if (el._scramble) el._scramble.start();
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -10px 0px'
+        });
+
+        els.forEach(function (el) {
+            observer.observe(el);
+        });
+    }
+
+    // ==========================================
     // Tabs
     // ==========================================
+
+    var textScrambleInstance = null;
 
     function initTabs() {
         var navLinks = document.querySelectorAll('[data-tab]');
@@ -170,6 +438,10 @@
                     link.classList.add('active');
                 }
             });
+
+            if (tabId === 'info' && textScrambleInstance) {
+                textScrambleInstance.start();
+            }
         }
 
         navLinks.forEach(function (link) {
@@ -238,6 +510,21 @@
             initTabs();
             initLang();
             new ParticleBackground('canvas-container');
+
+            var displayNameEl = document.querySelector('#info .display-name');
+            if (displayNameEl) {
+                textScrambleInstance = new TextScramble(displayNameEl, {
+                    waitMax: 40,
+                    scrambleDuration: 25
+                });
+                var hash = (window.location.hash || '').slice(1);
+                if (hash === 'info') {
+                    textScrambleInstance.start();
+                }
+            }
+
+            initVisualCodingEffect();
+            initInfoSectionScramble();
         } catch (err) {
             console.error('Init error:', err);
         }
