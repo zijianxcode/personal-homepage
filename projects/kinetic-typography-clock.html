@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Kinetic Typography Clock — zijian</title>
+  <link rel="icon" type="image/svg+xml" href="../Assets/img/favicon.svg">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;900&family=Courier+Prime&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      overflow: hidden;
+      background: #050505;
+      width: 100%;
+      height: 100%
+    }
+
+    canvas#c {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      cursor: none
+    }
+
+    #dot {
+      position: fixed;
+      pointer-events: none;
+      z-index: 100;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.6);
+      mix-blend-mode: difference;
+      transform: translate(-50%, -50%)
+    }
+
+    /* Back button */
+    .back-btn {
+      position: fixed;
+      top: 24px;
+      right: 32px;
+      z-index: 20;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .back-btn:hover { color: rgba(255,255,255,0.9); }
+  </style>
+</head>
+
+<body>
+  <a class="back-btn" href="../visual-coding.html">← VISUAL CODING</a>
+  <canvas id="c"></canvas>
+  <div id="dot"></div>
+
+  <script>
+    (() => {
+      'use strict';
+
+      // Perlin Noise (simplified 2D)
+      const P = [151, 160, 137, 91, 90, 15, 131, 13, 201, 95, 96, 53, 194, 233, 7, 225, 140, 36, 103, 30, 69, 142, 8, 99, 37, 240, 21, 10, 23, 190, 6, 148, 247, 120, 234, 75, 0, 26, 197, 62, 94, 252, 219, 203, 117, 35, 11, 32, 57, 177, 33, 88, 237, 149, 56, 87, 174, 20, 125, 136, 171, 168, 68, 175, 74, 165, 71, 134, 139, 48, 27, 166, 77, 146, 158, 231, 83, 111, 229, 122, 60, 211, 133, 230, 220, 105, 92, 41, 55, 46, 245, 40, 244, 102, 143, 54, 65, 25, 63, 161, 1, 216, 80, 73, 209, 76, 132, 187, 208, 89, 18, 169, 200, 196, 135, 130, 116, 188, 159, 86, 164, 100, 109, 198, 173, 186, 3, 64, 52, 217, 226, 250, 124, 123, 5, 202, 38, 147, 118, 126, 255, 82, 85, 212, 207, 206, 59, 227, 47, 16, 58, 17, 182, 189, 28, 42, 223, 183, 170, 213, 119, 248, 152, 2, 44, 154, 163, 70, 221, 153, 101, 155, 167, 43, 172, 9, 129, 22, 39, 253, 19, 98, 108, 110, 79, 113, 224, 232, 178, 185, 112, 104, 218, 246, 97, 228, 251, 34, 242, 193, 238, 210, 144, 12, 191, 179, 162, 241, 81, 51, 145, 235, 249, 14, 239, 107, 49, 192, 214, 31, 181, 199, 106, 157, 184, 84, 204, 176, 115, 121, 50, 45, 127, 4, 150, 254, 138, 236, 205, 93, 222, 114, 67, 29, 24, 72, 243, 141, 128, 195, 78, 66, 215, 61, 156, 180];
+      const pp = new Array(512); for (let i = 0; i < 512; i++)pp[i] = P[i & 255];
+      function fade(t) { return t * t * t * (t * (t * 6 - 15) + 10) }
+      function lerp(a, b, t) { return a + t * (b - a) }
+      function grad(h, x, y) { const v = h & 3; return (v === 0 ? x + y : v === 1 ? -x + y : v === 2 ? x - y : -x - y) }
+      function noise(x, y) { const X = Math.floor(x) & 255, Y = Math.floor(y) & 255; x -= Math.floor(x); y -= Math.floor(y); const u = fade(x), v = fade(y), A = pp[X] + Y, B = pp[X + 1] + Y; return lerp(lerp(grad(pp[A], x, y), grad(pp[B], x - 1, y), u), lerp(grad(pp[A + 1], x, y - 1), grad(pp[B + 1], x - 1, y - 1), u), v) }
+
+      const canvas = document.getElementById('c');
+      const ctx = canvas.getContext('2d');
+      const dot = document.getElementById('dot');
+
+
+      let W, H, dpr, cx, cy;
+      let mx = 0.5, my = 0.5, mxS = 0.5, myS = 0.5, mxPx = -999, myPx = -999;
+
+      function resize() {
+        dpr = Math.min(devicePixelRatio || 1, 2);
+        W = innerWidth; H = innerHeight;
+        canvas.width = W * dpr; canvas.height = H * dpr;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        cx = W / 2; cy = H / 2;
+      }
+      addEventListener('resize', resize); resize();
+      addEventListener('mousemove', e => {
+        mx = e.clientX / W; my = e.clientY / H;
+        mxPx = e.clientX; myPx = e.clientY;
+        dot.style.left = e.clientX + 'px'; dot.style.top = e.clientY + 'px';
+      });
+
+      // Numeral Systems
+      const ARABIC = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
+      const ENGLISH = ['One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Eleven', 'Twelve'];
+      const CJK = ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十二'];
+      const ROMAN = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII'];
+      const SETS = [ARABIC, ENGLISH, CJK, ROMAN];
+
+      // Render Styles
+      const STYLE_FILL = 0, STYLE_OUTLINE = 1;
+      let renderStyle = STYLE_FILL;
+
+      // Theme
+      let theme = 0, themeT = 0;
+      const DARK = { bg: [5, 5, 8], fg: [255, 255, 255], accent: [255, 50, 50] };
+      const LIGHT = { bg: [245, 243, 240], fg: [5, 5, 5], accent: [200, 30, 30] };
+
+      // Non-uniform rhythm: varied intervals
+      let nextInterval = 2000 + Math.random() * 2000;
+      let pulseIdx = 0;
+      let lastPulse = 0;
+
+      // State
+      let setIdx = 0, layoutIdx = 0;
+
+      // Spring helper
+      function springVal(cur, tgt, vel, k, d) {
+        vel += (tgt - cur) * k; vel *= d; return [cur + vel, vel];
+      }
+
+      // Number particles
+      class Num {
+        constructor(i) {
+          this.i = i;
+          this.x = cx; this.y = cy; this.tx = cx; this.ty = cy;
+          this.rot = Math.random() * 6.28; this.trot = 0;
+          this.rx = Math.random() * 6.28; this.trx = 0;
+          this.ry = Math.random() * 6.28; this.try_ = 0;
+          this.sc = 1; this.tsc = 1;
+          this.fs = 1; this.tfs = 1;
+          this.op = 1; this.top_ = 1;
+          this.depth = 0.3 + Math.random() * 0.7;
+          this.nOff = Math.random() * 100;
+          this.vx = 0; this.vy = 0; this.vr = 0; this.vrx = 0; this.vry = 0; this.vs = 0; this.vfs = 0; this.vop = 0;
+        }
+        update(t) {
+          const k = 0.055, d = 0.78;
+          let r;
+          r = springVal(this.x, this.tx, this.vx, k, d); this.x = r[0]; this.vx = r[1];
+          r = springVal(this.y, this.ty, this.vy, k, d); this.y = r[0]; this.vy = r[1];
+          r = springVal(this.rot, this.trot, this.vr, k, d); this.rot = r[0]; this.vr = r[1];
+          r = springVal(this.rx, this.trx, this.vrx, 0.03, d); this.rx = r[0]; this.vrx = r[1];
+          r = springVal(this.ry, this.try_, this.vry, 0.03, d); this.ry = r[0]; this.vry = r[1];
+          r = springVal(this.sc, this.tsc, this.vs, k, d); this.sc = r[0]; this.vs = r[1];
+          r = springVal(this.fs, this.tfs, this.vfs, k, d); this.fs = r[0]; this.vfs = r[1];
+          r = springVal(this.op, this.top_, this.vop, 0.04, 0.85); this.op = r[0]; this.vop = r[1];
+          // Perlin noise organic drift
+          const n1 = noise(this.nOff + t * 0.00015, this.i * 0.7) * 12;
+          const n2 = noise(this.nOff + 50 + t * 0.00015, this.i * 0.7) * 12;
+          this.x += n1 * this.depth; this.y += n2 * this.depth;
+          // Mouse repulsion
+          const ddx = this.x - mxPx, ddy = this.y - myPx;
+          const dist = Math.sqrt(ddx * ddx + ddy * ddy);
+          if (dist < 180 && dist > 0) {
+            const force = (1 - dist / 180) * 5;
+            this.x += ddx / dist * force; this.y += ddy / dist * force;
+          }
+          // Subtle continuous 3D spin
+          this.rx += Math.sin(t * 0.0003 + this.i * 0.5) * 0.002 * this.depth;
+          this.ry += Math.cos(t * 0.00035 + this.i * 0.7) * 0.002 * this.depth;
+        }
+        draw(label, fg, style) {
+          ctx.save();
+          const px = (mxS - 0.5) * 50 * this.depth;
+          const py = (myS - 0.5) * 30 * this.depth;
+          ctx.translate(this.x + px, this.y + py);
+          const sx = Math.cos(this.ry) * this.sc;
+          const sy = Math.cos(this.rx) * this.sc;
+          ctx.rotate(this.rot);
+          ctx.scale(sx, sy);
+          // LARGE sizing: 15-25% of min dimension
+          const baseSize = Math.min(W, H) * 0.105 * this.fs;
+          const isCJK = label.charCodeAt(0) > 0x2E00;
+          const font = isCJK
+            ? `900 ${baseSize}px "Noto Sans SC","Hiragino Sans","Inter",sans-serif`
+            : `900 ${baseSize}px "Inter","Helvetica Neue",Arial,sans-serif`;
+          ctx.font = font;
+          ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+          const cosY = Math.abs(Math.cos(this.ry)), cosX = Math.abs(Math.cos(this.rx));
+          const visAlpha = this.op * Math.max(0.3, cosY) * Math.max(0.3, cosX);
+          ctx.globalAlpha = Math.max(0.15, Math.min(1, visAlpha));
+
+          if (style === STYLE_OUTLINE) {
+            ctx.strokeStyle = `rgb(${fg[0]},${fg[1]},${fg[2]})`;
+            ctx.lineWidth = Math.max(1, baseSize * 0.015);
+            ctx.shadowColor = `rgba(${fg[0]},${fg[1]},${fg[2]},${0.1 * visAlpha})`;
+            ctx.shadowBlur = 15;
+            ctx.strokeText(label, 0, 0);
+            ctx.shadowBlur = 0; ctx.shadowColor = 'transparent';
+            ctx.strokeText(label, 0, 0);
+          } else {
+            ctx.shadowColor = `rgba(${fg[0]},${fg[1]},${fg[2]},${0.2 * visAlpha})`;
+            ctx.shadowBlur = 25;
+            ctx.fillStyle = `rgb(${fg[0]},${fg[1]},${fg[2]})`;
+            ctx.fillText(label, 0, 0);
+            ctx.shadowBlur = 0; ctx.shadowColor = 'transparent';
+            ctx.fillText(label, 0, 0);
+          }
+          ctx.restore();
+          ctx.globalAlpha = 1;
+        }
+      }
+
+      const nums = Array.from({ length: 12 }, (_, i) => new Num(i));
+
+      // Layout Functions
+      function setClock() {
+        const r = Math.min(W, H) * 0.38;
+        nums.forEach((n, i) => {
+          const a = (i / 12) * Math.PI * 2 - Math.PI / 2;
+          n.tx = cx + Math.cos(a) * r; n.ty = cy + Math.sin(a) * r;
+          n.trot = a + Math.PI / 2; n.trx = 0; n.try_ = 0; n.tsc = 1; n.tfs = 1; n.top_ = 1;
+        });
+      }
+      function setScatter() {
+        nums.forEach(n => {
+          n.tx = W * 0.08 + Math.random() * W * 0.84;
+          n.ty = H * 0.05 + Math.random() * H * 0.9;
+          n.trot = (Math.random() - 0.5) * Math.PI * 2;
+          n.trx = (Math.random() - 0.5) * 0.6; n.try_ = (Math.random() - 0.5) * 0.6;
+          n.tsc = 0.8 + Math.random() * 1.6; n.tfs = 0.8 + Math.random() * 1.8;
+          n.top_ = 0.7 + Math.random() * 0.3;
+        });
+      }
+      function setStack() {
+        const sp = H * 0.075; const startY = cy - sp * 5.5;
+        nums.forEach((n, i) => {
+          n.tx = cx + (Math.random() - 0.5) * 60; n.ty = startY + i * sp;
+          n.trot = (Math.random() - 0.5) * 0.3;
+          n.trx = (Math.random() - 0.5) * 0.2; n.try_ = (Math.random() - 0.5) * 0.1;
+          n.tsc = 1; n.tfs = 0.85; n.top_ = 1;
+        });
+      }
+      function setWave() {
+        nums.forEach((n, i) => {
+          const t = i / 11;
+          n.tx = W * 0.06 + (t * W * 0.88);
+          n.ty = cy + Math.sin(t * Math.PI * 2) * H * 0.25;
+          n.trot = Math.sin(t * Math.PI * 3) * 0.8;
+          n.trx = Math.sin(t * Math.PI * 2) * 0.4; n.try_ = Math.cos(t * Math.PI) * 0.3;
+          n.tsc = 1 + Math.sin(t * Math.PI) * 0.8; n.tfs = 1 + Math.sin(t * Math.PI) * 0.9;
+          n.top_ = 0.8 + Math.sin(t * Math.PI) * 0.2;
+        });
+      }
+      function setSpiral() {
+        nums.forEach((n, i) => {
+          const t = i / 12;
+          const a = t * Math.PI * 3.5 - Math.PI / 2;
+          const r = Math.min(W, H) * (0.05 + t * 0.35);
+          n.tx = cx + Math.cos(a) * r; n.ty = cy + Math.sin(a) * r;
+          n.trot = a + Math.PI / 2;
+          n.trx = t * 0.4; n.try_ = t * 0.3;
+          n.tsc = 0.4 + t * 1.0; n.tfs = 0.4 + t * 1.2; n.top_ = 0.5 + t * 0.5;
+        });
+      }
+      function setHorizontal() {
+        const totalW = W * 0.85;
+        nums.forEach((n, i) => {
+          const t = i / 11;
+          n.tx = W * 0.075 + t * totalW;
+          n.ty = cy + (Math.random() - 0.5) * H * 0.15;
+          n.trot = (Math.random() - 0.5) * 0.5;
+          n.trx = (Math.random() - 0.5) * 0.15; n.try_ = (Math.random() - 0.5) * 0.1;
+          n.tsc = 1.2 + Math.random() * 0.5; n.tfs = 1.2 + Math.random() * 0.8;
+          n.top_ = 0.85 + Math.random() * 0.15;
+        });
+      }
+
+      const LAYOUT_FN = [setClock, setScatter, setStack, setWave, setSpiral, setHorizontal];
+
+      // Pulse: simultaneous change of everything
+      function pulse() {
+        layoutIdx = (layoutIdx + 1) % LAYOUT_FN.length;
+        LAYOUT_FN[layoutIdx]();
+        setIdx = (setIdx + 1) % SETS.length;
+        renderStyle = Math.random() > 0.6 ? STYLE_OUTLINE : STYLE_FILL;
+        if (pulseIdx % 3 === 2) theme = 1 - theme;
+        nums.forEach(n => {
+          n.try_ += Math.PI * (0.5 + Math.random() * 1.5);
+          n.trx += (Math.random() - 0.5) * 1.2;
+        });
+        pulseIdx++;
+        nextInterval = 2000 + Math.random() * 2000;
+      }
+
+      // Clock Hands
+      function drawHands(fg, accent) {
+        const d = new Date();
+        const s = d.getSeconds() + d.getMilliseconds() / 1000;
+        const m = d.getMinutes() + s / 60;
+        const h = (d.getHours() % 12) + m / 60;
+        const maxL = Math.min(W, H) * 0.42;
+        const hands = [
+          { a: (h / 12) * Math.PI * 2 - Math.PI / 2, l: maxL * 0.45, w: 2.5, c: fg, dot: 5 },
+          { a: (m / 60) * Math.PI * 2 - Math.PI / 2, l: maxL * 0.7, w: 1.8, c: fg, dot: 4 },
+          { a: (s / 60) * Math.PI * 2 - Math.PI / 2, l: maxL * 0.95, w: 1, c: accent, dot: 3 },
+        ];
+        hands.forEach(hand => {
+          const ex = cx + Math.cos(hand.a) * hand.l;
+          const ey = cy + Math.sin(hand.a) * hand.l;
+          ctx.save(); ctx.globalAlpha = 0.85;
+          if (hand.c === accent) {
+            ctx.shadowColor = `rgba(${hand.c[0]},${hand.c[1]},${hand.c[2]},0.5)`;
+            ctx.shadowBlur = 12;
+          }
+          ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(ex, ey);
+          ctx.strokeStyle = `rgb(${hand.c[0]},${hand.c[1]},${hand.c[2]})`;
+          ctx.lineWidth = hand.w; ctx.lineCap = 'round'; ctx.stroke();
+          ctx.beginPath(); ctx.arc(ex, ey, hand.dot, 0, Math.PI * 2);
+          ctx.fillStyle = `rgb(${hand.c[0]},${hand.c[1]},${hand.c[2]})`;
+          ctx.fill();
+          ctx.beginPath(); ctx.arc(cx, cy, 3, 0, Math.PI * 2); ctx.fill();
+          ctx.restore();
+        });
+        ctx.globalAlpha = 1; ctx.shadowBlur = 0; ctx.shadowColor = 'transparent';
+      }
+
+      // Film grain
+      const grainC = document.createElement('canvas'); grainC.width = 256; grainC.height = 256;
+      const grainX = grainC.getContext('2d');
+      let grainFrame = 0;
+      function updateGrain() {
+        if (grainFrame++ % 3 !== 0) return;
+        const img = grainX.createImageData(256, 256); const d = img.data;
+        for (let i = 0; i < d.length; i += 4) { const v = Math.random() * 255; d[i] = d[i + 1] = d[i + 2] = v; d[i + 3] = 10; }
+        grainX.putImageData(img, 0, 0);
+      }
+
+      // Init
+      setClock(); lastPulse = performance.now();
+
+      // Main Loop
+      function frame(time) {
+        requestAnimationFrame(frame);
+        mxS += (mx - mxS) * 0.06; myS += (my - myS) * 0.06;
+
+        // Non-uniform pulse timing
+        if (time - lastPulse > nextInterval) {
+          pulse(); lastPulse = time;
+        }
+
+        // Theme lerp
+        const tgt = theme; themeT += (tgt - themeT) * 0.018;
+        const bg = [DARK.bg[0] + (LIGHT.bg[0] - DARK.bg[0]) * themeT,
+        DARK.bg[1] + (LIGHT.bg[1] - DARK.bg[1]) * themeT,
+        DARK.bg[2] + (LIGHT.bg[2] - DARK.bg[2]) * themeT];
+        const fg = [DARK.fg[0] + (LIGHT.fg[0] - DARK.fg[0]) * themeT | 0,
+        DARK.fg[1] + (LIGHT.fg[1] - DARK.fg[1]) * themeT | 0,
+        DARK.fg[2] + (LIGHT.fg[2] - DARK.fg[2]) * themeT | 0];
+        const acc = [DARK.accent[0] + (LIGHT.accent[0] - DARK.accent[0]) * themeT | 0,
+        DARK.accent[1] + (LIGHT.accent[1] - DARK.accent[1]) * themeT | 0,
+        DARK.accent[2] + (LIGHT.accent[2] - DARK.accent[2]) * themeT | 0];
+
+        // Clear
+        ctx.fillStyle = `rgb(${bg[0] | 0},${bg[1] | 0},${bg[2] | 0})`;
+        ctx.fillRect(0, 0, W, H);
+
+        // Vignette
+        const vig = ctx.createRadialGradient(cx, cy, Math.min(W, H) * 0.2, cx, cy, Math.max(W, H) * 0.9);
+        vig.addColorStop(0, 'transparent');
+        vig.addColorStop(1, `rgba(0,0,0,${themeT < 0.5 ? 0.3 : 0.05})`);
+        ctx.fillStyle = vig; ctx.fillRect(0, 0, W, H);
+
+        // Hands
+        drawHands(fg, acc);
+
+        // Numbers — depth sorted
+        const labels = SETS[setIdx];
+        const sorted = [...nums].sort((a, b) => Math.sin(a.ry) - Math.sin(b.ry));
+        sorted.forEach(n => { n.update(time); n.draw(labels[n.i], fg, renderStyle); });
+
+        // Grain
+        updateGrain();
+        ctx.save();
+        ctx.globalAlpha = themeT < 0.5 ? 0.05 : 0.025;
+        ctx.globalCompositeOperation = 'screen';
+        const pat = ctx.createPattern(grainC, 'repeat');
+        if (pat) { ctx.fillStyle = pat; ctx.fillRect(0, 0, W, H); }
+        ctx.restore();
+        ctx.globalCompositeOperation = 'source-over';
+      }
+      requestAnimationFrame(frame);
+
+    })();
+  </script>
+</body>
+
+</html>
