@@ -515,17 +515,6 @@
         var counterEl = document.getElementById('visitor-counter');
         if (!counterEl) return;
 
-        // 检查是否配置了 Supabase
-        if (SUPABASE_CONFIG.url === 'https://your-project.supabase.co') {
-            // 未配置，使用本地存储
-            var localCount = localStorage.getItem('visitor_count');
-            localCount = localCount ? parseInt(localCount, 10) + 1 : 1;
-            localStorage.setItem('visitor_count', localCount);
-            counterEl.textContent = localCount;
-            return;
-        }
-
-        // 使用 Supabase
         counterEl.textContent = '...';
         incrementAndGetCount();
     }
@@ -534,7 +523,7 @@
         var counterEl = document.getElementById('visitor-counter');
         var url = SUPABASE_CONFIG.url + '/rest/v1/counter';
 
-        // 先获取当前值
+        // 获取当前计数
         fetch(url + '?select=count&id=eq.1', {
             method: 'GET',
             headers: {
@@ -548,7 +537,7 @@
             var newCount = currentCount + 1;
 
             if (data.length === 0) {
-                // 插入第一条记录
+                // 没有记录，插入第一条
                 return fetch(url, {
                     method: 'POST',
                     headers: {
@@ -557,10 +546,10 @@
                         'Content-Type': 'application/json',
                         'Prefer': 'return=representation'
                     },
-                    body: JSON.stringify({ id: 1, count: newCount })
+                    body: JSON.stringify({ id: 1, count: 1 })
                 });
             } else {
-                // 更新计数
+                // 已有记录，更新计数
                 return fetch(url + '?id=eq.1', {
                     method: 'PATCH',
                     headers: {
@@ -579,7 +568,7 @@
             throw new Error('Update failed');
         })
         .then(function() {
-            // 重新获取最新值
+            // 获取最新计数显示
             return fetch(url + '?select=count&id=eq.1', {
                 method: 'GET',
                 headers: {
@@ -594,17 +583,14 @@
                 counterEl.textContent = data[0].count;
             }
         })
-        .catch(function() {
-            fallbackToLocal();
+        .catch(function(err) {
+            console.error('Visitor counter error:', err);
+            // 降级到本地存储
+            var localCount = localStorage.getItem('visitor_count');
+            localCount = localCount ? parseInt(localCount, 10) + 1 : 1;
+            localStorage.setItem('visitor_count', localCount);
+            counterEl.textContent = localCount;
         });
-    }
-
-    function fallbackToLocal() {
-        var counterEl = document.getElementById('visitor-counter');
-        var localCount = localStorage.getItem('visitor_count');
-        localCount = localCount ? parseInt(localCount, 10) + 1 : 1;
-        localStorage.setItem('visitor_count', localCount);
-        counterEl.textContent = localCount + ' (local)';
     }
 
     // ==========================================
