@@ -165,7 +165,7 @@
 
     function initFooter() {
         var el = document.getElementById('copyright');
-        if (el) el.textContent = '© ' + new Date().getFullYear();
+        if (el) el.textContent = 'zijian © ' + new Date().getFullYear();
     }
 
     // ==========================================

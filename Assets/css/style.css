@@ -582,6 +582,14 @@ a:hover {
     font-size: 13px;
     color: var(--text-muted);
     font-weight: 400;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.visitor-count {
+    color: var(--text-muted);
+    font-weight: 400;
 }
 
 /* ============================================
@@ -707,6 +715,9 @@ a:hover {
 
     .site-footer {
         padding: 32px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
     }
 }
 

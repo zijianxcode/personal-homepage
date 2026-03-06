@@ -503,9 +503,115 @@
     // ==========================================
     // Init
     // ==========================================
+    // Visitor Counter (Supabase)
+    // ==========================================
+
+    var SUPABASE_CONFIG = {
+        url: 'https://zijian-portfolio.supabase.co',
+        key: 'sb_publishable_i8aQLgtuEH9JYTNYMLis0Q_HsoJefL6'
+    };
+
+    function initVisitorCounter() {
+        var counterEl = document.getElementById('visitor-counter');
+        if (!counterEl) return;
+
+        // 检查是否配置了 Supabase
+        if (SUPABASE_CONFIG.url === 'https://your-project.supabase.co') {
+            // 未配置，使用本地存储
+            var localCount = localStorage.getItem('visitor_count');
+            localCount = localCount ? parseInt(localCount, 10) + 1 : 1;
+            localStorage.setItem('visitor_count', localCount);
+            counterEl.textContent = localCount;
+            return;
+        }
+
+        // 使用 Supabase
+        counterEl.textContent = '...';
+        incrementAndGetCount();
+    }
+
+    function incrementAndGetCount() {
+        var counterEl = document.getElementById('visitor-counter');
+        var url = SUPABASE_CONFIG.url + '/rest/v1/counter';
+
+        // 先获取当前值
+        fetch(url + '?select=count&id=eq.1', {
+            method: 'GET',
+            headers: {
+                'apikey': SUPABASE_CONFIG.key,
+                'Authorization': 'Bearer ' + SUPABASE_CONFIG.key
+            }
+        })
+        .then(function(res) { return res.json(); })
+        .then(function(data) {
+            var currentCount = data.length > 0 ? data[0].count : 0;
+            var newCount = currentCount + 1;
+
+            if (data.length === 0) {
+                // 插入第一条记录
+                return fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'apikey': SUPABASE_CONFIG.key,
+                        'Authorization': 'Bearer ' + SUPABASE_CONFIG.key,
+                        'Content-Type': 'application/json',
+                        'Prefer': 'return=representation'
+                    },
+                    body: JSON.stringify({ id: 1, count: newCount })
+                });
+            } else {
+                // 更新计数
+                return fetch(url + '?id=eq.1', {
+                    method: 'PATCH',
+                    headers: {
+                        'apikey': SUPABASE_CONFIG.key,
+                        'Authorization': 'Bearer ' + SUPABASE_CONFIG.key,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ count: newCount })
+                });
+            }
+        })
+        .then(function(res) {
+            if (res && res.ok) {
+                return res.json();
+            }
+            throw new Error('Update failed');
+        })
+        .then(function() {
+            // 重新获取最新值
+            return fetch(url + '?select=count&id=eq.1', {
+                method: 'GET',
+                headers: {
+                    'apikey': SUPABASE_CONFIG.key,
+                    'Authorization': 'Bearer ' + SUPABASE_CONFIG.key
+                }
+            });
+        })
+        .then(function(res) { return res.json(); })
+        .then(function(data) {
+            if (data.length > 0) {
+                counterEl.textContent = data[0].count;
+            }
+        })
+        .catch(function() {
+            fallbackToLocal();
+        });
+    }
+
+    function fallbackToLocal() {
+        var counterEl = document.getElementById('visitor-counter');
+        var localCount = localStorage.getItem('visitor_count');
+        localCount = localCount ? parseInt(localCount, 10) + 1 : 1;
+        localStorage.setItem('visitor_count', localCount);
+        counterEl.textContent = localCount + ' (local)';
+    }
+
+    // ==========================================
 
     document.addEventListener('DOMContentLoaded', function () {
         try {
+            initVisitorCounter();
             initVisibility();
             initTabs();
             initLang();
