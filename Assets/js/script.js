@@ -362,6 +362,25 @@
         });
     }
 
+    function initResearchFlowEffect() {
+        var els = document.querySelectorAll('.research-flow');
+        if (!els.length) return;
+
+        els.forEach(function (el) {
+            if (el.dataset.motionReady === '1') return;
+            var chars = el.textContent.split('');
+            var center = (chars.length - 1) / 2;
+            el.innerHTML = chars.map(function (ch, i) {
+                var shift = i - center;
+                if (ch === ' ') {
+                    return '<span class="research-char research-char--space" style="--char-index:' + i + '; --char-shift:' + shift + '; width:0.28em;"></span>';
+                }
+                return '<span class="research-char" style="--char-index:' + i + '; --char-shift:' + shift + ';">' + ch + '</span>';
+            }).join('');
+            el.dataset.motionReady = '1';
+        });
+    }
+
     // ==========================================
     // Info 分区滚动触发 TextScramble
     // 仅在元素进入视口时播放，且每个元素只播放一次
@@ -524,6 +543,7 @@
             }
 
             initVisualCodingEffect();
+            initResearchFlowEffect();
             initInfoSectionScramble();
         } catch (err) {
             console.error('Init error:', err);
