@@ -1,0 +1,418 @@
+================================================================================
+                    zijian Personal Homepage - 项目开发历程文档
+================================================================================
+
+项目域名：bananabox.plus
+GitHub 仓库：github.com/zijianxcode/personal-homepage
+创建时间：2026-02-22
+最后更新：2026-03-05
+
+================================================================================
+                              第一部分：开发时间线
+================================================================================
+
+一、初始阶段（2026-02-22）
+--------------------------------------------------------------------------------
+提交：4647f6c - Initial commit: Personal portfolio homepage
+
+内容：
+- 创建基础项目结构
+- 初始 index.html（简单的个人主页）
+- 基础 CSS 样式
+- 粒子标题动效 particle-title.js
+- 脚本逻辑 script.js
+- 下载字体 SixCaps-Regular.ttf
+
+技术栈：Vanilla HTML/CSS/JS，无框架
+
+
+二、重新设计阶段（2026-02-23）
+--------------------------------------------------------------------------------
+提交：1606a72 - Redesign: nicklabate style, dark theme, Work/Info/Things tabs
+
+内容：
+- 完全重新设计 UI
+- 采用 nicklabate 风格（暗色主题）
+- Work / Info / Things 三个 Tab 切换
+- 中英双语切换功能
+- 粒子背景动画
+- zijian 品牌标识
+
+改动规模：
+- CSS: 980 行重写（1262 行删除，794 行新增）
+- JS: 465 行重写
+- HTML: 611 行重写
+
+提交：1560093 - Add README and ai-builders.space deploy notes
+- 添加 README 文档
+- 添加 ai-builders.space 部署说明
+
+提交：d73bd91 - Add Dockerfile and static server
+- 添加 Dockerfile 用于容器部署
+- 添加 server.py 静态服务器
+
+提交：1a6c0a6 - fix: build script outputs to dist
+- 修复 CloudBase 构建脚本输出目录
+
+提交：3da5f2a - chore: add package.json and CloudBase config
+- 添加 package.json
+- 添加 cloudbaserc.json 配置
+
+
+三、信息页优化阶段（2026-02-24）
+--------------------------------------------------------------------------------
+提交：33f2407 - Fix Info Experiences alignment
+- 修复 Info 页工作经历对齐问题
+- 使用 grid 布局处理日期列
+
+提交：90d753d - Layout: 工作经历/教育背景对齐
+- 工作经历与"联系我"区块对齐
+- 教育背景：学校+学位同行显示
+- 全部采用左对齐布局
+
+提交：2d53155 - Update bio
+- 更新个人简介：设计学博士，方向为智能体验设计
+- 英文：Ph.D. in Design with focus on Intelligent Experience Design
+
+提交：1fa544e - Create CNAME
+- 添加 CNAME 文件（bananabox.plus）
+
+
+四、功能增强阶段（2026-03-02 ~ 2026-03-03）
+--------------------------------------------------------------------------------
+提交：768c12b - 更换 favicon 为香蕉图标
+提交：a50d470 - 用香蕉.svg 图标替换 favicon
+
+内容：
+- 设计与项目名"香蕉"匹配的 favicon
+- 使用 SVG 格式
+
+提交：5ea0e65 - feat: TextScramble 动效 + Visual Coding 子页面 + Floating Clock 项目
+
+重大功能更新：
+1. TextScramble 乱码效果
+   - Info 页 display-name 滚动触发乱码效果
+   - 各分区标题滚动触发
+   - 乱码期间随机科技感颜色
+   - 动画速度降低 50%
+
+2. Visual Coding 子页面
+   - 新增 visual-coding.html
+   - 4 列 grid 布局卡片
+   - Work 页新增 VISUAL CODING 条目
+   - 字符扰动与自愈 hover 效果
+
+3. Floating Clock 项目
+   - 新增 projects/floating-clock.html
+   - Three.js 3D 物理时钟
+   - 自由漂浮的数字和形状
+   - 基于物理的碰撞检测
+   - Fresnel 边缘光照效果
+   - 10 种颜色主题自动切换
+   - 点击/触摸切换主题
+   - 移动端适配
+
+4. Visual Coding 卡片
+   - 支持 iframe 内嵌实时预览
+   - overlay 防止 iframe 拦截点击
+
+提交：bb38c99 - update Things section
+- 更新 Things 区块
+- 用三个新的飞书文件链接替换旧链接
+
+
+五、参考案例与 PDF 阶段（2026-03-05）
+--------------------------------------------------------------------------------
+提交：3a4041d - Update Things: reorder time reference cases
+- 重新排序"时间"参考案例
+
+提交：58be67d - Update Things: rename to 主题-时间 About Time
+- 重命名为"主题-时间 About Time"
+
+提交：e274d17 - Update Things: rename references to 參考-時間 format
+- 更新为"參考-時間"格式
+
+提交：3e919dd - Add PDF for 主题-时间 About Time
+- 添加"主题-时间"主题 PDF 文档
+
+提交：ea997bd - Setup LFS for PDF files
+- 配置 Git LFS 管理大型 PDF 文件
+
+提交：f5bcd9e - Add reference PDF and update link
+- 添加参考 PDF 1
+
+提交：b22f40a - Add reference PDF 2
+- 添加参考 PDF 2
+
+提交：caf4ee4 - Add reference PDF 3
+- 添加参考 PDF 3
+
+提交：e9df30c - Fix PDF links to use GitHub raw URL
+- 修复 PDF 链接，使用 GitHub raw URL
+
+提交：74972f1 - Revert to Feishu links
+- 恢复飞书链接
+
+提交：ddd49d7 - Add Kinetic Typography Clock project
+
+新增项目：projects/kinetic-typography-clock.html
+- 弹簧物理动画效果
+- 支持多种数字系统（阿拉伯、英文、中文、罗马数字）
+- 添加到 Visual Coding 页面卡片
+
+
+================================================================================
+                              第二部分：项目结构演变
+================================================================================
+
+初始结构（2026-02-22）：
+```
+├── index.html
+├── Assets/
+│   ├── css/style.css
+│   ├── js/
+│   │   ├── script.js
+│   │   └── particle-title.js
+│   └── fonts/SixCaps-Regular.ttf
+├── .gitignore
+└── （无 README）
+```
+
+当前结构（2026-03-05）：
+```
+├── index.html                          ← 主页（Work/Info/Things 三 Tab）
+├── visual-coding.html                  ← Visual Coding 子页面
+├── projects/                           ← 独立实验作品
+│   ├── floating-clock.html            ← Three.js 3D 物理时钟
+│   └── kinetic-typography-clock.html   ← 弹簧物理数字时钟
+├── Assets/
+│   ├── css/style.css                  ← 全局样式 + CSS 变量
+│   ├── js/
+│   │   ├── script.js                  ← Tab 切换、语言切换、粒子背景
+│   │   ├── particle-title.js           ← 粒子标题动效
+│   │   └── vc-page.js                 ← Visual Coding 页面逻辑
+│   ├── fonts/SixCaps-Regular.ttf
+│   └── img/
+│       ├── favicon.svg
+│       └── 香蕉.svg
+├── server.py                          ← 容器部署用 HTTP 服务
+├── Dockerfile                         ← Docker 部署配置
+├── cloudbaserc.json                   ← CloudBase 配置
+├── package.json                       ← npm 配置
+├── .env.example                       ← 环境变量示例
+├── CNAME                             ← 自定义域名
+├── deploy-ai-builders.sh             ← AI Builders Space 部署脚本
+├── .gitignore
+├── .gitattributes                     ← Git LFS 配置
+├── .cursor/rules/                    ← AI 协作规则
+│   ├── design-system.md               ← 视觉系统规范
+│   ├── coding-standards.md           ← 前端工程规范
+│   └── ai-agent-workflow.md          ← 协作规则
+└── README.md                         ← 项目说明
+
+
+================================================================================
+                              第三部分：技术实现总结
+================================================================================
+
+一、核心功能
+--------------------------------------------------------------------------------
+1. 单页应用架构
+   - 三个 Tab（Work / Info / Things）无刷新切换
+   - CSS 控制显示/隐藏 + opacity 过渡
+
+2. 中英双语切换
+   - data-lang 属性标记
+   - CSS 伪类控制显隐（[data-lang="cn"] .lang-en { display: none }）
+   - 不使用 JS 条件渲染
+
+3. 粒子背景
+   - Canvas 2D 绘制
+   - script.js 中实现
+
+4. 文字动效
+   - TextScramble 乱码效果
+   - 滚动触发（Intersection Observer）
+   - 字符级扰动与自愈（.char-unit）
+
+5. Visual Coding 子页面
+   - 4 列 grid 布局（桌面）/ 2 列（移动端）
+   - 卡片内嵌 iframe 实时预览
+   - overlay 阻止 iframe 拦截鼠标事件
+
+6. Three.js 实验作品
+   - Floating Clock：3D 物理模拟、Fresnel 着色器、多主题
+   - Kinetic Typography Clock：弹簧物理、多数字系统
+
+
+二、技术栈
+--------------------------------------------------------------------------------
+- HTML5 + CSS3 + Vanilla JavaScript（无框架）
+- Three.js r128（3D 场景）
+- Canvas 2D（粒子系统）
+- CSS Custom Properties（设计令牌）
+- Intersection Observer API（滚动触发）
+- CSS Grid + Flexbox（布局）
+- Git LFS（大型文件）
+
+
+三、部署方案
+--------------------------------------------------------------------------------
+1. GitHub Pages（主站）
+   - 推送到 main 分支自动部署
+   - 域名：bananabox.plus
+
+2. ai-builders.space
+   - 支持静态部署
+   - 支持 Docker 部署
+
+3. CloudBase（腾讯云）
+   - npm run deploy
+   - 需要 TCB_ENV_ID 环境变量
+
+
+================================================================================
+                              第四部分：踩坑记录与经验总结
+================================================================================
+
+一、CSS 布局坑
+--------------------------------------------------------------------------------
+坑 1：Info 页工作经历对齐问题
+现象：日期列与"联系我"区块不对齐
+原因：使用 flex 布局时，日期列宽度计算不一致
+解决：改用 CSS Grid，固定列宽 `grid-template-columns: 1fr 80px 280px`
+相关提交：33f2407, 90d753d
+
+坑 2：移动端响应式断点
+现象：某些页面在小屏幕上布局错乱
+原因：只设置了 768px 断点，没考虑更小屏幕
+解决：增加 480px 断点，覆盖手机场景
+相关提交：5ea0e65
+
+
+二、iframe 交互坑
+--------------------------------------------------------------------------------
+坑 3：Visual Coding 卡片中的 iframe 拦截点击
+现象：鼠标 hover 到卡片上时，无法点击跳转链接
+原因：iframe 捕获了鼠标事件
+解决：添加透明 overlay 层（::after），z-index: 1，cursor: pointer
+相关提交：5ea0e65
+
+示例代码：
+```css
+.vc-card-media--live::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    cursor: pointer;
+}
+```
+
+
+三、Three.js 资源坑
+--------------------------------------------------------------------------------
+坑 4：Three.js CDN 版本兼容性
+现象：FontLoader 和 TextGeometry 在某些 CDN 版本中加载失败
+原因：Three.js 模块加载顺序和版本匹配问题
+解决：使用兼容的 CDN 版本组合：
+    - three.min.js r128
+    - FontLoader 和 TextGeometry 同版本
+相关提交：5ea0e65
+
+坑 5：Three.js 内存泄漏
+现象：页面切换后，3D 场景仍在后台运行，内存占用增加
+原因：未显式 dispose geometry、material、texture
+解决：在组件销毁时显式调用 dispose()（项目中新页面尚未遇到，但需注意）
+coding-standards.md 已记录此规范
+
+
+四、多语言坑
+--------------------------------------------------------------------------------
+坑 6：中英文内容长度差异
+现象：中文布局下某些文本溢出或换行不美观
+原因：中文比英文约长 30%
+解决：设计时为最长字符串预留空间，使用相对单位而非固定像素
+相关规范：design-system.md 已记录
+
+
+五、部署坑
+--------------------------------------------------------------------------------
+坑 7：CloudBase 构建输出目录
+现象：构建脚本输出到根目录而非 dist
+原因：package.json build script 配置错误
+解决：修改为 "build": "cp -r . dist/" 或类似命令
+相关提交：1a6c0a6
+
+坑 8：PDF 文件占用仓库空间
+现象：多次提交大 PDF 导致仓库体积膨胀
+原因：直接提交 PDF 文件到 Git
+解决：配置 Git LFS（.gitattributes）管理大型 PDF
+相关提交：ea997bd
+
+
+六、动画性能坑
+--------------------------------------------------------------------------------
+坑 9：动画导致页面卡顿
+现象：粒子背景和文字动画在低端设备上掉帧
+原因：动画属性选择不当，触发布局重排
+解决：
+    - 只动画 transform 和 opacity（合成层属性）
+    - 使用 will-change 谨慎
+    - 尊重 prefers-reduced-motion
+相关规范：coding-standards.md 已记录
+
+
+================================================================================
+                              第五部分：AI 协作规范（后续新增）
+================================================================================
+
+基于本次对话整理的规范（2026-03-05）：
+
+创建了 .cursor/rules/ 目录下的三个规则文件：
+
+1. design-system.md
+   - 视觉系统规范（字体、颜色、布局、交互意图）
+   - 来源：creative-director-agent.md 提炼
+
+2. coding-standards.md
+   - 前端工程规范（动画、性能、代码标准）
+   - 来源：senior-frontend-agent.md 提炼
+
+3. ai-agent-workflow.md
+   - 协作流程（PRD 模板、角色分工、任务估时）
+   - 来源：planner-strategist-agent.md 提炼
+
+这些规则会在 Cursor 对话中自动加载，确保 AI 生成的代码符合项目规范。
+
+
+================================================================================
+                                  附录：待办事项
+================================================================================
+
+短期：
+- [ ] 添加更多 Visual Coding 实验项目
+- [ ] 完善 Projects 卡片图片
+- [ ] 添加更多 Things 参考内容
+
+中期：
+- [ ] Lighthouse 性能优化（目标 ≥ 90）
+- [ ] 添加更多交互动效
+- [ ] 优化移动端体验
+
+长期：
+- [ ] 考虑 PWA 支持
+- [ ] 添加 Analytics
+- [ ] SEO 优化
+
+
+================================================================================
+                              文档信息
+================================================================================
+
+创建时间：2026-03-05
+最后更新：2026-03-05
+总提交数：25+
+主要贡献者：zijianxcode, Cursor AI
+
+================================================================================
