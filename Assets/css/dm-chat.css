@@ -173,6 +173,15 @@
     letter-spacing: 0.03em;
 }
 
+.dm-nickname-error {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 12px;
+    color: #ff4040;
+    letter-spacing: 0.03em;
+    min-height: 16px;
+    text-align: center;
+}
+
 .dm-nickname-row {
     display: flex;
     gap: 12px;

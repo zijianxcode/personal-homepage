@@ -73,6 +73,28 @@ function getQuery(event) {
   return event.queryStringParameters || {};
 }
 
+async function handleCheckNickname(event) {
+  const body = parseBody(event);
+  const { nickname, visitorId } = body;
+
+  if (!nickname || !visitorId) {
+    return cors({ error: "nickname and visitorId are required" }, 400);
+  }
+
+  const safeName = sanitize(nickname.slice(0, MAX_NICKNAME_LENGTH));
+  const existing = await db
+    .collection(CONVERSATIONS)
+    .where({ nickname: safeName, visitorId: _.neq(visitorId) })
+    .limit(1)
+    .get();
+
+  if (existing.data.length > 0) {
+    return cors({ ok: false, taken: true });
+  }
+
+  return cors({ ok: true, taken: false });
+}
+
 async function handleSend(event) {
   const body = parseBody(event);
   const { visitorId, nickname, content } = body;
@@ -266,6 +288,7 @@ exports.main = async (event) => {
   }
 
   const routes = {
+    "POST /check-nickname": handleCheckNickname,
     "POST /send": handleSend,
     "GET /poll": handlePoll,
     "POST /admin/auth": handleAdminAuth,

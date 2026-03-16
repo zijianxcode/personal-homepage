@@ -13,6 +13,7 @@
   let pageOpen = false;
   let pollTimer = null;
   let messages = [];
+  let lastMsgCount = 0;
   let sending = false;
   let rainAnim = null;
 
@@ -186,10 +187,15 @@
     const lang = document.body.getAttribute("data-lang") || "en";
     const label =
       lang === "cn"
-        ? "// 起个代号，方便识别你的身份"
-        : "// Pick a handle to identify yourself";
-    const placeholder = lang === "cn" ? "输入代号_" : "enter_handle_";
+        ? "// 输入你的秘密代号"
+        : "// Enter your secret handle";
+    const placeholder = lang === "cn" ? "秘密代号_" : "secret_handle_";
     const btnText = lang === "cn" ? "确认" : "ENTER";
+
+    const errorHint =
+      lang === "cn"
+        ? "该代号已经无法使用，请换一个"
+        : "This handle is taken, try another one";
 
     container.innerHTML = `
       <div class="dm-nickname-screen">
@@ -198,22 +204,49 @@
           <input class="dm-nickname-input" type="text" placeholder="${placeholder}" maxlength="30" autocomplete="off" spellcheck="false" />
           <button class="dm-nickname-submit" type="submit" disabled>${btnText}</button>
         </form>
+        <span class="dm-nickname-error"></span>
       </div>
     `;
 
     const input = container.querySelector(".dm-nickname-input");
     const btn = container.querySelector(".dm-nickname-submit");
+    const errorEl = container.querySelector(".dm-nickname-error");
 
     input.addEventListener("input", () => {
       btn.disabled = !input.value.trim();
+      if (errorEl.textContent) errorEl.textContent = "";
     });
 
-    container.querySelector(".dm-nickname-row").addEventListener("submit", (e) => {
+    container.querySelector(".dm-nickname-row").addEventListener("submit", async (e) => {
       e.preventDefault();
       const name = input.value.trim();
       if (!name) return;
-      setNickname(name);
-      renderPageBody();
+
+      btn.disabled = true;
+      input.disabled = true;
+      errorEl.textContent = "";
+
+      try {
+        const result = await api("/check-nickname", {
+          method: "POST",
+          body: JSON.stringify({ nickname: name, visitorId: getVisitorId() }),
+        });
+
+        if (result.taken) {
+          errorEl.textContent = errorHint;
+          input.disabled = false;
+          btn.disabled = false;
+          input.focus();
+          return;
+        }
+
+        setNickname(name);
+        renderPageBody();
+      } catch {
+        errorEl.textContent = lang === "cn" ? "网络错误，请重试" : "Network error, try again";
+        input.disabled = false;
+        btn.disabled = false;
+      }
     });
 
     requestAnimationFrame(() => input.focus());
@@ -255,35 +288,52 @@
     });
 
     sendBtn.addEventListener("click", sendMessage);
-    renderMessages();
+    renderMessages(true);
 
     requestAnimationFrame(() => input.focus());
   }
 
-  function renderMessages() {
+  function renderMessages(forceFullRender) {
     const container = document.querySelector(".dm-messages");
     if (!container) return;
 
     if (messages.length === 0) {
+      if (lastMsgCount === 0 && !forceFullRender) return;
       const lang = document.body.getAttribute("data-lang") || "en";
       const hint =
         lang === "cn"
           ? "> 等待输入..."
           : "> awaiting input...";
       container.innerHTML = `<div class="dm-empty-hint">${hint}</div>`;
+      lastMsgCount = 0;
       return;
     }
 
-    container.innerHTML = messages
-      .map(
-        (m) => `
-        <div class="dm-msg dm-msg--${m.sender}">
-          <div class="dm-msg-text">${m.content}</div>
-          <div class="dm-msg-time">${formatTime(m.createdAt)}</div>
-        </div>`
-      )
-      .join("");
+    if (!forceFullRender && messages.length === lastMsgCount) return;
 
+    if (forceFullRender || lastMsgCount === 0) {
+      container.innerHTML = messages
+        .map(
+          (m) => `
+          <div class="dm-msg dm-msg--${m.sender}">
+            <div class="dm-msg-text">${m.content}</div>
+            <div class="dm-msg-time">${formatTime(m.createdAt)}</div>
+          </div>`
+        )
+        .join("");
+    } else {
+      const hint = container.querySelector(".dm-empty-hint");
+      if (hint) hint.remove();
+      const newMsgs = messages.slice(lastMsgCount);
+      for (const m of newMsgs) {
+        const div = document.createElement("div");
+        div.className = `dm-msg dm-msg--${m.sender}`;
+        div.innerHTML = `<div class="dm-msg-text">${m.content}</div><div class="dm-msg-time">${formatTime(m.createdAt)}</div>`;
+        container.appendChild(div);
+      }
+    }
+
+    lastMsgCount = messages.length;
     container.scrollTop = container.scrollHeight;
   }
 
