@@ -10,11 +10,28 @@
   const URL_SECRET_KEY = "banana2026dm";
   const REFRESH_INTERVAL = 15000;
 
+  const LS_HIDDEN_CONVS = "dm_admin_hidden_convs";
   let adminToken = "";
   let conversations = [];
   let activeConvId = null;
   let chatMessages = [];
   let refreshTimer = null;
+
+  function getHiddenConvs() {
+    try {
+      return JSON.parse(localStorage.getItem(LS_HIDDEN_CONVS) || "[]");
+    } catch {
+      return [];
+    }
+  }
+
+  function hideConv(convId) {
+    const hidden = getHiddenConvs();
+    if (!hidden.includes(convId)) {
+      hidden.push(convId);
+      localStorage.setItem(LS_HIDDEN_CONVS, JSON.stringify(hidden));
+    }
+  }
 
   function checkUrlKey() {
     const params = new URLSearchParams(window.location.search);
@@ -107,13 +124,15 @@
 
   function renderConversations() {
     const list = document.getElementById("conv-list");
+    const hidden = getHiddenConvs();
+    const visible = conversations.filter((c) => !hidden.includes(c.id));
 
-    if (conversations.length === 0) {
+    if (visible.length === 0) {
       list.innerHTML = '<div class="conv-empty">No conversations yet</div>';
       return;
     }
 
-    list.innerHTML = conversations
+    list.innerHTML = visible
       .map(
         (c) => `
       <div class="conv-item ${c.id === activeConvId ? "active" : ""}" data-id="${c.id}">
@@ -122,12 +141,32 @@
           <div class="conv-time">${relativeTime(c.lastMessageAt)}</div>
         </div>
         ${c.unreadByAdmin > 0 ? `<div class="conv-badge">${c.unreadByAdmin}</div>` : ""}
+        <button class="conv-delete" data-id="${c.id}" title="Hide conversation">
+          <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
       </div>`
       )
       .join("");
 
     list.querySelectorAll(".conv-item").forEach((el) => {
-      el.addEventListener("click", () => selectConversation(el.dataset.id));
+      el.addEventListener("click", (e) => {
+        if (e.target.closest(".conv-delete")) return;
+        selectConversation(el.dataset.id);
+      });
+    });
+
+    list.querySelectorAll(".conv-delete").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const convId = btn.dataset.id;
+        hideConv(convId);
+        if (activeConvId === convId) {
+          activeConvId = null;
+          const area = document.getElementById("chat-area");
+          area.innerHTML = '<div class="chat-placeholder">Select a conversation</div>';
+        }
+        renderConversations();
+      });
     });
   }
 

@@ -234,6 +234,36 @@ body {
     flex-shrink: 0;
 }
 
+.conv-delete {
+    background: none;
+    border: none;
+    padding: 4px;
+    cursor: pointer;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    opacity: 0;
+    transition: opacity 0.15s, background 0.15s;
+}
+
+.conv-item:hover .conv-delete {
+    opacity: 1;
+}
+
+.conv-delete:hover {
+    background: rgba(224, 64, 64, 0.15);
+}
+
+.conv-delete svg {
+    width: 14px;
+    height: 14px;
+    stroke: rgba(224, 64, 64, 0.7);
+    stroke-width: 2;
+    fill: none;
+}
+
 .conv-empty {
     padding: 40px 20px;
     text-align: center;
