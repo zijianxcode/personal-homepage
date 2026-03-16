@@ -1,0 +1,9 @@
+{
+  "name": "dm-api",
+  "version": "1.0.0",
+  "description": "Private message API for personal homepage",
+  "main": "index.js",
+  "dependencies": {
+    "@cloudbase/node-sdk": "^2.6.5"
+  }
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DM Admin</title>
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#0a0a0a">
+    <link rel="icon" type="image/svg+xml" href="Assets/img/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Assets/css/dm-admin.css">
+</head>
+
+<body>
+
+    <!-- Auth Screen -->
+    <div class="auth-screen" id="auth-screen">
+        <form class="auth-card">
+            <div class="auth-title">Admin Access</div>
+            <input class="auth-input" type="password" placeholder="Password" autocomplete="off" />
+            <button class="auth-btn" type="submit">Verify</button>
+            <div class="auth-error"></div>
+        </form>
+    </div>
+
+    <!-- Main Layout -->
+    <div class="admin-layout" id="admin-layout">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <span class="sidebar-title">Conversations</span>
+                <button class="sidebar-refresh" aria-label="Refresh">
+                    <svg viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+                </button>
+            </div>
+            <div class="conv-list" id="conv-list">
+                <div class="conv-empty">Loading...</div>
+            </div>
+        </aside>
+        <main class="chat-area" id="chat-area">
+            <div class="chat-placeholder">Select a conversation</div>
+        </main>
+    </div>
+
+    <script src="Assets/js/dm-admin.js"></script>
+</body>
+
+</html>

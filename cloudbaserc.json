@@ -1,4 +1,15 @@
 {
   "version": "2.0",
-  "envId": "{{env.TCB_ENV_ID}}"
+  "envId": "{{env.TCB_ENV_ID}}",
+  "functions": [
+    {
+      "name": "dm-api",
+      "handler": "index.main",
+      "runtime": "Nodejs18.15",
+      "timeout": 10,
+      "envVariables": {
+        "ADMIN_PASSWORD": "{{env.ADMIN_PASSWORD}}"
+      }
+    }
+  ]
 }
