@@ -84,6 +84,9 @@
 
 - **不要自动推送** — 每次修改完成后，询问用户是否需要提交和推送到 GitHub
 - 推送前确认改动内容，确保只包含用户要求的修改
+- **本项目内容以 GitHub `main` 最新提交为准**
+- **跨平台统一以 GitHub 为准** — 无论在 Cursor、Antigravity、OpenClaw、Claude Code、Codex 或其他平台修改本项目，完成后都应提交并推送到本仓库远端，保持 GitHub 为单一最新来源
+- **每次新会话先对齐再开发** — 在任意平台开始处理本项目新指令前，先检查本地是否与 `origin/main` 一致（`git fetch` + `git status -sb`）；若本地落后远端，先提示并建议执行 `git pull --rebase origin main`，同步后再进行后续改动
 
 ---
 
