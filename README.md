@@ -4,6 +4,13 @@ Static personal homepage (Work / Info / Things). Dark theme, particle background
 
 **Domain**: [bananabox.plus](https://bananabox.plus)
 
+## Latest Update
+
+Updated on 2026-03-18:
+- Added a new external entry in the `Work` section for **JUJUTSU SCI High School**
+- Linked it to [zijianxcode/jujutsu-sci](https://zijianxcode.github.io/jujutsu-sci/)
+- Added a hover interaction with camera-shake instability, red-blue ghosting, and subtle fracture-like particles around the title
+
 ## Run locally
 
 ```bash

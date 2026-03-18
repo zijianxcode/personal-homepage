@@ -381,6 +381,81 @@
         });
     }
 
+    function initSciGhostEffect() {
+        var item = document.querySelector('.work-item--sci');
+        if (!item) return;
+
+        var lineEls = item.querySelectorAll('.work-name, .work-type');
+        var charEls = [];
+        var rafId = null;
+        var active = false;
+        var t = 0;
+
+        lineEls.forEach(function (el) {
+            if (el.dataset.ghostReady === '1') return;
+            var chars = el.textContent.split('');
+            el.innerHTML = '<span class="sci-ghost-line">' + chars.map(function (ch, i) {
+                if (ch === ' ') {
+                    return '<span class="sci-char sci-char--space" data-char=" " style="--char-index:' + i + '; width:0.28em;"></span>';
+                }
+                return '<span class="sci-char" data-char="' + ch + '" style="--char-index:' + i + ';">' +
+                    '<span class="sci-char-core">' + ch + '</span>' +
+                    '<span class="sci-frag-layer" aria-hidden="true">' +
+                        '<i class="sci-frag" style="--fx:-0.04em; --fy:0.10em; --tx:-0.08em; --ty:-0.04em; --fd:' + ((i * 17) % 90) + 'ms; --fs:1.55px;"></i>' +
+                        '<i class="sci-frag" style="--fx:0.70em; --fy:0.06em; --tx:0.08em; --ty:-0.05em; --fd:' + ((i * 23) % 110) + 'ms; --fs:1.45px;"></i>' +
+                        '<i class="sci-frag" style="--fx:0.30em; --fy:0.72em; --tx:0.05em; --ty:0.08em; --fd:' + ((i * 31) % 130) + 'ms; --fs:1.35px;"></i>' +
+                    '</span>' +
+                '</span>';
+            }).join('') + '</span>';
+            el.dataset.ghostReady = '1';
+        });
+
+        charEls = Array.prototype.slice.call(item.querySelectorAll('.sci-char'));
+
+        function resetChars() {
+            charEls.forEach(function (span, i) {
+                span.style.transitionDelay = (charEls.length - i) * 7 + 'ms';
+                span.style.transform = '';
+                span.style.removeProperty('--ghost-x');
+                span.style.removeProperty('--ghost-y');
+                span.style.opacity = '';
+            });
+        }
+
+        function tick() {
+            if (!active) return;
+            t += 0.12;
+            charEls.forEach(function (span, i) {
+                var jitterX = Math.sin(t * 2.4 + i * 0.52) * 1.2 + (Math.random() - 0.5) * 0.8;
+                var jitterY = Math.cos(t * 2.1 + i * 0.44) * 0.9 + (Math.random() - 0.5) * 0.6;
+                var rotate = Math.sin(t * 1.8 + i * 0.31) * 1.2;
+                span.style.transitionDelay = '0ms';
+                span.style.transform = 'translate(' + jitterX.toFixed(2) + 'px, ' + jitterY.toFixed(2) + 'px) rotate(' + rotate.toFixed(2) + 'deg)';
+                span.style.setProperty('--ghost-x', jitterX.toFixed(2) + 'px');
+                span.style.setProperty('--ghost-y', jitterY.toFixed(2) + 'px');
+                span.style.opacity = '0.98';
+            });
+            rafId = requestAnimationFrame(tick);
+        }
+
+        item.addEventListener('mouseenter', function () {
+            if (active) return;
+            active = true;
+            item.classList.add('is-ghosting');
+            tick();
+        });
+
+        item.addEventListener('mouseleave', function () {
+            active = false;
+            item.classList.remove('is-ghosting');
+            if (rafId) {
+                cancelAnimationFrame(rafId);
+                rafId = null;
+            }
+            resetChars();
+        });
+    }
+
     // ==========================================
     // Info 分区滚动触发 TextScramble
     // 仅在元素进入视口时播放，且每个元素只播放一次
@@ -544,6 +619,7 @@
 
             initVisualCodingEffect();
             initResearchFlowEffect();
+            initSciGhostEffect();
             initInfoSectionScramble();
         } catch (err) {
             console.error('Init error:', err);
