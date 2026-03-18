@@ -742,6 +742,142 @@ a:hover {
     gap: 0;
 }
 
+.things-entry-block {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 720px;
+    padding: 24px 0 28px;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.things-entry-block:hover {
+    opacity: 1;
+}
+
+.things-entry-block::before,
+.things-entry-block::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: clamp(84px, 30%, 220px);
+    height: 1px;
+    background: var(--text);
+    transform: scaleX(0.18);
+    transform-origin: left center;
+    opacity: 0.48;
+    pointer-events: none;
+}
+
+.things-entry-block::before {
+    top: -1px;
+}
+
+.things-entry-block::after {
+    bottom: -1px;
+}
+
+.things-entry-block:hover::before,
+.things-entry-block:hover::after {
+    animation: things-entry-progress 1.15s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes things-entry-progress {
+    0% {
+        transform: scaleX(0.18);
+        opacity: 0.48;
+    }
+
+    100% {
+        transform: scaleX(1);
+        opacity: 1;
+    }
+}
+
+.things-entry-topline,
+.things-entry-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.things-entry-index,
+.things-entry-label,
+.things-entry-prompt,
+.things-entry-arrow,
+.things-entry-desc {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.things-entry-index,
+.things-entry-label,
+.things-entry-prompt {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.things-entry-label--meta {
+    letter-spacing: 0.02em;
+    text-transform: none;
+}
+
+.things-entry-main {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 560px;
+}
+
+.things-entry-name {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: clamp(26.6px, 3.99vw, 45.6px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    font-weight: 100;
+    color: var(--text);
+}
+
+.things-entry-name-en {
+    display: inline-block;
+    font-size: 0.95em;
+    letter-spacing: -0.0315em;
+}
+
+.things-entry-desc {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text-muted);
+    transition: color 0.28s ease;
+}
+
+.things-entry-desc--en {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.things-entry-block:hover .things-entry-desc {
+    color: rgba(255, 255, 255, 0.68);
+}
+
+.things-entry-arrow {
+    font-size: 18px;
+    color: var(--text);
+    transition: transform 0.28s ease;
+}
+
+.things-entry-block:hover .things-entry-arrow {
+    transform: translateX(8px);
+}
+
 .things-link {
     display: flex;
     justify-content: space-between;
@@ -761,6 +897,10 @@ a:hover {
     opacity: 0.6;
 }
 
+.things-link--entry {
+    font-weight: 500;
+}
+
 .things-link-name {
     font-size: 16px;
     font-weight: 400;
@@ -770,6 +910,196 @@ a:hover {
     font-size: 16px;
     color: var(--text-muted);
     flex-shrink: 0;
+}
+
+.things-entry-hint {
+    margin-top: 14px;
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+/* ============================================
+   Permit Modal
+   ============================================ */
+
+.permit-modal-open {
+    overflow: hidden;
+}
+
+.permit-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(10, 10, 10, 0.72);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.permit-modal-dialog {
+    position: relative;
+    width: min(100%, 520px);
+    padding: 28px 28px 24px;
+    border: 1px solid var(--border);
+    background: rgba(10, 10, 10, 0.96);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.42);
+}
+
+.permit-modal-dialog::after {
+    content: '';
+    position: absolute;
+    left: 28px;
+    bottom: 24px;
+    width: 84px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.permit-modal-close {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    border: 0;
+    background: transparent;
+    color: var(--text-muted);
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+    transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.permit-modal-close:hover {
+    color: var(--text);
+    opacity: 1;
+}
+
+.permit-modal-meta,
+.permit-modal-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.permit-modal-meta {
+    padding-right: 52px;
+}
+
+.permit-modal-index,
+.permit-modal-label,
+.permit-modal-field-label,
+.permit-modal-btn {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.permit-modal-index,
+.permit-modal-label,
+.permit-modal-field-label {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.permit-modal-label {
+    text-align: right;
+}
+
+.permit-modal-title {
+    margin-top: 26px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+}
+
+.permit-modal-desc {
+    margin-top: 12px;
+    max-width: 360px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text-muted);
+}
+
+.permit-modal-form {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+}
+
+.permit-modal-field {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.permit-modal-input {
+    width: 100%;
+    padding: 14px 0;
+    border: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0;
+    background: transparent;
+    color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 0.06em;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.permit-modal-input::placeholder {
+    color: rgba(255, 255, 255, 0.22);
+    letter-spacing: 0;
+}
+
+.permit-modal-input:focus {
+    border-bottom-color: rgba(255, 255, 255, 0.72);
+}
+
+.permit-modal-error {
+    min-height: 20px;
+    margin-top: 12px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #d86b6b;
+}
+
+.permit-modal-actions {
+    margin-top: 18px;
+    justify-content: flex-end;
+}
+
+.permit-modal-btn {
+    min-width: 96px;
+    padding: 10px 18px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text);
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+}
+
+.permit-modal-btn:hover {
+    opacity: 1;
+    border-color: rgba(255, 255, 255, 0.34);
+}
+
+.permit-modal-btn--primary {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.permit-modal-dialog.is-error .permit-modal-input {
+    border-bottom-color: rgba(216, 107, 107, 0.9);
 }
 
 /* ============================================
@@ -839,6 +1169,85 @@ a:hover {
 
     .work-list {
         padding: 0 20px 80px;
+    }
+
+    .things-section {
+        padding: 32px 20px 48px;
+    }
+
+    .things-entry-block {
+        gap: 24px;
+        padding: 20px 0 22px;
+    }
+
+    .things-entry-topline,
+    .things-entry-footer {
+        gap: 12px;
+    }
+
+    .things-entry-label {
+        display: none;
+    }
+
+    .things-entry-label--meta {
+        display: inline;
+    }
+
+    .things-entry-name {
+        font-size: 28.5px;
+    }
+
+    .things-entry-desc {
+        font-size: 13px;
+        line-height: 1.65;
+    }
+
+    .things-entry-desc--en {
+        font-size: 11px;
+        letter-spacing: 0.1em;
+    }
+
+    .permit-modal-overlay {
+        padding: 18px;
+    }
+
+    .permit-modal-dialog {
+        padding: 24px 20px 20px;
+    }
+
+    .permit-modal-dialog::after {
+        left: 20px;
+        bottom: 20px;
+        width: 64px;
+    }
+
+    .permit-modal-title {
+        margin-top: 22px;
+        font-size: 30px;
+    }
+
+    .permit-modal-desc {
+        font-size: 13px;
+        line-height: 1.65;
+    }
+
+    .permit-modal-form {
+        margin-top: 24px;
+        padding-top: 18px;
+    }
+
+    .permit-modal-input {
+        padding: 12px 0;
+        font-size: 18px;
+    }
+
+    .permit-modal-actions {
+        gap: 10px;
+    }
+
+    .permit-modal-btn {
+        min-width: 84px;
+        padding: 10px 14px;
     }
 
     .work-name {

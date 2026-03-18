@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数字与体验 | aspera ad astra</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Assets/css/style.css">
+    <style>
+        .things-subpage-wrap {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 48px 24px 72px;
+        }
+
+        .things-subpage-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 28px;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .things-subpage-back:hover {
+            opacity: 1;
+            color: var(--text);
+        }
+
+        .things-subpage-note {
+            margin-bottom: 20px;
+            font-size: 13px;
+            color: var(--text-muted);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <main class="things-subpage-wrap">
+        <a class="things-subpage-back" href="index.html#things">← 返回首页</a>
+        <section class="things-section">
+            <h1 class="things-title">数字与体验</h1>
+            <p class="things-subpage-note">已通过许可代码验证，以下为内容入口。</p>
+            <div class="things-list">
+                <a class="things-link" href="https://my.feishu.cn/file/QkHSbdHUvopnCWxb5pvcsvvhn3d" target="_blank" rel="noopener">
+                    <span class="things-link-name">主题-时间 About Time</span>
+                    <span class="things-link-arrow">→</span>
+                </a>
+                <a class="things-link" href="https://my.feishu.cn/file/Blh6bFOxvon6DRxFC1AcHD0XnEb" target="_blank" rel="noopener">
+                    <span class="things-link-name">设计思维入门</span>
+                    <span class="things-link-arrow">→</span>
+                </a>
+                <a class="things-link" href="https://my.feishu.cn/file/ZZeSb3Umdodvw4xM2SactrgCnkc" target="_blank" rel="noopener">
+                    <span class="things-link-name">AI++</span>
+                    <span class="things-link-arrow">→</span>
+                </a>
+                <a class="things-link" href="https://my.feishu.cn/file/JALIbYo1go0XT5xzGdfcHkBLnwg" target="_blank" rel="noopener">
+                    <span class="things-link-name">小作业模板-1</span>
+                    <span class="things-link-arrow">→</span>
+                </a>
+                <a class="things-link" href="https://my.feishu.cn/file/E3blbjdN2o291rxyWdTczat0nRh" target="_blank" rel="noopener">
+                    <span class="things-link-name">参考-"时间" 1</span>
+                    <span class="things-link-arrow">→</span>
+                </a>
+                <a class="things-link" href="https://my.feishu.cn/file/BxQIbf4IbovCeXxmkfFcrMm9nZe" target="_blank" rel="noopener">
+                    <span class="things-link-name">参考-"时间" 2</span>
+                    <span class="things-link-arrow">→</span>
+                </a>
+                <a class="things-link" href="https://my.feishu.cn/file/GGjOby3a3oTXG9x30TOcweq4nyf" target="_blank" rel="noopener">
+                    <span class="things-link-name">参考-"时间" 3</span>
+                    <span class="things-link-arrow">→</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script src="Assets/js/permit-modal.js?v=20260318-modal"></script>
+    <script>
+        (function () {
+            var granted = sessionStorage.getItem('thingsAccessGranted');
+            if (granted === '1') return;
+
+            if (window.PermitCodeModal && window.PermitCodeModal.openPermitCodeModal) {
+                window.PermitCodeModal.openPermitCodeModal({
+                    contextLabel: 'Digital & Experience',
+                    title: '许可代码',
+                    description: '输入许可代码后继续访问数字与体验。',
+                    placeholder: '代码为本节课的开课日期',
+                    errorMessage: '许可代码错误，请重试。',
+                    validate: function (value) {
+                        return value === '20260309';
+                    },
+                    onSuccess: function () {
+                        sessionStorage.setItem('thingsAccessGranted', '1');
+                    },
+                    onCancel: function () {
+                        window.location.replace('index.html#things');
+                    }
+                });
+                return;
+            }
+
+            window.location.replace('index.html#things');
+        })();
+    </script>
+</body>
+</html>

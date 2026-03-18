@@ -585,6 +585,35 @@
     }
 
     // ==========================================
+    // Things Entry Password
+    // ==========================================
+
+    function initThingsEntryPassword() {
+        var entry = document.getElementById('things-permit-entry');
+        if (!entry) return;
+
+        entry.addEventListener('click', function (e) {
+            e.preventDefault();
+            if (window.PermitCodeModal && window.PermitCodeModal.openPermitCodeModal) {
+                window.PermitCodeModal.openPermitCodeModal({
+                    contextLabel: 'Digital & Experience',
+                    title: '许可代码',
+                    description: '输入许可代码后继续访问数字与体验。',
+                    placeholder: '代码为本节课的开课日期',
+                    errorMessage: '许可代码错误，请重试。',
+                    validate: function (value) {
+                        return value === '20260309';
+                    },
+                    onSuccess: function () {
+                        sessionStorage.setItem('thingsAccessGranted', '1');
+                        window.location.href = entry.getAttribute('href');
+                    }
+                });
+            }
+        });
+    }
+
+    // ==========================================
     // Page Visibility
     // ==========================================
 
@@ -603,6 +632,7 @@
             initVisibility();
             initTabs();
             initLang();
+            initThingsEntryPassword();
             new ParticleBackground('canvas-container');
 
             var displayNameEl = document.querySelector('#info .display-name');
