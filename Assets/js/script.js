@@ -422,7 +422,7 @@
         var progress = 0;
         var rafId = null;
         var itemRect = null;
-        var activeFlow = null;
+        var flowRect = null;
         var centerX = 0;
         var centerY = 0;
 
@@ -496,9 +496,11 @@
             return points;
         }
 
-        function buildParticles(flow) {
+        function buildParticles() {
+            var flow = getVisibleFlow();
             if (!flow || !itemRect) return;
 
+            flowRect = flow.getBoundingClientRect();
             centerX = itemRect.width * 0.5;
             centerY = itemRect.height * 0.5;
 
@@ -647,21 +649,17 @@
             rafId = requestAnimationFrame(tick);
         }
 
-        function start(flow) {
-            if (!flow) return;
-            activeFlow = flow;
+        function start() {
             active = true;
             item.classList.add('is-particle-active');
             resizeCanvas();
-            buildParticles(flow);
+            buildParticles();
             if (!rafId) {
                 tick();
             }
         }
 
-        function stop(flow) {
-            if (flow && activeFlow && flow !== activeFlow) return;
-            activeFlow = null;
+        function stop() {
             active = false;
             item.classList.remove('is-particle-active');
             if (!rafId) {
@@ -671,28 +669,16 @@
 
         function onResize() {
             resizeCanvas();
-            buildParticles(activeFlow || getVisibleFlow());
+            buildParticles();
         }
 
         resizeCanvas();
-        buildParticles(getVisibleFlow());
+        buildParticles();
 
-        var flows = item.querySelectorAll('.research-flow');
-        flows.forEach(function (flow) {
-            flow.addEventListener('pointerenter', function () {
-                start(flow);
-            });
-            flow.addEventListener('pointerleave', function () {
-                stop(flow);
-            });
-        });
-
-        item.addEventListener('focusin', function () {
-            start(getVisibleFlow());
-        });
-        item.addEventListener('focusout', function () {
-            stop();
-        });
+        item.addEventListener('pointerenter', start);
+        item.addEventListener('pointerleave', stop);
+        item.addEventListener('focusin', start);
+        item.addEventListener('focusout', stop);
         window.addEventListener('resize', onResize);
     }
 
