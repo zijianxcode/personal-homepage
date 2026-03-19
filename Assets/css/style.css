@@ -1448,7 +1448,7 @@ a:hover {
     pointer-events: none;
 }
 
-.work-item--research:hover::after,
+.work-item--research.is-particle-active::after,
 .work-item--research:focus-visible::after {
     opacity: 1;
     transform: scaleX(1) translateY(0);
@@ -1581,13 +1581,13 @@ a:hover {
     filter: saturate(1.08);
 }
 
-.work-item--research:hover .research-flow::before,
+.work-item--research.is-particle-active .research-flow::before,
 .work-item--research:focus-visible .research-flow::before {
     opacity: 1;
     transform: scale(1) rotate(0deg);
 }
 
-.work-item--research:hover .research-flow::after,
+.work-item--research.is-particle-active .research-flow::after,
 .work-item--research:focus-visible .research-flow::after {
     opacity: 1;
     transform: scaleX(1);

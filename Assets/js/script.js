@@ -422,7 +422,7 @@
         var progress = 0;
         var rafId = null;
         var itemRect = null;
-        var flowRect = null;
+        var activeFlow = null;
         var centerX = 0;
         var centerY = 0;
 
@@ -496,11 +496,9 @@
             return points;
         }
 
-        function buildParticles() {
-            var flow = getVisibleFlow();
+        function buildParticles(flow) {
             if (!flow || !itemRect) return;
 
-            flowRect = flow.getBoundingClientRect();
             centerX = itemRect.width * 0.5;
             centerY = itemRect.height * 0.5;
 
@@ -649,17 +647,21 @@
             rafId = requestAnimationFrame(tick);
         }
 
-        function start() {
+        function start(flow) {
+            if (!flow) return;
+            activeFlow = flow;
             active = true;
             item.classList.add('is-particle-active');
             resizeCanvas();
-            buildParticles();
+            buildParticles(flow);
             if (!rafId) {
                 tick();
             }
         }
 
-        function stop() {
+        function stop(flow) {
+            if (flow && activeFlow && flow !== activeFlow) return;
+            activeFlow = null;
             active = false;
             item.classList.remove('is-particle-active');
             if (!rafId) {
@@ -669,16 +671,28 @@
 
         function onResize() {
             resizeCanvas();
-            buildParticles();
+            buildParticles(activeFlow || getVisibleFlow());
         }
 
         resizeCanvas();
-        buildParticles();
+        buildParticles(getVisibleFlow());
 
-        item.addEventListener('pointerenter', start);
-        item.addEventListener('pointerleave', stop);
-        item.addEventListener('focusin', start);
-        item.addEventListener('focusout', stop);
+        var flows = item.querySelectorAll('.research-flow');
+        flows.forEach(function (flow) {
+            flow.addEventListener('pointerenter', function () {
+                start(flow);
+            });
+            flow.addEventListener('pointerleave', function () {
+                stop(flow);
+            });
+        });
+
+        item.addEventListener('focusin', function () {
+            start(getVisibleFlow());
+        });
+        item.addEventListener('focusout', function () {
+            stop();
+        });
         window.addEventListener('resize', onResize);
     }
 
