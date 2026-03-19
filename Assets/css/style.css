@@ -1409,6 +1409,7 @@ a:hover {
 
 /* Research — Typeflow inspired motion type */
 .work-item--research {
+    position: relative;
     overflow: visible;
 }
 
@@ -1416,13 +1417,71 @@ a:hover {
     opacity: 1;
 }
 
+.work-item--research::after {
+    content: '';
+    position: absolute;
+    left: -8px;
+    right: -8px;
+    bottom: 14px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.08) 18%, rgba(255, 255, 255, 0.86) 50%, rgba(255, 255, 255, 0.08) 82%, transparent 100%);
+    opacity: 0;
+    transform: scaleX(0.45) translateY(10px);
+    transform-origin: center;
+    transition: opacity 0.3s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+}
+
+.work-item--research:hover::after,
+.work-item--research:focus-visible::after {
+    opacity: 1;
+    transform: scaleX(1) translateY(0);
+}
+
 .research-flow {
+    position: relative;
     display: inline-flex;
     align-items: flex-end;
     gap: 0;
-    padding: 8px 14px;
-    margin: -8px -14px;
+    padding: 10px 16px 12px;
+    margin: -10px -16px -12px;
     overflow: visible;
+    isolation: isolate;
+    transform: translateZ(0);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), filter 0.35s ease;
+}
+
+.research-flow::before {
+    content: '';
+    position: absolute;
+    inset: -14px -18px -14px;
+    background:
+        radial-gradient(circle at 14% 58%, rgba(244, 212, 0, 0.18), transparent 28%),
+        radial-gradient(circle at 34% 20%, rgba(244, 183, 213, 0.18), transparent 26%),
+        radial-gradient(circle at 58% 44%, rgba(20, 152, 227, 0.16), transparent 30%),
+        radial-gradient(circle at 78% 24%, rgba(16, 146, 59, 0.16), transparent 28%),
+        radial-gradient(circle at 92% 60%, rgba(255, 52, 24, 0.18), transparent 28%);
+    filter: blur(18px);
+    opacity: 0;
+    transform: scale(0.84) rotate(-5deg);
+    transition: opacity 0.3s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: -2;
+    pointer-events: none;
+}
+
+.research-flow::after {
+    content: '';
+    position: absolute;
+    left: 6%;
+    right: 6%;
+    bottom: 4px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.95) 50%, transparent 100%);
+    opacity: 0;
+    transform: scaleX(0.35);
+    transform-origin: center;
+    transition: opacity 0.28s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
 }
 
 .research-char {
@@ -1434,6 +1493,7 @@ a:hover {
     will-change: transform, filter, opacity;
     z-index: 0;
     margin-inline: 0;
+    padding: 0 0.04em;
 }
 
 .research-char::before {
@@ -1448,6 +1508,7 @@ a:hover {
     opacity: 0;
     transition: opacity 0.24s ease, transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: -1;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06) inset, 0 14px 28px rgba(0, 0, 0, 0.3);
 }
 
 .research-char--space::before {
@@ -1490,10 +1551,29 @@ a:hover {
 .research-flow:hover .research-char,
 .research-flow:focus-visible .research-char {
     animation: research-wave 1.35s cubic-bezier(0.16, 1, 0.3, 1) infinite;
-    animation-delay: calc(var(--char-index) * 55ms);
+    animation-delay: calc(var(--char-index) * 45ms);
     color: rgba(255, 255, 255, 0.98);
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.14);
-    margin-inline: 0.045em;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.18), 0 0 22px rgba(244, 212, 0, 0.06);
+    margin-inline: 0.055em;
+    filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.22));
+}
+
+.research-flow:hover,
+.research-flow:focus-visible {
+    transform: translateY(-1px) skewX(-1.4deg);
+    filter: saturate(1.08);
+}
+
+.work-item--research:hover .research-flow::before,
+.work-item--research:focus-visible .research-flow::before {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+}
+
+.work-item--research:hover .research-flow::after,
+.work-item--research:focus-visible .research-flow::after {
+    opacity: 1;
+    transform: scaleX(1);
 }
 
 .research-flow:hover .research-char:nth-child(4n + 1)::before,
@@ -1541,6 +1621,31 @@ a:hover {
         transform: translate3d(calc(var(--char-shift) * 0.16em), 0, 0) rotate(0deg) scale(1);
         filter: blur(0);
         opacity: 1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .research-flow,
+    .research-flow::before,
+    .research-flow::after,
+    .research-char,
+    .research-char::before {
+        transition-duration: 0.01ms;
+        animation-duration: 0.01ms;
+        animation-iteration-count: 1;
+    }
+
+    .research-flow:hover,
+    .research-flow:focus-visible {
+        transform: none;
+        filter: none;
+    }
+
+    .research-flow:hover .research-char,
+    .research-flow:focus-visible .research-char {
+        animation: none;
+        margin-inline: 0.045em;
+        filter: none;
     }
 }
 
