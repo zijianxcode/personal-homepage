@@ -264,7 +264,10 @@ function parseThingsItems() {
   if (!raw) return [];
 
   try {
-    const parsed = JSON.parse(raw);
+    let parsed = JSON.parse(raw);
+    if (typeof parsed === "string") {
+      parsed = JSON.parse(parsed);
+    }
     if (!Array.isArray(parsed)) return [];
 
     return parsed
