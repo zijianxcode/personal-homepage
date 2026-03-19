@@ -278,6 +278,10 @@ a:hover {
     letter-spacing: -0.01em;
 }
 
+.work-item--coming-soon .work-name {
+    font-size: 14px;
+}
+
 .work-type {
     font-size: 20px;
     font-weight: 700;
@@ -1407,9 +1411,8 @@ a:hover {
     line-height: 1;
 }
 
-/* Research — Typeflow inspired motion type */
+/* Research — terminal type hover */
 .work-item--research {
-    position: relative;
     overflow: visible;
 }
 
@@ -1417,235 +1420,144 @@ a:hover {
     opacity: 1;
 }
 
-.work-item--research::after {
-    content: '';
-    position: absolute;
-    left: -8px;
-    right: -8px;
-    bottom: 14px;
-    height: 2px;
-    background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.08) 18%, rgba(255, 255, 255, 0.86) 50%, rgba(255, 255, 255, 0.08) 82%, transparent 100%);
-    opacity: 0;
-    transform: scaleX(0.45) translateY(10px);
-    transform-origin: center;
-    transition: opacity 0.3s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
-    pointer-events: none;
-}
-
-.work-item--research:hover::after,
-.work-item--research:focus-visible::after {
-    opacity: 1;
-    transform: scaleX(1) translateY(0);
-}
-
 .research-flow {
     position: relative;
     display: inline-flex;
-    align-items: flex-end;
-    gap: 0;
-    padding: 10px 16px 12px;
-    margin: -10px -16px -12px;
+    align-items: center;
+    min-height: 1.4em;
+    padding: 0.08em 0;
     overflow: visible;
-    isolation: isolate;
-    transform: translateZ(0);
-    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), filter 0.35s ease;
+    font-family: 'Share Tech Mono', 'Courier New', Courier, monospace;
+    font-weight: 400;
+    letter-spacing: 0.06em;
 }
 
-.research-flow::before {
-    content: '';
-    position: absolute;
-    inset: -14px -18px -14px;
-    background:
-        radial-gradient(circle at 14% 58%, rgba(244, 212, 0, 0.18), transparent 28%),
-        radial-gradient(circle at 34% 20%, rgba(244, 183, 213, 0.18), transparent 26%),
-        radial-gradient(circle at 58% 44%, rgba(20, 152, 227, 0.16), transparent 30%),
-        radial-gradient(circle at 78% 24%, rgba(16, 146, 59, 0.16), transparent 28%),
-        radial-gradient(circle at 92% 60%, rgba(255, 52, 24, 0.18), transparent 28%);
-    filter: blur(18px);
-    opacity: 0;
-    transform: scale(0.84) rotate(-5deg);
-    transition: opacity 0.3s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
-    z-index: -2;
-    pointer-events: none;
-}
-
-.research-flow::after {
-    content: '';
-    position: absolute;
-    left: 6%;
-    right: 6%;
-    bottom: 4px;
-    height: 1px;
-    background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.95) 50%, transparent 100%);
-    opacity: 0;
-    transform: scaleX(0.35);
-    transform-origin: center;
-    transition: opacity 0.28s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
-    pointer-events: none;
-}
-
-.research-char {
+.research-flow__base,
+.research-flow__overlay {
     display: inline-block;
-    position: relative;
-    min-width: 0.28em;
-    transform-origin: 50% 100%;
-    transition: color 0.25s ease, text-shadow 0.25s ease, margin 0.28s ease;
-    will-change: transform, filter, opacity;
-    z-index: 0;
-    margin-inline: 0;
-    padding: 0 0.04em;
+    white-space: nowrap;
+    line-height: 1.15;
 }
 
-.research-char::before {
-    content: '';
+.research-flow__base {
+    transition: opacity 0.22s ease;
+}
+
+.research-flow__overlay {
     position: absolute;
-    left: 50%;
-    top: 54%;
-    width: 1.15em;
-    height: 1.15em;
-    transform: translate(-50%, -50%) scale(0.72) rotate(0deg);
-    transform-origin: 50% 50%;
+    left: 0;
+    top: 50%;
+    width: 0;
+    overflow: hidden;
+    transform: translateY(-50%);
+    font-family: 'Share Tech Mono', 'Courier New', Courier, monospace;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    color: #78ff71;
+    background: linear-gradient(180deg, rgba(18, 24, 19, 0.96), rgba(10, 14, 11, 0.96));
+    border: 1px solid rgba(120, 255, 113, 0.18);
+    border-right: 0.14em solid #78ff71;
+    border-radius: 4px;
+    padding: 0.08em 0.1em 0.08em 0.22em;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.03) inset, 0 10px 24px rgba(0, 0, 0, 0.24), 0 0 16px rgba(80, 255, 132, 0.12);
     opacity: 0;
-    transition: opacity 0.24s ease, transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
-    z-index: -1;
-    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06) inset, 0 14px 28px rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+    will-change: width, opacity;
 }
 
-.research-char--space::before {
-    display: none;
+.research-flow--en .research-flow__overlay {
+    letter-spacing: 0.07em;
 }
 
-.research-flow:hover .research-char::before,
-.research-flow:focus-visible .research-char::before {
+.research-flow--cn {
+    font-family: 'Courier New', 'Noto Sans SC', monospace;
+    letter-spacing: 0.12em;
+}
+
+.research-flow--cn .research-flow__overlay {
+    font-family: 'Courier New', 'Noto Sans SC', monospace;
+    letter-spacing: 0.12em;
+}
+
+.work-item--research:hover .research-flow__base,
+.work-item--research:focus-visible .research-flow__base {
+    opacity: 0.14;
+}
+
+.work-item--research:hover .research-flow__overlay,
+.work-item--research:focus-visible .research-flow__overlay {
     opacity: 1;
-    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    animation: research-cursor-blink 0.58s step-end infinite;
 }
 
-.research-char:nth-child(5n + 1)::before {
-    background: #f4d400;
-    border-radius: 999px;
+.work-item--research:hover .research-flow--en .research-flow__overlay,
+.work-item--research:focus-visible .research-flow--en .research-flow__overlay {
+    animation:
+        research-type-and-delete-en 3.8s steps(11, end) infinite,
+        research-cursor-blink 0.58s step-end infinite;
 }
 
-.research-char:nth-child(5n + 2)::before {
-    background: #f4b7d5;
-    border-radius: 0;
+.work-item--research:hover .research-flow--cn .research-flow__overlay,
+.work-item--research:focus-visible .research-flow--cn .research-flow__overlay {
+    animation:
+        research-type-and-delete-cn 3.2s steps(7, end) infinite,
+        research-cursor-blink 0.58s step-end infinite;
 }
 
-.research-char:nth-child(5n + 3)::before {
-    background: #1498e3;
-    border-radius: 0;
-}
-
-.research-char:nth-child(5n + 4)::before {
-    background: #10923b;
-    border-radius: 999px;
-}
-
-.research-char:nth-child(5n)::before {
-    background: #ff3418;
-    width: 1.05em;
-    height: 1.05em;
-    border-radius: 999px;
-}
-
-.research-flow:hover .research-char,
-.research-flow:focus-visible .research-char {
-    animation: research-wave 1.35s cubic-bezier(0.16, 1, 0.3, 1) infinite;
-    animation-delay: calc(var(--char-index) * 45ms);
-    color: rgba(255, 255, 255, 0.98);
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.18), 0 0 22px rgba(244, 212, 0, 0.06);
-    margin-inline: 0.055em;
-    filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.22));
-}
-
-.research-flow:hover,
-.research-flow:focus-visible {
-    transform: translateY(-1px) skewX(-1.4deg);
-    filter: saturate(1.08);
-}
-
-.work-item--research:hover .research-flow::before,
-.work-item--research:focus-visible .research-flow::before {
-    opacity: 1;
-    transform: scale(1) rotate(0deg);
-}
-
-.work-item--research:hover .research-flow::after,
-.work-item--research:focus-visible .research-flow::after {
-    opacity: 1;
-    transform: scaleX(1);
-}
-
-.research-flow:hover .research-char:nth-child(4n + 1)::before,
-.research-flow:focus-visible .research-char:nth-child(4n + 1)::before {
-    transform: translate(-50%, -50%) scale(1) rotate(-8deg);
-}
-
-.research-flow:hover .research-char:nth-child(4n + 2)::before,
-.research-flow:focus-visible .research-char:nth-child(4n + 2)::before {
-    transform: translate(-50%, -50%) scale(1.06) rotate(6deg);
-}
-
-.research-flow:hover .research-char:nth-child(4n + 3)::before,
-.research-flow:focus-visible .research-char:nth-child(4n + 3)::before {
-    transform: translate(-50%, -50%) scale(0.98) rotate(-4deg);
-}
-
-.research-flow:hover .research-char:nth-child(4n)::before,
-.research-flow:focus-visible .research-char:nth-child(4n)::before {
-    transform: translate(-50%, -50%) scale(1.08) rotate(3deg);
-}
-
-@keyframes research-wave {
-    0% {
-        transform: translate3d(calc(var(--char-shift) * 0.16em), 0, 0) rotate(0deg) scale(1);
-        filter: blur(0);
-        opacity: 1;
+@keyframes research-cursor-blink {
+    50% {
+        border-right-color: transparent;
     }
-    18% {
-        transform: translate3d(calc(var(--char-shift) * 0.22em), -10px, 0) rotate(-6deg) scale(1.04);
-        filter: blur(0);
-        opacity: 1;
+}
+
+@keyframes research-type-and-delete-en {
+    0%,
+    10% {
+        width: 0;
     }
-    42% {
-        transform: translate3d(calc(var(--char-shift) * 0.2em), 4px, 0) rotate(5deg) scale(0.98);
-        filter: blur(0.3px);
-        opacity: 0.92;
+    45%,
+    55% {
+        width: 12.6ch;
     }
-    66% {
-        transform: translate3d(calc(var(--char-shift) * 0.18em), -4px, 0) rotate(-2deg) scale(1.02);
-        filter: blur(0);
-        opacity: 1;
-    }
+    90%,
     100% {
-        transform: translate3d(calc(var(--char-shift) * 0.16em), 0, 0) rotate(0deg) scale(1);
-        filter: blur(0);
-        opacity: 1;
+        width: 0;
+    }
+}
+
+@keyframes research-type-and-delete-cn {
+    0%,
+    10% {
+        width: 0;
+    }
+    45%,
+    55% {
+        width: 7.9em;
+    }
+    90%,
+    100% {
+        width: 0;
     }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .research-flow,
-    .research-flow::before,
-    .research-flow::after,
-    .research-char,
-    .research-char::before {
+    .research-flow__base,
+    .research-flow__overlay {
         transition-duration: 0.01ms;
         animation-duration: 0.01ms;
         animation-iteration-count: 1;
     }
 
-    .research-flow:hover,
-    .research-flow:focus-visible {
-        transform: none;
-        filter: none;
+    .work-item--research:hover .research-flow__base,
+    .work-item--research:focus-visible .research-flow__base {
+        opacity: 1;
     }
 
-    .research-flow:hover .research-char,
-    .research-flow:focus-visible .research-char {
-        animation: none;
-        margin-inline: 0.045em;
-        filter: none;
+    .work-item--research:hover .research-flow__overlay,
+    .work-item--research:focus-visible .research-flow__overlay {
+        opacity: 0;
+        width: 0;
+        border-right-color: transparent;
     }
 }
 
