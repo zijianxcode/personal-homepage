@@ -1,4 +1,5 @@
 const cloud = require("@cloudbase/node-sdk");
+const crypto = require("crypto");
 
 const app = cloud.init({ env: cloud.SYMBOL_CURRENT_ENV });
 const db = app.database();
@@ -6,11 +7,26 @@ const _ = db.command;
 
 const CONVERSATIONS = "dm_conversations";
 const MESSAGES = "dm_messages";
+const ANALYTICS_STATS = "site_analytics_stats";
+const ANALYTICS_VISITORS = "site_analytics_visitors";
 
 const MAX_CONTENT_LENGTH = 2000;
 const MAX_NICKNAME_LENGTH = 30;
-const RATE_LIMIT_WINDOW = 60 * 1000;
-const RATE_LIMIT_MAX = 10;
+
+const MESSAGE_RATE_LIMIT_WINDOW = 60 * 1000;
+const MESSAGE_RATE_LIMIT_MAX = 10;
+const ADMIN_AUTH_WINDOW = 10 * 60 * 1000;
+const ADMIN_AUTH_MAX = 5;
+const PERMIT_AUTH_WINDOW = 10 * 60 * 1000;
+const PERMIT_AUTH_MAX = 8;
+const ANALYTICS_TRACK_WINDOW = 60 * 60 * 1000;
+const ANALYTICS_TRACK_MAX_PER_VISITOR = 120;
+const ANALYTICS_TRACK_MAX_PER_IP = 300;
+
+const VISITOR_TOKEN_TTL_MS = 30 * 24 * 60 * 60 * 1000;
+const ADMIN_TOKEN_TTL_MS = 12 * 60 * 60 * 1000;
+const PERMIT_TOKEN_TTL_MS = 8 * 60 * 60 * 1000;
+const TOKEN_VERSION = 1;
 
 const rateLimitMap = new Map();
 
@@ -24,44 +40,202 @@ function sanitize(str) {
     .replace(/'/g, "&#x27;");
 }
 
-function cors(body, statusCode = 200) {
+function delay(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function getSessionSecret() {
+  return process.env.APP_SESSION_SECRET || process.env.ADMIN_PASSWORD || "";
+}
+
+function getAllowedOrigins() {
+  const raw = process.env.ALLOWED_ORIGINS || "";
+  return raw
+    .split(",")
+    .map((item) => item.trim())
+    .filter(Boolean);
+}
+
+function getOrigin(event) {
+  const headers = event.headers || {};
+  return headers.origin || headers.Origin || "";
+}
+
+function buildCorsHeaders(event) {
+  const headers = {
+    "Content-Type": "application/json",
+    "Cache-Control": "no-store",
+    "X-Content-Type-Options": "nosniff",
+    "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+    "Access-Control-Allow-Headers": "Authorization, Content-Type",
+  };
+
+  const allowedOrigins = getAllowedOrigins();
+  if (allowedOrigins.length === 0) {
+    headers["Access-Control-Allow-Origin"] = "*";
+    return headers;
+  }
+
+  const origin = getOrigin(event);
+  if (origin && allowedOrigins.includes(origin)) {
+    headers["Access-Control-Allow-Origin"] = origin;
+    headers.Vary = "Origin";
+    return headers;
+  }
+
+  if (!origin && allowedOrigins.length === 1) {
+    headers["Access-Control-Allow-Origin"] = allowedOrigins[0];
+    headers.Vary = "Origin";
+  }
+
+  return headers;
+}
+
+function jsonResponse(event, body, statusCode = 200) {
   return {
     statusCode,
-    headers: {
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
-      "Access-Control-Allow-Headers": "Content-Type, x-admin-token",
-    },
+    headers: buildCorsHeaders(event),
     body: JSON.stringify(body),
   };
 }
 
-function checkRateLimit(visitorId) {
-  const now = Date.now();
-  const record = rateLimitMap.get(visitorId);
-  if (!record || now - record.windowStart > RATE_LIMIT_WINDOW) {
-    rateLimitMap.set(visitorId, { windowStart: now, count: 1 });
-    return true;
+function getClientIp(event) {
+  const headers = event.headers || {};
+  const forwardedFor = headers["x-forwarded-for"] || headers["X-Forwarded-For"] || "";
+  if (forwardedFor) {
+    return forwardedFor.split(",")[0].trim();
   }
-  if (record.count >= RATE_LIMIT_MAX) return false;
-  record.count++;
-  return true;
+
+  const requestContext = event.requestContext || {};
+  return requestContext.sourceIp || requestContext.sourceIpV4 || "unknown";
 }
 
-function verifyAdmin(event) {
-  const adminPassword = process.env.ADMIN_PASSWORD;
-  if (!adminPassword) return false;
-  const token =
-    (event.headers && (event.headers["x-admin-token"] || event.headers["X-Admin-Token"])) || "";
-  return token === adminPassword;
+function getRateLimitState(key) {
+  const now = Date.now();
+  const record = rateLimitMap.get(key);
+  if (!record || now - record.windowStart > record.windowMs) {
+    return null;
+  }
+  return record;
+}
+
+function checkRateLimit(key, windowMs, max) {
+  const now = Date.now();
+  const record = getRateLimitState(key);
+
+  if (!record) {
+    rateLimitMap.set(key, { windowStart: now, count: 1, windowMs });
+    return { allowed: true, retryAfterMs: 0 };
+  }
+
+  if (record.count >= max) {
+    return {
+      allowed: false,
+      retryAfterMs: Math.max(0, record.windowStart + windowMs - now),
+    };
+  }
+
+  record.count += 1;
+  return { allowed: true, retryAfterMs: 0 };
+}
+
+function hashText(value) {
+  return crypto.createHash("sha256").update(String(value || ""), "utf8").digest();
+}
+
+function safeEqualText(a, b) {
+  return crypto.timingSafeEqual(hashText(a), hashText(b));
+}
+
+function base64urlEncode(value) {
+  return Buffer.from(value).toString("base64url");
+}
+
+function base64urlDecode(value) {
+  return Buffer.from(value, "base64url").toString("utf8");
+}
+
+function signToken(payload) {
+  const secret = getSessionSecret();
+  if (!secret) {
+    throw new Error("Missing APP_SESSION_SECRET or ADMIN_PASSWORD");
+  }
+
+  const encodedPayload = base64urlEncode(JSON.stringify(payload));
+  const signature = crypto
+    .createHmac("sha256", secret)
+    .update(encodedPayload)
+    .digest("base64url");
+
+  return `${encodedPayload}.${signature}`;
+}
+
+function verifyToken(token, expectedType) {
+  if (!token || typeof token !== "string") return null;
+
+  const secret = getSessionSecret();
+  if (!secret) return null;
+
+  const parts = token.split(".");
+  if (parts.length !== 2) return null;
+
+  const [encodedPayload, providedSignature] = parts;
+  const expectedSignature = crypto
+    .createHmac("sha256", secret)
+    .update(encodedPayload)
+    .digest("base64url");
+
+  if (!safeEqualText(providedSignature, expectedSignature)) {
+    return null;
+  }
+
+  try {
+    const payload = JSON.parse(base64urlDecode(encodedPayload));
+    if (!payload || payload.v !== TOKEN_VERSION) return null;
+    if (expectedType && payload.type !== expectedType) return null;
+    if (typeof payload.exp !== "number" || payload.exp <= Date.now()) return null;
+    return payload;
+  } catch {
+    return null;
+  }
+}
+
+function createToken(type, extraPayload, ttlMs) {
+  const now = Date.now();
+  return signToken({
+    ...extraPayload,
+    type,
+    iat: now,
+    exp: now + ttlMs,
+    v: TOKEN_VERSION,
+  });
+}
+
+function getBearerToken(event) {
+  const headers = event.headers || {};
+  const authorization = headers.authorization || headers.Authorization || "";
+  const match = authorization.match(/^Bearer\s+(.+)$/i);
+  return match ? match[1].trim() : "";
+}
+
+function getVisitorSession(event) {
+  return verifyToken(getBearerToken(event), "visitor");
+}
+
+function getAdminSession(event) {
+  return verifyToken(getBearerToken(event), "admin");
+}
+
+function getPermitSession(event) {
+  return verifyToken(getBearerToken(event), "permit");
 }
 
 function parseBody(event) {
   if (!event.body) return {};
+
   try {
     const raw = event.isBase64Encoded
-      ? Buffer.from(event.body, "base64").toString()
+      ? Buffer.from(event.body, "base64").toString("utf8")
       : event.body;
     return JSON.parse(raw);
   } catch {
@@ -73,52 +247,226 @@ function getQuery(event) {
   return event.queryStringParameters || {};
 }
 
-async function handleCheckNickname(event) {
-  const body = parseBody(event);
-  const { nickname, visitorId } = body;
+function normalizeNickname(nickname) {
+  const safeName = sanitize(String(nickname || "").trim().slice(0, MAX_NICKNAME_LENGTH));
+  return safeName || "Anonymous";
+}
 
-  if (!nickname || !visitorId) {
-    return cors({ error: "nickname and visitorId are required" }, 400);
+function normalizeContent(content) {
+  const trimmed = typeof content === "string" ? content.trim() : "";
+  if (!trimmed) return "";
+  if (trimmed.length > MAX_CONTENT_LENGTH) return null;
+  return sanitize(trimmed);
+}
+
+function parseThingsItems() {
+  const raw = process.env.THINGS_CONTENT_JSON;
+  if (!raw) return [];
+
+  try {
+    const parsed = JSON.parse(raw);
+    if (!Array.isArray(parsed)) return [];
+
+    return parsed
+      .map((item) => ({
+        name: String(item && item.name ? item.name : "").trim(),
+        url: String(item && item.url ? item.url : "").trim(),
+      }))
+      .filter((item) => item.name && /^https:\/\//i.test(item.url));
+  } catch {
+    return [];
+  }
+}
+
+function normalizeAnalyticsVisitorId(visitorId) {
+  const value = String(visitorId || "").trim();
+  if (!value || value.length > 128) return "";
+  return value.replace(/[^A-Za-z0-9_-]/g, "");
+}
+
+function normalizePagePath(pagePath) {
+  const value = String(pagePath || "/").trim();
+  if (!value) return "/";
+  return value.slice(0, 256);
+}
+
+async function getAnalyticsStatsDoc(siteKey) {
+  const result = await db
+    .collection(ANALYTICS_STATS)
+    .where({ siteKey })
+    .limit(1)
+    .get();
+
+  return result.data[0] || null;
+}
+
+async function handleAnalyticsTrack(event) {
+  const body = parseBody(event);
+  const visitorId = normalizeAnalyticsVisitorId(body.visitorId);
+  const pagePath = normalizePagePath(body.pagePath);
+  const siteKey = String(body.siteKey || "personal-homepage").trim() || "personal-homepage";
+
+  if (!visitorId) {
+    return jsonResponse(event, { error: "visitorId is required" }, 400);
+  }
+
+  const visitorGate = checkRateLimit(
+    `analytics-visitor:${siteKey}:${visitorId}`,
+    ANALYTICS_TRACK_WINDOW,
+    ANALYTICS_TRACK_MAX_PER_VISITOR
+  );
+  const ipGate = checkRateLimit(
+    `analytics-ip:${siteKey}:${getClientIp(event)}`,
+    ANALYTICS_TRACK_WINDOW,
+    ANALYTICS_TRACK_MAX_PER_IP
+  );
+
+  if (!visitorGate.allowed || !ipGate.allowed) {
+    return jsonResponse(event, { error: "Rate limit exceeded" }, 429);
+  }
+
+  const visitorHash = crypto
+    .createHash("sha256")
+    .update(`${siteKey}:${visitorId}`, "utf8")
+    .digest("hex");
+  const now = Date.now();
+
+  const existingVisitor = await db
+    .collection(ANALYTICS_VISITORS)
+    .where({ siteKey, visitorHash })
+    .limit(1)
+    .get();
+
+  const isNewVisitor = existingVisitor.data.length === 0;
+
+  if (isNewVisitor) {
+    await db.collection(ANALYTICS_VISITORS).add({
+      siteKey,
+      visitorHash,
+      firstSeenAt: now,
+      lastSeenAt: now,
+      lastPath: pagePath,
+    });
+  } else {
+    await db.collection(ANALYTICS_VISITORS).doc(existingVisitor.data[0]._id).update({
+      lastSeenAt: now,
+      lastPath: pagePath,
+    });
+  }
+
+  const currentStats = await getAnalyticsStatsDoc(siteKey);
+  let uv;
+  let pv;
+
+  if (!currentStats) {
+    uv = 1;
+    pv = 1;
+    await db.collection(ANALYTICS_STATS).add({
+      siteKey,
+      uv,
+      pv,
+      createdAt: now,
+      updatedAt: now,
+    });
+  } else {
+    uv = Number(currentStats.uv || 0) + (isNewVisitor ? 1 : 0);
+    pv = Number(currentStats.pv || 0) + 1;
+    await db.collection(ANALYTICS_STATS).doc(currentStats._id).update({
+      uv,
+      pv,
+      updatedAt: now,
+    });
+  }
+
+  return jsonResponse(event, {
+    ok: true,
+    siteKey,
+    uv,
+    pv,
+    isNewVisitor,
+  });
+}
+
+async function handleVisitorSession(event) {
+  const token = createToken(
+    "visitor",
+    { visitorId: crypto.randomUUID() },
+    VISITOR_TOKEN_TTL_MS
+  );
+
+  return jsonResponse(event, { ok: true, token });
+}
+
+async function handleCheckNickname(event) {
+  const visitor = getVisitorSession(event);
+  if (!visitor) {
+    return jsonResponse(event, { error: "Unauthorized" }, 401);
+  }
+
+  const body = parseBody(event);
+  const nickname = String(body.nickname || "").trim();
+
+  if (!nickname) {
+    return jsonResponse(event, { error: "nickname is required" }, 400);
   }
 
   const safeName = sanitize(nickname.slice(0, MAX_NICKNAME_LENGTH));
   const existing = await db
     .collection(CONVERSATIONS)
-    .where({ nickname: safeName, visitorId: _.neq(visitorId) })
+    .where({ nickname: safeName, visitorId: _.neq(visitor.visitorId) })
     .limit(1)
     .get();
 
-  if (existing.data.length > 0) {
-    return cors({ ok: false, taken: true });
-  }
-
-  return cors({ ok: true, taken: false });
+  return jsonResponse(event, {
+    ok: true,
+    taken: existing.data.length > 0,
+  });
 }
 
 async function handleSend(event) {
+  const visitor = getVisitorSession(event);
+  if (!visitor) {
+    return jsonResponse(event, { error: "Unauthorized" }, 401);
+  }
+
   const body = parseBody(event);
-  const { visitorId, nickname, content } = body;
-
-  if (!visitorId || !content) {
-    return cors({ error: "visitorId and content are required" }, 400);
+  const safeContent = normalizeContent(body.content);
+  if (safeContent === null) {
+    return jsonResponse(event, { error: "Content too long" }, 400);
   }
-  if (content.length > MAX_CONTENT_LENGTH) {
-    return cors({ error: "Content too long" }, 400);
-  }
-  if (!checkRateLimit(visitorId)) {
-    return cors({ error: "Rate limit exceeded" }, 429);
+  if (!safeContent) {
+    return jsonResponse(event, { error: "content is required" }, 400);
   }
 
-  const safeName = sanitize((nickname || "Anonymous").slice(0, MAX_NICKNAME_LENGTH));
-  const safeContent = sanitize(content);
+  const visitorRate = checkRateLimit(
+    `send:${visitor.visitorId}`,
+    MESSAGE_RATE_LIMIT_WINDOW,
+    MESSAGE_RATE_LIMIT_MAX
+  );
+  const ipRate = checkRateLimit(
+    `send-ip:${getClientIp(event)}`,
+    MESSAGE_RATE_LIMIT_WINDOW,
+    MESSAGE_RATE_LIMIT_MAX * 2
+  );
+
+  if (!visitorRate.allowed || !ipRate.allowed) {
+    return jsonResponse(event, { error: "Rate limit exceeded" }, 429);
+  }
+
+  const safeName = normalizeNickname(body.nickname);
   const now = Date.now();
 
-  let convResult = await db.collection(CONVERSATIONS).where({ visitorId }).get();
+  const convResult = await db
+    .collection(CONVERSATIONS)
+    .where({ visitorId: visitor.visitorId })
+    .limit(1)
+    .get();
+
   let conversationId;
 
   if (convResult.data.length === 0) {
     const addResult = await db.collection(CONVERSATIONS).add({
-      visitorId,
+      visitorId: visitor.visitorId,
       nickname: safeName,
       createdAt: now,
       lastMessageAt: now,
@@ -142,18 +490,23 @@ async function handleSend(event) {
     createdAt: now,
   });
 
-  return cors({ ok: true, conversationId });
+  return jsonResponse(event, { ok: true, conversationId });
 }
 
 async function handlePoll(event) {
-  const { visitorId } = getQuery(event);
-  if (!visitorId) {
-    return cors({ error: "visitorId is required" }, 400);
+  const visitor = getVisitorSession(event);
+  if (!visitor) {
+    return jsonResponse(event, { error: "Unauthorized" }, 401);
   }
 
-  const convResult = await db.collection(CONVERSATIONS).where({ visitorId }).get();
+  const convResult = await db
+    .collection(CONVERSATIONS)
+    .where({ visitorId: visitor.visitorId })
+    .limit(1)
+    .get();
+
   if (convResult.data.length === 0) {
-    return cors({ conversation: null, messages: [] });
+    return jsonResponse(event, { conversation: null, messages: [] });
   }
 
   const conv = convResult.data[0];
@@ -171,31 +524,55 @@ async function handlePoll(event) {
     .limit(200)
     .get();
 
-  return cors({
+  return jsonResponse(event, {
     conversation: {
       id: conv._id,
       nickname: conv.nickname,
       unreadByVisitor: conv.unreadByVisitor,
     },
-    messages: msgResult.data.map((m) => ({
-      id: m._id,
-      sender: m.sender,
-      content: m.content,
-      createdAt: m.createdAt,
+    messages: msgResult.data.map((message) => ({
+      id: message._id,
+      sender: message.sender,
+      content: message.content,
+      createdAt: message.createdAt,
     })),
   });
 }
 
 async function handleAdminAuth(event) {
-  if (!verifyAdmin(event)) {
-    return cors({ error: "Unauthorized" }, 401);
+  const adminPassword = process.env.ADMIN_PASSWORD;
+  if (!adminPassword) {
+    return jsonResponse(event, { error: "ADMIN_PASSWORD is not configured" }, 503);
   }
-  return cors({ ok: true });
+
+  const gate = checkRateLimit(
+    `admin-auth:${getClientIp(event)}`,
+    ADMIN_AUTH_WINDOW,
+    ADMIN_AUTH_MAX
+  );
+  if (!gate.allowed) {
+    return jsonResponse(event, { error: "Too many attempts" }, 429);
+  }
+
+  const body = parseBody(event);
+  const password = String(body.password || "");
+  if (!password) {
+    return jsonResponse(event, { error: "password is required" }, 400);
+  }
+
+  if (!safeEqualText(password, adminPassword)) {
+    await delay(800);
+    return jsonResponse(event, { error: "Unauthorized" }, 401);
+  }
+
+  const token = createToken("admin", {}, ADMIN_TOKEN_TTL_MS);
+  return jsonResponse(event, { ok: true, token, expiresInMs: ADMIN_TOKEN_TTL_MS });
 }
 
 async function handleAdminConversations(event) {
-  if (!verifyAdmin(event)) {
-    return cors({ error: "Unauthorized" }, 401);
+  const admin = getAdminSession(event);
+  if (!admin) {
+    return jsonResponse(event, { error: "Unauthorized" }, 401);
   }
 
   const result = await db
@@ -204,25 +581,26 @@ async function handleAdminConversations(event) {
     .limit(100)
     .get();
 
-  return cors({
-    conversations: result.data.map((c) => ({
-      id: c._id,
-      nickname: c.nickname,
-      lastMessageAt: c.lastMessageAt,
-      unreadByAdmin: c.unreadByAdmin,
-      createdAt: c.createdAt,
+  return jsonResponse(event, {
+    conversations: result.data.map((conversation) => ({
+      id: conversation._id,
+      nickname: conversation.nickname,
+      lastMessageAt: conversation.lastMessageAt,
+      unreadByAdmin: conversation.unreadByAdmin,
+      createdAt: conversation.createdAt,
     })),
   });
 }
 
 async function handleAdminMessages(event) {
-  if (!verifyAdmin(event)) {
-    return cors({ error: "Unauthorized" }, 401);
+  const admin = getAdminSession(event);
+  if (!admin) {
+    return jsonResponse(event, { error: "Unauthorized" }, 401);
   }
 
   const { conversationId } = getQuery(event);
   if (!conversationId) {
-    return cors({ error: "conversationId is required" }, 400);
+    return jsonResponse(event, { error: "conversationId is required" }, 400);
   }
 
   await db.collection(CONVERSATIONS).doc(conversationId).update({
@@ -236,32 +614,33 @@ async function handleAdminMessages(event) {
     .limit(200)
     .get();
 
-  return cors({
-    messages: result.data.map((m) => ({
-      id: m._id,
-      sender: m.sender,
-      content: m.content,
-      createdAt: m.createdAt,
+  return jsonResponse(event, {
+    messages: result.data.map((message) => ({
+      id: message._id,
+      sender: message.sender,
+      content: message.content,
+      createdAt: message.createdAt,
     })),
   });
 }
 
 async function handleAdminReply(event) {
-  if (!verifyAdmin(event)) {
-    return cors({ error: "Unauthorized" }, 401);
+  const admin = getAdminSession(event);
+  if (!admin) {
+    return jsonResponse(event, { error: "Unauthorized" }, 401);
   }
 
   const body = parseBody(event);
-  const { conversationId, content } = body;
+  const conversationId = String(body.conversationId || "").trim();
+  const safeContent = normalizeContent(body.content);
 
-  if (!conversationId || !content) {
-    return cors({ error: "conversationId and content are required" }, 400);
+  if (safeContent === null) {
+    return jsonResponse(event, { error: "Content too long" }, 400);
   }
-  if (content.length > MAX_CONTENT_LENGTH) {
-    return cors({ error: "Content too long" }, 400);
+  if (!conversationId || !safeContent) {
+    return jsonResponse(event, { error: "conversationId and content are required" }, 400);
   }
 
-  const safeContent = sanitize(content);
   const now = Date.now();
 
   await db.collection(MESSAGES).add({
@@ -276,7 +655,51 @@ async function handleAdminReply(event) {
     unreadByVisitor: _.inc(1),
   });
 
-  return cors({ ok: true });
+  return jsonResponse(event, { ok: true });
+}
+
+async function handlePermitAuth(event) {
+  const permitCode = process.env.THINGS_PERMIT_CODE;
+  if (!permitCode) {
+    return jsonResponse(event, { error: "THINGS_PERMIT_CODE is not configured" }, 503);
+  }
+
+  const gate = checkRateLimit(
+    `permit-auth:${getClientIp(event)}`,
+    PERMIT_AUTH_WINDOW,
+    PERMIT_AUTH_MAX
+  );
+  if (!gate.allowed) {
+    return jsonResponse(event, { error: "Too many attempts" }, 429);
+  }
+
+  const body = parseBody(event);
+  const code = String(body.code || "").trim();
+  if (!code) {
+    return jsonResponse(event, { error: "code is required" }, 400);
+  }
+
+  if (!safeEqualText(code, permitCode)) {
+    await delay(500);
+    return jsonResponse(event, { error: "Unauthorized" }, 401);
+  }
+
+  const token = createToken("permit", { resource: "things" }, PERMIT_TOKEN_TTL_MS);
+  return jsonResponse(event, { ok: true, token, expiresInMs: PERMIT_TOKEN_TTL_MS });
+}
+
+async function handlePermitContent(event) {
+  const permit = getPermitSession(event);
+  if (!permit || permit.resource !== "things") {
+    return jsonResponse(event, { error: "Unauthorized" }, 401);
+  }
+
+  const items = parseThingsItems();
+  if (items.length === 0) {
+    return jsonResponse(event, { error: "No protected content configured" }, 503);
+  }
+
+  return jsonResponse(event, { ok: true, items });
 }
 
 exports.main = async (event) => {
@@ -284,10 +707,12 @@ exports.main = async (event) => {
   const path = event.path || "";
 
   if (method === "OPTIONS") {
-    return cors({ ok: true });
+    return jsonResponse(event, { ok: true });
   }
 
   const routes = {
+    "POST /analytics/track": handleAnalyticsTrack,
+    "POST /visitor/session": handleVisitorSession,
     "POST /check-nickname": handleCheckNickname,
     "POST /send": handleSend,
     "GET /poll": handlePoll,
@@ -295,19 +720,21 @@ exports.main = async (event) => {
     "GET /admin/conversations": handleAdminConversations,
     "GET /admin/messages": handleAdminMessages,
     "POST /admin/reply": handleAdminReply,
+    "POST /permit/auth": handlePermitAuth,
+    "GET /permit/content": handlePermitContent,
   };
 
   const routeKey = `${method} ${path}`;
   const handler = routes[routeKey];
 
-  if (handler) {
-    try {
-      return await handler(event);
-    } catch (err) {
-      console.error("Handler error:", err);
-      return cors({ error: "Internal server error" }, 500);
-    }
+  if (!handler) {
+    return jsonResponse(event, { error: "Not found" }, 404);
   }
 
-  return cors({ error: "Not found" }, 404);
+  try {
+    return await handler(event);
+  } catch (error) {
+    console.error("Handler error:", error);
+    return jsonResponse(event, { error: "Internal server error" }, 500);
+  }
 };

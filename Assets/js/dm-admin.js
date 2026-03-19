@@ -7,15 +7,24 @@
 
   const API_BASE =
     "https://homepage-1gthisc4771d43ac.service.tcloudbase.com/dm-api";
-  const URL_SECRET_KEY = "banana2026dm";
   const REFRESH_INTERVAL = 15000;
-
+  const SESSION_KEY = "dm_admin_session_token";
   const LS_HIDDEN_CONVS = "dm_admin_hidden_convs";
-  let adminToken = "";
+
+  let adminToken = sessionStorage.getItem(SESSION_KEY) || "";
   let conversations = [];
   let activeConvId = null;
   let chatMessages = [];
   let refreshTimer = null;
+
+  function setAdminToken(token) {
+    adminToken = token || "";
+    if (adminToken) {
+      sessionStorage.setItem(SESSION_KEY, adminToken);
+    } else {
+      sessionStorage.removeItem(SESSION_KEY);
+    }
+  }
 
   function getHiddenConvs() {
     try {
@@ -31,11 +40,6 @@
       hidden.push(convId);
       localStorage.setItem(LS_HIDDEN_CONVS, JSON.stringify(hidden));
     }
-  }
-
-  function checkUrlKey() {
-    const params = new URLSearchParams(window.location.search);
-    return params.get("key") === URL_SECRET_KEY;
   }
 
   function formatTime(ts) {
@@ -57,30 +61,84 @@
 
   async function api(path, options = {}) {
     const url = API_BASE + path;
-    const res = await fetch(url, {
-      ...options,
-      headers: {
-        "Content-Type": "application/json",
-        "x-admin-token": adminToken,
-        ...(options.headers || {}),
-      },
-    });
-    return res.json();
-  }
+    const headers = {
+      "Content-Type": "application/json",
+      ...(options.headers || {}),
+    };
 
-  // --- Auth ---
-
-  function initAuth() {
-    if (!checkUrlKey()) {
-      document.body.innerHTML =
-        '<div style="display:flex;align-items:center;justify-content:center;height:100vh;color:rgba(255,255,255,0.15);font-family:Inter,sans-serif;font-size:13px;">404</div>';
-      return;
+    if (!options.skipAuth && adminToken) {
+      headers.Authorization = `Bearer ${adminToken}`;
     }
 
+    const res = await fetch(url, {
+      ...options,
+      headers,
+    });
+
+    let data = {};
+    try {
+      data = await res.json();
+    } catch {
+      data = {};
+    }
+
+    if (res.status === 401 && !options.skipUnauthorizedHandler) {
+      handleUnauthorized("Session expired, please sign in again.");
+    }
+
+    if (!res.ok) {
+      const err = new Error(data.error || `Request failed (${res.status})`);
+      err.status = res.status;
+      throw err;
+    }
+
+    return data;
+  }
+
+  function showAuthError(message) {
+    const errEl = document.querySelector(".auth-error");
+    if (errEl) errEl.textContent = message || "";
+  }
+
+  function handleUnauthorized(message) {
+    stopAutoRefresh();
+    setAdminToken("");
+    conversations = [];
+    activeConvId = null;
+    chatMessages = [];
+
+    const authScreen = document.getElementById("auth-screen");
+    const layout = document.getElementById("admin-layout");
+    if (layout) layout.classList.remove("visible");
+    if (authScreen) authScreen.style.display = "";
+    showAuthError(message || "Session expired.");
+  }
+
+  function showDashboard() {
+    const authScreen = document.getElementById("auth-screen");
+    const layout = document.getElementById("admin-layout");
+    if (authScreen) authScreen.style.display = "none";
+    if (layout) layout.classList.add("visible");
+  }
+
+  async function bootstrapAuthenticatedView() {
+    showDashboard();
+    await loadConversations();
+    startAutoRefresh();
+  }
+
+  function initAuth() {
     const authScreen = document.getElementById("auth-screen");
     const form = authScreen.querySelector("form");
     const input = authScreen.querySelector(".auth-input");
     const errEl = authScreen.querySelector(".auth-error");
+    const submitBtn = authScreen.querySelector(".auth-btn");
+
+    if (adminToken) {
+      bootstrapAuthenticatedView().catch(() => {
+        handleUnauthorized("Session expired, please sign in again.");
+      });
+    }
 
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
@@ -88,38 +146,41 @@
       if (!pwd) return;
 
       errEl.textContent = "";
-      adminToken = pwd;
+      input.disabled = true;
+      submitBtn.disabled = true;
 
       try {
-        const result = await api("/admin/auth", { method: "POST" });
-        if (result.ok) {
-          authScreen.style.display = "none";
-          document.getElementById("admin-layout").classList.add("visible");
-          loadConversations();
-          startAutoRefresh();
-        } else {
+        const result = await api("/admin/auth", {
+          method: "POST",
+          skipAuth: true,
+          skipUnauthorizedHandler: true,
+          body: JSON.stringify({ password: pwd }),
+        });
+
+        setAdminToken(result.token);
+        input.value = "";
+        await bootstrapAuthenticatedView();
+      } catch (err) {
+        if (err.status === 429) {
+          errEl.textContent = "Too many attempts. Please wait and try again.";
+        } else if (err.status === 401) {
           errEl.textContent = "Password incorrect";
-          adminToken = "";
+        } else {
+          errEl.textContent = "Connection error";
         }
-      } catch {
-        errEl.textContent = "Connection error";
-        adminToken = "";
+        setAdminToken("");
+      } finally {
+        input.disabled = false;
+        submitBtn.disabled = false;
+        input.focus();
       }
     });
   }
 
-  // --- Conversations ---
-
   async function loadConversations() {
-    try {
-      const result = await api("/admin/conversations");
-      if (result.conversations) {
-        conversations = result.conversations;
-        renderConversations();
-      }
-    } catch (err) {
-      console.error("Load conversations error:", err);
-    }
+    const result = await api("/admin/conversations");
+    conversations = Array.isArray(result.conversations) ? result.conversations : [];
+    renderConversations();
   }
 
   function renderConversations() {
@@ -177,22 +238,15 @@
     renderChatArea();
   }
 
-  // --- Messages ---
-
   async function loadMessages(convId) {
-    try {
-      const result = await api(
-        `/admin/messages?conversationId=${encodeURIComponent(convId)}`
-      );
-      if (result.messages) {
-        chatMessages = result.messages;
-        const conv = conversations.find((c) => c.id === convId);
-        if (conv) conv.unreadByAdmin = 0;
-        renderConversations();
-      }
-    } catch (err) {
-      console.error("Load messages error:", err);
-    }
+    const result = await api(
+      `/admin/messages?conversationId=${encodeURIComponent(convId)}`
+    );
+
+    chatMessages = Array.isArray(result.messages) ? result.messages : [];
+    const conv = conversations.find((c) => c.id === convId);
+    if (conv) conv.unreadByAdmin = 0;
+    renderConversations();
   }
 
   function renderChatArea() {
@@ -218,17 +272,7 @@
       </div>
     `;
 
-    const msgContainer = area.querySelector("#chat-messages");
-    msgContainer.innerHTML = chatMessages
-      .map(
-        (m) => `
-        <div class="chat-msg chat-msg--${m.sender}">
-          <div>${escapeHtml(m.content)}</div>
-          <div class="chat-msg-time">${formatTime(m.createdAt)}</div>
-        </div>`
-      )
-      .join("");
-    msgContainer.scrollTop = msgContainer.scrollHeight;
+    renderMessageList();
 
     const input = area.querySelector(".chat-reply-input");
     const btn = area.querySelector(".chat-reply-btn");
@@ -249,6 +293,22 @@
     btn.addEventListener("click", sendReply);
   }
 
+  function renderMessageList() {
+    const msgContainer = document.getElementById("chat-messages");
+    if (!msgContainer) return;
+
+    msgContainer.innerHTML = chatMessages
+      .map(
+        (m) => `
+        <div class="chat-msg chat-msg--${m.sender}">
+          <div>${escapeHtml(m.content)}</div>
+          <div class="chat-msg-time">${formatTime(m.createdAt)}</div>
+        </div>`
+      )
+      .join("");
+    msgContainer.scrollTop = msgContainer.scrollHeight;
+  }
+
   async function sendReply() {
     const input = document.querySelector(".chat-reply-input");
     const btn = document.querySelector(".chat-reply-btn");
@@ -259,7 +319,7 @@
     input.disabled = true;
 
     try {
-      const result = await api("/admin/reply", {
+      await api("/admin/reply", {
         method: "POST",
         body: JSON.stringify({
           conversationId: activeConvId,
@@ -267,61 +327,59 @@
         }),
       });
 
-      if (result.ok) {
-        input.value = "";
-        input.style.height = "auto";
-        await loadMessages(activeConvId);
-        renderChatArea();
-      }
+      input.value = "";
+      input.style.height = "auto";
+      await loadMessages(activeConvId);
+      renderChatArea();
     } catch (err) {
       console.error("Reply error:", err);
     } finally {
       if (input) input.disabled = false;
+      if (btn) btn.disabled = false;
+      if (input) input.focus();
     }
   }
 
-  // --- Auto refresh ---
+  function stopAutoRefresh() {
+    if (refreshTimer) {
+      clearInterval(refreshTimer);
+      refreshTimer = null;
+    }
+  }
 
   function startAutoRefresh() {
+    stopAutoRefresh();
     refreshTimer = setInterval(() => {
-      loadConversations();
+      loadConversations().catch((err) => {
+        console.error("Auto refresh conversations error:", err);
+      });
+
       if (activeConvId) {
-        loadMessages(activeConvId).then(() => {
-          const msgContainer = document.getElementById("chat-messages");
-          if (msgContainer) {
-            const msgs = chatMessages
-              .map(
-                (m) => `
-                <div class="chat-msg chat-msg--${m.sender}">
-                  <div>${escapeHtml(m.content)}</div>
-                  <div class="chat-msg-time">${formatTime(m.createdAt)}</div>
-                </div>`
-              )
-              .join("");
-            msgContainer.innerHTML = msgs;
-            msgContainer.scrollTop = msgContainer.scrollHeight;
-          }
-        });
+        loadMessages(activeConvId)
+          .then(renderMessageList)
+          .catch((err) => {
+            console.error("Auto refresh messages error:", err);
+          });
       }
     }, REFRESH_INTERVAL);
   }
 
-  // --- Utils ---
-
   function escapeHtml(str) {
     const div = document.createElement("div");
-    div.textContent = str;
+    div.textContent = str == null ? "" : String(str);
     return div.innerHTML;
   }
-
-  // --- Init ---
 
   document.addEventListener("DOMContentLoaded", () => {
     initAuth();
 
     const refreshBtn = document.querySelector(".sidebar-refresh");
     if (refreshBtn) {
-      refreshBtn.addEventListener("click", loadConversations);
+      refreshBtn.addEventListener("click", () => {
+        loadConversations().catch((err) => {
+          console.error("Manual refresh error:", err);
+        });
+      });
     }
   });
 })();

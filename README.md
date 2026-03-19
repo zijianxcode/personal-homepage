@@ -6,10 +6,13 @@ Static personal homepage (Work / Info / Things). Dark theme, particle background
 
 ## Latest Update
 
-Updated on 2026-03-18:
-- Added a new external entry in the `Work` section for **JUJUTSU SCI High School**
-- Linked it to [zijianxcode/jujutsu-sci](https://zijianxcode.github.io/jujutsu-sci/)
-- Added a hover interaction with camera-shake instability, red-blue ghosting, and subtle fracture-like particles around the title
+Updated on 2026-03-19:
+- Completed a security hardening pass across DM admin, visitor messaging, protected Things content, and public pages
+- Replaced client-side hardcoded secrets with server-issued signed sessions in CloudBase functions
+- Moved protected Things links out of tracked frontend files and into server-side configuration
+- Added a self-hosted CloudBase visitor UV tracker in shadow mode while temporarily keeping the original third-party counter for comparison
+- Localized `floating-clock` runtime dependencies into `Assets/vendor/` to remove external CDN script execution
+- Expanded build/deploy output to include the full static site structure
 
 ## Run locally
 
@@ -26,6 +29,17 @@ python3 -m http.server 8080
   - **Static**: set build output / root to repo root (serves `index.html` + `Assets/`).
   - **Docker**: use the included `Dockerfile`; it runs `server.py` and serves the site on `PORT` (default 8000).
 - **CloudBase**: `npm run deploy` (requires `TCB_ENV_ID` in `.env`)
+
+## Security Notes
+
+- Do not place access codes, protected links, admin entry keys, or API secrets in tracked frontend files.
+- Public pages must not rely on client-side equality checks for access control.
+- Third-party script execution is prohibited by default; use local vendored assets or server-owned endpoints first.
+- New external dependencies require a security review and a concrete rollback path.
+- Visitor analytics is currently running in shadow mode:
+  - `busuanzi` remains temporarily enabled for comparison.
+  - CloudBase self-hosted UV counting runs in parallel via `Assets/js/analytics.js`.
+  - Remove the third-party counter only after the two data sources are verified to be stable enough for replacement.
 
 ## Structure
 

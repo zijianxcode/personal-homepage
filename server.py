@@ -4,7 +4,13 @@ import http.server
 import socketserver
 
 PORT = int(os.getenv("PORT", "8000"))
-Handler = http.server.SimpleHTTPRequestHandler
 
-with socketserver.TCPServer(("", PORT), Handler) as httpd:
+
+class SecureStaticHandler(http.server.SimpleHTTPRequestHandler):
+    def end_headers(self):
+        self.send_header("X-Content-Type-Options", "nosniff")
+        self.send_header("Referrer-Policy", "strict-origin-when-cross-origin")
+        super().end_headers()
+
+with socketserver.TCPServer(("", PORT), SecureStaticHandler) as httpd:
     httpd.serve_forever()

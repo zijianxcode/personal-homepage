@@ -45,7 +45,9 @@
         var form = overlay.querySelector('.permit-modal-form');
         var input = overlay.querySelector('.permit-modal-input');
         var errorEl = overlay.querySelector('.permit-modal-error');
+        var submitBtn = overlay.querySelector('.permit-modal-btn--primary');
         var closed = false;
+        var pending = false;
 
         function cleanup() {
             if (closed) return;
@@ -74,7 +76,16 @@
             dialog.classList.remove('is-error');
         }
 
+        function setPendingState(isPending) {
+            pending = !!isPending;
+            input.disabled = pending;
+            closeBtn.disabled = pending;
+            cancelBtn.disabled = pending;
+            submitBtn.disabled = pending;
+        }
+
         function onKeydown(event) {
+            if (pending) return;
             if (event.key === 'Escape') {
                 event.preventDefault();
                 cancel();
@@ -84,6 +95,7 @@
         closeBtn.addEventListener('click', cancel);
         cancelBtn.addEventListener('click', cancel);
         overlay.addEventListener('click', function (event) {
+            if (pending) return;
             if (event.target === overlay) {
                 cancel();
             }
@@ -91,18 +103,29 @@
         input.addEventListener('input', clearError);
         form.addEventListener('submit', function (event) {
             event.preventDefault();
+            if (pending) return;
             var value = input.value.trim();
-            var isValid = typeof options.validate === 'function' ? options.validate(value) : !!value;
+            var validationResult = typeof options.validate === 'function' ? options.validate(value) : !!value;
 
-            if (!isValid) {
-                showError(options.errorMessage);
-                return;
-            }
+            setPendingState(true);
+            Promise.resolve(validationResult)
+                .then(function (result) {
+                    var normalized = typeof result === 'object' && result !== null ? result : { ok: !!result };
+                    if (!normalized.ok) {
+                        showError(normalized.errorMessage || options.errorMessage);
+                        setPendingState(false);
+                        return;
+                    }
 
-            cleanup();
-            if (typeof options.onSuccess === 'function') {
-                options.onSuccess(value);
-            }
+                    cleanup();
+                    if (typeof options.onSuccess === 'function') {
+                        options.onSuccess(value, normalized.payload);
+                    }
+                })
+                .catch(function () {
+                    showError(options.errorMessage);
+                    setPendingState(false);
+                });
         });
 
         document.addEventListener('keydown', onKeydown);

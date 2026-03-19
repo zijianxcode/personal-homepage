@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DM Admin</title>
     <meta name="robots" content="noindex, nofollow">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="theme-color" content="#0a0a0a">
     <link rel="icon" type="image/svg+xml" href="Assets/img/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,7 +21,7 @@
     <div class="auth-screen" id="auth-screen">
         <form class="auth-card">
             <div class="auth-title">Admin Access</div>
-            <input class="auth-input" type="password" placeholder="Password" autocomplete="off" />
+            <input class="auth-input" type="password" placeholder="Password" autocomplete="current-password" />
             <button class="auth-btn" type="submit">Verify</button>
             <div class="auth-error"></div>
         </form>

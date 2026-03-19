@@ -7,7 +7,7 @@
   const API_BASE =
     "https://homepage-1gthisc4771d43ac.service.tcloudbase.com/dm-api";
   const POLL_INTERVAL = 10000;
-  const LS_VISITOR_ID = "dm_visitor_id";
+  const LS_VISITOR_TOKEN = "dm_visitor_token";
   const LS_NICKNAME = "dm_nickname";
 
   let pageOpen = false;
@@ -17,20 +17,40 @@
   let sending = false;
   let rainAnim = null;
 
-  function uuid() {
-    return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (c) {
-      const r = (Math.random() * 16) | 0;
-      return (c === "x" ? r : (r & 0x3) | 0x8).toString(16);
-    });
+  function getVisitorToken() {
+    return localStorage.getItem(LS_VISITOR_TOKEN) || "";
   }
 
-  function getVisitorId() {
-    let id = localStorage.getItem(LS_VISITOR_ID);
-    if (!id) {
-      id = uuid();
-      localStorage.setItem(LS_VISITOR_ID, id);
+  function setVisitorToken(token) {
+    if (token) {
+      localStorage.setItem(LS_VISITOR_TOKEN, token);
+    } else {
+      localStorage.removeItem(LS_VISITOR_TOKEN);
     }
-    return id;
+  }
+
+  async function ensureVisitorSession(forceRefresh) {
+    const cached = !forceRefresh ? getVisitorToken() : "";
+    if (cached) return cached;
+
+    const res = await fetch(`${API_BASE}/visitor/session`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+    });
+
+    let data = {};
+    try {
+      data = await res.json();
+    } catch {
+      data = {};
+    }
+
+    if (!res.ok || !data.token) {
+      throw new Error(data.error || "Unable to create visitor session");
+    }
+
+    setVisitorToken(data.token);
+    return data.token;
   }
 
   function getNickname() {
@@ -41,6 +61,12 @@
     localStorage.setItem(LS_NICKNAME, name);
   }
 
+  function escapeHtml(value) {
+    const div = document.createElement("div");
+    div.textContent = value == null ? "" : String(value);
+    return div.innerHTML;
+  }
+
   function formatTime(ts) {
     const d = new Date(ts);
     const pad = (n) => String(n).padStart(2, "0");
@@ -48,12 +74,40 @@
   }
 
   async function api(path, options = {}) {
-    const url = API_BASE + path;
-    const res = await fetch(url, {
+    const headers = {
+      "Content-Type": "application/json",
+      ...(options.headers || {}),
+    };
+
+    if (!options.skipVisitorAuth) {
+      const token = await ensureVisitorSession(options.forceVisitorRefresh);
+      headers.Authorization = `Bearer ${token}`;
+    }
+
+    const res = await fetch(API_BASE + path, {
       ...options,
-      headers: { "Content-Type": "application/json", ...(options.headers || {}) },
+      headers,
     });
-    return res.json();
+
+    let data = {};
+    try {
+      data = await res.json();
+    } catch {
+      data = {};
+    }
+
+    if (res.status === 401 && !options.skipVisitorAuth && !options._retried) {
+      setVisitorToken("");
+      return api(path, { ...options, _retried: true, forceVisitorRefresh: true });
+    }
+
+    if (!res.ok) {
+      const err = new Error(data.error || `Request failed (${res.status})`);
+      err.status = res.status;
+      throw err;
+    }
+
+    return data;
   }
 
   // ===================== Matrix Rain =====================
@@ -79,24 +133,22 @@
 
     resize();
     window.addEventListener("resize", resize);
-    let frame = 0;
 
     function draw() {
       ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
       ctx.fillRect(0, 0, w, h);
-
       ctx.font = fontSize + "px 'Share Tech Mono', monospace";
 
       for (let i = 0; i < columns; i++) {
-        ticks[i]++;
+        ticks[i] += 1;
         if (ticks[i] < intervals[i]) continue;
         ticks[i] = 0;
 
         const char = MATRIX_CHARS[Math.floor(Math.random() * MATRIX_CHARS.length)];
         const x = i * fontSize;
         const y = drops[i] * fontSize;
-
         const brightness = 0.15 + Math.random() * 0.35;
+
         ctx.fillStyle = `rgba(0, 255, 65, ${brightness})`;
         ctx.fillText(char, x, y);
 
@@ -105,6 +157,7 @@
           intervals[i] = Math.floor(1 + Math.random() * 3);
           speeds[i] = 0.85 + Math.random() * 0.55;
         }
+
         drops[i] += speeds[i];
       }
 
@@ -177,7 +230,9 @@
       renderNicknameScreen(body);
     } else {
       renderChat(body);
-      pollMessages();
+      pollMessages().catch((err) => {
+        console.error("Initial DM poll error:", err);
+      });
     }
   }
 
@@ -229,7 +284,7 @@
       try {
         const result = await api("/check-nickname", {
           method: "POST",
-          body: JSON.stringify({ nickname: name, visitorId: getVisitorId() }),
+          body: JSON.stringify({ nickname: name }),
         });
 
         if (result.taken) {
@@ -258,16 +313,22 @@
     const lang = document.body.getAttribute("data-lang") || "en";
     const placeholder =
       lang === "cn"
-        ? "提出你的问题，没有问题也ok，聊聊天也行。"
-        : "Ask a question, or just say hi — anything goes.";
+        ? "> 输入内容，按 Enter 发送..."
+        : "> type your message, press Enter...";
+    const title = getNickname();
 
     container.innerHTML = `
-      <div class="dm-messages"></div>
-      <div class="dm-input-area">
-        <textarea class="dm-input" rows="1" placeholder="${placeholder}" maxlength="2000" spellcheck="false"></textarea>
-        <button class="dm-send-btn" aria-label="Send" disabled>
-          <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-        </button>
+      <div class="dm-chat">
+        <div class="dm-chat-meta">
+          <span class="dm-chat-handle">${escapeHtml(title)}</span>
+        </div>
+        <div class="dm-messages"></div>
+        <div class="dm-input-row">
+          <textarea class="dm-input" rows="1" maxlength="2000" placeholder="${placeholder}" spellcheck="false"></textarea>
+          <button class="dm-send-btn" aria-label="Send" disabled>
+            <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+        </div>
       </div>
     `;
 
@@ -275,7 +336,7 @@
     const sendBtn = container.querySelector(".dm-send-btn");
 
     input.addEventListener("input", () => {
-      sendBtn.disabled = !input.value.trim();
+      sendBtn.disabled = !input.value.trim() || sending;
       input.style.height = "auto";
       input.style.height = Math.min(input.scrollHeight, 120) + "px";
     });
@@ -316,7 +377,7 @@
         .map(
           (m) => `
           <div class="dm-msg dm-msg--${m.sender}">
-            <div class="dm-msg-text">${m.content}</div>
+            <div class="dm-msg-text">${escapeHtml(m.content)}</div>
             <div class="dm-msg-time">${formatTime(m.createdAt)}</div>
           </div>`
         )
@@ -328,7 +389,7 @@
       for (const m of newMsgs) {
         const div = document.createElement("div");
         div.className = `dm-msg dm-msg--${m.sender}`;
-        div.innerHTML = `<div class="dm-msg-text">${m.content}</div><div class="dm-msg-time">${formatTime(m.createdAt)}</div>`;
+        div.innerHTML = `<div class="dm-msg-text">${escapeHtml(m.content)}</div><div class="dm-msg-time">${formatTime(m.createdAt)}</div>`;
         container.appendChild(div);
       }
     }
@@ -352,11 +413,11 @@
       const result = await api("/send", {
         method: "POST",
         body: JSON.stringify({
-          visitorId: getVisitorId(),
           nickname: getNickname(),
           content,
         }),
       });
+
       if (result.ok) {
         input.value = "";
         input.style.height = "auto";
@@ -373,32 +434,29 @@
   }
 
   async function pollMessages() {
-    try {
-      const visitorId = getVisitorId();
-      const result = await api(`/poll?visitorId=${encodeURIComponent(visitorId)}`);
+    const result = await api("/poll");
 
-      if (result.messages) {
-        messages = result.messages;
-        if (pageOpen) renderMessages();
+    messages = Array.isArray(result.messages) ? result.messages : [];
+    if (pageOpen) renderMessages();
 
-        const badge = document.querySelector(".dm-nav-badge");
-        if (badge) {
-          if (!pageOpen && result.conversation && result.conversation.unreadByVisitor > 0) {
-            badge.classList.add("visible");
-          } else {
-            badge.classList.remove("visible");
-          }
-        }
+    const badge = document.querySelector(".dm-nav-badge");
+    if (badge) {
+      if (!pageOpen && result.conversation && result.conversation.unreadByVisitor > 0) {
+        badge.classList.add("visible");
+      } else {
+        badge.classList.remove("visible");
       }
-    } catch (err) {
-      console.error("DM poll error:", err);
     }
   }
 
   function startPolling() {
     stopPolling();
     pollTimer = setInterval(() => {
-      if (pageOpen && getNickname()) pollMessages();
+      if (pageOpen && getNickname()) {
+        pollMessages().catch((err) => {
+          console.error("DM poll error:", err);
+        });
+      }
     }, POLL_INTERVAL);
   }
 
@@ -412,6 +470,8 @@
   // ===================== Init =====================
 
   function init() {
+    localStorage.removeItem("dm_visitor_id");
+
     const navBtn = document.getElementById("dm-nav-btn");
     if (!navBtn) return;
 
@@ -431,7 +491,11 @@
       if (e.key === "Escape" && pageOpen) closePage();
     });
 
-    if (getNickname()) pollMessages();
+    if (getNickname()) {
+      pollMessages().catch((err) => {
+        console.error("Initial DM poll error:", err);
+      });
+    }
   }
 
   if (document.readyState === "loading") {

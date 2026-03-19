@@ -591,6 +591,8 @@
     function initThingsEntryPassword() {
         var entry = document.getElementById('things-permit-entry');
         if (!entry) return;
+        var apiBase = 'https://homepage-1gthisc4771d43ac.service.tcloudbase.com/dm-api';
+        var permitStorageKey = 'things_access_token';
 
         entry.addEventListener('click', function (e) {
             e.preventDefault();
@@ -600,12 +602,43 @@
                     title: '许可代码',
                     description: '输入许可代码后继续访问数字与体验。',
                     placeholder: '代码为本节课的开课日期',
-                    errorMessage: '许可代码错误，请重试。',
+                    errorMessage: '验证失败，请重试。',
                     validate: function (value) {
-                        return value === '20260309';
+                        return fetch(apiBase + '/permit/auth', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ code: value })
+                        }).then(function (res) {
+                            return res.json().catch(function () {
+                                return {};
+                            }).then(function (data) {
+                                if (!res.ok) {
+                                    return {
+                                        ok: false,
+                                        errorMessage: res.status === 429
+                                            ? '尝试次数过多，请稍后再试。'
+                                            : '许可代码错误，请重试。'
+                                    };
+                                }
+
+                                return {
+                                    ok: true,
+                                    payload: data
+                                };
+                            });
+                        }).catch(function () {
+                            return {
+                                ok: false,
+                                errorMessage: '网络错误，请稍后再试。'
+                            };
+                        });
                     },
-                    onSuccess: function () {
-                        sessionStorage.setItem('thingsAccessGranted', '1');
+                    onSuccess: function (_, payload) {
+                        if (payload && payload.token) {
+                            sessionStorage.setItem(permitStorageKey, payload.token);
+                        }
                         window.location.href = entry.getAttribute('href');
                     }
                 });

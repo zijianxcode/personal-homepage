@@ -5,7 +5,7 @@
 项目域名：bananabox.plus
 GitHub 仓库：github.com/zijianxcode/personal-homepage
 创建时间：2026-02-22
-最后更新：2026-03-05
+最后更新：2026-03-19
 
 ================================================================================
                               第一部分：开发时间线
@@ -161,6 +161,38 @@ GitHub 仓库：github.com/zijianxcode/personal-homepage
 - 添加到 Visual Coding 页面卡片
 
 
+六、安全整改与发布基线阶段（2026-03-18 ~ 2026-03-19）
+--------------------------------------------------------------------------------
+
+背景：
+- 本轮安全检查发现多个“功能可用但安全模型不成立”的问题：
+  1. 管理后台入口 key、许可码、受限内容链接曾放在前端/仓库中
+  2. 管理员鉴权缺少服务端会话与登录限流
+  3. 访客私信读取依赖前端可伪造标识
+  4. 公共页面曾存在第三方脚本执行入口
+
+整改内容：
+- 私信系统改为服务端签发短期会话 token
+- 管理后台增加登录限流、失败延迟、`Authorization` 鉴权
+- 受限 Things 内容改为服务端校验许可码后再返回内容
+- 受限链接移出受版本控制的前端文件，改为服务端配置
+- 新增 CloudBase 自建访客 UV 统计，先与原第三方计数并行运行
+- `floating-clock` 页面改为本地 vendored 依赖，不再从外部 CDN 执行脚本
+- 补充本地静态服务安全响应头
+- 构建脚本扩展为完整复制整站静态资源，避免安全修复遗漏到发布产物
+
+原因复盘：
+- 之前更多从“页面是否能工作”出发，而不是从“权限边界是否真实成立”出发
+- 对前端可见信息、第三方脚本、受限内容和发布基线缺少单独的安全审查环节
+- 缺少“先对齐 GitHub main，再改动、再发布”的强制执行习惯
+
+后续强制要求：
+- 任何访问控制、受限内容、后台入口都必须服务端校验
+- 仓库中禁止出现明文访问码、后台 key、真实受限链接
+- 新增第三方脚本前必须先说明原因、风险和回滚方案
+- 每次发布前必须执行安全检查清单，并将结果写入迭代记录
+
+
 ================================================================================
                               第二部分：项目结构演变
 ================================================================================
@@ -178,19 +210,28 @@ GitHub 仓库：github.com/zijianxcode/personal-homepage
 └── （无 README）
 ```
 
-当前结构（2026-03-05）：
+当前结构（2026-03-19）：
 ```
 ├── index.html                          ← 主页（Work/Info/Things 三 Tab）
 ├── visual-coding.html                  ← Visual Coding 子页面
+├── research.html                       ← 学术研究子页面
+├── things-digital-experience.html      ← 受限内容壳页面（服务端校验后动态拉取）
+├── admin-dm.html                       ← 私信后台登录页
 ├── projects/                           ← 独立实验作品
 │   ├── floating-clock.html            ← Three.js 3D 物理时钟
 │   └── kinetic-typography-clock.html   ← 弹簧物理数字时钟
 ├── Assets/
 │   ├── css/style.css                  ← 全局样式 + CSS 变量
 │   ├── js/
-│   │   ├── script.js                  ← Tab 切换、语言切换、粒子背景
+│   │   ├── script.js                  ← Tab 切换、语言切换、粒子背景、许可入口
+│   │   ├── analytics.js               ← CloudBase 访客 UV 影子统计
+│   │   ├── dm-admin.js                ← 后台会话鉴权与管理界面
+│   │   ├── dm-chat.js                 ← 访客私信前端
+│   │   ├── permit-modal.js            ← 许可码异步校验弹窗
+│   │   ├── things-page.js             ← 受限内容动态加载
 │   │   ├── particle-title.js           ← 粒子标题动效
 │   │   └── vc-page.js                 ← Visual Coding 页面逻辑
+│   ├── vendor/three/                  ← 本地 vendored Three.js 依赖
 │   ├── fonts/SixCaps-Regular.ttf
 │   └── img/
 │       ├── favicon.svg
@@ -202,6 +243,8 @@ GitHub 仓库：github.com/zijianxcode/personal-homepage
 ├── .env.example                       ← 环境变量示例
 ├── CNAME                             ← 自定义域名
 ├── deploy-ai-builders.sh             ← AI Builders Space 部署脚本
+├── cloudfunctions/
+│   └── dm-api/                       ← 私信 / 许可内容 / 统计 API
 ├── .gitignore
 ├── .gitattributes                     ← Git LFS 配置
 ├── .cursor/rules/                    ← AI 协作规则
