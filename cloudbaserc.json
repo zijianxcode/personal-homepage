@@ -8,7 +8,11 @@
       "runtime": "Nodejs18.15",
       "timeout": 10,
       "envVariables": {
-        "ADMIN_PASSWORD": "{{env.ADMIN_PASSWORD}}"
+        "ADMIN_PASSWORD": "{{env.ADMIN_PASSWORD}}",
+        "APP_SESSION_SECRET": "{{env.APP_SESSION_SECRET}}",
+        "ALLOWED_ORIGINS": "{{env.ALLOWED_ORIGINS}}",
+        "THINGS_PERMIT_CODE": "{{env.THINGS_PERMIT_CODE}}",
+        "THINGS_CONTENT_JSON": "{{env.THINGS_CONTENT_JSON}}"
       }
     }
   ]
