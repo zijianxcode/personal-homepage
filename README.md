@@ -6,7 +6,7 @@ Static personal homepage (Work / Info / Things). Dark theme, particle background
 
 ## Latest Update
 
-Updated on 2026-03-19:
+Updated on 2026-03-19 (`v1.2`):
 - Completed a security hardening pass across DM admin, visitor messaging, protected Things content, and public pages
 - Replaced client-side hardcoded secrets with server-issued signed sessions in CloudBase functions
 - Moved protected Things links out of tracked frontend files and into server-side configuration
