@@ -1420,7 +1420,7 @@ a:hover {
     height: calc(100% + 34px);
     pointer-events: none;
     opacity: 0;
-    mix-blend-mode: screen;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.18));
     transition: opacity 0.25s ease;
     z-index: 1;
 }
@@ -1595,8 +1595,8 @@ a:hover {
 
 .work-item--research.is-particle-active .research-char {
     animation: none;
-    color: rgba(255, 255, 255, 0.34);
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.2);
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.12);
     filter: none;
     margin-inline: 0.02em;
 }
