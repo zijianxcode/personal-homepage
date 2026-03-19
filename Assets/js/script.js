@@ -544,7 +544,7 @@
         }
 
         function drawConnections() {
-            var maxDistance = 34 + progress * 30;
+            var maxDistance = 26 + progress * 22;
             for (var i = 0; i < particles.length; i++) {
                 var p = particles[i];
                 var links = 0;
@@ -556,12 +556,12 @@
                     var dist = Math.sqrt(dx * dx + dy * dy);
 
                     if (dist < maxDistance) {
-                        var alpha = (1 - dist / maxDistance) * (0.08 + progress * 0.16);
+                        var alpha = (1 - dist / maxDistance) * (0.04 + progress * 0.07);
                         ctx.beginPath();
                         ctx.moveTo(p.x, p.y);
                         ctx.lineTo(p2.x, p2.y);
-                        ctx.strokeStyle = 'rgba(210, 236, 255, ' + alpha.toFixed(3) + ')';
-                        ctx.lineWidth = 0.7;
+                        ctx.strokeStyle = 'rgba(255, 255, 255, ' + alpha.toFixed(3) + ')';
+                        ctx.lineWidth = 0.45;
                         ctx.stroke();
                         links++;
                     }
@@ -611,17 +611,17 @@
                     p.energy = clamp(p.energy - 0.045, 0, 1);
                 }
 
-                var trailAlpha = 0.16 + progress * 0.32 + p.energy * 0.16;
+                var trailAlpha = 0.08 + progress * 0.24 + p.energy * 0.12;
                 ctx.beginPath();
                 ctx.moveTo(p.px, p.py);
                 ctx.lineTo(p.x, p.y);
-                ctx.strokeStyle = 'rgba(222, 244, 255, ' + trailAlpha.toFixed(3) + ')';
-                ctx.lineWidth = p.width + 0.25;
+                ctx.strokeStyle = 'rgba(255, 255, 255, ' + trailAlpha.toFixed(3) + ')';
+                ctx.lineWidth = p.width;
                 ctx.stroke();
 
                 ctx.beginPath();
                 ctx.arc(p.x, p.y, 0.65 + p.width * 0.45, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(255, 255, 255, ' + (0.18 + progress * 0.24 + glow * 0.05).toFixed(3) + ')';
+                ctx.fillStyle = 'rgba(255, 255, 255, ' + (0.10 + progress * 0.18 + glow * 0.03).toFixed(3) + ')';
                 ctx.fill();
             }
 
@@ -683,12 +683,6 @@
                 start(flow);
             });
             flow.addEventListener('pointerleave', function () {
-                stop(flow);
-            });
-            flow.addEventListener('mouseenter', function () {
-                start(flow);
-            });
-            flow.addEventListener('mouseleave', function () {
                 stop(flow);
             });
         });
