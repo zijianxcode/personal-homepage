@@ -1413,22 +1413,6 @@ a:hover {
     overflow: visible;
 }
 
-.research-particle-canvas {
-    position: absolute;
-    inset: -18px -20px -16px;
-    width: calc(100% + 40px);
-    height: calc(100% + 34px);
-    pointer-events: none;
-    opacity: 0;
-    mix-blend-mode: screen;
-    transition: opacity 0.25s ease;
-    z-index: 1;
-}
-
-.work-item--research.is-particle-active .research-particle-canvas {
-    opacity: 1;
-}
-
 .work-item--research:hover {
     opacity: 1;
 }
@@ -1465,7 +1449,6 @@ a:hover {
     isolation: isolate;
     transform: translateZ(0);
     transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), filter 0.35s ease;
-    z-index: 2;
 }
 
 .research-flow::before {
@@ -1591,29 +1574,6 @@ a:hover {
 .work-item--research:focus-visible .research-flow::after {
     opacity: 1;
     transform: scaleX(1);
-}
-
-.work-item--research.is-particle-active .research-char {
-    animation: none;
-    color: rgba(255, 255, 255, 0.34);
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.08);
-    filter: none;
-    margin-inline: 0.02em;
-}
-
-.work-item--research.is-particle-active .research-flow {
-    transform: translateY(-1px);
-    filter: none;
-}
-
-.work-item--research.is-particle-active .research-flow::before {
-    opacity: 0.75;
-    transform: scale(0.98) rotate(0deg);
-}
-
-.work-item--research.is-particle-active .research-flow::after {
-    opacity: 0.75;
-    transform: scaleX(0.94);
 }
 
 .research-flow:hover .research-char:nth-child(4n + 1)::before,
