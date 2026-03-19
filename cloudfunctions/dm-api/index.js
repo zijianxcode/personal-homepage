@@ -264,7 +264,12 @@ function parseThingsItems() {
   if (!raw) return [];
 
   try {
-    let parsed = JSON.parse(raw);
+    let source = raw;
+    if (raw.startsWith("base64:")) {
+      source = Buffer.from(raw.slice("base64:".length), "base64").toString("utf8");
+    }
+
+    let parsed = JSON.parse(source);
     if (typeof parsed === "string") {
       parsed = JSON.parse(parsed);
     }
