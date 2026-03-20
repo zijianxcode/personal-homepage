@@ -20,15 +20,7 @@ function normalizeText(entry) {
 }
 
 (function initDetailPage() {
-    if (!Array.isArray(entries) || !entries.length) return;
-
-    const FILTERS = [
-        { id: 'all', label: '全部' },
-        { id: 'daily', label: '日会讨论' },
-        { id: 'weekly', label: '周会讨论' },
-        { id: 'review', label: '评审会' }
-    ];
-
+    const url = new URL(window.location.href);
     const navRoot = document.getElementById('navList');
     const articleRoot = document.getElementById('content');
     const articleTitle = document.getElementById('articleTitle');
@@ -43,11 +35,32 @@ function normalizeText(entry) {
     const menuToggle = document.getElementById('menuToggle');
     const closeMenu = document.getElementById('closeMenu');
 
+    if (!Array.isArray(entries) || !entries.length) {
+        if (latestMeta) latestMeta.textContent = '暂无记录';
+        if (totalMeta) totalMeta.textContent = '0 条记录';
+        if (currentMeta) currentMeta.textContent = '当前 0/0';
+        if (navRoot) navRoot.innerHTML = '<li class="empty-state">还没有可展示的记录，等你开始打星后这里会自动出现。</li>';
+        if (articleTitle) articleTitle.textContent = pageConfig && pageConfig.title ? pageConfig.title : '暂无记录';
+        if (articleIntro) articleIntro.textContent = pageConfig && pageConfig.subtitle ? pageConfig.subtitle : '暂时还没有内容。';
+        if (articleRoot) articleRoot.innerHTML = '<div class="empty-state">当前页面还没有生成任何记录。</div>';
+        return;
+    }
+
+    const FILTERS = [
+        { id: 'all', label: '全部' },
+        { id: 'weekly', label: '周会讨论' },
+        { id: 'review', label: '评审会' }
+    ];
+
     const state = {
         activeIndex: 0,
         query: '',
         filter: 'all'
     };
+    const requestedFilter = url.searchParams.get('filter');
+    if (requestedFilter && FILTERS.some((filter) => filter.id === requestedFilter)) {
+        state.filter = requestedFilter;
+    }
 
     entries.forEach((entry, index) => {
         entry.title = entry.title || extractHeading(entry.content);
@@ -57,9 +70,27 @@ function normalizeText(entry) {
 
     const availableFilters = FILTERS.filter((filter) => filter.id === 'all' || entries.some((entry) => entry.session_type === filter.id));
     const filterEnabled = availableFilters.filter((filter) => filter.id !== 'all').length > 1;
+    if (!availableFilters.some((filter) => filter.id === state.filter)) {
+        state.filter = 'all';
+    }
 
     if (latestMeta) latestMeta.textContent = `最新记录 ${formatDateLabel(entries[0].date)}`;
     if (totalMeta) totalMeta.textContent = `${entries.length} 条记录`;
+
+    function syncRoute() {
+        const nextUrl = new URL(window.location.href);
+        if (state.filter && state.filter !== 'all' && availableFilters.some((filter) => filter.id === state.filter)) {
+            nextUrl.searchParams.set('filter', state.filter);
+        } else {
+            nextUrl.searchParams.delete('filter');
+        }
+        if (entries[state.activeIndex]) {
+            nextUrl.hash = entries[state.activeIndex].hash;
+        } else {
+            nextUrl.hash = '';
+        }
+        history.replaceState(null, '', `${nextUrl.pathname}${nextUrl.search}${nextUrl.hash}`);
+    }
 
     function countForFilter(filterId) {
         return entries.filter((entry) => {
@@ -105,6 +136,7 @@ function normalizeText(entry) {
                 renderFilterTabs();
                 renderNav();
                 renderArticle(state.activeIndex);
+                syncRoute();
             });
         });
     }
@@ -171,14 +203,15 @@ function normalizeText(entry) {
         }
 
         document.title = `${pageConfig.title} - ${entry.title}`;
+        syncRoute();
     }
 
     function setActive(index, updateHash) {
         state.activeIndex = index;
         renderNav();
         renderArticle(index);
-        if (updateHash && entries[index]) {
-            history.replaceState(null, '', `#${entries[index].hash}`);
+        if (updateHash) {
+            syncRoute();
         }
     }
 
