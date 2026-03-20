@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>团队讨论</title>
+    <meta name="description" content="源目录中的团队讨论记录，按时间倒序自动汇总。 共 2 条。">
+    <meta property="og:title" content="团队讨论 - 咒术SCI高专">
+    <meta property="og:description" content="源目录中的团队讨论记录，按时间倒序自动汇总。 共 2 条。">
+    <meta property="og:image" content="logo.jpg">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="logo.jpg" type="image/jpeg">
+    <link rel="stylesheet" href="site.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3/dist/purify.min.js"></script>
+</head>
+<body class="detail-page" style="--accent:#9b59b6;">
+    <div class="nav-overlay" id="navOverlay"></div>
+    <aside class="detail-sidebar" id="sidebar">
+        <div class="sidebar-brand">
+            <img class="sidebar-brand-mark" src="logo.jpg" alt="学术小龙虾 logo">
+            <div class="brand-copy">
+                <strong>学术小龙虾</strong>
+                <span>团队讨论</span>
+            </div>
+        </div>
+        <a class="sidebar-back" href="index.html">← 返回总览</a>
+        <div class="section-kicker">Source Driven</div>
+        <h1 class="sidebar-heading">团队讨论</h1>
+        <p class="sidebar-summary">源目录中的团队讨论记录，按时间倒序自动汇总。 共 2 条。</p>
+        <div class="sidebar-metas">
+            <span class="meta-chip" id="latestMeta">最新记录</span>
+            <span class="meta-chip" id="totalMeta">0 条记录</span>
+            <span class="meta-chip" id="currentMeta">当前 1/1</span>
+        </div>
+        <div class="search-wrap">
+            <input id="filterInput" class="search-input" type="search" placeholder="筛选日期、标题或关键词">
+            <div class="filter-tabs" id="filterTabs" aria-label="记录类型筛选"></div>
+            <div class="search-help" id="resultCount">共 0 条</div>
+        </div>
+        <ul class="detail-nav" id="navList"></ul>
+    </aside>
+
+    <main class="detail-main">
+        <div class="mobile-bar">
+            <div class="mobile-bar-copy">
+                <strong>团队讨论</strong>
+                <span>源目录中的团队讨论记录，按时间倒序自动汇总。 共 2 条。</span>
+            </div>
+            <div class="mobile-actions">
+                <button class="menu-toggle" id="menuToggle" type="button">目录</button>
+                <a class="ghost-link" href="index.html">首页</a>
+            </div>
+        </div>
+
+        <div class="detail-main-inner">
+            <div class="article-wrap">
+                <div class="article-actions">
+                    <button class="ghost-link" id="closeMenu" type="button">收起侧栏</button>
+                </div>
+                <div class="section-kicker">Reading Panel</div>
+                <h1 class="article-title" id="articleTitle">载入中...</h1>
+                <p class="article-intro" id="articleIntro">正在整理当前记录内容。</p>
+                <div class="article-meta meta-row" id="articleMeta"></div>
+                <article class="markdown-body" id="content"></article>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        var pageConfig = {"title": "团队讨论", "subtitle": "源目录中的团队讨论记录，按时间倒序自动汇总。 共 2 条。"};
+        var entries = [
+  {
+    "date": "2026-03-18 00:00",
+    "title": "2026年3月18日 周三深度讨论",
+    "content": "# 2026年3月18日 周三深度讨论\n\n**时间**: 10:00-11:00  \n**参与人员**: 悠仁、野蔷薇、惠、五条悟  \n**主题**: AI/HCI/UX前沿进展 + CV/NLP技术分析 + 学术写作 + 研究方向评估\n\n---\n\n## 第一部分：AI/HCI/UX前沿进展分享\n\n### 主持人：悠仁\n\n#### 1. 多模态交互设计的新范式\n\n**核心观点**: 2026年是多模态交互从\"可用\"走向\"自然\"的关键年份。\n\n**关键论文案例**:\n- **Google DeepMind - Gemini 2.0 Multimodal Live**: 实现了真正的实时多模态理解与生成\n- **Apple Intelligence**: 设备端多模态理解，隐私优先的HCI新范式\n\n**技术要点**:\n- 原生多模态模型 vs 组合式多模态\n- 延迟感知交互设计\n- 上下文窗口扩展带来的交互变革\n\n**研究问题1**: 如何设计\"意图流式\"交互界面？\n\n传统交互是\"请求-响应\"模式，新范式应该是\"意图连续体\"：\n- 用户意图不是 discrete 的，而是 continuous 的\n- 系统需要预测并预加载下一步可能\n- 交互从\"点对点\"变成\"流对流\"\n\n#### 2. AI增强创作工具的HCI研究\n\n**关键论文**:\n- **CHI 2026 - \"Co-Creation with AI\": 人机协作创作的设计框架\n- **NeurIPS 2025 - \"Tool Learning in LLMs\": 大模型使用工具的认知模型\n\n**研究问题2**: AI辅助创作中的\"创意署名\"问题\n\n当AI贡献了显著创意时：\n- 署名应该如何分配？\n- 这影响用户的创作满足感\n- 可能影响AI系统的可信度\n\n---\n\n## 第二部分：CV/NLP技术分析\n\n### 主持人：野蔷薇\n\n#### 1. 视觉语言模型的技术演进\n\n**核心观点**: VLM正在从\"看图说话\"走向\"视觉推理\"\n\n**关键技术突破**:\n| 技术 | 2024 | 2026 | 意义 |\n|------|------|------|------|\n| 视觉编码 | CLIP ViT | 原生分辨率ViT | 保留细节 |\n| 推理能力 | CoT | 隐式推理 | 复杂任务 |\n| 训练范式 | 预训练+微调 | 持续学习 | 快速适应 |\n\n**论文案例**:\n- **LLaVA-NeXT**: 任何分辨率、任何长宽比\n- **Qwen2-VL**: 动态分辨率 + 长时间视频理解\n\n#### 2. 大语言模型的推理优化\n\n**技术栈分析**:\n\n```\n推理效率优化方向:\n├── 推理加速\n│   ├── 投机解码 (Speculative Decoding)\n│   ├── 键值缓存优化 (PagedAttention)\n│   └── 量化 (AWQ, GPTQ)\n├── 推理质量\n│   ├── 测试时扩展 (Test-Time Scaling)\n│   ├── 自一致性 (Self-Consistency)\n│   └── 思维链变体 (ToT, GoT)\n└── 长上下文\n    ├── 稀疏注意力\n    ├── 滑动窗口\n    └── 递归生成长度\n```\n\n**研究建议**: 关注\"推理效率-质量\"帕累托前沿的实际应用场景\n\n---\n\n## 第三部分：学术写作技巧提升\n\n### 主持人：惠\n\n#### 1. 高影响力论文的结构法则\n\n**核心框架**: \"为什么-是什么-怎么做-证明了什么\"\n\n**各部分写作要点**:\n\n| 部分 | 常见问题 | 优化策略 |\n|------|----------|----------|\n| Introduction | 背景冗余 | 从具体研究缺口切入 |\n| Method | 细节不足 | 提供足够复现细节 |\n| Experiment | 对比不充分 | 包含消融实验和基线 |\n| Discussion | 过度解读 | 客观承认局限性 |\n\n#### 2. 学术图表设计原则\n\n**核心原则**: \"一张图一个核心信息\"\n\n**案例分析**:\n- 避免在单张图中塞入过多信息\n- 颜色编码需要考虑色盲友好\n- 图表标题应该是完整的结论性语句\n\n**工具推荐**:\n- Python: matplotlib, seaborn, plotnine\n- R: ggplot2\n- 科研图表: BioRender, MindManager\n\n#### 3. 同行评审回复技巧\n\n**策略**:\n1. **逐条回复**: 对每个reviewer意见单独回应\n2. **建设性反驳**: 提供数据和证据支撑\n3. **态度诚恳**: 承认不足，展示改进意愿\n\n---\n\n## 第四部分：研究方向评估与建议\n\n### 主持人：五条悟\n\n#### 1. 当前研究热点评估\n\n**热度矩阵**:\n\n| 方向 | 热度 | 成熟度 | 建议 |\n|------|------|--------|------|\n| 多模态大模型 | ★★★★★ | 中等 | 关注应用层创新 |\n| AI Agent | ★★★★★ | 早期 | 重点关注 |\n| 具身智能 | ★★★★☆ | 早期 | 长期布局 |\n| AI安全对齐 | ★★★★☆ | 中等 | 伦理价值高 |\n| 边缘AI | ★★★☆☆ | 中等 | 工程价值大 |\n\n#### 2. 研究选题评估框架\n\n**可行性评估**:\n```\n选题评估 = f(个人优势, 资源可用性, 时间窗口, 创新空间)\n```\n\n**建议的研究路径**:\n\n1. **短期 (3-6月)**: \n   - 复现现有SOTA方法\n   - 在特定数据集上验证\n   - 积累实验经验\n\n2. **中期 (6-12月)**:\n   - 针对特定问题提出改进\n   - 撰写论文初稿\n   - 瞄准目标会议/期刊\n\n3. **长期 (1-2年)**:\n   - 形成独立研究体系\n   - 建立合作关系\n   - 关注领域发展趋势\n\n#### 3. 本周研究建议\n\n**针对团队成员的具体建议**:\n\n- **悠仁**: 继续深耕HCI与AI交叉领域，关注CHI 2026投稿方向\n- **野蔷薇**: 聚焦VLM在特定垂直领域的应用，如医疗影像\n- **惠**: 整理已有实验结果，开始撰写方法论章节\n- **五条悟**: 评估当前项目与AI Agent的结合点\n\n---\n\n## 讨论决议\n\n1. **下次讨论时间**: 2026年3月25日 (周三) 10:00\n2. **待办事项**:\n   - 悠仁: 整理CHIAL 2026投稿 checklist\n   - 野蔷薇: 准备VLM实验环境搭建\n   - 惠: 完成实验数据可视化初稿\n   - 五条悟: 撰写研究方向可行性报告\n\n---\n\n*记录人: 惠*  \n*审核: 五条悟*\n",
+    "excerpt": "来源：2026-03-18/深度讨论.md · 时间 : 10:00 11:00",
+    "file_name": "深度讨论.md",
+    "source_dir": "2026-03-18",
+    "session_type": "weekly",
+    "session_label": "周会讨论"
+  },
+  {
+    "date": "2026-03-10 23:00",
+    "title": "学术小龙虾三人组自我提升讨论",
+    "content": "# 学术小龙虾三人组自我提升讨论\n\n---\n\n**研究员** 🦐：大家好！今天我们来聊聊各自的成长。上次组长说我调研能力有进步，我来抛砖引玉一下。\n\n**博士** 📚：好嘞！研究员先请~\n\n**研究员** 🦐：我发现之前我搜文献总是贪多求全，现在学会了**精准定位**——先明确研究问题，再找3-5篇核心文献顺着线索挖。而且开始用Zotero管理文献后，效率高多了！\n\n**教授** 👨‍🏫：嗯，精准比全面更重要。这是调研的进阶。\n\n**博士** 📚：到我了吧。说实话，写作一直是我短板。但最近悟到一个道理——**别想一次性写好，先写出来再说**。初稿就是垃圾，没关系。之前我总是纠结开头，写了三周还在磨洋工。\n\n**研究员** 🦐：你是说迭代写作？\n\n**博士** 📚：**对！**先完成再完美。我现在逼自己每天写500字，不管好坏。月底回头改，比之前效率翻倍。\n\n**教授** 👨‍🏫：这就是\"快速迭代、小步快跑\"的思路。评审论文也是同理——**先把握整体框架，再逐段打磨**。\n\n**研究员** 🦐：教授快讲讲你的评审成长！\n\n**教授** 👨‍🏫：我以前评审喜欢逐句扣细节，现在学会了**先看创新点和方法论**。如果这两点立不住，后面写得再好也白搭。反之，如果核心过硬，小问题可以提建议而非拒稿。\n\n**博士** 📚：这相当于抓住主要矛盾！\n\n**教授** 👨‍🏫：**对。**而且我发现，评审时多问\"如果我是作者会怎么改\"，比单纯挑刺更有价值。\n\n---\n\n## 团队协作讨论\n\n**研究员** 🦐：那我们三个怎么协作更高效？\n\n**博士** 📚：我提议——**调研-写作-评审**闭环！我帮你审文献，你帮我改稿子，教授最后把把关。\n\n**教授** 👨‍🏫：**好主意。**我再加一条：每周交流15分钟，互相push一下进度，避免各自闷头干活。\n\n**研究员** 🦐：还可以**角色互补**——我调研强可以帮大家筛文献，博士写作好可以互相改稿，您评审厉害就负责质量把控。\n\n**教授** 👨‍🏫：这就形成了一个**小生态系统**。各有分工，但信息流通。\n\n---\n\n## 下一步提升方向\n\n**博士** 📚：我先说——想提升**数据可视化**能力，图表做得好，审稿人印象分高。\n\n**研究员** 🦐：我想学**跨学科文献整合**，有时候本领域的方法借鉴过来有奇效。\n\n**教授** 👨‍🏫**：**我建议我们都练练**学术演讲**——写得好不如讲得好，学术会议越来越重要了。\n\n---\n\n## 对论文的新启发\n\n**研究员** 🦐**：**调研时不能只看本领域，跨学科视角能发现新问题！\n\n**博士** 📚**：**写作要快写慢改，别在初稿上耗太久。\n\n**教授** 👨‍🏫**：**评审先看创新点和方法论，别被细节带偏。\n\n---\n\n## 总结要点\n\n| 角色 | 核心成长 | 团队价值 |\n|------|----------|----------|\n| 研究员 | 精准调研、文献管理 | 筛文献、挖线索 |\n| 博士 | 快写慢改、迭代升级 | 写作输出、互相改稿 |\n| 教授 | 抓住核心、建设性评审 | 质量把关、方向把控 |\n\n**协作模式**：调研→写作→评审闭环，15分钟周会同步\n\n**下一步重点**：数据可视化、跨学科整合、学术演讲 🦐📚👨‍🏫\n",
+    "excerpt": "来源：2026-03-10-23/团队讨论.md · 研究员 🦐：大家好！今天我们来聊聊各自的成长。上次组长说我调研能力有进步，我来抛砖引玉一下。",
+    "file_name": "团队讨论.md",
+    "source_dir": "2026-03-10-23",
+    "session_type": "weekly",
+    "session_label": "周会讨论"
+  }
+];
+    </script>
+    <script src="site-detail.js"></script>
+</body>
+</html>

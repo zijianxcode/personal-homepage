@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日会记录</title>
+    <meta name="description" content="源目录中的日会记录，按时间倒序自动汇总。 共 8 条。">
+    <meta property="og:title" content="日会记录 - 咒术SCI高专">
+    <meta property="og:description" content="源目录中的日会记录，按时间倒序自动汇总。 共 8 条。">
+    <meta property="og:image" content="logo.jpg">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="logo.jpg" type="image/jpeg">
+    <link rel="stylesheet" href="site.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3/dist/purify.min.js"></script>
+</head>
+<body class="detail-page" style="--accent:#88ccff;">
+    <div class="nav-overlay" id="navOverlay"></div>
+    <aside class="detail-sidebar" id="sidebar">
+        <div class="sidebar-brand">
+            <img class="sidebar-brand-mark" src="logo.jpg" alt="学术小龙虾 logo">
+            <div class="brand-copy">
+                <strong>学术小龙虾</strong>
+                <span>日会记录</span>
+            </div>
+        </div>
+        <a class="sidebar-back" href="index.html">← 返回总览</a>
+        <div class="section-kicker">Source Driven</div>
+        <h1 class="sidebar-heading">日会记录</h1>
+        <p class="sidebar-summary">源目录中的日会记录，按时间倒序自动汇总。 共 8 条。</p>
+        <div class="sidebar-metas">
+            <span class="meta-chip" id="latestMeta">最新记录</span>
+            <span class="meta-chip" id="totalMeta">0 条记录</span>
+            <span class="meta-chip" id="currentMeta">当前 1/1</span>
+        </div>
+        <div class="search-wrap">
+            <input id="filterInput" class="search-input" type="search" placeholder="筛选日期、标题或关键词">
+            <div class="filter-tabs" id="filterTabs" aria-label="记录类型筛选"></div>
+            <div class="search-help" id="resultCount">共 0 条</div>
+        </div>
+        <ul class="detail-nav" id="navList"></ul>
+    </aside>
+
+    <main class="detail-main">
+        <div class="mobile-bar">
+            <div class="mobile-bar-copy">
+                <strong>日会记录</strong>
+                <span>源目录中的日会记录，按时间倒序自动汇总。 共 8 条。</span>
+            </div>
+            <div class="mobile-actions">
+                <button class="menu-toggle" id="menuToggle" type="button">目录</button>
+                <a class="ghost-link" href="index.html">首页</a>
+            </div>
+        </div>
+
+        <div class="detail-main-inner">
+            <div class="article-wrap">
+                <div class="article-actions">
+                    <button class="ghost-link" id="closeMenu" type="button">收起侧栏</button>
+                </div>
+                <div class="section-kicker">Reading Panel</div>
+                <h1 class="article-title" id="articleTitle">载入中...</h1>
+                <p class="article-intro" id="articleIntro">正在整理当前记录内容。</p>
+                <div class="article-meta meta-row" id="articleMeta"></div>
+                <article class="markdown-body" id="content"></article>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        var pageConfig = {"title": "日会记录", "subtitle": "源目录中的日会记录，按时间倒序自动汇总。 共 8 条。"};
+        var entries = [
+  {
+    "date": "2026-03-19 09:00",
+    "title": "日会记录 — 2026-03-19",
+    "content": "# 日会记录 — 2026-03-19\n\n**时间：** 2026-03-19 09:00（北京时间）\n**地点：** ~/Library/Mobile Documents/com~apple~CloudDocs/sci/2026sci1/学术小龙虾/2026-03-19/\n\n---\n\n## 1. 悠仁：今日调研心得\n\n（待填写）\n\n---\n\n## 2. 野蔷薇：今日分析发现\n\n（待填写）\n\n---\n\n## 3. 惠：今日写作进步\n\n（待填写）\n\n---\n\n## 4. 五条悟：今日评审洞察\n\n（待填写）\n\n---\n\n*记录生成时间：2026-03-19 09:24（北京时间）*\n",
+    "excerpt": "来源：2026-03-19/日会记录.md · 时间： 2026 03 19 09:00（北京时间）",
+    "file_name": "日会记录.md",
+    "source_dir": "2026-03-19",
+    "session_type": "daily",
+    "session_label": "日会讨论"
+  },
+  {
+    "date": "2026-03-18 00:00",
+    "title": "2026-03-18 日会记录",
+    "content": "# 2026-03-18 日会记录\n\n**日期**: 2026-03-18  \n**时间**: 北京时间 9:00\n\n---\n\n## 1. 悠仁：今日调研心得\n\n（待记录）\n\n---\n\n## 2. 野蔷薇：今日分析发现\n\n（待记录）\n\n---\n\n## 3. 惠：今日写作进步\n\n（待记录）\n\n---\n\n## 4. 五条悟：今日评审洞察\n\n（待记录）\n\n---\n\n## 今日总结\n\n（待补充）\n\n---\n\n*此文件由自动cron任务生成*\n",
+    "excerpt": "来源：2026-03-18/日会记录.md · 日期 : 2026 03 18",
+    "file_name": "日会记录.md",
+    "source_dir": "2026-03-18",
+    "session_type": "daily",
+    "session_label": "日会讨论"
+  },
+  {
+    "date": "2026-03-17 00:00",
+    "title": "2026-03-17 日会记录",
+    "content": "# 2026-03-17 日会记录\n\n**时间**：2026年3月17日 9:00 (北京时间)\n\n---\n\n## 四人团队每日学习总结\n\n### 1. 悠仁：今日调研心得\n\n（待记录）\n\n---\n\n### 2. 野蔷薇：今日分析发现\n\n（待记录）\n\n---\n\n### 3. 惠：今日写作进步\n\n（待记录）\n\n---\n\n### 4. 五条悟：今日评审洞察\n\n（待记录）\n\n---\n\n*备注：请各成员填写今日心得*\n",
+    "excerpt": "来源：2026-03-17/日会记录.md · 时间 ：2026年3月17日 9:00 (北京时间)",
+    "file_name": "日会记录.md",
+    "source_dir": "2026-03-17",
+    "session_type": "daily",
+    "session_label": "日会讨论"
+  },
+  {
+    "date": "2026-03-16 00:00",
+    "title": "2026-03-16 日会记录",
+    "content": "# 2026-03-16 日会记录\n\n**时间：** 2026年3月16日 9:00 (北京时间)\n\n---\n\n## 四人团队每日学习总结\n\n### 1. 悠仁：今日调研心得\n_（待补充）_\n\n---\n\n### 2. 野蔷薇：今日分析发现\n_（待补充）_\n\n---\n\n### 3. 惠：今日写作进步\n_（待补充）_\n\n---\n\n### 4. 五条悟：今日评审洞察\n_（待补充）_\n\n---\n\n*注：请各成员补充今日学习心得与发现*\n",
+    "excerpt": "来源：2026-03-16/日会记录.md · 时间： 2026年3月16日 9:00 (北京时间)",
+    "file_name": "日会记录.md",
+    "source_dir": "2026-03-16",
+    "session_type": "daily",
+    "session_label": "日会讨论"
+  },
+  {
+    "date": "2026-03-15 09:00",
+    "title": "2026-03-15 日会记录",
+    "content": "# 2026-03-15 日会记录\n\n## 四人团队每日学习总结\n\n### 1. 悠仁：今日调研心得\n（待记录）\n\n### 2. 野蔷薇：今日分析发现\n（待记录）\n\n### 3. 惠：今日写作进步\n（待记录）\n\n### 4. 五条悟：今日评审洞察\n（待记录）\n\n---\n*记录时间：2026-03-15 09:00 (北京时间)*\n",
+    "excerpt": "来源：2026-03-15/日会记录.md · （待记录）",
+    "file_name": "日会记录.md",
+    "source_dir": "2026-03-15",
+    "session_type": "daily",
+    "session_label": "日会讨论"
+  },
+  {
+    "date": "2026-03-14 00:00",
+    "title": "2026-03-14 日会记录",
+    "content": "# 2026-03-14 日会记录\n\n**时间：** 2026年3月14日 9:00 (北京时间)\n\n**参会：** 悠仁、野蔷薇、惠、五条悟\n\n---\n\n## 1. 悠仁：今日调研心得\n\n\n\n## 2. 野蔷薇：今日分析发现\n\n\n\n## 3. 惠：今日写作进步\n\n\n\n## 4. 五条悟：今日评审洞察\n\n\n\n---\n\n*备注：*\n",
+    "excerpt": "来源：2026-03-14/日会记录.md · 时间： 2026年3月14日 9:00 (北京时间)",
+    "file_name": "日会记录.md",
+    "source_dir": "2026-03-14",
+    "session_type": "daily",
+    "session_label": "日会讨论"
+  },
+  {
+    "date": "2026-03-13 00:00",
+    "title": "2026-03-13 日会记录",
+    "content": "# 2026-03-13 日会记录\n\n**日期：** 2026-03-13  \n**时间：** 北京时间 9:00 AM\n\n---\n\n## 四人团队每日学习总结\n\n### 1. 悠仁：今日调研心得\n_(待补充)_\n\n### 2. 野蔷薇：今日分析发现\n_(待补充)_\n\n### 3. 惠：今日写作进步\n_(待补充)_\n\n### 4. 五条悟：今日评审洞察\n_(待补充)_\n\n---\n\n*备注：请各成员填写今日学习心得与发现*\n",
+    "excerpt": "来源：2026-03-13/日会记录.md · 日期： 2026 03 13",
+    "file_name": "日会记录.md",
+    "source_dir": "2026-03-13",
+    "session_type": "daily",
+    "session_label": "日会讨论"
+  },
+  {
+    "date": "2026-03-12 00:00",
+    "title": "2026-03-12 日会记录",
+    "content": "# 2026-03-12 日会记录\n\n**日期**: 2026-03-12\n**时间**: 北京时间 9:00 AM\n\n---\n\n## 四人团队每日学习总结\n\n### 悠仁：今日调研心得\n-\n\n### 野蔷薇：今日分析发现\n-\n\n### 惠：今日写作进步\n-\n\n### 五条悟：今日评审洞察\n\n---\n\n*备注：*\n",
+    "excerpt": "来源：2026-03-12/日会记录.md · 日期 : 2026 03 12",
+    "file_name": "日会记录.md",
+    "source_dir": "2026-03-12",
+    "session_type": "daily",
+    "session_label": "日会讨论"
+  }
+];
+    </script>
+    <script src="site-detail.js"></script>
+</body>
+</html>
