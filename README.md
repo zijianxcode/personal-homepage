@@ -30,6 +30,35 @@ python3 -m http.server 8080
   - **Docker**: use the included `Dockerfile`; it runs `server.py` and serves the site on `PORT` (default 8000).
 - **CloudBase**: `npm run deploy` (requires `TCB_ENV_ID` in `.env`)
 
+## academy Sync Rule
+
+`academy/` is a mirrored static subsite copied from the academic project:
+- Source project:
+  `/Users/zijian/Library/Mobile Documents/com~apple~CloudDocs/SCI/学术小龙虾-web`
+- Production URL:
+  [https://bananabox.plus/academy/](https://bananabox.plus/academy/)
+
+Important:
+- Updating `jujutsu-sci` alone does **not** update `bananabox.plus/academy/`
+- Updating local `academy/` files alone does **not** update production either
+
+Any academy update must complete all three steps:
+1. Regenerate the academic site locally in `学术小龙虾-web`
+2. Sync the generated static files into this repo's `academy/` directory and push this repo
+3. Redeploy CloudBase with the latest `academy/` included in `.cloudbase-deploy/`
+
+Recommended CloudBase publish pattern:
+```bash
+cd /tmp/personal-homepage-preview
+rm -rf .cloudbase-deploy
+mkdir -p .cloudbase-deploy
+cp *.html CNAME .cloudbase-deploy/
+cp -r Assets projects documents academy .cloudbase-deploy/
+TCB_ENV_ID='homepage-1gthisc4771d43ac' \
+  npm exec --yes --package @cloudbase/cli@2.12.2 -- \
+  tcb hosting deploy .cloudbase-deploy .
+```
+
 ## Security Notes
 
 - Do not place access codes, protected links, admin entry keys, or API secrets in tracked frontend files.
