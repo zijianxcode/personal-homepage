@@ -41,12 +41,13 @@ python3 -m http.server 8080
 Important:
 - Updating `jujutsu-sci` alone does **not** update `bananabox.plus/academy/`
 - Updating local `academy/` files alone does **not** update production either
+- As of 2026-03-23, `bananabox.plus` is currently served by GitHub Pages (`main /`), so academy production refresh depends on this repo being pushed and Pages rebuilding successfully
 - Local sync, validation, and deploy package preparation can happen first, but GitHub push and CloudBase production publish require explicit user confirmation
 
 Any academy update must complete all three steps:
 1. Regenerate the academic site locally in `学术小龙虾-web`
 2. Sync the generated static files into this repo's `academy/` directory and push this repo
-3. Redeploy CloudBase with the latest `academy/` included in `.cloudbase-deploy/`
+3. Verify GitHub Pages has rebuilt `bananabox.plus`; if CloudBase is still used in parallel, redeploy CloudBase separately with the latest `academy/`
 
 Recommended CloudBase publish pattern:
 ```bash
