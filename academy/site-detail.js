@@ -15,8 +15,17 @@ function formatDateLabel(value) {
     return value.replace('T', ' ');
 }
 
+function normalizeSearchText(value) {
+    return String(value || '')
+        .toLowerCase()
+        .replace(/["'`“”‘’]/g, ' ')
+        .replace(/[-–—_:：/.,!?()[\]{}]/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+}
+
 function normalizeText(entry) {
-    return `${entry.date || ''} ${entry.title || ''} ${entry.content || ''} ${entry.source_dir || ''} ${entry.file_name || ''} ${entry.session_label || ''}`.toLowerCase();
+    return normalizeSearchText(`${entry.date || ''} ${entry.title || ''} ${entry.content || ''} ${entry.source_dir || ''} ${entry.file_name || ''} ${entry.session_label || ''}`);
 }
 
 (function initDetailPage() {
@@ -58,8 +67,12 @@ function normalizeText(entry) {
         filter: 'all'
     };
     const requestedFilter = url.searchParams.get('filter');
+    const requestedSearch = normalizeSearchText(url.searchParams.get('search') || '');
     if (requestedFilter && FILTERS.some((filter) => filter.id === requestedFilter)) {
         state.filter = requestedFilter;
+    }
+    if (requestedSearch) {
+        state.query = requestedSearch;
     }
 
     entries.forEach((entry, index) => {
@@ -84,6 +97,11 @@ function normalizeText(entry) {
         } else {
             nextUrl.searchParams.delete('filter');
         }
+        if (state.query) {
+            nextUrl.searchParams.set('search', filterInput ? filterInput.value.trim() : state.query);
+        } else {
+            nextUrl.searchParams.delete('search');
+        }
         if (entries[state.activeIndex]) {
             nextUrl.hash = entries[state.activeIndex].hash;
         } else {
@@ -95,7 +113,7 @@ function normalizeText(entry) {
     function countForFilter(filterId) {
         return entries.filter((entry) => {
             const matchesFilter = filterId === 'all' ? true : entry.session_type === filterId;
-            const matchesQuery = !state.query || entry.searchText.includes(state.query);
+            const matchesQuery = !state.query || state.query.split(' ').every((token) => entry.searchText.includes(token));
             return matchesFilter && matchesQuery;
         }).length;
     }
@@ -105,7 +123,7 @@ function normalizeText(entry) {
             .map((entry, index) => ({ entry, index }))
             .filter(({ entry }) => {
                 const matchesFilter = !filterEnabled || state.filter === 'all' ? true : entry.session_type === state.filter;
-                const matchesQuery = !state.query || entry.searchText.includes(state.query);
+                const matchesQuery = !state.query || state.query.split(' ').every((token) => entry.searchText.includes(token));
                 return matchesFilter && matchesQuery;
             });
     }
@@ -231,8 +249,11 @@ function normalizeText(entry) {
     }
 
     if (filterInput) {
+        if (state.query) {
+            filterInput.value = url.searchParams.get('search') || '';
+        }
         filterInput.addEventListener('input', (event) => {
-            state.query = event.target.value.trim().toLowerCase();
+            state.query = normalizeSearchText(event.target.value);
             const visible = visibleEntries();
             if (visible.length && !visible.some(({ index }) => index === state.activeIndex)) {
                 state.activeIndex = visible[0].index;
