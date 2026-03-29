@@ -282,6 +282,99 @@ a:hover {
     font-size: 14px;
 }
 
+.work-item--coming-soon {
+    position: relative;
+    overflow: visible;
+    opacity: 1;
+}
+
+.work-item--coming-soon::before {
+    display: none;
+}
+
+.work-item--coming-soon::after {
+    content: '02';
+    position: absolute;
+    right: 0;
+    top: 18px;
+    font-family: 'Share Tech Mono', 'Courier New', Courier, monospace;
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    color: rgba(255, 171, 112, 0.42);
+}
+
+.work-item--coming-soon .work-name {
+    display: inline-block;
+    margin-top: 0;
+    padding: 0;
+    font-family: 'Inter', 'Arial Narrow', 'Helvetica Neue Condensed', sans-serif;
+    font-style: normal;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: rgba(142, 44, 44, 0.92);
+    line-height: 1;
+}
+
+.work-item--coming-soon .work-type {
+    font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'MS PMincho', 'Noto Serif JP', serif;
+    font-style: normal;
+    font-size: clamp(18px, 2.05vw, 32px);
+    font-weight: 700;
+    text-transform: none;
+    letter-spacing: 0.08em;
+    line-height: 0.96;
+    color: #f2c94c;
+    text-shadow: 0 0 14px rgba(242, 201, 76, 0.06);
+    font-feature-settings: "palt" 1;
+}
+
+.work-item--coming-soon .work-name.lang-cn {
+    font-family: 'Inter', 'Arial Narrow', 'Helvetica Neue Condensed', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+}
+
+.work-item--coming-soon .work-type.lang-cn {
+    font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'MS PMincho', 'Noto Serif JP', serif;
+    text-transform: none;
+    letter-spacing: 0.08em;
+}
+
+.work-item--coming-soon .eva-char {
+    display: inline-block;
+    color: inherit;
+    transition: color 0.22s ease, text-shadow 0.22s ease, transform 0.22s ease;
+}
+
+.work-item--coming-soon .eva-char--space {
+    width: 0.38em;
+}
+
+.work-item--coming-soon:hover .eva-char,
+.work-item--coming-soon:focus-visible .eva-char {
+    transform: translateY(-0.01em);
+}
+
+.work-item--coming-soon:hover .eva-char--purple,
+.work-item--coming-soon:focus-visible .eva-char--purple {
+    color: #8d69dd;
+    text-shadow: 0 0 10px rgba(141, 105, 221, 0.18);
+}
+
+.work-item--coming-soon:hover .eva-char--green,
+.work-item--coming-soon:focus-visible .eva-char--green {
+    color: #43db72;
+    text-shadow: 0 0 10px rgba(67, 219, 114, 0.16);
+}
+
+.work-item--coming-soon:hover .eva-char--yellow,
+.work-item--coming-soon:focus-visible .eva-char--yellow {
+    color: #f0cf5b;
+    text-shadow: 0 0 10px rgba(240, 207, 91, 0.14);
+}
+
 .work-type {
     font-size: 20px;
     font-weight: 700;
@@ -1414,6 +1507,7 @@ a:hover {
 /* Research — terminal type hover */
 .work-item--research {
     overflow: visible;
+    font-size: 1.2em;
 }
 
 .work-item--research:hover {

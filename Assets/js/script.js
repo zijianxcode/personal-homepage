@@ -437,6 +437,58 @@
         });
     }
 
+    function initComingSoonEvaEffect() {
+        var item = document.querySelector('.work-item--coming-soon');
+        if (!item) return;
+
+        var textEls = item.querySelectorAll('.work-name, .work-type');
+        if (!textEls.length) return;
+
+        function colorClassFromRoll(roll) {
+            if (roll < 0.6) return 'eva-char--purple';
+            if (roll < 0.9) return 'eva-char--green';
+            return 'eva-char--yellow';
+        }
+
+        function wrapChars(el) {
+            if (el.dataset.evaReady === '1') return;
+
+            var chars = el.textContent.split('');
+            el.innerHTML = chars.map(function (ch) {
+                if (ch === ' ') {
+                    return '<span class="eva-char eva-char--space"> </span>';
+                }
+                return '<span class="eva-char">' + ch + '</span>';
+            }).join('');
+            el.dataset.evaReady = '1';
+        }
+
+        function randomizeChars() {
+            textEls.forEach(function (el) {
+                el.querySelectorAll('.eva-char').forEach(function (span) {
+                    span.classList.remove('eva-char--purple', 'eva-char--green', 'eva-char--yellow');
+                    if (span.classList.contains('eva-char--space')) return;
+                    span.classList.add(colorClassFromRoll(Math.random()));
+                });
+            });
+        }
+
+        function resetChars() {
+            textEls.forEach(function (el) {
+                el.querySelectorAll('.eva-char').forEach(function (span) {
+                    span.classList.remove('eva-char--purple', 'eva-char--green', 'eva-char--yellow');
+                });
+            });
+        }
+
+        textEls.forEach(wrapChars);
+
+        item.addEventListener('mouseenter', randomizeChars);
+        item.addEventListener('focusin', randomizeChars);
+        item.addEventListener('mouseleave', resetChars);
+        item.addEventListener('focusout', resetChars);
+    }
+
     // ==========================================
     // Info 分区滚动触发 TextScramble
     // 仅在元素进入视口时播放，且每个元素只播放一次
@@ -662,6 +714,7 @@
             }
 
             initVisualCodingEffect();
+            initComingSoonEvaEffect();
             initSciGhostEffect();
             initInfoSectionScramble();
         } catch (err) {
