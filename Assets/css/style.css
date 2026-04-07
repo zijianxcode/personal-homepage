@@ -2117,6 +2117,14 @@ a:hover {
     opacity: 0.7;
 }
 
+.research-item--static {
+    cursor: default;
+}
+
+.research-item--static:hover {
+    opacity: 1;
+}
+
 .research-item:first-child {
     padding-top: 0;
 }
