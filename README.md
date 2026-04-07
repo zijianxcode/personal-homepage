@@ -30,6 +30,21 @@ python3 -m http.server 8080
   - **Docker**: use the included `Dockerfile`; it runs `server.py` and serves the site on `PORT` (default 8000).
 - **CloudBase**: `npm run deploy` (requires `TCB_ENV_ID` in `.env`)
 
+## New Project Path Rule
+
+Any new site project added under this homepage must ship under the main domain as:
+
+- `https://bananabox.plus/<project-slug>/`
+
+Do not use temporary provider domains such as `*.tcloudbaseapp.com`, `*.app.tcloudbase.com`, or `vercel.app` as the public production entry linked from the site.
+
+Required pattern:
+
+1. Put the published static output in a repo-root folder named after the slug, e.g. `time-ink/`
+2. Ensure `npm run build` and `npm run deploy` include that folder
+3. Link the project detail page CTA to `../<project-slug>/` so the live button resolves to the main-domain path
+4. Verify the production URL on `bananabox.plus/<project-slug>/` after each publish
+
 ## academy Sync Rule
 
 `academy/` is a mirrored static subsite copied from the academic project:

@@ -274,6 +274,28 @@ Bundle     | < 200KB    | Bundle analyzer
 11. [ ] 若引入自建与第三方并行方案，必须先影子运行并记录对比结果
 
 
+## 新项目接入与正式路径规则（强制）
+
+以后新增站内项目时，正式访问路径必须统一使用主域名子路径：
+
+- 正式路径格式：`https://bananabox.plus/<project-slug>/`
+- 禁止把 `*.tcloudbaseapp.com`、`*.app.tcloudbase.com`、`vercel.app` 等测试/临时域名作为站内正式入口
+- 项目详情页中的体验按钮，也必须优先指向 `bananabox.plus/<project-slug>/`
+
+标准接入方式：
+
+1. 为每个新项目分配唯一 `project-slug`
+2. 将可发布静态文件落到仓库根目录同名文件夹：`/<project-slug>/`
+3. 保证主站构建与部署脚本包含该目录
+4. 项目详情页或二级页中的体验入口统一链接到 `../<project-slug>/` 或 `/<project-slug>/` 对应正式路径
+5. 发布后优先验证 `https://bananabox.plus/<project-slug>/`，而不是临时测试域名
+
+例：
+
+- `Time-INK` 正式路径应为 `https://bananabox.plus/time-ink/`
+- 不应把 `https://homepage-...tcloudbaseapp.com/time-ink/` 作为对外正式地址
+
+
 
 --------------------------------------------------------------------------------
                               第三部分：协作规范

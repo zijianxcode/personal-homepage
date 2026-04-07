@@ -90,6 +90,17 @@
 
 ---
 
+## 新项目正式路径规则
+
+- 以后新增站内项目时，正式访问路径统一使用主域名子路径：`https://bananabox.plus/<project-slug>/`
+- 不把 `*.tcloudbaseapp.com`、`*.app.tcloudbase.com`、`vercel.app` 等临时或测试域名写成站内正式入口
+- 新项目的可发布静态产物应落在仓库根目录同名文件夹，例如 `time-ink/`
+- `build` / `deploy` 脚本必须包含该目录
+- 项目详情页中的体验按钮默认链接到 `../<project-slug>/` 或 `/<project-slug>/`
+- 发布后优先验证 `bananabox.plus/<project-slug>/` 是否生效，而不是只验证临时测试域名
+
+---
+
 ## 关联规则
 
 - 视觉系统 → `design-system.md`
