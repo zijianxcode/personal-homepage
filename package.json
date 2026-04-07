@@ -4,8 +4,8 @@
   "private": true,
   "description": "Static personal homepage",
   "scripts": {
-    "deploy": "mkdir -p .cloudbase-deploy && cp *.html CNAME .cloudbase-deploy/ && cp -r Assets projects documents academy time-ink .cloudbase-deploy/ && tcb hosting deploy .cloudbase-deploy .",
-    "build": "mkdir -p dist && cp *.html CNAME dist/ && cp -r Assets projects documents academy time-ink dist/"
+    "deploy": "mkdir -p .cloudbase-deploy && cp *.html CNAME .nojekyll .cloudbase-deploy/ && cp -r Assets projects documents academy time-ink .cloudbase-deploy/ && tcb hosting deploy .cloudbase-deploy .",
+    "build": "mkdir -p dist && cp *.html CNAME .nojekyll dist/ && cp -r Assets projects documents academy time-ink dist/"
   },
   "devDependencies": {
     "@cloudbase/cli": "^2.12.2"
