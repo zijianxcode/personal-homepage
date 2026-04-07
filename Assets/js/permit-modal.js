@@ -1,13 +1,31 @@
 (function () {
     'use strict';
 
+    function escapeAttr(str) {
+        return String(str)
+            .replace(/&/g, '&amp;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#x27;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;');
+    }
+
+    function escapeHtml(str) {
+        return String(str)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#x27;');
+    }
+
     function createModalHtml(options) {
-        var contextLabel = options.contextLabel || 'Digital & Experience';
-        var title = options.title || '许可代码';
-        var description = options.description || '输入许可代码后继续访问。';
-        var submitLabel = options.submitLabel || '进入';
-        var cancelLabel = options.cancelLabel || '取消';
-        var placeholder = options.placeholder || '请输入许可代码';
+        var contextLabel = escapeHtml(options.contextLabel || 'Digital & Experience');
+        var title = escapeHtml(options.title || '许可代码');
+        var description = escapeHtml(options.description || '输入许可代码后继续访问。');
+        var submitLabel = escapeHtml(options.submitLabel || '进入');
+        var cancelLabel = escapeHtml(options.cancelLabel || '取消');
+        var placeholder = escapeAttr(options.placeholder || '请输入许可代码');
 
         return '' +
             '<div class="permit-modal-overlay" data-permit-overlay>' +

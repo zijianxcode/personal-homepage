@@ -18,14 +18,14 @@
   let rainAnim = null;
 
   function getVisitorToken() {
-    return localStorage.getItem(LS_VISITOR_TOKEN) || "";
+    return sessionStorage.getItem(LS_VISITOR_TOKEN) || "";
   }
 
   function setVisitorToken(token) {
     if (token) {
-      localStorage.setItem(LS_VISITOR_TOKEN, token);
+      sessionStorage.setItem(LS_VISITOR_TOKEN, token);
     } else {
-      localStorage.removeItem(LS_VISITOR_TOKEN);
+      sessionStorage.removeItem(LS_VISITOR_TOKEN);
     }
   }
 
@@ -54,11 +54,11 @@
   }
 
   function getNickname() {
-    return localStorage.getItem(LS_NICKNAME) || "";
+    return sessionStorage.getItem(LS_NICKNAME) || "";
   }
 
   function setNickname(name) {
-    localStorage.setItem(LS_NICKNAME, name);
+    sessionStorage.setItem(LS_NICKNAME, name);
   }
 
   function escapeHtml(value) {
@@ -470,7 +470,7 @@
   // ===================== Init =====================
 
   function init() {
-    localStorage.removeItem("dm_visitor_id");
+    sessionStorage.removeItem("dm_visitor_id");
 
     const navBtn = document.getElementById("dm-nav-btn");
     if (!navBtn) return;
