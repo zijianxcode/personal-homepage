@@ -318,7 +318,8 @@
 
 /* Input area */
 
-.dm-input-area {
+.dm-input-area,
+.dm-input-row {
     padding: 16px 60px 32px;
     display: flex;
     gap: 12px;
@@ -400,7 +401,8 @@
         padding: 20px;
     }
 
-    .dm-input-area {
+    .dm-input-area,
+    .dm-input-row {
         padding: 14px 20px 24px;
     }
 
