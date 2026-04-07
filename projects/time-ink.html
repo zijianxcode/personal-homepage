@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time-INK — zijian</title>
+
+    <meta name="description" content="Time-INK — an immersive timed-writing tool designed to reduce switching costs and bring attention back to the current sprint.">
+    <meta name="robots" content="index, follow">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="theme-color" content="#0a0a0a">
+    <link rel="icon" type="image/svg+xml" href="../Assets/img/favicon.svg">
+    <link rel="apple-touch-icon" href="../Assets/img/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../Assets/css/style.css?v=20260329-eva-coming-soon">
+</head>
+
+<body data-lang="en">
+
+    <div id="canvas-container"></div>
+
+    <header class="site-header">
+        <nav class="nav-links">
+            <a href="../index.html#work" class="nav-link">Work</a>
+            <a href="../index.html#info" class="nav-link">Info</a>
+            <a href="../index.html#things" class="nav-link">Things</a>
+        </nav>
+        <div class="nav-right">
+            <div class="lang-switch">
+                <button class="lang-btn" data-lang="en">EN</button>
+                <span class="lang-divider">/</span>
+                <button class="lang-btn" data-lang="cn">CN</button>
+            </div>
+            <a href="../index.html#work" class="brand-name">zijian</a>
+        </div>
+    </header>
+
+    <main class="exp-detail-page">
+        <section class="exp-detail-hero">
+            <div class="exp-detail-meta">
+                <a href="../experimental-project.html" class="vc-back exp-detail-back">
+                    <span class="lang-en">← Experimental Project</span>
+                    <span class="lang-cn">← 实验项目</span>
+                </a>
+                <div class="exp-detail-kicker">002</div>
+            </div>
+            <h1 class="exp-detail-title lang-en">Time-INK</h1>
+            <h1 class="exp-detail-title lang-cn">Time-INK</h1>
+            <p class="exp-detail-subtitle lang-en">A timed-writing tool for getting into the draft quickly and staying with the current writing sprint.</p>
+            <p class="exp-detail-subtitle lang-cn">一个限时写作工具，重点不是功能堆叠，而是让人尽快开始写，并把注意力留在这一轮写作里。</p>
+            <div class="exp-detail-actions">
+                <a class="exp-detail-link" href="https://github.com/zijianxcode/time-ink" target="_blank" rel="noopener noreferrer">
+                    <span class="lang-en">View Project on GitHub</span>
+                    <span class="lang-cn">查看 GitHub 项目</span>
+                    <span class="exp-detail-link__arrow" aria-hidden="true">↗</span>
+                </a>
+                <a class="exp-detail-link exp-detail-link--demo" href="../time-ink/" target="_blank" rel="noopener noreferrer">
+                    <span class="lang-en">Try Live Demo</span>
+                    <span class="lang-cn">在线体验</span>
+                    <span class="exp-detail-link__arrow" aria-hidden="true">↗</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="exp-detail-body">
+            <div class="exp-detail-grid">
+                <div class="exp-detail-label lang-en">Overview</div>
+                <div class="exp-detail-label lang-cn">概述</div>
+                <div class="exp-detail-content lang-en">
+                    <p><code>time-ink</code> is a timed-writing tool. It is neither a note app nor a long-form editor, but a sprint interface built for opening the page and writing right away.</p>
+                    <p>The problem it tries to solve is simple: reduce switching, reduce hesitation, help the writer enter the draft faster, and keep attention inside the current session.</p>
+                </div>
+                <div class="exp-detail-content lang-cn">
+                    <p><code>time-ink</code> 是一个限时写作工具。它不是笔记软件，也不是长文档编辑器，而是一个让人“进来就写”的冲刺界面。</p>
+                    <p>这个项目想解决的很简单：少一点切换，少一点犹豫，让人更快进入状态，并把注意力留在当前这一轮写作里。</p>
+                </div>
+
+                <div class="exp-detail-label lang-en">Interaction</div>
+                <div class="exp-detail-label lang-cn">交互</div>
+                <div class="exp-detail-content lang-en">
+                    <p>The flow is straightforward: choose a duration, start the timer, keep writing in the main editor, and let the session save automatically when time is up. Users can also pause, reset, copy the text, or begin the next round.</p>
+                    <p>The interface stays centered on only three things: the timer, the editor, and the result of the current sprint. That constraint is what makes “start writing” feel like the default action.</p>
+                </div>
+                <div class="exp-detail-content lang-cn">
+                    <p>它的流程很直接：先选时间，开始倒计时，在主编辑区持续写，到时自动保存这一轮内容。用户可以暂停、重置、复制，也可以重新开始下一轮。</p>
+                    <p>界面的重点始终只有三个东西：计时、输入区和这一轮的结果。这样做是为了让“开始写”变成最自然的动作。</p>
+                </div>
+
+                <div class="exp-detail-label lang-en">System</div>
+                <div class="exp-detail-label lang-cn">系统</div>
+                <div class="exp-detail-content lang-en">
+                    <p>The project is built with Next.js 14, React 18, TypeScript, and Framer Motion. The core logic lives in a single writing page that already supports duration selection, countdown, live input, local persistence, automatic save on timeout, and copy or clear actions for the current round.</p>
+                    <p>Beyond features, it also cares about state reliability: recovery after refresh, protection against accidental closing, and keeping local and deployed behavior as close as possible.</p>
+                </div>
+                <div class="exp-detail-content lang-cn">
+                    <p>项目基于 Next.js 14、React 18、TypeScript 和 Framer Motion 构建，核心逻辑集中在单页写作界面里。当前已经支持时长选择、倒计时、实时输入、本地保存、到时自动归档，以及复制和清空本轮内容。</p>
+                    <p>除了功能本身，它也很重视状态可靠性，比如刷新后恢复、误关提醒，以及本地和线上尽量保持一致。</p>
+                </div>
+
+                <div class="exp-detail-label lang-en">Principles</div>
+                <div class="exp-detail-label lang-cn">原则</div>
+                <div class="exp-detail-content lang-en">
+                    <p><code>time-ink</code> is a writing-sprint tool first, and a web project second. Future iterations should keep serving the act of writing, instead of expanding into a heavier platform.</p>
+                    <p>Its value is not how many features it can accumulate, but how clearly it protects one goal: giving writing a lightweight, complete session that is hard to interrupt.</p>
+                </div>
+                <div class="exp-detail-content lang-cn">
+                    <p><code>time-ink</code> 首先是一个写作冲刺工具，其次才是一个网页项目。所以后续迭代更应该服务写作本身，而不是把它扩成一个复杂的平台。</p>
+                    <p>它的价值不在于功能有多少，而在于目标够明确：给写作留出一个轻量、完整、不会被轻易打断的回合。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <span id="copyright">zijian © 2026</span>
+    </footer>
+
+    <script src="../Assets/js/analytics.js?v=20260319-cloudbase-uv"></script>
+    <script src="../Assets/js/vc-page.js"></script>
+</body>
+
+</html>

@@ -1820,6 +1820,7 @@ a:hover {
 }
 
 .exp-detail-page {
+    --exp-detail-serif: 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', 'STSong', 'Times New Roman', serif;
     padding-top: var(--header-height);
     min-height: 100vh;
     position: relative;
@@ -1873,8 +1874,10 @@ a:hover {
 .exp-detail-title {
     max-width: 100%;
     white-space: nowrap;
-    font-family: 'Libre Baskerville', Georgia, serif;
+    font-family: var(--exp-detail-serif);
     font-size: clamp(34px, 5.2vw, 72px);
+    font-weight: 600;
+    letter-spacing: -0.025em;
     line-height: 0.98;
     color: var(--text);
     margin-bottom: 18px;
@@ -1884,18 +1887,29 @@ a:hover {
     width: min(1016px, 100%);
     max-width: 100%;
     margin-left: 0;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: var(--exp-detail-serif);
     font-size: 18px;
-    line-height: 1.75;
-    color: var(--text-muted);
+    font-weight: 400;
+    line-height: 1.78;
+    color: rgba(255, 255, 255, 0.76);
+}
+
+.exp-detail-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 28px;
+    margin-left: 256px;
+    flex-wrap: wrap;
 }
 
 .exp-detail-link {
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    margin-top: 28px;
-    margin-left: 256px;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
     padding: 13px 18px;
     border: 1px solid rgba(255, 255, 255, 0.18);
     border-radius: 999px;
@@ -1915,6 +1929,29 @@ a:hover {
     transition: color 0.24s ease, transform 0.24s ease, border-color 0.24s ease, background-color 0.24s ease, box-shadow 0.24s ease;
 }
 
+.exp-detail-link::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(110deg, transparent 0%, rgba(255, 255, 255, 0) 38%, rgba(255, 255, 255, 0.16) 50%, rgba(255, 255, 255, 0) 62%, transparent 100%);
+    transform: translateX(-140%);
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.exp-detail-link::after {
+    content: '';
+    position: absolute;
+    left: 12px;
+    top: 11px;
+    bottom: 11px;
+    width: 1px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.04));
+    opacity: 0.7;
+    transition: opacity 0.24s ease, background 0.24s ease;
+}
+
 .exp-detail-link:hover,
 .exp-detail-link:focus-visible {
     color: rgba(255, 255, 255, 1);
@@ -1924,8 +1961,30 @@ a:hover {
         rgba(12, 12, 12, 0.92);
     box-shadow:
         inset 0 1px 0 rgba(255, 255, 255, 0.08),
-        0 16px 38px rgba(0, 0, 0, 0.3);
-    transform: translateY(-1px);
+        0 18px 40px rgba(0, 0, 0, 0.34);
+    transform: translateY(-2px);
+}
+
+.exp-detail-link:hover::before,
+.exp-detail-link:focus-visible::before {
+    transform: translateX(140%);
+}
+
+.exp-detail-link:hover::after,
+.exp-detail-link:focus-visible::after {
+    opacity: 1;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.32), rgba(255, 255, 255, 0.06));
+}
+
+.exp-detail-link--demo {
+    border-color: rgba(255, 255, 255, 0.24);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.036)),
+        rgba(14, 14, 14, 0.9);
+}
+
+.exp-detail-link--demo::after {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.05));
 }
 
 .exp-detail-link__arrow {
@@ -1937,7 +1996,7 @@ a:hover {
 
 .exp-detail-link:hover .exp-detail-link__arrow,
 .exp-detail-link:focus-visible .exp-detail-link__arrow {
-    transform: translate(2px, -2px);
+    transform: translate(4px, -2px);
 }
 
 .exp-detail-body {
@@ -1952,19 +2011,20 @@ a:hover {
 
 .exp-detail-label {
     padding-top: 6px;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: var(--exp-detail-serif);
     font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.12em;
+    font-weight: 600;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.34);
+    color: rgba(255, 255, 255, 0.42);
 }
 
 .exp-detail-content p {
     margin: 0 0 22px;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: var(--exp-detail-serif);
     font-size: 17px;
-    line-height: 1.92;
+    font-weight: 400;
+    line-height: 1.94;
     color: rgba(255, 255, 255, 0.84);
 }
 
@@ -2015,8 +2075,13 @@ a:hover {
         margin-left: 0;
     }
 
-    .exp-detail-link {
+    .exp-detail-actions {
         margin-left: 0;
+        gap: 12px;
+    }
+
+    .exp-detail-link {
+        width: auto;
     }
 
     .exp-detail-grid {
