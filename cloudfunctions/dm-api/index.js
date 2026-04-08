@@ -45,7 +45,11 @@ function delay(ms) {
 }
 
 function getSessionSecret() {
-  return process.env.APP_SESSION_SECRET || process.env.ADMIN_PASSWORD || "";
+  const secret = process.env.APP_SESSION_SECRET || process.env.ADMIN_PASSWORD;
+  if (!secret) {
+    throw new Error("APP_SESSION_SECRET or ADMIN_PASSWORD must be configured");
+  }
+  return secret;
 }
 
 function getAllowedOrigins() {
@@ -72,7 +76,6 @@ function buildCorsHeaders(event) {
 
   const allowedOrigins = getAllowedOrigins();
   if (allowedOrigins.length === 0) {
-    headers["Access-Control-Allow-Origin"] = "*";
     return headers;
   }
 
@@ -230,8 +233,14 @@ function getPermitSession(event) {
   return verifyToken(getBearerToken(event), "permit");
 }
 
+const MAX_BODY_SIZE = 100 * 1024;
+
 function parseBody(event) {
   if (!event.body) return {};
+
+  if (event.body.length > MAX_BODY_SIZE) {
+    return {};
+  }
 
   try {
     const raw = event.isBase64Encoded
@@ -611,6 +620,14 @@ async function handleAdminMessages(event) {
     return jsonResponse(event, { error: "conversationId is required" }, 400);
   }
 
+  const convCheck = await db
+    .collection(CONVERSATIONS)
+    .doc(conversationId)
+    .get();
+  if (!convCheck.data || convCheck.data.length === 0) {
+    return jsonResponse(event, { error: "Conversation not found" }, 404);
+  }
+
   await db.collection(CONVERSATIONS).doc(conversationId).update({
     unreadByAdmin: 0,
   });
@@ -647,6 +664,14 @@ async function handleAdminReply(event) {
   }
   if (!conversationId || !safeContent) {
     return jsonResponse(event, { error: "conversationId and content are required" }, 400);
+  }
+
+  const convCheck = await db
+    .collection(CONVERSATIONS)
+    .doc(conversationId)
+    .get();
+  if (!convCheck.data || convCheck.data.length === 0) {
+    return jsonResponse(event, { error: "Conversation not found" }, 404);
   }
 
   const now = Date.now();
