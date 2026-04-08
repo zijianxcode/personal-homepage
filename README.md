@@ -6,13 +6,13 @@ Static personal homepage (Work / Info / Things). Dark theme, particle background
 
 ## Latest Update
 
-Updated on 2026-03-19 (`v1.2`):
-- Completed a security hardening pass across DM admin, visitor messaging, protected Things content, and public pages
-- Replaced client-side hardcoded secrets with server-issued signed sessions in CloudBase functions
-- Moved protected Things links out of tracked frontend files and into server-side configuration
-- Added a self-hosted CloudBase visitor UV tracker in shadow mode while temporarily keeping the original third-party counter for comparison
-- Localized `floating-clock` runtime dependencies into `Assets/vendor/` to remove external CDN script execution
-- Expanded build/deploy output to include the full static site structure
+Updated on 2026-04-08 (`v1.3`):
+- Added `Experimental Project` as a real project section with `Easy Presentation` and `Time-INK` detail pages
+- Published `Time-INK` under the main-domain path `bananabox.plus/time-ink/` and fixed hosted first-screen visibility issues
+- Expanded `research.html` with two additional publication entries and updated venue labels such as `SCI Q2` and `ESCI`
+- Synced the `academy/` subsite into the main deployment flow and refreshed its latest academic content
+- Formalized new project release rules so future site projects must ship under `bananabox.plus/<project-slug>/`
+- Added hosted subpath and first-screen visibility safeguards into the project rules and release checklist
 
 ## Run locally
 
