@@ -622,60 +622,72 @@
     // ==========================================
 
     function initThingsEntryPassword() {
-        var entry = document.getElementById('things-permit-entry');
-        if (!entry) return;
+        var entries = document.querySelectorAll('[data-things-permit-entry]');
+        if (!entries.length) return;
         var apiBase = 'https://homepage-1gthisc4771d43ac.service.tcloudbase.com/dm-api';
-        var permitStorageKey = 'things_access_token';
 
-        entry.addEventListener('click', function (e) {
-            e.preventDefault();
-            if (window.PermitCodeModal && window.PermitCodeModal.openPermitCodeModal) {
-                window.PermitCodeModal.openPermitCodeModal({
-                    contextLabel: 'Digital & Experience',
-                    title: '许可代码',
-                    description: '输入许可代码后继续访问数字与体验。',
-                    placeholder: '代码为本节课的开课日期',
-                    errorMessage: '验证失败，请重试。',
-                    validate: function (value) {
-                        return fetch(apiBase + '/permit/auth', {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json'
-                            },
-                            body: JSON.stringify({ code: value })
-                        }).then(function (res) {
-                            return res.json().catch(function () {
-                                return {};
-                            }).then(function (data) {
-                                if (!res.ok) {
+        function getTokenStorageKey(resource) {
+            if (resource === 'things') return 'things_access_token';
+            return 'things_access_token_' + resource.replace(/[^a-z0-9_-]/g, '_');
+        }
+
+        entries.forEach(function (entry) {
+            entry.addEventListener('click', function (e) {
+                var resource = entry.getAttribute('data-permit-resource') || 'things';
+                var permitStorageKey = entry.getAttribute('data-permit-storage-key') || getTokenStorageKey(resource);
+
+                e.preventDefault();
+                if (window.PermitCodeModal && window.PermitCodeModal.openPermitCodeModal) {
+                    window.PermitCodeModal.openPermitCodeModal({
+                        contextLabel: entry.getAttribute('data-permit-context') || 'Digital & Experience',
+                        contextIndex: entry.getAttribute('data-permit-index') || '01',
+                        title: '许可代码',
+                        description: entry.getAttribute('data-permit-description') || '输入许可代码后继续访问。',
+                        placeholder: entry.getAttribute('data-permit-placeholder') || '请输入许可代码',
+                        errorMessage: '验证失败，请重试。',
+                        validate: function (value) {
+                            return fetch(apiBase + '/permit/auth', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify({ code: value, resource: resource })
+                            }).then(function (res) {
+                                return res.json().catch(function () {
+                                    return {};
+                                }).then(function (data) {
+                                    if (!res.ok) {
+                                        return {
+                                            ok: false,
+                                            errorMessage: res.status === 429
+                                                ? '尝试次数过多，请稍后再试。'
+                                                : res.status === 503
+                                                    ? '内容配置暂未上线，请稍后再试。'
+                                                    : '许可代码错误，请重试。'
+                                        };
+                                    }
+
                                     return {
-                                        ok: false,
-                                        errorMessage: res.status === 429
-                                            ? '尝试次数过多，请稍后再试。'
-                                            : '许可代码错误，请重试。'
+                                        ok: true,
+                                        payload: data
                                     };
-                                }
-
+                                });
+                            }).catch(function () {
                                 return {
-                                    ok: true,
-                                    payload: data
+                                    ok: false,
+                                    errorMessage: '网络错误，请稍后再试。'
                                 };
                             });
-                        }).catch(function () {
-                            return {
-                                ok: false,
-                                errorMessage: '网络错误，请稍后再试。'
-                            };
-                        });
-                    },
-                    onSuccess: function (_, payload) {
-                        if (payload && payload.token) {
-                            sessionStorage.setItem(permitStorageKey, payload.token);
+                        },
+                        onSuccess: function (_, payload) {
+                            if (payload && payload.token) {
+                                sessionStorage.setItem(permitStorageKey, payload.token);
+                            }
+                            window.location.href = entry.getAttribute('href');
                         }
-                        window.location.href = entry.getAttribute('href');
-                    }
-                });
-            }
+                    });
+                }
+            });
         });
     }
 

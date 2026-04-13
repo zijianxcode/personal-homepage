@@ -27,6 +27,7 @@ const VISITOR_TOKEN_TTL_MS = 30 * 24 * 60 * 60 * 1000;
 const ADMIN_TOKEN_TTL_MS = 12 * 60 * 60 * 1000;
 const PERMIT_TOKEN_TTL_MS = 8 * 60 * 60 * 1000;
 const TOKEN_VERSION = 1;
+const DEFAULT_PERMIT_RESOURCE = "things";
 
 const rateLimitMap = new Map();
 
@@ -259,8 +260,12 @@ function normalizeContent(content) {
   return sanitize(trimmed);
 }
 
-function parseThingsItems() {
-  const raw = process.env.THINGS_CONTENT_JSON;
+function normalizePermitResource(resource) {
+  const value = String(resource || DEFAULT_PERMIT_RESOURCE).trim().toLowerCase();
+  return /^[a-z0-9][a-z0-9-]{0,63}$/.test(value) ? value : "";
+}
+
+function parseJsonEnvValue(raw) {
   if (!raw) return [];
 
   try {
@@ -273,17 +278,59 @@ function parseThingsItems() {
     if (typeof parsed === "string") {
       parsed = JSON.parse(parsed);
     }
-    if (!Array.isArray(parsed)) return [];
-
-    return parsed
-      .map((item) => ({
-        name: String(item && item.name ? item.name : "").trim(),
-        url: String(item && item.url ? item.url : "").trim(),
-      }))
-      .filter((item) => item.name && /^https:\/\//i.test(item.url));
+    return parsed;
   } catch {
     return [];
   }
+}
+
+function normalizePermitItems(items) {
+  if (!Array.isArray(items)) return [];
+
+  return items
+    .map((item) => ({
+      name: String(item && item.name ? item.name : "").trim(),
+      url: String(item && item.url ? item.url : "").trim(),
+    }))
+    .filter((item) => item.name && /^https:\/\//i.test(item.url));
+}
+
+function parseThingsItems() {
+  return normalizePermitItems(parseJsonEnvValue(process.env.THINGS_CONTENT_JSON));
+}
+
+function parsePermitResources() {
+  const resources = {};
+  const legacyPermitCode = String(process.env.THINGS_PERMIT_CODE || "").trim();
+
+  if (legacyPermitCode) {
+    resources[DEFAULT_PERMIT_RESOURCE] = {
+      code: legacyPermitCode,
+      items: parseThingsItems(),
+    };
+  }
+
+  const configuredResources = parseJsonEnvValue(process.env.PERMIT_RESOURCES_JSON);
+  if (
+    configuredResources &&
+    typeof configuredResources === "object" &&
+    !Array.isArray(configuredResources)
+  ) {
+    Object.keys(configuredResources).forEach((key) => {
+      const resource = normalizePermitResource(key);
+      const config = configuredResources[key] || {};
+      const code = String(config.code || config.permitCode || "").trim();
+
+      if (!resource || !code) return;
+
+      resources[resource] = {
+        code,
+        items: normalizePermitItems(config.items || config.content),
+      };
+    });
+  }
+
+  return resources;
 }
 
 function normalizeAnalyticsVisitorId(visitorId) {
@@ -667,13 +714,22 @@ async function handleAdminReply(event) {
 }
 
 async function handlePermitAuth(event) {
-  const permitCode = process.env.THINGS_PERMIT_CODE;
-  if (!permitCode) {
-    return jsonResponse(event, { error: "THINGS_PERMIT_CODE is not configured" }, 503);
+  const body = parseBody(event);
+  const resource = normalizePermitResource(body.resource);
+  const code = String(body.code || "").trim();
+  const resources = parsePermitResources();
+  const permitConfig = resource ? resources[resource] : null;
+
+  if (!resource) {
+    return jsonResponse(event, { error: "resource is invalid" }, 400);
+  }
+
+  if (!permitConfig || !permitConfig.code) {
+    return jsonResponse(event, { error: "permit resource is not configured" }, 503);
   }
 
   const gate = checkRateLimit(
-    `permit-auth:${getClientIp(event)}`,
+    `permit-auth:${resource}:${getClientIp(event)}`,
     PERMIT_AUTH_WINDOW,
     PERMIT_AUTH_MAX
   );
@@ -681,28 +737,30 @@ async function handlePermitAuth(event) {
     return jsonResponse(event, { error: "Too many attempts" }, 429);
   }
 
-  const body = parseBody(event);
-  const code = String(body.code || "").trim();
   if (!code) {
     return jsonResponse(event, { error: "code is required" }, 400);
   }
 
-  if (!safeEqualText(code, permitCode)) {
+  if (!safeEqualText(code, permitConfig.code)) {
     await delay(500);
     return jsonResponse(event, { error: "Unauthorized" }, 401);
   }
 
-  const token = createToken("permit", { resource: "things" }, PERMIT_TOKEN_TTL_MS);
+  const token = createToken("permit", { resource }, PERMIT_TOKEN_TTL_MS);
   return jsonResponse(event, { ok: true, token, expiresInMs: PERMIT_TOKEN_TTL_MS });
 }
 
 async function handlePermitContent(event) {
+  const query = getQuery(event);
+  const resource = normalizePermitResource(query.resource);
   const permit = getPermitSession(event);
-  if (!permit || permit.resource !== "things") {
+  if (!resource || !permit || permit.resource !== resource) {
     return jsonResponse(event, { error: "Unauthorized" }, 401);
   }
 
-  const items = parseThingsItems();
+  const resources = parsePermitResources();
+  const permitConfig = resources[resource];
+  const items = permitConfig ? permitConfig.items : [];
   if (items.length === 0) {
     return jsonResponse(event, { error: "No protected content configured" }, 503);
   }

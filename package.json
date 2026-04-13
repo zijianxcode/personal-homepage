@@ -5,7 +5,8 @@
   "description": "Static personal homepage",
   "scripts": {
     "deploy": "mkdir -p .cloudbase-deploy && cp *.html CNAME .nojekyll .cloudbase-deploy/ && cp -r Assets projects documents academy time-ink .cloudbase-deploy/ && tcb hosting deploy .cloudbase-deploy .",
-    "build": "mkdir -p dist && cp *.html CNAME .nojekyll dist/ && cp -r Assets projects documents academy time-ink dist/"
+    "build": "mkdir -p dist && cp *.html CNAME .nojekyll dist/ && cp -r Assets projects documents academy time-ink dist/",
+    "test:things-access": "node check-things-access.js"
   },
   "devDependencies": {
     "@cloudbase/cli": "^2.12.2"

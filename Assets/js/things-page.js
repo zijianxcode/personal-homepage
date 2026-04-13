@@ -2,17 +2,40 @@
     'use strict';
 
     var API_BASE = 'https://homepage-1gthisc4771d43ac.service.tcloudbase.com/dm-api';
-    var PERMIT_STORAGE_KEY = 'things_access_token';
+
+    function normalizeResource(value) {
+        var resource = String(value || 'things').trim().toLowerCase();
+        return /^[a-z0-9][a-z0-9-]{0,63}$/.test(resource) ? resource : 'things';
+    }
+
+    function getStorageKey(resource) {
+        if (resource === 'things') return 'things_access_token';
+        return 'things_access_token_' + resource.replace(/[^a-z0-9_-]/g, '_');
+    }
+
+    function getThingsPageConfig() {
+        var root = document.body || document.documentElement;
+        var resource = normalizeResource(root.getAttribute('data-things-resource'));
+
+        return {
+            resource: resource,
+            storageKey: root.getAttribute('data-things-storage-key') || getStorageKey(resource),
+            contextLabel: root.getAttribute('data-things-context') || 'Digital & Experience',
+            description: root.getAttribute('data-things-description') || '输入许可代码后继续访问。',
+            placeholder: root.getAttribute('data-things-placeholder') || '请输入许可代码'
+        };
+    }
 
     function getToken() {
-        return sessionStorage.getItem(PERMIT_STORAGE_KEY) || '';
+        return sessionStorage.getItem(getThingsPageConfig().storageKey) || '';
     }
 
     function setToken(token) {
+        var storageKey = getThingsPageConfig().storageKey;
         if (token) {
-            sessionStorage.setItem(PERMIT_STORAGE_KEY, token);
+            sessionStorage.setItem(storageKey, token);
         } else {
-            sessionStorage.removeItem(PERMIT_STORAGE_KEY);
+            sessionStorage.removeItem(storageKey);
         }
     }
 
@@ -61,12 +84,13 @@
     }
 
     function requestPermit(code) {
+        var config = getThingsPageConfig();
         return fetch(API_BASE + '/permit/auth', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ code: code })
+            body: JSON.stringify({ code: code, resource: config.resource })
         }).then(function (res) {
             return res.json().catch(function () {
                 return {};
@@ -76,7 +100,9 @@
                         ok: false,
                         errorMessage: res.status === 429
                             ? '尝试次数过多，请稍后再试。'
-                            : '许可代码错误，请重试。'
+                            : res.status === 503
+                                ? '内容配置暂未上线，请稍后再试。'
+                                : '许可代码错误，请重试。'
                     };
                 }
 
@@ -100,10 +126,10 @@
         }
 
         window.PermitCodeModal.openPermitCodeModal({
-            contextLabel: 'Digital & Experience',
+            contextLabel: getThingsPageConfig().contextLabel,
             title: '许可代码',
-            description: '输入许可代码后继续访问数字与体验。',
-            placeholder: '请输入许可代码',
+            description: getThingsPageConfig().description,
+            placeholder: getThingsPageConfig().placeholder,
             errorMessage: '验证失败，请重试。',
             validate: requestPermit,
             onSuccess: function (_, payload) {
@@ -119,7 +145,8 @@
     }
 
     function fetchContent() {
-        return fetch(API_BASE + '/permit/content', {
+        var resource = getThingsPageConfig().resource;
+        return fetch(API_BASE + '/permit/content?resource=' + encodeURIComponent(resource), {
             method: 'GET',
             headers: {
                 Authorization: 'Bearer ' + getToken()

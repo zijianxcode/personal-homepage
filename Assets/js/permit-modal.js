@@ -1,8 +1,15 @@
 (function () {
     'use strict';
 
+    function escapeHtml(value) {
+        var div = document.createElement('div');
+        div.textContent = value == null ? '' : String(value);
+        return div.innerHTML;
+    }
+
     function createModalHtml(options) {
         var contextLabel = options.contextLabel || 'Digital & Experience';
+        var contextIndex = options.contextIndex || '01';
         var title = options.title || '许可代码';
         var description = options.description || '输入许可代码后继续访问。';
         var submitLabel = options.submitLabel || '进入';
@@ -14,19 +21,20 @@
                 '<div class="permit-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="permit-modal-title">' +
                     '<button class="permit-modal-close" type="button" aria-label="关闭">×</button>' +
                     '<div class="permit-modal-meta">' +
-                        '<span class="permit-modal-index">01</span>' +
+                        '<span class="permit-modal-index">' + escapeHtml(contextIndex) + '</span>' +
+                        '<span class="permit-modal-label">' + escapeHtml(contextLabel) + '</span>' +
                     '</div>' +
-                    '<h2 class="permit-modal-title" id="permit-modal-title">' + title + '</h2>' +
-                    '<p class="permit-modal-desc">' + description + '</p>' +
+                    '<h2 class="permit-modal-title" id="permit-modal-title">' + escapeHtml(title) + '</h2>' +
+                    '<p class="permit-modal-desc">' + escapeHtml(description) + '</p>' +
                     '<form class="permit-modal-form">' +
                         '<label class="permit-modal-field">' +
                             '<span class="permit-modal-field-label">Permit Code</span>' +
-                            '<input class="permit-modal-input" type="password" inputmode="numeric" autocomplete="off" placeholder="' + placeholder + '" />' +
+                            '<input class="permit-modal-input" type="password" inputmode="numeric" autocomplete="off" placeholder="' + escapeHtml(placeholder) + '" />' +
                         '</label>' +
                         '<p class="permit-modal-error" aria-live="polite"></p>' +
                         '<div class="permit-modal-actions">' +
-                            '<button class="permit-modal-btn permit-modal-btn--ghost" type="button" data-permit-cancel>' + cancelLabel + '</button>' +
-                            '<button class="permit-modal-btn permit-modal-btn--primary" type="submit">' + submitLabel + '</button>' +
+                            '<button class="permit-modal-btn permit-modal-btn--ghost" type="button" data-permit-cancel>' + escapeHtml(cancelLabel) + '</button>' +
+                            '<button class="permit-modal-btn permit-modal-btn--primary" type="submit">' + escapeHtml(submitLabel) + '</button>' +
                         '</div>' +
                     '</form>' +
                 '</div>' +
