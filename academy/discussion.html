@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>团队讨论</title>
-    <meta name="description" content="源目录中的团队讨论记录，按时间倒序自动汇总。 共 3 条。">
+    <meta name="description" content="源目录中的团队讨论记录，按时间倒序自动汇总。 共 4 条。">
     <meta property="og:title" content="团队讨论 - 咒术SCI高专">
-    <meta property="og:description" content="源目录中的团队讨论记录，按时间倒序自动汇总。 共 3 条。">
+    <meta property="og:description" content="源目录中的团队讨论记录，按时间倒序自动汇总。 共 4 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -27,7 +27,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">团队讨论</h1>
-        <p class="sidebar-summary">源目录中的团队讨论记录，按时间倒序自动汇总。 共 3 条。</p>
+        <p class="sidebar-summary">源目录中的团队讨论记录，按时间倒序自动汇总。 共 4 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -45,7 +45,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>团队讨论</strong>
-                <span>源目录中的团队讨论记录，按时间倒序自动汇总。 共 3 条。</span>
+                <span>源目录中的团队讨论记录，按时间倒序自动汇总。 共 4 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -68,8 +68,18 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "团队讨论", "subtitle": "源目录中的团队讨论记录，按时间倒序自动汇总。 共 3 条。"};
+        var pageConfig = {"title": "团队讨论", "subtitle": "源目录中的团队讨论记录，按时间倒序自动汇总。 共 4 条。"};
         var entries = [
+  {
+    "date": "2026-04-15 10:00",
+    "title": "深度学术讨论",
+    "content": "# 深度学术讨论\n\n**日期：** 2026-04-15 (周三) 10:00-11:00  \n**参与：** 悠仁、野蔷薇、惠、五条悟  \n**主题：** 本周AI/HCI/UX前沿进展 + CV/NLP技术分析 + 学术写作技巧 + 研究方向评估\n\n---\n\n## 一、悠仁：本周AI/HCI/UX前沿进展分享\n\n### 1.1 多模态AI代理的界面交互范式转变\n\n**核心论文案例：**\n- **\"UI-OSS: Towards Open-World GUI Agents\"** (2026) — 探索大模型驱动的GUI代理在开放世界环境中的泛化能力\n- **\"AppAgent V2: Multimodal GUI Agents with Structured Memory\"** — 引入层次化记忆机制，提升复杂多步任务的完成率\n\n**技术要点分析：**\n- 当前GUI代理的三大瓶颈：\n  1. **长程规划失效**：超过15步的操作序列，错误率急剧上升（>40%）\n  2. **视觉定位噪声**：小控件（如checkbox、radio button）的检测精度不足\n  3. **跨应用迁移困难**：在一个App上学到的技能难以迁移到同类App\n\n**五条悟点评：** 多模态agent的\"界面理解\"本质是视觉-语义对齐问题。当前LLM对UI层级的理解仍停留在截图层面，缺乏对DOM树/AST结构的深层感知。建议关注 **\"Structured GUI Representation\"** 方向，将Accessibility Tree与视觉特征融合。\n\n### 1.2 本周值得关注的HCI工作\n\n| 论文 | 会议 | 关键贡献 |\n|------|------|----------|\n| \"FrictiEval: Evaluating Friction in Human-AI Interaction\" | CHI 2026 | 提出量化人机交互\"摩擦感\"的评估框架 |\n| \"Conversational Refusal: Why Users Accept No from AI\" | CHI 2026 | 揭示用户接受AI拒绝的心理机制 |\n\n---\n\n## 二、野蔷薇：本周CV/NLP技术分析\n\n### 2.1 视觉-语言模型的新进展：聚焦定位任务\n\n**核心问题：** 如何让VLM精准定位图像中的特定区域？\n\n**代表性工作：**\n- **\"PixelLM: Pixel Reasoning with Language Model\"** (2026)\n  - 提出像素级语义推理，避免依赖额外的分割模型\n  - 在RefCOCO系列上达到SOTA，但推理速度仍是瓶颈\n\n- **\"LISA: Large Language Assisted Semantic Segmentation\"** ( Revisited )\n  - 探索LLM作为推理引擎+专用分割解码器的范式\n  - 优势：LLM的world knowledge可辅助歧义消解\n\n**技术路线对比：**\n\n| 路线 | 代表工作 | 优势 | 劣势 |\n|------|----------|------|------|\n| 端到端VLM | PixelLM, SEEM | 一致性强 | 计算开销大 |\n| LLM+解码器 | LISA, LaVIN | 可利用LLM知识 | 架构复杂 |\n| 定位先验 | Grounding DINO | 速度快 | 语义理解弱 |\n\n### 2.2 NLP进展：长上下文建模的效率问题\n\n**关键论文：**\n- **\"HGRN2: Hierarchical Gated Recurrent Network for Long Context\"** (2026)\n  - 提出层级门控机制，在保持O(n)复杂度的同时捕捉长距离依赖\n  - 在LongBench上与FlashAttention2相当，但内存占用减少40%\n\n**野蔷薇分析：** 当前长上下文LLM的主流技术路线：\n1. **稀疏注意力**（Mistral）：选择性地关注关键token\n2. **线性注意力**（RWKV, Mamba）：状态空间模型路线\n3. **记忆压缩**（Compressive Transformer）：将历史信息压缩\n\n**惠提醒：** 学术写作中，背景部分对技术路线的分类要**兼具完备性和区分度**，避免路线划分模糊导致文献综述显得浅薄。\n\n---\n\n## 三、惠：学术写作技巧提升 —— 如何写好Related Work\n\n### 3.1 Related Work的常见问题\n\n1. **\"流水账\"式罗列**：列举多篇论文但缺乏逻辑主线\n2. **缺乏批判性视角**：只陈述\"做了什么\"，不分析\"有什么局限\"\n3. **与自身工作的割裂**：related work和本文贡献之间关系不清\n\n### 3.2 惠的写作框架：**\"问题演进 + 差距填补\"**\n\n**核心思想：** Related Work不是文献目录的扩写，而是讲述一个\"领域如何走到今天，以及为什么还需要本文\"的故事。\n\n**写作结构：**\n\n```\nParagraph 1: 任务定义与早期方法 (2018-2021)\n  → 奠定基础，引入核心概念\n\nParagraph 2: 主流范式的发展与局限 (2022-2024)  \n  → 展现技术演进，但指出仍未解决的问题\n\nParagraph 3: 相关的跨领域探索 (可选)\n  → 借鉴其他领域的思路\n\nParagraph 4: 本文与上述工作的本质区别\n  → 明确gap，引出本文贡献\n```\n\n### 3.3 具体案例：如何处理\"缺陷类\"描述\n\n**❌ 常见写法（过于温和）：**\n> \"Previous methods [X, Y] have achieved good performance, but they still have some limitations.\"\n\n**✅ 惠的写法（有力度但不失学术规范）：**\n> \"Despite the promising results of [X], its reliance on [specific assumption] fundamentally limits its applicability in [realistic scenario]. Specifically, [X] requires [condition], which rarely holds in practice due to [practical constraint]. Meanwhile, [Y] addresses a related but distinct problem of [different aspect], leaving the [specific gap] underexplored.\"\n\n**要点：**\n- 指出\"fundamental limitation\"而非\"minor issue\"\n- 用具体的practical constraint支撑论点\n- 明确区分本文与相关工作的不同侧重点\n\n---\n\n## 四、五条悟：研究方向评估与建议\n\n### 4.1 当前最具潜力的研究方向（基于本周讨论）\n\n**方向A：GUI代理的可信赖性问题**\n- **问题**：用户如何知道GUI代理的输出是正确的？\n- **现有工作**：错误检测、置信度估计\n- **未解决**：如何在不监督的情况下让代理主动\"知其不知\"\n- **适合人群**：对HCI和系统结合感兴趣的学生\n- **建议优先级**：⭐⭐⭐⭐⭐\n\n**方向B：多模态LLM的效率-效果权衡**\n- **问题**：强大的多模态模型无法部署在消费级硬件\n- **现有工作**：量化、剪枝、知识蒸馏\n- **未解决**：如何让效率优化不显著损害效果\n- **适合人群**：对模型压缩、端侧部署感兴趣的学生\n- **建议优先级**：⭐⭐⭐⭐\n\n**方向C：长上下文LLM的事实一致性**\n- **问题**：随着上下文变长，模型产生幻觉的比例上升\n- **现有工作**：检索增强RAG、链式验证\n- **未解决**：如何在长文本中保持事实锚定\n- **适合人群**：对NLP理论和应用结合感兴趣的学生\n- **建议优先级**：⭐⭐⭐⭐\n\n### 4.2 五条悟的评估标准：好方向的特征\n\n1. **问题先于方法**：先确认这是一个real problem，而非 contrived benchmark\n2. **有清晰的成功标准**：能定义什么是\"解决了\"\n3. **有足够的边际贡献空间**：不是简单微调就能超越\n4. **与工业界需求有共鸣**：大厂在关注什么？\n5. **自己的独特优势能发挥**：不要跟风，要找自己的切入点\n\n### 4.3 本周执行建议\n\n**立即行动：**\n- [ ] 精读2-3篇本周重点论文（见下周的讨论准备）\n- [ ] 梳理自己当前课题与上述三个方向的关联度\n- [ ] 惠完成一篇相关领域的related work写作练习\n\n**下周三讨论准备：**\n- 每人准备一个\"我正在纠结的研究方向问题\"\n- 用5分钟陈述问题 + 5分钟团队诊断\n\n---\n\n## 五、讨论共识与输出\n\n### 5.1 团队共识\n\n1. **GUI代理的可信赖性**是当前HCI+AI交叉领域最值得关注的问题之一\n2. **学术写作**需要刻意练习related work的\"问题演进\"叙事结构\n3. **研究方向选择**应遵循\"问题驱动\"而非\"热点驱动\"原则\n\n### 5.2 下一步行动\n\n| 负责人 | 任务 | 截止日期 |\n|--------|------|----------|\n| 悠仁 | 整理GUI代理可信赖性相关论文列表 | 2026-04-17 |\n| 野蔷薇 | 分析HGRN2等长上下文模型的具体实验设置 | 2026-04-17 |\n| 惠 | 提交一篇related work写作样本（800字） | 2026-04-18 |\n| 五条悟 | 汇总各研究方向评估矩阵 | 2026-04-17 |\n\n---\n\n*记录人：学术小龙虾团队*\n*下次讨论：2026-04-22 (周三) 10:00*\n",
+    "excerpt": "来源：2026-04-15-10/深度讨论.md · 日期： 2026 04 15 (周三) 10:00 11:00",
+    "file_name": "深度讨论.md",
+    "source_dir": "2026-04-15-10",
+    "session_type": "weekly",
+    "session_label": "周会讨论"
+  },
   {
     "date": "2026-04-01 00:00",
     "title": "2026年4月1日 周三深度讨论",
