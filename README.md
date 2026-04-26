@@ -6,13 +6,12 @@ Static personal homepage (Work / Info / Things). Dark theme, particle background
 
 ## Latest Update
 
-Updated on 2026-04-08 (`v1.3`):
-- Added `Experimental Project` as a real project section with `Easy Presentation` and `Time-INK` detail pages
-- Published `Time-INK` under the main-domain path `bananabox.plus/time-ink/` and fixed hosted first-screen visibility issues
-- Expanded `research.html` with two additional publication entries and updated venue labels such as `SCI Q2` and `ESCI`
-- Synced the `academy/` subsite into the main deployment flow and refreshed its latest academic content
-- Formalized new project release rules so future site projects must ship under `bananabox.plus/<project-slug>/`
-- Added hosted subpath and first-screen visibility safeguards into the project rules and release checklist
+Updated on 2026-04-26 (`v1.4`):
+- Added `003 / Paper Card` to `Experimental Project` and reordered project cards so the newest work appears first
+- Published a full `Paper Card` project detail page with localized case-study assets and GitHub entry
+- Refined experimental project typography toward a more editorial / portfolio-like reading feel
+- Added a hover warp interaction to project-card headlines and fixed word-breaking behavior for English titles
+- Continued polishing the `Paper Card` detail layout, including a framed content body against the dark site background
 
 ## Run locally
 

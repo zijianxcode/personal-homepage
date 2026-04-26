@@ -169,6 +169,170 @@
     }
 
     // ==========================================
+    // Experimental card hover warp
+    // ==========================================
+
+    function initExperimentalCardWarp() {
+        if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            return;
+        }
+
+        var notes = Array.prototype.slice.call(document.querySelectorAll('.exp-card-note'));
+        if (!notes.length) return;
+
+        notes.forEach(function (note) {
+            prepareWarpGlyphs(note);
+            bindWarpEvents(note);
+        });
+    }
+
+    function prepareWarpGlyphs(note) {
+        if (!note || note.dataset.warpReady === 'true') return;
+
+        var text = note.textContent || '';
+        var isChinese = note.classList.contains('lang-cn');
+        note.dataset.warpText = text;
+        note.setAttribute('aria-label', text.trim());
+        note.textContent = '';
+
+        var fragment = document.createDocumentFragment();
+        if (isChinese) {
+            for (var i = 0; i < text.length; i++) {
+                var char = text.charAt(i);
+                var glyph = document.createElement('span');
+                glyph.className = 'exp-card-glyph' + (char === ' ' ? ' exp-card-glyph--space' : '');
+                glyph.setAttribute('aria-hidden', 'true');
+                glyph.textContent = char === ' ' ? '\u00A0' : char;
+                fragment.appendChild(glyph);
+            }
+        } else {
+            var tokens = text.split(/(\s+)/);
+            for (var t = 0; t < tokens.length; t++) {
+                var token = tokens[t];
+                if (!token) continue;
+
+                if (/^\s+$/.test(token)) {
+                    fragment.appendChild(document.createTextNode(token));
+                    continue;
+                }
+
+                var word = document.createElement('span');
+                word.className = 'exp-card-word';
+                word.setAttribute('aria-hidden', 'true');
+
+                for (var j = 0; j < token.length; j++) {
+                    var wordGlyph = document.createElement('span');
+                    wordGlyph.className = 'exp-card-glyph';
+                    wordGlyph.setAttribute('aria-hidden', 'true');
+                    wordGlyph.textContent = token.charAt(j);
+                    word.appendChild(wordGlyph);
+                }
+
+                fragment.appendChild(word);
+            }
+        }
+
+        note.appendChild(fragment);
+        note.dataset.warpReady = 'true';
+    }
+
+    function bindWarpEvents(note) {
+        var frame = 0;
+        var pointerX = 0;
+        var pointerY = 0;
+
+        function queueUpdate(clientX, clientY) {
+            pointerX = clientX;
+            pointerY = clientY;
+
+            if (frame) return;
+            frame = requestAnimationFrame(function () {
+                frame = 0;
+                updateWarp(note, pointerX, pointerY);
+            });
+        }
+
+        note.addEventListener('mouseenter', function (event) {
+            queueUpdate(event.clientX, event.clientY);
+        });
+
+        note.addEventListener('mousemove', function (event) {
+            queueUpdate(event.clientX, event.clientY);
+        });
+
+        note.addEventListener('mouseleave', function () {
+            if (frame) {
+                cancelAnimationFrame(frame);
+                frame = 0;
+            }
+            resetWarp(note);
+        });
+    }
+
+    function updateWarp(note, clientX, clientY) {
+        if (!note) return;
+
+        var rect = note.getBoundingClientRect();
+        var noteWidth = Math.max(rect.width, 1);
+        var noteHeight = Math.max(rect.height, 1);
+        var relX = (clientX - rect.left) / noteWidth;
+        var relY = (clientY - rect.top) / noteHeight;
+        var clampedX = Math.max(0, Math.min(1, relX));
+        var clampedY = Math.max(0, Math.min(1, relY));
+        var glyphs = note.querySelectorAll('.exp-card-glyph');
+        var radius = Math.min(180, Math.max(96, noteWidth * 0.42));
+
+        note.style.setProperty('--hole-x', (clampedX * 100).toFixed(2) + '%');
+        note.style.setProperty('--hole-y', (clampedY * 100).toFixed(2) + '%');
+        note.style.setProperty('--hole-opacity', '0.88');
+
+        for (var i = 0; i < glyphs.length; i++) {
+            var glyph = glyphs[i];
+            if (glyph.classList.contains('exp-card-glyph--space')) continue;
+
+            var glyphRect = glyph.getBoundingClientRect();
+            var centerX = glyphRect.left + glyphRect.width / 2;
+            var centerY = glyphRect.top + glyphRect.height / 2;
+            var dx = clientX - centerX;
+            var dy = clientY - centerY;
+            var distance = Math.sqrt(dx * dx + dy * dy);
+            var falloff = Math.max(0, 1 - distance / radius);
+            var force = Math.pow(falloff, 2.35);
+            var moveX = dx * force * 0.16;
+            var moveY = dy * force * 0.22;
+            var scale = 1 - force * 0.24;
+            var blur = force * 1.6;
+            var opacity = 1 - force * 0.14;
+            var rotate = dx * force * 0.03;
+
+            glyph.style.setProperty('--glyph-x', moveX.toFixed(2) + 'px');
+            glyph.style.setProperty('--glyph-y', moveY.toFixed(2) + 'px');
+            glyph.style.setProperty('--glyph-scale', scale.toFixed(3));
+            glyph.style.setProperty('--glyph-blur', blur.toFixed(2) + 'px');
+            glyph.style.setProperty('--glyph-opacity', opacity.toFixed(3));
+            glyph.style.setProperty('--glyph-rotate', rotate.toFixed(2) + 'deg');
+        }
+    }
+
+    function resetWarp(note) {
+        if (!note) return;
+
+        note.style.setProperty('--hole-opacity', '0');
+        note.style.setProperty('--hole-scale', '0.78');
+        note.style.setProperty('--hole-rotate', '0deg');
+
+        var glyphs = note.querySelectorAll('.exp-card-glyph');
+        for (var i = 0; i < glyphs.length; i++) {
+            glyphs[i].style.removeProperty('--glyph-x');
+            glyphs[i].style.removeProperty('--glyph-y');
+            glyphs[i].style.removeProperty('--glyph-scale');
+            glyphs[i].style.removeProperty('--glyph-blur');
+            glyphs[i].style.removeProperty('--glyph-opacity');
+            glyphs[i].style.removeProperty('--glyph-rotate');
+        }
+    }
+
+    // ==========================================
     // Init
     // ==========================================
 
@@ -181,6 +345,7 @@
             initLang();
             initFooter();
             new ParticleBackground('canvas-container');
+            initExperimentalCardWarp();
         } catch (err) {
             console.error('vc-page init error:', err);
         }

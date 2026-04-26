@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paper Card — zijian</title>
+
+    <meta name="description" content="Paper Card — an agent collaboration case study for turning a research paper into structured visual content.">
+    <meta name="robots" content="index, follow">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="theme-color" content="#0a0a0a">
+    <link rel="icon" type="image/svg+xml" href="../Assets/img/favicon.svg">
+    <link rel="apple-touch-icon" href="../Assets/img/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../Assets/css/style.css?v=20260329-eva-coming-soon">
+    <style>
+        .paper-card-case {
+            --pc-bg: #f7f4ed;
+            --pc-panel: #fffdf8;
+            --pc-text: #17202a;
+            --pc-subtle: #5e574f;
+            --pc-border: #d9d0c2;
+            --pc-border-strong: #ddd5c8;
+            --pc-accent: #8b4513;
+            --pc-dark: #17202a;
+            --pc-dark-2: #101316;
+            --pc-dark-3: #171a1e;
+            --pc-green: #69b79b;
+            --pc-amber: #e0a766;
+            width: min(1560px, calc(100vw - 72px));
+            margin: 36px auto 0;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 28px;
+            overflow: hidden;
+            background: var(--pc-bg);
+            color: var(--pc-text);
+            box-shadow: 0 28px 80px rgba(0, 0, 0, 0.18);
+        }
+
+        .paper-card-case *,
+        .paper-card-case *::before,
+        .paper-card-case *::after {
+            box-sizing: border-box;
+        }
+
+        .paper-card-case a {
+            color: inherit;
+        }
+
+        .paper-card-case img {
+            display: block;
+            max-width: 100%;
+        }
+
+        .paper-card-case .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            border-bottom: 1px solid var(--pc-border-strong);
+            background: color-mix(in srgb, var(--pc-bg) 94%, transparent);
+            backdrop-filter: blur(12px);
+        }
+
+        .paper-card-case .topbar-inner,
+        .paper-card-case .hero,
+        .paper-card-case .section-inner {
+            width: min(1120px, calc(100vw - 40px));
+            margin: 0 auto;
+        }
+
+        .paper-card-case .topbar-inner {
+            min-height: 58px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 22px;
+        }
+
+        .paper-card-case .brand {
+            color: #2c3e50;
+            font-size: 13px;
+            font-weight: 800;
+            white-space: nowrap;
+        }
+
+        .paper-card-case .nav {
+            display: flex;
+            gap: 15px;
+            color: #70675d;
+            font-size: 13px;
+            white-space: nowrap;
+        }
+
+        .paper-card-case .nav a {
+            text-decoration: none;
+        }
+
+        .paper-card-case .nav a:hover {
+            color: #2c3e50;
+        }
+
+        .paper-card-case .hero {
+            padding: 82px 0 72px;
+        }
+
+        .paper-card-case .eyebrow,
+        .paper-card-case .section-kicker {
+            color: var(--pc-accent);
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .paper-card-case h1,
+        .paper-card-case h2 {
+            margin: 0;
+            color: var(--pc-text);
+            font-family: Georgia, "Times New Roman", "Songti SC", serif;
+            letter-spacing: 0;
+        }
+
+        .paper-card-case h1 {
+            max-width: 920px;
+            margin-top: 18px;
+            font-size: clamp(42px, 6.2vw, 76px);
+            line-height: 1.08;
+        }
+
+        .paper-card-case h2 {
+            margin-top: 10px;
+            max-width: 900px;
+            font-size: clamp(30px, 4vw, 52px);
+            line-height: 1.16;
+        }
+
+        .paper-card-case .hero-lede,
+        .paper-card-case .section-lede {
+            max-width: 760px;
+            color: #46515b;
+            font-size: 18px;
+        }
+
+        .paper-card-case .hero-lede {
+            margin: 26px 0 0;
+        }
+
+        .paper-card-case .hero-points {
+            margin-top: 28px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+        }
+
+        .paper-card-case .pill {
+            display: inline-flex;
+            align-items: center;
+            min-height: 30px;
+            padding: 4px 11px;
+            border: 1px solid #d6ccbe;
+            border-radius: 999px;
+            background: var(--pc-panel);
+            color: var(--pc-subtle);
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .paper-card-case .section {
+            border-top: 1px solid var(--pc-border-strong);
+            scroll-margin-top: 84px;
+        }
+
+        .paper-card-case .section-inner {
+            padding: 72px 0;
+        }
+
+        .paper-card-case .section-lede {
+            margin: 18px 0 0;
+        }
+
+        .paper-card-case .flow {
+            margin-top: 34px;
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 10px;
+        }
+
+        .paper-card-case .flow-card,
+        .paper-card-case .panel,
+        .paper-card-case .compact-card,
+        .paper-card-case .visual-card,
+        .paper-card-case .output-card {
+            border: 1px solid var(--pc-border);
+            border-radius: 10px;
+            background: var(--pc-panel);
+        }
+
+        .paper-card-case .flow-card {
+            min-height: 178px;
+            padding: 18px;
+        }
+
+        .paper-card-case .flow-index {
+            color: var(--pc-accent);
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .paper-card-case .flow-title {
+            margin-top: 12px;
+            color: #2c3e50;
+            font-size: 20px;
+            font-weight: 850;
+            line-height: 1.3;
+        }
+
+        .paper-card-case .flow-copy,
+        .paper-card-case .visual-card p,
+        .paper-card-case .compact-card p,
+        .paper-card-case .output-caption span {
+            margin-top: 8px;
+            color: var(--pc-subtle);
+            font-size: 14px;
+        }
+
+        .paper-card-case .two-col {
+            margin-top: 34px;
+            display: grid;
+            grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+            gap: 16px;
+        }
+
+        .paper-card-case .panel {
+            padding: 22px;
+        }
+
+        .paper-card-case .panel h3,
+        .paper-card-case .compact-card h3,
+        .paper-card-case .visual-card h3 {
+            margin: 0;
+            color: #2c3e50;
+            line-height: 1.35;
+        }
+
+        .paper-card-case .panel h3 {
+            font-size: 21px;
+        }
+
+        .paper-card-case .meta {
+            margin-top: 16px;
+            border-top: 1px solid #e8dfd2;
+        }
+
+        .paper-card-case .meta-row {
+            display: grid;
+            grid-template-columns: 84px minmax(0, 1fr);
+            gap: 14px;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee7dc;
+        }
+
+        .paper-card-case .meta-label {
+            color: #887d72;
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .paper-card-case .meta-value {
+            color: #24313c;
+            font-size: 15px;
+        }
+
+        .paper-card-case .quote {
+            margin-top: 16px;
+            padding: 18px 20px;
+            border-left: 4px solid var(--pc-accent);
+            background: #fbf8f1;
+            color: #3c4650;
+            font-size: 15px;
+        }
+
+        .paper-card-case .compact-grid {
+            margin-top: 34px;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .paper-card-case .compact-card {
+            min-height: 180px;
+            padding: 20px;
+        }
+
+        .paper-card-case .compact-card h3 {
+            font-size: 20px;
+        }
+
+        .paper-card-case .compact-card p {
+            font-size: 15px;
+        }
+
+        .paper-card-case .visual-grid {
+            margin-top: 34px;
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .paper-card-case .visual-card {
+            min-height: 184px;
+            padding: 18px;
+        }
+
+        .paper-card-case .visual-card svg {
+            width: 100%;
+            height: 54px;
+            margin-bottom: 12px;
+        }
+
+        .paper-card-case .visual-card h3 {
+            font-size: 17px;
+        }
+
+        .paper-card-case .agent-section {
+            border-top: 0;
+            background:
+                radial-gradient(circle at 16px 16px, rgba(255, 253, 248, 0.13) 1.4px, transparent 1.6px) 0 0 / 28px 28px,
+                linear-gradient(135deg, var(--pc-dark-2) 0%, var(--pc-dark-3) 56%, #111417 100%);
+            color: #f7f4ed;
+        }
+
+        .paper-card-case .agent-section h2,
+        .paper-card-case .method h2 {
+            color: #f7f4ed;
+        }
+
+        .paper-card-case .agent-section .section-kicker {
+            color: var(--pc-amber);
+        }
+
+        .paper-card-case .agent-section .section-lede,
+        .paper-card-case .method .section-lede {
+            color: #d8cec0;
+        }
+
+        .paper-card-case .agent-map {
+            margin-top: 34px;
+            border: 1px solid rgba(247, 244, 237, 0.18);
+            border-radius: 16px;
+            background: rgba(18, 22, 26, 0.88);
+            overflow-x: auto;
+            box-shadow: 0 28px 80px rgba(0, 0, 0, 0.28);
+        }
+
+        .paper-card-case .agent-map svg {
+            display: block;
+            width: 100%;
+            min-width: 940px;
+            height: auto;
+        }
+
+        .paper-card-case .agent-mobile-flow {
+            display: none;
+            margin-top: 28px;
+        }
+
+        .paper-card-case .mobile-node {
+            position: relative;
+            padding: 17px 18px;
+            border: 1px solid rgba(247, 244, 237, 0.18);
+            border-radius: 14px;
+            background: rgba(255, 253, 248, 0.06);
+        }
+
+        .paper-card-case .mobile-node + .mobile-node {
+            margin-top: 28px;
+        }
+
+        .paper-card-case .mobile-node:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            left: 28px;
+            bottom: -29px;
+            width: 2px;
+            height: 28px;
+            background: rgba(247, 244, 237, 0.32);
+        }
+
+        .paper-card-case .mobile-node-label {
+            color: var(--pc-amber);
+            font-size: 11px;
+            font-weight: 850;
+        }
+
+        .paper-card-case .mobile-node h3 {
+            margin: 7px 0 0;
+            color: #fffdf8;
+            font-size: 20px;
+            line-height: 1.3;
+        }
+
+        .paper-card-case .mobile-node p {
+            margin: 6px 0 0;
+            color: #d8cec0;
+            font-size: 13px;
+        }
+
+        .paper-card-case .mobile-chips,
+        .paper-card-case .mobile-branches {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .paper-card-case .mobile-chip,
+        .paper-card-case .mobile-branch {
+            border: 1px solid rgba(247, 244, 237, 0.16);
+            border-radius: 999px;
+            background: rgba(255, 253, 248, 0.07);
+            color: #d8cec0;
+            font-size: 12px;
+            font-weight: 750;
+            padding: 4px 9px;
+        }
+
+        .paper-card-case .mobile-branch.is-output {
+            border-color: rgba(105, 183, 155, 0.45);
+            color: #a9dcc9;
+        }
+
+        .paper-card-case .mobile-branch.is-feedback {
+            border-color: rgba(224, 167, 102, 0.5);
+            color: #f1c996;
+        }
+
+        .paper-card-case .map-frame {
+            fill: rgba(255, 253, 248, 0.04);
+            stroke: rgba(247, 244, 237, 0.18);
+        }
+
+        .paper-card-case .map-node {
+            fill: #20242a;
+            stroke: #7f8490;
+            stroke-width: 1.5;
+        }
+
+        .paper-card-case .map-node-strong {
+            fill: #28232d;
+            stroke: #cfc7d9;
+            stroke-width: 2;
+        }
+
+        .paper-card-case .map-output {
+            fill: #17282a;
+            stroke: var(--pc-green);
+            stroke-width: 1.6;
+        }
+
+        .paper-card-case .map-human {
+            fill: #2a241e;
+            stroke: var(--pc-amber);
+            stroke-width: 1.6;
+        }
+
+        .paper-card-case .map-label {
+            fill: #a9aab2;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0;
+        }
+
+        .paper-card-case .map-label-green {
+            fill: var(--pc-green);
+        }
+
+        .paper-card-case .map-label-amber {
+            fill: var(--pc-amber);
+        }
+
+        .paper-card-case .map-route-chip {
+            fill: rgba(18, 22, 26, 0.9);
+            stroke-width: 1;
+        }
+
+        .paper-card-case .map-route-chip.is-green {
+            stroke: rgba(105, 183, 155, 0.55);
+        }
+
+        .paper-card-case .map-route-chip.is-amber {
+            stroke: rgba(224, 167, 102, 0.55);
+        }
+
+        .paper-card-case .map-title {
+            fill: #fffdf8;
+            font-size: 18px;
+            font-weight: 850;
+            letter-spacing: 0;
+        }
+
+        .paper-card-case .map-copy {
+            fill: #c9c2b8;
+            font-size: 12px;
+            letter-spacing: 0;
+        }
+
+        .paper-card-case .map-small {
+            fill: #a9aab2;
+            font-size: 11px;
+            letter-spacing: 0;
+        }
+
+        .paper-card-case .map-tool-title {
+            fill: #fffdf8;
+            font-size: 12px;
+            font-weight: 850;
+            text-anchor: middle;
+            letter-spacing: 0;
+        }
+
+        .paper-card-case .map-tool-copy {
+            fill: #a9aab2;
+            font-size: 9.5px;
+            text-anchor: middle;
+            letter-spacing: 0;
+        }
+
+        .paper-card-case .map-edge {
+            fill: none;
+            stroke: #8c909a;
+            stroke-width: 2;
+        }
+
+        .paper-card-case .map-edge-soft {
+            fill: none;
+            stroke: #8c909a;
+            stroke-width: 1.7;
+            stroke-dasharray: 7 8;
+        }
+
+        .paper-card-case .map-edge-yes {
+            fill: none;
+            stroke: var(--pc-green);
+            stroke-width: 2.2;
+        }
+
+        .paper-card-case .map-edge-feedback {
+            fill: none;
+            stroke: var(--pc-amber);
+            stroke-width: 1.9;
+            stroke-dasharray: 8 7;
+        }
+
+        .paper-card-case .map-chip {
+            fill: rgba(255, 253, 248, 0.07);
+            stroke: rgba(247, 244, 237, 0.16);
+        }
+
+        .paper-card-case .agent-controls {
+            margin-top: 16px;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .paper-card-case .control-card {
+            padding: 16px 18px;
+            border: 1px solid rgba(247, 244, 237, 0.18);
+            border-radius: 12px;
+            background: rgba(255, 253, 248, 0.06);
+        }
+
+        .paper-card-case .control-card strong {
+            display: block;
+            color: #fffdf8;
+            font-size: 17px;
+        }
+
+        .paper-card-case .control-card span {
+            display: block;
+            margin-top: 5px;
+            color: #d8cec0;
+            font-size: 13px;
+        }
+
+        .paper-card-case .output-gallery {
+            margin-top: 34px;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+            align-items: start;
+        }
+
+        .paper-card-case .output-card {
+            overflow: hidden;
+        }
+
+        .paper-card-case .output-card figure {
+            margin: 0;
+        }
+
+        .paper-card-case .output-card img {
+            width: 100%;
+            background: #fafaf8;
+        }
+
+        .paper-card-case .output-caption {
+            min-height: 116px;
+            padding: 15px 17px 17px;
+            border-top: 1px solid #e7ded1;
+        }
+
+        .paper-card-case .output-caption strong {
+            display: block;
+            color: #2c3e50;
+            font-size: 15px;
+        }
+
+        .paper-card-case .method {
+            background: var(--pc-dark);
+            color: #f7f4ed;
+        }
+
+        .paper-card-case .method .section-kicker {
+            color: #c98d55;
+        }
+
+        .paper-card-case .principles {
+            margin-top: 34px;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .paper-card-case .principle {
+            padding: 22px;
+            border: 1px solid rgba(247, 244, 237, 0.14);
+            border-radius: 14px;
+            background: rgba(255, 253, 248, 0.06);
+        }
+
+        .paper-card-case .principle strong {
+            display: block;
+            color: #fffdf8;
+            font-size: 19px;
+        }
+
+        .paper-card-case .principle span {
+            display: block;
+            margin-top: 8px;
+            color: #d8cec0;
+            font-size: 14px;
+        }
+
+        .paper-card-case .footer {
+            background: #12171c;
+            color: #a8acb3;
+            font-size: 13px;
+        }
+
+        .paper-card-case .footer .section-inner {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 28px 0 34px;
+        }
+
+        @media (max-width: 1100px) {
+            .paper-card-case .flow,
+            .paper-card-case .visual-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 900px) {
+            .paper-card-case .nav {
+                display: none;
+            }
+
+            .paper-card-case .flow,
+            .paper-card-case .compact-grid,
+            .paper-card-case .visual-grid,
+            .paper-card-case .agent-controls,
+            .paper-card-case .output-gallery,
+            .paper-card-case .principles,
+            .paper-card-case .two-col {
+                grid-template-columns: 1fr;
+            }
+
+            .paper-card-case .agent-map {
+                display: none;
+            }
+
+            .paper-card-case .agent-mobile-flow {
+                display: block;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .paper-card-case {
+                width: min(100vw - 24px, 1560px);
+                border-radius: 22px;
+                margin-top: 28px;
+            }
+
+            .paper-card-case .topbar-inner,
+            .paper-card-case .hero,
+            .paper-card-case .section-inner {
+                width: min(100vw - 28px, 1120px);
+            }
+
+            .paper-card-case .hero {
+                padding: 56px 0 48px;
+            }
+
+            .paper-card-case .hero-lede,
+            .paper-card-case .section-lede {
+                font-size: 16px;
+            }
+
+            .paper-card-case .output-gallery {
+                display: flex;
+                overflow-x: auto;
+                gap: 14px;
+                padding-bottom: 6px;
+                scroll-snap-type: x mandatory;
+            }
+
+            .paper-card-case .output-card {
+                min-width: 280px;
+                scroll-snap-align: start;
+            }
+
+            .paper-card-case .footer .section-inner {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body data-lang="en">
+
+    <div id="canvas-container"></div>
+
+    <header class="site-header">
+        <nav class="nav-links">
+            <a href="../index.html#work" class="nav-link">Work</a>
+            <a href="../index.html#info" class="nav-link">Info</a>
+            <a href="../index.html#things" class="nav-link">Things</a>
+        </nav>
+        <div class="nav-right">
+            <div class="lang-switch">
+                <button class="lang-btn" data-lang="en">EN</button>
+                <span class="lang-divider">/</span>
+                <button class="lang-btn" data-lang="cn">CN</button>
+            </div>
+            <a href="../index.html#work" class="brand-name">zijian</a>
+        </div>
+    </header>
+
+    <main class="exp-detail-page">
+        <section class="exp-detail-hero">
+            <div class="exp-detail-meta">
+                <a href="../experimental-project.html" class="vc-back exp-detail-back">
+                    <span class="lang-en">← Experimental Project</span>
+                    <span class="lang-cn">← 实验项目</span>
+                </a>
+                <div class="exp-detail-kicker">003</div>
+            </div>
+            <h1 class="exp-detail-title lang-en">Paper Card</h1>
+            <h1 class="exp-detail-title lang-cn">Paper Card</h1>
+            <p class="exp-detail-subtitle lang-en">A case study on how agent collaboration can turn a paper into structured, shareable visual content.</p>
+            <p class="exp-detail-subtitle lang-cn">一个关于 agent 协作流程的案例页：从论文输入开始，经过提炼、结构化与图形化，最终形成可传播的视觉内容。</p>
+            <div class="exp-detail-actions">
+                <a class="exp-detail-link" href="https://github.com/zijianxcode/paper-card" target="_blank" rel="noopener noreferrer">
+                    <span class="lang-en">View Project on GitHub</span>
+                    <span class="lang-cn">查看 GitHub 项目</span>
+                    <span class="exp-detail-link__arrow" aria-hidden="true">↗</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="paper-card-case" aria-label="Paper Card case study">
+            <header class="topbar">
+                <div class="topbar-inner">
+                    <div class="brand">Case.1 / Agent 协作流程设计</div>
+                    <nav class="nav" aria-label="页面导航">
+                        <a href="#flow">写作流程</a>
+                        <a href="#agent">Agent 流程</a>
+                        <a href="#input">输入</a>
+                        <a href="#structure">结构</a>
+                        <a href="#visual">图形化</a>
+                        <a href="#output">输出</a>
+                        <a href="#method">结论</a>
+                    </nav>
+                </div>
+            </header>
+
+            <section class="hero">
+                <div class="eyebrow">Work with AI / AIUX Case Study</div>
+                <h1>Case.1_ 从论文到视觉内容的 Agent 协作流程设计</h1>
+                <p class="hero-lede">用一个论文长图案例，展示 agent 如何参与写作流程：先明确输入，再组织信息，随后做图形化转译，最后形成可传播的视觉输出。</p>
+                <div class="hero-points">
+                    <span class="pill">流程先行</span>
+                    <span class="pill">信息准确</span>
+                    <span class="pill">表达简洁</span>
+                    <span class="pill">输出可见</span>
+                </div>
+            </section>
+
+            <section class="section" id="flow">
+                <div class="section-inner">
+                    <div class="section-kicker">01 / 写作流程</div>
+                    <h2>先展示流程，再按流程展示内容。</h2>
+                    <p class="section-lede">这页 case 的讲法不是堆结果，而是让听众先理解 agent 的协作路径。</p>
+                    <div class="flow" aria-label="从论文到视觉内容的写作流程">
+                        <article class="flow-card">
+                            <div class="flow-index">Step 01</div>
+                            <div class="flow-title">输入</div>
+                            <div class="flow-copy">论文题目、链接、目标受众和输出形式。</div>
+                        </article>
+                        <article class="flow-card">
+                            <div class="flow-index">Step 02</div>
+                            <div class="flow-title">提炼</div>
+                            <div class="flow-copy">把论文变成可审阅的重点和初稿。</div>
+                        </article>
+                        <article class="flow-card">
+                            <div class="flow-index">Step 03</div>
+                            <div class="flow-title">结构化</div>
+                            <div class="flow-copy">按讲解顺序组织成模块。</div>
+                        </article>
+                        <article class="flow-card">
+                            <div class="flow-index">Step 04</div>
+                            <div class="flow-title">图形化</div>
+                            <div class="flow-copy">选择对比图、流程图、结果卡和取舍图。</div>
+                        </article>
+                        <article class="flow-card">
+                            <div class="flow-index">Step 05</div>
+                            <div class="flow-title">输出</div>
+                            <div class="flow-copy">生成手机长图和可交互界面。</div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section agent-section" id="agent">
+                <div class="section-inner">
+                    <div class="section-kicker">02 / Agent Backstage</div>
+                    <h2>Agent 内部流程：把模糊输入变成可交付内容。</h2>
+                    <p class="section-lede">这张图展示协作后台：agent 负责组织材料、调用能力和生成草案；人保留关键判断，决定准确性、取舍和传播目标。</p>
+                    <div class="agent-map" aria-label="Agent 内部协作流程图">
+                        <svg viewBox="0 0 1120 420" role="img" aria-labelledby="agent-map-title agent-map-desc">
+                            <title id="agent-map-title">从论文输入到视觉输出的 Agent 内部协作流程</title>
+                            <desc id="agent-map-desc">流程从用户输入开始，进入 Agent 工作区，经过上下文记忆、阅读提取、结构规划和图形化转译等能力调用，再通过判断点决定输出长图、可交互界面，或回到人工反馈。</desc>
+                            <defs>
+                                <marker id="paper-card-arrow-main" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                                    <path d="M 0 0 L 10 5 L 0 10 z" fill="#8C909A"/>
+                                </marker>
+                                <marker id="paper-card-arrow-yes" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                                    <path d="M 0 0 L 10 5 L 0 10 z" fill="#69B79B"/>
+                                </marker>
+                                <marker id="paper-card-arrow-feedback" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                                    <path d="M 0 0 L 10 5 L 0 10 z" fill="#E0A766"/>
+                                </marker>
+                                <filter id="paper-card-map-shadow" x="-20%" y="-20%" width="140%" height="140%">
+                                    <feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#000000" flood-opacity="0.24"/>
+                                </filter>
+                            </defs>
+
+                            <rect class="map-frame" x="24" y="24" width="1072" height="372" rx="22"/>
+                            <g transform="translate(0 -52)">
+                                <g filter="url(#paper-card-map-shadow)">
+                                    <rect class="map-node" x="64" y="152" width="170" height="134" rx="18"/>
+                                    <text class="map-label" x="86" y="178">TRIGGER / 输入触发</text>
+                                    <circle cx="94" cy="205" r="13" fill="#263E45" stroke="#3AA6B5" stroke-width="1.5"/>
+                                    <path d="M89 205h10M89 211h16M89 199h12" stroke="#3AA6B5" stroke-width="1.8" stroke-linecap="round"/>
+                                    <text class="map-title" x="86" y="244">论文 + 目标</text>
+                                    <text class="map-copy" x="86" y="268">材料、受众、输出形式</text>
+                                </g>
+
+                                <path class="map-edge" d="M234 219 H318" marker-end="url(#paper-card-arrow-main)"/>
+
+                                <g filter="url(#paper-card-map-shadow)">
+                                    <rect class="map-node-strong" x="318" y="138" width="300" height="146" rx="18"/>
+                                    <text class="map-label" x="342" y="172">AGENT WORKSPACE / 协作中枢</text>
+                                    <text class="map-title" x="342" y="210">Agent 工作区</text>
+                                    <text class="map-copy" x="342" y="236">理解材料 · 组织结构 · 生成草案</text>
+                                    <rect class="map-chip" x="342" y="252" width="70" height="22" rx="11"/>
+                                    <text class="map-small" x="360" y="267">上下文</text>
+                                    <rect class="map-chip" x="424" y="252" width="70" height="22" rx="11"/>
+                                    <text class="map-small" x="448" y="267">工具</text>
+                                    <rect class="map-chip" x="506" y="252" width="78" height="22" rx="11"/>
+                                    <text class="map-small" x="528" y="267">生成</text>
+                                </g>
+
+                                <path class="map-edge" d="M618 219 H698" marker-end="url(#paper-card-arrow-main)"/>
+
+                                <g>
+                                    <path class="map-edge-soft" d="M384 284 C350 306 324 316 286 324" marker-end="url(#paper-card-arrow-main)"/>
+                                    <path class="map-edge-soft" d="M450 284 C436 307 428 318 420 326" marker-end="url(#paper-card-arrow-main)"/>
+                                    <path class="map-edge-soft" d="M516 284 C538 306 552 318 570 326" marker-end="url(#paper-card-arrow-main)"/>
+                                    <path class="map-edge-soft" d="M580 284 C632 306 670 318 720 324" marker-end="url(#paper-card-arrow-main)"/>
+
+                                    <circle cx="270" cy="352" r="38" fill="#1D2327" stroke="#7F8490" stroke-width="1.5"/>
+                                    <path d="M258 328h24M258 337h20M258 346h24" stroke="#8C909A" stroke-width="1.8" stroke-linecap="round"/>
+                                    <text class="map-tool-title" x="270" y="361">上下文记忆</text>
+                                    <text class="map-tool-copy" x="270" y="377">背景 / 历史反馈</text>
+
+                                    <circle cx="420" cy="352" r="38" fill="#1D2327" stroke="#7F8490" stroke-width="1.5"/>
+                                    <path d="M406 324h22l8 8v26h-30z M428 324v9h8 M412 341h18 M412 351h14" fill="none" stroke="#8C909A" stroke-width="1.8" stroke-linecap="round"/>
+                                    <text class="map-tool-title" x="420" y="366">阅读提取</text>
+                                    <text class="map-tool-copy" x="420" y="382">重点 / 证据 / 数字</text>
+
+                                    <circle cx="570" cy="352" r="38" fill="#1D2327" stroke="#7F8490" stroke-width="1.5"/>
+                                    <path d="M570 324v12M550 347h40M550 347v13M590 347v13M570 347v13" stroke="#8C909A" stroke-width="1.8" stroke-linecap="round"/>
+                                    <rect x="560" y="335" width="20" height="15" rx="4" fill="none" stroke="#8C909A" stroke-width="1.8"/>
+                                    <text class="map-tool-title" x="570" y="366">结构规划</text>
+                                    <text class="map-tool-copy" x="570" y="382">顺序 / 模块</text>
+
+                                    <circle cx="720" cy="352" r="38" fill="#1D2327" stroke="#7F8490" stroke-width="1.5"/>
+                                    <rect x="704" y="324" width="14" height="14" rx="3" fill="none" stroke="#8C909A" stroke-width="1.8"/>
+                                    <rect x="724" y="324" width="14" height="14" rx="3" fill="none" stroke="#8C909A" stroke-width="1.8"/>
+                                    <rect x="704" y="345" width="34" height="13" rx="3" fill="none" stroke="#8C909A" stroke-width="1.8"/>
+                                    <text class="map-tool-title" x="720" y="369">图形化转译</text>
+                                    <text class="map-tool-copy" x="720" y="385">对比图 / 流程图</text>
+                                </g>
+
+                                <g filter="url(#paper-card-map-shadow)">
+                                    <rect class="map-node" x="698" y="150" width="154" height="142" rx="16"/>
+                                    <text class="map-label" x="720" y="178">DECISION / 判断点</text>
+                                    <path d="M750 204h52M750 224h52M750 244h52" stroke="#69B79B" stroke-width="6.5" stroke-linecap="round"/>
+                                    <circle cx="776" cy="224" r="6" fill="#171A1E"/>
+                                    <text class="map-title" x="718" y="266">是否讲清楚？</text>
+                                    <text class="map-copy" x="718" y="286">准确、简洁、可传播</text>
+                                </g>
+
+                                <path class="map-edge-yes" d="M852 200 C884 168 896 160 920 160" marker-end="url(#paper-card-arrow-yes)"/>
+                                <path class="map-edge-yes" d="M852 252 C884 288 896 300 920 300" marker-end="url(#paper-card-arrow-yes)"/>
+                                <path class="map-edge-feedback" d="M804 292 C818 322 832 344 850 360" marker-end="url(#paper-card-arrow-feedback)"/>
+                                <g>
+                                    <rect class="map-route-chip is-green" x="858" y="176" width="58" height="22" rx="11"/>
+                                    <text class="map-label map-label-green" x="870" y="192">可输出</text>
+                                </g>
+                                <g>
+                                    <rect class="map-route-chip is-amber" x="814" y="324" width="68" height="22" rx="11"/>
+                                    <text class="map-label map-label-amber" x="826" y="340">需反馈</text>
+                                </g>
+
+                                <g filter="url(#paper-card-map-shadow)">
+                                    <rect class="map-output" x="920" y="118" width="160" height="86" rx="16"/>
+                                    <text class="map-label" x="942" y="152">OUTPUT</text>
+                                    <text class="map-title" x="942" y="182">长图</text>
+                                    <text class="map-copy" x="920" y="236">适合手机阅读</text>
+                                </g>
+
+                                <g filter="url(#paper-card-map-shadow)">
+                                    <rect class="map-output" x="920" y="258" width="160" height="86" rx="16"/>
+                                    <text class="map-label" x="942" y="292">OUTPUT</text>
+                                    <text class="map-title" x="942" y="322">可交互界面</text>
+                                    <text class="map-copy" x="920" y="374">适合分享讲解</text>
+                                </g>
+
+                                <g filter="url(#paper-card-map-shadow)">
+                                    <rect class="map-human" x="850" y="356" width="230" height="66" rx="16"/>
+                                    <text class="map-label" x="874" y="384">HUMAN REVIEW / 人工反馈</text>
+                                    <text class="map-copy" x="874" y="408">改标题 / 删内容 / 调顺序 / 校准</text>
+                                </g>
+
+                                <path class="map-edge-feedback" d="M850 404 V420 H318 V284" marker-end="url(#paper-card-arrow-feedback)"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="agent-mobile-flow" aria-label="移动端 Agent 内部协作流程">
+                        <article class="mobile-node">
+                            <div class="mobile-node-label">TRIGGER / 输入触发</div>
+                            <h3>论文 + 目标</h3>
+                            <p>材料、受众、输出形式先被定义。</p>
+                        </article>
+                        <article class="mobile-node">
+                            <div class="mobile-node-label">AGENT WORKSPACE / 协作中枢</div>
+                            <h3>理解材料，组织结构，生成草案</h3>
+                            <div class="mobile-chips">
+                                <span class="mobile-chip">上下文记忆</span>
+                                <span class="mobile-chip">阅读提取</span>
+                                <span class="mobile-chip">结构规划</span>
+                                <span class="mobile-chip">图形化转译</span>
+                            </div>
+                        </article>
+                        <article class="mobile-node">
+                            <div class="mobile-node-label">DECISION / 判断点</div>
+                            <h3>是否讲清楚？</h3>
+                            <p>检查准确性、简洁度和可传播性。</p>
+                            <div class="mobile-branches">
+                                <span class="mobile-branch is-output">可输出：长图 / 可交互界面</span>
+                                <span class="mobile-branch is-feedback">需反馈：改标题 / 删内容 / 调顺序</span>
+                            </div>
+                        </article>
+                        <article class="mobile-node">
+                            <div class="mobile-node-label">HUMAN REVIEW / 人工反馈</div>
+                            <h3>人的判断回流到下一轮生成</h3>
+                            <p>修改不是补丁，而是下一轮 agent 工作的约束。</p>
+                        </article>
+                    </div>
+                    <div class="agent-controls">
+                        <div class="control-card">
+                            <strong>输入被定义</strong>
+                            <span>先固定论文、受众和输出形式，避免 agent 在模糊目标里发散。</span>
+                        </div>
+                        <div class="control-card">
+                            <strong>判断被显性化</strong>
+                            <span>准确性、简洁度、可传播性成为流程里的检查点。</span>
+                        </div>
+                        <div class="control-card">
+                            <strong>反馈能回流</strong>
+                            <span>人的修改不是补丁，而是下一轮生成的约束。</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="input">
+                <div class="section-inner">
+                    <div class="section-kicker">03 / Step 01 输入</div>
+                    <h2>输入要清楚：论文是什么，要给谁看，最后做成什么。</h2>
+                    <div class="two-col">
+                        <article class="panel">
+                            <h3>论文输入</h3>
+                            <div class="meta">
+                                <div class="meta-row">
+                                    <div class="meta-label">论文</div>
+                                    <div class="meta-value">Attention Is All You Need</div>
+                                </div>
+                                <div class="meta-row">
+                                    <div class="meta-label">链接</div>
+                                    <div class="meta-value"><a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noopener noreferrer">arxiv.org/abs/1706.03762</a></div>
+                                </div>
+                                <div class="meta-row">
+                                    <div class="meta-label">输出</div>
+                                    <div class="meta-value">手机竖屏论文长图，用于分享课和社交传播。</div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="panel">
+                            <h3>agent 的第一步</h3>
+                            <p class="quote">先把论文从“技术文本”转成“可讲述对象”：它解决什么问题、为什么重要、结果如何、哪里有局限。</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="structure">
+                <div class="section-inner">
+                    <div class="section-kicker">04 / Step 02-03 提炼与结构化</div>
+                    <h2>写作不是压缩全文，而是建立讲解顺序。</h2>
+                    <div class="compact-grid">
+                        <article class="compact-card">
+                            <h3>为什么该关心</h3>
+                            <p>先解释问题背景：为什么 RNN 的顺序计算会限制效率和远距离依赖。</p>
+                        </article>
+                        <article class="compact-card">
+                            <h3>他们怎么做</h3>
+                            <p>再解释方法：注意力机制如何替代传统序列结构。</p>
+                        </article>
+                        <article class="compact-card">
+                            <h3>结果与启发</h3>
+                            <p>最后收束：结果、局限、启发和论文基本信息。</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="visual">
+                <div class="section-inner">
+                    <div class="section-kicker">05 / Step 04 图形化转译</div>
+                    <h2>图形化不是装饰，而是降低理解成本。</h2>
+                    <div class="visual-grid">
+                        <article class="visual-card">
+                            <svg viewBox="0 0 220 56" aria-label="对比图示意">
+                                <rect x="8" y="12" width="72" height="32" rx="6" fill="#EFEAE1" stroke="#B8AEA0"/>
+                                <rect x="140" y="12" width="72" height="32" rx="6" fill="#E7EDF3" stroke="#9AAABC"/>
+                                <line x1="88" y1="28" x2="132" y2="28" stroke="#8B4513" stroke-width="2"/>
+                                <polygon points="132,28 124,24 124,32" fill="#8B4513"/>
+                            </svg>
+                            <h3>有差异，画对比图</h3>
+                            <p>RNN 顺序等待 vs. Transformer 并行关注。</p>
+                        </article>
+                        <article class="visual-card">
+                            <svg viewBox="0 0 220 56" aria-label="流程图示意">
+                                <circle cx="34" cy="28" r="13" fill="#F6EFE7" stroke="#8B4513"/>
+                                <circle cx="110" cy="28" r="13" fill="#F6EFE7" stroke="#8B4513"/>
+                                <circle cx="186" cy="28" r="13" fill="#F6EFE7" stroke="#8B4513"/>
+                                <path d="M47,28 L97,28 M123,28 L173,28" stroke="#2C3E50" stroke-width="2"/>
+                            </svg>
+                            <h3>有步骤，画流程图</h3>
+                            <p>Q/K/V 如何变成注意力输出。</p>
+                        </article>
+                        <article class="visual-card">
+                            <svg viewBox="0 0 220 56" aria-label="结果卡示意">
+                                <rect x="16" y="8" width="188" height="40" rx="7" fill="#FFFDF8" stroke="#D9D0C2"/>
+                                <text x="38" y="34" font-size="13" fill="#2C3E50" font-weight="700">BLEU</text>
+                                <text x="142" y="37" font-size="30" fill="#2C3E50" font-weight="700">28.4</text>
+                            </svg>
+                            <h3>有数字，画结果卡</h3>
+                            <p>让结论先被看见，再读解释。</p>
+                        </article>
+                        <article class="visual-card">
+                            <svg viewBox="0 0 220 56" aria-label="取舍图示意">
+                                <rect x="16" y="10" width="82" height="36" rx="6" fill="#E7EDF3" stroke="#9AAABC"/>
+                                <rect x="122" y="10" width="82" height="36" rx="6" fill="#F6EFE7" stroke="#D8B58E"/>
+                                <text x="57" y="33" text-anchor="middle" font-size="12" fill="#2C3E50" font-weight="700">优势</text>
+                                <text x="163" y="33" text-anchor="middle" font-size="12" fill="#8B4513" font-weight="700">代价</text>
+                            </svg>
+                            <h3>有利弊，画取舍图</h3>
+                            <p>依赖路径更短，但长序列成本更高。</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="output">
+                <div class="section-inner">
+                    <div class="section-kicker">06 / Step 05 输出</div>
+                    <h2>最终输出要能直接作为分享素材使用。</h2>
+                    <p class="section-lede">下面是整理好的三张图片输出。桌面端完整展示，手机端横向滑动查看。</p>
+                    <div class="output-gallery" aria-label="最终图片输出">
+                        <article class="output-card">
+                            <figure>
+                                <img src="../Assets/img/paper-card/page-1.png" alt="输出第一页：问题背景与核心对比">
+                                <figcaption class="output-caption">
+                                    <strong>输出 01 / 问题与对比</strong>
+                                    <span>建立问题背景，并用对比图说明核心变化。</span>
+                                </figcaption>
+                            </figure>
+                        </article>
+                        <article class="output-card">
+                            <figure>
+                                <img src="../Assets/img/paper-card/page-2.png" alt="输出第二页：方法机制">
+                                <figcaption class="output-caption">
+                                    <strong>输出 02 / 方法机制</strong>
+                                    <span>把抽象机制转成更容易讲解的视觉结构。</span>
+                                </figcaption>
+                            </figure>
+                        </article>
+                        <article class="output-card">
+                            <figure>
+                                <img src="../Assets/img/paper-card/page-3.png" alt="输出第三页：结果、局限与速览">
+                                <figcaption class="output-caption">
+                                    <strong>输出 03 / 结果与速览</strong>
+                                    <span>用结果、局限和论文信息完成收束。</span>
+                                </figcaption>
+                            </figure>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section method" id="method">
+                <div class="section-inner">
+                    <div class="section-kicker">07 / 分享课结论</div>
+                    <h2>这个 case 讲的是 agent 协作，而不是 AI 一键生成。</h2>
+                    <p class="section-lede">准确、简洁、高效的 AIUX 案例，需要展示输入、流程、判断和输出之间的关系。</p>
+                    <div class="principles">
+                        <div class="principle">
+                            <strong>流程可见</strong>
+                            <span>先让听众知道 agent 怎么工作，再展示具体内容。</span>
+                        </div>
+                        <div class="principle">
+                            <strong>判断保留给人</strong>
+                            <span>人决定深度、取舍、语气和传播目标。</span>
+                        </div>
+                        <div class="principle">
+                            <strong>输出成为证据</strong>
+                            <span>最终图片不是装饰，而是流程有效性的证明。</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="footer">
+                <div class="section-inner">
+                    <div>Paper Card Case Study · Work with AI</div>
+                    <div>Designed for AIUX / HCI sharing sessions</div>
+                </div>
+            </footer>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <span id="copyright">zijian © 2026</span>
+    </footer>
+
+    <script src="../Assets/js/analytics.js?v=20260319-cloudbase-uv"></script>
+    <script src="../Assets/js/vc-page.js"></script>
+</body>
+
+</html>

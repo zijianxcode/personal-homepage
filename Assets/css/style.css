@@ -1820,7 +1820,7 @@ a:hover {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 18px;
+    padding: 22px 26px 20px;
     background:
         linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02)),
         radial-gradient(circle at 78% 18%, rgba(255, 255, 255, 0.08), transparent 24%);
@@ -1833,33 +1833,124 @@ a:hover {
 
 .exp-card-index {
     font-family: 'Share Tech Mono', 'Courier New', Courier, monospace;
-    font-size: 14px;
-    letter-spacing: 0.18em;
-    color: rgba(255, 255, 255, 0.28);
+    font-size: 13px;
+    letter-spacing: 0.26em;
+    color: rgba(255, 255, 255, 0.24);
 }
 
 .exp-card-state {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     font-size: 11px;
     font-weight: 500;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.32);
+    color: rgba(255, 255, 255, 0.3);
 }
 
 .exp-card-note {
     display: block;
-    max-width: 18ch;
-    font-family: 'Libre Baskerville', Georgia, serif;
-    font-size: 22px;
-    line-height: 1.15;
-    color: rgba(255, 255, 255, 0.92);
+    max-width: 15.4ch;
+    font-family: 'Baskervville', 'Libre Baskerville', Georgia, serif;
+    font-size: clamp(21px, 1.46vw, 27px);
+    font-weight: 400;
+    line-height: 1.18;
+    letter-spacing: -0.018em;
+    color: rgba(255, 255, 255, 0.93);
+    text-wrap: balance;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "liga" 1, "kern" 1;
+    position: relative;
+    isolation: isolate;
+    --hole-x: 50%;
+    --hole-y: 50%;
+    --hole-opacity: 0;
+    --hole-scale: 0.78;
+    --hole-rotate: 0deg;
+    transition: color 0.28s ease;
+}
+
+.exp-card-note::before,
+.exp-card-note::after {
+    content: '';
+    position: absolute;
+    left: var(--hole-x);
+    top: var(--hole-y);
+    transform: translate(-50%, -50%) rotate(var(--hole-rotate)) scale(var(--hole-scale));
+    border-radius: 999px;
+    pointer-events: none;
+    opacity: var(--hole-opacity);
+    transition: opacity 0.18s ease;
+}
+
+.exp-card-note::before {
+    width: 144px;
+    height: 92px;
+    background:
+        radial-gradient(circle at 50% 50%, rgba(6, 6, 8, 0.82) 0%, rgba(6, 6, 8, 0.62) 24%, rgba(6, 6, 8, 0.08) 68%, transparent 100%);
+    filter: blur(12px);
+    z-index: 1;
+}
+
+.exp-card-note::after {
+    width: 118px;
+    height: 118px;
+    background:
+        conic-gradient(from 0deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.14));
+    filter: blur(18px);
+    mix-blend-mode: screen;
+    z-index: 0;
+}
+
+.exp-card-glyph {
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+    transform-origin: 50% 50%;
+    transform:
+        translate3d(var(--glyph-x, 0px), var(--glyph-y, 0px), 0)
+        scale(var(--glyph-scale, 1))
+        rotate(var(--glyph-rotate, 0deg));
+    filter: blur(var(--glyph-blur, 0px));
+    opacity: var(--glyph-opacity, 1);
+    transition:
+        transform 0.34s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.34s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.34s ease;
+    will-change: transform, filter, opacity;
+}
+
+.exp-card-glyph--space {
+    width: 0.32em;
+}
+
+.exp-card-word {
+    display: inline-flex;
+    align-items: baseline;
+    vertical-align: baseline;
+}
+
+.exp-card-note.lang-cn {
+    max-width: 11.4em;
+    font-family: 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', 'STSong', serif;
+    font-size: clamp(18px, 1.18vw, 22px);
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.018em;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .exp-card[href]:hover .exp-card-note,
 .exp-card[href]:focus-visible .exp-card-note {
-    transform: translateY(-1px);
-    transition: transform 0.25s ease;
+    transform: translateY(-2px);
+    color: rgba(255, 255, 255, 0.98);
+    transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.exp-card[href]:hover .exp-card-note::before,
+.exp-card[href]:hover .exp-card-note::after,
+.exp-card[href]:focus-visible .exp-card-note::before,
+.exp-card[href]:focus-visible .exp-card-note::after {
+    opacity: max(var(--hole-opacity), 0);
 }
 
 .exp-detail-page {
@@ -1942,7 +2033,7 @@ a:hover {
     align-items: center;
     gap: 14px;
     margin-top: 28px;
-    margin-left: 256px;
+    margin-left: 0;
     flex-wrap: wrap;
 }
 
@@ -2090,6 +2181,32 @@ a:hover {
 }
 
 @media (max-width: 900px) {
+    .exp-card .vc-card-media {
+        padding: 20px 20px 18px;
+    }
+
+    .exp-card-note {
+        max-width: 14ch;
+        font-size: clamp(20px, 5vw, 24px);
+        line-height: 1.2;
+    }
+
+    .exp-card-note.lang-cn {
+        max-width: 10.3em;
+        font-size: clamp(17px, 4vw, 20px);
+        line-height: 1.54;
+    }
+
+    .exp-card-note::before {
+        width: 112px;
+        height: 76px;
+    }
+
+    .exp-card-note::after {
+        width: 88px;
+        height: 88px;
+    }
+
     .exp-detail-hero {
         padding: 40px 20px 24px;
     }
