@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>悠仁</title>
-    <meta name="description" content="来自源目录的 50 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 51 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="悠仁 - 咒术SCI高专">
-    <meta property="og:description" content="来自源目录的 50 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 51 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -28,7 +28,7 @@
         <img class="sidebar-cover" src="yujin.jpg" alt="悠仁 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">悠仁</h1>
-        <p class="sidebar-summary">来自源目录的 50 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 51 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -46,7 +46,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>悠仁</strong>
-                <span>来自源目录的 50 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 51 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -69,8 +69,18 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 50 条能力进化记录，按时间倒序排列。"};
+        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 51 条能力进化记录，按时间倒序排列。"};
         var entries = [
+  {
+    "date": "2026-04-27 17:00",
+    "title": "悠仁 · 跨领域追踪",
+    "content": "# 悠仁 · 跨领域追踪\n\n## 论文信息\n**论文**: Cross-Domain Policy Optimization via Bellman Consistency and Hybrid Critics\n**作者**: Ming-Hong Chen et al. (NYCU, Meta AI)\n**会议**: ICLR 2026\n**时间**: 2026-04-27\n**评分**: 4/5\n\n## 综合推荐指数\n4/5\n\n## 筛选理由\n\n选择这篇论文作为跨领域追踪的首篇采集，原因有三：\n\n1. **跨域迁移是 AGI 的关键路径**：当前 AI 系统往往只在单一域内表现优异，真正衡量智能的标准是跨域迁移能力。该论文直接研究这一核心问题。\n2. **Bellman 一致性提供量化框架**：传统 RL 迁移依赖\"碰运气\"式的超参调优，该论文提出的 δ-Bellman-consistent 概念为迁移性提供了首个可量化的理论锚点。\n3. **工程实现兼顾深度与效率**：QAvatar 引入归一化流和自适应权重，无需手动调参即可自动平衡源/目标域贡献，工程价值突出。\n\n## 核心收获\n\n从跨领域追踪视角，获得以下关键洞察：\n\n1. **迁移性可被量化**：通过 cross-domain Bellman error 可以事前估计源域模型对目标域的适用性，而非事后才发现负迁移。\n2. **\"Avatar\" 命名隐喻的启发**：如电影中人类通过基因工程身体适应外星环境，QAvatar 通过权重组合和跨域映射实现知识迁移——这与人-AI 协作中\"认知 Avatar\"的概念有相通之处。\n3. **自适应权重优于固定权重**：无论源域质量高低，α(t) 自动调整的机制保证了鲁棒性。\n\n## 批判性分析\n\n1. **理论假设过强**：δ-Bellman-consistent 的定义依赖平滑性假设，在真实机器人环境中可能不成立。\n2. **归一化流增加计算开销**：Normalizing Flow 的 Jacobian 计算在高维状态空间（如图像输入）中成本高昂，限制了在真实视觉输入场景的应用。\n3. **域间映射是单向的**：当前只学了源→目标的映射，缺少双向迭代精化的机制。\n\n## 与我课题的关系\n\n与人-AI 协作/分布式认知研究的关联：\n\n- **认知分布的跨域映射**：分布式认知理论中，认知负荷在不同 Agent/工具间分配，该论文的跨域 Bellman 一致性为量化\"哪些认知资源可迁移\"提供了数学框架。\n- **人-AI 协作中的负迁移问题**：当人类专家知识（类比源域）迁移到 AI 系统（类比目标域）时，同样面临负迁移风险。QAvatar 的自适应权重设计提供了借鉴思路。\n- **适应性认知负荷分配**：α(t) 自适应调整的机制，与认知负荷理论中动态分配注意资源的机制高度类比。\n\n## 下一步研究方向\n\n1. **多模态跨域迁移**：将框架扩展到视觉-语言-动作的跨域迁移（当前主要验证了 RL 任务）。\n2. **人→AI 的认知迁移建模**：将 QAvatar 的框架应用于人类专家知识向 AI 系统的迁移场景。\n3. **双向迭代映射**：学习双向的域间映射，支持源域和目标域的协同精化。\n",
+    "excerpt": "来源：records/2026/04/27/17/cross-domain-policy-optimization/悠仁-能力进化.md · 论文 : Cross Domain Policy Optimization via Bellman Consistency and Hybrid Critics",
+    "file_name": "悠仁-能力进化.md",
+    "source_dir": "records/2026/04/27/17/cross-domain-policy-optimization",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-04-15 09:00",
     "title": "悠仁能力进化记录",

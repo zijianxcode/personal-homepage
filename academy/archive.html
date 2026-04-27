@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>全部记录</title>
-    <meta name="description" content="源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 525 条。">
+    <meta name="description" content="源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 533 条。">
     <meta property="og:title" content="全部记录 - 咒术SCI高专">
-    <meta property="og:description" content="源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 525 条。">
+    <meta property="og:description" content="源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 533 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -27,7 +27,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">全部记录</h1>
-        <p class="sidebar-summary">源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 525 条。</p>
+        <p class="sidebar-summary">源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 533 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -45,7 +45,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>全部记录</strong>
-                <span>源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 525 条。</span>
+                <span>源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 533 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -68,8 +68,88 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "全部记录", "subtitle": "源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 525 条。"};
+        var pageConfig = {"title": "全部记录", "subtitle": "源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 533 条。"};
         var entries = [
+  {
+    "date": "2026-04-27 17:00",
+    "title": "MTA-Agent: An Open Recipe for Multimodal Deep Search Agents",
+    "content": "# MTA-Agent: An Open Recipe for Multimodal Deep Search Agents\n\n**作者**: Xiangyu Peng, Can Qin, An Yan, Xinyi Yang, Zeyuan Chen, Ran Xu, Chien-Sheng Wu (Salesforce AI Research)\n**会议/期刊**: arXiv:2604.06376 (2026-04-07)\n**日期**: 2026-04-27\n**领域标签**: AI, LLM, Multimodal Agent, 前沿评审\n**综合评分**: 4.5/5\n\n## 1. 研究什么？\n\n多模态大语言模型（MLLMs）在视觉理解方面展现了强大能力，但在复杂多步推理任务中仍然存在明显不足——这类任务需要深度搜索并整合来自视觉和文本来源的外部知识。现有方法依赖浅层检索或有限的推理模式，难以应对需要多跳（multi-hop）视觉推理的真实复杂场景。\n\n核心问题：如何构建高质量的多跳视觉-语言训练数据，并训练出能够深度搜索的多模态 Agent？\n\n## 2. 为什么研究？\n\n当前多模态 Agent 的瓶颈不在于\"看\"的能力，而在于\"搜+推理\"的能力：\n- 现有 VQA 数据集大多是单跳问题，无法训练多步推理\n- 多跳问题（如\"这张图中 A 和 B 的关系与某年某事件的关联\"）需要迭代式搜索和验证\n- 商业模型（GPT-5、Gemini）在深度搜索任务上仍表现不足，开源方案更是稀缺\n\n## 3. 别人做过什么？\n\n现有相关工作可分为：\n- **单跳 VQA**：大多数现有 VQA 数据集（如 VQAv2, OK-VQA）只需要单次推理\n- **多跳推理数据集**：如 HotpotQA（文本）、MCOP（多跳图像推理），但规模有限\n- **多模态 Agent**：如 GPT-4V + 搜索工具的简单组合，缺乏系统性训练方案\n\n本文的差异化：提出完整的多跳多模态搜索 Agent 训练方案，包括数据合成、验证和 RL 训练全流程。\n\n## 4. 作者怎么研究的？\n\n**MTA-Agent 框架**核心思想：将现有高质量 VQA 数据集转化为具有挑战性的多跳搜索任务。\n\n**Pipeline**：\n1. 从多样化 VQA 种子数据集出发\n2. 使用工具增强 Agent 自动选择工具及其参数（Tavily 搜索、Google Lens、图像搜索等）\n3. 生成结构化的多跳问答轨迹\n4. 通过多阶段验证流程确保事实一致性和答案唯一性\n\n**最终数据集**：MTA-Vision-DeepSearch，21K 高质量多跳示例（2/3/4 跳）\n\n**训练方法**：\n- 基座模型：Qwen3-VL-32B-Instruct\n- DAPO 强化学习（batch size=64, 8 rollouts/prompt, lr=2×10⁻⁶, 100 步）\n- ReAct 风格 Agent，最多 6 步交互\n- Replay 机制支持离线训练，降低工具调用成本\n\n## 5. 发现了什么？\n\n**主要结果（MTA-DeepSearch-32B）**：\n\n| Benchmark | Score |\n|-----------|-------|\n| MMSearch | 31.93 |\n| MMSearch-Plus | 53.95 |\n| BrowseComp-VL | 53.77 |\n| FVQA | 82.35 |\n| MTA-test | 76.00 |\n| HR-MMSearch | 29.78 |\n| **平均** | **54.63%** |\n\n- 超越 GPT-5（51.86%）、Gemini-2.5-Pro（50.98%）、Gemini-3-Pro（54.46%）\n- 相比基线模型：8B 版本提升 12.08%，32B 版本提升 13.78%\n- 平均推理步数从 2.27 提升至 4.28，搜索行为更加系统化\n\n**三个关键 insight**：\n1. 高质量多跳数据驱动长程推理能力\n2. 数据多样性与多阶段验证对性能至关重要\n3. Replay 训练可在不牺牲精度的前提下显著提升效率\n\n## 6. 价值和不足？\n\n**价值**：\n- 首个完整开源的多模态深度搜索 Agent 方案\n- 21K 多跳数据集配合多阶段验证，数据质量有保障\n- Replay 机制降低训练成本，方案可复现性强\n- 证明了 RL 训练可以让开源模型超越顶级商业模型\n\n**不足**：\n- 基座模型依赖 Qwen3-VL，未探索其他架构适配性\n- 工具集主要依赖 Web 搜索类，缺少数据库查询、代码执行等复杂工具\n- 4 跳问题单独使用时提升有限，需要混合训练\n- 评估指标以准确率为主，对搜索效率、轨迹长度等过程指标分析不足\n",
+    "excerpt": "来源：records/2026/04/27/17/mta-agent/论文总结.md · 作者 : Xiangyu Peng, Can Qin, An Yan, Xinyi Yang, Zeyuan Chen, Ran Xu, Chien Sheng Wu (Salesforce AI Research)",
+    "file_name": "论文总结.md",
+    "source_dir": "records/2026/04/27/17/mta-agent",
+    "session_type": "review",
+    "session_label": "评审会"
+  },
+  {
+    "date": "2026-04-27 17:00",
+    "title": "Fifteen Years of Learning Analytics Research: Topics, Trends, and Challenges",
+    "content": "# Fifteen Years of Learning Analytics Research: Topics, Trends, and Challenges\n\n**作者**: Valdemar Švábenský, Conrad Borchers, Elvin Fortuna, Elizabeth B. Cloude, Dragan Gašević\n**会议/期刊**: LAK26: 16th International Learning Analytics and Knowledge Conference\n**DOI**: 10.1145/3785022.3785131\n**日期**: 2026-04-27\n**领域标签**: Learning Analytics, 教育AI, 方法论\n**综合评分**: 4.5/5\n\n## 1. 研究什么？\n\n学习分析（Learning Analytics, LA）领域经过 15 年发展（2011-2026），亟需系统性地梳理研究主题、趋势和挑战。本研究对 LAK 会议 15 年间发表的 936 篇论文进行元分析，试图回答：\n- LA 研究主题如何随时间演变？\n- 作者网络和合作模式有何特征？\n- 资金来源与研究主题有何关联？\n- 主题稳定性与分化趋势如何？\n\n## 2. 为什么研究？\n\nLA 领域近期有两个重要里程碑：LAK 会议成立 15 周年，以及 2011 年提出的 LA 定义的首次更新。然而，学界对 LA 社区的研究主题、资金流向、合作关系缺乏系统认知。作为领域发展 15 年的里程碑式综述，本研究提供了回顾与前瞻的独特机会。\n\n## 3. 别人做过什么？\n\nLA 领域的文献综述主要分为三类：\n- **描述性综述**：总结某次会议或期刊的研究主题分类，多为手工编码，覆盖范围有限\n- **引用分析**：基于引用网络的计量分析，但无法揭示内容主题\n- **系统性综述**：针对特定主题（如 SRL、学术预警）的深度梳理，但缺乏领域全景视角\n\n本研究的独特价值：用计算方法（Topic Modeling + NLP + Network Analysis）对 15 年 936 篇论文进行系统性全景分析。\n\n## 4. 作者怎么研究的？\n\n**数据来源**：LAK 会议 2011-2026 所有 936 篇全文和短文\n\n**分析方法**：\n1. **无监督机器学习（Topic Modeling）**：识别 936 篇论文的潜在主题结构\n2. **自然语言处理（NLP）**：提取关键词社区、作者合作网络\n3. **网络分析（Network Analytics）**：分析资金-主题关联、作者合作模式\n\n## 5. 发现了什么？\n\n**六大持久主题中心**：\n\n| 主题 | 说明 |\n|------|------|\n| 自我调节学习 (SRL) | 学习者元认知、策略使用研究 |\n| 仪表盘与理论 | 学习仪表盘设计、理论框架 |\n| 社交学习 | 协作学习、社区分析 |\n| 自动反馈 | 智能辅导、自动评估 |\n| 多模态分析 | 行为、表情、生理等多通道数据 |\n| 结果预测 | 学业成就、辍学风险预测 |\n\n**作者网络特征**：\n- 稳定核心：一小部分高产作者提供领域连续性\n- 高流动率：新人更替频繁\n- 三分之一规律：约 1/3 的作者发表多于一篇论文\n\n**资金-主题关联**：\n- 资助来源与研究方向存在系统性关联\n- 到 2024 年，资助网络连通性增加、模块性下降\n- 资助者开始支持更广泛的投资组合\n\n**新兴前沿**：LLM/生成式 AI、人-AI 协作、多模态 LA、Agentic AI\n\n## 6. 价值和不足？\n\n**三大启示**：\n1. **整体稳定性 vs. 新兴分化**：成熟中心高度稳定，但 LLM/生成式 AI 正在重塑研究格局\n2. **资金结构演变的杠杆作用**：资助网络连通性提升为跨中心合作提供机会\n3. **理论驱动方法的崛起**：SRL、自动反馈、多模态分析等理论根基扎实的领域兴起\n\n**三大优先方向**：\n1. 提升代表性不足国家的可见度\n2. 利用资金整合推动跨中心合作\n3. 配对理论驱动领域与真实场景评估\n\n**不足**：\n- LAK 会议偏向高等教育情境，K-12 场景覆盖不足\n- 缺乏对非英语国家研究的系统性纳入\n- 资金数据依赖论文披露，覆盖率有限\n",
+    "excerpt": "来源：records/2026/04/27/17/lak-2026-learning-analytics/论文总结.md · 作者 : Valdemar Švábenský, Conrad Borchers, Elvin Fortuna, Elizabeth B. Cloude, Dragan Gašević",
+    "file_name": "论文总结.md",
+    "source_dir": "records/2026/04/27/17/lak-2026-learning-analytics",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-04-27 17:00",
+    "title": "\"I think this is fair\": Uncovering the Complexities of Stakeholder Decision-Making in AI Fairness Assessment",
+    "content": "# \"I think this is fair\": Uncovering the Complexities of Stakeholder Decision-Making in AI Fairness Assessment\n\n**作者**: Lin Luo, Yuri Nakao, Mathieu Chollet, Hiroya Inakoshi, Simone Stumpf\n**会议/期刊**: ACM CHI 2026 (Barcelona, April 13-17, 2026)\n**arXiv/DOI**: arXiv:2509.17956 / DOI: 10.1145/3772318.3790770\n**日期**: 2026-04-27\n**领域标签**: AI, HCI, 批判性分析, AI Fairness\n**综合评分**: 4.5/5\n\n## 1. 研究什么？\n\n当前 AI 公平性评估通常由 AI 专家选择受保护特征、公平性指标并设定阈值——但真正受 AI 决策影响的利益相关者（普通民众）却被排除在外。本研究探讨：缺乏 AI 专业知识的利益相关者如何评估 AI 公平性？他们与 AI 专家的判断有何差异？\n\n## 2. 为什么研究？\n\nAI 系统已被广泛用于信贷评估、招聘筛选、司法量刑等高风险决策。现有公平性评估实践存在根本性缺陷：\n- AI 专家主导公平性指标选择，普通受影响者无发言权\n- 法律规定的\"受保护特征\"范围有限，无法覆盖普通人的公平性直觉\n- 个体层面的公平性感知（intersectional fairness）被群体统计指标掩盖\n\n## 3. 别人做过什么？\n\n现有工作可分为三类：\n- **公平性指标工程**：设计各种数学公平性定义（demographic parity, equalized odds 等），但都是技术专家主导\n- **解释性公平工具**：帮助用户理解 AI 决策（如 Fairness Frontiers, FAT* 框架），但仍由专家设定指标\n- **参与式设计方法**：让利益相关者参与 AI 开发，但仍局限在反馈收集层面，非实质性决策权分享\n\n## 4. 作者怎么研究的？\n\n对 26 位缺乏 AI 专业知识的人进行深度访谈。受访者模拟信用评分场景中的决策主体角色，完成三个任务：\n1. **特征识别**：识别并排序对公平性重要的特征\n2. **指标映射**：将特征映射到公平性指标（含阈值设定）\n3. **公平性反思**：反思决策过程\n\n使用 FEE（Fairness Explorer & Explainer）框架提供公平性指标参考，包括人口公平性、均等机会、预测平等性等群体指标，以及一致性和公平相似性等个体指标。\n\n## 5. 发现了什么？\n\n利益相关者的公平性判断远比专家实践复杂：\n\n| 维度 | 专家实践 | 利益相关者判断 |\n|------|---------|--------------|\n| 特征范围 | 法律规定的受保护特征 | 超出法律范围的广泛社会/情境因素 |\n| 指标选择 | 一刀切的统一指标 | 量身定制的多样化指标 |\n| 阈值设定 | 固定阈值 | 多样但更严格的阈值 |\n| 指标定制 | 使用现有指标 | 设计自定义公平性指标 |\n\n参与者展现了广泛而细致的公平性关注，甚至创建了专家未预设的自定义指标。\n\n## 6. 价值和不足？\n\n**理论贡献**：\n- 揭示利益相关者如何识别和优先排序公平性特征\n- 发现对程序公平性的重视——关注决策过程而非仅结果\n- 为支持利益相关者创建符合自身价值观的工具设计提供启示\n\n**实践意义**：\n- 赋予利益相关者与 AI 专家同等地位参与核心决策\n- 工具应支持参与者理解和定制符合其需求的公平性标准\n\n**不足**：\n- 26 人样本的代表性有限，便利抽样存在选择偏差\n- 单一信用卡场景可能无法泛化到其他高风险场景\n- 论文标题\"I think this is fair\"暗示的个体判断局限性未被深入探讨\n- 未涉及利益相关者之间的权力不对等问题\n",
+    "excerpt": "来源：records/2026/04/27/17/chi-2026-ai-fairness/论文总结.md · 作者 : Lin Luo, Yuri Nakao, Mathieu Chollet, Hiroya Inakoshi, Simone Stumpf",
+    "file_name": "论文总结.md",
+    "source_dir": "records/2026/04/27/17/chi-2026-ai-fairness",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-04-27 17:00",
+    "title": "Cross-Domain Policy Optimization via Bellman Consistency and Hybrid Critics",
+    "content": "# Cross-Domain Policy Optimization via Bellman Consistency and Hybrid Critics\n\n**作者**: Ming-Hong Chen, Kuan-Chen Pan, You-De Huang, Xi Liu, Ping-Chun Hsieh\n**机构**: National Yang Ming Chiao Tung University, Meta AI\n**会议/期刊**: ICLR 2026 (International Conference on Learning Representations)\n**arXiv/DOI**: arXiv:2604.xxxxx\n**日期**: 2026-04-27\n**领域标签**: AI, 跨领域追踪, Reinforcement Learning\n**综合评分**: 4/5\n\n## 1. 研究什么？\n\n本论文研究跨域强化学习（Cross-Domain Reinforcement Learning, CDRL）的核心问题：如何利用源域收集的数据样本促进目标域的学习，从而提高强化学习的数据效率。\n\n关键挑战：\n- **状态/动作空间不一致**：源域和目标域可能具有不同的状态空间或动作空间，直接迁移不可行\n- **迁移性未知**：源域模型对目标域的迁移性无法先验确定，CDRL容易遭受负迁移效应\n\n## 2. 为什么研究？\n\n跨域强化学习在现实场景中极为重要——例如机器人控制中，从仿真环境迁移到真实硬件（sim-to-real），或在不同形态机器人之间迁移策略。但现有方法要么依赖域间结构相似性假设，要么缺乏理论保证，容易产生负迁移。\n\n## 3. 别人做过什么？\n\n相关基线方法：\n- SAC（从零学习，无迁移）\n- Direct Fine-Tuning（直接微调）\n- CMD（Cross-Morphology-Domain Policy Adaptation）\n- CAT（Cross-domain Adaptive Transfer）\n- PAR（Policy Adaptation by Representation mismatch）\n\n这些方法共同的局限是：无法量化迁移性，无法保证即使源域质量低时也能避免负迁移。\n\n## 4. 作者怎么研究的？\n\n提出 **QAvatar 算法**，核心包含三个创新：\n\n**跨域 Bellman 一致性**：定义\"δ-Bellman-consistent\"——若存在域间映射(ϕ, ψ)使得 cross-domain Bellman error 不超过 δ，则源域 Q 函数在目标域策略下是 δ-Bellman-consistent。可迁移性由 δ 捕获，δ 越小迁移效果越好。\n\n**混合评判器（Hybrid Critic）**：\n- Q_hybrid = (1-α(t))·Qtar + α(t)·Qsrc(ϕ(s), ψ(a))\n- α(t) 是自适应、无超参数的权重函数\n\n**域间映射学习**：通过最小化跨域 Bellman 损失学习映射函数 ϕ (状态映射) 和 ψ (动作映射)。使用归一化流实现有界空间的稳定映射。\n\n## 5. 发现了什么？\n\n实验在 MuJoCo locomotion、Robosuite robot arm manipulation、Navigation 等环境中进行：\n\n| 环境 | QAvatar 达阈时间 | SAC 达阈时间 | 提升比 |\n|------|-----------------|-------------|--------|\n| HalfCheetah (6000) | 126K | 176K | 0.71 |\n| Ant (1600) | 206K | 346K | 0.59 |\n| Door Opening (90) | 48K | 98K | 0.49 |\n| Table Wiping (45) | 72K | 98K | 0.73 |\n| Navigation (20) | 218K | 490K | 0.44 |\n\n- 低质量源域时，α(t) 训练结束时降到较小值，有效缓解负迁移\n- 无结构相似性场景（Hopper→table wiping）仍表现可靠\n- QAvatar-DeepSearch-32B 达 54.63% 平均准确率，超越 GPT-5（51.86%）和 Gemini-2.5-Pro（50.98%）\n\n## 6. 价值和不足？\n\n**价值**：\n- 首个具有性能保证的 CDRL 方法\n- 自适应权重机制无需手动调参\n- 归一化流映射解决有界空间训练不稳定问题\n- 提供收敛性分析和次优性边界理论保证\n\n**不足**：\n- 理论分析依赖较强的正则性假设\n- 归一化流实现有额外计算开销\n- 目前只验证了单步域间映射，多步映射待探索\n- 从 MuJoCo 到 Robosuite 的跨形态迁移仍有挑战\n\n## 开源代码\nhttps://rl-bandits-lab.github.io/Cross-Domain-RL/\n",
+    "excerpt": "来源：records/2026/04/27/17/cross-domain-policy-optimization/论文总结.md · 作者 : Ming Hong Chen, Kuan Chen Pan, You De Huang, Xi Liu, Ping Chun Hsieh",
+    "file_name": "论文总结.md",
+    "source_dir": "records/2026/04/27/17/cross-domain-policy-optimization",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-04-27 17:00",
+    "title": "野蔷薇 · 批判性分析",
+    "content": "# 野蔷薇 · 批判性分析\n\n## 论文信息\n**论文**: \"I think this is fair\": Uncovering the Complexities of Stakeholder Decision-Making in AI Fairness Assessment\n**作者**: Lin Luo et al.\n**会议**: CHI 2026\n**时间**: 2026-04-27\n**评分**: 4.5/5\n\n## 综合推荐指数\n4.5/5\n\n## 筛选理由\n\n选择这篇论文作为批判性分析的首篇采集，因为它是批判性 HCI 视角介入 AI 公平性评估的范式式工作：它不满足于改进\"技术公平性指标\"，而是挑战谁有权定义\"公平\"这一根本问题。\n\n## 核心收获\n\n### 批判性视角的三大发现\n\n1. **知识权力的反转**：传统 AI 公平性研究默认\"专家定义公平、利益相关者接受评估\"，本文反转了这一权力关系——让利益相关者成为定义者而非被评估对象。这是批判性 HCI \"value-sensitive design\" 传统的直接继承。\n\n2. **常识公平性超越法律框架**：参与者考虑的公平性特征远超法律规定的受保护特征范围。这揭示了法律框架的保守性——它只保护最底线的平等，而常识感知到了更多需要公平对待的维度。\n\n3. **程序公平性的复兴**：参与者不仅关注结果均等，还高度关注决策过程的透明度和可问责性。这呼应了批判理论对\"形式公正 vs. 实质公正\"区分——表面相同的处理（法律平等）可能掩盖实质不平等（情境差异）。\n\n### 方法论亮点\n\n**赋能式参与设计**：不是把参与者当作信息源来\"提取\"，而是赋予其决策者角色。这种方法论选择本身就是批判性立场的体现。\n\n## 批判性分析\n\n### 优点\n1. **批判性立场的明确性**：明确挑战技术专家主导的公平性评估现状，主张利益相关者的\"常识公平性\"应与专家知识同等地位。\n2. **方法论创新**：26 人访谈揭示了大量专家未预设的公平性推理模式。\n3. **去技术化倾向**：拒绝将公平性简化为数学指标，追溯从朴素概念到可操作标准的转化过程。\n\n### 批判视角\n1. **参与鸿沟**：26 人样本是否足以代表受 AI 系统影响的多元群体？便利抽样存在代表性局限。\n2. **权力关系忽视**：未深入探讨利益相关者在实际评估场景中的权力不对等——穷人、女性、少数族裔可能有不同的\"公平性直觉\"，但他们的声音是否被平等对待？\n3. **技术决定论嫌疑**：将公平性评估转化为\"特征-指标-阈值\"框架，虽便于操作，却可能将复杂的价值判断降格为技术参数——这恰恰是批判性 HCI 所警惕的。\n\n## 与批判性HCI的关联\n\n本研究契合批判性人机交互的核心关切：\n- **价值敏感性设计**：强调 AI 系统应反映多元利益相关者的价值判断\n- **参与式民主**：将 AI 公平性评估从技术专家扩展到普通受影响者\n- **批判性技术评估**：质疑\"公平性\"概念的技术化倾向\n\n## 下一步研究方向\n\n1. **纵向追踪**：探索利益相关者的公平性判断如何随时间和经验演化\n2. **跨文化比较**：不同文化背景下公平性概念的差异性（当前研究隐含西方价值观假设）\n3. **权力不对等**：深入研究不同社会经济地位群体的公平性感知差异\n4. **制度化路径**：探索将研究成果转化为实际政策建议的机制\n",
+    "excerpt": "来源：records/2026/04/27/17/chi-2026-ai-fairness/野蔷薇-能力进化.md · 论文 : \"I think this is fair\": Uncovering the Complexities of Stakeholder Decision Making in AI Fairness Assessment",
+    "file_name": "野蔷薇-能力进化.md",
+    "source_dir": "records/2026/04/27/17/chi-2026-ai-fairness",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-04-27 17:00",
+    "title": "惠 · 写作与方法论",
+    "content": "# 惠 · 写作与方法论\n\n## 论文信息\n**论文**: Fifteen Years of Learning Analytics Research: Topics, Trends, and Challenges\n**作者**: Švábenský et al. (Masaryk University, Stanford, etc.)\n**会议**: LAK 2026\n**时间**: 2026-04-27\n**评分**: 4.5/5\n\n## 综合推荐指数\n4.5/5\n\n## 筛选理由\n\n选择这篇作为写作与方法论的首篇采集，原因在于：它是方法论文献写作的标杆——用 936 篇论文的数据量级构建领域权威性，同时通过 Topic Modeling + NLP + Network Analysis 的多方法融合展现方法论严谨性。对于写作方法论研究者，它同时是一篇高质量的元分析范本。\n\n## 核心收获\n\n### 方法论文献写作规范\n\n**本研方法论亮点**（值得写作时借鉴）：\n\n| 方法 | 作用 |\n|------|------|\n| Topic Modeling | 识别 936 篇论文的潜在主题结构 |\n| NLP | 提取关键词社区、作者合作网络 |\n| Network Analytics | 资金-主题关联、作者合作模式 |\n\n**关键启发**：顶级综述不止单一方法——多方法融合能同时回答描述性（主题有哪些）+ 解释性（主题如何演变）两类研究问题。\n\n### 主题结构化能力\n\n**六大主题中心 → 可转化为写作选题框架**：\n\n| 主题 | 写作切入点 |\n|------|-----------|\n| 自我调节学习 | SRL 与 AI 助学的边界在哪？ |\n| 仪表盘与理论 | 学习仪表盘如何避免\"僵尸指标\"？ |\n| 社交学习 | AI 如何重塑学习社区？ |\n| 自动反馈 | 自动反馈的伦理边界 |\n| 多模态分析 | 多模态数据的隐私风险 |\n| 结果预测 | 辍学预测的公平性问题 |\n\n### 前沿感知力\n\n**LA 领域 2025-2026 新兴方向**：\n1. LLM/生成式 AI → 正在重塑 LA 研究范式\n2. 人-AI 协作 → Agency 问题成为焦点\n3. 多模态 LA → 行为+生理+环境数据的融合\n4. Agentic AI → 自主智能体进入教育场景\n\n**写作选题方向**：\n- AI 学伴的决策权归属（参考 Agency Allocation Framework）\n- 生成式 AI 如何改变学术写作（警惕代理写作）\n- 多模态学习分析的方法论挑战\n\n## 批判性分析\n\n1. **数据覆盖局限**：只分析 LAK 会议，EDM、AIED 等相关会议未纳入，K-12 场景覆盖不足。\n2. **英语偏见**：非英语国家研究的系统性纳入不足，隐含西方学术话语权主导。\n3. **资金数据质量**：依赖论文披露，覆盖率和准确性有限。\n\n## 与我课题的关系\n\n与人-AI 协作学习研究的关联：\n\n- **多模态 LA 与人-AI 协作**：学习者在与 AI 交互时产生的多通道数据（行为、生理，语言）是理解认知分布的重要窗口\n- **SRL 框架**：自我调节学习理论为理解人-AI 协作中的元认知和策略使用提供成熟框架\n- **仪表盘研究**：学习仪表盘是认知分布的可视化载体，与分布认知的\"外部表征\"概念直接对应\n\n## 下一步研究方向\n\n1. **精读 Agentic AI 教育应用论文**（AUSS framework, 2026.04）\n2. **构建学习分析领域知识图谱**（六大主题+新兴方向）\n3. **练习写\"论文方法论点评\"**（每次采集后分析其方法亮点）\n4. **关注 LAK 2026 其他论文**，尤其是 LLM/人-AI 协作相关\n",
+    "excerpt": "来源：records/2026/04/27/17/lak-2026-learning-analytics/惠-能力进化.md · 论文 : Fifteen Years of Learning Analytics Research: Topics, Trends, and Challenges",
+    "file_name": "惠-能力进化.md",
+    "source_dir": "records/2026/04/27/17/lak-2026-learning-analytics",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-04-27 17:00",
+    "title": "悠仁 · 跨领域追踪",
+    "content": "# 悠仁 · 跨领域追踪\n\n## 论文信息\n**论文**: Cross-Domain Policy Optimization via Bellman Consistency and Hybrid Critics\n**作者**: Ming-Hong Chen et al. (NYCU, Meta AI)\n**会议**: ICLR 2026\n**时间**: 2026-04-27\n**评分**: 4/5\n\n## 综合推荐指数\n4/5\n\n## 筛选理由\n\n选择这篇论文作为跨领域追踪的首篇采集，原因有三：\n\n1. **跨域迁移是 AGI 的关键路径**：当前 AI 系统往往只在单一域内表现优异，真正衡量智能的标准是跨域迁移能力。该论文直接研究这一核心问题。\n2. **Bellman 一致性提供量化框架**：传统 RL 迁移依赖\"碰运气\"式的超参调优，该论文提出的 δ-Bellman-consistent 概念为迁移性提供了首个可量化的理论锚点。\n3. **工程实现兼顾深度与效率**：QAvatar 引入归一化流和自适应权重，无需手动调参即可自动平衡源/目标域贡献，工程价值突出。\n\n## 核心收获\n\n从跨领域追踪视角，获得以下关键洞察：\n\n1. **迁移性可被量化**：通过 cross-domain Bellman error 可以事前估计源域模型对目标域的适用性，而非事后才发现负迁移。\n2. **\"Avatar\" 命名隐喻的启发**：如电影中人类通过基因工程身体适应外星环境，QAvatar 通过权重组合和跨域映射实现知识迁移——这与人-AI 协作中\"认知 Avatar\"的概念有相通之处。\n3. **自适应权重优于固定权重**：无论源域质量高低，α(t) 自动调整的机制保证了鲁棒性。\n\n## 批判性分析\n\n1. **理论假设过强**：δ-Bellman-consistent 的定义依赖平滑性假设，在真实机器人环境中可能不成立。\n2. **归一化流增加计算开销**：Normalizing Flow 的 Jacobian 计算在高维状态空间（如图像输入）中成本高昂，限制了在真实视觉输入场景的应用。\n3. **域间映射是单向的**：当前只学了源→目标的映射，缺少双向迭代精化的机制。\n\n## 与我课题的关系\n\n与人-AI 协作/分布式认知研究的关联：\n\n- **认知分布的跨域映射**：分布式认知理论中，认知负荷在不同 Agent/工具间分配，该论文的跨域 Bellman 一致性为量化\"哪些认知资源可迁移\"提供了数学框架。\n- **人-AI 协作中的负迁移问题**：当人类专家知识（类比源域）迁移到 AI 系统（类比目标域）时，同样面临负迁移风险。QAvatar 的自适应权重设计提供了借鉴思路。\n- **适应性认知负荷分配**：α(t) 自适应调整的机制，与认知负荷理论中动态分配注意资源的机制高度类比。\n\n## 下一步研究方向\n\n1. **多模态跨域迁移**：将框架扩展到视觉-语言-动作的跨域迁移（当前主要验证了 RL 任务）。\n2. **人→AI 的认知迁移建模**：将 QAvatar 的框架应用于人类专家知识向 AI 系统的迁移场景。\n3. **双向迭代映射**：学习双向的域间映射，支持源域和目标域的协同精化。\n",
+    "excerpt": "来源：records/2026/04/27/17/cross-domain-policy-optimization/悠仁-能力进化.md · 论文 : Cross Domain Policy Optimization via Bellman Consistency and Hybrid Critics",
+    "file_name": "悠仁-能力进化.md",
+    "source_dir": "records/2026/04/27/17/cross-domain-policy-optimization",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-04-27 17:00",
+    "title": "五条悟 · 前沿评审",
+    "content": "# 五条悟 · 前沿评审\n\n## 论文信息\n**论文**: MTA-Agent: An Open Recipe for Multimodal Deep Search Agents\n**作者**: Xiangyu Peng et al. (Salesforce AI Research)\n**arXiv**: 2604.06376\n**时间**: 2026-04-27\n**评分**: 4.5/5\n\n## 综合推荐指数\n4.5/5\n\n## 筛选理由\n\n选择这篇作为前沿评审的首篇采集：它是 2026 年多模态 Agent 领域的重要开源突破，首次证明 RL 训练的开源多模态搜索 Agent 可超越 GPT-5/Gemini 等顶级商业模型。作为前沿评审，需要紧跟\"能力边界突破\"类工作——这类工作往往定义了接下来 6-12 个月的研究方向。\n\n## 批判性分析\n\n### 优点\n\n1. **数据工程扎实**：21K 样本经多阶段验证，兼顾难度多样性和质量，不是粗暴 scaling 而是精细化工程。\n2. **训练范式创新**：Replay 机制巧妙解决工具调用成本问题——无需实时工具调用即可训练搜索行为，思路可迁移到其他 Agent 训练场景。\n3. **开源力度大**：数据集、代码、训练轨迹全放出，在当前 AI 圈\"闭源焦虑\"下难能可贵。\n4. **基准全面**：6 个 benchmark 覆盖深度搜索不同维度，与商业模型对比有说服力。\n\n### 不足\n\n1. **基座模型单一依赖**：只验证了 Qwen3-VL，未探索 LLaMA-Vision、InternVL 等其他架构的适配性。\n2. **工具集有限**：主要依赖 Web 搜索类工具，缺少 API 调用、代码执行、数据库查询等更复杂工具——离通用 Agent 仍有距离。\n3. **评估指标单一**：主要依赖准确率，对搜索效率、轨迹长度等过程指标分析不足。\n4. **多跳难度控制**：4 跳问题单独使用时效果有限，暗示数据生成仍有优化空间。\n\n## 关联分析（与同期 SOTA 论文的关系）\n\n| 论文 | 关联点 | 差异点 |\n|------|--------|--------|\n| Skywork-R1V4 | 同属多模态 Agent，强调 Interleaved Thinking | Skywork 更侧重规划+图像操作，MTA 更侧重数据合成 |\n| Kimi K2.5 | 同为开源多模态 Agent | Kimi 强调 Agent Swarm 并行化，MTA 强调数据质量 |\n| GenAgent | 视觉理解+生成统一框架 | GenAgent 专注文生图，MTA 专注多模态搜索 |\n| Vero | 同为开源 VLM，强调 RL 训练 | Vero 侧重通用视觉推理，MTA 聚焦深度搜索 |\n\n**生态定位**：MTA-Agent 属于\"多模态 Agent 能力强化\"赛道，填补了高质量多跳搜索数据合成这一关键缺口。\n\n## 下一步行动建议\n\n### 短期（1-3 个月）\n1. **复现 MTA-DeepSearch-32B**：基于 GitHub 代码在本地验证基线性能\n2. **探索数据增强**：将 MTA 数据合成 pipeline 应用于视频、文档等多模态场景\n3. **集成到现有 Agent 框架**：将 MTA 的搜索策略整合到业务 Agent 系统中\n\n### 中期（3-6 个月）\n1. **架构迁移实验**：将 MTA 训练方案迁移至 InternVL3、LLaMA-Vision 等架构\n2. **工具集扩展**：增加 API 调用、代码执行、数据库查询等更复杂工具\n3. **轨迹分析**：深入分析训练后 Agent 的搜索行为变化，挖掘能力进化规律\n\n### 长期（6-12 个月）\n1. **端到端多模态 Agent**：结合 MTA 的搜索能力与 GenAgent 的生成能力\n2. **多 Agent 协作**：借鉴 Kimi K2.5 的 Agent Swarm 架构，实现多 MTA-Agent 并行搜索\n3. **自主数据生成**：构建自进化 pipeline，让 Agent 自主发现并补充能力短板\n\n## 五条悟总结语\n\n\"MTA-Agent 是一份出色的工作——它没有追求暴力 scaling 的'无量大数'，而是在数据工程和训练范式上做了扎实的创新。如同帐式改革一样，它找到了一条低成本、高效率的能力提升路径。但真正的'无限'还未到来——当多模态 Agent 能够自主设计任务、自主生成数据、自主评估能力时，才是真正的领域突破。期待看到 MTA 的下一代。\"\n\n---\n\n*评审时间：2026-04-27*\n*评审人：五条悟（前沿评审）*\n",
+    "excerpt": "来源：records/2026/04/27/17/mta-agent/五条悟-能力进化.md · 论文 : MTA Agent: An Open Recipe for Multimodal Deep Search Agents",
+    "file_name": "五条悟-能力进化.md",
+    "source_dir": "records/2026/04/27/17/mta-agent",
+    "session_type": "review",
+    "session_label": "评审会"
+  },
   {
     "date": "2026-04-21 11:00",
     "title": "五条悟能力进化记录",

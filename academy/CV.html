@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV</title>
-    <meta name="description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 65 条。">
+    <meta name="description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 66 条。">
     <meta property="og:title" content="CV - 咒术SCI高专">
-    <meta property="og:description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 65 条。">
+    <meta property="og:description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 66 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -27,7 +27,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">CV</h1>
-        <p class="sidebar-summary">基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 65 条。</p>
+        <p class="sidebar-summary">基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 66 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -45,7 +45,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>CV</strong>
-                <span>基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 65 条。</span>
+                <span>基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 66 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -68,8 +68,18 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "CV", "subtitle": "基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 65 条。"};
+        var pageConfig = {"title": "CV", "subtitle": "基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 66 条。"};
         var entries = [
+  {
+    "date": "2026-04-27 17:00",
+    "title": "MTA-Agent: An Open Recipe for Multimodal Deep Search Agents",
+    "content": "# MTA-Agent: An Open Recipe for Multimodal Deep Search Agents\n\n**作者**: Xiangyu Peng, Can Qin, An Yan, Xinyi Yang, Zeyuan Chen, Ran Xu, Chien-Sheng Wu (Salesforce AI Research)\n**会议/期刊**: arXiv:2604.06376 (2026-04-07)\n**日期**: 2026-04-27\n**领域标签**: AI, LLM, Multimodal Agent, 前沿评审\n**综合评分**: 4.5/5\n\n## 1. 研究什么？\n\n多模态大语言模型（MLLMs）在视觉理解方面展现了强大能力，但在复杂多步推理任务中仍然存在明显不足——这类任务需要深度搜索并整合来自视觉和文本来源的外部知识。现有方法依赖浅层检索或有限的推理模式，难以应对需要多跳（multi-hop）视觉推理的真实复杂场景。\n\n核心问题：如何构建高质量的多跳视觉-语言训练数据，并训练出能够深度搜索的多模态 Agent？\n\n## 2. 为什么研究？\n\n当前多模态 Agent 的瓶颈不在于\"看\"的能力，而在于\"搜+推理\"的能力：\n- 现有 VQA 数据集大多是单跳问题，无法训练多步推理\n- 多跳问题（如\"这张图中 A 和 B 的关系与某年某事件的关联\"）需要迭代式搜索和验证\n- 商业模型（GPT-5、Gemini）在深度搜索任务上仍表现不足，开源方案更是稀缺\n\n## 3. 别人做过什么？\n\n现有相关工作可分为：\n- **单跳 VQA**：大多数现有 VQA 数据集（如 VQAv2, OK-VQA）只需要单次推理\n- **多跳推理数据集**：如 HotpotQA（文本）、MCOP（多跳图像推理），但规模有限\n- **多模态 Agent**：如 GPT-4V + 搜索工具的简单组合，缺乏系统性训练方案\n\n本文的差异化：提出完整的多跳多模态搜索 Agent 训练方案，包括数据合成、验证和 RL 训练全流程。\n\n## 4. 作者怎么研究的？\n\n**MTA-Agent 框架**核心思想：将现有高质量 VQA 数据集转化为具有挑战性的多跳搜索任务。\n\n**Pipeline**：\n1. 从多样化 VQA 种子数据集出发\n2. 使用工具增强 Agent 自动选择工具及其参数（Tavily 搜索、Google Lens、图像搜索等）\n3. 生成结构化的多跳问答轨迹\n4. 通过多阶段验证流程确保事实一致性和答案唯一性\n\n**最终数据集**：MTA-Vision-DeepSearch，21K 高质量多跳示例（2/3/4 跳）\n\n**训练方法**：\n- 基座模型：Qwen3-VL-32B-Instruct\n- DAPO 强化学习（batch size=64, 8 rollouts/prompt, lr=2×10⁻⁶, 100 步）\n- ReAct 风格 Agent，最多 6 步交互\n- Replay 机制支持离线训练，降低工具调用成本\n\n## 5. 发现了什么？\n\n**主要结果（MTA-DeepSearch-32B）**：\n\n| Benchmark | Score |\n|-----------|-------|\n| MMSearch | 31.93 |\n| MMSearch-Plus | 53.95 |\n| BrowseComp-VL | 53.77 |\n| FVQA | 82.35 |\n| MTA-test | 76.00 |\n| HR-MMSearch | 29.78 |\n| **平均** | **54.63%** |\n\n- 超越 GPT-5（51.86%）、Gemini-2.5-Pro（50.98%）、Gemini-3-Pro（54.46%）\n- 相比基线模型：8B 版本提升 12.08%，32B 版本提升 13.78%\n- 平均推理步数从 2.27 提升至 4.28，搜索行为更加系统化\n\n**三个关键 insight**：\n1. 高质量多跳数据驱动长程推理能力\n2. 数据多样性与多阶段验证对性能至关重要\n3. Replay 训练可在不牺牲精度的前提下显著提升效率\n\n## 6. 价值和不足？\n\n**价值**：\n- 首个完整开源的多模态深度搜索 Agent 方案\n- 21K 多跳数据集配合多阶段验证，数据质量有保障\n- Replay 机制降低训练成本，方案可复现性强\n- 证明了 RL 训练可以让开源模型超越顶级商业模型\n\n**不足**：\n- 基座模型依赖 Qwen3-VL，未探索其他架构适配性\n- 工具集主要依赖 Web 搜索类，缺少数据库查询、代码执行等复杂工具\n- 4 跳问题单独使用时提升有限，需要混合训练\n- 评估指标以准确率为主，对搜索效率、轨迹长度等过程指标分析不足\n",
+    "excerpt": "来源：records/2026/04/27/17/mta-agent/论文总结.md · 作者 : Xiangyu Peng, Can Qin, An Yan, Xinyi Yang, Zeyuan Chen, Ran Xu, Chien Sheng Wu (Salesforce AI Research)",
+    "file_name": "论文总结.md",
+    "source_dir": "records/2026/04/27/17/mta-agent",
+    "session_type": "review",
+    "session_label": "评审会"
+  },
   {
     "date": "2026-04-19 11:00",
     "title": "论文总结",
