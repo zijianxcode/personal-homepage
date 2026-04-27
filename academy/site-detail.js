@@ -28,13 +28,98 @@ function normalizeText(entry) {
     return normalizeSearchText(`${entry.date || ''} ${entry.title || ''} ${entry.content || ''} ${entry.source_dir || ''} ${entry.file_name || ''} ${entry.session_label || ''}`);
 }
 
+function normalizeHeadingText(value) {
+    return String(value || '')
+        .toLowerCase()
+        .replace(/[^\p{L}\p{N}]+/gu, '')
+        .trim();
+}
+
+function cleanSectionLabel(value) {
+    return String(value || '')
+        .replace(/^\s*(?:第\s*)?(?:\d+|[一二三四五六七八九十]+)\s*[.、．:：]\s*/, '')
+        .trim();
+}
+
+function obsidianNoteName(value) {
+    return String(value || '未命名论文')
+        .replace(/[\\/:*?"<>|#^[\]]+/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim()
+        .slice(0, 90) || '未命名论文';
+}
+
+function buildObsidianMarkdown(entry) {
+    const lines = [
+        `# ${entry.title}`,
+        '',
+        '## 论文信息',
+        `- 收集时间：${formatDateLabel(entry.date)}`,
+        `- 来源目录：${entry.source_dir || '未标注'}`,
+        `- 来源文件：${entry.file_name || '未标注'}`
+    ];
+
+    if (entry.original_url) {
+        lines.push(`- 原文链接：${entry.original_url}`);
+    }
+
+    lines.push('', '## 阅读总结', '', entry.content || '');
+    return lines.join('\n').trim();
+}
+
+function copyText(text) {
+    if (navigator.clipboard && window.isSecureContext) {
+        return navigator.clipboard.writeText(text);
+    }
+
+    return new Promise((resolve, reject) => {
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.setAttribute('readonly', '');
+        textarea.style.position = 'fixed';
+        textarea.style.left = '-9999px';
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+            document.execCommand('copy') ? resolve() : reject(new Error('copy failed'));
+        } catch (error) {
+            reject(error);
+        } finally {
+            textarea.remove();
+        }
+    });
+}
+
+function buildObsidianUri(entry) {
+    const obsidian = pageConfig && pageConfig.obsidian ? pageConfig.obsidian : {};
+    const params = new URLSearchParams();
+    const vault = String(obsidian.vault || '').trim();
+    const folder = String(obsidian.folder || '').trim().replace(/^\/+|\/+$/g, '');
+    const noteName = obsidianNoteName(entry.title);
+
+    if (vault) {
+        params.set('vault', vault);
+    }
+    if (folder) {
+        params.set('file', `${folder}/${noteName}`);
+    } else {
+        params.set('name', noteName);
+    }
+    params.set('clipboard', 'true');
+    return `obsidian://new?${params.toString()}`;
+}
+
 (function initDetailPage() {
     const url = new URL(window.location.href);
     const navRoot = document.getElementById('navList');
     const articleRoot = document.getElementById('content');
     const articleTitle = document.getElementById('articleTitle');
-    const articleIntro = document.getElementById('articleIntro');
-    const articleMeta = document.getElementById('articleMeta');
+    const originalLink = document.getElementById('originalLink');
+    const obsidianButton = document.getElementById('obsidianButton');
+    const obsidianStatus = document.getElementById('obsidianStatus');
+    const readerTools = document.getElementById('readerTools');
+    const readerToc = document.getElementById('readerToc');
+    const readerToolsCount = document.getElementById('readerToolsCount');
     const filterInput = document.getElementById('filterInput');
     const filterTabs = document.getElementById('filterTabs');
     const resultCount = document.getElementById('resultCount');
@@ -42,7 +127,6 @@ function normalizeText(entry) {
     const totalMeta = document.getElementById('totalMeta');
     const currentMeta = document.getElementById('currentMeta');
     const menuToggle = document.getElementById('menuToggle');
-    const closeMenu = document.getElementById('closeMenu');
 
     if (!Array.isArray(entries) || !entries.length) {
         if (latestMeta) latestMeta.textContent = '暂无记录';
@@ -50,7 +134,6 @@ function normalizeText(entry) {
         if (currentMeta) currentMeta.textContent = '当前 0/0';
         if (navRoot) navRoot.innerHTML = '<li class="empty-state">还没有可展示的记录，等你开始打星后这里会自动出现。</li>';
         if (articleTitle) articleTitle.textContent = pageConfig && pageConfig.title ? pageConfig.title : '暂无记录';
-        if (articleIntro) articleIntro.textContent = pageConfig && pageConfig.subtitle ? pageConfig.subtitle : '暂时还没有内容。';
         if (articleRoot) articleRoot.innerHTML = '<div class="empty-state">当前页面还没有生成任何记录。</div>';
         return;
     }
@@ -60,6 +143,7 @@ function normalizeText(entry) {
         { id: 'weekly', label: '周会讨论' },
         { id: 'review', label: '评审会' }
     ];
+    let headingObserver = null;
 
     const state = {
         activeIndex: 0,
@@ -189,10 +273,100 @@ function normalizeText(entry) {
 
     function renderEmptyArticle() {
         articleTitle.textContent = '没有匹配的记录';
-        articleIntro.textContent = '可以切换回全部标签，或者换一个更短的关键词继续找。';
-        articleMeta.innerHTML = '';
         articleRoot.innerHTML = '<div class="empty-state">当前筛选条件下没有可展示的内容。</div>';
+        if (readerTools) readerTools.hidden = true;
+        if (originalLink) originalLink.hidden = true;
+        if (obsidianButton) obsidianButton.disabled = true;
+        if (obsidianStatus) obsidianStatus.textContent = '';
         if (currentMeta) currentMeta.textContent = '当前 0/0';
+    }
+
+    function removeDuplicateLeadHeading(entry) {
+        const firstHeading = articleRoot.querySelector('h1');
+        if (!firstHeading) return;
+
+        const headingText = normalizeHeadingText(firstHeading.textContent);
+        const titleText = normalizeHeadingText(entry.title);
+        const pageTitleText = normalizeHeadingText(pageConfig && pageConfig.title);
+        const fileNameText = normalizeHeadingText(entry.file_name || '');
+
+        if (headingText && (headingText === titleText || headingText === pageTitleText || headingText === fileNameText)) {
+            firstHeading.remove();
+        }
+    }
+
+    function renderReaderTools() {
+        if (!readerTools || !readerToc) return;
+        if (headingObserver) {
+            headingObserver.disconnect();
+            headingObserver = null;
+        }
+
+        const headings = Array.from(articleRoot.querySelectorAll('h2, h3')).slice(0, 12);
+        if (!headings.length) {
+            readerTools.hidden = true;
+            readerToc.innerHTML = '';
+            if (readerToolsCount) readerToolsCount.textContent = '';
+            return;
+        }
+
+        headings.forEach((heading, index) => {
+            heading.id = heading.id || `section-${state.activeIndex}-${index}`;
+        });
+
+        readerTools.hidden = false;
+        if (readerToolsCount) {
+            readerToolsCount.textContent = `${headings.length} 段`;
+        }
+        readerToc.innerHTML = headings.map((heading, index) => `
+            <button class="reader-toc-link reader-toc-${heading.tagName.toLowerCase()}" type="button" data-target="${escapeHtml(heading.id)}">
+                <span>${String(index + 1).padStart(2, '0')}</span>
+                <strong>${escapeHtml(cleanSectionLabel(heading.textContent) || heading.textContent.trim())}</strong>
+            </button>
+        `).join('');
+
+        readerToc.querySelectorAll('.reader-toc-link').forEach((node) => {
+            node.addEventListener('click', () => {
+                const target = document.getElementById(node.dataset.target);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        const tocLinks = Array.from(readerToc.querySelectorAll('.reader-toc-link'));
+        const setActiveLink = (id) => {
+            tocLinks.forEach((node) => {
+                node.classList.toggle('active', node.dataset.target === id);
+            });
+        };
+        setActiveLink(headings[0].id);
+
+        const updateActiveHeading = () => {
+            const markerY = Math.max(96, window.innerHeight * 0.2);
+            const current = headings.reduce((active, heading) => {
+                const top = heading.getBoundingClientRect().top;
+                return top <= markerY ? heading : active;
+            }, headings[0]);
+            setActiveLink(current.id);
+        };
+        updateActiveHeading();
+
+        let ticking = false;
+        const onScroll = () => {
+            if (ticking) return;
+            ticking = true;
+            window.requestAnimationFrame(() => {
+                updateActiveHeading();
+                ticking = false;
+            });
+        };
+        window.addEventListener('scroll', onScroll, { passive: true });
+        headingObserver = {
+            disconnect() {
+                window.removeEventListener('scroll', onScroll);
+            }
+        };
     }
 
     function renderArticle(index) {
@@ -204,17 +378,20 @@ function normalizeText(entry) {
         }
 
         articleRoot.innerHTML = DOMPurify.sanitize(marked.parse(entry.content, { breaks: false, gfm: true }));
+        removeDuplicateLeadHeading(entry);
+        renderReaderTools();
         articleTitle.textContent = entry.title;
-        articleIntro.textContent = entry.excerpt || `${pageConfig.subtitle} · 当前阅读的是第 ${index + 1} 条归档记录。`;
-
-        const chips = [
-            `<span class="meta-chip">${escapeHtml(formatDateLabel(entry.date))}</span>`,
-            entry.session_label ? `<span class="meta-chip">${escapeHtml(entry.session_label)}</span>` : '',
-            entry.source_dir ? `<span class="meta-chip">${escapeHtml(entry.source_dir)}</span>` : '',
-            entry.file_name ? `<span class="meta-chip">${escapeHtml(entry.file_name)}</span>` : ''
-        ].filter(Boolean);
-
-        articleMeta.innerHTML = chips.join('');
+        if (originalLink) {
+            originalLink.hidden = !entry.original_url;
+            originalLink.href = entry.original_url || '#';
+            originalLink.textContent = entry.original_label ? `打开${entry.original_label}` : '原文链接';
+        }
+        if (obsidianButton) {
+            obsidianButton.disabled = false;
+        }
+        if (obsidianStatus) {
+            obsidianStatus.textContent = '';
+        }
 
         if (currentMeta) {
             currentMeta.textContent = `当前 ${index + 1}/${entries.length}`;
@@ -270,8 +447,26 @@ function normalizeText(entry) {
         });
     }
 
-    if (closeMenu) {
-        closeMenu.addEventListener('click', closeSidebar);
+    if (obsidianButton) {
+        obsidianButton.addEventListener('click', async () => {
+            const entry = entries[state.activeIndex];
+            if (!entry) return;
+
+            obsidianButton.disabled = true;
+            if (obsidianStatus) obsidianStatus.textContent = '正在复制...';
+            try {
+                await copyText(buildObsidianMarkdown(entry));
+                if (obsidianStatus) obsidianStatus.textContent = '已复制，正在打开 Obsidian';
+                window.location.href = buildObsidianUri(entry);
+                window.setTimeout(() => {
+                    obsidianButton.disabled = false;
+                    if (obsidianStatus) obsidianStatus.textContent = '已发送到 Obsidian';
+                }, 900);
+            } catch (error) {
+                obsidianButton.disabled = false;
+                if (obsidianStatus) obsidianStatus.textContent = '复制失败，请检查浏览器剪贴板权限';
+            }
+        });
     }
 
     var overlay = document.getElementById('navOverlay');

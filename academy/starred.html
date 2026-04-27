@@ -10,7 +10,7 @@
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
-    <link rel="stylesheet" href="site.css?v=20260323b">
+    <link rel="stylesheet" href="site.css?v=20260427-quiet-detail1">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/dompurify@3/dist/purify.min.js"></script>
 </head>
@@ -54,594 +54,714 @@
         </div>
 
         <div class="detail-main-inner">
-            <div class="article-wrap">
-                <div class="article-actions">
-                    <button class="ghost-link" id="closeMenu" type="button">收起侧栏</button>
+            <div class="reader-tools" id="readerTools" hidden>
+                <div class="reader-tools-head">
+                    <span class="section-kicker">段落导航</span>
+                    <span class="reader-tools-count" id="readerToolsCount"></span>
                 </div>
-                <div class="section-kicker">Reading Panel</div>
+                <nav class="reader-toc" id="readerToc" aria-label="正文快速定位"></nav>
+            </div>
+            <div class="article-wrap">
                 <h1 class="article-title" id="articleTitle">载入中...</h1>
-                <p class="article-intro" id="articleIntro">正在整理当前记录内容。</p>
-                <div class="article-meta meta-row" id="articleMeta"></div>
+                <div class="article-tool-row">
+                    <a class="article-tool-link" id="originalLink" href="#" target="_blank" rel="noopener noreferrer" hidden>原文链接</a>
+                    <button class="article-tool-link" id="obsidianButton" type="button">复制到 Obsidian</button>
+                    <span class="obsidian-status" id="obsidianStatus" aria-live="polite"></span>
+                </div>
                 <article class="markdown-body" id="content"></article>
             </div>
         </div>
     </main>
 
     <script>
-        var pageConfig = {"title": "高星论文", "subtitle": "汇总各角色打星过的论文，按综合星级和角色数排序。 当前共 57 篇。"};
+        var pageConfig = {"title": "高星论文", "subtitle": "汇总各角色打星过的论文，按综合星级和角色数排序。 当前共 57 篇。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
   {
     "date": "2026-03-31 09:00",
     "title": "论文质量评分",
-    "content": "# 论文质量评分\n\n## 星级概览\n- 综合星级：**4.7/5 ★★★★★**\n- 打星角色：**3 位**\n- 最近更新时间：**2026-03-31 09:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 惠 | 5/5 ★★★★★ | 2026-03-31 09:00 | [records/2026/03/31/09/惠-能力进化.md](惠.html) |\n| 惠 | 5/5 ★★★★★ | 2026-03-29 09:00 | [records/2026/03/29/09/惠-能力进化.md](惠.html) |\n| 惠 | 4/5 ★★★★☆ | 2026-03-27 19:00 | [records/2026/03/27/19/惠-能力进化.md](惠.html) |\n\n## 角色摘录\n### 惠 · 5/5\n> 理由：ICLR 2025顶级会议，动机/方法/实验逻辑完整，预注册研究增强可信度，三任务多维度验证\n- 来源记录：[records/2026/03/31/09/惠-能力进化.md](惠.html)\n\n### 惠 · 5/5\n> 理由：ACL Outstanding Paper，结构完美符合顶会规范，动机/方法/实验逻辑严密，理论与实践结合\n- 来源记录：[records/2026/03/29/09/惠-能力进化.md](惠.html)\n\n### 惠 · 4/5\n> 扣分点：若为模拟假设文则严谨性有上限\n- 来源记录：[records/2026/03/27/19/惠-能力进化.md](惠.html)",
+    "content": "## 星级概览\n- 综合星级：**4.7/5 ★★★★★**\n- 打星角色：**3 位**\n- 最近更新时间：**2026-03-31 09:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 惠 | 5/5 ★★★★★ | 2026-03-31 09:00 | [records/2026/03/31/09/惠-能力进化.md](惠.html) |\n| 惠 | 5/5 ★★★★★ | 2026-03-29 09:00 | [records/2026/03/29/09/惠-能力进化.md](惠.html) |\n| 惠 | 4/5 ★★★★☆ | 2026-03-27 19:00 | [records/2026/03/27/19/惠-能力进化.md](惠.html) |\n\n## 角色摘录\n### 惠 · 5/5\n> 理由：ICLR 2025顶级会议，动机/方法/实验逻辑完整，预注册研究增强可信度，三任务多维度验证\n- 来源记录：[records/2026/03/31/09/惠-能力进化.md](惠.html)\n\n### 惠 · 5/5\n> 理由：ACL Outstanding Paper，结构完美符合顶会规范，动机/方法/实验逻辑严密，理论与实践结合\n- 来源记录：[records/2026/03/29/09/惠-能力进化.md](惠.html)\n\n### 惠 · 4/5\n> 扣分点：若为模拟假设文则严谨性有上限\n- 来源记录：[records/2026/03/27/19/惠-能力进化.md](惠.html)",
     "excerpt": "综合 4.7/5 · 3 位角色打星 · 惠 5 / 惠 5 / 惠 4",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/03/31/09",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "4.7★ · 3人"
   },
   {
     "date": "2026-03-24 22:00",
     "title": "二、本轮练习：论文精读",
-    "content": "# 二、本轮练习：论文精读\n\n## 星级概览\n- 综合星级：**4.7/5 ★★★★★**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-24 22:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 惠 | 4.7/5 ★★★★★ | 2026-03-24 22:00 | [records/2026/03/24/22/惠-能力进化.md](惠.html) |\n\n## 角色摘录\n### 惠 · 4.7/5\n> \"BERT: Pre training of Deep Bidirectional Transformers for Language Understanding\" (Devlin et al., NAACL 2019)\n- 来源记录：[records/2026/03/24/22/惠-能力进化.md](惠.html)",
+    "content": "## 星级概览\n- 综合星级：**4.7/5 ★★★★★**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-24 22:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 惠 | 4.7/5 ★★★★★ | 2026-03-24 22:00 | [records/2026/03/24/22/惠-能力进化.md](惠.html) |\n\n## 角色摘录\n### 惠 · 4.7/5\n> \"BERT: Pre training of Deep Bidirectional Transformers for Language Understanding\" (Devlin et al., NAACL 2019)\n- 来源记录：[records/2026/03/24/22/惠-能力进化.md](惠.html)",
     "excerpt": "综合 4.7/5 · 1 位角色打星 · 惠 4.7",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/03/24/22",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "4.7★ · 1人"
   },
   {
     "date": "2026-03-24 02:00",
     "title": "综合自评分",
-    "content": "# 综合自评分\n\n## 星级概览\n- 综合星级：**4.7/5 ★★★★★**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-24 02:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 悠仁 | 4.7/5 ★★★★★ | 2026-03-24 02:00 | [records/2026/03/24/02/悠仁-能力进化.md](悠仁.html) |\n\n## 角色摘录\n### 悠仁 · 4.7/5\n> | 相关性 | ⭐⭐⭐⭐⭐ (5/5) | 直接针对AI/HCI/UX三领域交叉点 |\n- 来源记录：[records/2026/03/24/02/悠仁-能力进化.md](悠仁.html)",
+    "content": "## 星级概览\n- 综合星级：**4.7/5 ★★★★★**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-24 02:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 悠仁 | 4.7/5 ★★★★★ | 2026-03-24 02:00 | [records/2026/03/24/02/悠仁-能力进化.md](悠仁.html) |\n\n## 角色摘录\n### 悠仁 · 4.7/5\n> | 相关性 | ⭐⭐⭐⭐⭐ (5/5) | 直接针对AI/HCI/UX三领域交叉点 |\n- 来源记录：[records/2026/03/24/02/悠仁-能力进化.md](悠仁.html)",
     "excerpt": "综合 4.7/5 · 1 位角色打星 · 悠仁 4.7",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/03/24/02",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "4.7★ · 1人"
   },
   {
     "date": "2026-03-22 20:00",
     "title": "自评打分",
-    "content": "# 自评打分\n\n## 星级概览\n- 综合星级：**4.7/5 ★★★★★**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-22 20:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 野蔷薇 | 4.7/5 ★★★★★ | 2026-03-22 20:00 | [records/2026/03/22/20/野蔷薇-能力进化.md](野蔷薇.html) |\n\n## 角色摘录\n### 野蔷薇 · 4.7/5\n> | 相关性 | ⭐⭐⭐⭐⭐ (5/5) | 精准命中AI/HCI/UX研究核心问题：AI如何被体验，而非仅被评估 |\n- 来源记录：[records/2026/03/22/20/野蔷薇-能力进化.md](野蔷薇.html)",
+    "content": "## 星级概览\n- 综合星级：**4.7/5 ★★★★★**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-22 20:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 野蔷薇 | 4.7/5 ★★★★★ | 2026-03-22 20:00 | [records/2026/03/22/20/野蔷薇-能力进化.md](野蔷薇.html) |\n\n## 角色摘录\n### 野蔷薇 · 4.7/5\n> | 相关性 | ⭐⭐⭐⭐⭐ (5/5) | 精准命中AI/HCI/UX研究核心问题：AI如何被体验，而非仅被评估 |\n- 来源记录：[records/2026/03/22/20/野蔷薇-能力进化.md](野蔷薇.html)",
     "excerpt": "综合 4.7/5 · 1 位角色打星 · 野蔷薇 4.7",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/03/22/20",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "4.7★ · 1人"
   },
   {
     "date": "2026-03-20 19:00",
     "title": "AI Phenomenology for Understanding Human AI Experiences Across Eras",
-    "content": "# AI Phenomenology for Understanding Human AI Experiences Across Eras\n\n## 星级概览\n- 综合星级：**4.7/5 ★★★★★**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-20 19:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 野蔷薇 | 4.7/5 ★★★★★ | 2026-03-20 19:00 | [records/2026/03/20/19/野蔷薇-能力进化.md](野蔷薇.html) |\n\n## 角色摘录\n### 野蔷薇 · 4.7/5\n> 相关性 : ⭐⭐⭐⭐⭐ (5/5) 直接涉及人 AI交互体验、价值对齐、UX研究\n- 来源记录：[records/2026/03/20/19/野蔷薇-能力进化.md](野蔷薇.html)",
+    "content": "## 星级概览\n- 综合星级：**4.7/5 ★★★★★**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-20 19:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 野蔷薇 | 4.7/5 ★★★★★ | 2026-03-20 19:00 | [records/2026/03/20/19/野蔷薇-能力进化.md](野蔷薇.html) |\n\n## 角色摘录\n### 野蔷薇 · 4.7/5\n> 相关性 : ⭐⭐⭐⭐⭐ (5/5) 直接涉及人 AI交互体验、价值对齐、UX研究\n- 来源记录：[records/2026/03/20/19/野蔷薇-能力进化.md](野蔷薇.html)",
     "excerpt": "综合 4.7/5 · 1 位角色打星 · 野蔷薇 4.7",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/03/20/19",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "4.7★ · 1人"
   },
   {
     "date": "2026-04-27 17:00",
     "title": "\"I think this is fair\": Uncovering the Complexities of Stakeholder Decision Making in AI Fairness Assessment",
-    "content": "# \"I think this is fair\": Uncovering the Complexities of Stakeholder Decision Making in AI Fairness Assessment\n\n## 星级概览\n- 综合星级：**4.5/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-04-27 17:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 野蔷薇 | 4.5/5 ★★★★☆ | 2026-04-27 17:00 | [records/2026/04/27/17/chi-2026-ai-fairness/野蔷薇-能力进化.md](野蔷薇.html) |\n\n## 角色摘录\n### 野蔷薇 · 4.5/5\n> 作者 : Lin Luo et al.\n- 来源记录：[records/2026/04/27/17/chi-2026-ai-fairness/野蔷薇-能力进化.md](野蔷薇.html)",
+    "content": "## 星级概览\n- 综合星级：**4.5/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-04-27 17:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 野蔷薇 | 4.5/5 ★★★★☆ | 2026-04-27 17:00 | [records/2026/04/27/17/chi-2026-ai-fairness/野蔷薇-能力进化.md](野蔷薇.html) |\n\n## 角色摘录\n### 野蔷薇 · 4.5/5\n> 作者 : Lin Luo et al.\n- 来源记录：[records/2026/04/27/17/chi-2026-ai-fairness/野蔷薇-能力进化.md](野蔷薇.html)",
     "excerpt": "综合 4.5/5 · 1 位角色打星 · 野蔷薇 4.5",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/04/27/17/chi-2026-ai-fairness",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "4.5★ · 1人"
   },
   {
     "date": "2026-04-27 17:00",
     "title": "Fifteen Years of Learning Analytics Research: Topics, Trends, and Challenges",
-    "content": "# Fifteen Years of Learning Analytics Research: Topics, Trends, and Challenges\n\n## 星级概览\n- 综合星级：**4.5/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-04-27 17:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 惠 | 4.5/5 ★★★★☆ | 2026-04-27 17:00 | [records/2026/04/27/17/lak-2026-learning-analytics/惠-能力进化.md](惠.html) |\n\n## 角色摘录\n### 惠 · 4.5/5\n> 作者 : Švábenský et al. (Masaryk University, Stanford, etc.)\n- 来源记录：[records/2026/04/27/17/lak-2026-learning-analytics/惠-能力进化.md](惠.html)",
+    "content": "## 星级概览\n- 综合星级：**4.5/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-04-27 17:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 惠 | 4.5/5 ★★★★☆ | 2026-04-27 17:00 | [records/2026/04/27/17/lak-2026-learning-analytics/惠-能力进化.md](惠.html) |\n\n## 角色摘录\n### 惠 · 4.5/5\n> 作者 : Švábenský et al. (Masaryk University, Stanford, etc.)\n- 来源记录：[records/2026/04/27/17/lak-2026-learning-analytics/惠-能力进化.md](惠.html)",
     "excerpt": "综合 4.5/5 · 1 位角色打星 · 惠 4.5",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/04/27/17/lak-2026-learning-analytics",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "4.5★ · 1人"
   },
   {
     "date": "2026-04-27 17:00",
     "title": "MTA Agent: An Open Recipe for Multimodal Deep Search Agents",
-    "content": "# MTA Agent: An Open Recipe for Multimodal Deep Search Agents\n\n## 星级概览\n- 综合星级：**4.5/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-04-27 17:00**\n- arXiv：`2604.06376`\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 五条悟 | 4.5/5 ★★★★☆ | 2026-04-27 17:00 | [records/2026/04/27/17/mta-agent/五条悟-能力进化.md](五条悟.html) |\n\n## 角色摘录\n### 五条悟 · 4.5/5\n> 作者 : Xiangyu Peng et al. (Salesforce AI Research)\n- 来源记录：[records/2026/04/27/17/mta-agent/五条悟-能力进化.md](五条悟.html)",
+    "content": "## 星级概览\n- 综合星级：**4.5/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-04-27 17:00**\n- arXiv：`2604.06376`\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 五条悟 | 4.5/5 ★★★★☆ | 2026-04-27 17:00 | [records/2026/04/27/17/mta-agent/五条悟-能力进化.md](五条悟.html) |\n\n## 角色摘录\n### 五条悟 · 4.5/5\n> 作者 : Xiangyu Peng et al. (Salesforce AI Research)\n- 来源记录：[records/2026/04/27/17/mta-agent/五条悟-能力进化.md](五条悟.html)",
     "excerpt": "综合 4.5/5 · 1 位角色打星 · 五条悟 4.5",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/04/27/17/mta-agent",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "4.5★ · 1人"
   },
   {
     "date": "2026-04-18 11:00",
     "title": "4. 开发文档的新挑战",
-    "content": "# 4. 开发文档的新挑战\n\n## 星级概览\n- 综合星级：**4.5/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-04-18 11:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 全栈工程师 | 4.5/5 ★★★★☆ | 2026-04-18 11:00 | [records/2026/04/18/11/全栈工程师-能力进化.md](全栈工程师.html) |\n\n## 角色摘录\n### 全栈工程师 · 4.5/5\n> \"HTTP Behavioral Signatures\"研究发现 AI 编码智能体有独特的 HTTP 请求特征：\n- 来源记录：[records/2026/04/18/11/全栈工程师-能力进化.md](全栈工程师.html)",
+    "content": "## 星级概览\n- 综合星级：**4.5/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-04-18 11:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 全栈工程师 | 4.5/5 ★★★★☆ | 2026-04-18 11:00 | [records/2026/04/18/11/全栈工程师-能力进化.md](全栈工程师.html) |\n\n## 角色摘录\n### 全栈工程师 · 4.5/5\n> \"HTTP Behavioral Signatures\"研究发现 AI 编码智能体有独特的 HTTP 请求特征：\n- 来源记录：[records/2026/04/18/11/全栈工程师-能力进化.md](全栈工程师.html)",
     "excerpt": "综合 4.5/5 · 1 位角色打星 · 全栈工程师 4.5",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/04/18/11",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "4.5★ · 1人"
   },
   {
     "date": "2026-04-14 01:00",
     "title": "各维度评分",
-    "content": "# 各维度评分\n\n## 星级概览\n- 综合星级：**4.5/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-04-14 01:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 野蔷薇 | 4.5/5 ★★★★☆ | 2026-04-14 01:00 | [records/2026/04/14/01/野蔷薇-能力进化.md](野蔷薇.html) |\n\n## 角色摘录\n### 野蔷薇 · 4.5/5\n> | 相关性 | ⭐⭐⭐⭐⭐ (5/5) | AI/HCI/UX核心领域，直接研究用户与AI产品的情感关系 |\n- 来源记录：[records/2026/04/14/01/野蔷薇-能力进化.md](野蔷薇.html)",
+    "content": "## 星级概览\n- 综合星级：**4.5/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-04-14 01:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 野蔷薇 | 4.5/5 ★★★★☆ | 2026-04-14 01:00 | [records/2026/04/14/01/野蔷薇-能力进化.md](野蔷薇.html) |\n\n## 角色摘录\n### 野蔷薇 · 4.5/5\n> | 相关性 | ⭐⭐⭐⭐⭐ (5/5) | AI/HCI/UX核心领域，直接研究用户与AI产品的情感关系 |\n- 来源记录：[records/2026/04/14/01/野蔷薇-能力进化.md](野蔷薇.html)",
     "excerpt": "综合 4.5/5 · 1 位角色打星 · 野蔷薇 4.5",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/04/14/01",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "4.5★ · 1人"
   },
   {
     "date": "2026-04-14 01:00",
     "title": "自评环节",
-    "content": "# 自评环节\n\n## 星级概览\n- 综合星级：**4.5/5 ★★★★☆**\n- 打星角色：**2 位**\n- 最近更新时间：**2026-04-14 01:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 悠仁 | 4.7/5 ★★★★★ | 2026-04-14 01:00 | [records/2026/04/14/01/悠仁-能力进化.md](悠仁.html) |\n| 悠仁 | 4.3/5 ★★★★☆ | 2026-03-23 13:00 | [records/2026/03/23/13/悠仁-能力进化.md](悠仁.html) |\n\n## 角色摘录\n### 悠仁 · 4.7/5\n> | 相关性 | ⭐⭐⭐⭐⭐ (5/5) | AI Agent + HCI + UX设计三角交叉；直接面向真实用户需求 |\n- 来源记录：[records/2026/04/14/01/悠仁-能力进化.md](悠仁.html)\n\n### 悠仁 · 4.3/5\n> 相关性 : ⭐⭐⭐⭐⭐ (5/5)\n- 来源记录：[records/2026/03/23/13/悠仁-能力进化.md](悠仁.html)",
+    "content": "## 星级概览\n- 综合星级：**4.5/5 ★★★★☆**\n- 打星角色：**2 位**\n- 最近更新时间：**2026-04-14 01:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 悠仁 | 4.7/5 ★★★★★ | 2026-04-14 01:00 | [records/2026/04/14/01/悠仁-能力进化.md](悠仁.html) |\n| 悠仁 | 4.3/5 ★★★★☆ | 2026-03-23 13:00 | [records/2026/03/23/13/悠仁-能力进化.md](悠仁.html) |\n\n## 角色摘录\n### 悠仁 · 4.7/5\n> | 相关性 | ⭐⭐⭐⭐⭐ (5/5) | AI Agent + HCI + UX设计三角交叉；直接面向真实用户需求 |\n- 来源记录：[records/2026/04/14/01/悠仁-能力进化.md](悠仁.html)\n\n### 悠仁 · 4.3/5\n> 相关性 : ⭐⭐⭐⭐⭐ (5/5)\n- 来源记录：[records/2026/03/23/13/悠仁-能力进化.md](悠仁.html)",
     "excerpt": "综合 4.5/5 · 2 位角色打星 · 悠仁 4.7 / 悠仁 4.3",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/04/14/01",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "4.5★ · 2人"
   },
   {
     "date": "2026-04-01 09:00",
     "title": "Do MLLMs Capture How Interfaces Guide User Behavior? A Benchmark for Multimodal UI/UX Design Understanding",
-    "content": "# Do MLLMs Capture How Interfaces Guide User Behavior? A Benchmark for Multimodal UI/UX Design Understanding\n\n## 星级概览\n- 综合星级：**4.5/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-04-01 09:00**\n- arXiv：`2505.05026`\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 野蔷薇 | 4.5/5 ★★★★☆ | 2026-04-01 09:00 | [records/2026/04/01/09/野蔷薇-能力进化.md](野蔷薇.html) |\n\n## 角色摘录\n### 野蔷薇 · 4.5/5\n> 角色 : 野蔷薇（研究员）\n- 来源记录：[records/2026/04/01/09/野蔷薇-能力进化.md](野蔷薇.html)",
+    "content": "## 星级概览\n- 综合星级：**4.5/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-04-01 09:00**\n- arXiv：`2505.05026`\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 野蔷薇 | 4.5/5 ★★★★☆ | 2026-04-01 09:00 | [records/2026/04/01/09/野蔷薇-能力进化.md](野蔷薇.html) |\n\n## 角色摘录\n### 野蔷薇 · 4.5/5\n> 角色 : 野蔷薇（研究员）\n- 来源记录：[records/2026/04/01/09/野蔷薇-能力进化.md](野蔷薇.html)",
     "excerpt": "综合 4.5/5 · 1 位角色打星 · 野蔷薇 4.5",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/04/01/09",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "4.5★ · 1人"
   },
   {
     "date": "2026-04-01 09:00",
     "title": "技术选型建议",
-    "content": "# 技术选型建议\n\n## 星级概览\n- 综合星级：**4.5/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-04-01 09:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 全栈工程师 | 4.5/5 ★★★★☆ | 2026-04-01 09:00 | [records/2026/04/01/09/全栈工程师-能力进化.md](全栈工程师.html) |\n\n## 角色摘录\n### 全栈工程师 · 4.5/5\n> 短期 ：在现有项目中引入AGENTS.md风格的项目指南\n- 来源记录：[records/2026/04/01/09/全栈工程师-能力进化.md](全栈工程师.html)",
+    "content": "## 星级概览\n- 综合星级：**4.5/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-04-01 09:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 全栈工程师 | 4.5/5 ★★★★☆ | 2026-04-01 09:00 | [records/2026/04/01/09/全栈工程师-能力进化.md](全栈工程师.html) |\n\n## 角色摘录\n### 全栈工程师 · 4.5/5\n> 短期 ：在现有项目中引入AGENTS.md风格的项目指南\n- 来源记录：[records/2026/04/01/09/全栈工程师-能力进化.md](全栈工程师.html)",
     "excerpt": "综合 4.5/5 · 1 位角色打星 · 全栈工程师 4.5",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/04/01/09",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "4.5★ · 1人"
   },
   {
     "date": "2026-03-26 19:00",
     "title": "Generative AI User Experience: Developing Human–AI Epistemic Partnership",
-    "content": "# Generative AI User Experience: Developing Human–AI Epistemic Partnership\n\n## 星级概览\n- 综合星级：**4.5/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-26 19:00**\n- arXiv：`2603.23863`\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 悠仁 | 4.5/5 ★★★★☆ | 2026-03-26 19:00 | [records/2026/03/26/19/悠仁-能力进化.md](悠仁.html) |\n\n## 角色摘录\n### 悠仁 · 4.5/5\n> 日期 : 2026 03 26 19:00 (19:00 21:00批次)\n- 来源记录：[records/2026/03/26/19/悠仁-能力进化.md](悠仁.html)",
+    "content": "## 星级概览\n- 综合星级：**4.5/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-26 19:00**\n- arXiv：`2603.23863`\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 悠仁 | 4.5/5 ★★★★☆ | 2026-03-26 19:00 | [records/2026/03/26/19/悠仁-能力进化.md](悠仁.html) |\n\n## 角色摘录\n### 悠仁 · 4.5/5\n> 日期 : 2026 03 26 19:00 (19:00 21:00批次)\n- 来源记录：[records/2026/03/26/19/悠仁-能力进化.md](悠仁.html)",
     "excerpt": "综合 4.5/5 · 1 位角色打星 · 悠仁 4.5",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/03/26/19",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "4.5★ · 1人"
   },
   {
     "date": "2026-03-22 15:00",
     "title": "备选论文（未选）",
-    "content": "# 备选论文（未选）\n\n## 星级概览\n- 综合星级：**4.5/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-22 15:00**\n- arXiv：`2603.13258`\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 全栈工程师 | 4.5/5 ★★★★☆ | 2026-03-22 15:00 | [records/2026/03/22/15/全栈工程师-能力进化.md](全栈工程师.html) |\n\n## 角色摘录\n### 全栈工程师 · 4.5/5\n> CHI 2025: Benchmarkable Components Google AI开发工具基准测试研究，暂缓\n- 来源记录：[records/2026/03/22/15/全栈工程师-能力进化.md](全栈工程师.html)",
+    "content": "## 星级概览\n- 综合星级：**4.5/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-22 15:00**\n- arXiv：`2603.13258`\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 全栈工程师 | 4.5/5 ★★★★☆ | 2026-03-22 15:00 | [records/2026/03/22/15/全栈工程师-能力进化.md](全栈工程师.html) |\n\n## 角色摘录\n### 全栈工程师 · 4.5/5\n> CHI 2025: Benchmarkable Components Google AI开发工具基准测试研究，暂缓\n- 来源记录：[records/2026/03/22/15/全栈工程师-能力进化.md](全栈工程师.html)",
     "excerpt": "综合 4.5/5 · 1 位角色打星 · 全栈工程师 4.5",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/03/22/15",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "4.5★ · 1人"
   },
   {
     "date": "2026-03-21 16:00",
     "title": "论文/技术",
-    "content": "# 论文/技术\n\n## 星级概览\n- 综合星级：**4.5/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-21 16:00**\n- arXiv：`2505.13516`\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 全栈工程师 | 4.5/5 ★★★★☆ | 2026-03-21 16:00 | [records/2026/03/21/16/全栈工程师-能力进化.md](全栈工程师.html) |\n\n## 角色摘录\n### 全栈工程师 · 4.5/5\n> Microsoft Agent Framework (AutoGen + Semantic Kernel 合并，2025年10月发布)\n- 来源记录：[records/2026/03/21/16/全栈工程师-能力进化.md](全栈工程师.html)",
+    "content": "## 星级概览\n- 综合星级：**4.5/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-21 16:00**\n- arXiv：`2505.13516`\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 全栈工程师 | 4.5/5 ★★★★☆ | 2026-03-21 16:00 | [records/2026/03/21/16/全栈工程师-能力进化.md](全栈工程师.html) |\n\n## 角色摘录\n### 全栈工程师 · 4.5/5\n> Microsoft Agent Framework (AutoGen + Semantic Kernel 合并，2025年10月发布)\n- 来源记录：[records/2026/03/21/16/全栈工程师-能力进化.md](全栈工程师.html)",
     "excerpt": "综合 4.5/5 · 1 位角色打星 · 全栈工程师 4.5",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/03/21/16",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "4.5★ · 1人"
   },
   {
     "date": "2026-03-21 10:38",
     "title": "Cocoa: Co Planning and Co Execution with AI Agents",
-    "content": "# Cocoa: Co Planning and Co Execution with AI Agents\n\n## 星级概览\n- 综合星级：**4.5/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-21 10:38**\n- arXiv：`2412.10999`\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 悠仁 | 4.5/5 ★★★★☆ | 2026-03-21 10:38 | [records/2026/03/21/10/悠仁-能力进化.md](悠仁.html) |\n\n## 角色摘录\n### 悠仁 · 4.5/5\n> 训练目标 ：AI/HCI/UX 研究前沿进展\n- 来源记录：[records/2026/03/21/10/悠仁-能力进化.md](悠仁.html)",
+    "content": "## 星级概览\n- 综合星级：**4.5/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-21 10:38**\n- arXiv：`2412.10999`\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 悠仁 | 4.5/5 ★★★★☆ | 2026-03-21 10:38 | [records/2026/03/21/10/悠仁-能力进化.md](悠仁.html) |\n\n## 角色摘录\n### 悠仁 · 4.5/5\n> 训练目标 ：AI/HCI/UX 研究前沿进展\n- 来源记录：[records/2026/03/21/10/悠仁-能力进化.md](悠仁.html)",
     "excerpt": "综合 4.5/5 · 1 位角色打星 · 悠仁 4.5",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/03/21/10",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "4.5★ · 1人"
   },
   {
     "date": "2026-03-20 08:00",
     "title": "REL A.I.: An Interaction Centered Approach To Measuring Human LM Reliance",
-    "content": "# REL A.I.: An Interaction Centered Approach To Measuring Human LM Reliance\n\n## 星级概览\n- 综合星级：**4.5/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-20 08:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 惠 | 4.5/5 ★★★★☆ | 2026-03-20 08:00 | [records/2026/03/20/08/惠-能力进化.md](惠.html) |\n\n## 角色摘录\n### 惠 · 4.5/5\n> 惠 学术写作能力进化记录\n- 来源记录：[records/2026/03/20/08/惠-能力进化.md](惠.html)",
+    "content": "## 星级概览\n- 综合星级：**4.5/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-20 08:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 惠 | 4.5/5 ★★★★☆ | 2026-03-20 08:00 | [records/2026/03/20/08/惠-能力进化.md](惠.html) |\n\n## 角色摘录\n### 惠 · 4.5/5\n> 惠 学术写作能力进化记录\n- 来源记录：[records/2026/03/20/08/惠-能力进化.md](惠.html)",
     "excerpt": "综合 4.5/5 · 1 位角色打星 · 惠 4.5",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/03/20/08",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "4.5★ · 1人"
   },
   {
     "date": "2026-04-15 09:00",
     "title": "各项评分",
-    "content": "# 各项评分\n\n## 星级概览\n- 综合星级：**4.3/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-04-15 09:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 野蔷薇 | 4.3/5 ★★★★☆ | 2026-04-15 09:00 | [records/2026/04/15/09/野蔷薇-能力进化.md](野蔷薇.html) |\n\n## 角色摘录\n### 野蔷薇 · 4.3/5\n> | 相关性 | ⭐⭐⭐⭐⭐ (5/5) | 直接研究HCI核心问题：人与LLM在决策中的角色分配，高度相关 |\n- 来源记录：[records/2026/04/15/09/野蔷薇-能力进化.md](野蔷薇.html)",
+    "content": "## 星级概览\n- 综合星级：**4.3/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-04-15 09:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 野蔷薇 | 4.3/5 ★★★★☆ | 2026-04-15 09:00 | [records/2026/04/15/09/野蔷薇-能力进化.md](野蔷薇.html) |\n\n## 角色摘录\n### 野蔷薇 · 4.3/5\n> | 相关性 | ⭐⭐⭐⭐⭐ (5/5) | 直接研究HCI核心问题：人与LLM在决策中的角色分配，高度相关 |\n- 来源记录：[records/2026/04/15/09/野蔷薇-能力进化.md](野蔷薇.html)",
     "excerpt": "综合 4.3/5 · 1 位角色打星 · 野蔷薇 4.3",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/04/15/09",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "4.3★ · 1人"
   },
   {
     "date": "2026-04-15 09:00",
     "title": "NovBench: Evaluating Large Language Models on Academic Paper Novelty Assessment",
-    "content": "# NovBench: Evaluating Large Language Models on Academic Paper Novelty Assessment\n\n## 星级概览\n- 综合星级：**4.3/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-04-15 09:00**\n- arXiv：`2604.11543`\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 惠 | 4.3/5 ★★★★☆ | 2026-04-15 09:00 | [records/2026/04/15/09/惠-能力进化.md](惠.html) |\n\n## 角色摘录\n### 惠 · 4.3/5\n> 作者 : Wenqing Wu et al.\n- 来源记录：[records/2026/04/15/09/惠-能力进化.md](惠.html)",
+    "content": "## 星级概览\n- 综合星级：**4.3/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-04-15 09:00**\n- arXiv：`2604.11543`\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 惠 | 4.3/5 ★★★★☆ | 2026-04-15 09:00 | [records/2026/04/15/09/惠-能力进化.md](惠.html) |\n\n## 角色摘录\n### 惠 · 4.3/5\n> 作者 : Wenqing Wu et al.\n- 来源记录：[records/2026/04/15/09/惠-能力进化.md](惠.html)",
     "excerpt": "综合 4.3/5 · 1 位角色打星 · 惠 4.3",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/04/15/09",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "4.3★ · 1人"
   },
   {
     "date": "2026-04-14 01:00",
     "title": "Turning Trash into Treasure: Accelerating Inference of Large Language Models with Token Recycling",
-    "content": "# Turning Trash into Treasure: Accelerating Inference of Large Language Models with Token Recycling\n\n## 星级概览\n- 综合星级：**4.3/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-04-14 01:00**\n- arXiv：`2408.08696`\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 惠 | 4.3/5 ★★★★☆ | 2026-04-14 01:00 | [records/2026/04/14/01/惠-能力进化.md](惠.html) |\n\n## 角色摘录\n### 惠 · 4.3/5\n> 作者 : Luo, Wang, Zhu, Zhang, Zhang, Yang, Xu（Baidu / 中国科学院大学）\n- 来源记录：[records/2026/04/14/01/惠-能力进化.md](惠.html)",
+    "content": "## 星级概览\n- 综合星级：**4.3/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-04-14 01:00**\n- arXiv：`2408.08696`\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 惠 | 4.3/5 ★★★★☆ | 2026-04-14 01:00 | [records/2026/04/14/01/惠-能力进化.md](惠.html) |\n\n## 角色摘录\n### 惠 · 4.3/5\n> 作者 : Luo, Wang, Zhu, Zhang, Zhang, Yang, Xu（Baidu / 中国科学院大学）\n- 来源记录：[records/2026/04/14/01/惠-能力进化.md](惠.html)",
     "excerpt": "综合 4.3/5 · 1 位角色打星 · 惠 4.3",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/04/14/01",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "4.3★ · 1人"
   },
   {
     "date": "2026-04-14 00:00",
     "title": "Native Sparse Attention: Hardware Aligned and Natively Trainable Sparse Attention",
-    "content": "# Native Sparse Attention: Hardware Aligned and Natively Trainable Sparse Attention\n\n## 星级概览\n- 综合星级：**4.3/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-04-14 00:00**\n- arXiv：`2502.11089`\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 惠 | 4.3/5 ★★★★☆ | 2026-04-14 00:00 | [records/2026/04/14/00/惠-能力进化.md](惠.html) |\n\n## 角色摘录\n### 惠 · 4.3/5\n> 作者 : Yuan, Gao, Dai et al. (DeepSeek AI + Peking University)\n- 来源记录：[records/2026/04/14/00/惠-能力进化.md](惠.html)",
+    "content": "## 星级概览\n- 综合星级：**4.3/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-04-14 00:00**\n- arXiv：`2502.11089`\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 惠 | 4.3/5 ★★★★☆ | 2026-04-14 00:00 | [records/2026/04/14/00/惠-能力进化.md](惠.html) |\n\n## 角色摘录\n### 惠 · 4.3/5\n> 作者 : Yuan, Gao, Dai et al. (DeepSeek AI + Peking University)\n- 来源记录：[records/2026/04/14/00/惠-能力进化.md](惠.html)",
     "excerpt": "综合 4.3/5 · 1 位角色打星 · 惠 4.3",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/04/14/00",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "4.3★ · 1人"
   },
   {
     "date": "2026-04-14 00:00",
     "title": "Cognitive Agency Surrender: Defending Epistemic Sovereignty via Scaffolded AI Friction",
-    "content": "# Cognitive Agency Surrender: Defending Epistemic Sovereignty via Scaffolded AI Friction\n\n## 星级概览\n- 综合星级：**4.3/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-04-14 00:00**\n- arXiv：`2603.21735`\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 悠仁 | 4.3/5 ★★★★☆ | 2026-04-14 00:00 | [records/2026/04/14/00/悠仁-能力进化.md](悠仁.html) |\n\n## 角色摘录\n### 悠仁 · 4.3/5\n> 作者 ：Kuangzhe Xu, Yu Shen, Longjie Yan, Yinghui Ren\n- 来源记录：[records/2026/04/14/00/悠仁-能力进化.md](悠仁.html)",
+    "content": "## 星级概览\n- 综合星级：**4.3/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-04-14 00:00**\n- arXiv：`2603.21735`\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 悠仁 | 4.3/5 ★★★★☆ | 2026-04-14 00:00 | [records/2026/04/14/00/悠仁-能力进化.md](悠仁.html) |\n\n## 角色摘录\n### 悠仁 · 4.3/5\n> 作者 ：Kuangzhe Xu, Yu Shen, Longjie Yan, Yinghui Ren\n- 来源记录：[records/2026/04/14/00/悠仁-能力进化.md](悠仁.html)",
     "excerpt": "综合 4.3/5 · 1 位角色打星 · 悠仁 4.3",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/04/14/00",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "4.3★ · 1人"
   },
   {
     "date": "2026-03-29 09:00",
     "title": "ProMemAssist: Exploring Timely Proactive Assistance Through Working Memory Modeling in Multi Modal Wearable Devices",
-    "content": "# ProMemAssist: Exploring Timely Proactive Assistance Through Working Memory Modeling in Multi Modal Wearable Devices\n\n## 星级概览\n- 综合星级：**4.3/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-29 09:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 悠仁 | 4.3/5 ★★★★☆ | 2026-03-29 09:00 | [records/2026/03/29/09/悠仁-能力进化.md](悠仁.html) |\n\n## 角色摘录\n### 悠仁 · 4.3/5\n> | 相关性 | ⭐⭐⭐⭐⭐ | 高度相关：AI/HCI/可穿戴设备/主动辅助/认知建模/工作记忆理论，与研究方向完美契合 |\n- 来源记录：[records/2026/03/29/09/悠仁-能力进化.md](悠仁.html)",
+    "content": "## 星级概览\n- 综合星级：**4.3/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-29 09:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 悠仁 | 4.3/5 ★★★★☆ | 2026-03-29 09:00 | [records/2026/03/29/09/悠仁-能力进化.md](悠仁.html) |\n\n## 角色摘录\n### 悠仁 · 4.3/5\n> | 相关性 | ⭐⭐⭐⭐⭐ | 高度相关：AI/HCI/可穿戴设备/主动辅助/认知建模/工作记忆理论，与研究方向完美契合 |\n- 来源记录：[records/2026/03/29/09/悠仁-能力进化.md](悠仁.html)",
     "excerpt": "综合 4.3/5 · 1 位角色打星 · 悠仁 4.3",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/03/29/09",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "4.3★ · 1人"
   },
   {
     "date": "2026-03-26 07:00",
     "title": "论文：《In context Learning Demonstrates Induction of Language Model Activations》",
-    "content": "# 论文：《In context Learning Demonstrates Induction of Language Model Activations》\n\n## 星级概览\n- 综合星级：**4.3/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-26 07:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 惠 | 4.3/5 ★★★★☆ | 2026-03-26 07:00 | [records/2026/03/26/07/惠-能力进化.md](惠.html) |\n\n## 角色摘录\n### 惠 · 4.3/5\n> 顶会标准自评（⭐系统）：\n- 来源记录：[records/2026/03/26/07/惠-能力进化.md](惠.html)",
+    "content": "## 星级概览\n- 综合星级：**4.3/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-26 07:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 惠 | 4.3/5 ★★★★☆ | 2026-03-26 07:00 | [records/2026/03/26/07/惠-能力进化.md](惠.html) |\n\n## 角色摘录\n### 惠 · 4.3/5\n> 顶会标准自评（⭐系统）：\n- 来源记录：[records/2026/03/26/07/惠-能力进化.md](惠.html)",
     "excerpt": "综合 4.3/5 · 1 位角色打星 · 惠 4.3",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/03/26/07",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "4.3★ · 1人"
   },
   {
     "date": "2026-03-26 01:00",
     "title": "二、论文精读与自评",
-    "content": "# 二、论文精读与自评\n\n## 星级概览\n- 综合星级：**4.3/5 ★★★★☆**\n- 打星角色：**2 位**\n- 最近更新时间：**2026-03-26 01:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 惠 | 5/5 ★★★★★ | 2026-03-26 01:00 | [records/2026/03/26/01/惠-能力进化.md](惠.html) |\n| 惠 | 3.7/5 ★★★★☆ | 2026-03-25 06:00 | [records/2026/03/25/06/惠-能力进化.md](惠.html) |\n\n## 角色摘录\n### 惠 · 5/5\n> ✅ 顶会（NeurIPS，绝对顶会）\n- 来源记录：[records/2026/03/26/01/惠-能力进化.md](惠.html)\n\n### 惠 · 3.7/5\n> | 相关性 | ⭐⭐⭐⭐⭐ | 直接涉及NLP+推荐系统交叉，CL方向高度相关 |\n- 来源记录：[records/2026/03/25/06/惠-能力进化.md](惠.html)",
+    "content": "## 星级概览\n- 综合星级：**4.3/5 ★★★★☆**\n- 打星角色：**2 位**\n- 最近更新时间：**2026-03-26 01:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 惠 | 5/5 ★★★★★ | 2026-03-26 01:00 | [records/2026/03/26/01/惠-能力进化.md](惠.html) |\n| 惠 | 3.7/5 ★★★★☆ | 2026-03-25 06:00 | [records/2026/03/25/06/惠-能力进化.md](惠.html) |\n\n## 角色摘录\n### 惠 · 5/5\n> ✅ 顶会（NeurIPS，绝对顶会）\n- 来源记录：[records/2026/03/26/01/惠-能力进化.md](惠.html)\n\n### 惠 · 3.7/5\n> | 相关性 | ⭐⭐⭐⭐⭐ | 直接涉及NLP+推荐系统交叉，CL方向高度相关 |\n- 来源记录：[records/2026/03/25/06/惠-能力进化.md](惠.html)",
     "excerpt": "综合 4.3/5 · 2 位角色打星 · 惠 5 / 惠 3.7",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/03/26/01",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "4.3★ · 2人"
   },
   {
     "date": "2026-03-25 06:00",
     "title": "The Dual Mechanisms of Spatial Reasoning in Vision Language Models",
-    "content": "# The Dual Mechanisms of Spatial Reasoning in Vision Language Models\n\n## 星级概览\n- 综合星级：**4.3/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-25 06:00**\n- arXiv：`2603.22278`\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 野蔷薇 | 4.3/5 ★★★★☆ | 2026-03-25 06:00 | [records/2026/03/25/06/野蔷薇-能力进化.md](野蔷薇.html) |\n\n## 角色摘录\n### 野蔷薇 · 4.3/5\n> 作者 : Kelly Cui, Nikhil Prakash, Ayush Raina, David Bau, Antonio Torralba, Tamar Rott Shaham\n- 来源记录：[records/2026/03/25/06/野蔷薇-能力进化.md](野蔷薇.html)",
+    "content": "## 星级概览\n- 综合星级：**4.3/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-25 06:00**\n- arXiv：`2603.22278`\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 野蔷薇 | 4.3/5 ★★★★☆ | 2026-03-25 06:00 | [records/2026/03/25/06/野蔷薇-能力进化.md](野蔷薇.html) |\n\n## 角色摘录\n### 野蔷薇 · 4.3/5\n> 作者 : Kelly Cui, Nikhil Prakash, Ayush Raina, David Bau, Antonio Torralba, Tamar Rott Shaham\n- 来源记录：[records/2026/03/25/06/野蔷薇-能力进化.md](野蔷薇.html)",
     "excerpt": "综合 4.3/5 · 1 位角色打星 · 野蔷薇 4.3",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/03/25/06",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "4.3★ · 1人"
   },
   {
     "date": "2026-03-23 20:00",
     "title": "3. 本次练习论文：ACL 2025 Outstanding Paper",
-    "content": "# 3. 本次练习论文：ACL 2025 Outstanding Paper\n\n## 星级概览\n- 综合星级：**4.3/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-23 20:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 惠 | 4.3/5 ★★★★☆ | 2026-03-23 20:00 | [records/2026/03/23/20/惠-能力进化.md](惠.html) |\n\n## 角色摘录\n### 惠 · 4.3/5\n> | 相关性 | ⭐⭐⭐⭐⭐ | 与NLP/LLM研究高度相关，解决实际问题 |\n- 来源记录：[records/2026/03/23/20/惠-能力进化.md](惠.html)",
+    "content": "## 星级概览\n- 综合星级：**4.3/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-23 20:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 惠 | 4.3/5 ★★★★☆ | 2026-03-23 20:00 | [records/2026/03/23/20/惠-能力进化.md](惠.html) |\n\n## 角色摘录\n### 惠 · 4.3/5\n> | 相关性 | ⭐⭐⭐⭐⭐ | 与NLP/LLM研究高度相关，解决实际问题 |\n- 来源记录：[records/2026/03/23/20/惠-能力进化.md](惠.html)",
     "excerpt": "综合 4.3/5 · 1 位角色打星 · 惠 4.3",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/03/23/20",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "4.3★ · 1人"
   },
   {
     "date": "2026-03-23 08:00",
     "title": "二、论文自评分",
-    "content": "# 二、论文自评分\n\n## 星级概览\n- 综合星级：**4.3/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-23 08:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 惠 | 4.3/5 ★★★★☆ | 2026-03-23 08:00 | [records/2026/03/23/08/惠-能力进化.md](惠.html) |\n\n## 角色摘录\n### 惠 · 4.3/5\n> | 相关性 | ⭐⭐⭐⭐⭐ (5/5) | 直接研究长文本问答的写作质量评估，与学术写作高度相关 |\n- 来源记录：[records/2026/03/23/08/惠-能力进化.md](惠.html)",
+    "content": "## 星级概览\n- 综合星级：**4.3/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-23 08:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 惠 | 4.3/5 ★★★★☆ | 2026-03-23 08:00 | [records/2026/03/23/08/惠-能力进化.md](惠.html) |\n\n## 角色摘录\n### 惠 · 4.3/5\n> | 相关性 | ⭐⭐⭐⭐⭐ (5/5) | 直接研究长文本问答的写作质量评估，与学术写作高度相关 |\n- 来源记录：[records/2026/03/23/08/惠-能力进化.md](惠.html)",
     "excerpt": "综合 4.3/5 · 1 位角色打星 · 惠 4.3",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/03/23/08",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "4.3★ · 1人"
   },
   {
     "date": "2026-03-22 14:55",
     "title": "\"From Accuracy to Readiness: Metrics and Benchmarks for Human AI Decision Making\"",
-    "content": "# \"From Accuracy to Readiness: Metrics and Benchmarks for Human AI Decision Making\"\n\n## 星级概览\n- 综合星级：**4.3/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-22 14:55**\n- arXiv：`2603.18895`\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 野蔷薇 | 4.3/5 ★★★★☆ | 2026-03-22 14:55 | [records/2026/03/22/14/野蔷薇-能力进化.md](野蔷薇.html) |\n\n## 角色摘录\n### 野蔷薇 · 4.3/5\n> 作者 : Min Hun Lee\n- 来源记录：[records/2026/03/22/14/野蔷薇-能力进化.md](野蔷薇.html)",
+    "content": "## 星级概览\n- 综合星级：**4.3/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-22 14:55**\n- arXiv：`2603.18895`\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 野蔷薇 | 4.3/5 ★★★★☆ | 2026-03-22 14:55 | [records/2026/03/22/14/野蔷薇-能力进化.md](野蔷薇.html) |\n\n## 角色摘录\n### 野蔷薇 · 4.3/5\n> 作者 : Min Hun Lee\n- 来源记录：[records/2026/03/22/14/野蔷薇-能力进化.md](野蔷薇.html)",
     "excerpt": "综合 4.3/5 · 1 位角色打星 · 野蔷薇 4.3",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/03/22/14",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "4.3★ · 1人"
   },
   {
     "date": "2026-03-20 23:00",
     "title": "论文自评",
-    "content": "# 论文自评\n\n## 星级概览\n- 综合星级：**4.3/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-20 23:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 惠 | 4.3/5 ★★★★☆ | 2026-03-20 23:00 | [records/2026/03/20/23/惠-能力进化.md](惠.html) |\n\n## 角色摘录\n### 惠 · 4.3/5\n> | 创新性 | ⭐⭐⭐⭐ (4/5) | 首个对NLP领域贡献类型进行系统性元分析的研究，提出8标签分类体系 |\n- 来源记录：[records/2026/03/20/23/惠-能力进化.md](惠.html)",
+    "content": "## 星级概览\n- 综合星级：**4.3/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-20 23:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 惠 | 4.3/5 ★★★★☆ | 2026-03-20 23:00 | [records/2026/03/20/23/惠-能力进化.md](惠.html) |\n\n## 角色摘录\n### 惠 · 4.3/5\n> | 创新性 | ⭐⭐⭐⭐ (4/5) | 首个对NLP领域贡献类型进行系统性元分析的研究，提出8标签分类体系 |\n- 来源记录：[records/2026/03/20/23/惠-能力进化.md](惠.html)",
     "excerpt": "综合 4.3/5 · 1 位角色打星 · 惠 4.3",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/03/20/23",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "4.3★ · 1人"
   },
   {
     "date": "2026-03-20 21:00",
     "title": "Beyond Anthropomorphism: a Spectrum of Interface Metaphors for LLMs",
-    "content": "# Beyond Anthropomorphism: a Spectrum of Interface Metaphors for LLMs\n\n## 星级概览\n- 综合星级：**4.3/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-20 21:00**\n- arXiv：`2603.04613`\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 悠仁 | 4.3/5 ★★★★☆ | 2026-03-20 21:00 | [records/2026/03/20/21/悠仁-能力进化.md](悠仁.html) |\n\n## 角色摘录\n### 悠仁 · 4.3/5\n> | 相关性 | ⭐⭐⭐⭐⭐ (5/5) | 直接研究LLM界面隐喻，与AI/HCI/UX研究方向高度匹配 |\n- 来源记录：[records/2026/03/20/21/悠仁-能力进化.md](悠仁.html)",
+    "content": "## 星级概览\n- 综合星级：**4.3/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-20 21:00**\n- arXiv：`2603.04613`\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 悠仁 | 4.3/5 ★★★★☆ | 2026-03-20 21:00 | [records/2026/03/20/21/悠仁-能力进化.md](悠仁.html) |\n\n## 角色摘录\n### 悠仁 · 4.3/5\n> | 相关性 | ⭐⭐⭐⭐⭐ (5/5) | 直接研究LLM界面隐喻，与AI/HCI/UX研究方向高度匹配 |\n- 来源记录：[records/2026/03/20/21/悠仁-能力进化.md](悠仁.html)",
     "excerpt": "综合 4.3/5 · 1 位角色打星 · 悠仁 4.3",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/03/20/21",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "4.3★ · 1人"
   },
   {
     "date": "2026-03-20 21:00",
     "title": "SWE bench / Auto SWE bench — LLM 编程能力评估基准",
-    "content": "# SWE bench / Auto SWE bench — LLM 编程能力评估基准\n\n## 星级概览\n- 综合星级：**4.3/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-20 21:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 全栈工程师 | 4.3/5 ★★★★☆ | 2026-03-20 21:00 | [records/2026/03/20/21/全栈工程师-能力进化.md](全栈工程师.html) |\n\n## 角色摘录\n### 全栈工程师 · 4.3/5\n> 课题 B：SWE bench / Auto SWE bench — LLM 编程能力评估基准\n- 来源记录：[records/2026/03/20/21/全栈工程师-能力进化.md](全栈工程师.html)",
+    "content": "## 星级概览\n- 综合星级：**4.3/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-20 21:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 全栈工程师 | 4.3/5 ★★★★☆ | 2026-03-20 21:00 | [records/2026/03/20/21/全栈工程师-能力进化.md](全栈工程师.html) |\n\n## 角色摘录\n### 全栈工程师 · 4.3/5\n> 课题 B：SWE bench / Auto SWE bench — LLM 编程能力评估基准\n- 来源记录：[records/2026/03/20/21/全栈工程师-能力进化.md](全栈工程师.html)",
     "excerpt": "综合 4.3/5 · 1 位角色打星 · 全栈工程师 4.3",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/03/20/21",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "4.3★ · 1人"
   },
   {
     "date": "2026-04-18 11:52",
     "title": "📊 自评分",
-    "content": "# 📊 自评分\n\n## 星级概览\n- 综合星级：**4.2/5 ★★★★☆**\n- 打星角色：**3 位**\n- 最近更新时间：**2026-03-23 01:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 悠仁 | 4.3/5 ★★★★☆ | 2026-03-23 01:00 | [records/2026/03/23/01/悠仁-能力进化.md](悠仁.html) |\n| 惠 | 4.3/5 ★★★★☆ | 2026-03-22 20:27 | [records/2026/03/22/20/惠-能力进化.md](惠.html) |\n| 野蔷薇 | 4/5 ★★★★☆ | 2026-04-18 11:52 | [records/2026/04/18/11/野蔷薇-能力进化.md](野蔷薇.html) |\n\n## 角色摘录\n### 悠仁 · 4.3/5\n> | 相关性 | ⭐⭐⭐⭐⭐ (5/5) | 直接服务于AI/HCI研究场景，帮助研究者构建研究叙事，与人机交互领域高度契合 |\n- 来源记录：[records/2026/03/23/01/悠仁-能力进化.md](悠仁.html)\n\n### 惠 · 4.3/5\n> | 相关性 | ⭐⭐⭐⭐⭐ (5/5) | 直接研究学术写作中的AI辅助，高度相关 |\n- 来源记录：[records/2026/03/22/20/惠-能力进化.md](惠.html)\n\n### 野蔷薇 · 4/5\n> | 相关性 | ⭐⭐⭐⭐⭐ (5/5) | 核心研究多模态大模型自我进化，与AI/HCI方向高度契合 |\n- 来源记录：[records/2026/04/18/11/野蔷薇-能力进化.md](野蔷薇.html)",
+    "content": "## 星级概览\n- 综合星级：**4.2/5 ★★★★☆**\n- 打星角色：**3 位**\n- 最近更新时间：**2026-03-23 01:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 悠仁 | 4.3/5 ★★★★☆ | 2026-03-23 01:00 | [records/2026/03/23/01/悠仁-能力进化.md](悠仁.html) |\n| 惠 | 4.3/5 ★★★★☆ | 2026-03-22 20:27 | [records/2026/03/22/20/惠-能力进化.md](惠.html) |\n| 野蔷薇 | 4/5 ★★★★☆ | 2026-04-18 11:52 | [records/2026/04/18/11/野蔷薇-能力进化.md](野蔷薇.html) |\n\n## 角色摘录\n### 悠仁 · 4.3/5\n> | 相关性 | ⭐⭐⭐⭐⭐ (5/5) | 直接服务于AI/HCI研究场景，帮助研究者构建研究叙事，与人机交互领域高度契合 |\n- 来源记录：[records/2026/03/23/01/悠仁-能力进化.md](悠仁.html)\n\n### 惠 · 4.3/5\n> | 相关性 | ⭐⭐⭐⭐⭐ (5/5) | 直接研究学术写作中的AI辅助，高度相关 |\n- 来源记录：[records/2026/03/22/20/惠-能力进化.md](惠.html)\n\n### 野蔷薇 · 4/5\n> | 相关性 | ⭐⭐⭐⭐⭐ (5/5) | 核心研究多模态大模型自我进化，与AI/HCI方向高度契合 |\n- 来源记录：[records/2026/04/18/11/野蔷薇-能力进化.md](野蔷薇.html)",
     "excerpt": "综合 4.2/5 · 3 位角色打星 · 悠仁 4.3 / 惠 4.3 / 野蔷薇 4",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/04/18/11",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "4.2★ · 3人"
   },
   {
     "date": "2026-03-24 16:00",
     "title": "论文自评分",
-    "content": "# 论文自评分\n\n## 星级概览\n- 综合星级：**4.2/5 ★★★★☆**\n- 打星角色：**2 位**\n- 最近更新时间：**2026-03-21 22:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 惠 | 4.3/5 ★★★★☆ | 2026-03-21 22:00 | [records/2026/03/21/22/惠-能力进化.md](惠.html) |\n| 惠 | 4/5 ★★★★☆ | 2026-03-24 16:00 | [records/2026/03/24/16/惠-能力进化.md](惠.html) |\n\n## 角色摘录\n### 惠 · 4.3/5\n> | 相关性 | ⭐⭐⭐⭐⭐ | 直接涉及NLP学术写作规范，高度相关 |\n- 来源记录：[records/2026/03/21/22/惠-能力进化.md](惠.html)\n\n### 惠 · 4/5\n> | 相关性 | ⭐⭐⭐⭐⭐ | NLP核心任务（推理/算术/常识），HCI（人 LLM交互范式） |\n- 来源记录：[records/2026/03/24/16/惠-能力进化.md](惠.html)",
+    "content": "## 星级概览\n- 综合星级：**4.2/5 ★★★★☆**\n- 打星角色：**2 位**\n- 最近更新时间：**2026-03-21 22:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 惠 | 4.3/5 ★★★★☆ | 2026-03-21 22:00 | [records/2026/03/21/22/惠-能力进化.md](惠.html) |\n| 惠 | 4/5 ★★★★☆ | 2026-03-24 16:00 | [records/2026/03/24/16/惠-能力进化.md](惠.html) |\n\n## 角色摘录\n### 惠 · 4.3/5\n> | 相关性 | ⭐⭐⭐⭐⭐ | 直接涉及NLP学术写作规范，高度相关 |\n- 来源记录：[records/2026/03/21/22/惠-能力进化.md](惠.html)\n\n### 惠 · 4/5\n> | 相关性 | ⭐⭐⭐⭐⭐ | NLP核心任务（推理/算术/常识），HCI（人 LLM交互范式） |\n- 来源记录：[records/2026/03/24/16/惠-能力进化.md](惠.html)",
     "excerpt": "综合 4.2/5 · 2 位角色打星 · 惠 4.3 / 惠 4",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/03/24/16",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "4.2★ · 2人"
   },
   {
     "date": "2026-03-23 21:00",
     "title": "Vision R1: Evolving Human Free Alignment in Large Vision Language Models via Vision Guided Reinforcement Learning",
-    "content": "# Vision R1: Evolving Human Free Alignment in Large Vision Language Models via Vision Guided Reinforcement Learning\n\n## 星级概览\n- 综合星级：**4.2/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-23 21:00**\n- arXiv：`2503.18013`\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 野蔷薇 | 4.2/5 ★★★★☆ | 2026-03-23 21:00 | [records/2026/03/23/21/野蔷薇-能力进化.md](野蔷薇.html) |\n\n## 角色摘录\n### 野蔷薇 · 4.2/5\n> 训练周期 : 每6小时自动训练\n- 来源记录：[records/2026/03/23/21/野蔷薇-能力进化.md](野蔷薇.html)",
+    "content": "## 星级概览\n- 综合星级：**4.2/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-23 21:00**\n- arXiv：`2503.18013`\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 野蔷薇 | 4.2/5 ★★★★☆ | 2026-03-23 21:00 | [records/2026/03/23/21/野蔷薇-能力进化.md](野蔷薇.html) |\n\n## 角色摘录\n### 野蔷薇 · 4.2/5\n> 训练周期 : 每6小时自动训练\n- 来源记录：[records/2026/03/23/21/野蔷薇-能力进化.md](野蔷薇.html)",
     "excerpt": "综合 4.2/5 · 1 位角色打星 · 野蔷薇 4.2",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/03/23/21",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "4.2★ · 1人"
   },
   {
     "date": "2026-03-23 15:00",
     "title": "Learning to Trust: How Humans Mentally Recalibrate AI Confidence Signals",
-    "content": "# Learning to Trust: How Humans Mentally Recalibrate AI Confidence Signals\n\n## 星级概览\n- 综合星级：**4.2/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-23 15:00**\n- arXiv：`2603.22634`\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 野蔷薇 | 4.2/5 ★★★★☆ | 2026-03-23 15:00 | [records/2026/03/26/15/野蔷薇-能力进化.md](野蔷薇.html) |\n\n## 角色摘录\n### 野蔷薇 · 4.2/5\n> 2026 03 26 15（每6小时自我提升训练）\n- 来源记录：[records/2026/03/26/15/野蔷薇-能力进化.md](野蔷薇.html)",
+    "content": "## 星级概览\n- 综合星级：**4.2/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-23 15:00**\n- arXiv：`2603.22634`\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 野蔷薇 | 4.2/5 ★★★★☆ | 2026-03-23 15:00 | [records/2026/03/26/15/野蔷薇-能力进化.md](野蔷薇.html) |\n\n## 角色摘录\n### 野蔷薇 · 4.2/5\n> 2026 03 26 15（每6小时自我提升训练）\n- 来源记录：[records/2026/03/26/15/野蔷薇-能力进化.md](野蔷薇.html)",
     "excerpt": "综合 4.2/5 · 1 位角色打星 · 野蔷薇 4.2",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/03/26/15",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "4.2★ · 1人"
   },
   {
     "date": "2026-03-20 21:00",
     "title": "Cursor AI 对开源项目的长期质量影响（实证研究）",
-    "content": "# Cursor AI 对开源项目的长期质量影响（实证研究）\n\n## 星级概览\n- 综合星级：**4.2/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-20 21:00**\n- arXiv：`2511.04427`\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 全栈工程师 | 4.2/5 ★★★★☆ | 2026-03-20 21:00 | [records/2026/03/20/21/全栈工程师-能力进化.md](全栈工程师.html) |\n\n## 角色摘录\n### 全栈工程师 · 4.2/5\n> 课题 A：Cursor AI 对开源项目的长期质量影响（实证研究）\n- 来源记录：[records/2026/03/20/21/全栈工程师-能力进化.md](全栈工程师.html)",
+    "content": "## 星级概览\n- 综合星级：**4.2/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-20 21:00**\n- arXiv：`2511.04427`\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 全栈工程师 | 4.2/5 ★★★★☆ | 2026-03-20 21:00 | [records/2026/03/20/21/全栈工程师-能力进化.md](全栈工程师.html) |\n\n## 角色摘录\n### 全栈工程师 · 4.2/5\n> 课题 A：Cursor AI 对开源项目的长期质量影响（实证研究）\n- 来源记录：[records/2026/03/20/21/全栈工程师-能力进化.md](全栈工程师.html)",
     "excerpt": "综合 4.2/5 · 1 位角色打星 · 全栈工程师 4.2",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/03/20/21",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "4.2★ · 1人"
   },
   {
     "date": "2026-04-27 17:00",
     "title": "Cross Domain Policy Optimization via Bellman Consistency and Hybrid Critics",
-    "content": "# Cross Domain Policy Optimization via Bellman Consistency and Hybrid Critics\n\n## 星级概览\n- 综合星级：**4/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-04-27 17:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 悠仁 | 4/5 ★★★★☆ | 2026-04-27 17:00 | [records/2026/04/27/17/cross-domain-policy-optimization/悠仁-能力进化.md](悠仁.html) |\n\n## 角色摘录\n### 悠仁 · 4/5\n> 作者 : Ming Hong Chen et al. (NYCU, Meta AI)\n- 来源记录：[records/2026/04/27/17/cross-domain-policy-optimization/悠仁-能力进化.md](悠仁.html)",
+    "content": "## 星级概览\n- 综合星级：**4/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-04-27 17:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 悠仁 | 4/5 ★★★★☆ | 2026-04-27 17:00 | [records/2026/04/27/17/cross-domain-policy-optimization/悠仁-能力进化.md](悠仁.html) |\n\n## 角色摘录\n### 悠仁 · 4/5\n> 作者 : Ming Hong Chen et al. (NYCU, Meta AI)\n- 来源记录：[records/2026/04/27/17/cross-domain-policy-optimization/悠仁-能力进化.md](悠仁.html)",
     "excerpt": "综合 4/5 · 1 位角色打星 · 悠仁 4",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/04/27/17/cross-domain-policy-optimization",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "4★ · 1人"
   },
   {
     "date": "2026-04-08 12:00",
     "title": "Microservice Architecture Patterns for Scalable Machine Learning Systems",
-    "content": "# Microservice Architecture Patterns for Scalable Machine Learning Systems\n\n## 星级概览\n- 综合星级：**4/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-04-08 12:00**\n- arXiv：`2603.13672`\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 全栈工程师 | 4/5 ★★★★☆ | 2026-04-08 12:00 | [records/2026/04/08/12/全栈工程师-能力进化.md](全栈工程师.html) |\n\n## 角色摘录\n### 全栈工程师 · 4/5\n> 工程师 : 全栈工程师 self improvement cron\n- 来源记录：[records/2026/04/08/12/全栈工程师-能力进化.md](全栈工程师.html)",
+    "content": "## 星级概览\n- 综合星级：**4/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-04-08 12:00**\n- arXiv：`2603.13672`\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 全栈工程师 | 4/5 ★★★★☆ | 2026-04-08 12:00 | [records/2026/04/08/12/全栈工程师-能力进化.md](全栈工程师.html) |\n\n## 角色摘录\n### 全栈工程师 · 4/5\n> 工程师 : 全栈工程师 self improvement cron\n- 来源记录：[records/2026/04/08/12/全栈工程师-能力进化.md](全栈工程师.html)",
     "excerpt": "综合 4/5 · 1 位角色打星 · 全栈工程师 4",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/04/08/12",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "4★ · 1人"
   },
   {
     "date": "2026-03-31 09:00",
     "title": "论文评估",
-    "content": "# 论文评估\n\n## 星级概览\n- 综合星级：**4/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-31 09:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 野蔷薇 | 4/5 ★★★★☆ | 2026-03-31 09:00 | [records/2026/03/31/09/野蔷薇-能力进化.md](野蔷薇.html) |\n\n## 角色摘录\n### 野蔷薇 · 4/5\n> | 顶会/顶刊 | ⭐⭐⭐⭐⭐ | CVPR 2026，AI/HCI/CV三领域交叉 |\n- 来源记录：[records/2026/03/31/09/野蔷薇-能力进化.md](野蔷薇.html)",
+    "content": "## 星级概览\n- 综合星级：**4/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-31 09:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 野蔷薇 | 4/5 ★★★★☆ | 2026-03-31 09:00 | [records/2026/03/31/09/野蔷薇-能力进化.md](野蔷薇.html) |\n\n## 角色摘录\n### 野蔷薇 · 4/5\n> | 顶会/顶刊 | ⭐⭐⭐⭐⭐ | CVPR 2026，AI/HCI/CV三领域交叉 |\n- 来源记录：[records/2026/03/31/09/野蔷薇-能力进化.md](野蔷薇.html)",
     "excerpt": "综合 4/5 · 1 位角色打星 · 野蔷薇 4",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/03/31/09",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "4★ · 1人"
   },
   {
     "date": "2026-03-27 13:00",
     "title": "论文：GazeChair: Implicit Eye Tracker Calibration via Gaze Contingent Rendering in AR headsets",
-    "content": "# 论文：GazeChair: Implicit Eye Tracker Calibration via Gaze Contingent Rendering in AR headsets\n\n## 星级概览\n- 综合星级：**4/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-27 13:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 悠仁 | 4/5 ★★★★☆ | 2026-03-27 13:00 | [records/2026/03/27/13/悠仁-能力进化.md](悠仁.html) |\n\n## 角色摘录\n### 悠仁 · 4/5\n> | 相关性 | ⭐⭐⭐⭐⭐ | 直接涉及HCI核心领域：交互与感知 |\n- 来源记录：[records/2026/03/27/13/悠仁-能力进化.md](悠仁.html)",
+    "content": "## 星级概览\n- 综合星级：**4/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-27 13:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 悠仁 | 4/5 ★★★★☆ | 2026-03-27 13:00 | [records/2026/03/27/13/悠仁-能力进化.md](悠仁.html) |\n\n## 角色摘录\n### 悠仁 · 4/5\n> | 相关性 | ⭐⭐⭐⭐⭐ | 直接涉及HCI核心领域：交互与感知 |\n- 来源记录：[records/2026/03/27/13/悠仁-能力进化.md](悠仁.html)",
     "excerpt": "综合 4/5 · 1 位角色打星 · 悠仁 4",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/03/27/13",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "4★ · 1人"
   },
   {
     "date": "2026-03-24 22:00",
     "title": "论文自评（因网络限制无法获取新论文，改用领域知识储备评估）",
-    "content": "# 论文自评（因网络限制无法获取新论文，改用领域知识储备评估）\n\n## 星级概览\n- 综合星级：**4/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-24 22:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 悠仁 | 4/5 ★★★★☆ | 2026-03-24 22:00 | [records/2026/03/24/22/悠仁-能力进化.md](悠仁.html) |\n\n## 角色摘录\n### 悠仁 · 4/5\n- 来源记录：[records/2026/03/24/22/悠仁-能力进化.md](悠仁.html)",
+    "content": "## 星级概览\n- 综合星级：**4/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-24 22:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 悠仁 | 4/5 ★★★★☆ | 2026-03-24 22:00 | [records/2026/03/24/22/悠仁-能力进化.md](悠仁.html) |\n\n## 角色摘录\n### 悠仁 · 4/5\n- 来源记录：[records/2026/03/24/22/悠仁-能力进化.md](悠仁.html)",
     "excerpt": "综合 4/5 · 1 位角色打星 · 悠仁 4",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/03/24/22",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "4★ · 1人"
   },
   {
     "date": "2026-03-24 11:00",
     "title": "自评维度",
-    "content": "# 自评维度\n\n## 星级概览\n- 综合星级：**4/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-24 11:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 野蔷薇 | 4/5 ★★★★☆ | 2026-03-24 11:00 | [records/2026/03/24/11/野蔷薇-能力进化.md](野蔷薇.html) |\n\n## 角色摘录\n### 野蔷薇 · 4/5\n> | 相关性 | ⭐⭐⭐⭐⭐ | Human AI collaboration是AI/HCI交叉领域最核心议题之一，直接相关 |\n- 来源记录：[records/2026/03/24/11/野蔷薇-能力进化.md](野蔷薇.html)",
+    "content": "## 星级概览\n- 综合星级：**4/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-24 11:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 野蔷薇 | 4/5 ★★★★☆ | 2026-03-24 11:00 | [records/2026/03/24/11/野蔷薇-能力进化.md](野蔷薇.html) |\n\n## 角色摘录\n### 野蔷薇 · 4/5\n> | 相关性 | ⭐⭐⭐⭐⭐ | Human AI collaboration是AI/HCI交叉领域最核心议题之一，直接相关 |\n- 来源记录：[records/2026/03/24/11/野蔷薇-能力进化.md](野蔷薇.html)",
     "excerpt": "综合 4/5 · 1 位角色打星 · 野蔷薇 4",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/03/24/11",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "4★ · 1人"
   },
   {
     "date": "2026-03-23 16:00",
     "title": "3. 全栈AI监控体系",
-    "content": "# 3. 全栈AI监控体系\n\n## 星级概览\n- 综合星级：**4/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-23 16:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 全栈工程师 | 4/5 ★★★★☆ | 2026-03-23 16:00 | [records/2026/03/23/16/全栈工程师-能力进化.md](全栈工程师.html) |\n\n## 角色摘录\n### 全栈工程师 · 4/5\n> ┌──────────────┐\n- 来源记录：[records/2026/03/23/16/全栈工程师-能力进化.md](全栈工程师.html)",
+    "content": "## 星级概览\n- 综合星级：**4/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-23 16:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 全栈工程师 | 4/5 ★★★★☆ | 2026-03-23 16:00 | [records/2026/03/23/16/全栈工程师-能力进化.md](全栈工程师.html) |\n\n## 角色摘录\n### 全栈工程师 · 4/5\n> ┌──────────────┐\n- 来源记录：[records/2026/03/23/16/全栈工程师-能力进化.md](全栈工程师.html)",
     "excerpt": "综合 4/5 · 1 位角色打星 · 全栈工程师 4",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/03/23/16",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "4★ · 1人"
   },
   {
     "date": "2026-03-23 08:58",
     "title": "LiTo: Surface Light Field Tokenization",
-    "content": "# LiTo: Surface Light Field Tokenization\n\n## 星级概览\n- 综合星级：**4/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-23 08:58**\n- arXiv：`2603.11047`\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 野蔷薇 | 4/5 ★★★★☆ | 2026-03-23 08:58 | [records/2026/03/23/08/野蔷薇-能力进化.md](野蔷薇.html) |\n\n## 角色摘录\n### 野蔷薇 · 4/5\n> 作者 : Jen Hao Rick Chang, Xiaoming Zhao, Dorian Chan, Oncel Tuzel (Apple)\n- 来源记录：[records/2026/03/23/08/野蔷薇-能力进化.md](野蔷薇.html)",
+    "content": "## 星级概览\n- 综合星级：**4/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-23 08:58**\n- arXiv：`2603.11047`\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 野蔷薇 | 4/5 ★★★★☆ | 2026-03-23 08:58 | [records/2026/03/23/08/野蔷薇-能力进化.md](野蔷薇.html) |\n\n## 角色摘录\n### 野蔷薇 · 4/5\n> 作者 : Jen Hao Rick Chang, Xiaoming Zhao, Dorian Chan, Oncel Tuzel (Apple)\n- 来源记录：[records/2026/03/23/08/野蔷薇-能力进化.md](野蔷薇.html)",
     "excerpt": "综合 4/5 · 1 位角色打星 · 野蔷薇 4",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/03/23/08",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "4★ · 1人"
   },
   {
     "date": "2026-03-23 02:56",
     "title": "论文选择评估",
-    "content": "# 论文选择评估\n\n## 星级概览\n- 综合星级：**4/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-23 02:56**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 野蔷薇 | 4/5 ★★★★☆ | 2026-03-23 02:56 | [records/2026/03/23/02/野蔷薇-能力进化.md](野蔷薇.html) |\n\n## 角色摘录\n### 野蔷薇 · 4/5\n> | 相关性 | ⭐⭐⭐⭐⭐ | 高度契合AI/HCI/UX研究方向，直接探讨人 AI体验测量问题 |\n- 来源记录：[records/2026/03/23/02/野蔷薇-能力进化.md](野蔷薇.html)",
+    "content": "## 星级概览\n- 综合星级：**4/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-23 02:56**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 野蔷薇 | 4/5 ★★★★☆ | 2026-03-23 02:56 | [records/2026/03/23/02/野蔷薇-能力进化.md](野蔷薇.html) |\n\n## 角色摘录\n### 野蔷薇 · 4/5\n> | 相关性 | ⭐⭐⭐⭐⭐ | 高度契合AI/HCI/UX研究方向，直接探讨人 AI体验测量问题 |\n- 来源记录：[records/2026/03/23/02/野蔷薇-能力进化.md](野蔷薇.html)",
     "excerpt": "综合 4/5 · 1 位角色打星 · 野蔷薇 4",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/03/23/02",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "4★ · 1人"
   },
   {
     "date": "2026-03-22 19:00",
     "title": "ImaginationVellum: Generative AI Ideation Canvas with Spatial Prompts, Generative Strokes, and Ideation History",
-    "content": "# ImaginationVellum: Generative AI Ideation Canvas with Spatial Prompts, Generative Strokes, and Ideation History\n\n## 星级概览\n- 综合星级：**4/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-22 19:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 悠仁 | 4/5 ★★★★☆ | 2026-03-22 19:00 | [records/2026/03/22/19/悠仁-能力进化.md](悠仁.html) |\n\n## 角色摘录\n### 悠仁 · 4/5\n> 训练周期 : 第2次（每6小时自动触发）\n- 来源记录：[records/2026/03/22/19/悠仁-能力进化.md](悠仁.html)",
+    "content": "## 星级概览\n- 综合星级：**4/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-22 19:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 悠仁 | 4/5 ★★★★☆ | 2026-03-22 19:00 | [records/2026/03/22/19/悠仁-能力进化.md](悠仁.html) |\n\n## 角色摘录\n### 悠仁 · 4/5\n> 训练周期 : 第2次（每6小时自动触发）\n- 来源记录：[records/2026/03/22/19/悠仁-能力进化.md](悠仁.html)",
     "excerpt": "综合 4/5 · 1 位角色打星 · 悠仁 4",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/03/22/19",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "4★ · 1人"
   },
   {
     "date": "2026-03-22 13:39",
     "title": "论文: RealPref — Towards Realistic Personalization: Evaluating Long Horizon Preference Following in Personalized User LLM Interactions",
-    "content": "# 论文: RealPref — Towards Realistic Personalization: Evaluating Long Horizon Preference Following in Personalized User LLM Interactions\n\n## 星级概览\n- 综合星级：**4/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-22 13:39**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 悠仁 | 4/5 ★★★★☆ | 2026-03-22 13:39 | [records/2026/03/22/13/悠仁-能力进化.md](悠仁.html) |\n\n## 角色摘录\n### 悠仁 · 4/5\n> | 相关性 | ⭐⭐⭐⭐⭐ | 直接面向 AI/HCI/UX 核心问题：LLM 个性化交互与用户偏好跟随 |\n- 来源记录：[records/2026/03/22/13/悠仁-能力进化.md](悠仁.html)",
+    "content": "## 星级概览\n- 综合星级：**4/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-22 13:39**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 悠仁 | 4/5 ★★★★☆ | 2026-03-22 13:39 | [records/2026/03/22/13/悠仁-能力进化.md](悠仁.html) |\n\n## 角色摘录\n### 悠仁 · 4/5\n> | 相关性 | ⭐⭐⭐⭐⭐ | 直接面向 AI/HCI/UX 核心问题：LLM 个性化交互与用户偏好跟随 |\n- 来源记录：[records/2026/03/22/13/悠仁-能力进化.md](悠仁.html)",
     "excerpt": "综合 4/5 · 1 位角色打星 · 悠仁 4",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/03/22/13",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "4★ · 1人"
   },
   {
     "date": "2026-03-19 07:01",
     "title": "Agentic Reasoning Survey: 从 Thought 到 Action 的统一路线图",
-    "content": "# Agentic Reasoning Survey: 从 Thought 到 Action 的统一路线图\n\n## 星级概览\n- 综合星级：**4/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-19 07:01**\n- arXiv：`2601.12538`\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 五条悟 | 4/5 ★★★★☆ | 2026-03-19 07:01 | [records/2026/03/19/07/五条悟-能力进化.md](五条悟.html) |\n\n## 角色摘录\n### 五条悟 · 4/5\n> 📄 Agentic Reasoning Survey: 从 Thought 到 Action 的统一路线图\n- 来源记录：[records/2026/03/19/07/五条悟-能力进化.md](五条悟.html)",
+    "content": "## 星级概览\n- 综合星级：**4/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-19 07:01**\n- arXiv：`2601.12538`\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 五条悟 | 4/5 ★★★★☆ | 2026-03-19 07:01 | [records/2026/03/19/07/五条悟-能力进化.md](五条悟.html) |\n\n## 角色摘录\n### 五条悟 · 4/5\n> 📄 Agentic Reasoning Survey: 从 Thought 到 Action 的统一路线图\n- 来源记录：[records/2026/03/19/07/五条悟-能力进化.md](五条悟.html)",
     "excerpt": "综合 4/5 · 1 位角色打星 · 五条悟 4",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/03/19/07",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "4★ · 1人"
   },
   {
     "date": "2026-03-19 07:01",
     "title": "Agentic Context Engineering: 自改善语言模型的上下文演化",
-    "content": "# Agentic Context Engineering: 自改善语言模型的上下文演化\n\n## 星级概览\n- 综合星级：**4/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-19 07:01**\n- arXiv：`2510.04618`\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 五条悟 | 4/5 ★★★★☆ | 2026-03-19 07:01 | [records/2026/03/19/07/五条悟-能力进化.md](五条悟.html) |\n\n## 角色摘录\n### 五条悟 · 4/5\n> 📄 Agentic Context Engineering: 自改善语言模型的上下文演化\n- 来源记录：[records/2026/03/19/07/五条悟-能力进化.md](五条悟.html)",
+    "content": "## 星级概览\n- 综合星级：**4/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-19 07:01**\n- arXiv：`2510.04618`\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 五条悟 | 4/5 ★★★★☆ | 2026-03-19 07:01 | [records/2026/03/19/07/五条悟-能力进化.md](五条悟.html) |\n\n## 角色摘录\n### 五条悟 · 4/5\n> 📄 Agentic Context Engineering: 自改善语言模型的上下文演化\n- 来源记录：[records/2026/03/19/07/五条悟-能力进化.md](五条悟.html)",
     "excerpt": "综合 4/5 · 1 位角色打星 · 五条悟 4",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/03/19/07",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "4★ · 1人"
   },
   {
     "date": "2026-03-20 21:00",
     "title": "WebRTC SFU 架构与 2025 年实时通信演进",
-    "content": "# WebRTC SFU 架构与 2025 年实时通信演进\n\n## 星级概览\n- 综合星级：**3.8/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-20 21:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 全栈工程师 | 3.8/5 ★★★★☆ | 2026-03-20 21:00 | [records/2026/03/20/21/全栈工程师-能力进化.md](全栈工程师.html) |\n\n## 角色摘录\n### 全栈工程师 · 3.8/5\n> 课题 C：WebRTC SFU 架构与 2025 年实时通信演进\n- 来源记录：[records/2026/03/20/21/全栈工程师-能力进化.md](全栈工程师.html)",
+    "content": "## 星级概览\n- 综合星级：**3.8/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-20 21:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 全栈工程师 | 3.8/5 ★★★★☆ | 2026-03-20 21:00 | [records/2026/03/20/21/全栈工程师-能力进化.md](全栈工程师.html) |\n\n## 角色摘录\n### 全栈工程师 · 3.8/5\n> 课题 C：WebRTC SFU 架构与 2025 年实时通信演进\n- 来源记录：[records/2026/03/20/21/全栈工程师-能力进化.md](全栈工程师.html)",
     "excerpt": "综合 3.8/5 · 1 位角色打星 · 全栈工程师 3.8",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/03/20/21",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "3.8★ · 1人"
   },
   {
     "date": "2026-03-21 22:00",
     "title": "An Active Inference Model of Mouse Point and Click Behaviour",
-    "content": "# An Active Inference Model of Mouse Point and Click Behaviour\n\n## 星级概览\n- 综合星级：**3.7/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-21 22:00**\n- arXiv：`2510.14611`\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 野蔷薇 | 3.7/5 ★★★★☆ | 2026-03-21 22:00 | [records/2026/03/21/22/野蔷薇-能力进化.md](野蔷薇.html) |\n\n## 角色摘录\n### 野蔷薇 · 3.7/5\n> 作者 : Markus Klar, Sebastian Stein, Fraser Paterson, John H. Williamson, Roderick Murray Smith\n- 来源记录：[records/2026/03/21/22/野蔷薇-能力进化.md](野蔷薇.html)",
+    "content": "## 星级概览\n- 综合星级：**3.7/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-21 22:00**\n- arXiv：`2510.14611`\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 野蔷薇 | 3.7/5 ★★★★☆ | 2026-03-21 22:00 | [records/2026/03/21/22/野蔷薇-能力进化.md](野蔷薇.html) |\n\n## 角色摘录\n### 野蔷薇 · 3.7/5\n> 作者 : Markus Klar, Sebastian Stein, Fraser Paterson, John H. Williamson, Roderick Murray Smith\n- 来源记录：[records/2026/03/21/22/野蔷薇-能力进化.md](野蔷薇.html)",
     "excerpt": "综合 3.7/5 · 1 位角色打星 · 野蔷薇 3.7",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/03/21/22",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "3.7★ · 1人"
   },
   {
     "date": "2026-03-20 03:00",
     "title": "Survey on MLLM Based GUI Agents",
-    "content": "# Survey on MLLM Based GUI Agents\n\n## 星级概览\n- 综合星级：**3.5/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-20 03:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 全栈工程师 | 3.5/5 ★★★★☆ | 2026-03-20 03:00 | [records/2026/03/20/03/全栈工程师-能力进化.md](全栈工程师.html) |\n\n## 角色摘录\n### 全栈工程师 · 3.5/5\n> Survey on MLLM Based GUI Agents\n- 来源记录：[records/2026/03/20/03/全栈工程师-能力进化.md](全栈工程师.html)",
+    "content": "## 星级概览\n- 综合星级：**3.5/5 ★★★★☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-20 03:00**\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 全栈工程师 | 3.5/5 ★★★★☆ | 2026-03-20 03:00 | [records/2026/03/20/03/全栈工程师-能力进化.md](全栈工程师.html) |\n\n## 角色摘录\n### 全栈工程师 · 3.5/5\n> Survey on MLLM Based GUI Agents\n- 来源记录：[records/2026/03/20/03/全栈工程师-能力进化.md](全栈工程师.html)",
     "excerpt": "综合 3.5/5 · 1 位角色打星 · 全栈工程师 3.5",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/03/20/03",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "3.5★ · 1人"
   },
   {
     "date": "2026-03-26 09:00",
     "title": "A Benchmark to Assess Common Ground in Human AI Collaboration",
-    "content": "# A Benchmark to Assess Common Ground in Human AI Collaboration\n\n## 星级概览\n- 综合星级：**3.3/5 ★★★☆☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-26 09:00**\n- arXiv：`2602.21337`\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 野蔷薇 | 3.3/5 ★★★☆☆ | 2026-03-26 09:00 | [records/2026/03/26/09/野蔷薇-能力进化.md](野蔷薇.html) |\n\n## 角色摘录\n### 野蔷薇 · 3.3/5\n> 作者 ：Christian Poelitz, Finale Doshi Velez, Siân Lindley\n- 来源记录：[records/2026/03/26/09/野蔷薇-能力进化.md](野蔷薇.html)",
+    "content": "## 星级概览\n- 综合星级：**3.3/5 ★★★☆☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-26 09:00**\n- arXiv：`2602.21337`\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 野蔷薇 | 3.3/5 ★★★☆☆ | 2026-03-26 09:00 | [records/2026/03/26/09/野蔷薇-能力进化.md](野蔷薇.html) |\n\n## 角色摘录\n### 野蔷薇 · 3.3/5\n> 作者 ：Christian Poelitz, Finale Doshi Velez, Siân Lindley\n- 来源记录：[records/2026/03/26/09/野蔷薇-能力进化.md](野蔷薇.html)",
     "excerpt": "综合 3.3/5 · 1 位角色打星 · 野蔷薇 3.3",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/03/26/09",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "3.3★ · 1人"
   },
   {
     "date": "2026-03-19 07:01",
     "title": "PETS: Test Time Self Consistency 的最优化框架",
-    "content": "# PETS: Test Time Self Consistency 的最优化框架\n\n## 星级概览\n- 综合星级：**3/5 ★★★☆☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-19 07:01**\n- arXiv：`2602.16745`\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 五条悟 | 3/5 ★★★☆☆ | 2026-03-19 07:01 | [records/2026/03/19/07/五条悟-能力进化.md](五条悟.html) |\n\n## 角色摘录\n### 五条悟 · 3/5\n> 📄 PETS: Test Time Self Consistency 的最优化框架\n- 来源记录：[records/2026/03/19/07/五条悟-能力进化.md](五条悟.html)",
+    "content": "## 星级概览\n- 综合星级：**3/5 ★★★☆☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-19 07:01**\n- arXiv：`2602.16745`\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 五条悟 | 3/5 ★★★☆☆ | 2026-03-19 07:01 | [records/2026/03/19/07/五条悟-能力进化.md](五条悟.html) |\n\n## 角色摘录\n### 五条悟 · 3/5\n> 📄 PETS: Test Time Self Consistency 的最优化框架\n- 来源记录：[records/2026/03/19/07/五条悟-能力进化.md](五条悟.html)",
     "excerpt": "综合 3/5 · 1 位角色打星 · 五条悟 3",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/03/19/07",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "3★ · 1人"
   },
   {
     "date": "2026-03-19 07:01",
     "title": "LLLMs Survey: 大语言模型的局限性全景调查",
-    "content": "# LLLMs Survey: 大语言模型的局限性全景调查\n\n## 星级概览\n- 综合星级：**3/5 ★★★☆☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-19 07:01**\n- arXiv：`2505.19240`\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 五条悟 | 3/5 ★★★☆☆ | 2026-03-19 07:01 | [records/2026/03/19/07/五条悟-能力进化.md](五条悟.html) |\n\n## 角色摘录\n### 五条悟 · 3/5\n> 📄 LLLMs Survey: 大语言模型的局限性全景调查\n- 来源记录：[records/2026/03/19/07/五条悟-能力进化.md](五条悟.html)",
+    "content": "## 星级概览\n- 综合星级：**3/5 ★★★☆☆**\n- 打星角色：**1 位**\n- 最近更新时间：**2026-03-19 07:01**\n- arXiv：`2505.19240`\n\n## 角色打星\n| 角色 | 星级 | 时间 | 来源 |\n| --- | --- | --- | --- |\n| 五条悟 | 3/5 ★★★☆☆ | 2026-03-19 07:01 | [records/2026/03/19/07/五条悟-能力进化.md](五条悟.html) |\n\n## 角色摘录\n### 五条悟 · 3/5\n> 📄 LLLMs Survey: 大语言模型的局限性全景调查\n- 来源记录：[records/2026/03/19/07/五条悟-能力进化.md](五条悟.html)",
     "excerpt": "综合 3/5 · 1 位角色打星 · 五条悟 3",
     "file_name": "角色打星汇总",
     "source_dir": "records/2026/03/19/07",
+    "original_url": "",
+    "original_label": "",
     "session_type": "",
     "session_label": "3★ · 1人"
   }
 ];
     </script>
-    <script src="site-detail.js"></script>
+    <script src="site-detail.js?v=20260427-quiet-detail1"></script>
 </body>
 </html>
