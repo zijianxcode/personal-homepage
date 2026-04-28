@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV</title>
-    <meta name="description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 66 条。">
+    <meta name="description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 68 条。">
     <meta property="og:title" content="CV - 咒术SCI高专">
-    <meta property="og:description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 66 条。">
+    <meta property="og:description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 68 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -27,7 +27,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">CV</h1>
-        <p class="sidebar-summary">基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 66 条。</p>
+        <p class="sidebar-summary">基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 68 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -45,7 +45,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>CV</strong>
-                <span>基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 66 条。</span>
+                <span>基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 68 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -74,8 +74,32 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "CV", "subtitle": "基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 66 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "CV", "subtitle": "基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 68 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-04-28 09:00",
+    "title": "AI Agents as Users（Nielsen Norman Group 2026 研究报告）",
+    "content": "**作者/来源：** Kate Moran, Raluca Budiu, Sarah Gibbons 及 NN/g 专家团队（Nielsen Norman Group）\n\n**来源URL：** https://www.nngroup.com/articles/ai-agents-as-users/\n\n**日期：** 2026年4月10日发布（年度 UX 趋势报告框架内）\n\n**领域标签：** [UX设计] [AI-Agent] [Web无障碍] [跨域融合] [人机交互]\n\n**综合评分：8/10**\n\n---\n\n## 一、核心命题：Agent 是真正的\"用户\"\n\nNN/g 提出了一个根本性的概念翻转：AI Agent（能够自主设定目标、迭代行动、评估进展并决定下一步的系统）现在正在与人类用户一样使用数字界面——浏览网站、填写表单、比较选项、执行交易。从功能角度，它们就是用户。\n\n这意味着一个数十年来 UX 领域从未质疑的隐含假设需要更新：**\"用户\"不再等同于\"人类\"**。\n\n## 二、AI Agent 的三种交互模态\n\n文章识别了 Agent 与界面交互的三种主要方式：\n\n**视觉模式（Vision-based）**：Agent 截取屏幕截图，用视觉-语言模型解释 UI 元素。慢、贵、容易产生幻觉。\n\n**无障碍树解析（Accessibility-tree parsing）**：Agent 读取浏览器生成的无障碍树（accessibility tree）——这正是屏幕阅读器为视障用户生成的相同数据结构。确定性、快速、可靠。\n\n**直接 API 访问**：Agent 完全绕过视觉层，通过 MCP 或公开 API 直接操作底层数据和服务。\n\n关键趋势：行业正在向无障碍树解析收敛。OpenAI Atlas、Microsoft Playwright MCP、Perplexity 的 Comet 都依赖无障碍数据。\n\n## 三、无障碍树：意外的通用界面\n\n无障碍树是浏览器从 HTML 自动生成的结构化页面表示。它原本为屏幕阅读器设计，用于向视障用户呈现页面结构。如今它成为 AI Agent 理解页面的最有效途径。\n\n量化对比：\n- 典型页面的完整 DOM 包含数千个节点（每个 div、span、style、script 标签）\n- 无障碍树只保留可交互元素：按钮、链接、表单字段、标题、地标\n- 一次无障碍树快照约消耗 4,000 tokens；同等信息的截图视觉分析约消耗 50,000 tokens\n- CHI 2026 研究\"Is the Web Accessible for AI Agents?\"发现：在完整无障碍页面上，AI Agent 任务成功率达 78.33%；当强制通过无障碍障碍（如无可见焦点指示器的键盘导航）时，性能下降近一半或更多\n\n## 四、无障碍最佳实践 → Agent 可用性的直接映射\n\n文章建立了 WCAG 无障碍标准与 AI Agent 性能之间的直接对应关系：\n\n| 无障碍实践 | Agent 效果 |\n|-----------|-----------|\n| 语义 HTML（用 `<button>` 而非 `<div>`） | Agent 自动识别可交互元素 |\n| 清晰的描述性标签 | Agent 准确理解元素功能 |\n| 逻辑标题层级（h1-h6） | Agent 理解页面结构和内容关系 |\n| 地标区域（`<nav>`, `<main>`, `<aside>`） | Agent 定位页面不同区域 |\n| `autocomplete` 属性 | Agent 准确填写表单字段 |\n| ARIA 标准（正确使用时） | 自定义组件的机器可读语义 |\n\n错误使用 ARIA（如用 ARIA 覆盖正确的 HTML 语义）会同时伤害屏幕阅读器用户和 AI Agent。\n\n## 五、业务含义：从合规成本到增长引擎\n\n这一洞察对商业决策有直接含义：\n\n**传统认知**：无障碍投入是合规成本、道德责任。\n\n**新现实**：无障碍投入是商业分发（distribution）基础设施。如果 Agent 无法解析你的无障碍树，你的产品在自动化经济中就是隐形的——不会被购物 Agent 比价、被研究 Agent 抓取、被任务 Agent 代表用户执行操作。\n\n\"Agentic SEO\" 一词应运而生：语义 HTML 不再只是合规清单，它是 Agent 发现渠道。\n\n行业预测：无障碍工作将从\"道德/合规预算\"转移到\"增长/SEO 预算\"。这意味着更大的利益相关方关注、更高的投资优先级。\n\n## 六、人机用户的分歧点\n\n文章也指出了一个重要的未来分歧：\n\n当 Agent 可以查询结构化数据并直接执行操作时，视觉界面对它们来说将变得无关紧要。随着更多组织通过 Agent 兼容的 API 暴露服务，面向人类用户的设计问题和面向 Agent 用户的设计问题将逐渐分离。\n\n但人类仍然需要界面——视觉化的、可交互的、为理解和决策设计的界面。人类与 Agent 的体验路径将长期并行。\n\n---\n\n## 七、批判性评估\n\n**贡献**：\n- 提出了一个在 AI Agent 爆发前从未被系统性思考的问题：谁在用我们的界面？\n- 将 UX 设计与 Web 无障碍两个领域几十年的积累连接起来，赋予了它们新的商业价值框架\n- 提供了清晰的实操路径（无障碍树审计、语义 HTML 优先、ARIA 补充而非替代）\n- 预见了\"人机用户路径分离\"这一未来架构趋势\n\n**局限**：\n- 缺乏系统性的大规模实证数据（CHI 研究引用了，但没有原始数据）\n- 对 Agent 视觉模式的衰落可能过于乐观——某些场景（如复杂可视化）视觉仍有优势\n- \"Agentic SEO\" 概念尚处早期，缺乏成熟度指标\n- 文章主要面向 UX 设计师，对组织变革管理层面的挑战着墨不足\n\n**跨域洞察评分**：极高。这篇文章将 UX 设计、Web 无障碍标准、AI Agent 架构和商业增长策略四个领域连接成一个连贯叙事，展示了第一性原理思维的力量：回到\"用户\"这个基本定义，重新审视被视作理所当然的假设。",
+    "excerpt": "来源：records/20260428/09/论文总结.md · 标题： AI Agents as Users（Nielsen Norman Group 2026 研究报告）",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260428/09",
+    "original_url": "https://www.nngroup.com/articles/ai-agents-as-users/",
+    "original_label": "原文",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-04-28 09:00",
+    "title": "Vero: An Open RL Recipe for General Visual Reasoning",
+    "content": "---\n\n## 一句话总结\n\nVero提出了一个完全开源的单阶段RL配方，通过600K样本的Vero-600K数据集训练，使开源VLM在各类视觉推理任务上达到SOTA，超越了使用专有数据的MiMo-VL-7B-RL。\n\n---\n\n## 核心贡献\n\n### 1. 问题：视觉推理的\"秘方\"被锁在黑箱里\n\n当前最强的VLM（如Qwen3-VL）展现出广泛的视觉推理能力，但背后的训练配方被专有RL管道和私有数据锁住。Vero的核心问题是：**如何用完全开源的方式达到甚至超越专有方法的视觉推理性能？**\n\n### 2. 方法：Vero-600K + Task-Routed Rewards\n\n**数据集构建**：\n- 600K高质量RL样本，来自59个数据集\n- 覆盖6大类视觉推理任务：\n  - Chart & OCR（图表与文字识别）\n  - STEM（科学、技术、工程、数学）\n  - Spatial & Action（空间推理与动作理解）\n  - Knowledge & Recognition（知识与识别）\n  - Grounding, Counting & Search（定位、计数、搜索）\n  - Captioning & Instruction Following（描述与指令执行）\n\n**训练配方**：\n- 单阶段RL，无预热阶段，无分阶段训练\n- Task-routed reward functions（任务路由奖励函数）处理异构答案格式\n- 无专有数据，全部公开\n\n### 3. 关键发现\n\n1. **数据多样性是关键驱动因素**：不同任务类别引发截然不同的推理模式，单一类别的数据无法迁移到其他类别。广泛的数据覆盖是RL scaling的主要驱动力。\n\n2. **task-routed rewards的重要性**：不同任务需要不同的奖励路由策略才能正确评估。\n\n3. **跨类别迁移**：均匀混合 + 任务路由奖励对于链式思维行为的正向跨类别迁移至关重要。\n\n### 4. 性能结果\n\n在VeroEval（30个基准测试的评估套件）上：\n- Vero-Qwen3T-8B（基于Qwen3-VL-8B-Thinking）：在24/30基准上超越Qwen3-VL-8B-Thinking\n- Vero-Qwen3I-8B（基于Qwen3-VL-8B-Instruct）：在23/30基准上超越Qwen3-VL-8B-Thinking\n- Vero-MiMo-7B：超越使用同一初始检查点的MiMo-VL-7B-RL（后者使用专有RL配方）\n\n### 5. 开源资产\n\n- **模型**：Vero-Qwen25-7B, Vero-Qwen3I-8B, Vero-Qwen3T-8B, Vero-MiMo-7B\n- **数据**：Vero-600K（59个数据集，600K样本）\n- **代码**：vero-rl训练栈 + vero-eval评估框架\n- **评估**：VeroEvalSuite（30个基准测试）\n\n---\n\n## 方法论亮点\n\n### 优点\n1. **完全开源可复现**：数据、代码、模型全部开放，这是领域内罕见的\n2. **系统性的消融实验**：揭示了数据多样性、任务路由奖励的重要性\n3. **全面的评估**：30个基准测试覆盖6大类任务\n4. **多基座模型验证**：在Qwen2.5-VL、Qwen3-VL、MiMo-VL上均有效\n\n### 局限\n1. 主要在8B参数规模验证，更大规模尚未探索\n2. 虽然是\"open RL recipe\"，但基座模型（Qwen3-VL等）仍是专有的\n3. 论文未深入分析为什么不同任务类别需要不同的推理模式\n\n---\n\n## 对我的意义\n\nVero是\"开源打败闭源\"的又一个有力证明。在视觉推理领域，专有数据和RL配方不再是护城河。Vero的核心启示是：**多样性的数据 + 正确的奖励设计 + 单阶段RL = 强大的视觉推理**。\n\n这对于理解多模态模型的RL训练具有重要的方法论价值。\n\n---\n\n## 六维评分\n\n| 维度 | 评分 | 说明 |\n|------|------|------|\n| 方法论严谨性 | 9/10 | 系统性消融、充分实验、多基座验证 |\n| 创新性 | 8/10 | 首个完全开源的视觉推理RL配方 |\n| 实证贡献 | 9/10 | 在30个基准上达到SOTA |\n| 可复现性 | 10/10 | 全部开源，罕见的完整复现资产 |\n| 影响力 | 8/10 | 开源vs闭源的范式竞争 |\n| 清晰度 | 8/10 | 论文结构清晰，但部分细节需参考代码 |\n\n**总分：8.5/10**",
+    "excerpt": "来源：records/20260428/09/论文总结.md · 标题 ：Vero: An Open RL Recipe for General Visual Reasoning",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260428/09",
+    "original_url": "https://arxiv.org/abs/2604.04917",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-04-27 17:00",
     "title": "MTA-Agent: An Open Recipe for Multimodal Deep Search Agents",
