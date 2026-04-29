@@ -94,8 +94,13 @@ function normalizeForSearch(value) {
         window.location.href = 'archive.html?search=' + encodeURIComponent(query);
     }
 
-    input.addEventListener('input', function (event) {
-        applyQuery(event.target.value);
+    var debounceTimer = null;
+    input.addEventListener('input', function () {
+        if (isComposing) return;
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(function () {
+            applyQuery(input.value);
+        }, 150);
     });
 
     input.addEventListener('compositionstart', function () {
@@ -104,6 +109,8 @@ function normalizeForSearch(value) {
 
     input.addEventListener('compositionend', function () {
         isComposing = false;
+        clearTimeout(debounceTimer);
+        applyQuery(input.value);
     });
 
     input.addEventListener('keydown', function (event) {

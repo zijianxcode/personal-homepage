@@ -382,8 +382,9 @@ function buildObsidianUri(entry) {
         renderReaderTools();
         articleTitle.textContent = entry.title;
         if (originalLink) {
-            originalLink.hidden = !entry.original_url;
-            originalLink.href = entry.original_url || '#';
+            var safeUrl = entry.original_url && /^https?:\/\//i.test(entry.original_url) ? entry.original_url : '';
+            originalLink.hidden = !safeUrl;
+            originalLink.href = safeUrl || '#';
             originalLink.textContent = entry.original_label ? `打开${entry.original_label}` : '原文链接';
         }
         if (obsidianButton) {
@@ -394,7 +395,8 @@ function buildObsidianUri(entry) {
         }
 
         if (currentMeta) {
-            currentMeta.textContent = `当前 ${index + 1}/${entries.length}`;
+            var posInList = list.findIndex(function (v) { return v.index === index; });
+            currentMeta.textContent = `当前 ${posInList + 1}/${list.length}`;
         }
 
         document.title = `${pageConfig.title} - ${entry.title}`;
@@ -429,15 +431,27 @@ function buildObsidianUri(entry) {
         if (state.query) {
             filterInput.value = url.searchParams.get('search') || '';
         }
-        filterInput.addEventListener('input', (event) => {
-            state.query = normalizeSearchText(event.target.value);
-            const visible = visibleEntries();
-            if (visible.length && !visible.some(({ index }) => index === state.activeIndex)) {
+        var composing = false;
+        var debounceTimer = null;
+        filterInput.addEventListener('compositionstart', function () { composing = true; });
+        filterInput.addEventListener('compositionend', function () {
+            composing = false;
+            handleFilterInput();
+        });
+        function handleFilterInput() {
+            state.query = normalizeSearchText(filterInput.value);
+            var visible = visibleEntries();
+            if (visible.length && !visible.some(function (v) { return v.index === state.activeIndex; })) {
                 state.activeIndex = visible[0].index;
             }
             renderFilterTabs();
             renderNav();
             renderArticle(state.activeIndex);
+        }
+        filterInput.addEventListener('input', function () {
+            if (composing) return;
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(handleFilterInput, 150);
         });
     }
 
