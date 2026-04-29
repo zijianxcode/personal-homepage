@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    var API_BASE = 'https://homepage-1gthisc4771d43ac.service.tcloudbase.com/dm-api';
+    var API_BASE = (window.APP_CONFIG && window.APP_CONFIG.apiBase) || 'https://homepage-1gthisc4771d43ac.service.tcloudbase.com/dm-api';
 
     function normalizeResource(value) {
         var resource = String(value || 'things').trim().toLowerCase();

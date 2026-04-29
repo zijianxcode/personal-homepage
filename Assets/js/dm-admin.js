@@ -6,7 +6,7 @@
   "use strict";
 
   const API_BASE =
-    "https://homepage-1gthisc4771d43ac.service.tcloudbase.com/dm-api";
+    (window.APP_CONFIG && window.APP_CONFIG.apiBase) || "https://homepage-1gthisc4771d43ac.service.tcloudbase.com/dm-api";
   const REFRESH_INTERVAL = 15000;
   const SESSION_KEY = "dm_admin_session_token";
   const LS_HIDDEN_CONVS = "dm_admin_hidden_convs";

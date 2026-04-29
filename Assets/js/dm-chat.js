@@ -5,7 +5,7 @@
   "use strict";
 
   const API_BASE =
-    "https://homepage-1gthisc4771d43ac.service.tcloudbase.com/dm-api";
+    (window.APP_CONFIG && window.APP_CONFIG.apiBase) || "https://homepage-1gthisc4771d43ac.service.tcloudbase.com/dm-api";
   const POLL_INTERVAL = 10000;
   const LS_VISITOR_TOKEN = "dm_visitor_token";
   const LS_NICKNAME = "dm_nickname";

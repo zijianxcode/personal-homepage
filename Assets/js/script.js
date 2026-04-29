@@ -624,7 +624,7 @@
     function initThingsEntryPassword() {
         var entries = document.querySelectorAll('[data-things-permit-entry]');
         if (!entries.length) return;
-        var apiBase = 'https://homepage-1gthisc4771d43ac.service.tcloudbase.com/dm-api';
+        var apiBase = (window.APP_CONFIG && window.APP_CONFIG.apiBase) || 'https://homepage-1gthisc4771d43ac.service.tcloudbase.com/dm-api';
 
         function getTokenStorageKey(resource) {
             if (resource === 'things') return 'things_access_token';
