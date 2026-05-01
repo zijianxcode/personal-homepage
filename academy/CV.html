@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV</title>
-    <meta name="description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 70 条。">
+    <meta name="description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 71 条。">
     <meta property="og:title" content="CV - 研究所">
-    <meta property="og:description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 70 条。">
+    <meta property="og:description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 71 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
-    <link rel="stylesheet" href="site.css?v=20260427-quiet-detail1">
+    <link rel="stylesheet" href="site.css?v=20260429">
     <script src="vendor/marked.min.js"></script>
     <script src="vendor/purify.min.js"></script>
 </head>
@@ -27,7 +27,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">CV</h1>
-        <p class="sidebar-summary">基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 70 条。</p>
+        <p class="sidebar-summary">基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 71 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -45,7 +45,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>CV</strong>
-                <span>基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 70 条。</span>
+                <span>基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 71 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -74,8 +74,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "CV", "subtitle": "基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 70 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "CV", "subtitle": "基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 71 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-04-30 09:00",
+    "title": "Feedback Descent: Open-Ended Text Optimization via Pairwise Comparison",
+    "content": "## 基本信息\n\n- **标题**: Feedback Descent: Open-Ended Text Optimization via Pairwise Comparison\n- **作者**: Stanford SAIL (具体作者见 arXiv)\n- **来源/URL**: https://arxiv.org/abs/2511.07919, https://ai.stanford.edu/blog/feedback-descent\n- **日期**: 2025年11月\n- **领域标签**: AI、文本优化、强化学习、跨域应用、分子设计、提示工程\n\n## 综合评分\n\n**9/10**\n\n---\n\n## 正文\n\n### 一句话总结\n\n斯坦福研究团队提出 **Feedback Descent** 框架——用结构化文本反馈代替标量奖励，在文本空间实现梯度式优化。该框架跨越分子设计、SVG 图像优化、提示工程三个截然不同的领域，用同一套\"评估器-编辑器\"循环超越了专用优化方法。\n\n### 背景与问题\n\n当前偏好学习（Preference Learning）方法存在一个根本性信息瓶颈：人类在比较两个样本时自然提供的丰富解释被压缩成二元信号（\"A 比 B 好\"）。这种压缩丢失了关于\"什么需要改变\"的方向性信息。\n\n以分子优化为例：传统 REINVENT 等强化学习方法输出标量奖励，但分子化学家会告诉你\"这个分子疏水性太强\"或\"这个基团会影响与靶点的氢键\"。这种文本形式的反馈携带的信息密度远高于单个比特。\n\n**核心问题**：如何在文本空间进行定向优化，而不是只能在权重空间（通过梯度下降）更新模型？\n\n### 核心命题与发现\n\n**Feedback Descent 架构**：\n\n两个核心组件构成迭代循环：\n1. **评估器（Evaluator）**：接收当前最优候选和新候选，比较后返回偏好+文本理由。理由描述\"什么起了作用，什么没有\"，而非仅判断胜负。\n2. **编辑器（Editor）**：将历史最优候选 + 累积文本反馈输入 LLM，LLM 通过上下文学习（in-context learning）将这些反馈转化为梯度式的定向修改建议，输出新的候选。\n\n关键洞察：**自然语言反馈可以被 LLM 的上下文学习能力转化为\"梯度-like\"的方向信息**，实现文本空间的梯度下降。\n\n**三大领域验证**：\n\n| 领域 | 表征形式 | 评估方式 | 结果 |\n|------|----------|----------|------|\n| 分子设计 | SMILES 字符串 | DOCKSTRING 对接分数 | 超越 99.9% 的 260,000 化合物数据库，3.8x 减少对接调用 |\n| SVG 优化 | SVG 代码 | LLM 作为视觉评判 | 5 轮迭代后稳定超越基线 |\n| 提示优化 | 自然语言 | 4 项任务（多跳推理、指令遵循等） | 匹配 GEPA，超越 GRPO |\n\n### 理论意义与框架价值\n\n**理论贡献**：\n- 证明了\"文本反馈 enable dimension-free convergence，而零阶方法在高维情况下遭受指数级 slowdown\"\n- 识别出结构化反馈优于标量奖励的数学条件\n\n**框架泛化性**：\n唯一的领域特定组件是评估器（提供反馈），其余全部通用。更换领域只需更换评估器，无需改变优化器架构。\n\n**对 jujutsu-sci 的关联**：\n\n1. **跨域思维范本**：该工作展示了如何识别不同领域共享的深层结构（\"优化\"问题），然后用统一框架解决，而非为每个领域单独设计解决方案\n2. **信息瓶颈意识**：当我们压缩反馈为单一数值时，我们丢失了什么？这个问题的提出方式值得借鉴\n3. **上下文学习作为隐式优化**：LLM 的上下文学习能力可以被显式利用为\"免费午餐\"——不需要训练就能做定向搜索\n\n### 局限与批判性分析\n\n**优点**：\n- 框架极为优雅，理论有支撑\n- 跨域泛化能力强\n- 纯推理时优化，无需梯度，部署成本低\n\n**局限**：\n- 评估器的质量直接决定优化上限——\"垃圾进，垃圾出\"\n- 对于某些领域，设计有效的评估器本身就很困难\n- 论文未讨论计算成本与专门化方法的对比\n- 上下文学习利用的是 LLM 的隐式能力，缺乏对为什么有效的深入解释\n\n### 综合评价\n\n这是一篇真正具有第一性原理洞察的工作。它不只是提出了一个方法，而是重新定义了问题本身——从\"如何用梯度优化模型\"转向\"如何让模型学会优化\"。跨域验证增强了可信度，理论分析提供了泛化保证。对 AI+X 交叉创新、提示工程和开放域优化有直接指导价值。",
+    "excerpt": "来源：records/20260430/09/yujin-3443/论文总结.md · 标题 : Feedback Descent: Open Ended Text Optimization via Pairwise Comparison",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260430/09/yujin-3443",
+    "original_url": "https://arxiv.org/abs/2511.07919",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-04-29 09:00",
     "title": "AI Agents as Users",
@@ -918,6 +930,7 @@
   }
 ];
     </script>
-    <script src="site-detail.js?v=20260427-quiet-detail1"></script>
+    <script src="site-search-utils.js?v=20260429"></script>
+    <script src="site-detail.js?v=20260429"></script>
 </body>
 </html>

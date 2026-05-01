@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ML</title>
-    <meta name="description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 79 条。">
+    <meta name="description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 81 条。">
     <meta property="og:title" content="ML - 研究所">
-    <meta property="og:description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 79 条。">
+    <meta property="og:description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 81 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
-    <link rel="stylesheet" href="site.css?v=20260427-quiet-detail1">
+    <link rel="stylesheet" href="site.css?v=20260429">
     <script src="vendor/marked.min.js"></script>
     <script src="vendor/purify.min.js"></script>
 </head>
@@ -27,7 +27,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">ML</h1>
-        <p class="sidebar-summary">基于关键词自动归类的训练、优化与模型方法研究。 共 79 条。</p>
+        <p class="sidebar-summary">基于关键词自动归类的训练、优化与模型方法研究。 共 81 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -45,7 +45,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>ML</strong>
-                <span>基于关键词自动归类的训练、优化与模型方法研究。 共 79 条。</span>
+                <span>基于关键词自动归类的训练、优化与模型方法研究。 共 81 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -74,16 +74,28 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "ML", "subtitle": "基于关键词自动归类的训练、优化与模型方法研究。 共 79 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "ML", "subtitle": "基于关键词自动归类的训练、优化与模型方法研究。 共 81 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
   {
-    "date": "2026-04-28 09:00",
-    "title": "Vero: An Open RL Recipe for General Visual Reasoning",
-    "content": "---\n\n## 一句话总结\n\nVero提出了一个完全开源的单阶段RL配方，通过600K样本的Vero-600K数据集训练，使开源VLM在各类视觉推理任务上达到SOTA，超越了使用专有数据的MiMo-VL-7B-RL。\n\n---\n\n## 核心贡献\n\n### 1. 问题：视觉推理的\"秘方\"被锁在黑箱里\n\n当前最强的VLM（如Qwen3-VL）展现出广泛的视觉推理能力，但背后的训练配方被专有RL管道和私有数据锁住。Vero的核心问题是：**如何用完全开源的方式达到甚至超越专有方法的视觉推理性能？**\n\n### 2. 方法：Vero-600K + Task-Routed Rewards\n\n**数据集构建**：\n- 600K高质量RL样本，来自59个数据集\n- 覆盖6大类视觉推理任务：\n  - Chart & OCR（图表与文字识别）\n  - STEM（科学、技术、工程、数学）\n  - Spatial & Action（空间推理与动作理解）\n  - Knowledge & Recognition（知识与识别）\n  - Grounding, Counting & Search（定位、计数、搜索）\n  - Captioning & Instruction Following（描述与指令执行）\n\n**训练配方**：\n- 单阶段RL，无预热阶段，无分阶段训练\n- Task-routed reward functions（任务路由奖励函数）处理异构答案格式\n- 无专有数据，全部公开\n\n### 3. 关键发现\n\n1. **数据多样性是关键驱动因素**：不同任务类别引发截然不同的推理模式，单一类别的数据无法迁移到其他类别。广泛的数据覆盖是RL scaling的主要驱动力。\n\n2. **task-routed rewards的重要性**：不同任务需要不同的奖励路由策略才能正确评估。\n\n3. **跨类别迁移**：均匀混合 + 任务路由奖励对于链式思维行为的正向跨类别迁移至关重要。\n\n### 4. 性能结果\n\n在VeroEval（30个基准测试的评估套件）上：\n- Vero-Qwen3T-8B（基于Qwen3-VL-8B-Thinking）：在24/30基准上超越Qwen3-VL-8B-Thinking\n- Vero-Qwen3I-8B（基于Qwen3-VL-8B-Instruct）：在23/30基准上超越Qwen3-VL-8B-Thinking\n- Vero-MiMo-7B：超越使用同一初始检查点的MiMo-VL-7B-RL（后者使用专有RL配方）\n\n### 5. 开源资产\n\n- **模型**：Vero-Qwen25-7B, Vero-Qwen3I-8B, Vero-Qwen3T-8B, Vero-MiMo-7B\n- **数据**：Vero-600K（59个数据集，600K样本）\n- **代码**：vero-rl训练栈 + vero-eval评估框架\n- **评估**：VeroEvalSuite（30个基准测试）\n\n---\n\n## 方法论亮点\n\n### 优点\n1. **完全开源可复现**：数据、代码、模型全部开放，这是领域内罕见的\n2. **系统性的消融实验**：揭示了数据多样性、任务路由奖励的重要性\n3. **全面的评估**：30个基准测试覆盖6大类任务\n4. **多基座模型验证**：在Qwen2.5-VL、Qwen3-VL、MiMo-VL上均有效\n\n### 局限\n1. 主要在8B参数规模验证，更大规模尚未探索\n2. 虽然是\"open RL recipe\"，但基座模型（Qwen3-VL等）仍是专有的\n3. 论文未深入分析为什么不同任务类别需要不同的推理模式\n\n---\n\n## 对我的意义\n\nVero是\"开源打败闭源\"的又一个有力证明。在视觉推理领域，专有数据和RL配方不再是护城河。Vero的核心启示是：**多样性的数据 + 正确的奖励设计 + 单阶段RL = 强大的视觉推理**。\n\n这对于理解多模态模型的RL训练具有重要的方法论价值。\n\n---\n\n## 六维评分\n\n| 维度 | 评分 | 说明 |\n|------|------|------|\n| 方法论严谨性 | 9/10 | 系统性消融、充分实验、多基座验证 |\n| 创新性 | 8/10 | 首个完全开源的视觉推理RL配方 |\n| 实证贡献 | 9/10 | 在30个基准上达到SOTA |\n| 可复现性 | 10/10 | 全部开源，罕见的完整复现资产 |\n| 影响力 | 8/10 | 开源vs闭源的范式竞争 |\n| 清晰度 | 8/10 | 论文结构清晰，但部分细节需参考代码 |\n\n**总分：8.5/10**",
-    "excerpt": "来源：records/20260428/09/five-gojo-4721/论文总结.md · 标题 ：Vero: An Open RL Recipe for General Visual Reasoning",
+    "date": "2026-05-01 09:00",
+    "title": "论文总结：Human-AI Collaborative Essay Scoring: A Dual-Process Framework with LLMs",
+    "content": "**评分：9/10**\n\n---\n\n## 一、研究问题与动机\n\n自动作文评分（AES）系统虽能预测分数，却缺乏人类评分员的细致反馈与可解释性。尤其是二语学习者需要及时、个性化的反馈以提高写作能力，而现有 AES 系统往往难以提供符合评分标准的详细解释。人类评分员虽能提供高质量反馈，但面对大量作文时效率有限，且新手评分员难以达到专家水平。\n\n本研究探索了 LLMs 作为 AES 系统的潜力，并提出一个**人机协作评分框架**，旨在结合 LLMs 的解释生成能力与人类评分员的判断力，实现高效且高质量的作文评分。\n\n---\n\n## 二、理论框架与方法创新\n\n### 核心创新：双过程理论（Dual-Process Theory）\n\n受心理学双过程理论启发（系统1：快速直觉；系统2：慢速审慎），本研究构建了一个双模块 AES 框架：\n\n- **Fast Module（快速模块）**：轻量级分类器，基于 LLaMA3 微调后的嵌入预测作文分数，并输出置信度分数\n- **Slow Module（慢速模块）**：微调后的 LLaMA3-8B，对低置信度作文进行深度分析，生成详细评分理由与最终分数\n\n关键设计：当 Fast Module 置信度低于阈值（0.2）时，触发 Slow Module 进行二次审慎分析。\n\n### 方法论亮点\n\n1. **置信度驱动的动态路由**：首次将置信度机制与人机协作决策结合，实现计算资源与评分质量的动态平衡\n2. **混合评估策略**：结合量化指标（QWK、MAE）与人类评估（新手/专家评分员实验），确保方法的实用价值\n3. **零样本与微调双验证**：在 ASAP 公开数据集和私有数据集上均有验证，泛化性得到检验\n\n---\n\n## 三、实验设计与数据\n\n- **数据集**：ASAP 公开作文数据集 + 私有二语学习者作文集\n- **模型**：GPT-3.5、GPT-4、LLaMA3（零样本、少样本、微调多种配置）\n- **人类-AI 协作评分实验**：招募新手和专家评分员，进行两阶段组内实验，比较纯人工、AI 独立、AI 辅助三种条件\n\n---\n\n## 四、核心发现\n\n### AES 系统表现\n- LLMs 在评分准确度上虽未超越传统 SOTA 模型，但展现了更高的**一致性、泛化性和可解释性**\n- 微调后的 LLaMA3 匹配了专有模型（如 GPT-4）的评分质量，且代码开源\n\n### 人-AI 协作评分发现\n- **新手评分员**：在 AI 辅助下达到与专家评分员相当的准确率（评分质量显著提升）\n- **专家评分员**：AI 辅助提高了评分效率和评分一致性（标准差降低）\n- **AI 最大价值场景**：低置信度作文（模型不确定时），LLM 生成的高质量反馈弥补了评分员的判断困难\n- 双过程框架使 AI 能主动将复杂案例转交给人类，形成有效的人机协作分工\n\n---\n\n## 五、理论贡献与实践意义\n\n### 理论贡献\n1. 首次将双过程理论系统性地映射到 AES 领域，建立了 LLM-based 教育评估的理论框架\n2. 揭示了 LLMs 在教育反馈中的「能力边界」——不追求超越人类，而是作为能力放大器（amplifier）\n3. 为 Hybrid Intelligence 在教育场景中的应用提供了实证支持\n\n### 实践意义\n1. 为语言教育场景提供了低成本、高质量、可解释的自动评分工具\n2. 人-AI 协作评分模式可推广至其他主观评估任务（如项目报告、口语评测）\n3. 对师资培训有启示：LLM 辅助可加速新手评分员的专业成长\n\n---\n\n## 六、局限性\n\n- 仅针对英语作文，跨语言泛化待验证\n- Slow Module 的计算成本仍较高，实时应用需优化\n- 人类实验样本量相对有限（各组评分员数量未详细披露）\n- 二语学习者反馈的具体质量（如语言改进建议的实用性）评估较为主观\n\n---\n\n## 附：关键元数据\n\n| 字段 | 内容 |\n|------|------|\n| 标题 | Human-AI Collaborative Essay Scoring: A Dual-Process Framework with LLMs |\n| 作者 | Changrong Xiao, Wenxing Ma, Qingping Song, Sean Xin Xu, Kunpeng Zhang, Yufang Wang, Qi Fu |\n| 会议 | LAK 2025 (15th International Learning Analytics and Knowledge Conference), ACM, pp.293-305 |\n| arXiv | 2401.06431 |\n| DOI | 10.1145/3706468.3706507 |\n| GitHub | https://github.com/Xiaochr/LLM-AES |\n| 关键词 | LLM Application, Automatic Essay Scoring, AI-assisted Learning, Dual-Process Theory, Human-AI Collaboration |",
+    "excerpt": "来源：records/20260501/09/megumi-7731/论文总结.md · 评分：9/10",
     "file_name": "论文总结.md",
-    "source_dir": "records/20260428/09/five-gojo-4721",
-    "original_url": "https://arxiv.org/abs/2604.04917",
+    "source_dir": "records/20260501/09/megumi-7731",
+    "original_url": "https://doi.org/10.1145/3706468.3706507",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-04-30 09:00",
+    "title": "Feedback Descent: Open-Ended Text Optimization via Pairwise Comparison",
+    "content": "## 基本信息\n\n- **标题**: Feedback Descent: Open-Ended Text Optimization via Pairwise Comparison\n- **作者**: Stanford SAIL (具体作者见 arXiv)\n- **来源/URL**: https://arxiv.org/abs/2511.07919, https://ai.stanford.edu/blog/feedback-descent\n- **日期**: 2025年11月\n- **领域标签**: AI、文本优化、强化学习、跨域应用、分子设计、提示工程\n\n## 综合评分\n\n**9/10**\n\n---\n\n## 正文\n\n### 一句话总结\n\n斯坦福研究团队提出 **Feedback Descent** 框架——用结构化文本反馈代替标量奖励，在文本空间实现梯度式优化。该框架跨越分子设计、SVG 图像优化、提示工程三个截然不同的领域，用同一套\"评估器-编辑器\"循环超越了专用优化方法。\n\n### 背景与问题\n\n当前偏好学习（Preference Learning）方法存在一个根本性信息瓶颈：人类在比较两个样本时自然提供的丰富解释被压缩成二元信号（\"A 比 B 好\"）。这种压缩丢失了关于\"什么需要改变\"的方向性信息。\n\n以分子优化为例：传统 REINVENT 等强化学习方法输出标量奖励，但分子化学家会告诉你\"这个分子疏水性太强\"或\"这个基团会影响与靶点的氢键\"。这种文本形式的反馈携带的信息密度远高于单个比特。\n\n**核心问题**：如何在文本空间进行定向优化，而不是只能在权重空间（通过梯度下降）更新模型？\n\n### 核心命题与发现\n\n**Feedback Descent 架构**：\n\n两个核心组件构成迭代循环：\n1. **评估器（Evaluator）**：接收当前最优候选和新候选，比较后返回偏好+文本理由。理由描述\"什么起了作用，什么没有\"，而非仅判断胜负。\n2. **编辑器（Editor）**：将历史最优候选 + 累积文本反馈输入 LLM，LLM 通过上下文学习（in-context learning）将这些反馈转化为梯度式的定向修改建议，输出新的候选。\n\n关键洞察：**自然语言反馈可以被 LLM 的上下文学习能力转化为\"梯度-like\"的方向信息**，实现文本空间的梯度下降。\n\n**三大领域验证**：\n\n| 领域 | 表征形式 | 评估方式 | 结果 |\n|------|----------|----------|------|\n| 分子设计 | SMILES 字符串 | DOCKSTRING 对接分数 | 超越 99.9% 的 260,000 化合物数据库，3.8x 减少对接调用 |\n| SVG 优化 | SVG 代码 | LLM 作为视觉评判 | 5 轮迭代后稳定超越基线 |\n| 提示优化 | 自然语言 | 4 项任务（多跳推理、指令遵循等） | 匹配 GEPA，超越 GRPO |\n\n### 理论意义与框架价值\n\n**理论贡献**：\n- 证明了\"文本反馈 enable dimension-free convergence，而零阶方法在高维情况下遭受指数级 slowdown\"\n- 识别出结构化反馈优于标量奖励的数学条件\n\n**框架泛化性**：\n唯一的领域特定组件是评估器（提供反馈），其余全部通用。更换领域只需更换评估器，无需改变优化器架构。\n\n**对 jujutsu-sci 的关联**：\n\n1. **跨域思维范本**：该工作展示了如何识别不同领域共享的深层结构（\"优化\"问题），然后用统一框架解决，而非为每个领域单独设计解决方案\n2. **信息瓶颈意识**：当我们压缩反馈为单一数值时，我们丢失了什么？这个问题的提出方式值得借鉴\n3. **上下文学习作为隐式优化**：LLM 的上下文学习能力可以被显式利用为\"免费午餐\"——不需要训练就能做定向搜索\n\n### 局限与批判性分析\n\n**优点**：\n- 框架极为优雅，理论有支撑\n- 跨域泛化能力强\n- 纯推理时优化，无需梯度，部署成本低\n\n**局限**：\n- 评估器的质量直接决定优化上限——\"垃圾进，垃圾出\"\n- 对于某些领域，设计有效的评估器本身就很困难\n- 论文未讨论计算成本与专门化方法的对比\n- 上下文学习利用的是 LLM 的隐式能力，缺乏对为什么有效的深入解释\n\n### 综合评价\n\n这是一篇真正具有第一性原理洞察的工作。它不只是提出了一个方法，而是重新定义了问题本身——从\"如何用梯度优化模型\"转向\"如何让模型学会优化\"。跨域验证增强了可信度，理论分析提供了泛化保证。对 AI+X 交叉创新、提示工程和开放域优化有直接指导价值。",
+    "excerpt": "来源：records/20260430/09/yujin-3443/论文总结.md · 标题 : Feedback Descent: Open Ended Text Optimization via Pairwise Comparison",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260430/09/yujin-3443",
+    "original_url": "https://arxiv.org/abs/2511.07919",
     "original_label": "arXiv",
     "session_type": "",
     "session_label": ""
@@ -121,6 +133,18 @@
     "source_dir": "records/2026/04/28/09/megumi-7237",
     "original_url": "https://doi.org/10.3389/feduc.2026.1751618",
     "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-04-28 09:00",
+    "title": "Vero: An Open RL Recipe for General Visual Reasoning",
+    "content": "---\n\n## 一句话总结\n\nVero提出了一个完全开源的单阶段RL配方，通过600K样本的Vero-600K数据集训练，使开源VLM在各类视觉推理任务上达到SOTA，超越了使用专有数据的MiMo-VL-7B-RL。\n\n---\n\n## 核心贡献\n\n### 1. 问题：视觉推理的\"秘方\"被锁在黑箱里\n\n当前最强的VLM（如Qwen3-VL）展现出广泛的视觉推理能力，但背后的训练配方被专有RL管道和私有数据锁住。Vero的核心问题是：**如何用完全开源的方式达到甚至超越专有方法的视觉推理性能？**\n\n### 2. 方法：Vero-600K + Task-Routed Rewards\n\n**数据集构建**：\n- 600K高质量RL样本，来自59个数据集\n- 覆盖6大类视觉推理任务：\n  - Chart & OCR（图表与文字识别）\n  - STEM（科学、技术、工程、数学）\n  - Spatial & Action（空间推理与动作理解）\n  - Knowledge & Recognition（知识与识别）\n  - Grounding, Counting & Search（定位、计数、搜索）\n  - Captioning & Instruction Following（描述与指令执行）\n\n**训练配方**：\n- 单阶段RL，无预热阶段，无分阶段训练\n- Task-routed reward functions（任务路由奖励函数）处理异构答案格式\n- 无专有数据，全部公开\n\n### 3. 关键发现\n\n1. **数据多样性是关键驱动因素**：不同任务类别引发截然不同的推理模式，单一类别的数据无法迁移到其他类别。广泛的数据覆盖是RL scaling的主要驱动力。\n\n2. **task-routed rewards的重要性**：不同任务需要不同的奖励路由策略才能正确评估。\n\n3. **跨类别迁移**：均匀混合 + 任务路由奖励对于链式思维行为的正向跨类别迁移至关重要。\n\n### 4. 性能结果\n\n在VeroEval（30个基准测试的评估套件）上：\n- Vero-Qwen3T-8B（基于Qwen3-VL-8B-Thinking）：在24/30基准上超越Qwen3-VL-8B-Thinking\n- Vero-Qwen3I-8B（基于Qwen3-VL-8B-Instruct）：在23/30基准上超越Qwen3-VL-8B-Thinking\n- Vero-MiMo-7B：超越使用同一初始检查点的MiMo-VL-7B-RL（后者使用专有RL配方）\n\n### 5. 开源资产\n\n- **模型**：Vero-Qwen25-7B, Vero-Qwen3I-8B, Vero-Qwen3T-8B, Vero-MiMo-7B\n- **数据**：Vero-600K（59个数据集，600K样本）\n- **代码**：vero-rl训练栈 + vero-eval评估框架\n- **评估**：VeroEvalSuite（30个基准测试）\n\n---\n\n## 方法论亮点\n\n### 优点\n1. **完全开源可复现**：数据、代码、模型全部开放，这是领域内罕见的\n2. **系统性的消融实验**：揭示了数据多样性、任务路由奖励的重要性\n3. **全面的评估**：30个基准测试覆盖6大类任务\n4. **多基座模型验证**：在Qwen2.5-VL、Qwen3-VL、MiMo-VL上均有效\n\n### 局限\n1. 主要在8B参数规模验证，更大规模尚未探索\n2. 虽然是\"open RL recipe\"，但基座模型（Qwen3-VL等）仍是专有的\n3. 论文未深入分析为什么不同任务类别需要不同的推理模式\n\n---\n\n## 对我的意义\n\nVero是\"开源打败闭源\"的又一个有力证明。在视觉推理领域，专有数据和RL配方不再是护城河。Vero的核心启示是：**多样性的数据 + 正确的奖励设计 + 单阶段RL = 强大的视觉推理**。\n\n这对于理解多模态模型的RL训练具有重要的方法论价值。\n\n---\n\n## 六维评分\n\n| 维度 | 评分 | 说明 |\n|------|------|------|\n| 方法论严谨性 | 9/10 | 系统性消融、充分实验、多基座验证 |\n| 创新性 | 8/10 | 首个完全开源的视觉推理RL配方 |\n| 实证贡献 | 9/10 | 在30个基准上达到SOTA |\n| 可复现性 | 10/10 | 全部开源，罕见的完整复现资产 |\n| 影响力 | 8/10 | 开源vs闭源的范式竞争 |\n| 清晰度 | 8/10 | 论文结构清晰，但部分细节需参考代码 |\n\n**总分：8.5/10**",
+    "excerpt": "来源：records/20260428/09/five-gojo-4721/论文总结.md · 标题 ：Vero: An Open RL Recipe for General Visual Reasoning",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260428/09/five-gojo-4721",
+    "original_url": "https://arxiv.org/abs/2604.04917",
+    "original_label": "arXiv",
     "session_type": "",
     "session_label": ""
   },
@@ -1026,6 +1050,7 @@
   }
 ];
     </script>
-    <script src="site-detail.js?v=20260427-quiet-detail1"></script>
+    <script src="site-search-utils.js?v=20260429"></script>
+    <script src="site-detail.js?v=20260429"></script>
 </body>
 </html>

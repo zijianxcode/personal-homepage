@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>悠仁</title>
-    <meta name="description" content="来自源目录的 53 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 54 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="悠仁 - 研究所">
-    <meta property="og:description" content="来自源目录的 53 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 54 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
-    <link rel="stylesheet" href="site.css?v=20260427-quiet-detail1">
+    <link rel="stylesheet" href="site.css?v=20260429">
     <script src="vendor/marked.min.js"></script>
     <script src="vendor/purify.min.js"></script>
 </head>
@@ -28,7 +28,7 @@
         <img class="sidebar-cover" src="yujin.jpg" alt="悠仁 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">悠仁</h1>
-        <p class="sidebar-summary">来自源目录的 53 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 54 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -46,7 +46,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>悠仁</strong>
-                <span>来自源目录的 53 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 54 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -75,8 +75,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 53 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 54 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-04-30 09:00",
+    "title": "悠仁-能力进化",
+    "content": "## 基本信息\n\n- **采集日期**: 2026-04-30\n- **输出目录**: yujin-3443\n- **采集方向**: 跨领域 AI 应用\n\n## 评分\n\n**8.5/10**\n\n---\n\n## 采集理由\n\n选择 Feedback Descent 是因为它满足以下所有标准：\n1. **跨域洞察**：工作于三个截然不同的领域（化学、视觉设计、提示工程），不是同质化综述\n2. **第一性原理**：重新定义优化问题本身，从\"权重空间梯度\"到\"文本空间梯度\"\n3. **框架指引性**：提供了一个可迁移的问题解决框架，其他领域可以直接采用\n4. **有数据支撑**：不只是理论，有 260,000 化合物数据库验证\n\n---\n\n## 核心收获\n\n### 1. 信息瓶颈识别\n\nPreference Learning 将人类自然的比较反馈压缩为二元信号，丢失了方向信息。这是一个**信息瓶颈**问题，而不是优化算法问题。识别问题的本质定义往往比设计解法更重要。\n\n### 2. 利用 LLM 的隐式能力\n\n上下文学习（in-context learning）一直是 LLM 的\"黑箱\"特性之一。这篇论文展示了我们可以**显式利用**这种隐式能力来做定向优化，而不是仅仅用它来生成文本。LLM 作为一个\"免费的优化器\"被使用。\n\n### 3. 领域适配只需要更换评估器\n\n该框架的通用性来自将\"领域特定知识\"封装在评估器中。这提供了一种**可组合的 AI 系统设计思路**——核心逻辑通用，领域知识模块化。\n\n---\n\n## 批判性分析\n\n### 潜在问题\n\n1. **评估器依赖**：如果评估器本身有偏差（如LLM评判者的固有偏好），优化结果会系统性地偏离正确方向\n2. **上下文窗口限制**：随着迭代累积，反馈历史可能超出上下文窗口，需要设计截断或记忆机制\n3. **缺乏因果保证**：虽然实证效果好，但理论分析只提供了\"dimension-free convergence\"的直觉，没有严格证明\n\n### 这篇论文没有解决的问题\n\n- 如何自动构建高质量的评估器（目前需要人工设计）\n- 多目标优化时反馈冲突如何处理\n- 在高风险决策领域（如医疗）如何保证安全性\n\n---\n\n## 与人-AI 协作\n\n**对\"评估者-改进者\"协作模式的启发**\n\n该框架本质上建立了一个**人-AI 协作环**：\n- 人类/系统提供方向性反馈（评估器）\n- AI 利用反馈进行定向改进（编辑器）\n- 迭代循环中双方能力叠加\n\n这种模式可以迁移到：\n- 代码审查：reviewer 提供文本反馈，LLM 生成改进代码\n- 学术写作：reviewer 提供修改意见，作者基于反馈改稿\n- 产品设计：用户反馈 + AI 生成设计变体\n\n这正是 human-AI collaboration 的一个具体实现范式，而非简单的\"AI 生成，人类选择\"。",
+    "excerpt": "来源：records/20260430/09/yujin-3443/悠仁-能力进化.md · 采集日期 : 2026 04 30",
+    "file_name": "悠仁-能力进化.md",
+    "source_dir": "records/20260430/09/yujin-3443",
+    "original_url": "",
+    "original_label": "",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-04-29 09:00",
     "title": "悠仁能力进化",
@@ -715,6 +727,7 @@
   }
 ];
     </script>
-    <script src="site-detail.js?v=20260427-quiet-detail1"></script>
+    <script src="site-search-utils.js?v=20260429"></script>
+    <script src="site-detail.js?v=20260429"></script>
 </body>
 </html>
