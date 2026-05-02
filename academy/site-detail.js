@@ -15,14 +15,7 @@ function formatDateLabel(value) {
     return value.replace('T', ' ');
 }
 
-function normalizeSearchText(value) {
-    return String(value || '')
-        .toLowerCase()
-        .replace(/["'`“”‘’]/g, ' ')
-        .replace(/[-–—_:：/.,!?()[\]{}]/g, ' ')
-        .replace(/\s+/g, ' ')
-        .trim();
-}
+/* normalizeSearchText provided by site-search-utils.js */
 
 function normalizeText(entry) {
     return normalizeSearchText(`${entry.date || ''} ${entry.title || ''} ${entry.content || ''} ${entry.source_dir || ''} ${entry.file_name || ''} ${entry.session_label || ''}`);

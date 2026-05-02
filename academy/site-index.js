@@ -1,15 +1,5 @@
-function compactText(value) {
-    return String(value || '').replace(/\s+/g, ' ').trim();
-}
-
-function normalizeForSearch(value) {
-    return compactText(value)
-        .toLowerCase()
-        .replace(/["'`“”‘’]/g, ' ')
-        .replace(/[-–—_:：/.,!?()[\]{}]/g, ' ')
-        .replace(/\s+/g, ' ')
-        .trim();
-}
+/* compactText / normalizeSearchText provided by site-search-utils.js */
+var normalizeForSearch = normalizeSearchText;
 
 (function initHomeSearch() {
     var input = document.getElementById('homeSearchInput');
