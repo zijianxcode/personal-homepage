@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV</title>
-    <meta name="description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 71 条。">
+    <meta name="description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 73 条。">
     <meta property="og:title" content="CV - 研究所">
-    <meta property="og:description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 71 条。">
+    <meta property="og:description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 73 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -27,7 +27,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">CV</h1>
-        <p class="sidebar-summary">基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 71 条。</p>
+        <p class="sidebar-summary">基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 73 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -45,7 +45,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>CV</strong>
-                <span>基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 71 条。</span>
+                <span>基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 73 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -74,8 +74,32 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "CV", "subtitle": "基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 71 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "CV", "subtitle": "基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 73 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-05-03 09:00",
+    "title": "Sapiens2: High-Fidelity Human-Centric Vision at Scale",
+    "content": "**评分：9/10**\n\n---\n\n## 基本信息\n- **标题**: Sapiens2: High-Fidelity Human-Centric Vision at Scale\n- **来源**: arXiv:2604.21681 (Meta AI Research, 2026)\n- **领域标签**: Computer Vision, Human-Centric Vision, Foundation Models, Embodied AI, Multi-Modal Learning\n\n---\n\n## 一、研究问题与动机\n\n人类中心视觉（Human-Centric Vision）是理解物理世界智能的核心——从姿态估计到身份识别，从场景重建到具身 AI。现有通用视觉模型（DINOv2、DINOv3、SAM）在人类相关任务上表现不如专用模型，但训练专用模型代价高昂、泛化性差。\n\n核心问题：**能否构建一个通用的、人类中心视觉的基础模型，在多种任务上同时达到 SOTA，且能泛化到开放世界？**\n\nSapiens2 给出了肯定答案。\n\n---\n\n## 二、技术方法\n\n### 2.1 预训练策略：统一目标函数\n\nSapiens2 的核心创新是**统一的预训练目标**，结合两类学习信号：\n\n1. **掩码图像重建（Masked Image Reconstruction）**：学习低级细节（几何、表面法线、纹理）\n2. **自蒸馏对比目标（Self-Distilled Contrastive Objectives）**：学习高级语义（身份、姿态、动作）\n\n这种统一方法解决了以往 MAE 方法语义不足、对比方法细节缺失的问题。\n\n### 2.2 数据：10 亿张高质量人类图像\n\n- 1B（10亿）张精选人类图像\n- 相比第一代 Sapiens，数据质量与标注数量均有显著提升\n- 覆盖多样姿态、遮挡、视角、光照条件\n\n### 2.3 模型家族：0.4B → 5B 参数\n\n| 模型规模 | 原生分辨率 | 支持分辨率 |\n|----------|-----------|-----------|\n| Sapiens2-0.4B | 1K | 1K |\n| Sapiens2-1B | 1K | 1K / 2K |\n| Sapiens2-2B | 1K | 1K / 2K |\n| Sapiens2-5B | 1K | 1K / 2K / **4K** |\n\n4K 模型采用**窗口注意力（Windowed Attention）**以在更长空间上下文上推理。\n\n---\n\n## 三、核心发现\n\n### 3.1 任务全面覆盖\n\nSapiens2-5B 在四个人类相关任务上均达到 SOTA：\n\n| 任务 | 指标 | 相比 Sapiens 第一代 |\n|------|------|---------------------|\n| **全身姿态估计** | +4 mAP | +4 mAP |\n| **人体部位分割** | +24.3 mIoU | 大幅提升 |\n| **法线估计** | -45.6% 角度误差 | 显著改进 |\n| **身份识别** | 领先 | 领先 |\n| **新增：Pointmap** | 新任务 | SOTA |\n| **新增：Albedo 反照率估计** | 新任务 | SOTA |\n\n### 3.2 零样本泛化能力\n\n在野外（in-the-wild）条件下，Sapiens2-5B 在 308 关键点预测上达到 **82.3 mAP**，展现强大零样本能力。\n\n### 3.3  vs 通用视觉 backbone\n\n在相同模型规模下，Sapiens2 全面超越 DINOv2、DINOv3 等通用 backbone：\n- 姿态估计：DINOv3 因对比目标和规模表现较好，但 Sapiens2-5B 更优\n- 几何任务（法线、深度）：Sapiens2 显著领先\n- 语义理解：Sapiens2 联合目标函数兼顾语义与几何\n\n### 3.4  架构改进\n\n- 借鉴前沿模型最新进展（更长训练计划 + 更好稳定性）\n- 4K 模型使用窗口注意力处理长空间上下文\n- 2K 输出分辨率预训练\n\n---\n\n## 四、意义与影响\n\n### 4.1 行业影响\n\n- **具身 AI（Embodied AI）**：人类姿态理解是机器人、AR/VR 的核心能力\n- **影视与游戏**：高精度人体动作捕捉与重建\n- **医疗与康复**：人体姿态异常检测\n- **监控与安全**：多尺度人体分析\n\n### 4.2 研究影响\n\n- 证明了**统一预训练目标**的有效性（掩码重建 + 对比学习可以协同）\n- 证明了**规模化数据**（1B 图像）对人类视觉任务的决定性作用\n- 开辟新任务线：pointmap 和 albedo 估计\n\n### 4.3 开源影响\n\n所有模型、代码、数据（部分）已发布，为社区提供强大的人类视觉 baseline。\n\n---\n\n## 五、局限性\n\n1. **计算资源需求高**：5B 模型训练需要大量 GPU 资源，限制了复现\n2. **数据隐私**：10 亿人类图像数据集的隐私合规性值得进一步审查\n3. **新任务泛化**：pointmap 和 albedo 估计的泛化边界尚未充分探索\n4. **视频理解缺失**：当前专注于图像，未来扩展到视频是自然方向\n\n---\n\n## 六、结论\n\nSapiens2 证明了「一个模型，多种人类视觉任务」范式的可行性。其统一的预训练策略、规模化数据和架构创新的组合，在 0.4B 到 5B 参数范围内均展现出显著优于前辈的性能，并为 pointmap 和 albedo 等新任务开辟了可能性。\n\n随着具身 AI 和多模态学习的快速发展，Sapiens2 提供了一个强大的基础，值得在未来工作中进一步扩展到视频、4D（时空）和交互式场景理解。",
+    "excerpt": "来源：records/20260503/09/five-gojo-8837/论文总结.md · 评分：9/10",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260503/09/five-gojo-8837",
+    "original_url": "https://arxiv.org/abs/2604.21681",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-05-03 09:00",
+    "title": "Supporting Co-Adaptive Machine Teaching through Human Concept Learning and Cognitive Theories",
+    "content": "**来源 URL：** https://arxiv.org/html/2409.16561v2\n**日期：** 2025-04（CHI 2025，4月26日—5月1日，横滨）\n**领域标签：** 学习科学、人机交互、机器教学、认知理论、教育AI\n**综合评分：** 8/10\n\n---\n\n## 一、背景与问题\n\n在交互式机器学习中，特别是在主观性或模糊性领域（如数据标注、概念定义），人类与模型之间存在双向对齐挑战：用户通过标注数据来教模型，但与此同时，交互过程也在反过来塑造用户自身对概念的理解。如何支持这种**双向共适应**（co-adaptive）过程，是核心问题。\n\n现有方法往往只关注模型侧学习，忽视了人类用户在教学过程中的认知变化和概念演化。\n\n## 二、核心贡献与方法\n\n论文提出 **Mocha**——一个基于两个人类概念学习和认知理论的交互式机器学习工具，具有两条核心设计：\n\n**理论层：**\n- **变异理论（Variation Theory, VT）：** 生成与已标注数据在语法和语义上相似、但预测标签不同的反事实样本（counterexamples）。通过让用户标注这些矛盾样本，帮助用户反思自身标签定义的边界。\n- **结构对齐理论（Structural Alignment Theory, SAT）：** 将反事实样本分组呈现，帮助用户识别项目之间的**可对齐差异**（alignable differences），实现批量标注。\n\n**技术层：**\n- 神经符号（neuro-symbolic）流程，支持基于 VT 的反事实数据生成；\n- SAT 驱动的反事实渲染界面。\n\n## 三、关键发现与实验结果\n\n18 名参与者受邀参与实验室研究，评估 Mocha 的有效性和可用性：\n\n- **VT + SAT 组合版本（C3）** 在所有测量指标上均一致优于其他版本；\n- 参与者能够高效聚焦于原始样本与反事实样本之间的关键差异，标注效率显著提升；\n- 用户报告 Mocha 帮助他们**精炼标签定义**、同时获得对模型行为的洞察；\n- SAT 渲染使差异更显著（salient），而 VT 保证了差异的概念信息量——两者形成**共生关系**。\n\n## 四、理论意义与框架价值\n\n1. **认知理论 × HCI × ML 的跨领域融合：** 首次将变异理论与结构对齐理论系统性地引入人机协作标注场景，提供了认知科学理论与人机交互设计的桥接框架。\n2. **共适应教学的认知机制揭示：** 证明了在教学交互中，人类用户的概念理解与模型学习是相互促进的，而非独立过程。\n3. **共生关系的形式化：** VT 提供概念基础保证差异的一致性，SAT 增强差异的可辨识性——两者互补产生 1+1>2 的效果。\n\n## 五、实践启示与应用价值\n\n- **标注工具设计：** 反事实标注策略可迁移至任何需要主观判断的标注场景（医学影像、NLP 语料、教育数据）；\n- **智能辅导系统：** 将 VT 生成的矛盾样本嵌入辅导对话，可促进学生的概念反思；\n- **教育数据挖掘：** 帮助分析学生在概念边界上的混淆模式，为教学干预提供依据；\n- **模型可解释性：** 提供了一种通过用户标注来探测模型决策边界的方法。\n\n## 六、局限与未来方向\n\n- **样本量有限：** 18 人实验室研究，泛化性待验证；\n- **领域复杂度：** 尚未在真实大规模、复杂领域验证；\n- **长期共适应：** 当前为单轮实验，长期教学交互中的概念演化未被考察；\n- **跨理论整合的规模化：** 探索更多认知理论（如具身认知、分布认知）与 ML 的系统整合。",
+    "excerpt": "来源：records/20260503/09/megumi-7036/论文总结.md · 标题： Supporting Co Adaptive Machine Teaching through Human Concept Learning and Cognitive Theories",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260503/09/megumi-7036",
+    "original_url": "https://arxiv.org/html/2409.16561v2",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-04-30 09:00",
     "title": "Feedback Descent: Open-Ended Text Optimization via Pairwise Comparison",
