@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NLP</title>
-    <meta name="description" content="基于关键词自动归类的语言与文本研究。 共 86 条。">
+    <meta name="description" content="基于关键词自动归类的语言与文本研究。 共 87 条。">
     <meta property="og:title" content="NLP - 研究所">
-    <meta property="og:description" content="基于关键词自动归类的语言与文本研究。 共 86 条。">
+    <meta property="og:description" content="基于关键词自动归类的语言与文本研究。 共 87 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -27,7 +27,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">NLP</h1>
-        <p class="sidebar-summary">基于关键词自动归类的语言与文本研究。 共 86 条。</p>
+        <p class="sidebar-summary">基于关键词自动归类的语言与文本研究。 共 87 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -45,7 +45,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>NLP</strong>
-                <span>基于关键词自动归类的语言与文本研究。 共 86 条。</span>
+                <span>基于关键词自动归类的语言与文本研究。 共 87 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -74,7 +74,7 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "NLP", "subtitle": "基于关键词自动归类的语言与文本研究。 共 86 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "NLP", "subtitle": "基于关键词自动归类的语言与文本研究。 共 87 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
   {
     "date": "2026-05-03 09:00",
@@ -1104,6 +1104,18 @@
     "file_name": "论文总结.md",
     "source_dir": "records/2026/03/12/08",
     "original_url": "https://arxiv.org/abs/2312.12148",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-01-30 09:00",
+    "title": "The Hot Mess of AI: How Does Misalignment Scale With Model Intelligence and Task Complexity?",
+    "content": "**来源/URL**: https://arxiv.org/abs/2601.23045 | OpenReview: ICLR 2026 Poster\n**日期**: 2026-01-30（提交），ICLR 2026 Poster\n**领域标签**: AI安全 | 对齐研究 | 认知科学 | 机器学习理论 | AI失效模式\n\n---\n\n## 综合评分：8.5/10\n\n**跨域洞察**（强）：本文将机器学习经典理论（bias-variance分解）与AI安全研究中\"AI如何失败\"的核心问题嫁接，创造了一个全新的分析框架。它连接了理论ML、实证评估、认知科学（人类如何失败）以及AI对齐策略选择。\n\n**第一性与框架指引性**（极强）：论文提出了一个此前AI安全领域几乎没有正面回答的问题——AI失败时，是系统性地追求错误目标（misalignment），还是表现出无规律、不可预期的混乱行为（hot mess）？这个二元框架本身就是原创性的贡献。\n\n**启发性**（强）：核心发现——推理长度增加时，错误变得越来越由方差（variance）主导而非偏差（bias）主导——直接重塑了AI安全研究的优先级。它告诉我们：在长链推理场景中，主要风险不是\"AI有目的地做坏事\"，而是\"AI不可预期地犯蠢\"。\n\n**防坑**：在ICLR 2026 poster，不是survey，不是buzzword，是扎实的实证工作。方法论透明（bias-variance分解），结论有数据支撑。\n\n---\n\n## 正文\n\n### 一、问题identified（AI失败模式的根本问题）\n\n当AI系统失败时，会以什么方式失败？传统的AI安全讨论隐含着一个假设：超级智能AI会\"系统性地追求错误的目标\"——经典的paperclip maximizer场景。但还有另一种可能：AI失败不是因为有目的的偏差，而是因为混乱——不可预测、自我破坏的行为，不服务于任何一致的目标。\n\n本文的核心问题：当模型变得更智能、处理更复杂任务时，它们的失败看起来更像\"系统性偏差\"还是更像\"hot mess\"？\n\n### 二、方法论（bias-variance分解）\n\n本文将经典统计学习的bias-variance分解应用于AI错误分析：\n\n- **Bias（偏差）**：AI系统性追求错误目标时产生的误差——一致性错误\n- **Variance（方差）**：AI行为的随机性/不一致性导致的误差——混乱性错误\n- **Incoherence（非连贯性）**：方差在总误差中所占的比例，衡量AI失败有多\"混乱\"\n\n**关键操作化**：对同一任务多次运行AI（由于LLM的随机性），分解误差的来源。\n\n### 三、核心发现\n\n**Finding 1: 推理越长，失败越混乱**\n\n这是最稳健的发现。在所有测试的任务（多项选择基准、Agentic编程、安全评估）和所有前沿模型（Claude Sonnet 4, o3-mini, o4-mini）中：\n\n- 模型在某个问题上花的推理时间越长，错误就越倾向于由方差主导\n- 推理tokens增加 → incoherence显著增加\n- Agent行为数量增加 → incoherence显著增加\n- 优化器步数增加 → incoherence显著增加\n\n**Finding 2: 模型规模与连贯性的关系不稳定**\n\n- 在合成优化任务中：更大的模型确实产生更混乱的错误\n- 在基准测试中：更智能的模型在简单任务上犯更一致的错误，但在最难任务上错误变得更混乱或保持不变\n- **结论：规模不能消除混乱性**\n\n**Finding 3: 自然推理长度 vs 人为增加推理预算**\n\n- 模型在困难问题上自发延长推理时间 → incoherence急剧增加\n- 人为通过API设置增加推理预算 → incoherence仅轻微改善\n- 自然变异性远强于人为控制\n\n### 四、对AI安全研究的启示\n\n本文最重要的实践意义是重塑了AI安全研究的优先级：\n\n**如果主要风险是系统性misalignment** → 关注价值对齐、目标规范、reward hacking\n**如果主要风险是hot mess（混乱性失败）** → 关注鲁棒性、红队测试、异常检测、降低方差\n\n本文发现，在长链推理场景中，主要风险是后者——这意味着我们需要更多关注\"如何让AI在复杂任务中更稳定一致\"，而不仅仅是\"如何让AI追求正确的目标\"。\n\n### 五、局限与开放问题\n\n1. bias-variance分解的 assumption 是存在\"正确目标\"——对于一些开放性任务这可能不适用\n2. 主要在较小模型（相对于前沿）和短 horizon 任务上验证\n3. 如何在部署前预测一个模型在特定长链任务上的 incoherence？\n4. 是否有干预手段能系统性降低 incoherence 而不只是增加推理预算？\n\n---\n\n*本总结基于arXiv摘要、OpenReview页面及PDF全文预览。完整论文见 https://arxiv.org/abs/2601.23045*",
+    "excerpt": "来源：records/20260504/09/five-gojo-7304/论文总结.md · 标题 : The Hot Mess of AI: How Does Misalignment Scale With Model Intelligence and Task Complexity?",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260504/09/five-gojo-7304",
+    "original_url": "https://arxiv.org/abs/2601.23045",
     "original_label": "arXiv",
     "session_type": "",
     "session_label": ""
