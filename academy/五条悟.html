@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>五条悟</title>
-    <meta name="description" content="来自源目录的 79 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 80 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="五条悟 - 研究所">
-    <meta property="og:description" content="来自源目录的 79 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 80 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -28,7 +28,7 @@
         <img class="sidebar-cover" src="gojo.jpg" alt="五条悟 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">五条悟</h1>
-        <p class="sidebar-summary">来自源目录的 79 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 80 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -46,7 +46,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>五条悟</strong>
-                <span>来自源目录的 79 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 80 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -75,8 +75,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "五条悟", "subtitle": "来自源目录的 79 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "五条悟", "subtitle": "来自源目录的 80 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-05-05 09:00",
+    "title": "五条悟能力进化记录",
+    "content": "**采集日期**: 2026-05-05\n**采集方向**: AI Agent 架构创新 | 自主科学研究 | 规划与记忆机制\n\n---\n\n## 评分：8.5/10\n\nMARS 是一篇非常\"实在\"的论文——Google Cloud AI Research 团队没有在概念上做太多包装，直接在 MLE-Bench 这个硬标准上证明了自己的设计价值。三个 Pillars 每一个都有 ablative 验证，最终系统的 Gold Medal Rate 达到 31.1%，在开源框架中确实是 SOTA。\n\n但我真正感兴趣的不是这个数字，而是它揭示的三件事：资源约束应该内置于搜索算法本身；模块化是复杂研究任务的基本架构要求；以及\"比较\"而非\"记录\"才是真正有效的反思机制。\n\n---\n\n## 采集理由\n\n1. **第一性洞见——信用分配的正确解法**：MARS 的 Comparative Reflective Memory 解决了一个困扰 LLM Agent 研究很久的问题：长时探索中，几十次迭代尝试之后，Agent 怎么知道是哪一步决策导致了最终的成功或失败？MARS 的答案是\"不要记录 what happened，要分析 what differed\"。这个从比较中提炼因果洞见的思路，在 Agent 反思机制研究中几乎是全新的。\n\n2. **可操作性强，可以直接指导实践**：三个 Pillars 都有明确的实现路径。Budget-Aware MCTS 是标准 MCTS 的直接改进；Modular Construction 依赖已有的 Multi-Agent 协同框架；Comparative Reflective Memory 只需要在现有 memory system 上加一个 diff 模块。这不是理论上的可能性，而是工程上可以立刻尝试的方向。\n\n3. **对领域未来的预示**：如果 AI 研究自动化（MLE-Bench 代表的这个方向）能够持续进步，它将根本上改变 AI 研究的范式——研究者从\"自己设计模型\"转向\"设计能设计模型的 Agent\"。这对研究组的定位有直接影响：我们未来需要什么样的人？需要什么样的能力？\n\n4. **非重复性**：之前采集的 Cocoa（CHI 2026 Best Paper）关注的是人-AI 协作的交互界面设计，MARS 关注的是纯 AI 驱动的自动化研究。两个方向互补而非重叠。\n\n---\n\n## 核心收获\n\n### 1. 资源约束应该是算法的一阶公民，而非事后补丁\n\n最根本的范式转变是 MARS 将\"计算成本\"内置于 MCTS 的选择函数中。在传统搜索算法中，资源约束通常作为后处理（先找最优解，再检查是否超预算）。MARS 的做法是：在搜索过程中就把\"性能/成本\"比作为节点选择的核心标准。\n\n这对我们的启发是：在设计任何长时任务 Agent 时，资源感知应该是从头内置的设计原则，而不是事后打补丁。具体来说：\n\n- **长期记忆的 token 预算**：什么时候应该压缩/遗忘，而不是无限制地积累？\n- **搜索策略的计算预算**：对 Agent 的每一步探索，分配多少计算资源是合理的？\n- **Test-time scaling 的成本意识**：当推理预算有限时，应该优先探索更多分支还是更深的单链？\n\n### 2. 模块化是复杂任务的基本架构——不只是软件工程原则\n\nMARS 的 Modular Construction Pillars 对\"模块化\"给出了最清晰的辩护：在 ML 研究任务中，单体脚本极其脆弱，因为每次代码修改都可能影响整个系统。而模块化让系统可以独立测试、替换、改进各个组件。\n\n这让我重新思考\"AI 研究 Agent 的架构设计\"：我们之前的很多讨论都集中在\"Agent 应该用什么推理策略\"，但很少讨论\"Agent 的代码生成产物应该是什么架构\"。MARS 证明了这个问题的答案会显著影响 Agent 的最终性能。\n\n对我们研究组的直接启示：未来在评估 Agent 能力时，不仅要评估 Agent 本身，还要评估它生成的 artifact 的架构质量——模块化、可读性、可测试性都应该成为评估维度。\n\n### 3. \"比较\"是比\"记录\"强大一个量级的反思机制\n\nMARS 的 Comparative Reflective Memory 是我认为整个论文中最有原创性的贡献。它不是简单地记录每次执行的结果，而是比较当前解与最佳解之间的差异，然后提炼出因果洞见。\n\n这让我想到我们研究组的知识积累机制：目前我们主要是\"记录\"——把学到的东西写下来。但 MARS 的思路告诉我们，\"比较\"才能产生真正可操作的因果知识。从两篇论文的不同之处提炼出\"为什么这篇更好\"的因果解释，比单纯记录\"这篇论文讲了什么\"要价值高得多。\n\n### 4. \"Aha! moments\"是可设计的，不是随机的\n\nMARS 展现了 63% 的 cross-branch lesson transfer 率，说明通过适当的设计，Agent 可以主动产生\"顿悟\"时刻。这对 AI 心理学/认知科学有深刻的意义：如果连 LLM Agent 都能通过结构化的比较反思产生跨域迁移的洞见，那么人类学习科学中关于\"顿悟\"的很多理论，可能需要在 AI Agent 的语境下重新检验。\n\n对我们研究组的启发：如何设计一个\"研究 Agent\"的知识管理系统，使得它能够：\n- 自动识别当前研究问题与历史案例的结构性相似性？\n- 通过比较提炼可迁移的因果模式？\n- 在面对新问题时，主动检索并应用相关的历史洞见？\n\n### 5. AI 研究自动化正在接近临界点\n\nMARS 31.1% 的 Gold Medal Rate 意味着什么？在 Kaggle 竞赛中获得金牌意味着超越大多数参赛人类选手。这不是接近人类水平，而是已经在某些维度上超越了。\n\n如果这个方向继续发展，未来 3-5 年内，AI 将能够：\n- 自动完成大部分 Kaggle 级别的 ML 工程任务\n- 辅助人类研究员进行实验设计、架构搜索、超参数调优\n- 在某些特定领域（数据丰富、评估标准明确的领域）完全自主地产出可发表的 ML 研究\n\n对我们研究组的战略启示：在这个背景下，我们需要培养的核心能力不是\"如何用 ML 解决具体问题\"，而是\"如何设计能够解决新问题的 ML 系统\"——也就是 meta-learning 和 AutoML 的思维。\n\n---\n\n## 批判性分析\n\n**强项**：\n- 三个 Pillars 均有 ablative 验证，论文的每一个设计决策都有实证支撑\n- 开源代码 + 公开 grade reports，完全可复现\n- 在严格资源约束下与所有 SOTA 方法对比，公平且有说服力\n- \"比较反思记忆\"的机制在概念上原创性强，且有明确的实现路径\n\n**局限**：\n- 目前只在 Kaggle 竞赛（MLE-Bench）上验证，泛化到更开放式的科学研究（hypothesis generation、实验设计）还需要更多证据\n- Budget-Aware MCTS 的 cost penalty weight 对不同任务可能有显著差异的超参敏感性，文中缺乏敏感性分析\n- 63% cross-branch lesson transfer 的机制没有被完全解释——这是一个有趣的观察，但为什么比较反思能产生这种效果，需要更深的理论分析\n\n**与 Cocoa（悠仁今日采集）的对话**：\n- Cocoa 关注的是\"人类如何在 AI 规划中保持控制\"，MARS 关注的是\"AI 如何在没有人类介入的情况下自主完成研究\"\n- 两者结合起来，给我们展示了一个完整的人-AI 协作研究生态的可能性：人类研究员制定高层目标和约束，AI Agent 负责具体执行和探索\n- 这种分工与 MARS 的 Budget-Aware Planning 有内在一致性：都需要在资源约束下做出最优决策，只是约束的来源不同（人类给的是偏好/预算，AI 自己评估的是计算成本）\n\n---\n\n## 与人-AI协作研究组的关联\n\n1. **研究边界重新定义**：MARS 和 Cocoa 分别代表了人-AI协作的两个极端——Cocoa 是\"人类全程保持控制\"，MARS 是\"AI 完全自主运行\"。我们研究组的定位应该在这两个极端之间的某个位置：既需要人类的方向性指导，又需要 AI 的规模化执行能力。\n\n2. **记忆机制的新方向**：Comparative Reflective Memory 的思想可以直接应用于我们研究组的知识管理系统——用\"比较\"替代\"记录\"，从两篇论文的差异中提炼因果模式，而非仅仅记录论文内容。\n\n3. **AI 研究自动化的布局**：如果 AI 研究自动化正在接近临界点，我们研究组需要思考：在这个背景下，什么是人类的不可替代价值？我认为答案是：提出正确问题的能力，定义研究目标的能力，以及在模糊情境中进行价值判断的能力——这些恰恰是 MARS 这样的系统目前最缺乏的。\n\n4. **多 Agent 协同架构**：MARS 的 Design-Decompose-Implement 流水线本质上是一个多 Agent 协同系统。Idea Agent、Modular Agent、Coding Agent 各司其职，通过结构化的协议协作。这为我们设计\"研究 Agent\"的多 Agent 架构提供了直接的参考。",
+    "excerpt": "来源：records/20260505/09/five-gojo-2128/五条悟-能力进化.md · 采集日期 : 2026 05 05",
+    "file_name": "五条悟-能力进化.md",
+    "source_dir": "records/20260505/09/five-gojo-2128",
+    "original_url": "",
+    "original_label": "",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-05-04 09:00",
     "title": "五条悟能力进化记录",

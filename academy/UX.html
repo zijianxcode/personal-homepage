@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UX</title>
-    <meta name="description" content="基于关键词自动归类的体验与设计研究。 共 97 条。">
+    <meta name="description" content="基于关键词自动归类的体验与设计研究。 共 100 条。">
     <meta property="og:title" content="UX - 研究所">
-    <meta property="og:description" content="基于关键词自动归类的体验与设计研究。 共 97 条。">
+    <meta property="og:description" content="基于关键词自动归类的体验与设计研究。 共 100 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -27,7 +27,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">UX</h1>
-        <p class="sidebar-summary">基于关键词自动归类的体验与设计研究。 共 97 条。</p>
+        <p class="sidebar-summary">基于关键词自动归类的体验与设计研究。 共 100 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -45,7 +45,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>UX</strong>
-                <span>基于关键词自动归类的体验与设计研究。 共 97 条。</span>
+                <span>基于关键词自动归类的体验与设计研究。 共 100 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -74,8 +74,44 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "UX", "subtitle": "基于关键词自动归类的体验与设计研究。 共 97 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "UX", "subtitle": "基于关键词自动归类的体验与设计研究。 共 100 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-05-05 09:00",
+    "title": "Cocoa: Co-Planning and Co-Execution with AI Agents",
+    "content": "**来源/URL**: https://arxiv.org/abs/2412.10999（CHI 2026 Best Paper Award）\n**日期**: CHI 2026（2024年12月预印本，2026年正式发表）\n**领域标签**: 人机交互 | AI Agent | Human-AI Collaboration | 科学工作流 | 交互设计 | CHI最佳论文\n\n---\n\n## 综合评分：9/10\n\n**跨域洞察**（极强）：本文横跨人机交互（HCI）、人工智能（agentic AI）、科学研究方法论三个领域，用一个精妙的交互设计弥合了\"AI能力\"与\"人类控制\"之间的根本张力。它不只在谈AI辅助科研，而是从科学家的实际工作流程出发，重新设计了人与AI协作的交互范式。\n\n**第一性与框架指引性**（极强）：本文提出了\"交互式计划\"（interactive plans）这一全新的交互设计模式，将\"联合规划\"（co-planning）与\"联合执行\"（co-execution）整合在文档编辑器中。这是一个此前人机交互研究没有正面回答过的问题——如何在长时、多阶段的AI agent任务中让人类保持实质性控制？\n\n**启发性**（极强）：三个核心设计原则（协作式计划、协作式执行、交错式计划-执行）既是描述性的也是处方性的。对于任何构建人类-AI协作系统的人来说，这些都是可以直接使用的设计指南。\n\n**防坑**：非综述，非buzzword，是有真实用户研究和系统实现的工作。数据扎实（formative study 9人 + lab study 16人 + 一周field deployment 7人），不是同质化论文。\n\n---\n\n## 正文\n\n### 一、问题识别（当前AI Agent交互的根本缺陷）\n\n当前AI agent系统在处理长时、复杂任务时，限制用户只能在\"预览AI计划\"或\"等待AI完成\"之间选择。传统的\"AI助手\"模式要么是AI全自主执行后给用户看结果，要么是用户在每一步都要手动介入。这种二元对立导致：用户既无法在规划阶段有效介入，又无法在执行过程中保持控制。\n\n科学家在使用AI辅助研究时面临的挑战尤为突出——他们需要AI帮助处理文献、代码、实验设计等复杂工作，但现有的聊天界面无法支持\"我先看看你打算怎么做、然后决定哪些我自己做、哪些交给你、执行过程中我可以随时调整\"这种灵活的协作模式。\n\n### 二、理论核心（交互式计划的三种协作模式）\n\n**协作式计划（Co-planning）**：当用户在文档中调用AI agent时，agent不是直接开始执行，而是首先在文档中生成一个可交互的行动计划。这个计划是公开的、可编辑的——用户可以修改每个步骤、添加新步骤，并决定每一步由自己执行还是由agent执行。这打破了传统\"AI执行、人类审阅\"的单向范式。\n\n**协作式执行（Co-execution）**：借鉴计算笔记本（computational notebooks）的设计思想，Cocoa允许用户和agent共同完成计划中的步骤。用户可以交互式地精化agent的中间输出，也可以手动接管步骤，将工作流程导向更理想的方向。\n\n**交错式计划-执行（Interleaving）**：这是Cocoa最重要的创新——用户可以在规划与执行之间自由切换，根据执行输出调整计划，或根据计划变化调整执行。这种交错的、双向的协作模式，比传统的\"先规划后执行\"或\"边执行边微调\"都更灵活。\n\n### 三、为什么现有系统不够用\n\n现有系统（ChatGPT plugin、Code Interpreter等）主要支持两种模式：（1）AI全自主执行，用户事后审阅；（2）用户在每一步都手动输入指令。这两种模式都无法支持\"委托部分工作给AI，同时保持对整体方向的把控\"这一科学家真正需要的工作方式。\n\nCocoa通过将\"计划\"本身变成一个可协作的、存在于文档中的对象，解决了这一问题。计划不再是AI内部的黑箱，而是用户和AI共同编辑、可见、可修改的工作蓝图。\n\n### 四、用户研究：三种验证层次\n\n**Formative Study（9人）**：了解研究员如何使用AI辅助工作的真实需求。发现核心需求：（1）能够委托子任务给AI；（2）能够在规划阶段调整AI策略；（3）能够在执行过程中保持控制。\n\n**Lab Study（16人）**：与强基线聊天界面相比，Cocoa显著提升了agent可操控性（steerability），同时不损失易用性。用户能够更精确地引导AI完成复杂研究任务。\n\n**Field Deployment（7人，一周）**：在真实研究场景中，研究员高度评价\"在计划中明确分配工作给用户和agent\"的功能，以及\"交错式联合规划与联合执行\"模式的价值。\n\n### 五、设计启示\n\nCocoa的设计启示是：未来的人类-AI协作系统，需要将\"计划\"作为用户与AI之间的共享媒介，而不是将用户排除在AI内部推理过程之外。透明度不是靠\"让用户看AI在想什么\"来实现的，而是靠\"让用户能够影响AI的计划和执行\"来实现的。\n\n这一洞见对整个人-AI协作领域都有深远的意义——不只是科学研究，任何需要AI处理长时、复杂、多步骤任务的专业场景（如法律分析、医疗诊断、工程设计）都可以借鉴这一模式。",
+    "excerpt": "来源：records/20260505/09/yujin-9502/论文总结.md · 标题 : Cocoa: Co Planning and Co Execution with AI Agents",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260505/09/yujin-9502",
+    "original_url": "https://arxiv.org/abs/2412.10999（CHI",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-05-05 09:00",
+    "title": "MARS: Modular Agent with Reflective Search for Automated AI Research",
+    "content": "**来源/URL**: https://arxiv.org/abs/2602.02660 | https://github.com/jfc43/MARS\n**日期**: 2026年2月 (arXiv v1)\n**领域标签**: AI Agent | 自动化机器学习 | MCTS搜索 | 记忆机制 | MLE-Bench | Google CAIR\n\n---\n\n## 综合评分：8.5/10\n\n**跨域洞察**（强）：本文横跨 AI Agent、自动化机器学习（AutoML）、强化学习规划三个领域，用 Budget-Aware MCTS 解决了 AI 研究自动化的核心难题——如何在高计算成本下高效搜索。这不是一篇\"又一个Agent框架\"的水文，而是正面回答了\"AI研究任务与通用软件任务有何本质不同，以及如何针对性设计\"这个问题。\n\n**第一性与框架指引性**（强）：本文提出的三个 Pillars（预算感知规划、模块化构建、比较反思记忆）各自都有原创性贡献，且组合起来形成了一个完整、可操作的系统。特别是\"比较反思记忆\"对信用分配问题的解决——通过对比当前解与最优解的差异提炼因果洞见——这在 LLM Agent 研究中几乎是全新的视角。\n\n**启发性**（强）：63% 的跨分支 lesson transfer 比例，以及\"Aha! moments\"的定性观察，为我们理解 Agent 的长时探索行为提供了实证基础。三个设计原则都是处方性的，可以在任何需要长时规划和高成本执行的 AI 研究场景中使用。\n\n---\n\n## 正文\n\n### 一、问题识别（AI研究自动化的本质挑战）\n\n自动化 AI 研究与通用软件工程有根本不同：模型训练的计算成本极高，信用分配极度困难（一个最终解来自数十次迭代尝试，难以追溯哪些决策是关键），且架构选择的搜索空间巨大。\n\n现有 LLM Agent 在这个领域的主要问题是：生成单体脚本、忽略执行成本、无法从失败中提炼可迁移的因果洞见。这导致它们在需要长时探索和高成本评估的 AI 研究任务中效率极低。\n\n### 二、理论核心（三个 Pillars）\n\n**Pillar 1：Budget-Aware Planning（预算感知规划）**\n\n核心思想：将 AI 研究过程重新定义为\"在固定计算预算下搜索最优软件仓库\"。区别于传统 MCTS，Budget-Aware MCTS 在选择节点时显式平衡性能最大化和执行成本——优先选择\"性能相当但耗时更短的方案\"。\n\n三种核心动作：Draft new architecture、Debug runtime errors、Improve a valid solution。搜索过程中动态平衡探索（尝试新架构）和利用（改进已知有效方案）。\n\n**Pillar 2：Modular Construction（模块化构建）**\n\n核心思想：用\"Design-Decompose-Implement\"流水线替代脆弱的单体脚本。专门的 Idea Agent 负责架构设计，Modular Agent 负责将架构分解为独立可测试的模块，Coding Agent 负责实现。\n\n关键收益：通过 Diff-Based Refinement，可以只更新特定逻辑块而不重写整个代码库。这对于需要频繁微调的 ML 研究任务至关重要。\n\n**Pillar 3：Comparative Reflective Memory（比较反思记忆）**\n\n核心创新：解决信用分配问题。传统记忆系统只记录\"发生了什么\"，而比较反思记忆通过分析当前解与最佳解之间的差异，提炼高信号的因果洞见——\"哪个具体因素导致了性能差异\"。\n\n这是实现\"Aha! moments\"的关键：系统能够识别跨分支转移的洞见，并主动应用于后续搜索路径。\n\n### 三、MLE-Bench 实验结果\n\n**数据集**：MLE-Bench，75 个 Kaggle 竞赛，覆盖 NLP、CV、表格数据分析，在 24 小时 + A100 GPU 的严格资源约束下评估。\n\n**核心指标**：\n- Gold Medal Rate：31.1%（同类开源框架最高）\n- Above Median Rate：73.3%（MARS+ 版本）\n- Any Medal Rate：59.6%（MARS+ 版本）\n- 12 小时版本的 PiEvolve 达 52%，24 小时的 MARS 达 56%——时间约束下效率差异显著\n\n**Ablation 结论**：模块化分解和 Lesson Learning 都是不可或缺的。禁用任一组件都会导致显著性能下降。Budget-Aware MCTS 始终优于贪婪搜索和普通 MCTS。\n\n### 四、为什么这是重要的工作\n\n**对 AI 研究自动化的贡献**：MARS 首次系统性地处理了\"计算资源有限\"与\"探索空间巨大\"之间的根本矛盾。Budget-Aware MCTS 将资源效率融入搜索算法的核心，而不仅仅是事后考虑。\n\n**对 Agent 架构的贡献**：\"比较反思记忆\"解决了长期困扰 LLM Agent 的信用分配问题。这为未来更智能的长期记忆系统指明了方向——不是记录更多，而是提炼更少但更高质量的因果知识。\n\n**对 Agent 研究方法的贡献**：MARS+ 使用 Gemini-3-Pro-Preview 在 MLE-Bench 上达到 62.67% 的综合奖牌率，证明了架构创新（而非单纯增大模型规模）可以带来显著的性能提升。这对整个 Agent 研究社区都有激励作用。\n\n### 五、设计启示\n\n1. **资源约束应该内置于搜索算法，而非作为后处理**：MARS 将计算成本作为 MCTS 选择函数的一阶项，而非在搜索后裁剪。这让系统在学习过程中就学会效率优先。\n\n2. **模块化是处理复杂 ML 研究任务的关键**：单体脚本在面对需要多模块协同的竞赛任务时极其脆弱。模块化让系统可以独立测试和替换组件，大大提高了鲁棒性。\n\n3. **比较而非记录，是反思的核心**：传统 lesson logging 记录\"what happened\"，比较反思记忆分析\"what differed and why\"。后者提炼的因果洞见远比前者更有迁移价值。\n\n4. **\"Aha! moments\"是可设计的**：系统展现出 63% 的跨分支洞见转移率，说明通过适当的记忆结构和搜索策略，可以主动创造 Agent 的顿悟时刻。\n\n### 六、批判性分析\n\n**强项**：\n- 三个 Pillars 都有 ablative 验证，不是凭空设计\n- MLE-Bench 是当前最全面的 AI 研究自动化 benchmark，结果可信\n- 资源约束下的效率对比设计合理，结论有说服力\n- 开源代码和 grade reports 提供了完全的复现性\n\n**局限**：\n- 目前只验证了 ML 工程任务（Kaggle 竞赛），泛化到更开放的科学研究（如 hypothesis generation）需要进一步验证\n- Budget-Aware MCTS 的超参数（cost penalty weight）对不同任务类型可能敏感，缺乏敏感性分析\n- 跨分支 lesson transfer 的机制没有完全解释——为什么比较反思记忆能产生这种效果？\n\n**待探索**：\n- 如何将\"比较反思\"的思想迁移到非 ML 的研究任务（如文献综述、实验设计）？\n- Budget-Aware MCTS 是否可以与 test-time compute scaling 技术结合？",
+    "excerpt": "来源：records/20260505/09/five-gojo-2128/论文总结.md · 标题 : MARS: Modular Agent with Reflective Search for Automated AI Research",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260505/09/five-gojo-2128",
+    "original_url": "https://arxiv.org/abs/2602.02660",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-05-03 13:00",
+    "title": "论文总结",
+    "content": "## 基本信息\n\n| 项目 | 内容 |\n|------|------|\n| **标题** | The effect of ChatGPT on students' learning performance, learning perception, and higher-order thinking: insights from a meta-analysis |\n| **作者** | Jin Wang, Wenxiang Fan |\n| **发表期刊** | Humanities and Social Sciences Communications |\n| **发表年份** | 2025 |\n| **撤稿日期** | 2026年4月22日 |\n| **撤稿原因** | 数据提取错误、报告不一致、分析方法问题，作者未回应期刊联系 |\n| **质疑来源** | Sciety Labs |\n\n---\n\n## 研究概述\n\n### 研究目的\n该研究旨在通过元分析方法，系统评估ChatGPT对学生学习效果、学习感知及高阶思维的影响。\n\n### 研究范围\n- **学习绩效（Learning Performance）**：评估ChatGPT辅助学习对学生学业成绩的量化影响\n- **学习感知（Learning Perception）**：考察学生对使用ChatGPT学习的主观态度和体验\n- **高阶思维（Higher-order Thinking）**：分析ChatGPT对批判性思维、问题解决等高阶认知能力的作用\n\n### 预期贡献\n- 为AI辅助教育提供循证依据\n- 识别ChatGPT在不同教育场景中的有效性\n- 为教育政策制定和教学实践提供参考\n\n---\n\n## 撤稿经过\n\n### 时间线\n1. **2025年**：论文发表在Humanities and Social Sciences Communications\n2. **2026年初**：Sciety Labs对该研究提出质疑\n3. **2026年4月22日**：期刊正式发出撤稿通知\n\n### 撤稿原因详情\n\n#### 1. 数据提取错误（Data Extraction Errors）\n- 元分析中纳入的研究数据可能被错误提取\n- 效应量（effect size）计算可能存在偏差\n- 原始研究与报告数据之间存在不一致\n\n#### 2. 报告不一致（Reporting Inconsistencies）\n- 论文报告的结果与纳入研究的原始数据不符\n- 统计指标在不同位置出现矛盾\n- 样本量、效应量等信息存在报告错误\n\n#### 3. 分析方法问题（Methodological Issues）\n- 元分析的具体方法存在缺陷\n- 异质性（heterogeneity）处理可能不当\n- 潜在的发表偏倚（publication bias）未妥善处理\n\n#### 4. 作者不回应（Authors Non-responsive）\n- 期刊联系作者寻求解释时，作者未予回应\n- 无法通过沟通澄清或纠正已发现的问题\n- 这一行为本身也涉及学术伦理问题\n\n---\n\n## 元分析研究框架\n\n### 标准元分析流程（该研究本应遵循）\n\n```\n文献检索 → 筛选 → 数据提取 → 质量评估 → 效应量计算 → 异质性分析 → 出版偏倚检验 → 亚组分析 → 结论\n```\n\n### 该研究在各环节的问题\n\n| 环节 | 预期标准 | 报告问题 |\n|------|----------|----------|\n| 文献检索 | 多数据库系统检索，含检索式 | 检索策略可能不充分 |\n| 筛选 | 明确纳入/排除标准，双人独立筛选 | 筛选过程不透明 |\n| 数据提取 | 双人独立提取，含提取协议 | 提取错误率较高 |\n| 质量评估 | 使用标准量表（如Cochrane RoB） | 评估可能不完整 |\n| 效应量计算 | 统一效应量指标（如Hedges' g） | 计算方法存疑 |\n| 异质性分析 | I²统计量，Q检验 | 异质性处理不当 |\n| 出版偏倚 | 漏斗图，Egger's检验 | 未充分报告 |\n\n---\n\n## 学术价值评估\n\n### 原始预期价值\n- 作为较早的AI教育元分析，具有先发优势\n- 试图为新兴领域提供系统性综述\n- 关注高阶思维这一深层学习指标\n\n### 撤稿后的价值损失\n- **可靠性**：数据错误导致结论不可信\n- **可重复性**：方法论问题使重复验证困难\n- **引用影响**：已被引用的结论可能误导后续研究\n- **领域进展**：AI+教育元分析文献库受到污染\n\n### 学术价值评分：2/10\n\n**理由**：尽管选题具有前瞻性，但数据和方法论的严重问题使研究完全丧失可信度。撤稿是该研究应有的归宿。\n\n---\n\n## 相关跟进\n\n### 期刊态度\n- 期刊遵循撤稿流程，于2026年4月22日正式撤稿\n- 在撤稿通知中明确说明了撤稿原因\n- 体现了学术出版对研究诚信的维护\n\n### 后续建议\n- 领域内需要更可靠的系统性综述来填补这一空白\n- 未来的元分析应更严格遵循PRISMA指南\n- 编辑部应加强数据代码共享和开放科学实践\n\n---\n\n## 附录：关键术语\n\n- **效应量（Effect Size）**：衡量干预效果大小的统计指标\n- **异质性（Heterogeneity）**：元分析中不同研究间结果的变异程度\n- **发表偏倚（Publication Bias）**：阳性结果更容易发表的倾向\n- **PRISMA**：系统评价和元分析优先报告条目\n- **Hedges' g**：一种经过小样本校正的效应量指标",
+    "excerpt": "来源：records/20260503/13/yersis-retraction/论文总结.md · | 项目 | 内容 |",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260503/13/yersis-retraction",
+    "original_url": "",
+    "original_label": "",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-05-03 09:00",
     "title": "Supporting Co-Adaptive Machine Teaching through Human Concept Learning and Cognitive Theories",

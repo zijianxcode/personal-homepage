@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HCI</title>
-    <meta name="description" content="基于关键词自动归类的人机交互与协作研究。 共 78 条。">
+    <meta name="description" content="基于关键词自动归类的人机交互与协作研究。 共 79 条。">
     <meta property="og:title" content="HCI - 研究所">
-    <meta property="og:description" content="基于关键词自动归类的人机交互与协作研究。 共 78 条。">
+    <meta property="og:description" content="基于关键词自动归类的人机交互与协作研究。 共 79 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -27,7 +27,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">HCI</h1>
-        <p class="sidebar-summary">基于关键词自动归类的人机交互与协作研究。 共 78 条。</p>
+        <p class="sidebar-summary">基于关键词自动归类的人机交互与协作研究。 共 79 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -45,7 +45,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>HCI</strong>
-                <span>基于关键词自动归类的人机交互与协作研究。 共 78 条。</span>
+                <span>基于关键词自动归类的人机交互与协作研究。 共 79 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -74,8 +74,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "HCI", "subtitle": "基于关键词自动归类的人机交互与协作研究。 共 78 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "HCI", "subtitle": "基于关键词自动归类的人机交互与协作研究。 共 79 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-05-05 09:00",
+    "title": "Cocoa: Co-Planning and Co-Execution with AI Agents",
+    "content": "**来源/URL**: https://arxiv.org/abs/2412.10999（CHI 2026 Best Paper Award）\n**日期**: CHI 2026（2024年12月预印本，2026年正式发表）\n**领域标签**: 人机交互 | AI Agent | Human-AI Collaboration | 科学工作流 | 交互设计 | CHI最佳论文\n\n---\n\n## 综合评分：9/10\n\n**跨域洞察**（极强）：本文横跨人机交互（HCI）、人工智能（agentic AI）、科学研究方法论三个领域，用一个精妙的交互设计弥合了\"AI能力\"与\"人类控制\"之间的根本张力。它不只在谈AI辅助科研，而是从科学家的实际工作流程出发，重新设计了人与AI协作的交互范式。\n\n**第一性与框架指引性**（极强）：本文提出了\"交互式计划\"（interactive plans）这一全新的交互设计模式，将\"联合规划\"（co-planning）与\"联合执行\"（co-execution）整合在文档编辑器中。这是一个此前人机交互研究没有正面回答过的问题——如何在长时、多阶段的AI agent任务中让人类保持实质性控制？\n\n**启发性**（极强）：三个核心设计原则（协作式计划、协作式执行、交错式计划-执行）既是描述性的也是处方性的。对于任何构建人类-AI协作系统的人来说，这些都是可以直接使用的设计指南。\n\n**防坑**：非综述，非buzzword，是有真实用户研究和系统实现的工作。数据扎实（formative study 9人 + lab study 16人 + 一周field deployment 7人），不是同质化论文。\n\n---\n\n## 正文\n\n### 一、问题识别（当前AI Agent交互的根本缺陷）\n\n当前AI agent系统在处理长时、复杂任务时，限制用户只能在\"预览AI计划\"或\"等待AI完成\"之间选择。传统的\"AI助手\"模式要么是AI全自主执行后给用户看结果，要么是用户在每一步都要手动介入。这种二元对立导致：用户既无法在规划阶段有效介入，又无法在执行过程中保持控制。\n\n科学家在使用AI辅助研究时面临的挑战尤为突出——他们需要AI帮助处理文献、代码、实验设计等复杂工作，但现有的聊天界面无法支持\"我先看看你打算怎么做、然后决定哪些我自己做、哪些交给你、执行过程中我可以随时调整\"这种灵活的协作模式。\n\n### 二、理论核心（交互式计划的三种协作模式）\n\n**协作式计划（Co-planning）**：当用户在文档中调用AI agent时，agent不是直接开始执行，而是首先在文档中生成一个可交互的行动计划。这个计划是公开的、可编辑的——用户可以修改每个步骤、添加新步骤，并决定每一步由自己执行还是由agent执行。这打破了传统\"AI执行、人类审阅\"的单向范式。\n\n**协作式执行（Co-execution）**：借鉴计算笔记本（computational notebooks）的设计思想，Cocoa允许用户和agent共同完成计划中的步骤。用户可以交互式地精化agent的中间输出，也可以手动接管步骤，将工作流程导向更理想的方向。\n\n**交错式计划-执行（Interleaving）**：这是Cocoa最重要的创新——用户可以在规划与执行之间自由切换，根据执行输出调整计划，或根据计划变化调整执行。这种交错的、双向的协作模式，比传统的\"先规划后执行\"或\"边执行边微调\"都更灵活。\n\n### 三、为什么现有系统不够用\n\n现有系统（ChatGPT plugin、Code Interpreter等）主要支持两种模式：（1）AI全自主执行，用户事后审阅；（2）用户在每一步都手动输入指令。这两种模式都无法支持\"委托部分工作给AI，同时保持对整体方向的把控\"这一科学家真正需要的工作方式。\n\nCocoa通过将\"计划\"本身变成一个可协作的、存在于文档中的对象，解决了这一问题。计划不再是AI内部的黑箱，而是用户和AI共同编辑、可见、可修改的工作蓝图。\n\n### 四、用户研究：三种验证层次\n\n**Formative Study（9人）**：了解研究员如何使用AI辅助工作的真实需求。发现核心需求：（1）能够委托子任务给AI；（2）能够在规划阶段调整AI策略；（3）能够在执行过程中保持控制。\n\n**Lab Study（16人）**：与强基线聊天界面相比，Cocoa显著提升了agent可操控性（steerability），同时不损失易用性。用户能够更精确地引导AI完成复杂研究任务。\n\n**Field Deployment（7人，一周）**：在真实研究场景中，研究员高度评价\"在计划中明确分配工作给用户和agent\"的功能，以及\"交错式联合规划与联合执行\"模式的价值。\n\n### 五、设计启示\n\nCocoa的设计启示是：未来的人类-AI协作系统，需要将\"计划\"作为用户与AI之间的共享媒介，而不是将用户排除在AI内部推理过程之外。透明度不是靠\"让用户看AI在想什么\"来实现的，而是靠\"让用户能够影响AI的计划和执行\"来实现的。\n\n这一洞见对整个人-AI协作领域都有深远的意义——不只是科学研究，任何需要AI处理长时、复杂、多步骤任务的专业场景（如法律分析、医疗诊断、工程设计）都可以借鉴这一模式。",
+    "excerpt": "来源：records/20260505/09/yujin-9502/论文总结.md · 标题 : Cocoa: Co Planning and Co Execution with AI Agents",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260505/09/yujin-9502",
+    "original_url": "https://arxiv.org/abs/2412.10999（CHI",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-05-03 09:00",
     "title": "Sapiens2: High-Fidelity Human-Centric Vision at Scale",
