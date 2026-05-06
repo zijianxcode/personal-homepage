@@ -14,15 +14,31 @@ function assert(condition, message) {
 }
 
 const index = read("index.html");
+const hciEntryPosition = index.indexOf('href="things-hci-prototyping.html?v=20260507-hci-permit"');
 const aiEntryPosition = index.indexOf('data-permit-resource="ai-innovative-design"');
 const digitalEntryPosition = index.indexOf('data-permit-resource="things"');
 
+assert(hciEntryPosition !== -1, "Things 首页缺少 HCI 入口链接");
 assert(aiEntryPosition !== -1, "Things 首页缺少 ai-innovative-design 入口资源标记");
 assert(digitalEntryPosition !== -1, "Things 首页缺少原数字与体验资源标记");
+assert(hciEntryPosition < aiEntryPosition, "新 HCI 入口需要排在 AI 入口前面");
 assert(aiEntryPosition < digitalEntryPosition, "新入口需要排在数字与体验前面");
+assert(index.includes("人机交互与原型设计"), "新入口缺少中文标题");
+assert(
+  index.includes("HCI &amp; PROTOTYPING") || index.includes("Human-Computer Interaction &amp; Prototyping"),
+  "新入口缺少英文副标题"
+);
+assert(index.includes("2026.5 讲义内容"), "新入口缺少 2026.5 讲义内容");
 assert(index.includes("人工智能与创新设计"), "新入口缺少中文标题");
 assert(index.includes("AI &amp; Innovative"), "新入口缺少英文副标题");
 assert(index.includes("2026.4 讲义内容"), "新入口缺少 2026.4 讲义内容");
+
+const hciPagePath = path.join(root, "things-hci-prototyping.html");
+assert(fs.existsSync(hciPagePath), "缺少人机交互与原型设计受限子页面");
+const hciPage = read("things-hci-prototyping.html");
+assert(hciPage.includes("人机交互与原型设计"), "HCI 子页面缺少标题");
+assert(hciPage.includes("20260507"), "HCI 子页面缺少访问码配置");
+assert(hciPage.includes("课程预告"), "HCI 子页面缺少课程预告链接名称");
 
 const aiPagePath = path.join(root, "things-ai-innovative-design.html");
 assert(fs.existsSync(aiPagePath), "缺少人工智能与创新设计受限子页面");
@@ -59,6 +75,7 @@ const forbiddenValues = (process.env.FORBIDDEN_STRINGS || "")
 if (forbiddenValues.length > 0) {
   const filesToScan = [
     "index.html",
+    "things-hci-prototyping.html",
     "things-ai-innovative-design.html",
     "things-digital-experience.html",
     "Assets/js/script.js",

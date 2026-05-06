@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>人机交互与原型设计 | aspera ad astra</title>
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Assets/css/style.css">
+    <style>
+        .things-subpage-wrap {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 48px 24px 72px;
+        }
+
+        .things-subpage-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 28px;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .things-subpage-back:hover {
+            opacity: 1;
+            color: var(--text);
+        }
+
+        .things-subpage-note {
+            margin-bottom: 20px;
+            font-size: 13px;
+            color: var(--text-muted);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .things-link--state {
+            justify-content: center;
+            color: var(--text-muted);
+            cursor: default;
+        }
+    </style>
+</head>
+<body
+    data-things-context="HCI &amp; Prototyping"
+>
+    <main class="things-subpage-wrap">
+        <a class="things-subpage-back" href="index.html#things">← 返回首页</a>
+        <section class="things-section">
+            <h1 class="things-title">人机交互与原型设计</h1>
+            <p class="things-subpage-note" id="things-status">请输入许可代码后查看内容。</p>
+            <div class="things-list" id="things-list">
+                <div class="things-link things-link--state">内容加载中...</div>
+            </div>
+        </section>
+    </main>
+
+    <script src="Assets/js/config.js"></script>
+    <script src="Assets/js/analytics.js?v=20260319-cloudbase-uv"></script>
+    <script src="Assets/js/permit-modal.js?v=20260413-things-multi-resource"></script>
+    <script>
+        (function () {
+            'use strict';
+
+            var PERMIT_CODE = '20260507';
+            var contentItems = [
+                {
+                    name: '课程预告',
+                    url: 'https://my.feishu.cn/file/CBamb2sejorT7sxKppschaKXnig'
+                }
+            ];
+
+            function escapeHtml(value) {
+                var div = document.createElement('div');
+                div.textContent = value == null ? '' : String(value);
+                return div.innerHTML;
+            }
+
+            function setStatus(message) {
+                var note = document.getElementById('things-status');
+                if (note) note.textContent = message;
+            }
+
+            function renderItems(items) {
+                var list = document.getElementById('things-list');
+                if (!list) return;
+
+                list.innerHTML = '';
+                items.forEach(function (item) {
+                    var anchor = document.createElement('a');
+                    anchor.className = 'things-link';
+                    anchor.href = item.url;
+                    anchor.target = '_blank';
+                    anchor.rel = 'noopener noreferrer';
+                    anchor.innerHTML =
+                        '<span class="things-link-name">' + escapeHtml(item.name) + '</span>' +
+                        '<span class="things-link-arrow">→</span>';
+                    list.appendChild(anchor);
+                });
+            }
+
+            function promptCode() {
+                if (!window.PermitCodeModal || !window.PermitCodeModal.openPermitCodeModal) return;
+
+                window.PermitCodeModal.openPermitCodeModal({
+                    contextLabel: 'HCI & Prototyping',
+                    contextIndex: '03',
+                    title: '许可代码',
+                    description: '输入许可代码后继续访问人机交互与原型设计。',
+                    placeholder: '代码为本节课的开课日期',
+                    errorMessage: '许可代码错误，请重试。',
+                    validate: function (value) {
+                        return {
+                            ok: value === PERMIT_CODE
+                        };
+                    },
+                    onSuccess: function () {
+                        renderItems(contentItems);
+                        setStatus('已通过许可代码验证，以下为内容入口。');
+                    },
+                    onCancel: function () {
+                        window.location.replace('index.html#things');
+                    }
+                });
+            }
+
+            document.addEventListener('DOMContentLoaded', function () {
+                setStatus('请输入许可代码后查看内容。');
+                promptCode();
+            });
+        })();
+    </script>
+</body>
+</html>
