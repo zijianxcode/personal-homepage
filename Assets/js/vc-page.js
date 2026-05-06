@@ -26,7 +26,10 @@
         this.ctx = this.canvas.getContext('2d');
         this.particles = [];
         this.animId = null;
-        this.dpr = Math.min(window.devicePixelRatio || 1, 2);
+        this.resizeFrame = null;
+        this.frameCount = 0;
+        this.isCoarsePointer = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+        this.dpr = 1;
 
         this.resize();
         this.createParticles();
@@ -37,6 +40,8 @@
     ParticleBackground.prototype.resize = function () {
         this.width = window.innerWidth;
         this.height = window.innerHeight;
+        this.isMobile = this.width < PARTICLE_CONFIG.MOBILE_BREAKPOINT;
+        this.dpr = Math.min(window.devicePixelRatio || 1, this.isMobile ? 1.5 : 2);
         this.canvas.width = this.width * this.dpr;
         this.canvas.height = this.height * this.dpr;
         this.canvas.style.width = this.width + 'px';
@@ -65,22 +70,34 @@
     ParticleBackground.prototype.bindEvents = function () {
         var self = this;
         window.addEventListener('resize', function () {
-            self.resize();
-            self.createParticles();
+            if (self.resizeFrame) return;
+            self.resizeFrame = requestAnimationFrame(function () {
+                self.resizeFrame = null;
+                self.resize();
+                self.createParticles();
+            });
         });
-        window.addEventListener('mousemove', function (e) {
-            mouse.x = e.clientX;
-            mouse.y = e.clientY;
-        });
-        window.addEventListener('mouseleave', function () {
-            mouse.x = -9999;
-            mouse.y = -9999;
-        });
+        if (!this.isCoarsePointer) {
+            window.addEventListener('mousemove', function (e) {
+                mouse.x = e.clientX;
+                mouse.y = e.clientY;
+            });
+            window.addEventListener('mouseleave', function () {
+                mouse.x = -9999;
+                mouse.y = -9999;
+            });
+        }
     };
 
     ParticleBackground.prototype.animate = function () {
         var self = this;
         if (!isPageVisible) {
+            this.animId = window.setTimeout(function () { self.animate(); }, 250);
+            return;
+        }
+
+        this.frameCount++;
+        if (this.isMobile && this.frameCount % 2 !== 0) {
             this.animId = requestAnimationFrame(function () { self.animate(); });
             return;
         }

@@ -1,5 +1,15 @@
 # Changelog
 
+## v1.5 — 2026-05-06
+
+- 建立主站移动端体验基线，覆盖首页、`research.html`、`visual-coding.html`、`experimental-project.html`、项目详情页、`academy/` 和 `time-ink/`。
+- 优化小屏布局密度：统一移动端边距、提高卡片间距、修复项目卡片英文断词、调整详情页标题与正文在手机端的自然换行。
+- Things 入口卡片在移动端保持单列可读，卡片内部留白、标题断行和点击区域更稳定。
+- 所有主要入口、返回、语言切换、GitHub / 体验按钮、许可弹窗按钮补齐 `focus-visible`、`:active` 和不小于 44px 的触控区域。
+- 保留粒子背景、hover、标题扭曲等视觉动效，同时加入可见性暂停、resize 防抖、移动端低 DPR 限制和离屏降耗。
+- 给 Visual Coding iframe 预览增加 `loading="lazy"`，减少移动端首屏资源竞争。
+- 补充移动端适配规范：后续新增页面必须沿用 20px 移动边距、舒展卡片间距、触控反馈、单列优先和动效降耗逻辑。
+
 ## v1.4 — 2026-04-26
 
 - `Experimental Project` 新增 `003 / Paper Card` 项目卡片，并调整项目排序为最新项目在前。

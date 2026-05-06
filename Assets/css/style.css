@@ -10,6 +10,10 @@
     --text-light: rgba(255, 255, 255, 0.25);
     --border: rgba(255, 255, 255, 0.1);
     --header-height: 64px;
+    --mobile-page-padding: 20px;
+    --mobile-card-gap: 34px;
+    --mobile-section-gap: 48px;
+    --touch-target: 44px;
 }
 
 /* ============================================
@@ -73,6 +77,15 @@ a:hover {
     opacity: 0.6;
 }
 
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 1px solid rgba(255, 255, 255, 0.72);
+    outline-offset: 4px;
+}
+
 ::selection {
     background: rgba(255, 255, 255, 0.15);
     color: var(--text);
@@ -108,6 +121,9 @@ a:hover {
     color: var(--text-muted);
     text-decoration: none;
     transition: color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--touch-target);
 }
 
 .nav-link:hover {
@@ -139,7 +155,9 @@ a:hover {
     background: none;
     border: none;
     cursor: pointer;
-    padding: 2px 4px;
+    min-width: 34px;
+    min-height: var(--touch-target);
+    padding: 2px 6px;
     letter-spacing: 0.03em;
     transition: color 0.3s ease;
 }
@@ -165,6 +183,9 @@ a:hover {
     font-weight: 400;
     color: var(--text);
     text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--touch-target);
 }
 
 .brand-name:hover {
@@ -651,6 +672,14 @@ a:hover {
     border-top: 1px solid var(--border);
 }
 
+.info-section,
+.research-list,
+.vc-grid-section,
+.exp-detail-body {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 720px;
+}
+
 .section-label {
     font-size: 18px;
     font-weight: 400;
@@ -1091,6 +1120,11 @@ a:hover {
     font-size: 24px;
     line-height: 1;
     cursor: pointer;
+    width: var(--touch-target);
+    height: var(--touch-target);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     transition: color 0.2s ease, opacity 0.2s ease;
 }
 
@@ -1202,6 +1236,7 @@ a:hover {
 
 .permit-modal-btn {
     min-width: 96px;
+    min-height: var(--touch-target);
     padding: 10px 18px;
     border: 1px solid var(--border);
     background: transparent;
@@ -1215,6 +1250,14 @@ a:hover {
 .permit-modal-btn:hover {
     opacity: 1;
     border-color: rgba(255, 255, 255, 0.34);
+}
+
+.permit-modal-btn:active,
+.things-entry-block:active,
+.work-item:active,
+.vc-card:active,
+.exp-detail-link:active {
+    transform: translateY(1px);
 }
 
 .permit-modal-btn--primary {
@@ -1253,7 +1296,7 @@ a:hover {
 
 @media (max-width: 768px) {
     .site-header {
-        padding: 0 20px;
+        padding: 0 max(var(--mobile-page-padding), env(safe-area-inset-right)) 0 max(var(--mobile-page-padding), env(safe-area-inset-left));
         height: 56px;
     }
 
@@ -1282,7 +1325,7 @@ a:hover {
     }
 
     .work-hero {
-        padding: 32px 20px 32px;
+        padding: 32px var(--mobile-page-padding) 36px;
     }
 
     .hero-bio {
@@ -1291,21 +1334,21 @@ a:hover {
     }
 
     .work-list {
-        padding: 0 20px 80px;
+        padding: 0 var(--mobile-page-padding) 88px;
     }
 
     .things-section {
-        padding: 32px 20px 48px;
+        padding: 36px var(--mobile-page-padding) 64px;
     }
 
     .things-entry-grid {
         grid-template-columns: 1fr;
-        gap: 0;
+        gap: var(--mobile-card-gap);
     }
 
     .things-entry-block {
-        gap: 24px;
-        padding: 20px 0 22px;
+        gap: 28px;
+        padding: 26px 0 30px;
     }
 
     .things-entry-grid .things-entry-block {
@@ -1313,16 +1356,23 @@ a:hover {
     }
 
     .things-entry-block + .things-entry-block {
-        margin-top: 22px;
+        margin-top: var(--mobile-card-gap);
     }
 
     .things-entry-grid .things-entry-block + .things-entry-block {
-        margin-top: 22px;
+        margin-top: 0;
     }
 
     .things-entry-topline,
     .things-entry-footer {
         gap: 12px;
+    }
+
+    .things-entry-topline {
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        gap: 8px;
     }
 
     .things-entry-label {
@@ -1331,10 +1381,21 @@ a:hover {
 
     .things-entry-label--meta {
         display: inline;
+        max-width: 100%;
+        font-size: 11px;
+        line-height: 1.4;
     }
 
     .things-entry-name {
-        font-size: 28.5px;
+        font-size: 30px;
+        line-height: 1.08;
+    }
+
+    .things-entry-name-en {
+        display: block;
+        margin-top: 6px;
+        font-size: 0.88em;
+        letter-spacing: -0.02em;
     }
 
     .things-entry-desc {
@@ -1348,11 +1409,13 @@ a:hover {
     }
 
     .permit-modal-overlay {
-        padding: 18px;
+        padding: max(18px, env(safe-area-inset-top)) max(18px, env(safe-area-inset-right)) max(18px, env(safe-area-inset-bottom)) max(18px, env(safe-area-inset-left));
     }
 
     .permit-modal-dialog {
         padding: 24px 20px 20px;
+        max-height: calc(100vh - 36px);
+        overflow-y: auto;
     }
 
     .permit-modal-dialog::after {
@@ -1387,7 +1450,8 @@ a:hover {
 
     .permit-modal-btn {
         min-width: 84px;
-        padding: 10px 14px;
+        min-height: var(--touch-target);
+        padding: 10px 16px;
     }
 
     .work-name {
@@ -1403,13 +1467,13 @@ a:hover {
     }
 
     .info-hero {
-        padding: 48px 20px 0;
+        padding: 48px var(--mobile-page-padding) 0;
     }
 
     .info-top {
         flex-direction: column;
         gap: 40px;
-        padding: 32px 20px 48px;
+        padding: 32px var(--mobile-page-padding) 48px;
     }
 
     .info-bio p {
@@ -1421,7 +1485,7 @@ a:hover {
     }
 
     .info-section {
-        padding: 36px 20px;
+        padding: 40px var(--mobile-page-padding);
     }
 
     .exp-item {
@@ -1527,7 +1591,9 @@ a:hover {
     font-weight: 400;
     color: var(--text-muted);
     text-decoration: none;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--touch-target);
     margin-bottom: 24px;
     transition: color 0.3s ease;
     letter-spacing: 0.01em;
@@ -1706,8 +1772,8 @@ a:hover {
 .vc-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    column-gap: 8px;
-    row-gap: 22px;
+    column-gap: clamp(10px, 1vw, 18px);
+    row-gap: clamp(24px, 2.2vw, 36px);
 }
 
 .vc-grid:empty {
@@ -1857,6 +1923,9 @@ a:hover {
     letter-spacing: -0.018em;
     color: rgba(255, 255, 255, 0.93);
     text-wrap: balance;
+    word-break: normal;
+    overflow-wrap: normal;
+    hyphens: none;
     text-rendering: optimizeLegibility;
     font-feature-settings: "liga" 1, "kern" 1;
     position: relative;
@@ -1927,6 +1996,7 @@ a:hover {
     display: inline-flex;
     align-items: baseline;
     vertical-align: baseline;
+    white-space: nowrap;
 }
 
 .exp-card-note.lang-cn {
@@ -2044,6 +2114,7 @@ a:hover {
     position: relative;
     overflow: hidden;
     isolation: isolate;
+    min-height: var(--touch-target);
     padding: 13px 18px;
     border: 1px solid rgba(255, 255, 255, 0.18);
     border-radius: 999px;
@@ -2186,9 +2257,10 @@ a:hover {
     }
 
     .exp-card-note {
-        max-width: 14ch;
-        font-size: clamp(20px, 5vw, 24px);
-        line-height: 1.2;
+        max-width: 16.5ch;
+        font-size: clamp(19px, 4.6vw, 23px);
+        line-height: 1.32;
+        text-wrap: pretty;
     }
 
     .exp-card-note.lang-cn {
@@ -2229,10 +2301,19 @@ a:hover {
         padding: 0 20px 96px;
     }
 
+    .exp-detail-title {
+        white-space: normal;
+        font-size: clamp(34px, 10vw, 58px);
+        line-height: 1.04;
+        letter-spacing: -0.02em;
+        text-wrap: balance;
+    }
+
     .exp-detail-subtitle {
         width: auto;
-        max-width: 100%;
+        max-width: min(100%, 32ch);
         margin-left: 0;
+        overflow-wrap: break-word;
     }
 
     .exp-detail-actions {
@@ -2242,6 +2323,8 @@ a:hover {
 
     .exp-detail-link {
         width: auto;
+        max-width: 100%;
+        justify-content: center;
     }
 
     .exp-detail-grid {
@@ -2255,6 +2338,7 @@ a:hover {
 
     .exp-detail-figure {
         margin-top: 40px;
+        margin-left: 0;
         padding-left: 0;
     }
 }
@@ -2340,20 +2424,29 @@ a:hover {
     }
 
     .vc-grid-section {
-        padding: 0 20px 80px;
+        padding: 0 20px 88px;
     }
 
     .vc-grid {
         grid-template-columns: repeat(2, 1fr);
-        column-gap: 8px;
-        row-gap: 18px;
+        column-gap: 14px;
+        row-gap: 28px;
     }
 
     .vc-page--experimental .hero-bio {
-        max-width: 100%;
+        max-width: min(100%, 36ch);
         font-size: 15px;
         line-height: 1.76;
         font-weight: 300;
+        overflow-wrap: break-word;
+    }
+
+    .vc-title {
+        max-width: 100%;
+        font-size: clamp(28px, 9vw, 46px);
+        line-height: 1.08;
+        letter-spacing: 0.035em;
+        overflow-wrap: anywhere;
     }
 
     .research-list {
@@ -2369,9 +2462,43 @@ a:hover {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
     .vc-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1px;
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .vc-card-info {
+        padding-bottom: 0;
+    }
+
+    .exp-card .vc-card-media {
+        min-height: 280px;
+        padding: 24px 24px 20px;
+    }
+
+    .exp-card-note {
+        max-width: 18ch;
+        font-size: 22px;
+        line-height: 1.34;
+    }
+
+    .exp-card-note.lang-cn {
+        max-width: 12em;
+        font-size: 19px;
+        line-height: 1.6;
+    }
+
+    .exp-detail-actions {
+        align-items: stretch;
+    }
+
+    .exp-detail-link {
+        width: 100%;
+    }
+
+    .exp-detail-content p {
+        font-size: 16px;
+        line-height: 1.9;
     }
 }

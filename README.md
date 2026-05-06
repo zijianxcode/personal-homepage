@@ -6,12 +6,12 @@ Static personal homepage (Work / Info / Things). Dark theme, particle background
 
 ## Latest Update
 
-Updated on 2026-04-26 (`v1.4`):
-- Added `003 / Paper Card` to `Experimental Project` and reordered project cards so the newest work appears first
-- Published a full `Paper Card` project detail page with localized case-study assets and GitHub entry
-- Refined experimental project typography toward a more editorial / portfolio-like reading feel
-- Added a hover warp interaction to project-card headlines and fixed word-breaking behavior for English titles
-- Continued polishing the `Paper Card` detail layout, including a framed content body against the dark site background
+Updated on 2026-05-06 (`v1.5`):
+- Added a mobile UX baseline across the main site, project pages, `academy/`, and `time-ink/`
+- Improved responsive spacing, card gaps, title wrapping, and button touch targets for small screens
+- Kept particle and hover effects while reducing mobile runtime cost through visibility-aware animation loops
+- Added lazy iframe loading and stronger focus / active states for keyboard and touch interaction
+- Documented the mobile adaptation rules so future updates follow the same responsive logic
 
 ## Run locally
 
@@ -114,6 +114,7 @@ TCB_ENV_ID='homepage-1gthisc4771d43ac' \
 - **Typography**: Libre Baskerville（衬线主体）+ Inter（UI/导航），`clamp()` 响应式字号
 - **Color**: 深色优先，背景 `#0a0a0a`，文字 `#ffffff`，辅助文字 `rgba(255,255,255,0.45)`
 - **Layout**: 桌面 60px 边距，移动端 20px 边距，响应断点 768px / 480px
+- **Mobile Baseline**: 手机端优先保证单列可读、卡片间距舒展、按钮触控区不小于 44px，hover 效果必须有 touch / active 等价反馈
 - **Motion**: 有目的的动画 — 引导注意力、提供反馈、建立空间关系
 - **Language**: 中/英双语，通过 `data-lang` 属性切换，CSS 控制显隐
 
@@ -124,6 +125,7 @@ TCB_ENV_ID='homepage-1gthisc4771d43ac' \
 - 移动优先响应式设计
 - Canvas 用于粒子系统和生成式视觉
 - 独立实验使用单 HTML 文件
+- 移动端适配不删除既有视觉动效；优先降低离屏、隐藏页、resize 和高 DPR 场景下的无效计算
 
 ## Naming
 
