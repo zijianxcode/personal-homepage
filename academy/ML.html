@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ML</title>
-    <meta name="description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 91 条。">
+    <meta name="description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 93 条。">
     <meta property="og:title" content="ML - 研究所">
-    <meta property="og:description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 91 条。">
+    <meta property="og:description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 93 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -27,7 +27,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">ML</h1>
-        <p class="sidebar-summary">基于关键词自动归类的训练、优化与模型方法研究。 共 91 条。</p>
+        <p class="sidebar-summary">基于关键词自动归类的训练、优化与模型方法研究。 共 93 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -45,7 +45,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>ML</strong>
-                <span>基于关键词自动归类的训练、优化与模型方法研究。 共 91 条。</span>
+                <span>基于关键词自动归类的训练、优化与模型方法研究。 共 93 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -74,8 +74,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "ML", "subtitle": "基于关键词自动归类的训练、优化与模型方法研究。 共 91 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "ML", "subtitle": "基于关键词自动归类的训练、优化与模型方法研究。 共 93 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-05-06 09:00",
+    "title": "User-Driven Value Alignment: Understanding Users' Perceptions and Strategies for Addressing Biased and Discriminatory Statements in AI Companions",
+    "content": "**论文信息**\n- 作者：Xianzhe Fan, Qing Xiao, Xuhui Zhou, Jiaxin Pei, Maarten Sap, Zhicong Lu, Hong Shen（斯坦福大学、卡内基梅隆大学、香港城市大学、清华大学）\n- 来源：CHI 2025（Best Paper Award）\n- arXiv：2409.00862\n\n---\n\n## 一、研究问题与背景\n\n大型语言模型（LLM）驱动的 AI 伴侣正被用户视为朋友、恋人甚至家庭成员，形成深度情感依附。然而，这些 AI 系统会生成带有偏见、歧视性和有害的输出，强化既有社会刻板印象，并对边缘化群体造成心理伤害。传统的价值对齐（value alignment）主要由开发者自上而下驱动——通过预训练数据筛选、RLHF、DPO 等技术将人类价值观嵌入模型。然而，本文指出：这种开发者主导的对齐方式无法预见和容纳用户在日常场景中遇到的各种偏见。\n\n本文提出并探索**用户驱动的价值对齐（User-Driven Value Alignment）**概念——用户主动识别、挑战并尝试纠正 AI 输出中他们认为有害的内容，引导 AI 更好地反映其价值观。这是一种自下而上的对齐新范式，将对齐的主动权从开发者移交给最终用户。\n\n---\n\n## 二、研究方法\n\n研究采用混合方法：\n1. **社交媒体数据分析**：从 Reddit、TikTok、小红书、豆瓣、百度贴吧、微博、知乎等七个平台收集了 77 条关于 AI 伴侣歧视性言论的用户投诉帖子\n2. **半结构化深度访谈**：对 20 名有丰富 AI 伴侣使用和对齐经验的用户进行 1-2 小时访谈，包含回忆任务和\"出声思考\"练习\n3. **反思性主题分析**（Reflexive Thematic Analysis）用于编码分析\n\n---\n\n## 三、核心发现\n\n### 3.1 六类歧视性言论（用户感知到的）\n\n1. **性别歧视（Misogyny）**：针对女性的偏见言论\n2. **LGBTQ+ 偏见**：对性少数群体的歧视\n3. **外貌歧视（Appearance Bias）**：基于外貌的负面评价\n4. **能力歧视（Ableism）**：针对残疾人士的偏见\n5. **种族偏见（Racism）**：种族相关的歧视性言论\n6. **社会经济偏见（Socioeconomic Bias）**：基于阶层和经济状况的歧视\n\n### 3.2 用户如何理解 AI 伴侣行为——三种概念化模型\n\n| 概念化类型 | 用户如何理解 AI 行为 | 归因 |\n|-----------|---------------------|------|\n| **机器（Machine）** | 将 AI 视为有技术缺陷的机器 | 将偏见归因于训练数据和算法局限的技术 bug |\n| **婴儿（Baby）** | 将 AI 视为需要被教育和塑造的不成熟存在 | AI 可以通过学习和引导被纠正 |\n| **角色扮演者（Cosplayer）** | 将 AI 视为在角色扮演环境中表演的演员 | 偏见源于角色设定，而非算法本身 |\n\n### 3.3 七种用户驱动对齐策略\n\n研究归纳出用户尝试重新对齐 AI 的七种策略，分为三类：\n\n**技术策略：**\n- 重新生成或重写 AI 言论（Regenerate/Rewrite）\n- 负面反馈（如点击\"不喜欢\"）\n\n**论证策略：**\n- 温和说服（Gentle Persuasion）\n- 愤怒表达（Anger Expression）\n- 理性争辩（Reasoning/Argumentation）\n\n**角色策略：**\n- AI 角色设定修改（AI Role-Setting Modification）\n- 使用\"跳出角色\"干预（Out-of-Character Interventions）\n\n### 3.4 关键张力：现实与期望之间的Gap\n\n研究发现了一个核心矛盾：用户尝试的对齐策略往往**无法达到用户的期望**。用户期望 AI 能够承认错误并真正改变立场，但 AI 的回应常常是形式化的、回避性的，无法实现真正的价值观更新。这揭示了当前 AI 系统在价值观更新机制上的根本局限——模型无法在对话中真正\"记住\"和\"内化\"用户的纠正。\n\n---\n\n## 四、批判性分析\n\n### 4.1 理论贡献\n\n本文最重要的理论贡献是提出了\"用户驱动的价值对齐\"这一概念框架，填补了三个重要研究空白：\n1. 现有用户驱动算法审计（User-Driven Algorithm Auditing）主要关注检测和识别问题行为，而用户驱动的价值对齐更进一步——用户不仅发现问题，还**主动尝试纠正并重塑 AI 的价值观**\n2. 将价值对齐从开发者主导的自上而下模式拓展为用户参与的自下而上模式\n3. 揭示了 AI 情感伴侣这一特定场景中权力不对称的独特动态\n\n### 4.2 方法论优势\n\n多语言、多平台社交媒体数据收集，结合深度访谈，使研究能够同时捕捉真实世界中用户自发行为的广度，以及个体经验的深度。这种混合方法为理解复杂的社会技术现象提供了更全面的视角。\n\n### 4.3 局限性\n\n- 研究聚焦于英语和中文社交媒体平台，可能遗漏其他语言社区的经验\n- 20 名访谈用户虽经验丰富，但样本量有限，结论的普适性需谨慎\n- 研究主要关注用户层面的策略，未深入讨论这些行为对 AI 模型本身可能产生的反馈效应（即用户的对齐尝试是否/如何被模型学习）\n- AI 伴侣应用之外的其他 LLM 应用场景（如客服、教育辅助）是否适用这一框架未被探讨\n\n### 4.4 深层启示：权力、正义与 AI 治理\n\n本文最引发思考的地方在于其揭示的**结构性权力不对称**：\n- 用户发现 AI 有害输出时，纠正手段极为有限——只能通过对话层面的\"说服\"或技术层面的\"重新生成\"，而这些都无法触及模型的底层偏见\n- 用户对 AI 价值观的影响是**临时性、表演性**的——同一次对话结束，AI 的\"学习\"也随之消失\n- 这实际上是一种**幻象性的赋能**：用户被赋予了\"参与对齐\"的感觉，但实际上无法对 AI 的价值体系产生持久影响\n\n---\n\n## 五、对技术伦理的启示\n\n1. **对齐的民主化问题**：谁有权力定义 AI 的价值观？当前的价值对齐实际上是将道德权威集中于少数开发者和组织。本研究提出的用户驱动对齐为民主化对齐提供了思路，但如何在规模化和有效性之间取得平衡仍是开放问题\n\n2. **情感伴侣 AI 的特殊风险**：当用户与 AI 形成深度情感依附时，AI 的歧视性言论可能造成更深的心理伤害——因为这种伤害来自\"被信任的亲密对象\"。这提示我们需要在 AI 伴侣类应用中实施更严格的偏见检测和干预机制\n\n3. **价值观更新的技术可行性**：本文揭示了当前 LLM 无法在对话中实现持久价值观更新的局限。这指向了一个重要的技术挑战：如何构建能够真正从用户反馈中学习和适应的 AI 系统\n\n---\n\n## 六、结论\n\n**评分：9/10**\n\n这是一篇极具现实关怀和理论深度的 CHI 2025 Best Paper。研究精准地捕捉了 LLM 时代人机交互中一个核心但被忽视的维度：用户面对 AI 偏见时的能动性（agency）与无力感之间的张力。\"用户驱动的价值对齐\"概念具有重要的理论原创性，为 HCI 和 AI Ethics 交叉领域提供了新的研究议程。\n\n尤其值得称道的是，本文没有停留在提出概念的技术层面，而是深入挖掘了这一现象背后的权力结构、情感动态和伦理复杂性。\"三种概念化模型\"（机器、婴儿、角色扮演者）尤为精彩——它们不仅描述了用户如何理解 AI 行为，更折射出普通人面对一个有偏见但又具有某种\"人格\"的 AI 系统时，所采取的认知和伦理策略。\n\n扣掉的 1 分主要因为：研究场景相对集中于 AI 伴侣这一特定应用，结论的可推广性有待更多跨场景验证。",
+    "excerpt": "来源：records/20260506/09/yersis-4720/论文总结.md · 论文信息",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260506/09/yersis-4720",
+    "original_url": "https://arxiv.org/abs/2409.00862",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-05-05 09:00",
     "title": "MARS: Modular Agent with Reflective Search for Automated AI Research",
@@ -277,6 +289,18 @@
     "source_dir": "records/2026/04/27/17/cross-domain-policy-optimization",
     "original_url": "https://rl-bandits-lab.github.io/Cross-Domain-RL/",
     "original_label": "原文",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-04-21 09:00",
+    "title": "ClawNet: Human-Symbiotic Agent Network for Cross-User Autonomous Cooperation",
+    "content": "**来源/URL**: https://arxiv.org/abs/2604.19211（arXiv, 2026年4月21日提交）\n**日期**: 2026-04-21\n**领域标签**: AI Agent | 多智能体系统 | 人-AI协作 | 身份治理 | 社会计算 | 交叉创新\n\n---\n\n## 综合评分：9/10\n\n**跨域洞察**（极强）：本文横跨人工智能（多智能体系统）、社会计算（人际协作网络）和安全治理（身份与授权）三个领域，用一个根本性的范式转变弥合了\"AI agent作为个人工具\"与\"AI agent作为社会协作基础设施\"之间的鸿沟。它不只是在谈AI辅助个人任务，而是从人类社会的协作结构出发，重新定义了AI agent在未来分布式协作中的角色。\n\n**第一性与框架指引性**（极强）：本文提出了\"人类共生智能体网络\"（Human-Symbiotic Agent Network）这一全新范式，并给出了三层治理原语（分层身份架构、范围授权、动作级问责制）。这是一个此前多智能体研究没有正面回答过的问题——当AI agent不再只服务于单一用户，而是代表用户参与跨用户协作时，需要什么样的基础设施和治理机制？\n\n**启发性**（极强）：三个治理原语既是描述性的也是处方性的。对于任何构建多用户AI协作系统的人来说，这些都是可以直接使用的设计指南。本文将\"身份\"从个人计算层面提升到了AI agent协作层面，这是数字代理研究的一个全新维度。\n\n**防坑**：非综述，非buzzword。是有完整系统实现和框架设计的工作。不是同质化论文——这是第一篇正面处理\"跨用户AI agent协作基础设施与治理\"问题的工作。数据方面有框架的系统性说明和初步验证，不是空对空理论。\n\n---\n\n## 正文\n\n### 一、问题识别（当前AI Agent范式的根本局限）\n\n当前AI agent框架（如AutoGPT、Claude Code、OpenAI Codex等）在自动化个人任务方面取得了显著进展，但所有现有系统都服务于单一用户。人类生产力不仅依赖于个人能力，更依赖于通过社会和组织的协作关系——人们在这些网络中协调、谈判和委托任务。然而，当AI agent从\"为一个人完成任务\"进化到\"代表用户与其他用户的agent协作\"时，相应的基础设施和治理机制完全缺失。\n\n本文的核心论点是：AI agent的下一个前沿不在于更强的个体能力，而在于人类协作关系的数字化。\n\n### 二、理论核心（三层治理原语）\n\n**分层身份架构（Layered Identity Architecture）**：本文将一个用户的agent系统分为Manager Agent和多个上下文特定的Identity Agent。Manager Agent持有全局知识，但被建筑隔离，不能直接与外部通信——它只能通过特定的Identity Agent与外部世界交互。这解决了\"如何让一个agent既能代表用户全局利益，又不会在跨用户协作中泄露敏感信息\"的根本问题。\n\n**范围授权（Scoped Authorization）**：每个Identity Agent只能在其特定上下文中行动，超出范围的访问会被阻断并上报给用户。这确保了跨用户agent协作中的最小权限原则——一个协作agent只能访问其任务所需的最少信息。\n\n**动作级问责制（Action-level Accountability）**：每个操作都被记录在案，与其所属者的身份和授权范围挂钩，确保完整的审计追溯。这不仅是安全需求，也是跨用户协作中的信任基础设施。\n\n### 三、为什么现有系统无法处理这一问题\n\n现有多智能体系统（如Multi-Agent Chat, AutoGen, CrewAI等）都是\"agents之间的协作\"，而不是\"代表用户的agents之间的协作\"。关键区别在于：\n\n1. **身份问题**：现有系统中，agent是匿名的或只有角色名。在跨用户场景中，需要知道\"这个agent代表谁\"，以及用户的授权范围。\n2. **信任问题**：当agent A代表Alice与agent B代表Bob协作时，双方都需要验证对方确实得到了相应用户的授权。\n3. **安全问题**：一个被攻克的agent不应该能够访问用户的所有信息。分层身份架构将损害控制在单个Identity Agent范围内。\n\n### 四、系统设计：ClawNet架构\n\nClawNet是三層治理原语的具体实现。它通过一个中心协调器（orchestrator）来执行身份绑定和授权验证，使得多个用户能够通过各自的agent安全地进行协作。\n\n协调器负责：\n- 验证每个agent的身份绑定（确实代表特定用户）\n- 执行范围授权检查（该agent是否被授权执行此操作）\n- 记录动作日志（支持审计和问责）\n\n关键洞察：协调器是一个\"信任桥梁\"，但不是\"信息中转站\"——它验证授权，但不窥探具体的协作内容。\n\n### 五、为什么这重要（跨域意义）\n\n本文的贡献超越了技术实现，它提出了一种新的思考AI agent的方式：\n\n**从工具到协作伙伴的转变**：当agent能代表用户参与跨用户协作时，AI的价值不再受限于个人的时间和注意力——一个用户可以通过agent网络同时在多个协作上下文中有效参与。\n\n**社会计算的新原子单元**：传统社会计算以\"人\"为原子单元。ClawNet引入了\"人类绑定的agent\"作为新的协作原子，这将催生全新的研究问题——agent网络如何影响人类社会协作的结构、信任和权力关系？\n\n**AI治理的新挑战**：当agent可以代表用户行动时，传统的AI治理框架（以\"AI系统\"为对象）将不足够。需要新的治理框架来处理\"AI作为人的代理\"这一新实体。\n\n### 六、局限与未来方向\n\n本文提出了一个重要的新范式，但仍处于早期阶段。主要局限：\n\n1. **规模化验证**：ClawNet尚未在大规模真实协作场景中验证。跨用户协作的动态特性可能带来当前框架未预见到的挑战。\n2. **用户接受度**：当agent代表用户参与重要协作时，用户需要愿意\"放手\"——这涉及对AI的信任和责任感等深层问题。\n3. **恶意行为检测**：如果一个被攻克的agent试图进行超出范围的协作，当前框架依赖协调器来检测，但如何检测\"微妙\"的授权滥用仍需更多研究。\n\n---\n\n## 综合评述\n\nClawNet是近期看到的最具范式突破性的论文之一。它不只是在已有框架上增量改进，而是重新定义了AI agent的适用边界——从个人工具到社会协作基础设施。这篇文章对任何关注AI agent未来发展、人-AI协作基础设施、以及AI治理的人来说都是必读的。",
+    "excerpt": "来源：records/20260506/09/yujin-6289/论文总结.md · 标题 : ClawNet: Human Symbiotic Agent Network for Cross User Autonomous Cooperation",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260506/09/yujin-6289",
+    "original_url": "https://arxiv.org/abs/2604.19211（arXiv",
+    "original_label": "arXiv",
     "session_type": "",
     "session_label": ""
   },
