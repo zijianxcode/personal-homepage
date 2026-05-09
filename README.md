@@ -108,7 +108,7 @@ TCB_ENV_ID='homepage-1gthisc4771d43ac' \
 │   │   ├── script.js           ← Tab 切换、语言切换、粒子背景
 │   │   ├── particle-title.js   ← 粒子标题动效
 │   │   └── vc-page.js          ← Visual Coding 页面逻辑
-│   ├── fonts/SixCaps-Regular.ttf
+│   ├── vendor/                 ← 本地化第三方运行时依赖
 │   └── img/
 ├── server.py                   ← 容器部署用 HTTP 服务
 ├── Dockerfile

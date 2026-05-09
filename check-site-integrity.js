@@ -40,4 +40,19 @@ if (forbiddenRootCopies.length > 0) {
   fail(`academy pages were copied to repo root: ${forbiddenRootCopies.join(', ')}`);
 }
 
+const fontDir = path.join(root, 'Assets', 'fonts');
+if (fs.existsSync(fontDir)) {
+  const invalidFonts = fs
+    .readdirSync(fontDir)
+    .filter((name) => /\.(ttf|otf|woff2?)$/i.test(name))
+    .filter((name) => {
+      const content = fs.readFileSync(path.join(fontDir, name), 'utf8').trimStart();
+      return content.startsWith('<!DOCTYPE') || content.startsWith('<html');
+    });
+
+  if (invalidFonts.length > 0) {
+    fail(`font files appear to contain HTML instead of binary font data: ${invalidFonts.join(', ')}`);
+  }
+}
+
 console.log('Site integrity checks passed');

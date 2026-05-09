@@ -21,7 +21,7 @@ GitHub 仓库：github.com/zijianxcode/personal-homepage
 - 基础 CSS 样式
 - 粒子标题动效 particle-title.js
 - 脚本逻辑 script.js
-- 下载字体 SixCaps-Regular.ttf
+- 曾尝试下载 SixCaps 字体；后续确认误下载为 GitHub HTML 页面，已从仓库移除
 
 技术栈：Vanilla HTML/CSS/JS，无框架
 
@@ -205,7 +205,6 @@ GitHub 仓库：github.com/zijianxcode/personal-homepage
 │   ├── js/
 │   │   ├── script.js
 │   │   └── particle-title.js
-│   └── fonts/SixCaps-Regular.ttf
 ├── .gitignore
 └── （无 README）
 ```
@@ -232,7 +231,6 @@ GitHub 仓库：github.com/zijianxcode/personal-homepage
 │   │   ├── particle-title.js           ← 粒子标题动效
 │   │   └── vc-page.js                 ← Visual Coding 页面逻辑
 │   ├── vendor/three/                  ← 本地 vendored Three.js 依赖
-│   ├── fonts/SixCaps-Regular.ttf
 │   └── img/
 │       ├── favicon.svg
 │       └── 香蕉.svg
