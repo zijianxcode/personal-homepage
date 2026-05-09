@@ -67,12 +67,15 @@ Root safety rule:
 - Academy generated files must never be copied to the repo root.
 - The repo-root `index.html` is the personal homepage. The academy homepage must only live at `academy/index.html`.
 - If a sync produces root-level files such as `AI.html`, `papers.html`, `archive.html`, `ranking.html`, or a root `index.html` titled `研究所`, stop and fix the sync target before publishing.
+- `npm run build` and `npm run deploy` run `npm run test:site-integrity` first. If root `index.html` is polluted by academy content, or academy pages appear in the repo root, the command must fail and publishing must stop.
+- GitHub Actions also runs the same `site-integrity` check on every `main` push and pull request. Keep it required before merging or publishing academy sync changes.
 
 Recommended CloudBase publish pattern:
 ```bash
 cd /tmp/personal-homepage-preview
 rm -rf .cloudbase-deploy
 mkdir -p .cloudbase-deploy
+npm run test:site-integrity
 cp *.html CNAME .cloudbase-deploy/
 cp -r Assets projects documents academy .cloudbase-deploy/
 TCB_ENV_ID='homepage-1gthisc4771d43ac' \

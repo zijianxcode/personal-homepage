@@ -4,8 +4,9 @@
   "private": true,
   "description": "Static personal homepage",
   "scripts": {
-    "deploy": "mkdir -p .cloudbase-deploy && cp *.html CNAME .nojekyll .cloudbase-deploy/ && cp -r Assets projects documents academy time-ink .cloudbase-deploy/ && tcb hosting deploy .cloudbase-deploy .",
-    "build": "mkdir -p dist && cp *.html CNAME .nojekyll dist/ && cp -r Assets projects documents academy time-ink dist/",
+    "deploy": "npm run test:site-integrity && mkdir -p .cloudbase-deploy && cp *.html CNAME .nojekyll .cloudbase-deploy/ && cp -r Assets projects documents academy time-ink .cloudbase-deploy/ && tcb hosting deploy .cloudbase-deploy .",
+    "build": "npm run test:site-integrity && mkdir -p dist && cp *.html CNAME .nojekyll dist/ && cp -r Assets projects documents academy time-ink dist/",
+    "test:site-integrity": "node check-site-integrity.js",
     "test:things-access": "node check-things-access.js"
   },
   "devDependencies": {

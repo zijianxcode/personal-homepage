@@ -242,6 +242,9 @@ Academy 同步安全规则：
 - 根目录 `index.html` 永远是个人主页；研究所首页只能是 `academy/index.html`。
 - 如果同步后根目录出现 `AI.html`、`papers.html`、`archive.html`、`ranking.html`、`starred.html`、`HCI.html` 等 academy 页面，说明同步目标错误，必须先撤销或修正后再发布。
 - 发布前必须用 `head -20 index.html` 和 `head -20 academy/index.html` 双重确认：根目录标题应为 `aspera ad astra`，academy 标题应为 `研究所`。
+- 发布前必须运行 `npm run test:site-integrity`。该检查会拦截两类错误：根目录 `index.html` 被 academy 首页覆盖；`academy/*.html` 被复制到仓库根目录。
+- `npm run build` 和 `npm run deploy` 已内置 `test:site-integrity`，如果检查失败，禁止继续推送或部署。
+- GitHub Actions 的 `site-integrity` 会在每次 `main` push 和 PR 时运行。后续 academy 同步发布前必须确认该检查通过；如果开启分支保护，应把它设为必需检查。
 
 每个功能的自检清单
 

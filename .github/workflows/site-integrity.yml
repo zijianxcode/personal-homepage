@@ -1,0 +1,22 @@
+name: site-integrity
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  site-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Check site integrity
+        run: npm run test:site-integrity
