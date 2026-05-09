@@ -236,6 +236,13 @@ Bundle     | < 200KB    | Bundle analyzer
 - 粒子、Canvas、hover warp 等动效不默认删除；优化顺序是可见性暂停、resize 防抖、降低移动端 DPR、离屏不计算、减少事件监听范围。
 - `document.hidden`、IntersectionObserver 或等价机制必须用于长时间运行的视觉循环，避免后台标签页继续满帧运行。
 
+Academy 同步安全规则：
+
+- `academy/` 子站只能同步到仓库的 `academy/` 目录，禁止把生成文件复制到仓库根目录。
+- 根目录 `index.html` 永远是个人主页；研究所首页只能是 `academy/index.html`。
+- 如果同步后根目录出现 `AI.html`、`papers.html`、`archive.html`、`ranking.html`、`starred.html`、`HCI.html` 等 academy 页面，说明同步目标错误，必须先撤销或修正后再发布。
+- 发布前必须用 `head -20 index.html` 和 `head -20 academy/index.html` 双重确认：根目录标题应为 `aspera ad astra`，academy 标题应为 `研究所`。
+
 每个功能的自检清单
 
 1. 会不会导致布局偏移？

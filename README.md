@@ -63,6 +63,11 @@ Any academy update must complete all three steps:
 2. Sync the generated static files into this repo's `academy/` directory and push this repo
 3. Verify GitHub Pages has rebuilt `bananabox.plus`; if CloudBase is still used in parallel, redeploy CloudBase separately with the latest `academy/`
 
+Root safety rule:
+- Academy generated files must never be copied to the repo root.
+- The repo-root `index.html` is the personal homepage. The academy homepage must only live at `academy/index.html`.
+- If a sync produces root-level files such as `AI.html`, `papers.html`, `archive.html`, `ranking.html`, or a root `index.html` titled `研究所`, stop and fix the sync target before publishing.
+
 Recommended CloudBase publish pattern:
 ```bash
 cd /tmp/personal-homepage-preview
