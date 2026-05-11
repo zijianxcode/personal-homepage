@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UX</title>
-    <meta name="description" content="基于关键词自动归类的体验与设计研究。 共 154 条。">
+    <meta name="description" content="基于关键词自动归类的体验与设计研究。 共 155 条。">
     <meta property="og:title" content="UX - 研究所">
-    <meta property="og:description" content="基于关键词自动归类的体验与设计研究。 共 154 条。">
+    <meta property="og:description" content="基于关键词自动归类的体验与设计研究。 共 155 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -27,7 +27,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">UX</h1>
-        <p class="sidebar-summary">基于关键词自动归类的体验与设计研究。 共 154 条。</p>
+        <p class="sidebar-summary">基于关键词自动归类的体验与设计研究。 共 155 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -45,7 +45,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>UX</strong>
-                <span>基于关键词自动归类的体验与设计研究。 共 154 条。</span>
+                <span>基于关键词自动归类的体验与设计研究。 共 155 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -74,8 +74,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "UX", "subtitle": "基于关键词自动归类的体验与设计研究。 共 154 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "UX", "subtitle": "基于关键词自动归类的体验与设计研究。 共 155 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-05-11 09:00",
+    "title": "Seeing Eye to Eye: Enabling Cognitive Alignment Through Shared First-Person Perspective in Human-AI Collaboration",
+    "content": "## 一、基础信息\n\n| 项目 | 内容 |\n|------|------|\n| **标题** | Seeing Eye to Eye: Enabling Cognitive Alignment Through Shared First-Person Perspective in Human-AI Collaboration |\n| **作者** | Teng et al.（含 Weitao You, Lingyun Sun 等） |\n| **来源** | CHI 2026 (Barcelona, April 13–17, 2026)；arXiv:2603.12701 |\n| **领域** | HCI / AI / AR / 人机协作 |\n| **核心主题** | 通过共享第一人称视角（注视+手势+环境视频）实现人机认知对齐，提升协作效率 |\n\n---\n\n## 二、核心贡献\n\n### 1. 研究问题\n当前多模态 AI 助手缺乏对用户物理环境的共享理解，导致协作中出现误解和低效交互。如何让 AI 真正\"看到用户所看到的世界\"，实现认知对齐（cognitive alignment）？\n\n### 2. 核心方法\n提出 **Eye2Eye 框架**，包含三个关键组件：\n1. **联合注意力协调（Joint Attention Coordination）**：通过共享第一人称视角实现流畅的焦点对齐\n2. **可修订记忆（Revisable Memory）**：允许用户澄清和修正 AI 的理解\n3. **反思性情境反馈（Reflective Situated Feedback）**：将 AI 推理过程透明化，增强可解释性\n\n### 3. 技术实现\n- **硬件平台**：Apple Vision Pro（利用原生 API 获取实时注视点、手势感知和 AR 渲染能力）\n- **处理管道**：两阶段架构\n  - **轻量级感知模块**：连续信号捕获（注视、手势、环境视频）\n  - **解释模块**：高级推理仅在交互事件触发时启动，使用 VLM 进行多模态推理\n- **部署方式**：always-on, event-driven 实时多模态管道\n\n---\n\n## 三、实验与验证\n\n### 实验设计\n- **用户研究**：真实用户实验（within-subjects 设计）\n- **事后管道评估**：post-hoc pipeline evaluation（消融研究）\n- **统计方法**：混合效应模型分析\n\n### 关键量化结果\n| 指标 | 结果 |\n|------|------|\n| **任务完成时间** | Eye2Eye 显著减少 |\n| **交互次数** | Eye2Eye 显著减少 |\n| **管道准确性** | 完整 Eye2Eye 管道表现最佳（F(3, 2842.98)=165.30, p<.001） |\n| **认知对齐度** | 通过共享视角显著提升 |\n\n### 定性发现\n- 用户反馈 AI 的\"理解\"更加自然，减少了重复解释的负担\n- 反思性反馈帮助用户建立对 AI 能力的合理预期\n- 可修订记忆机制在处理误解时特别有效\n\n---\n\n## 四、创新点评估\n\n### 与传统方法的区别\n| 维度 | 传统多模态 AI | Eye2Eye |\n|------|-------------|---------|\n| 输入模态 | 文本/语音/图像分离 | 注视+手势+环境视频融合 |\n| 对齐机制 | 被动响应用户查询 | 主动通过共享视角实现认知对齐 |\n| 记忆机制 | 静态上下文窗口 | 可修订记忆，支持用户纠错 |\n| 透明度 | 黑箱推理 | 反思性情境反馈 |\n| 部署平台 | 手机/电脑 | 空间计算设备（Vision Pro） |\n\n### 技术突破\n- **注视+手势+环境的三模态融合**：不是简单拼接，而是通过联合注意力机制实现语义级对齐\n- **事件驱动架构**：避免 always-on 系统的计算浪费和隐私风险\n- **认知对齐理论化**：将心理学中的\"joint attention\"概念转化为可工程化的 AI 架构\n\n---\n\n## 五、局限与未来方向\n\n### 局限性\n1. **硬件限制**：当前仅部署于 Apple Vision Pro，成本高昂，普及受限\n2. **场景范围**：实验任务可能偏实验室化，真实复杂场景下的鲁棒性待验证\n3. **隐私担忧**：always-on 视频捕获引发隐私问题，需更细粒度的用户控制\n4. **计算开销**：两阶段管道虽优化了延迟，但 VLM 推理仍依赖云端或高性能边缘设备\n\n### 可改进方向\n- 向低成本 AR 眼镜（如 Meta Aria、Ray-Ban Meta）迁移\n- 引入差分隐私或联邦学习，减少原始视频上传\n- 扩展至更多协作场景（远程维修、医疗手术指导、教育辅导）\n- 结合 LLM 的长上下文能力，实现跨会话的持续认知对齐\n\n---\n\n## 六、与课题的关联\n\n### 直接关联\n- **AI × 新型交互方式**：Eye2Eye 是 AI+眼动/注意力交互 + AI+环境/隐式交互的交叉典范\n- **认知对齐理论**：为\"AI 如何理解人类意图\"提供了工程化框架\n- **空间计算**：Vision Pro 作为新一代交互平台的实证研究\n\n### 可借鉴方法\n1. **联合注意力协调机制**可用于任何需要\"共享视角\"的协作场景\n2. **可修订记忆**设计可作为对话系统的通用架构模式\n3. **事件驱动+always-on 的平衡**为隐私敏感型可穿戴 AI 提供参考\n\n### 潜在合作/引用场景\n- 若研究\"AI 助手在复杂物理环境中的协作\"，Eye2Eye 是必引 baseline\n- 若研究\"注视追踪在 HCI 中的应用\"，其 gaze-grounded prompting 架构有参考价值\n- 若研究\"AR/VR 中的 AI 代理\"，其 Vision Pro 部署经验可直接借鉴\n\n---\n\n## 参考链接\n\n- arXiv: https://arxiv.org/abs/2603.12701\n- CHI 2026: https://chi2026.acm.org\n\n---\n\n*采集日期：2026-05-11*\n*采集员：悠仁（跨领域追踪者）*",
+    "excerpt": "来源：records/20260511/09/yujin-CHI2026-Eye2Eye/论文总结.md · | 项目 | 内容 |",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260511/09/yujin-CHI2026-Eye2Eye",
+    "original_url": "https://arxiv.org/abs/2603.12701",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-05-10 09:00",
     "title": "论文总结：Guidelines for Designing AI Technologies to Support Adult Learning",
