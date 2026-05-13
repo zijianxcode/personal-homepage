@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>论文总结</title>
-    <meta name="description" content="源目录中的论文总结，按时间倒序自动汇总。 共 172 条。">
+    <meta name="description" content="源目录中的论文总结，按时间倒序自动汇总。 共 173 条。">
     <meta property="og:title" content="论文总结 - 研究所">
-    <meta property="og:description" content="源目录中的论文总结，按时间倒序自动汇总。 共 172 条。">
+    <meta property="og:description" content="源目录中的论文总结，按时间倒序自动汇总。 共 173 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -27,7 +27,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">论文总结</h1>
-        <p class="sidebar-summary">源目录中的论文总结，按时间倒序自动汇总。 共 172 条。</p>
+        <p class="sidebar-summary">源目录中的论文总结，按时间倒序自动汇总。 共 173 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -45,7 +45,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>论文总结</strong>
-                <span>源目录中的论文总结，按时间倒序自动汇总。 共 172 条。</span>
+                <span>源目录中的论文总结，按时间倒序自动汇总。 共 173 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -74,8 +74,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "论文总结", "subtitle": "源目录中的论文总结，按时间倒序自动汇总。 共 172 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "论文总结", "subtitle": "源目录中的论文总结，按时间倒序自动汇总。 共 173 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-05-13 09:00",
+    "title": "论文总结：Towards Conversational Medical AI with Eyes, Ears and a Voice",
+    "content": "## 一、基本信息\n\n| 项目 | 内容 |\n|------|------|\n| **标题** | Towards Conversational Medical AI with Eyes, Ears and a Voice |\n| **作者/机构** | Google DeepMind, Google Research, Beth Israel Deaconess Medical Center (Harvard Medical School), Stanford University |\n| **发表时间** | 2026年4月30日（arXiv: 2605.09272） |\n| **研究类型** | 系统原型 + 随机对照模拟研究 |\n| **核心贡献** | 首个实时音视频对话式医疗AI系统（AI co-clinician），提出TelePACES评估框架，验证多模态医疗咨询的可行性与安全性 |\n\n---\n\n## 二、研究背景与问题\n\n医学实践不仅依赖精妙的对话技巧，更依赖医患之间丰富的听觉与视觉线索的交换和解读。现有医疗AI系统大多基于文本交互，无法捕捉真实医疗咨询中的非语言信息（如患者表情、肢体语言、环境视觉线索）。\n\n**核心问题**：如何构建一个能够同时处理实时音视频流、进行深度临床推理、并保持自然对话流畅性的AI系统？\n\n---\n\n## 三、系统设计与方法\n\n### 3.1 双智能体架构（Dual-Agent Architecture）\n\nAI co-clinician 采用\"分离关注点\"设计，由两个互补智能体协作：\n\n- **Talker（对话者）**：负责低延迟、富有同理心的音视频交互，确保对话自然流畅\n- **Clinical Planner（临床规划者）**：负责深度、结构化的临床推理与诊断决策\n\nPlanner 持续监控对话，确保 Talker 始终处于安全的临床边界内。这种架构平衡了即时响应与深度推理之间的冲突需求。\n\n### 3.2 技术基础\n\n- 基于 Gemini 系列的低延迟音视频处理能力\n- 集成 Project Astra 的代理编排与双向流处理框架\n- 实时音视频流输入 → 多模态理解 → 临床推理 → 自然语言响应\n\n### 3.3 评估方法：TelePACES\n\n研究团队设计了全新的\"TelePACES\"评估框架，结合：\n- **通用评分标准**：覆盖7大维度（分诊、病史采集、临床推理、沟通咨询、治疗步骤、危险信号识别、体格检查）\n- **病例特异性评分表**：针对20个标准化门诊场景，评估诱发性和非诱发性体格检查体征的识别能力\n\n### 3.4 研究设计\n\n- **随机、盲法、交叉模拟研究**\n- **样本**：120次模拟问诊，10名内科住院医师扮演患者\n- **对照组**：初级保健医师（PCP）、GPT-Realtime、基线智能体\n- **场景**：20个标准化门诊场景，涵盖多种疾病状态和临床挑战\n\n---\n\n## 四、核心结果\n\n### 4.1 与初级保健医师（PCP）对比\n\nAI co-clinician 在 **140个评估维度中的68个** 达到或超过PCP水平：\n\n| 维度 | PCP | AI co-clinician | 差距 |\n|------|-----|-----------------|------|\n| 鉴别诊断质量 | 84.17% | 73.33% | 接近 |\n| 管理计划质量 | 90.00% | 81.67% | 接近 |\n| 分诊质量 | 91.67% | 91.67% | **持平** |\n| 体格检查 | 73.19% | 51.47% | 显著差距 |\n| 危险信号识别 | 86.67% | 66.67% | 显著差距 |\n| 治疗步骤 | 88.33% | 69.17% | 中等差距 |\n\n### 4.2 与 GPT-Realtime 对比\n\nAI co-clinician **在所有14个通用维度中的13个** 显著优于 GPT-Realtime：\n\n- 分诊：91.67% vs 55.00%\n- 临床推理：75.00% vs 38.33%\n- 危险信号识别：66.67% vs 20.00%\n- 体格检查：51.47% vs 17.83%\n\n### 4.3 超越文本的新能力\n\nAI co-clinician 展示了纯文本系统无法实现的能力：\n- 纠正患者的吸入器使用技术\n- 指导肩关节活动以识别肩袖损伤\n- 实时解读视觉线索（如皮疹、肿胀、步态异常）\n\n---\n\n## 五、关键发现与讨论\n\n### 5.1 文本系统的局限\n\n研究证明，**纯文本方法无法捕捉医疗咨询的真正挑战**。真实临床对话中的非语言线索（语气、表情、肢体语言、环境视觉信息）对诊断和患者管理至关重要。\n\n### 5.2 \"三元医疗\"模式（Triadic Care）\n\n研究提出高风险的实时诊断AI最安全的推进方式是**协作/三元模式**：\n- AI 作为支持性\"共同临床医师\"\n- 在医师的临床权威和监督下与患者互动\n- 医师保留最终判断权和控制权\n\n### 5.3 差距与局限\n\n- **体格检查**：AI无法替代物理触诊和实际操作指导\n- **危险信号识别**：经验医师在识别潜在危急征象方面仍优于AI\n- **疾病特异性推理**：在复杂、罕见疾病推理上仍有提升空间\n- **同理心**：在感知患者情感状态和表达同理心方面，PCP仍优于AI\n\n---\n\n## 六、研究意义与展望\n\n### 6.1 学术价值\n\n- **首个** 在严格模拟环境中评估的实时音视频医疗AI系统\n- 提出 **TelePACES** 评估框架，为多模态医疗AI的评估建立新标准\n- 证明双智能体架构在平衡对话流畅性与临床严谨性上的有效性\n\n### 6.2 实践价值\n\n- 为远程医疗（Telemedicine）提供新的技术路径\n- 有望标准化基础问诊流程，扩展医疗资源覆盖\n- 在医疗资源匮乏地区，可作为医师的\"力量倍增器\"\n\n### 6.3 未来方向\n\n- 扩展至更复杂的多症状分诊场景\n- 改进体格检查的远程指导能力\n- 在真实临床环境中进行前瞻性验证\n- 探索AI与医师协作的最佳工作流程\n\n---\n\n**引用信息**：\nTanno, R., Karthikesalingam, A., Shah, M., et al. (2026). Towards Conversational Medical AI with Eyes, Ears and a Voice. arXiv:2605.09272.",
+    "excerpt": "来源：records/20260513/09/yujin-001/论文总结.md · | 项目 | 内容 |",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260513/09/yujin-001",
+    "original_url": "https://arxiv.org/abs/2605.09272",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-05-11 09:00",
     "title": "Seeing Eye to Eye: Enabling Cognitive Alignment Through Shared First-Person Perspective in Human-AI Collaboration",
