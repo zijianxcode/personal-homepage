@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UX</title>
-    <meta name="description" content="基于关键词自动归类的体验与设计研究。 共 156 条。">
+    <meta name="description" content="基于关键词自动归类的体验与设计研究。 共 157 条。">
     <meta property="og:title" content="UX - 研究所">
-    <meta property="og:description" content="基于关键词自动归类的体验与设计研究。 共 156 条。">
+    <meta property="og:description" content="基于关键词自动归类的体验与设计研究。 共 157 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -27,7 +27,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">UX</h1>
-        <p class="sidebar-summary">基于关键词自动归类的体验与设计研究。 共 156 条。</p>
+        <p class="sidebar-summary">基于关键词自动归类的体验与设计研究。 共 157 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -45,7 +45,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>UX</strong>
-                <span>基于关键词自动归类的体验与设计研究。 共 156 条。</span>
+                <span>基于关键词自动归类的体验与设计研究。 共 157 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -74,7 +74,7 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "UX", "subtitle": "基于关键词自动归类的体验与设计研究。 共 156 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "UX", "subtitle": "基于关键词自动归类的体验与设计研究。 共 157 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
   {
     "date": "2026-05-13 09:00",
@@ -85,6 +85,18 @@
     "source_dir": "records/20260513/09/yujin-001",
     "original_url": "https://arxiv.org/abs/2605.09272",
     "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-05-13 09:00",
+    "title": "Breaking out of the Lab: Mitigating Mind Wandering with Gaze-Based Attention-Aware Technology in Classrooms",
+    "content": "## 1. 基础信息\n\n- **标题**: Breaking out of the Lab: Mitigating Mind Wandering with Gaze-Based Attention-Aware Technology in Classrooms\n- **作者**: Stephen Hutt, Kristina Krasich, James R. Brockmole, Sidney K. D’Mello\n- **发表年份/会议**: 2021, Proceedings of the ACM CHI Conference on Human Factors in Computing Systems (CHI ’21)\n- **DOI**: https://doi.org/10.1145/3411764.3445269\n- **研究类型**: 现场实验研究（Classroom-based Field Study），含两轮迭代课堂实验\n- **样本量**: N = 287 名美国高中生\n- **教育场景**: 高中生物课堂，使用智能导学系统 GuruTutor 进行计算机化学习\n- **技术关键词**: 眼动追踪（Eye Tracking）、注意力感知学习技术（Attention-Aware Learning Technology, AALT）、心智游移（Mind Wandering, MW）、智能导学系统（ITS）、实时干预\n\n---\n\n## 2. 研究背景与核心问题\n\n### 2.1 研究背景\n心智游移（Mind Wandering, MW）指注意力从当前学习任务转移到与任务无关的内部思维，是课堂学习中普遍存在的现象。研究表明，MW 与阅读理解、知识保持等学习结果呈显著负相关。传统实验室研究已证实眼动数据可用于检测 MW，但将此类技术迁移到真实课堂环境面临巨大挑战：光照变化、学生移动、设备成本、校准困难、隐私顾虑等。\n\n### 2.2 核心研究问题\n作者团队提出一个核心问题：**能否利用低成本商用眼动仪（COTS eye-tracker）在真实课堂中实时检测学生 MW，并通过智能干预重新定向注意力、改善学习保持？**\n\n为此，他们设计并测试了注意力感知学习技术（AALT），该系统包含：\n1. **检测层**：基于眼动特征的自动化 MW 检测器；\n2. **干预层**：与学生和教师共同设计的实时重定向策略（点名、重申内容、提问）；\n3. **验证层**：在真实高中课堂中进行两轮大规模现场实验。\n\n---\n\n## 3. 研究方法与系统设计\n\n### 3.1 技术架构\n- **硬件**: 商用眼动仪（Tobii Pro X2-60 等 COTS 设备），集成于课堂电脑。\n- **检测模型**: 基于先前在 135 名高中生课堂数据中训练的 MW 检测器（Hutt et al., 2019），利用凝视时长、扫视幅度、瞳孔直径等眼动指标，通过机器学习实现学生无关（student-independent）的实时 MW 分类。\n- **干预策略**: 经多轮与师生共同设计（co-design）迭代确定：\n  - 使用学生姓名进行个性化提示；\n  - 简要重申当前学习内容的要点；\n  - 提出与当前内容相关的简单问题，促使学生重新投入。\n\n### 3.2 实验设计\n研究包含两轮课堂实验（Study 1 与 Study 2），共 287 名高中生参与：\n- **条件设置**: 实验组（AALT 实时干预） vs. 两个对照组（无干预基线、非自适应随机提示）。\n- **测量指标**:\n  - **过程数据**: 眼动追踪数据、系统日志、MW 自评探针（thought probes）；\n  - **学习结果**: 即时理解测试 + 延迟保持测试（delayed assessment，约一周后）；\n  - **人口学与先验知识**: 先验知识水平、MW 频率倾向。\n\n### 3.3 数据分析\n- 使用多层模型（multilevel modeling）处理嵌套数据（学生嵌套于班级）。\n- 关注交互效应：先验知识 × MW 频率 × 实验条件。\n\n---\n\n## 4. 核心研究发现\n\n### 4.1 主要结果\n1. **干预成功重定向注意力**: AALT 的实时干预显著降低了学生自报的 MW 频率，眼动数据也显示干预后学生的注意力模式恢复至“专注”状态特征。\n2. **延迟保持显著提升**: 与两个对照组相比，AALT 组学生在延迟测试中的保持成绩显著提高。\n3. **条件性效应（关键发现）**: 上述学习收益**并非对所有学生均等**。AALT 的积极效果主要集中在：\n   - **低先验知识学生**（low prior-knowledge）；\n   - **偶尔发生 MW、但非过度频繁 MW 的学生**（occasional, but not excessive mind wanderers）。\n   对于高先验知识学生或习惯性高频 MW 学生，AALT 干预未产生显著的学习保持增益。\n\n### 4.2 效应量与稳健性\n- MW 减少效应在实验组与对照组之间达到统计显著（p < .05）。\n- 延迟保持测试的交互效应表明，AALT 对特定子群体的效应量中等（按 Cohen’s d 估算约 0.4–0.6 区间）。\n- 两轮研究的结果趋势一致，显示出一定的跨情境稳健性。\n\n### 4.3 质性反馈\n- 学生和教师对干预策略的接受度较高，认为“被点名”和“简短提问”比强制重复阅读更少干扰学习流。\n- 部分学生报告，干预帮助他们意识到自己的注意力漂移，从而增强了元认知监控。\n\n---\n\n## 5. 对教育实践与系统设计的影响\n\n### 5.1 实践启示\n- **课堂可部署性**: 该研究是少数成功将眼动追踪 MW 检测技术从实验室“搬出”到真实课堂（Breaking out of the Lab）的研究，证明了 COTS 眼动仪在常规教室环境下的可行性。\n- **精准教学支持**: AALT 为教师提供了一种“注意力仪表盘”式的辅助工具，帮助识别需要关注的学生，而非替代教师角色。\n- **差异化干预**: 研究结果强烈提示，注意力感知系统应避免“一刀切”干预。对高频 MW 学生，简单的重定向提示可能不足以克服其深层动机或认知负荷问题；对高先验知识学生，MW 可能伴随有益的发散思维，强制拉回反而可能抑制创造性加工。\n\n### 5.2 系统设计启示\n- **人机协同设计**: 干预策略的师生共创（co-design）是确保技术被接受并有效整合进课堂生态的关键。\n- **实时性与隐私平衡**: 系统需要在实时检测精度、数据隐私（尤其是生物特征数据）和课堂管理成本之间取得平衡。\n- **多模态融合潜力**: 作者指出，未来可结合头部姿态、面部表情或键盘交互日志，以弥补纯眼动数据在课堂复杂环境下的检测精度损失。\n\n---\n\n## 6. 批判性分析与局限\n\n### 6.1 研究局限\n1. **样本代表性**: 研究在美国高中生物课堂进行，样本以特定学区为主，跨文化、跨学科（如数学、语言）的普适性仍需验证。\n2. **延迟保持的测量深度**: 延迟测试主要考查事实性保持，对高阶思维（迁移、问题解决）的评估不足。\n3. **眼动追踪的技术局限**: 课堂中的光照、学生坐姿变化导致部分数据丢失（约 15–25% 的样本需剔除），COTS 设备在真实课堂的鲁棒性仍有提升空间。\n4. **因果推断的谨慎性**: 虽然采用对照实验设计，但课堂环境的复杂性（教师差异、班级氛围、时间编排）可能引入混淆变量。\n\n### 6.2 对“失败案例”的启示\n本研究实际上揭示了一种**条件性失败/边界效应**：\n- **对高频 MW 学生无效**: 提示干预未能改善他们的学习保持，说明单纯的外部重定向无法解决由低动机、高认知负荷或情绪困扰驱动的持续性注意力漂移。\n- **对高先验知识学生可能多余**: 这部分学生即使发生 MW，其学习保持也未受损，暗示 MW 在不同知识水平学生身上可能具有不同的认知功能（如创造性酝酿）。盲目干预可能打断有益的内部思维。\n- **过度干预的风险**: 若系统对所有 MW 事件均触发提示，可能导致“提示疲劳”（alert fatigue），反而增加认知负荷。本研究的条件性触发策略（仅针对偶尔 MW 的低先验学生）恰好规避了这一点。\n\n### 6.3 方法论贡献\n- 该研究为 Learning Analytics 与 EDM 社区提供了一个**从实验室到课堂（lab-to-classroom）**的方法论范例，强调迭代设计、师生参与和现场验证的重要性。\n- 其“学生无关检测器”思路降低了系统部署前的个体校准成本，提升了可扩展性。\n\n---\n\n## 7. 关联标签\n\n#AttentionAwareLearning #EyeTracking #MindWandering #IntelligentTutoringSystem #ClassroomDeployment #LearningAnalytics #CHI2021 #GazeBasedIntervention #AdaptiveLearning #RealWorldEducation #MixedMethods #HumanAICollaboration",
+    "excerpt": "来源：records/20260513/09/megumi-attention-gaze/论文总结.md · 标题 : Breaking out of the Lab: Mitigating Mind Wandering with Gaze Based Attention Aware Technology in Classrooms",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260513/09/megumi-attention-gaze",
+    "original_url": "https://doi.org/10.1145/3411764.3445269",
+    "original_label": "DOI",
     "session_type": "",
     "session_label": ""
   },
