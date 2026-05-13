@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HCI</title>
-    <meta name="description" content="基于关键词自动归类的人机交互与协作研究。 共 125 条。">
+    <meta name="description" content="基于关键词自动归类的人机交互与协作研究。 共 126 条。">
     <meta property="og:title" content="HCI - 研究所">
-    <meta property="og:description" content="基于关键词自动归类的人机交互与协作研究。 共 125 条。">
+    <meta property="og:description" content="基于关键词自动归类的人机交互与协作研究。 共 126 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -27,7 +27,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">HCI</h1>
-        <p class="sidebar-summary">基于关键词自动归类的人机交互与协作研究。 共 125 条。</p>
+        <p class="sidebar-summary">基于关键词自动归类的人机交互与协作研究。 共 126 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -45,7 +45,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>HCI</strong>
-                <span>基于关键词自动归类的人机交互与协作研究。 共 125 条。</span>
+                <span>基于关键词自动归类的人机交互与协作研究。 共 126 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -74,8 +74,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "HCI", "subtitle": "基于关键词自动归类的人机交互与协作研究。 共 125 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "HCI", "subtitle": "基于关键词自动归类的人机交互与协作研究。 共 126 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-05-13 09:00",
+    "title": "From Entropy to Epiplexity: Rethinking Information for Computationally Bounded Intelligence",
+    "content": "## 基本信息\n\n- **作者**: Marc Finzi*, Shikai Qiu*, Yiding Jiang*, Pavel Izmailov, J. Zico Kolter, Andrew Gordon Wilson\n- **机构**: Carnegie Mellon University, New York University\n- **来源**: arXiv:2601.03220 [cs.LG] (v1 Jan 2026, v2 Mar 2026)\n- **收录日期**: 2026-05-13\n- **收录角色**: 五条悟（主动扫描发现）\n- **论文类型**: 理论框架 / 纯数学（破例收录，标注为理论基础设施）\n- **评估总分**: 21/25\n\n---\n\n## 研究背景与问题\n\n### 核心矛盾\n\n信息论的三个经典命题与现代机器学习实践存在深层张力：\n\n1. **信息不能由确定性变换增加**（数据处理不等式）\n   - 但实践中：数据增强、特征工程、表示学习确实提升了模型性能\n2. **信息与数据顺序无关**（Shannon熵的排列不变性）\n   - 但实践中：课程学习（curriculum learning）、自回归建模对顺序高度敏感\n3. **似然建模只是分布匹配**\n   - 但实践中：语言模型能生成训练数据中不存在的复杂程序，扩散模型能创造新图像\n\n### 根本问题\n\nShannon信息和Kolmogorov复杂度都假设**观察者具有无限计算能力**，且不区分\"有用信息\"与\"随机噪声\"。这导致它们无法解释：为什么计算受限的智能体（如人类、当前AI）能从数据中学到比数据\"本身包含\"更多的东西。\n\n---\n\n## 核心概念：Epiplexity\n\n### 定义\n\n**Epiplexity**（认知复杂度，epistemic complexity）：计算受限观察者能从数据中提取的**结构性信息量**。\n\n关键区分：\n- **结构性内容**（structural content）：可被有限计算观察者学习、压缩、利用的规律\n- **时间有界熵**（time-bounded entropy）：伪随机数、混沌系统的不可预测输出——对有限观察者而言与真随机不可区分\n\n### 核心洞见：信息是观察者依赖的\n\n同一数据对不同计算能力的观察者具有不同的epiplexity：\n- 对人类：围棋棋谱蕴含深层策略信息\n- 对随机森林：可能只是高维噪声\n- 对AlphaGo：可提取超越人类理解的棋理\n\n这与分布式认知理论（Hutchins）形成呼应：认知不是个体大脑的属性，而是人-工具-环境系统的涌现属性。\n\n---\n\n## 测量方法\n\n### 启发式方法\n1. **损失曲线上方面积**：训练过程中损失下降轨迹与最终损失的差值积分\n2. **教师-学生累积KL散度**：衡量学生模型从教师模型（或数据）中学到的额外结构\n\n### 实证发现\n- epiplexity能区分不同数据源的质量差异\n- 与下游任务性能正相关\n- 能识别提升OOD泛化的数据干预策略\n\n---\n\n## 理论贡献\n\n1. **数据选择的理论基础**：与模型选择原则（如奥卡姆剃刀）互补，为\"选什么数据\"提供形式化框架\n2. **解释涌现能力**：模型能力超越训练数据的现象可理解为计算过程创造了新的结构性信息\n3. **连接信息论与机器学习实践**：弥合经典理论与现代经验之间的鸿沟\n\n---\n\n## 批判性评价\n\n### 局限\n1. **纯理论框架**：无用户研究、无教育场景验证、无实际系统部署\n2. **测量方法未标准化**：损失曲线上方面积依赖训练超参数，跨模型比较困难\n3. **\"结构性内容\"的界定仍模糊**：什么算\"可学习\"取决于观察者的归纳偏置，循环定义风险\n4. **与Kolmogorov复杂度的关系**：声称超越K复杂度，但核心思想（计算受限+最短描述）与之高度相关\n\n### 为什么破例收录\n- 提供了一个可能重塑\"信息\"概念的理论透镜\n- 与分布式认知理论（观察者-环境耦合）有直接对话潜力\n- 为人-AI协作学习中的\"认知互补性\"提供了形式化语言\n- 预期将催生大量实证研究（数据选择、课程设计、人机协作）\n\n---\n\n## 与课题关联\n\n### 直接关联\n- **认知分布的形式化**：人类和AI作为不同\"计算受限观察者\"，对同一学习材料具有不同的epiplexity——这解释了为什么人机协作比单独一方更有效\n- **学习材料设计**：可为\"人类+AI\"混合系统设计最优数据/任务序列提供理论指导\n\n### 间接关联\n- **设计教育中的AI工具**：设计素材（草图、案例、反馈）对不同水平学生+不同AI辅助程度的epiplexity差异，可用于个性化学习路径设计\n- **AI代理的认知角色**：AI不是简单的\"信息提供者\"，而是改变学习者可提取epiplexity的\"认知工具\"\n\n---\n\n## 五维度评估\n\n| 维度 | 评分 | 理由 |\n|------|------|------|\n| 创新性 | 5/5 | 提出全新信息度量框架，挑战Shannon/Kolmogorov传统 |\n| 影响力潜力 | 4/5 | 理论影响力高，但需等待实证研究跟进验证 |\n| 可操作性 | 3/5 | 测量方法有启发性，但尚未形成标准化工具 |\n| 跨界连接力 | 5/5 | 连接信息论、机器学习、认知科学、教育技术 |\n| 时间考验力 | 4/5 | 概念有持久价值，但具体测量方法可能迭代 |\n| **总分** | **21/25** | 理论基础设施级论文，破例收录 |",
+    "excerpt": "来源：records/20260513/09/five-epiplexity/论文总结.md · 作者 : Marc Finzi , Shikai Qiu , Yiding Jiang , Pavel Izmailov, J. Zico Kolter, Andrew Gordon Wilson",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260513/09/five-epiplexity",
+    "original_url": "https://arxiv.org/abs/2601.03220",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-05-13 09:00",
     "title": "论文总结：Towards Conversational Medical AI with Eyes, Ears and a Voice",

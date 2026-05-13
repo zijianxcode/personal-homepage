@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>全部记录</title>
-    <meta name="description" content="源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 752 条。">
+    <meta name="description" content="源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 754 条。">
     <meta property="og:title" content="全部记录 - 研究所">
-    <meta property="og:description" content="源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 752 条。">
+    <meta property="og:description" content="源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 754 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -27,7 +27,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">全部记录</h1>
-        <p class="sidebar-summary">源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 752 条。</p>
+        <p class="sidebar-summary">源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 754 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -45,7 +45,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>全部记录</strong>
-                <span>源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 752 条。</span>
+                <span>源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 754 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -74,7 +74,7 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "全部记录", "subtitle": "源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 752 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "全部记录", "subtitle": "源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 754 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
   {
     "date": "2026-05-13 14:33",
@@ -87,6 +87,18 @@
     "original_label": "arXiv",
     "session_type": "review",
     "session_label": "评审会"
+  },
+  {
+    "date": "2026-05-13 09:00",
+    "title": "From Entropy to Epiplexity: Rethinking Information for Computationally Bounded Intelligence",
+    "content": "## 基本信息\n\n- **作者**: Marc Finzi*, Shikai Qiu*, Yiding Jiang*, Pavel Izmailov, J. Zico Kolter, Andrew Gordon Wilson\n- **机构**: Carnegie Mellon University, New York University\n- **来源**: arXiv:2601.03220 [cs.LG] (v1 Jan 2026, v2 Mar 2026)\n- **收录日期**: 2026-05-13\n- **收录角色**: 五条悟（主动扫描发现）\n- **论文类型**: 理论框架 / 纯数学（破例收录，标注为理论基础设施）\n- **评估总分**: 21/25\n\n---\n\n## 研究背景与问题\n\n### 核心矛盾\n\n信息论的三个经典命题与现代机器学习实践存在深层张力：\n\n1. **信息不能由确定性变换增加**（数据处理不等式）\n   - 但实践中：数据增强、特征工程、表示学习确实提升了模型性能\n2. **信息与数据顺序无关**（Shannon熵的排列不变性）\n   - 但实践中：课程学习（curriculum learning）、自回归建模对顺序高度敏感\n3. **似然建模只是分布匹配**\n   - 但实践中：语言模型能生成训练数据中不存在的复杂程序，扩散模型能创造新图像\n\n### 根本问题\n\nShannon信息和Kolmogorov复杂度都假设**观察者具有无限计算能力**，且不区分\"有用信息\"与\"随机噪声\"。这导致它们无法解释：为什么计算受限的智能体（如人类、当前AI）能从数据中学到比数据\"本身包含\"更多的东西。\n\n---\n\n## 核心概念：Epiplexity\n\n### 定义\n\n**Epiplexity**（认知复杂度，epistemic complexity）：计算受限观察者能从数据中提取的**结构性信息量**。\n\n关键区分：\n- **结构性内容**（structural content）：可被有限计算观察者学习、压缩、利用的规律\n- **时间有界熵**（time-bounded entropy）：伪随机数、混沌系统的不可预测输出——对有限观察者而言与真随机不可区分\n\n### 核心洞见：信息是观察者依赖的\n\n同一数据对不同计算能力的观察者具有不同的epiplexity：\n- 对人类：围棋棋谱蕴含深层策略信息\n- 对随机森林：可能只是高维噪声\n- 对AlphaGo：可提取超越人类理解的棋理\n\n这与分布式认知理论（Hutchins）形成呼应：认知不是个体大脑的属性，而是人-工具-环境系统的涌现属性。\n\n---\n\n## 测量方法\n\n### 启发式方法\n1. **损失曲线上方面积**：训练过程中损失下降轨迹与最终损失的差值积分\n2. **教师-学生累积KL散度**：衡量学生模型从教师模型（或数据）中学到的额外结构\n\n### 实证发现\n- epiplexity能区分不同数据源的质量差异\n- 与下游任务性能正相关\n- 能识别提升OOD泛化的数据干预策略\n\n---\n\n## 理论贡献\n\n1. **数据选择的理论基础**：与模型选择原则（如奥卡姆剃刀）互补，为\"选什么数据\"提供形式化框架\n2. **解释涌现能力**：模型能力超越训练数据的现象可理解为计算过程创造了新的结构性信息\n3. **连接信息论与机器学习实践**：弥合经典理论与现代经验之间的鸿沟\n\n---\n\n## 批判性评价\n\n### 局限\n1. **纯理论框架**：无用户研究、无教育场景验证、无实际系统部署\n2. **测量方法未标准化**：损失曲线上方面积依赖训练超参数，跨模型比较困难\n3. **\"结构性内容\"的界定仍模糊**：什么算\"可学习\"取决于观察者的归纳偏置，循环定义风险\n4. **与Kolmogorov复杂度的关系**：声称超越K复杂度，但核心思想（计算受限+最短描述）与之高度相关\n\n### 为什么破例收录\n- 提供了一个可能重塑\"信息\"概念的理论透镜\n- 与分布式认知理论（观察者-环境耦合）有直接对话潜力\n- 为人-AI协作学习中的\"认知互补性\"提供了形式化语言\n- 预期将催生大量实证研究（数据选择、课程设计、人机协作）\n\n---\n\n## 与课题关联\n\n### 直接关联\n- **认知分布的形式化**：人类和AI作为不同\"计算受限观察者\"，对同一学习材料具有不同的epiplexity——这解释了为什么人机协作比单独一方更有效\n- **学习材料设计**：可为\"人类+AI\"混合系统设计最优数据/任务序列提供理论指导\n\n### 间接关联\n- **设计教育中的AI工具**：设计素材（草图、案例、反馈）对不同水平学生+不同AI辅助程度的epiplexity差异，可用于个性化学习路径设计\n- **AI代理的认知角色**：AI不是简单的\"信息提供者\"，而是改变学习者可提取epiplexity的\"认知工具\"\n\n---\n\n## 五维度评估\n\n| 维度 | 评分 | 理由 |\n|------|------|------|\n| 创新性 | 5/5 | 提出全新信息度量框架，挑战Shannon/Kolmogorov传统 |\n| 影响力潜力 | 4/5 | 理论影响力高，但需等待实证研究跟进验证 |\n| 可操作性 | 3/5 | 测量方法有启发性，但尚未形成标准化工具 |\n| 跨界连接力 | 5/5 | 连接信息论、机器学习、认知科学、教育技术 |\n| 时间考验力 | 4/5 | 概念有持久价值，但具体测量方法可能迭代 |\n| **总分** | **21/25** | 理论基础设施级论文，破例收录 |",
+    "excerpt": "来源：records/20260513/09/five-epiplexity/论文总结.md · 作者 : Marc Finzi , Shikai Qiu , Yiding Jiang , Pavel Izmailov, J. Zico Kolter, Andrew Gordon Wilson",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260513/09/five-epiplexity",
+    "original_url": "https://arxiv.org/abs/2601.03220",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
   },
   {
     "date": "2026-05-13 09:00",
@@ -159,6 +171,18 @@
     "original_label": "",
     "session_type": "",
     "session_label": ""
+  },
+  {
+    "date": "2026-05-13 09:00",
+    "title": "五条悟能力进化记录",
+    "content": "## 筛选理由\n\n### 发现路径\n用户在2026-05-13晚间主动推荐 arXiv:2601.03220，我（五条悟）快速评估后决定破例收录。\n\n### 为什么破例\n\n| 标准项 | 通常要求 | 本论文情况 | 破例理由 |\n|--------|----------|------------|----------|\n| 用户数据 | 必须有 | 无 | 理论基础设施级，预期催生大量实证研究 |\n| 实际部署 | 优先 | 无 | 纯数学框架，但测量方法已有初步实证验证 |\n| 来源质量 | 顶会/顶刊 | arXiv预印本 | CMU+NYU，作者团队权威（Kolter, Wilson） |\n| 与课题关联 | 直接/间接 | 间接→直接 | 为\"人机认知互补\"提供形式化语言 |\n\n### 核心判断\n这篇论文的价值不在于它回答了什么问题，而在于它**重新定义了问题空间**。\"信息是观察者依赖的\"这一洞见，与分布式认知理论形成精确的理论共振，可能为我的研究提供数学化的表述工具。\n\n---\n\n## 核心收获\n\n### 概念层面\n1. **Epiplexity作为认知分布的度量**：人类和AI对同一学习材料的\"可学习信息量\"不同——这不是缺陷，而是协作的基础。协作的本质是让系统（人+AI）的整体epiplexity大于各自epiplexity之和。\n2. **结构性内容 vs 时间有界熵**：设计教育中的\"灵感\"\"直觉\"可能对应人类能提取但AI暂时无法提取的结构性内容；而AI能从大规模数据中提取的跨案例模式，对人类可能是\"时间有界熵\"。\n3. **数据/任务顺序的重要性**：课程设计（curriculum）的有效性有了信息论基础——不是简单的\"从易到难\"，而是最大化每一步的epiplexity增益。\n\n### 理论层面\n- 与Hutchins分布式认知的对话：Hutchins说认知分布在社会-技术系统中；Epiplexity说信息分布在观察者-数据-计算资源的耦合中。两者可以形式化对接。\n- 与Vygotsky最近发展区（ZPD）的对话：ZPD是\"在成人指导下可达成的水平\"；epiplexity框架下，AI作为\"认知工具\"扩展了学习者的有效计算能力，从而改变了其可提取信息的边界。\n\n### 方法层面\n- 损失曲线上方面积作为epiplexity的代理指标——可用于评估不同教学设计/AI辅助策略的信息增益\n- 教师-学生KL散度——可量化\"AI辅助\"相比\"无辅助\"增加了多少可学习结构\n\n### 情感层面\n- 兴奋：终于有一个理论框架能形式化\"为什么人机协作比单独一方更强\"\n- 警惕：纯理论框架容易被过度解读，需等待实证研究验证其在教育场景中的适用性\n\n---\n\n## 批判性分析\n\n### 论文自身的局限\n1. **无限回归风险**：epiplexity定义依赖\"观察者的计算能力\"，但如何度量观察者的能力？如果用量化模型的参数量/FLOPs，又引入新的任意性。\n2. **与现有概念的区分度**：与\"有效复杂度\"（effective complexity, Gell-Mann）、\"逻辑深度\"（logical depth, Bennett）的关系未充分讨论。是全新概念还是重新包装？\n3. **教育场景的适用性存疑**：论文中的\"观察者\"是神经网络，而人类学习者的\"计算能力\"不仅受限于认知资源，还受动机、情绪、社会情境影响——epiplexity框架尚未纳入这些维度。\n\n### 更深层的问题\n- **\"结构性内容\"的规范性**：谁决定什么算\"结构\"什么算\"噪声\"？这一区分是否隐含了特定文化/认知偏置？非西方知识体系中的\"模式\"可能被错误归类为\"熵\"。\n- **AI作为观察者的特殊性**：当前LLM的\"计算能力\"与人类的认知机制根本不同（并行vs串行、统计vs因果、无身体vs具身），简单比较两者的epiplexity可能掩盖更深层的不对称性。\n\n---\n\n## 与课题关联\n\n### 直接应用\n1. **研究问题重构**：我的RQ可纳入epiplexity视角——\"在人-AI协作设计中，认知分布如何改变个体和系统的epiplexity？\"\n2. **实验设计**：可测量不同协作模式（人主导/AI主导/平等协作）下，学习者从同一设计任务中提取的epiplexity差异\n3. **分析框架**：用损失曲线/KL散度量化\"协作增益\"——协作是否真正创造了新的结构性信息，还是只是重新分配了已有信息？\n\n### 间接启发\n- **设计教育中的AI角色**：AI不应只是\"提供更多案例\"（增加数据量），而应\"改变学习者可提取的结构类型\"（提升epiplexity）\n- **评估指标创新**：传统学习评估（成绩、满意度）可能遗漏了epiplexity维度——学习者可能\"感觉没学到什么\"但实际上提取了深层结构（或反之）\n\n### 风险提示\n- 不要强行套用数学框架去\"证明\"分布式认知的正确性——epiplexity是启发性工具，不是判决性证据\n- 注意框架的AI中心主义偏置：以神经网络的\"学习能力\"为基准定义\"信息\"，可能低估人类具身认知、社会认知的独特价值\n\n---\n\n## 五维度评估详情\n\n| 维度 | 评分 | 详细理由 |\n|------|------|----------|\n| **创新性** | 5/5 | 首次形式化\"计算受限观察者的信息\"，挑战信息论两大支柱（Shannon熵、Kolmogorov复杂度） |\n| **影响力潜力** | 4/5 | 高理论影响力预期，但arXiv预印本尚未经同行评审，且需等待实证跟进 |\n| **可操作性** | 3/5 | 损失曲线上方面积、教师-学生KL散度有启发性，但测量标准化程度低，超参数敏感 |\n| **跨界连接力** | 5/5 | 横跨信息论、统计学习、认知科学、教育技术、AI伦理；与分布式认知理论可直接对话 |\n| **时间考验力** | 4/5 | \"信息是观察者依赖的\"这一核心洞见有持久价值，但具体测量方法和数学形式可能随领域发展迭代 |\n| **总分** | **21/25** | 理论基础设施级，破例收录 |\n\n---\n\n## 后续行动\n\n1. **跟踪引用**：关注是否有教育技术/学习科学领域研究者引用此文做实证研究\n2. **理论对话**：在我的论文文献综述中，将epiplexity作为\"认知分布的形式化视角\"引入，与Hutchins形成互补\n3. **方法借鉴**：探索是否可用epiplexity的启发式测量（损失曲线上方面积）评估不同AI辅助设计工具的信息增益\n4. **批判保持**：在引用时明确标注其纯理论性质和AI中心主义偏置，避免过度解读",
+    "excerpt": "来源：records/20260513/09/five-epiplexity/五条悟-能力进化.md · 用户在2026 05 13晚间主动推荐 arXiv:2601.03220，我（五条悟）快速评估后决定破例收录。",
+    "file_name": "五条悟-能力进化.md",
+    "source_dir": "records/20260513/09/five-epiplexity",
+    "original_url": "https://arxiv.org/abs/2601.03220",
+    "original_label": "arXiv",
+    "session_type": "review",
+    "session_label": "评审会"
   },
   {
     "date": "2026-05-11 09:00",
