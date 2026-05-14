@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV</title>
-    <meta name="description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 97 条。">
+    <meta name="description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 98 条。">
     <meta property="og:title" content="CV - 研究所">
-    <meta property="og:description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 97 条。">
+    <meta property="og:description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 98 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -27,7 +27,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">CV</h1>
-        <p class="sidebar-summary">基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 97 条。</p>
+        <p class="sidebar-summary">基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 98 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -45,7 +45,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>CV</strong>
-                <span>基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 97 条。</span>
+                <span>基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 98 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -74,8 +74,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "CV", "subtitle": "基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 97 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "CV", "subtitle": "基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 98 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-05-14 09:00",
+    "title": "From Gaze to Guidance: Interpreting and Adapting to Users' Cognitive Needs with Multimodal Gaze-Aware AI Assistants",
+    "content": "@@ -0,0 +1,135 @@\n+# From Gaze to Guidance: Interpreting and Adapting to Users' Cognitive Needs with Multimodal Gaze-Aware AI Assistants\n+\n+## 一、基础信息\n+\n+- **标题**: From Gaze to Guidance: Interpreting and Adapting to Users' Cognitive Needs with Multimodal Gaze-Aware AI Assistants\n+- **作者**: Valdemar Danry, Javier Hernandez, Andrew Wilson, Pattie Maes, Judith Amores\n+- **机构**: Microsoft Research, MIT Media Lab\n+- **发表**: arXiv:2604.08062, 2026年4月（拟投 UIST 2026）\n+- **领域**: Human-Computer Interaction (cs.HC) / Artificial Intelligence (cs.AI)\n+- **关键词**: gaze-aware AI assistant, multimodal LLM, egocentric video, cognitive needs, eye tracking, reading comprehension\n+- **链接**: https://arxiv.org/abs/2604.08062\n+\n+---\n+\n+## 二、研究背景与问题\n+\n+当前 LLM 助手虽能处理文本、图像、音频、视频，但**完全依赖用户的显式输入**（说/写/上传/提问），无法感知用户何时、何处遇到困难。人类在日常互动中会通过观察他人 gaze 来推断其关注点、兴趣、困惑或挣扎——学生反复回看某段文字时，往往意味着卡住了。现有 AI 系统对这种**行为上下文（behavioral context）**基本\"失明\"。\n+\n+核心问题：**能否将眼动追踪与第一人称视频作为多模态输入，让 LLM 助手主动推断用户的认知需求，并提供针对性的对话式支持？**\n+\n+---\n+\n+## 三、方法与技术方案\n+\n+### 3.1 系统架构（三阶段管道）\n+\n+1. **多模态场景感知（Multimodal Scene Grounding）**\n+   - 硬件：Meta Aria 智能眼镜（前向 RGB 2880×2880 + 双眼追踪摄像头）\n+   -  gaze 投影：开源 Aria gaze 推理模型，将 gaze 向量映射为第一人称图像上的红色半透明圆点\n+   - 输入设计：同时提供原图 + 以 gaze 点为中心的 200×200 像素裁剪图（提升 MLLM 识别准确率）\n+   - 输出：时间戳化的 \"GazeAnalysis\" 对象列表（注视词/句/物体 + 时间）\n+\n+2. **候选困难时刻推断（Inference of Candidate Moments of Difficulty）**\n+   - 将 gaze action list 输入 GPT-4，prompt 要求识别 fixation、regression、凝视游离、内容跳过等行为\n+   - 对齐到具体词/句/区域，推断可能的认知需求\n+   - 本研究采用**回顾式分析**（读完后统一处理），避免实时打断阅读流\n+\n+3. **对话式辅助（Conversational Assistance）**\n+   - 使用 OpenAI Realtime API (gpt-4o-realtime-preview)，语音交互\n+   - 端到端延迟：往返语音 < 2s，完整管道（gaze 观察 → 助手输出）平均 4.1s\n+   - 策略：结合解释与苏格拉底式提问；因 gaze 解释存在不确定性，系统使用 hedging（\"你在这里停顿了，是因为这个词不清楚吗？\"）\n+\n+### 3.2 实验设计\n+\n+- **设计**：within-subjects（被试内），两条件对照\n+  - 实验条件：gaze-aware 助手（文本 + gaze 视频分析）\n+  - 对照条件：text-only 助手（仅文本 + 文本推断分析，prompt 相同但无 gaze 数据）\n+- **被试**：招募 41 人，排除 5 人（设备断连 3 + 完成时间过短 2），最终 n=36\n+  - 年龄 18-44，57% 男性，43% 女性\n+- **材料**：两篇中等难度阅读文本（Inflation / Plate Tectonics），第三篇用于 side-by-side 直接对比\n+- **测量指标**：\n+  - 学习表现：recall、definition probe、concept-inventory\n+  - 主观评价：LLM 分析准确性、个性化程度（1-7 Likert）\n+  - 行为指标：用户发言词数、对话轮数\n+  - 探索性：NASA-TLX 认知负荷、LLM-as-a-judge 对话分析\n+\n+---\n+\n+## 四、核心结果\n+\n+### 4.1 学习表现\n+\n+| 指标 | 对照 (text-only) | 实验 (gaze-aware) | 提升 | 统计显著性 |\n+|------|------------------|-------------------|------|-----------|\n+| Recall | 88.9% ± 15.9% | 96.3% ± 10.6% | +7.4 pp | **p=0.0187**, Cohen's d=0.41 |\n+| Definition probe | 77.8% ± 42.2% | 83.3% ± 37.8% | +5.6 pp | p=0.487（不显著） |\n+| Concept inventory | 49.1% ± 30.3% | 51.9% ± 27.0% | +2.8 pp | p=0.668（不显著） |\n+\n+- **关键发现**：gaze-aware 助手在 recall 上显著提升，但在更深层的概念迁移（concept-inventory）和定义探测上仅有方向性提升、未达显著。\n+\n+### 4.2 主观评价与偏好\n+\n+- **准确性评分**：4.31 → 5.50（+1.19, **p=0.00027**）\n+- **个性化评分**：3.94 → 5.50（+1.56, **p<0.00001**）\n+- **Side-by-side 偏好**：63.9% (23/36) 选择 gaze-based 分析\n+\n+### 4.3 交互效率\n+\n+- **用户发言词数**：83.25 → 57.28（-25.97 词, **p=0.0469**）\n+- **对话轮数**：8.39 → 7.22（方向性减少，p=0.107）\n+- **用户 steering 行为**（LLM-as-judge）：0.67 → 0.44（**p=0.030**）\n+- **表达困惑频率**：0.61 → 0.39（方向性降低，p=0.103）\n+\n+### 4.4 定性发现\n+\n+- 多数用户称 gaze-aware 助手\"读懂了我的心\"（\"read my mind\"），能精准定位其犹豫/回读的句子\n+- **失败模式**：系统有时将\"验证性重读\"\"策略性跳读\"误判为困惑；gaze 无法捕捉深层概念关系困难（如理解 lithosphere-asthenosphere 相互作用，而非单个术语）\n+\n+---\n+\n+## 五、讨论与局限\n+\n+### 5.1 理论贡献\n+\n+- **范式转换**：将 gaze 从\"注意力定位/指代消解\"工具，转变为**认知需求的概率性行为线索**\n+- **诊断负担转移**：gaze-aware 系统将\"识别困难所在\"的认知工作从用户转移到系统，减少用户的显式求助成本\n+- **区分两个设计问题**：需求检测（targeting）与辅助交付（explanation）应分开优化；本系统在 targeting 上效果显著，但 explanation 质量本身未显著提升深层学习\n+\n+### 5.2 局限\n+\n+1. **天花板效应**：材料较短，recall 基线已较高（88.9%），可能压缩了提升空间\n+2. **强对照基线**：对照条件并非通用聊天机器人，而是同样被 prompt 推断困难的助手，对比偏保守\n+3. **回顾式干预**：未测试实时干预；试点发现实时打断常在不恰当时机发生，因此采用读后分析\n+4. **领域局限**：阅读任务中注意力目标空间锚定，结果未必推广至开放式社交复杂场景\n+5. **gaze 歧义性**：同一眼动模式可对应困惑、验证、熟悉、疲劳或策略性阅读，存在误读风险\n+\n+### 5.3 伦理与隐私\n+\n+- 论文专设 Ethics 章节：gaze 数据属敏感生物特征，需明确用户同意、数据脱敏、本地存储\n+- 强调\"有意义的用户控制\"（meaningful user controls）与系统透明度\n+\n+---\n+\n+## 六、五条悟评估\n+\n+| 维度 | 评分 | 理由 |\n+|------|------|------|\n+| **创新性** | ⭐⭐⭐⭐⭐ | 首次将 gaze-projected egocentric video 作为直接多模态输入，让 MLLM 主动推断认知需求，而非仅做指代消解或注意力追踪。范式意义明确。 |\n+| **影响力** | ⭐⭐⭐⭐☆ | 对 HCI、AI 助手、教育技术、可穿戴计算均有启发。Microsoft Research + MIT Media Lab 背书，拟投 UIST。但需更多领域验证才能产生广泛影响。 |\n+| **可操作性** | ⭐⭐⭐⭐☆ | 系统基于现有硬件（Meta Aria）和 API（OpenAI Realtime）构建，技术路径清晰。但 gaze 校准、隐私合规、实时延迟仍是落地门槛。 |\n+| **跨界连接力** | ⭐⭐⭐⭐⭐ | 连接认知科学（gaze-cognition 关联）、MLLM 多模态推理、教育心理学（retrieval practice, self-explanation）、可穿戴工程。典型的 AI+X 交叉。 |\n+| **时间考验力** | ⭐⭐⭐⭐☆ | 核心洞察（gaze as behavioral context for assistance）具有持久价值。但具体实现（GPT-4o Realtime、Aria 眼镜）可能随技术迭代被替代。 |\n+\n+**总分**: 22/25（优秀，强烈推荐）\n+\n+---\n+\n+## 七、与课题关联\n+\n+本工作直接回应\"AI × 新型交互方式\"中的**眼动/注意力交互**方向，展示了：\n+- 如何将生理传感（gaze）与 LLM 结合，实现**隐式交互（implicit interaction）**\n+- 从\"用户显式输入\"到\"系统主动感知\"的交互范式演进\n+- gaze 数据在教育、阅读、智能眼镜场景中的产品化路径\n+\n+对设计实践的核心启示：**下一代 AI 助手不应只等用户开口，而应学会\"察言观色\"——而 gaze 是最接近人类自然社交直觉的窗口之一。**",
+    "excerpt": "来源：records/20260514/09/yujin-260408062/论文总结.md · @@ 0,0 +1,135 @@",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260514/09/yujin-260408062",
+    "original_url": "https://arxiv.org/abs/2604.08062",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-05-13 09:00",
     "title": "From Entropy to Epiplexity: Rethinking Information for Computationally Bounded Intelligence",
