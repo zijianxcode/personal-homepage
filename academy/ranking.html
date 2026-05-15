@@ -10,9 +10,14 @@
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
-    <link rel="stylesheet" href="site.css?v=20260429">
+    <link rel="stylesheet" href="site.css?v=20260515-i18n1">
 </head>
 <body class="home-page ranking-page">
+    <div class="language-switch" data-i18n-root aria-label="Language switcher">
+        <button class="language-option is-active" type="button" data-lang-option="zh" aria-pressed="true">中</button>
+        <button class="language-option" type="button" data-lang-option="en" aria-pressed="false">EN</button>
+    </div>
+
     <div class="home-shell">
         <header class="topbar ranking-topbar">
             <a class="brand" href="index.html">
@@ -207,5 +212,6 @@
             show(10);
         })();
     </script>
+    <script src="site-i18n.js?v=20260515-i18n1"></script>
 </body>
 </html>
