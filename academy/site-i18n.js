@@ -280,7 +280,12 @@
         if (isApplying) return;
         mutations.forEach((mutation) => {
             if (mutation.type === 'characterData') {
-                originalTexts.delete(mutation.target);
+                const original = originalTexts.get(mutation.target);
+                if (!original) return;
+                const expected = currentLang === 'en' ? translateText(original) : original;
+                if (mutation.target.nodeValue !== expected) {
+                    originalTexts.delete(mutation.target);
+                }
             }
         });
         scheduleApply();
