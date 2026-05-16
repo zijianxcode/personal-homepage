@@ -34,6 +34,7 @@
 - `site.css`：共享视觉样式
 - `site-index.js`：首页交互脚本
 - `site-detail.js`：详情页交互脚本
+- `site-i18n.js`：全局中英文 UI 切换脚本
 
 ### 构建入口
 - `sync_from_source.py`：扫描源目录并重建页面
@@ -60,7 +61,8 @@
 3. `sync_from_source.py` 决定页面生成规则。
 4. `site.css` 决定视觉和布局。
 5. `site-detail.js` / `site-index.js` 决定页面交互。
-6. `docs/ISSUE_LOG.md` 只记录历史问题与修复经验，不承载常规规则。
+6. `site-i18n.js` 决定全局 UI 文案的中英文切换。
+7. `docs/ISSUE_LOG.md` 只记录历史问题与修复经验，不承载常规规则。
 
 ## 当前项目特点
 
