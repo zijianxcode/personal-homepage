@@ -2812,3 +2812,37 @@ input:focus-visible {
         color: var(--accent, #ff6b35);
     }
 }
+
+/* Strategy section on member pages */
+.strategy-section {
+    margin-bottom: 2.5rem;
+    border: 1px solid var(--border, #e0e0e0);
+    border-radius: 8px;
+    padding: 1.5rem;
+    background: var(--surface, #fafafa);
+}
+.strategy-header {
+    margin-bottom: 1rem;
+}
+.strategy-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0.25rem 0 0;
+    color: var(--fg, #1a1a1a);
+}
+.strategy-card {
+    padding: 1rem 0;
+    border-top: 1px solid var(--border, #e0e0e0);
+}
+.strategy-card:first-child {
+    border-top: none;
+}
+.strategy-body h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 1rem 0 0.5rem;
+}
+.strategy-body ul {
+    margin: 0.25rem 0;
+    padding-left: 1.25rem;
+}
