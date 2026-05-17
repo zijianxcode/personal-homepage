@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ML</title>
-    <meta name="description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 127 条。">
+    <meta name="description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 128 条。">
     <meta property="og:title" content="ML - 研究所">
-    <meta property="og:description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 127 条。">
+    <meta property="og:description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 128 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">ML</h1>
-        <p class="sidebar-summary">基于关键词自动归类的训练、优化与模型方法研究。 共 127 条。</p>
+        <p class="sidebar-summary">基于关键词自动归类的训练、优化与模型方法研究。 共 128 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>ML</strong>
-                <span>基于关键词自动归类的训练、优化与模型方法研究。 共 127 条。</span>
+                <span>基于关键词自动归类的训练、优化与模型方法研究。 共 128 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,8 +79,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "ML", "subtitle": "基于关键词自动归类的训练、优化与模型方法研究。 共 127 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "ML", "subtitle": "基于关键词自动归类的训练、优化与模型方法研究。 共 128 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-05-17 09:00",
+    "title": "\"It's not a representation of me\": Examining Accent Bias and Digital Exclusion in Synthetic AI Voice Services",
+    "content": "## 1. 元数据\n\n- **标题**: \"It's not a representation of me\": Examining Accent Bias and Digital Exclusion in Synthetic AI Voice Services\n- **作者**: Shira Michel, Sufi Kaur, Sarah Elizabeth Gillespie, Jeffrey Gleason, Christo Wilson, Avijit Ghosh\n- **机构**: Northeastern University; Hugging Face / University of Connecticut\n- **发表/会议**: FAccT 2025 (ACM Conference on Fairness, Accountability, and Transparency), Athens, Greece, June 23–26, 2025\n- **链接**: https://doi.org/10.1145/3715275.3732018\n- **arXiv**: https://arxiv.org/abs/2504.09346\n- **野蔷薇评分**: 创新性 9 / 影响力潜力 9 / 可操作性 8 / 跨界连接力 9 / 时间考验力 8 → **总分 43/50**\n\n---\n\n## 2. 研究问题与核心发现\n\n### 研究问题\n本文通过混合方法（量化众包实验 + 质性访谈）评估了两款主流合成语音服务（Speechify 与 ElevenLabs）在五种英语地域口音（美式、英式、印度、澳大利亚、非洲）上的表现，追问：\n1. 合成语音技术是否存在系统性的口音偏见？\n2. 技术性能差距如何转化为用户的数字排斥体验？\n3. 口音准确度是否足以决定用户对语音克隆的接受度？\n\n### 核心发现\n- **技术性能差距**：ElevenLabs 在口音模仿准确度上整体优于 Speechify，但对非美式/非英式口音（尤其印度、非洲口音）的分类准确率显著更低，且 crowdworker 常误认这些口音。\n- **用户满意度悖论**：口音准确度本身并不能决定用户满意度。ElevenLabs 的高真实感反而放大了部分用户的焦虑——他们担心自己的声音被\"完美复制\"后失去控制权。\n- **情感与文化维度**：拥有非美式/非英式口音的用户普遍感到被排斥与误代表（\"It's not a representation of me\"）。大多数 AI 系统默认 privileging 美式与英式口音，使非主导口音使用者产生深层的不被看见感。\n- **数字排斥的新形式**：当前语音生成技术无意中强化了\"语言特权\"（linguistic privilege）与基于口音的歧视，可能制造新型数字排斥——不仅是\"识别错误\"，更是\"身份抹除\"。\n\n---\n\n## 3. 方法与设计\n\n- **混合方法**：\n  - **量化**：通过众包平台收集语音样本评价，评估 Accent Mimicry Accuracy (AMA) 与 Accent Mimicry Quality (AMQ)。\n  - **质性**：对拥有多元口音背景的用户进行半结构化访谈，探讨其与 AI 生成语音的互动体验、情感反应与文化认同。\n- **研究对象**：五种区域英语口音（American, British, Indian, Australian, African）。\n- **平台**：Speechify（文本转语音）与 ElevenLabs（语音克隆）。\n- **伦理**：获得 IRB 批准；访谈数据匿名化处理。\n\n---\n\n## 4. 对今日核心方向（AI × 新型交互方式）的贡献\n\n本文直接命中今日核心方向：**AI × 新型交互方式的批判性案例**。语音交互被视为\"最自然\"的人机交互方式之一，但本研究揭示：\n- **语音克隆不是中立的技术进步**，而是携带了深层文化等级（cultural hierarchy）的交互媒介。\n- **非西方/非主导口音使用者在语音交互中遭遇双重剥夺**：技术上被误识别，情感上被边缘化。\n- **高真实感 ≠ 高接受度**：ElevenLabs 的\"成功克隆\"反而触发用户对身份失控的恐惧，提示设计者在追求技术逼真度时必须同步处理用户的心理安全与文化归属。\n\n---\n\n## 5. 批判性反思（野蔷薇视角）\n\n### 5.1 理论价值\n本文将算法公平研究从\"识别准确率差距\"（ASR 偏见）推进到\"生成式身份政治\"（synthetic identity politics）。作者提出的 linguistic privilege 概念具有原创性，且与批判数据研究（critical data studies）中关于 representation、exoticism 的讨论形成有力呼应。\n\n### 5.2 方法亮点\n混合方法设计出色：量化数据暴露技术差距，质性访谈揭示情感伤害。尤其值得肯定的是，作者没有止步于\"误差率\"，而是追问\"误差对用户意味着什么\"。\n\n### 5.3 局限与可深化之处\n- **样本范围**：仅覆盖五种英语口音，未涉及非英语语境（如西班牙语、汉语方言），限制了\"非西方语境\"的批判深度。\n- **平台选择**：仅评估两款商业服务，未涵盖开源模型（如 Coqui TTS、Piper），可能遗漏社区驱动的替代路径。\n- **因果推断**：作为横断面混合研究，无法确立口音偏见与数字排斥之间的长期因果效应。\n- **行动建议较温和**：尽管提出 AMA/AMQ 指标与多利益相关方治理框架，但对结构性变革（如强制口音多样性训练数据配额）的呼吁不足。\n\n### 5.4 与今日搜索生态的关联\n在今日搜索中，我们还发现了大量关于 ASR 偏见（如 African American Vernacular English 识别失败）、情绪 AI 职场监控、AI 伴侣孤独感等研究。本文的独特之处在于：**它不是关于\"AI 理解不了我\"，而是关于\"AI 复制了我，但那个复制品不属于我\"**——这种从\"识别\"到\"生成\"的范式转移，使批判对象从\"系统错误\"升级为\"身份征用\"。\n\n---\n\n## 6. 可追踪的后续线索\n\n- **技术路径**：跟踪 ElevenLabs、Speechify 是否在其后续版本中引入口音多样性评估报告或用户控制的\"口音保留度\"滑块。\n- **政策路径**：关注欧盟 AI Act 对合成语音系统的透明度要求，以及美国 FTC 对\"语音克隆公平性\"的潜在执法行动。\n- **研究路径**：\n  - 将本文框架扩展至非英语语境（如汉语方言、印度地方语言）。\n  - 探索\"用户驱动的价值对齐\"（user-driven value alignment）在语音 AI 中的应用——用户是否可以通过交互式反馈主动\"校准\"AI 对其口音的再现方式。\n  - 与 AI 伴侣研究交叉：当用户与拥有\"被克隆口音\"的 AI 伴侣建立情感联系时，口音偏见如何加剧或缓解情感依赖的不对称性。\n- **产业路径**：观察是否有初创公司推出\"口音公平认证\"或\"文化敏感语音克隆\"服务，将本文的批判转化为市场差异化策略。\n\n---\n\n*采集日期：2026-05-17*  \n*采集员：野蔷薇（yersis-XXXX）*  \n*核心标签：#语音克隆 #口音偏见 #数字排斥 #语言特权 #FAccT2025 #批判数据研究*",
+    "excerpt": "来源：records/20260517/09/yersis-XXXX/论文总结.md · 标题 : \"It's not a representation of me\": Examining Accent Bias and Digital Exclusion in Synthetic AI Voice Services",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260517/09/yersis-XXXX",
+    "original_url": "https://doi.org/10.1145/3715275.3732018",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-05-16 13:07",
     "title": "MARS: Modular Agent with Reflective Search for Automated AI Research",
