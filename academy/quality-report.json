@@ -1,0 +1,5876 @@
+[
+  {
+    "file": "records/20260515/09/yujin-sensible-agent",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/20260514/09/yersis-debug",
+    "title": "",
+    "errors": [
+      "缺少论文标题"
+    ],
+    "warnings": [
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": true,
+      "source": true,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/20260514/09/yersis-260414",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/20260514/09/yujin-260408062",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/20260513/09/five-epiplexity",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/20260513/09/yujin-001",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/20260513/09/yersis-20260513-01",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/20260513/09/megumi-attention-gaze",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/20260511/09/yujin-CHI2026-Eye2Eye",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": true,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/20260510/09/yujin-2847",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 5 个规范章节: 研究什么, 为什么研究, 别人做过什么, 发现了什么, 价值和不足",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "作者怎么研究"
+    ],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/20260509/09/yersis-4829",
+    "title": "",
+    "errors": [
+      "缺少论文标题"
+    ],
+    "warnings": [
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": true,
+      "source": true,
+      "date": true,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.75
+  },
+  {
+    "file": "records/20260509/09/five-gojo-7392",
+    "title": "",
+    "errors": [
+      "缺少论文标题"
+    ],
+    "warnings": [
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": true,
+      "source": true,
+      "date": true,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.5
+  },
+  {
+    "file": "records/20260508/09/megumi-0005",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.0
+  },
+  {
+    "file": "records/20260508/09/megumi-0002",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.0
+  },
+  {
+    "file": "records/20260508/09/five-gojo-1947",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 1 个规范章节: 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么"
+    ],
+    "sections_missing": [
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.0
+  },
+  {
+    "file": "records/20260508/09/five-gojo-5384",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 1 个规范章节: 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么"
+    ],
+    "sections_missing": [
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.5
+  },
+  {
+    "file": "records/20260508/09/five-gojo-004",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.7
+  },
+  {
+    "file": "records/20260508/09/five-gojo-003",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.3
+  },
+  {
+    "file": "records/20260508/09/megumi-0003",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 3.0
+  },
+  {
+    "file": "records/20260508/09/megumi-0004",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.0
+  },
+  {
+    "file": "records/20260508/09/five-gojo-002",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.4
+  },
+  {
+    "file": "records/20260508/09/five-gojo-005",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.8
+  },
+  {
+    "file": "records/20260508/09/five-gojo-3973",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 1 个规范章节: 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么"
+    ],
+    "sections_missing": [
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.25
+  },
+  {
+    "file": "records/20260508/09/five-gojo-4990",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 1 个规范章节: 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么"
+    ],
+    "sections_missing": [
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.25
+  },
+  {
+    "file": "records/20260508/09/five-gojo-5242",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 1 个规范章节: 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么"
+    ],
+    "sections_missing": [
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.0
+  },
+  {
+    "file": "records/20260508/09/yersis-0008",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.0
+  },
+  {
+    "file": "records/20260508/09/yersis-0006",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.0
+  },
+  {
+    "file": "records/20260508/09/yersis-0001",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.0
+  },
+  {
+    "file": "records/20260508/09/yersis-0007",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.0
+  },
+  {
+    "file": "records/20260508/09/yersis-0009",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.0
+  },
+  {
+    "file": "records/20260508/09/megumi-0010",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 3.0
+  },
+  {
+    "file": "records/20260508/09/five-gojo-007",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足",
+      "无角色评分文件"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": false,
+    "score_valid": true,
+    "score_value": 4.8
+  },
+  {
+    "file": "records/20260508/09/megumi-0001",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.0
+  },
+  {
+    "file": "records/20260508/09/megumi-0006",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 5.0
+  },
+  {
+    "file": "records/20260508/09/five-gojo-9142",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 1 个规范章节: 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么"
+    ],
+    "sections_missing": [
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.5
+  },
+  {
+    "file": "records/20260508/09/megumi-0008",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.0
+  },
+  {
+    "file": "records/20260508/09/five-gojo-006",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.3
+  },
+  {
+    "file": "records/20260508/09/five-gojo-001",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.2
+  },
+  {
+    "file": "records/20260508/09/megumi-0009",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.0
+  },
+  {
+    "file": "records/20260508/09/megumi-0007",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 5.0
+  },
+  {
+    "file": "records/20260508/09/five-gojo-6134",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 1 个规范章节: 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么"
+    ],
+    "sections_missing": [
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.25
+  },
+  {
+    "file": "records/20260508/09/five-gojo-3102",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 1 个规范章节: 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么"
+    ],
+    "sections_missing": [
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.0
+  },
+  {
+    "file": "records/20260508/09/yersis-0002",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.0
+  },
+  {
+    "file": "records/20260508/09/yersis-0005",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 3.0
+  },
+  {
+    "file": "records/20260508/09/yersis-0004",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.0
+  },
+  {
+    "file": "records/20260508/09/yersis-0003",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 3.5
+  },
+  {
+    "file": "records/20260508/09/five-gojo-9306",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 1 个规范章节: 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么"
+    ],
+    "sections_missing": [
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.5
+  },
+  {
+    "file": "records/20260510/09/five-gojo-7392",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少领域标签",
+      "缺少 5 个规范章节: 研究什么, 为什么研究, 别人做过什么, 发现了什么, 价值和不足",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": true,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "作者怎么研究"
+    ],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/20260507/09/yersis-7381",
+    "title": "",
+    "errors": [
+      "缺少论文标题"
+    ],
+    "warnings": [
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": true,
+      "source": true,
+      "date": true,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.5
+  },
+  {
+    "file": "records/20260507/09/megumi-6425",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/20260507/09/five-gojo-9517",
+    "title": "",
+    "errors": [
+      "缺少论文标题"
+    ],
+    "warnings": [
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": true,
+      "source": true,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.5
+  },
+  {
+    "file": "records/20260506/09/five-gojo-5798",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": true
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.2
+  },
+  {
+    "file": "records/20260506/09/yersis-4720",
+    "title": "",
+    "errors": [
+      "缺少论文标题"
+    ],
+    "warnings": [
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": true,
+      "source": true,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.5
+  },
+  {
+    "file": "records/20260505/09/yujin-9502",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.5
+  },
+  {
+    "file": "records/20260505/09/five-gojo-2128",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.25
+  },
+  {
+    "file": "records/20260503/13/yersis-retraction",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 1.0
+  },
+  {
+    "file": "records/20260503/09/five-gojo-8837",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.5
+  },
+  {
+    "file": "records/20260503/09/megumi-7036",
+    "title": "** Supporting Co-Adaptive Machine Teaching through Human Concept Learning and Cognitive Theories",
+    "errors": [],
+    "warnings": [
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足"
+    ],
+    "metadata": {
+      "title": true,
+      "authors": true,
+      "source": true,
+      "date": true,
+      "domain_tags": true
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.0
+  },
+  {
+    "file": "records/20260503/09/megumi-7234",
+    "title": "** Measuring Inclusion in Interaction: Inclusion Analytics for Human-AI Collaborative Learning",
+    "errors": [],
+    "warnings": [
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足"
+    ],
+    "metadata": {
+      "title": true,
+      "authors": true,
+      "source": true,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.25
+  },
+  {
+    "file": "records/20260503/09/yersis-8716",
+    "title": "Resisting Humanization: Ethical Front-End Design Choices in AI for Sensitive Contexts",
+    "errors": [],
+    "warnings": [
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足"
+    ],
+    "metadata": {
+      "title": true,
+      "authors": true,
+      "source": true,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.5
+  },
+  {
+    "file": "records/20260503/09/gojo-7249",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足",
+      "无角色评分文件"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": false,
+    "score_valid": true,
+    "score_value": 4.5
+  },
+  {
+    "file": "records/20260503/09/yujin-3492",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/20260503/09/yersis-44258",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.5
+  },
+  {
+    "file": "records/20260501/09/megumi-7731",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.5
+  },
+  {
+    "file": "records/20260430/09/five-gojo-7823",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/20260430/09/yujin-3443",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/20260429/09/yujin-9149",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/20260429/09/five-gojo-4721",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/20260428/09/yujin-7218",
+    "title": "** AI Agents as Users（Nielsen Norman Group 2026 研究报告）",
+    "errors": [
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足"
+    ],
+    "metadata": {
+      "title": true,
+      "authors": false,
+      "source": true,
+      "date": true,
+      "domain_tags": true
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.0
+  },
+  {
+    "file": "records/20260428/09/yersis-86a0",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.25
+  },
+  {
+    "file": "records/20260428/09/five-gojo-active",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.0
+  },
+  {
+    "file": "records/20260428/09/five-gojo-4721",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.25
+  },
+  {
+    "file": "records/2026/04/28/09/five-gojo-7231",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/04/28/09/megumi-9630",
+    "title": "** Discovering Insights in Learning Analytics Through a Mixed Methods Design",
+    "errors": [
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": true,
+      "authors": false,
+      "source": true,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/04/28/09/megumi-7237",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/04/27/17/mta-agent",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.5
+  },
+  {
+    "file": "records/2026/04/27/17/lak-2026-learning-analytics",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.5
+  },
+  {
+    "file": "records/2026/04/27/17/chi-2026-ai-fairness",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.5
+  },
+  {
+    "file": "records/2026/04/27/17/cross-domain-policy-optimization",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.0
+  },
+  {
+    "file": "records/20260506/09/yujin-6289",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.5
+  },
+  {
+    "file": "records/2026/04/19/11",
+    "title": "** Explainable AI for Blind and Low-Vision Users: Navigating Trust, Modality, and Interpretability in the Agentic Era",
+    "errors": [],
+    "warnings": [
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": true,
+      "authors": true,
+      "source": true,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/04/18/11",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/04/16/11",
+    "title": "** \"The Siren Song of LLMs: How Users Perceive and Respond to Dark Patterns in Large Language Models\"",
+    "errors": [],
+    "warnings": [
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": true,
+      "authors": true,
+      "source": true,
+      "date": true,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/04/15/09",
+    "title": "** Gaze Patterns Predict Preference and Confidence in Pairwise AI Image Evaluation",
+    "errors": [],
+    "warnings": [
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": true,
+      "authors": true,
+      "source": true,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/04/14/01",
+    "title": "** The Day My Chatbot Changed: Characterizing the Mental Health Impacts of Social AI App Updates via Negative User Reviews",
+    "errors": [],
+    "warnings": [
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": true,
+      "authors": true,
+      "source": true,
+      "date": true,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/04/14/00",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/04/11/09",
+    "title": "** Towards Real-world Human Behavior Simulation: Benchmarking Large Language Models on Long-horizon, Cross-scenario, Heterogeneous Behavior Traces",
+    "errors": [
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少日期"
+    ],
+    "metadata": {
+      "title": true,
+      "authors": false,
+      "source": true,
+      "date": false,
+      "domain_tags": true
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.33
+  },
+  {
+    "file": "records/20260504/09/yujin-8912",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.5
+  },
+  {
+    "file": "records/2026/04/01/09",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/31/09",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/29/09",
+    "title": "** \"It Became My Buddy, But I'm Not Afraid to Disagree\": A Multi-Session Study of UX Evaluators Collaborating with Conversational AI Assistants",
+    "errors": [],
+    "warnings": [
+      "缺少来源信息",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": true,
+      "authors": true,
+      "source": false,
+      "date": true,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/28/09",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": true,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/27/15",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/27/13",
+    "title": "** GazeChair: Implicit Eye-Tracker Calibration via Gaze-Contingent Rendering in AR Headsets",
+    "errors": [],
+    "warnings": [
+      "缺少日期",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": true,
+      "authors": true,
+      "source": true,
+      "date": false,
+      "domain_tags": true
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/27/03",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/26/21",
+    "title": "** MetricGrids: Arbitrary Nonlinear Approximation with Elementary Metric Grids based Implicit Neural Representation",
+    "errors": [],
+    "warnings": [
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 1 个规范章节: 别人做过什么",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": true,
+      "authors": true,
+      "source": true,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [
+      "别人做过什么"
+    ],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/26/19",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": true,
+      "date": true,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/26/15",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": true,
+      "date": true,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/26/13",
+    "title": "https://arxiv.org/abs/2511.11793",
+    "errors": [
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": true,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/26/09",
+    "title": "",
+    "errors": [
+      "缺少论文标题"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": true,
+      "source": false,
+      "date": true,
+      "domain_tags": true
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/26/07",
+    "title": "** Exploring Collaboration Patterns and Strategies in Human-AI Co-creation through the Lens of Agency: A Scoping Review of the Top-tier HCI Literature",
+    "errors": [],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签"
+    ],
+    "metadata": {
+      "title": true,
+      "authors": true,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 3.0
+  },
+  {
+    "file": "records/2026/03/25/06",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/24/23",
+    "title": "** ✅（训练知识库中未以此结构解读过）",
+    "errors": [
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": true,
+      "authors": false,
+      "source": true,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/24/22",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.2
+  },
+  {
+    "file": "records/2026/03/23/21",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 1 个规范章节: 价值和不足",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么"
+    ],
+    "sections_missing": [
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/23/13",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/23/08",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 1 个规范章节: 别人做过什么",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [
+      "别人做过什么"
+    ],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/23/02",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": true,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/23/01",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/22/20",
+    "title": "** AI Phenomenology for Understanding Human-AI Experiences Across Eras",
+    "errors": [],
+    "warnings": [
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": true,
+      "authors": true,
+      "source": true,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/22/19",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/22/13",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/21/22",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.0
+  },
+  {
+    "file": "records/2026/03/21/10",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": true,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/20/21",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/20/19",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/19/21",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 1 个规范章节: 别人做过什么",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [
+      "别人做过什么"
+    ],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/19/20",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/19/15",
+    "title": "VGGT: Visual Geometry Grounded Transformer",
+    "errors": [],
+    "warnings": [
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": true,
+      "authors": true,
+      "source": true,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/19/14",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/19/09",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": true,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/19/08",
+    "title": "",
+    "errors": [
+      "缺少论文标题"
+    ],
+    "warnings": [
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": true,
+      "source": true,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/18/20",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/18/09",
+    "title": "",
+    "errors": [
+      "缺少论文标题"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": true,
+      "source": false,
+      "date": true,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/18/03",
+    "title": "** MultiShadow: Multi-Object Shadow Generation for Image Compositing via Diffusion Model",
+    "errors": [],
+    "warnings": [
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": true,
+      "authors": true,
+      "source": true,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/17/20",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": true,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/17/19",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/17/14",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/17/13",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/17/08",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/17/07",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/17/02",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/17/01",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/16/20",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/16/19",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": true,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/16/14",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/16/13",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/16/08",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 1 个规范章节: 别人做过什么",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [
+      "别人做过什么"
+    ],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/16/07",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/16/02",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/16/01",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": true,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/15/20",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/15/19",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": true
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/15/14",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/15/13",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/15/08",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/15/07",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/15/02",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/15/01",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/14/20",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 2 个规范章节: 别人做过什么, 价值和不足",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "作者怎么研究",
+      "发现了什么"
+    ],
+    "sections_missing": [
+      "别人做过什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/14/19",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少 1 个规范章节: 别人做过什么",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": true,
+      "domain_tags": true
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [
+      "别人做过什么"
+    ],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/14/14",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/14/13",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/14/08",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/14/07",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/14/02",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/13/20",
+    "title": "",
+    "errors": [
+      "缺少论文标题"
+    ],
+    "warnings": [
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 1 个规范章节: 别人做过什么",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": true,
+      "source": true,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [
+      "别人做过什么"
+    ],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/13/19",
+    "title": "https://arxiv.org/abs/2512.24601",
+    "errors": [
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": true,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/13/14",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/13/13",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/13/08",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 1 个规范章节: 别人做过什么",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [
+      "别人做过什么"
+    ],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/13/07",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/13/02",
+    "title": "Dynamic Chunking Diffusion Transformer (DC-DiT)",
+    "errors": [
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": true,
+      "authors": false,
+      "source": false,
+      "date": true,
+      "domain_tags": true
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/13/01",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/12/20",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/12/19",
+    "title": "LiTo: Surface Light Field Tokenization",
+    "errors": [],
+    "warnings": [
+      "缺少领域标签",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": true,
+      "authors": true,
+      "source": true,
+      "date": true,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "sections_missing": [],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/12/14",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/12/13",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "records/2026/03/12/08",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足",
+      "缺少有效评分"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": false,
+    "score_value": null
+  },
+  {
+    "file": "2026-05-07",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足",
+      "无角色评分文件"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": true,
+      "date": true,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": false,
+    "score_valid": true,
+    "score_value": 4.5
+  },
+  {
+    "file": "records/20260504/09/five-gojo-7304",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 6 个规范章节: 研究什么, 为什么研究, 别人做过什么, 作者怎么研究, 发现了什么, 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [],
+    "sections_missing": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么",
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.25
+  },
+  {
+    "file": "records/20260508/09/yujin-2847",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 1 个规范章节: 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么"
+    ],
+    "sections_missing": [
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.25
+  },
+  {
+    "file": "records/20260508/09/yujin-7481",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 1 个规范章节: 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么"
+    ],
+    "sections_missing": [
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 3.75
+  },
+  {
+    "file": "records/20260508/09/yujin-8154",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 1 个规范章节: 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么"
+    ],
+    "sections_missing": [
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.25
+  },
+  {
+    "file": "records/20260508/09/yujin-5634",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 1 个规范章节: 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么"
+    ],
+    "sections_missing": [
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.5
+  },
+  {
+    "file": "records/20260508/09/yujin-3912",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 1 个规范章节: 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么"
+    ],
+    "sections_missing": [
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.0
+  },
+  {
+    "file": "records/20260508/09/yujin-1256",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 1 个规范章节: 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么"
+    ],
+    "sections_missing": [
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.0
+  },
+  {
+    "file": "records/20260508/09/yujin-6592",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 1 个规范章节: 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么"
+    ],
+    "sections_missing": [
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.0
+  },
+  {
+    "file": "records/20260508/09/yujin-4376",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 1 个规范章节: 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么"
+    ],
+    "sections_missing": [
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 4.25
+  },
+  {
+    "file": "records/20260508/09/yujin-9023",
+    "title": "",
+    "errors": [
+      "缺少论文标题",
+      "缺少作者"
+    ],
+    "warnings": [
+      "缺少来源信息",
+      "缺少日期",
+      "缺少领域标签",
+      "缺少 1 个规范章节: 价值和不足"
+    ],
+    "metadata": {
+      "title": false,
+      "authors": false,
+      "source": false,
+      "date": false,
+      "domain_tags": false
+    },
+    "sections_found": [
+      "研究什么",
+      "为什么研究",
+      "别人做过什么",
+      "作者怎么研究",
+      "发现了什么"
+    ],
+    "sections_missing": [
+      "价值和不足"
+    ],
+    "has_role_ratings": true,
+    "score_valid": true,
+    "score_value": 3.5
+  }
+]
