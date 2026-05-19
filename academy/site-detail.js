@@ -15,6 +15,16 @@ function formatDateLabel(value) {
     return value.replace('T', ' ');
 }
 
+function parseEntryDate(value) {
+    const match = String(value || '').match(/^(\d{4})-(\d{2})-(\d{2})(?:[ T](\d{2}):(\d{2}))?/);
+    if (!match) return null;
+    return new Date(Number(match[1]), Number(match[2]) - 1, Number(match[3]), Number(match[4] || 0), Number(match[5] || 0));
+}
+
+function startOfDay(value) {
+    return new Date(value.getFullYear(), value.getMonth(), value.getDate());
+}
+
 /* normalizeSearchText provided by site-search-utils.js */
 
 function normalizeText(entry) {
@@ -145,6 +155,7 @@ function buildObsidianUri(entry) {
     };
     const requestedFilter = url.searchParams.get('filter');
     const requestedSearch = normalizeSearchText(url.searchParams.get('search') || '');
+    const requestedDateRange = url.searchParams.get('dateRange') || '';
     if (requestedFilter && FILTERS.some((filter) => filter.id === requestedFilter)) {
         state.filter = requestedFilter;
     }
@@ -156,7 +167,20 @@ function buildObsidianUri(entry) {
         entry.title = entry.title || extractHeading(entry.content);
         entry.searchText = normalizeText(entry);
         entry.hash = `entry-${index}`;
+        entry.dateValue = parseEntryDate(entry.date);
     });
+    const latestEntryDate = entries.reduce((latest, entry) => {
+        if (!entry.dateValue) return latest;
+        return !latest || entry.dateValue > latest ? entry.dateValue : latest;
+    }, null);
+    const DATE_RANGE_LABELS = {
+        'latest-day': '最新一天',
+        '3d': '近 3 天',
+        '7d': '近 7 天',
+        month: '本月'
+    };
+    const DATE_RANGES = new Set(Object.keys(DATE_RANGE_LABELS));
+    state.dateRange = DATE_RANGES.has(requestedDateRange) ? requestedDateRange : '';
 
     const availableFilters = FILTERS.filter((filter) => filter.id === 'all' || entries.some((entry) => entry.session_type === filter.id));
     const filterEnabled = availableFilters.filter((filter) => filter.id !== 'all').length > 1;
@@ -179,6 +203,11 @@ function buildObsidianUri(entry) {
         } else {
             nextUrl.searchParams.delete('search');
         }
+        if (state.dateRange) {
+            nextUrl.searchParams.set('dateRange', state.dateRange);
+        } else {
+            nextUrl.searchParams.delete('dateRange');
+        }
         if (entries[state.activeIndex]) {
             nextUrl.hash = entries[state.activeIndex].hash;
         } else {
@@ -191,8 +220,28 @@ function buildObsidianUri(entry) {
         return entries.filter((entry) => {
             const matchesFilter = filterId === 'all' ? true : entry.session_type === filterId;
             const matchesQuery = !state.query || state.query.split(' ').every((token) => entry.searchText.includes(token));
-            return matchesFilter && matchesQuery;
+            const matchesDate = matchesDateRange(entry);
+            return matchesFilter && matchesQuery && matchesDate;
         }).length;
+    }
+
+    function matchesDateRange(entry) {
+        if (!state.dateRange || !latestEntryDate || !entry.dateValue) return true;
+        const entryDay = startOfDay(entry.dateValue);
+        const latestDay = startOfDay(latestEntryDate);
+        if (state.dateRange === 'latest-day') {
+            return entryDay.getTime() === latestDay.getTime();
+        }
+        if (state.dateRange === '3d' || state.dateRange === '7d') {
+            const days = state.dateRange === '3d' ? 3 : 7;
+            const start = new Date(latestDay);
+            start.setDate(start.getDate() - (days - 1));
+            return entryDay >= start && entryDay <= latestDay;
+        }
+        if (state.dateRange === 'month') {
+            return entry.dateValue.getFullYear() === latestEntryDate.getFullYear() && entry.dateValue.getMonth() === latestEntryDate.getMonth();
+        }
+        return true;
     }
 
     function visibleEntries() {
@@ -201,7 +250,8 @@ function buildObsidianUri(entry) {
             .filter(({ entry }) => {
                 const matchesFilter = !filterEnabled || state.filter === 'all' ? true : entry.session_type === state.filter;
                 const matchesQuery = !state.query || state.query.split(' ').every((token) => entry.searchText.includes(token));
-                return matchesFilter && matchesQuery;
+                const matchesDate = matchesDateRange(entry);
+                return matchesFilter && matchesQuery && matchesDate;
             });
     }
 
@@ -251,8 +301,11 @@ function buildObsidianUri(entry) {
         `).join('') : '<li class="empty-state">没有找到匹配的记录，试试切换 tab 或输入更短的关键词。</li>';
 
         if (resultCount) {
-            const suffix = filterEnabled && state.filter !== 'all' ? ` · ${availableFilters.find((item) => item.id === state.filter).label}` : '';
-            resultCount.textContent = state.query || (filterEnabled && state.filter !== 'all') ? `匹配 ${list.length} 条${suffix}` : `共 ${entries.length} 条`;
+            const parts = [];
+            if (state.dateRange) parts.push(DATE_RANGE_LABELS[state.dateRange]);
+            if (filterEnabled && state.filter !== 'all') parts.push(availableFilters.find((item) => item.id === state.filter).label);
+            const suffix = parts.length ? ` · ${parts.join(' · ')}` : '';
+            resultCount.textContent = state.query || state.dateRange || (filterEnabled && state.filter !== 'all') ? `匹配 ${list.length} 条${suffix}` : `共 ${entries.length} 条`;
         }
 
         navRoot.querySelectorAll('.nav-item').forEach((node) => {
@@ -497,6 +550,10 @@ function buildObsidianUri(entry) {
     });
 
     openFromHash();
+    const initialVisible = visibleEntries();
+    if (initialVisible.length && !initialVisible.some(function (item) { return item.index === state.activeIndex; })) {
+        state.activeIndex = initialVisible[0].index;
+    }
     renderFilterTabs();
     renderNav();
     renderArticle(state.activeIndex);

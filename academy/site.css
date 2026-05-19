@@ -868,6 +868,44 @@ body[data-lang="en"] .topbar-search-input {
     text-underline-offset: 4px;
 }
 
+.time-search {
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(148, 163, 184, 0.13);
+}
+
+.time-search-title {
+    margin: 6px 0 12px;
+    font-size: 1rem;
+}
+
+.time-search-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.time-search-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 34px;
+    padding: 7px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.86rem;
+    font-weight: 700;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.time-search-link:hover {
+    transform: translateY(-1px);
+    border-color: color-mix(in srgb, var(--accent) 34%, rgba(255, 255, 255, 0.1));
+    background: color-mix(in srgb, var(--accent) 12%, rgba(255, 255, 255, 0.04));
+}
+
 .topic-tags {
     margin-top: 14px;
 }
