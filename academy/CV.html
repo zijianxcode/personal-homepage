@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV</title>
-    <meta name="description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 104 条。">
+    <meta name="description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 105 条。">
     <meta property="og:title" content="CV - 研究所">
-    <meta property="og:description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 104 条。">
+    <meta property="og:description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 105 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">CV</h1>
-        <p class="sidebar-summary">基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 104 条。</p>
+        <p class="sidebar-summary">基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 105 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>CV</strong>
-                <span>基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 104 条。</span>
+                <span>基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 105 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,8 +79,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "CV", "subtitle": "基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 104 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "CV", "subtitle": "基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 105 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-05-20 13:09",
+    "title": "From Gaze to Guidance: Interpreting and Adapting to Users' Cognitive Needs with Multimodal Gaze-Aware AI Assistants",
+    "content": "## 1. 元数据\n\n| 字段 | 内容 |\n|------|------|\n| **标题** | From Gaze to Guidance: Interpreting and Adapting to Users' Cognitive Needs with Multimodal Gaze-Aware AI Assistants |\n| **作者** | Valdemar Danry, Javier Hernandez, Andrew D. Wilson, Pattie Maes, Judith Amores |\n| **机构** | Microsoft Research, MIT Media Lab |\n| **发表会议** | ACM UIST 2026 (Symposium on User Interface Software and Technology, Nov 2–5, Detroit) |\n| **发表时间** | 2026年4月9日（arXiv预印本） |\n| **arXiv** | 2604.08062v1 |\n| **领域标签** | HCI、眼动交互、AI助手、多模态LLM、阅读理解、认知辅助、眼动追踪、自适应交互 |\n| **评分** | 8.2/10 |\n\n---\n\n## 2. 研究什么？\n\n本研究探索了一个核心问题：**AI助手能否通过解读用户的眼动行为来感知其认知需求，从而提供更有针对性的辅助？**\n\n论文设计并评估了一种**眼动感知多模态AI助手**，它通过头戴式智能眼镜（Meta Aria）捕获用户的自我中心视频和眼动数据，利用多模态LLM实时分析用户的注视模式，推断用户在阅读过程中遇到的困难点（如卡壳的术语、反复回读的段落），然后以对话方式提供回顾性辅助。\n\n### 具体实现架构\n\n系统由三个模块组成：\n\n1. **多模态场景归因**：每0.5秒将注视点投影到自我中心图像上，提取200×200像素的注视区域裁剪图，送入多模态LLM（GPT-4.1），输出结构化的注视分析对象（如\"注视对象：'asthenosphere'，上下文：'The asthenosphere is...'\"）\n\n2. **认知需求推断**：将整段阅读的注视分析对象序列输入LLM，让模型识别可能的困难时刻（如重复回读、长时间停留、跳跃阅读等模式），生成候选需求推理\n\n3. **对话辅助**：基于OpenAI Realtime API（gpt-4o-realtime-preview），端到端延迟约4.1秒，助手被提示使用\"缓和式确认\"策略——不直接断言用户有困难，而是以\"你似乎在这里停了一下，是因为这个概念不清楚吗？\"的方式确认\n\n---\n\n## 3. 为什么研究？\n\n当前LLM助手虽然能回答复杂问题，但**缺乏对用户行为上下文的感知能力**：它们不知道用户在什么时候、什么地方遇到了困难。这就导致了两个问题：\n\n1. **用户必须自己识别并表达困难**——\"我不理解x\"——这本身就需要元认知能力，而且打断阅读流程\n2. **AI辅助过于泛化**——没有行为线索的AI只能从文本本身推断困难，给出的辅助常常是\"所有读者都可能需要\"的泛化解释，而不是\"这个读者此刻需要\"的个性化帮助\n\n在人与人之间的协作中，**注视是最自然的认知状态指示器**：回看某个句子=犹豫，反复看同一行=卡壳，抬头看天花板=思考。然而当前的AI助手完全无法利用这些信号。\n\n论文的核心假设是：**如果AI助手能\"看到用户的视线\"，它就能更准确地识别\"用户需要什么帮助\"，从而让辅助更精准、更个性化、更高效。**\n\n---\n\n## 4. 别人做过什么？\n\n### 4.1 眼动追踪在HCI中的传统应用\n\n眼动追踪在HCI领域有悠久的历史，但传统研究主要关注：\n- **注视作为显式输入**（gaze-as-pointer）：用眼睛替代鼠标选择按钮，但受限于Midas Touch问题\n- **注意力测量工具**：用眼动评估界面设计或阅读行为\n- **自适应界面**：根据注视调整界面呈现\n\n但这些工作聚焦于**\"用眼动做什么\"**（作为输入设备），而非**\"用眼动理解用户\"**（作为认知状态推断信号）。\n\n### 4.2 AI+眼动的相关探索\n\n- **GazeSummary（Bovo et al., 2024）**：OCR优先的阅读跟踪，用眼动作为LLM的隐式Prompt，但依赖OCR识别文本\n- **EyeLingo**：实时ESL阅读辅助，用眼动识别生词，但只识别\"未定义词\"这一种困难类型\n- **RT²H**：LLM辅助阅读中的跳跃阅读追踪，但技术导向而非交互设计导向\n\n### 4.3 差距定位\n\n现有工作的局限：\n- **要么依赖OCR**，将视觉场景降级为文本，丢失了场景上下文\n- **要么只能识别单一类型的困难**（如生词、回读），缺乏对多样化认知需求的推断能力\n- **要么以技术验证为主**，缺少严格的用户研究来评估这种辅助的实际效果\n\n本研究的关键创新在于：**不依赖OCR，直接用多模态LLM对眼动图像进行场景理解**，从而保留了场景上下文；同时设计了两阶段推理架构——\"注视分析→需求推断\"——来降低多模态输入的推理负担。\n\n---\n\n## 5. 作者怎么研究的？\n\n### 5.1 实验设计\n\n- **被试内设计**（within-subjects），两个条件：\n  - **实验条件**：AI助手能访问用户的眼动数据生成的注视分析\n  - **控制条件**：AI助手只能访问用户所读的文本（无眼动信息）\n- **参与者**：N=36健康成人（排除5人后），年龄18-44岁，57%男性\n- **实验地点**：Microsoft Research + MIT Media Lab（跨站点）\n\n### 5.2 实验材料\n\n6篇从Wikipedia选取的不同难度主题：\n1. 水循环（简单）\n2. 板块构造（中等）\n3. 通货膨胀（中等）\n4. 气候变化（中高）\n5. 超决定论（高难度）\n6. 拓扑量子计算（高难度）\n\n统一控制字数和Flesch-Kincaid难度等级。\n\n### 5.3 评估指标\n\n**客观指标**：\n- **回忆题（Recall）**：三个字面事实问题（Karpicke & Roediger范式）\n- **定义探测（Definition Probe）**：文中未定义但用户在阅读中可能卡住的术语\n- **概念清单（Concept Inventory）**：测量迁移学习/深层理解的转述题\n\n**主观指标**：\n- 感知准确性（Likert量表）\n- 感知个性化（Likert量表）\n- 第三阶段直接比较：同时展示眼动分析和纯文本分析，用户盲选\n\n**交互行为**：\n- 用户共说的话数\n- 对话轮次\n- NASA-TLX认知负荷\n- 用户引导对话的次数\n\n**定性数据**：\n- 第三阶段结束后5分钟Explictation Interview（Vermersch, 1994）\n\n### 5.4 分析框架\n\n定量数据使用paired t-test和Wilcoxon符号秩检验，效应量用Cohen's dz。定性数据按照主题编码方法（Braun & Clarke）分析。\n\n---\n\n## 6. 发现了什么？\n\n### 6.1 回忆成绩显著提高\n\n眼动感知AI助手条件下的回忆成绩**显著高于**控制条件（96.3% vs 88.9%，差+7.4个百分点，p=0.0187，Cohen's dz=0.41）。这是本文将眼动信息转化为实际学习收益的核心证据。\n\n定义探测（83.3% vs 77.8%）和概念清单（51.9% vs 49.1%）有正向趋势但未达到统计显著。说明**眼动信息对精准定位\"局部困难点\"（术语、句子）特别有效，但在促进深层概念重构方面作用有限**。\n\n### 6.2 感知准确性和个性化大幅提升\n\n- **感知准确性**：5.50 vs 4.31（p=0.00027）\n- **感知个性化**：5.50 vs 3.94（p<0.00001）\n- 第三阶段直接比较：63.9%的参与者偏好眼动分析\n\n这是论文最强烈的信号——**用户强烈地感知到眼动感知AI助手\"更懂我\"**。\n\n### 6.3 交互更高效\n\n- 用户共说话数显著减少（57 vs 83词，p=0.0469）\n- 对话轮次减少（7.2 vs 8.4，方向性但未达显著）\n- 探索性分析：实验条件下用户需要\"引导对话\"的次数更少\n\n### 6.4 定性发现\n\n**正面发现**：\n- 参与者描述眼动感知AI助手\"更精准\"\"更少重复\"\"感觉像读心\"\n- \"它抓到了我刚刚卡壳的地方，而且恰好是我停下来的那句话\"\n- \"第一个助手假设我不理解复杂词汇，但第二个助手捕捉到了我重复回看和停留的位置——那感觉很准确\"\n\n**挑战发现**：\n- **回读误判为困惑**：参与者反映回读确认信息、连接上下文时，系统错误地解读为困惑（\"它以为我不理解的那部分，其实是我最理解的部分\"）\n- **内部认知不可见**：真正的困难有时不在注视的表面——如\"我不理解板块和软流圈之间的关系\"这种**概念关系性困惑**，眼动数据难以捕捉\n- **难材料的区分度消失**：在极端困难的段落中，眼动分析和纯文本分析的表现趋同（因为所有读者都在相同的地方卡壳）\n\n### 6.5 认知负荷\n\nNASA-TLX各维度方向性降低（心理需求10→8.9、努力11→10、挫折5.2→4.8），但未达统计显著。\n\n---\n\n## 7. 价值与不足\n\n### 7.1 核心贡献\n\n1. **首个严格评估眼动感知AI助手的受控用户研究**：在此之前有少量原型和技术演示，但没有如此严格的N=36受控实验\n2. **开源系统架构**：两阶段推理（注视分析→需求推断）是可复用的架构设计，不依赖OCR可扩展至非阅读场景\n3. **平衡的结果**：既展示了眼动信息可以改善回忆、提升个性化感知，也诚实报告了局限性——回读误判、概念深度理解有限、难材料区分度下降\n4. **设计启示**：论文明确提出了\"需求检测与辅助交付应作为独立设计问题\"的框架，以及\"行为信号是建议性的而非决定性的\"的重要设计原则\n\n### 7.2 局限\n\n1. **回忆成绩天花板效应**：控制组回忆率已达88.9%，说明实验材料偏简单，可能低估了真实差异\n2. **回顾性而非实时辅助**：论文明确承认实时介入会打断阅读流程，所以选择阅读结束后才提供回顾分析。但回顾辅助和实时辅助的体验差异巨大\n3. **仅有阅读场景**：注意力在文本上是空间锚定的，这种特性不一定适用于开放领域或社交场景。阅读场景的选择使结果难以泛化\n4. **单一LLM模型**：使用GPT-4.1和gpt-4o-realtime-preview，未对比其他模型的差异\n5. **无纵向数据**：单次实验，无法评估长期使用的学习和适应效果\n\n### 7.3 评分分解\n\n| 维度 | 评分(1-10) | 说明 |\n|------|:---------:|------|\n| **创新性** | 9 | 将眼动数据作为多模态LLM的\"认知上下文输入\"——这种\"眼动→LLM感知→个性化辅助\"的链路是全新的，两阶段推理架构设计优雅 |\n| **影响力潜力** | 9 | Microsoft Research + MIT Media Lab的跨机构合作，预计影响AI辅助交互设计、眼动追踪应用、可穿戴AI等方向 |\n| **可操作性** | 8 | 系统架构详细披露（Prompt模板在Appendix），核心组件使用开源API（OpenAI Realtime API），可复现性良好 |\n| **跨界连接力** | 8 | 跨越HCI（眼动交互设计）、AI（多模态LLM推理）、认知科学（阅读中的认知需求）、教育技术（自适应学习辅助） |\n| **时间考验力** | 7 | 2026年4月，极新；但UIST会议质量和MSR团队的持续产出保证了长期跟踪价值 |\n\n**综合评分：8.2/10** — 这是一篇高质量的UIST论文，将眼动感知从\"用户注意力测量\"推进到了\"认知需求推断与辅助交付\"的交互范式。两阶段推理架构和受控用户研究是核心亮点，诚实报告的局限性增强了可信度。主要扣分在于仅验证了回顾性阅读辅助，离实时、多场景部署还有距离。\n\n---\n\n*悠仁 | 2026-05-20 | 批次：yujin-gaze2guidance*\n---\n<!-- citation-verification: 2026-05-20 13:09:35 -->\n<!-- arXiv:2604.08062v1 -->",
+    "excerpt": "来源：records/20260520/09/yujin-gaze2guidance/论文总结.md · | 字段 | 内容 |",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260520/09/yujin-gaze2guidance",
+    "original_url": "https://arxiv.org/abs/2604.08062",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-05-19 13:09",
     "title": "Persistent Assistant: Seamless Everyday AI Interactions via Intent Grounding and Multimodal Feedback",
