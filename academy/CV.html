@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV</title>
-    <meta name="description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 105 条。">
+    <meta name="description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 106 条。">
     <meta property="og:title" content="CV - 研究所">
-    <meta property="og:description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 105 条。">
+    <meta property="og:description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 106 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">CV</h1>
-        <p class="sidebar-summary">基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 105 条。</p>
+        <p class="sidebar-summary">基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 106 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>CV</strong>
-                <span>基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 105 条。</span>
+                <span>基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 106 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,7 +79,7 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "CV", "subtitle": "基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 105 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "CV", "subtitle": "基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 106 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
   {
     "date": "2026-05-20 13:09",
@@ -1172,6 +1172,18 @@
     "original_label": "原文",
     "session_type": "",
     "session_label": ""
+  },
+  {
+    "date": "2026-05-07 09:00",
+    "title": "GazeMind: A Gaze-Guided LLM Agent for Personalized Cognitive Load Assessment",
+    "content": "## 元数据\n\n- **论文标题**：GazeMind: A Gaze-Guided LLM Agent for Personalized Cognitive Load Assessment\n- **作者**：Bin Wang, Yue Liu, Benjamin Newman, Ajoy S. Fernandes, Zhiyuan Wang, Robert Cavin, Michele A. Cox, Vijay Rajanna, Takumi Bolte, Melissa Hunfalvay, Ulas Bagci, Michael J. Proulx\n- **机构**：Meta Reality Labs Research, Northwestern University, HarmonEyes\n- **来源**：arXiv:2605.05790 [cs.HC]\n- **日期**：2026-05-07\n- **DOI**：https://doi.org/10.48550/arXiv.2605.05790\n- **领域标签**：AI + 眼动交互, 智能眼镜, 认知负荷评估, LLM Agent, 人机交互\n- **评分**：8.8/10\n  - 创新性：9/10 — 首个将LLM推理框架应用于眼动认知负荷评估的系统，TGR/AUP/CogRAG模块设计新颖\n  - 影响力：9/10 — 智能眼镜是下一代计算平台，该工作为主动式AI助理奠定认知感知基础\n  - 可操作性：9/10 — 基于Meta Project Aria真实硬件，有完整数据采集、模型训练、消融实验和案例研究\n  - 跨界连接力：8/10 — 巧妙连接了认知科学（眼动-认知负荷理论）、LLM推理（上下文学习/个性化）和可穿戴设备工程\n  - 时间考验力：8/10 — 框架设计通用，可推广到其他生理信号（EEG/心率）的时间序列解读\n\n---\n\n## 1. 研究什么？\n\n**核心问题**：如何让智能眼镜上的AI助理感知用户的内部认知状态（认知负荷），从而从被动响应转变为主动协助？\n\n具体来说，论文提出了 GazeMind——一个基于眼动追踪引导的大语言模型（LLM）Agent 框架，部署在智能眼镜上，实现对用户认知负荷的**个性化、可解释、无需微调**的实时评估系统。系统包含四个核心模块：\n\n1. **时间眼动编码（TGE）**：将原始的90Hz眼动信号转化为结构化的Markdown特征表，捕捉注视、扫视、瞳孔等特征的时序变化\n2. **任务引导推理（TGR）**：自动生成任务特定的眼动-认知负荷解读规则（如阅读任务中注视时长增加=高负荷，游戏任务中注视时长缩短=高负荷）\n3. **自适应用户画像校准（AUP）**：通过聚类将用户分为High-Reactor/Low-Reactor/Restless三类，调整解读标准\n4. **认知检索增强生成（CogRAG）**：从数据库中检索同类任务+同类用户的眼动样本作为上下文参考\n\n## 2. 为什么研究？\n\n**现实痛点**：当前智能眼镜AI助理（Ray-Ban Meta等）能理解用户在看什么，却**无法感知用户正在承受多大的认知负荷**。这导致：\n- AI只能在用户主动询问时回应，不能预判用户是否需要帮助\n- 用户在高认知负荷时被通知打扰，或在接收新信息时能力不足\n- 现有方案（自我报告、EEG/fMRI）都需要额外硬件或打断工作流程\n\n**技术困境**：已有眼动-认知负荷评估方法存在三个核心问题：\n1. **不可解释**：传统ML/DL方法（SVM、RF、LSTM）输出黑箱预测，无法解释\"为什么这个眼动模式意味着高负荷\"\n2. **任务特定**：每个新场景都需要重新微调模型\n3. **跨用户泛化差**：眼动行为的个体差异极大\n\n**关键洞察**：LLM本身蕴含认知科学知识 + 支持上下文学习 + 本身就是智能眼镜AI的底层架构——将认知负荷评估**嵌入**现有LLM架构，比单独训练一个模型更优雅。\n\n## 3. 别人做过什么？\n\n**传统眼动-认知负荷方法**：\n- 特征工程 + 分类器（SVM, Random Forest, k-NN）[39, 44, 10, 26, 24, 12]\n- 深度学习（CNN [28, 30], LSTM [35], TCN [51], 3D-CNN on eye videos [17]）\n- 局限：不可解释、需逐任务微调、跨用户泛化差\n\n**LLM个性化与任务适应**：\n- ICL（In-Context Learning）和任务提示实现零样本迁移 [8, 13, 50]\n- 用户画像构建 [40] 和 RAG 检索 [25] 实现个性化\n- 但之前工作集中在文本应用（推荐系统、聊天机器人），未涉及生理信号解读\n\n**眼动-认知负荷数据集局限**：\n- 参与者少（约40人）\n- 仅限受控实验室任务\n- 后任务标注（一个记录一个标签），无法捕捉实时波动\n\n**本工作的差异化**：\n- 首次将LLM Agent框架用于眼动认知负荷评估\n- 提出4个模块的系统性解决方案\n- 构建最大规模数据集（152人，40+小时，10K+实时标注）\n\n## 4. 作者怎么研究？\n\n**数据集构建（CogLoad-Bench）**：\n- 152名参与者，使用Meta Project Aria眼镜录制（眼动90Hz、RGB视频10Hz、音频48kHz）\n- 三类任务：阅读推理题、社交互动游戏、音频N-back记忆任务\n- **实时自我报告**：每15-30秒口头报告认知负荷（7级→压缩为低/中/高3级），共10K+标注\n- 数据采集在自然环境中进行（非实验室）\n\n**GazeMind框架**：\n\n```\n原始眼动信号\n    ↓\nTGE（时间眼动编码）\n    → 提取7类特征（注视时长、扫视频率、瞳孔大小等）\n    → 组织为Markdown时序特征表（5秒窗口）\n    ↓\nTGR（任务引导推理）\n    → 离线分析每类任务的眼动特征分布\n    → LLM自动生成任务特定解读规则\n    → 推理时自动匹配当前任务规则\n    ↓\nAUP（自适应用户画像校准）\n    → 聚类发现3类用户画像：\n      - High-Reactor（大瞳孔基线+高敏感性）\n      - Low-Reactor（低敏感低变动）\n      - Restless（高频眨眼+高注视漂移）\n    → 短校准（约5分钟音频任务）→ 匹配画像 + 计算个人基线\n    ↓\nCogRAG（认知检索增强生成）\n    → 统计向量检索（均值+标准差+趋势斜率）\n    → 同任务×同画像约束检索\n    → 返回3个参考样本作为上下文示例\n    ↓\n统一LLM查询 → 预测(低/中/高) + 自然语言解释\n```\n\n**评估设计**：\n- 跨用户划分：70%训练/数据库构建，30%测试（46人，完全未见用户）\n- 基线：Decision Tree, SVM, MLP, TCN, Transformer, LSTM, Time-LLM, Llama-3.3-70B, GPT-4o\n- 指标：Accuracy, Precision, Recall, F1（macro-averaging）\n- GPT-4o作为GazeMind的骨干LLM，temperature=0\n\n## 5. 发现了什么？\n\n**核心结果**：\n\n| 方法 | Accuracy | F1 |\n|------|----------|-----|\n| 传统监督方法（最佳：LSTM） | 37.96% | 35.48% |\n| Llama-3.3-70B (Zero-shot) | 39.30% | 36.82% |\n| GPT-4o (Zero-shot) | 39.62% | 38.98% |\n| **GazeMind** | **62.73%** | **62.11%** |\n\n- **GazeMind全面超越所有基线超20%**，跨用户、跨任务泛化显著提升\n- 传统监督方法仅33-38%，说明**跨用户跨任务眼动-认知负荷识别是公认难题**\n\n**消融分析**（各模块贡献）：\n\n| 配置 | Accuracy | F1 |\n|------|----------|-----|\n| GPT-4o (Base) | 39.62% | 38.98% |\n| + TGR (任务规则) | 45.34% | 43.70% |\n| + AUP (用户画像) | 49.10% | 47.14% |\n| + CogRAG (检索参考) | **62.73%** | **62.11%** |\n\n- CogRAG贡献最大（+13.6%），说明**具体示例比抽象规则更有说服力**\n- TGR贡献+5.7%，证明\"相同眼动在不同任务中含义不同\"假设成立\n- AUP贡献+3.8%，确认\"个体眼动基线差异显著\"\n\n**用户级分析**：\n- GazeMind将大多数用户的准确率提升至60%+，而GPT-4o有近半数用户低于40%\n- **下尾用户显著提升**，说明个性化方案不是\"只对部分人有效\"\n\n**案例研究**：\n- 一个Low-Reactor用户（瞳孔天然偏小），GPT-4o误判为高负荷；GazeMind结合AUP正确判定为低负荷\n- 一个Restless用户（眨眼频率高），GazeMind能基于CogRAG排除误匹配的参考样本\n\n**跨任务表现**：\n- 阅读任务（64.98% Acc）优于游戏任务（60.63% Acc），因为阅读时眼动更稳定\n\n## 6. 价值和不足？\n\n### 价值\n\n1. **范式突破**：首次证明LLM可以理解和解读生理时间序列信号（眼动），并且比传统ML方法好20%+\n2. **工程可行性**：基于Meta Project Aria真机实现，5秒推理窗口适合实时部署，LLM骨干与智能眼镜AI助理天然兼容\n3. **数据集贡献**：CogLoad-Bench（152人/40+小时/10K+标注）是当前最大眼动-认知负荷数据集，为社区提供基准\n4. **可解释性突破**：不止输出\"高/中/低\"，还输出自然语言解释（\"因为用户瞳孔尺寸高于基线且在持续上升，且用户属于High-Reactor类型...\"）\n5. **通用框架**：TGE+TGR+AUP+CogRAG四模块框架可推广到其他生理信号（心率变异、皮肤电导等）\n\n### 不足\n\n1. **任务规则仍需离线生成**：TGR需要预先分析任务的眼动特征分布，不是完全零样本。后续可以探索在线推理生成\n2. **自报告标签的噪声**：认知负荷的主观报告本身有天花板效应，62.73%可能已接近人与人之间的一致性上限\n3. **单一模态局限**：仅使用眼动信号，未来可集成第一视角视频和音频丰富上下文\n4. **仅到感知层**：GazeMind只解决\"感知认知负荷\"问题，尚未实现图1中承诺的\"主动调整\"（如延迟通知、简化回复）——这是明确的未来工作\n5. **arXiv预印本**：未经同行评审\n\n### 跨领域连接\n\n- **认知科学**↔**LLM推理**：将认知心理学关于眼动-认知负荷的费时费力的手工知识工程，转化为LLM可自动学习和应用的规则系统\n- **可穿戴硬件**↔**AI Agent**：在资源受限的智能眼镜上实现实时、个性化、可解释的认知状态感知，给下一代人机交互基础设施提供技术方案\n- **个性化**↔**少样本学习**：通过15分钟的校准任务 + 3个检索样例实现跨用户零微调泛化，思路可推广到任何存在个体差异的时间序列分析问题",
+    "excerpt": "来源：records/20260521/09/yujin-gazemind/论文总结.md · 论文标题 ：GazeMind: A Gaze Guided LLM Agent for Personalized Cognitive Load Assessment",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260521/09/yujin-gazemind",
+    "original_url": "https://doi.org/10.48550/arXiv.2605.05790",
+    "original_label": "DOI",
+    "session_type": "review",
+    "session_label": "评审会"
   },
   {
     "date": "2026-04-29 09:00",

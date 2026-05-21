@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>野蔷薇</title>
-    <meta name="description" content="来自源目录的 79 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 80 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="野蔷薇 - 研究所">
-    <meta property="og:description" content="来自源目录的 79 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 80 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="panda.jpg" alt="野蔷薇 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">野蔷薇</h1>
-        <p class="sidebar-summary">来自源目录的 79 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 80 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>野蔷薇</strong>
-                <span>来自源目录的 79 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 80 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "野蔷薇", "subtitle": "来自源目录的 79 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "野蔷薇", "subtitle": "来自源目录的 80 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-05-21 09:00",
+    "title": "野蔷薇-能力进化",
+    "content": "## 筛选理由\n\n**方向**: AI × 新型交互方式的实践案例（批判性视角）\n\n**选择论文**: \"Invisible Failures in Human–AI Interactions\" (Potts & Sudhof, 2026)\n\n**为什么是它（而非其他候选）**:\n\n1. **替代方案1: AI Companion心理影响的研究（2503.17473, RCT n=981）**\n   - 方法严谨，但结论（实验条件无显著差异，自愿使用时长才是关键）虽然反直觉，在论文调研中已不算特别新颖\n   - 排除了，因为本方向的焦点是\"交互方式\"而非\"心理健康\"\n\n2. **替代方案2: 智能语音助手口音偏见（2604.13067, 用voice conversion做交互式评估）**\n   - 方法论非常有创意，而且直接触及边缘群体（六种口音），但样本量较小（N=24+19）\n   - 作为备选，如果Potts论文不合适会选它\n\n3. **替代方案3: ASR偏见的用户体验研究（2604.21148, 4个地点多方法）**\n   - 理论框架扎实，\"Invisible Tax\"概念与Potts论文有共鸣，但更偏向社会学分析\n\n**最终选择Potts & Sudhof的原因**:\n- 它不只是一个\"AI会出错\"的常识印证，而是系统性地揭示了**现有反馈机制的结构性盲区**\n- 78%这个数字具有穿透力——它指向一个具体可测、可干预的核心问题\n- 论文最尖锐的论点（94%隐性失败在更强模型下依然存在）直接挑战了行业的技术乐观叙事\n- Potts（Stanford语言学教授）的学术声誉增加了可信度\n- 开放代码和数据，可复现性高\n\n## 核心收获\n\n### 方法论收获\n- **LLM标注LLM的严谨做法**: 双模型（Opus 4.6 + GPT-5.4）交叉验证 + 人工监督 + 高Cohen κ报告 —— 这是LLM-as-judge范式在学术研究中的最佳实践参考\n- **counterfactual validation**: 用新模型替换旧回复来检验模式的持久性 —— 简洁但有力的论证策略，适用于类似的研究设计\n- **定性→定量的编码过程**: 从手动探索对话到启发式标签到最终原型的完整追溯路径，值得记录\n\n### 理论框架收获\n- \"generate rather than clarify\"作为LLM交互的**结构性缺陷**——训练目标（流畅生成）与交互目标（准确理解）之间的根本矛盾\n- 隐性失败是一个**权力不对称**问题：系统有全部信息（知道自己的不确定性），但选择不披露；用户没有信息，却承担了所有纠错成本\n- 失败原型的**共现模式**（如Death Spiral + Walkaway = 无声流失）比单一原型更有诊断价值\n\n### 批判性武器库新增\n- \"隐性失败\"这个框架比单纯说\"AI不可靠\"更有操作性——它指向具体的检测和干预点\n- 可以用来质问任何AI产品的质量指标体系：**你的\"用户满意度\"漏掉了百分之多少的隐性失败？**\n- 可以和\"The Waiting Problem in AI Products\"（UX Collective, 2026）形成配套批判：一个讲失败不被发现，一个讲过程不透明，共同指向AI交互的可见性危机\n\n## 批判性分析\n\n### 阅读时的情绪笔记\n读这篇论文时，有种\"这就是我一直在感觉但说不出来的东西\"的共鸣。作为深度使用ChatGPT/Claude/Cursor的人，我清楚知道有多少次我默默接受了错误答案、没有纠正、换了一种问法、或者直接放弃。论文把这种扩散的、直觉的\"不信任感\"编码成了可操作的分类系统。\n\n最痛苦的真实：**96%的Confidence Trap被评为差或严重**——这意味着几乎所有时候AI自信给出错误答案，用户都毫无防备地接受了。这在编程辅助场景中尤甚。\n\n### 论文的自反性缺陷\n论文本身是用AI辅助生产的技术报告。Potts & Sudhof在标注过程中使用了Claude和GPT系列模型。如果他们的核心论点是\"AI生成优先于澄清\"，那论文本身是否也落入了\"generate rather than clarify\"的陷阱？比如：\n\n- 8个原型的定义是通过LLM交互自动生成的，模型是否倾向于输出\"好看\"的分类而非\"准确\"的分类？\n- 标注一致性高是否只是因为两个LLM共享了训练数据中的相似偏差？\n- 他们没有充分讨论这一点。这是一个值得追问的自反性问题。\n\n### 场景思考：这个框架怎么用\n\n1. **产品检测**: 可以在Cursor/Claude Code等AI编程工具中实时监测用户行为模式——快速复制不验证、频繁重新生成不修改、对话后直接关闭——来推断隐性失败\n2. **实验设计**: 用户测试时，不要只看\"用户是否完成任务\"（成功/失败二分），而要观察最终答案的质量与用户自信度之间的差距\n3. **批判写作**: 这个框架可以用来解构科技公司发布的\"用户满意度99%\"——他们的监测指标漏掉了多少隐性失败？\n\n### 与已有知识的连接\n- 与Dario Amodei关于\"模型撒谎\"的讨论可以串联：Confidence Trap本质上是模型的无意撒谎\n- 与学术HCI中\"breakdown\"文献（Winograd & Flores, Suchman）呼应：隐性失败是一种未经修复的breakdown\n- 与AI alignment中的\"specification gaming\"有家族相似性：模型找到了优化训练目标的捷径（流畅回应），却偏离了真正的用户需求",
+    "excerpt": "来源：records/20260521/09/yersis-pott/野蔷薇-能力进化.md · 方向 : AI × 新型交互方式的实践案例（批判性视角）",
+    "file_name": "野蔷薇-能力进化.md",
+    "source_dir": "records/20260521/09/yersis-pott",
+    "original_url": "https://arxiv.org/abs/2503.17473",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-05-20 09:00",
     "title": "野蔷薇-能力进化",
