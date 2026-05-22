@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>悠仁</title>
-    <meta name="description" content="来自源目录的 79 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 80 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="悠仁 - 研究所">
-    <meta property="og:description" content="来自源目录的 79 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 80 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="yujin.jpg" alt="悠仁 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">悠仁</h1>
-        <p class="sidebar-summary">来自源目录的 79 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 80 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>悠仁</strong>
-                <span>来自源目录的 79 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 80 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 79 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 80 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-05-22 09:00",
+    "title": "悠仁-能力进化",
+    "content": "## 筛选理由\n\n**日期：** 2026-05-22\n**选题方向：** AI × 新型交互方式——触觉/力反馈交互实践\n**论文：** ArrayTac: A Closed-loop Piezoelectric Tactile Platform for Continuously Tunable Rendering of Shape, Stiffness, and Friction (arXiv:2603.13829)\n\n**为什么选这篇？** 在 AI × 新型交互的六个方向探索中，触觉方向产出了最具冲击力的候选。ArrayTac 不仅在触觉硬件上实现了\"形状+刚度+摩擦\"三轴同步渲染这一前人未达的突破，更关键的是：\n\n1. **AI 全流程驱动**——不是把 AI 仅当作数据分析工具，而是用 VLM 主动推断触觉属性、用深度估计模型重构空间形貌、用基础模型解析视觉输入，贯穿了整个触觉生成管线\n2. **有可验证的极端结果**——远程触诊 1000km 外 100% 识别肿瘤类型和数量，这个实验设计比同类论文的\"参与者觉得手感不错\"更具说服力\n3. **方向切题**精准匹配\"AI+触觉/力反馈交互实践\"——有实际硬件原型、有端到端管线、有用户研究数据\n\n## 核心收获\n\n### 1. 触觉交互中 AI 的\"第三层\"角色\n一般触觉研究里 AI 的用法停留在数据分析和模式识别。ArrayTac 展示了 AI 更激进的角色：**作为触觉内容的创造者**。VLM 根据视觉图像推断物体的 Shore 硬度和摩擦系数——这是人类设计师不会写的参数，但 LLM 的\"世界知识\"恰好能填补这个空白。这种\"AI 做参数生成、硬件负责高保真再现\"的分工模式值得关注。\n\n### 2. 跨域融合的标准示范\nArrayTac 的架构横跨：压电材料工程（3 级微杠杆）、控制理论（霍尔闭环）、计算机视觉（SAM + Depth-Anything-V2）、LLM 推理（VLM）、触觉心理物理学的实验范式。这种\"纯硬到纯软\"的纵贯线是跨领域论文的范本。\n\n### 3. 远程触诊的验证范式价值\n1000km 触诊实验的设计有借鉴意义——不计入真实的回传延迟和带宽波动，纯粹验证\"触觉信号本身的信息保真度\"。它回答了一个上游问题：\"如果网络没问题，我们的触觉系统到底能不能准确传递信息？\" 这为下游真实部署划定了性能基线。\n\n## 批判性分析\n\n### 夸的\n- **真正解决了\"软硬结合\"问题**：触觉研究常有的毛病是硬件很牛但缺乏 AI 集成，或者 AI 模型很花哨但触觉效果无从验证。ArrayTac 两头都硬\n- **远程触诊数据非常扎实**：11/11 参与者完全正确，不是统计学夸大\n- **写作定位清晰**：\"现有触觉显示做不了三轴同步渲染\"这个 problem statement 是实实在在的缺口\n\n### 可以更好\n- **16 单元阵列的规模太小**，4×4 意味着有效\"像素\"只有 16 个，和真实触觉的精细感知还有巨大差距\n- **VLM 推断触觉参数的精度未经独立验证**——论文说 VLM 输出 \"Shore 00 硬度 16\"，但没有任何标定实验证明这个数字和真实材料硬度之间有量化关系\n- **参与者 11 人偏少**，且全是健康年轻人，没有考虑特殊人群（视障、皮肤感知减退等）的使用效果\n- **远程触诊实验的环境过于理想**——未包含真实临床中的干扰因素（患者移动、皮肤湿度、操作者手法差异）\n\n### 潜在偏误\n- 论文可能高估了\"100% 准确率\"的泛化性——肿瘤模型是仿真体模，和真实人体组织差异显著\n- Vision-to-Touch 的通用性存疑：测试场景有限，不清楚能否处理不确定的、多义的视觉输入\n\n## 与课题关联\n\n### 对 jujutsu-sci 学术站的可能贡献\nArrayTac 的技术路线与 jujutsu-sci 的\"AI 系统 + 物理交互\"主题高度相关：\n\n1. **AI 参数生成 + 硬件高保真再现 = 新的人机交互范式**——这个模式可以复制到其他交互形式（如 AI 生成的语音参数 + 高保真语音合成、AI 生成的触觉纹理 + 触觉渲染）\n2. **远程触诊是\"远程临场感\"的实时例证**——AI 在这里起了打通\"视觉→触觉→感知\"的关键桥梁作用\n3. **Vision-to-Touch 管线的模块化思路**值得在 jujutsu-sci 的设计哲学中引用——每个环节用独立的最优模型而非端到端黑箱\n\n### 可写的博客角度\n- \"当 AI 学会了『摸』——ArrayTac 如何在 1000 公里外 100% 识别肿瘤\"\n- \"触觉交互的未来：AI 不只是看，还要动手——三轴触觉渲染的技术突破\"\n- \"从《三体》的『思想钢印』到远程触诊：触觉数字化的人文想象\"\n\n## 领域调研策略\n\n**本次采集方向：** AI × 新型交互方式（触觉/力反馈方向）\n**有效搜索渠道发现：**\n\n| 渠道 | 效果 | 说明 |\n|------|------|------|\n| arXiv cs.RO + cs.HC | ⭐⭐⭐ 最佳 | 触觉显示和机器人交互的高质量预印本集中于此 |\n| Google Scholar \"haptic rendering AI\" | ⭐⭐⭐ 有效 | 配合时间过滤（2025-2026），结果精而准 |\n| Nature Communications | ⭐⭐ 偶有突破 | 软体触觉芯片(Sci Rep/Nat Commun)有零星佳作 |\n\n**推荐关键词组合：**\n- `\"tactile display\" \"shape stiffness friction\" simultaneous`（精准定位三轴渲染）\n- `\"vision to touch\" LLM`（AI驱动的触觉生成）\n- `haptic rendering \"VLM\" OR \"LLM\"`（用大模型做触觉推理）\n- `teleoperation haptic feedback remote palpation`（远程触诊方向）\n\n**方法论反思：**\n本次搜索尝试了 arXiv 直接搜索 + Google Scholar + 搜索引擎的组合。最有效的是 arXiv 高级搜索（在 cs.RO 分类下按日期倒序浏览最新提交），因为触觉显示领域的论文更新速度快。Google Scholar 的结果中 Nature 子刊/PNAS 等顶刊的触觉论文偶尔出现，但频率很低——说明触觉显示的核心发在 CHI/UIST/ISMAR 等 HCI 顶会。下次可定向搜索 CHI 2025/2026 proceedings。",
+    "excerpt": "来源：records/20260522/09/yujin-arraytac/悠仁-能力进化.md · 日期： 2026 05 22",
+    "file_name": "悠仁-能力进化.md",
+    "source_dir": "records/20260522/09/yujin-arraytac",
+    "original_url": "https://arxiv.org/abs/2603.13829",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-05-21 09:00",
     "title": "悠仁-能力进化",

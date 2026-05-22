@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV</title>
-    <meta name="description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 106 条。">
+    <meta name="description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 107 条。">
     <meta property="og:title" content="CV - 研究所">
-    <meta property="og:description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 106 条。">
+    <meta property="og:description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 107 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">CV</h1>
-        <p class="sidebar-summary">基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 106 条。</p>
+        <p class="sidebar-summary">基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 107 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>CV</strong>
-                <span>基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 106 条。</span>
+                <span>基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 107 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,7 +79,7 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "CV", "subtitle": "基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 106 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "CV", "subtitle": "基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 107 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
   {
     "date": "2026-05-20 13:09",
@@ -1302,6 +1302,18 @@
     "source_dir": "records/2026/03/14/19",
     "original_url": "",
     "original_label": "",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-03-14 09:00",
+    "title": "ArrayTac: A Closed-loop Piezoelectric Tactile Platform for Continuously Tunable Rendering of Shape, Stiffness, and Friction",
+    "content": "## 研究什么？\n\nArrayTac 是一个基于压电驱动器的闭环触觉显示平台，能够在 4×4 的致动器阵列上**同时且连续可调地渲染形状、刚度和摩擦三个触觉维度**。这是首个在同一硬件平台上实现三维触觉信息（形貌、软硬度、摩擦力）同步渲染的系统。论文还构建了两条端到端管线：(1) **Vision-to-Touch**——通过多模态基础模型（Depth-Anything-V2 + SAM + VLM）将静态 RGB 图像自动转化为触觉信号；以及 (2) **Tele-Touch**——跨千公里距离的远程触诊系统，实现远程\"触摸\"感知。\n\n## 为什么研究？\n\n人类的触觉感知依赖于形状、刚度和摩擦三种物理线索的整合——摸一个物体时，我们同时感受它的轮廓、软硬和表面滑涩。然而，现有触觉显示设备存在根本性缺陷：\n- 大多数只能渲染单一维度（通常是振动触觉），无法同时呈现形状、刚度和摩擦\n- 现有阵列式触觉显示器的致动位移通常仅有几十微米，不足以呈现常见的物体形貌\n- 多维度渲染往往需要不同硬件的拼接，无法在统一平台上连续调参\n\n在远程医疗、虚拟现实、视障辅助等领域，同时传递这三种触觉信息是实现\"以假乱真\"触觉体验的关键瓶颈。ArrayTac 的目标就是打破这一瓶颈。\n\n## 别人做过什么？\n\n触觉显示领域的研究路径大致可分为：\n1. **振动触觉显示器**（振动马达阵列）——最成熟，但只能呈现振动模式，无法传达形状或持续的压力变化\n2. **形状显示设备**（针阵列式）——可呈现轮廓，但通常无法调参刚度和摩擦\n3. **电刺激/超声悬浮触觉**——可呈现纹理和摩擦，但形状渲染有限\n4. **单点触觉再现**（如 Phantom Desktop）——精度高但无法一次性覆盖大面积区域\n\n现有方案要么只能渲染少数维度，要么维度间切换的硬件代价过高。**尚无系统能在同一硬件平台上连续调控形状、刚度、摩擦三个维度**——这是 ArrayTac 的核心空白。\n\n## 作者怎么研究？\n\n**硬件设计：**\n- 16 个压电致动器构成 4×4 阵列，每个单元采用三级微杠杆放大结构，将压电陶瓷的微米级位移放大到毫米级（最大 5mm）\n- 每个单元的末端执行器集成霍尔效应传感器实现闭环反馈控制，响应速度达 123Hz 闭环带宽、500Hz 阵列刷新率\n- 配套滑动平台支持主动手指滑动探索\n\n**Vision-to-Touch 管线：**\n1. Depth-Anything-V2 做单目深度估计 → Depth Layer\n2. SAM 做物体分割 → masks\n3. VLM（视觉语言模型）推断每个物体的触觉属性——\"Shore 00 硬度 16\"、\"相对摩擦系数 0.3\"\n4. 三个图层（深度 → 形状、VLM 推断 → 柔软度/摩擦力）对齐融合为\"触觉语义高维数组\"\n5. 实时采样后驱动 ArrayTac 再现\n\n**实验验证（三个用户研究）：**\n1. **触觉推断能力**——LLM 推断的振动参数与人类感知的一致性测试\n2. **物理传播效果**——衰减振动传播对材料感知的帮助\n3. **完整 VR 场景体验**——用户在厨房场景中触摸多物体时的沉浸感评价\n\n**Tele-Touch 远程触诊实验：**\n- 北京 → 上海，超 1000km 远程连接\n- 11 名未经培训的志愿者\n- 用 ArrayTac \"触摸\"医用级乳腺肿瘤仿真模型（含不同数量、类型的肿瘤）\n- 结果：**100% 正确识别肿瘤数量和类型**，定位精度达亚厘米级\n\n## 发现了什么？\n\n1. **形状识别**：首次使用的参与者仅通过触觉即可准确识别三维形状（圆锥、圆柱、球体等），无需训练\n2. **刚度与摩擦辨别**：参与者可通过触觉区分多个刚度等级和摩擦级别\n3. **Vision-to-Touch 有效**：从单张 RGB 图像自动提取的触觉参数可被人类准确感知，证明 LLM 的\"触觉常识\"可用于自动触觉内容生成\n4. **远程触诊惊人准确**：100% 的肿瘤识别率，表明 ArrayTac 有潜力支持远程医疗诊断\n5. **带宽与响应**：123Hz 闭环带宽 >500Hz 刷新率足以支持平滑的主动触觉探索\n\n## 价值和不足\n\n**价值：**\n- **首次实现三轴触觉统一渲染**：形状、刚度、摩擦在同一平台连续调控，是触觉显示领域的里程碑\n- **AI 全流程赋能**：从视觉感知到触觉生成（VLM 推断材料属性 + 深度估计 + 物理传播模拟），展示了 AI 在触觉交互中的端到端潜力\n- **远程医疗验证**：1000km 跨地域触诊的 100% 准确率打开了医疗触觉远程化的大门\n- **开源可复现**：有项目网站和代码\n\n**不足：**\n- 仅 4×4（16 单元）阵列，空间分辨率有限，无法覆盖较大面积\n- 用户研究规模较小（11 人），且为实验室模拟环境\n- 硬件复杂度和成本可能限制大规模部署\n- VLM 推断触觉属性的准确性未系统量化——\"Shore 00 硬度\"等数值是文本估计，未经物理标定\n- 尚未集成到真实临床远程触诊工作流中\n\n**五条悟评分：8.5/10**\n\n| 维度 | 分数 | 说明 |\n|------|------|------|\n| 创新性 | 9 | 首个三轴连续可调控统一触觉平台，硬件+AI管线双重创新 |\n| 影响力 | 9 | 远程触诊100%准确率极具冲击力，潜在影响远程医疗、VR、视障辅助 |\n| 可操作性 | 8 | 有完整原型和开源代码，但硬件复杂度是推广障碍 |\n| 跨界连接力 | 9 | 触觉 + CV + LLM + 医疗 + 机器人，跨域连接卓越 |\n| 时间考验力 | 7 | 硬件进度快，但有被新硬件方案迭代的风险 |\n\n**元数据**\n- **标题**：ArrayTac: A Closed-loop Piezoelectric Tactile Platform for Continuously Tunable Rendering of Shape, Stiffness, and Friction\n- **作者**：Tianhai Liang, Shiyi Guo, Baiye Cheng, Zhengrong Xue, Han Zhang, Huazhe Xu\n- **来源**：arXiv:2603.13829 (cs.RO / cs.AI / cs.HC)\n- **日期**：2026-03-14 (v1), 2026-04-17 (v2)\n- **领域标签**：#触觉显示 #AI+触觉交互 #远程医疗 #Vision-to-Touch #压电致动器\n- **评分**：8.5/10",
+    "excerpt": "来源：records/20260522/09/yujin-arraytac/论文总结.md · ArrayTac 是一个基于压电驱动器的闭环触觉显示平台，能够在 4×4 的致动器阵列上 同时且连续可调地渲染形状、刚度和摩擦三个触觉维度 。这是首个在同一硬件平台上实现三维触觉信息（形貌、软硬度、摩擦力）同步渲染的系统。论文还构建了两条端到端管线：(1) Vision to Touch ——通过多模态基础模型（Depth Anything V2 + SAM + VLM）将静态 RGB 图像自动转化为触觉信号；以及 (2) Tele Touch ——跨千公里距离的远程触诊系统，实现远程\"触摸\"感知。",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260522/09/yujin-arraytac",
+    "original_url": "https://arxiv.org/abs/2603.13829",
+    "original_label": "arXiv",
     "session_type": "",
     "session_label": ""
   },
