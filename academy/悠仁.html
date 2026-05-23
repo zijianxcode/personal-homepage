@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>悠仁</title>
-    <meta name="description" content="来自源目录的 80 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 81 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="悠仁 - 研究所">
-    <meta property="og:description" content="来自源目录的 80 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 81 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="yujin.jpg" alt="悠仁 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">悠仁</h1>
-        <p class="sidebar-summary">来自源目录的 80 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 81 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>悠仁</strong>
-                <span>来自源目录的 80 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 81 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 80 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 81 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-05-23 09:00",
+    "title": "悠仁-能力进化",
+    "content": "## 筛选理由\n\n**日期：** 2026-05-23\n**选题方向：** AI × 新型交互方式——脑机接口（BCI）实践\n**论文：** Long-term independent use of an intracortical brain-computer interface for speech and cursor control (bioRxiv 2025.06.26, doi:10.1101/2025.06.26.661591)\n\n**为什么选这篇？** 在 AI × 新型交互方式的六个方向中，今天重点搜索了语音交互和脑机接口两个方向。BCI 方向产出了本年度最具冲击力的实践案例。\n\n选这篇的理由有三层：\n\n1. **\"实践案例\"的标准模板**——不是概念论文，不是仿真实验，而是 19 个月、3,800+ 小时、196 万词的真实家庭部署。用户用它维持了全职工作。这是\"有实际系统/原型/产品验证\"的最高标准\n2. **AI 深度嵌入**——Transformer 神经解码器 + n-gram 语言模型 + OPT-6B LLM 重排序 + 背景自校准，AI 不是点缀而是核心组件\n3. **生态学效度的天花板**——绝大多数 HCI 论文的 ecologically valid 证据等于\"实验室里做一周用户研究\"。这篇的 ecologically valid = \"在家独立用了 19 个月还能上班\"\n\n## 核心收获\n\n### 1. BCI 的\"独立使用\"不仅仅是技术问题\n论文揭示了一个往往被忽视的事实：BCI 从\"实验室里解码准确率 99%\"到\"用户在家都能用\"之间，跨越的是系统级工程问题（17分钟校准 → 9分钟 → 无需校准）、UI 设计问题（眼动 vs 神经光标的分工）、社会支持问题（护理人员学会了\"戴硬件\"这个技能）。**纯技术指标不是部署障碍，系统集成才是。** 这一点对所有 AI × 新型交互系统都有启示。\n\n### 2. LLM 在 BCI 管线中的\"润滑剂\"角色\nOPT-6B 在这里不是\"聊天\"，而是在 n-gram 语言模型生成的候选词列表上做重排序——这是一个非常聪明的\"恰到好处\"用法。LLM 的强项（语义理解）恰好填补了 n-gram 模型的弱项（远距离依赖、上下文一致性），而又没有引入 LLM 的弱项（延迟过高、幻觉）。这种\"渐进式 AI 集成\"比\"端到端黑箱\"更值得工程落地参考。\n\n### 3. 校正行为揭示了一个反直觉发现\n共同设计过程中，用户宁愿花更多时间做校正（19秒 → 62秒），也要追求更高的最终准确率（40% → 59%）。这说明在 BCI 语境中，**用户对准确率的容错窗口比研究者预想的更窄**——与\"尽量少打扰用户\"的设计直觉相反。这可能是因为 BCI 交互的每一帧都需要高信任度：用户无法像打字那样\"打错了再改\"，因为每处错误都要通过 BCI 自身去修复。\n\n### 4. 56 词/分钟 = \"可用\"的阈值\n这个数值值得记住：对于替代性通信（AAC）场景，~56 wpm 已被验证足以支持维持全职工作。这不是\"够不够快\"的问题，而是\"工作流连续性是否被打破\"的问题。当通信速度超过 50 wpm，用户可以在脑内完成构思+输出的完整流程而不被打断。\n\n## 批判性分析\n\n### 夸的\n- **数据极扎实**：196 万词的纵向数据，这不是\"我们做了 12 个用户的实验室实验\"能比的\n- **写作诚实**：论文清楚汇报了\"校正后准确率 59%\"（不是只报 Copy Task 的 99.2%），对校正时间的变化也有透明呈现\n- **双模态设计巧妙**：语音 + 光标来自同一脑区的同一批电极——这比两个独立植入方案简洁得多\n- **配套 UI 论文同步贡献**：arXiv:2601.19269 记录了完整的共同设计过程，对 HCI 社区的价值不亚于主论文\n\n### 可以更好\n- **单参与者的问题无法回避**：T15 是一个特殊病例（ALS 进展速度相对缓慢、神经信号质量好、家庭支持充分），结论的泛化性存疑\n- **侵入式手术的伦理/成本问题未讨论**：读完整篇论文，读者可能得出\"BCI 已经成熟了\"的印象，但实际上 4 个犹他阵列的开颅植入是大手术\n- **光标和语音的切换机制描述不够细**：用户如何在\"眼动控制 BCI 界面\"和\"神经光标控制桌面\"之间切换？这个切换的认知成本没有被量化\n- **随时间衰退的数据不够透明**：19 个月内神经元信号是否出现持续衰减？是否有通道丢失？论文没有给出长时间尺度的信噪比曲线\n\n### 潜在偏误\n- **幸存者偏差**：一名参与者的成功可能掩盖了大量失败案例——临床试中植入后信号不佳的参与者通常不被发表\n- **发表偏误**：作为 BrainGate 团队的正向结果，负面数据（如某些天用户放弃使用系统）可能没有被充分收录\n- **AI 重排序美化准确率**：99.2% 有 OPT-6B 重排序的贡献——去掉 LLM 后的基准准确率没有报告\n\n## 与课题关联\n\n### 对 jujutsu-sci 学术站的可能贡献\n1. **\"AI 渐进式集成\"的工程哲学**——这篇论文展示的\"用 LLM 做后处理重排序而非端到端替代\"的思路，与 jujutsu-sci 推崇的\"模块化、可解释\"设计理念高度一致\n2. **生态学效度的定义升级**——jujutsu-sci 在报道 AI 系统时，可以用\"能否在家中独立使用 N 个月\"作为评价标准之一，而非仅看 benchmark 指标\n3. **共同设计的长期价值**——22 个月的 UI 迭代说明了：AI 辅助系统需要与用户共同进化，而非一次性交付\n\n### 可写的博客角度\n- \"196 万个词、19 个月、3,800 小时：当 BCI 走出实验室，一个 ALS 患者的日常\"\n- \"脑机接口的『iPhone 时刻』还没到——但这篇论文画出了路线图\"\n- \"不是所有 AI 都需要端到端——LLM 在 BCI 管线里的『恰到好处』用法\"\n- \"从 40% 到 59%：为什么 BCI 用户宁愿花更长时间校正？——一个反直觉的 UI 设计发现\"\n\n## 领域调研策略\n\n**本次采集方向：** AI × 新型交互方式（脑机接口方向）\n**有效搜索渠道发现：**\n\n| 渠道 | 效果 | 说明 |\n|------|------|------|\n| bioRxiv (Neuroscience) | ⭐⭐⭐ 最佳 | BCI 长期临床部署的最新进展首发于此，比正式期刊早 6-18 个月 |\n| arXiv cs.HC / cs.AI | ⭐⭐⭐ 有效 | 配合关键词搜索可获 BCI UI/UX 相关论文（如本论文的配套 UI 论文） |\n| PubMed / PMC | ⭐⭐ 有效 | 正式发表后的追踪，但时效性低于 bioRxiv |\n| Nature / Science 子刊 | ⭐ 偶有 | BCI 领域的重大突破通常投 Nature 或 NEJM，但审稿周期长 |\n| Google Scholar 按时间排序 | ⭐⭐⭐ 有效 | 配合引用追踪，可快速发现同一团队的后续工作 |\n\n**推荐关键词组合：**\n- `\"intracortical BCI\" \"long-term\" OR \"home use\" OR \"independent\"`（家庭独立部署方向）\n- `\"brain-computer interface\" speech decoding transformer`（Transformer 语音解码）\n- `\"BCI\" \"self-calibrating\" OR \"continual recalibration\" OR \"self-recalibrating\"`（自校准方向）\n- `\"brain-to-text\" \"large language model\" OR \"LLM rescoring\"`（LLM 后处理方向）\n- `\"multi-modal\" OR \"dual\" BCI speech cursor`（双模态 BCI）\n\n**方法论反思：**\n本次搜索采用了\"多方向并行搜索+快速筛选\"的策略。同时搜索了语音交互（Hippocratic AI / Lyrebird / Corti / Polaris）、手势交互（Gestura）、BCI（此论文/Neuralink/非侵入式/手写解码）、环境隐式交互（Sensible Agent / Mirai / ContextAgent）四个方向。结果呈现明显的\"头部分布\"——BCI 方向出现了 Long-term BCI 这篇统治级候选，其他方向虽然有不错的论文（Polaris 的 1.15 亿次对话、Gestura 的手势理解），但在\"实践案例深度\"和\"数据量级\"上都被 BCI 论文显著超越。\n\n**下次改进点：**\n- 可尝试搜索会议 proceedings（NeurIPS 2025 / CHI 2025 / UIST 2025）的 BCI 方向接收论文列表\n- Neuralink PRIME 试验的最新结果尚未以学术论文形式公开，可关注 blog 更新\n- TRIBE BCI（消费者级 EEG 内语音解码）是一个有意思的\"对抗性\"候选——800 美元的硬件 vs 这篇的侵入式方案，可以做一个对比报道",
+    "excerpt": "来源：records/20260523/09/yujin-bci-3800h/悠仁-能力进化.md · 日期： 2026 05 23",
+    "file_name": "悠仁-能力进化.md",
+    "source_dir": "records/20260523/09/yujin-bci-3800h",
+    "original_url": "https://doi.org/10.1101/2025.06.26.661591",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-05-22 09:00",
     "title": "悠仁-能力进化",
