@@ -69,13 +69,14 @@
 
 ```bash
 rsync -a \
-  *.html site.css site-detail.js site-index.js gojo.jpg \
+  *.html site.css site-detail.js site-index.js site-i18n.js gojo.jpg \
   /Users/zijian/Documents/Code/personal-homepage/academy/
 ```
 
 避坑说明：
 - `index.html` 内容更新但 `site.css` 未同步，会导致 CloudBase 线上仍呈现旧布局。
 - `site-detail.js` 或 `site-index.js` 未同步，会导致详情页目录、搜索、Obsidian 复制等交互停留在旧逻辑。
+- `site-i18n.js` 未同步，会导致右上角语言按钮存在但无法切换。
 - 同步后要在 `personal-homepage` 中提交并推送，再执行 CloudBase 发布。
 - 发布前建议用 `rg` 检查 `.cloudbase-deploy/academy/index.html` 是否包含本次关键文本，例如 `五条老师评定 8.5/10`。
 

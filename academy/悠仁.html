@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>悠仁</title>
-    <meta name="description" content="来自源目录的 81 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 82 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="悠仁 - 研究所">
-    <meta property="og:description" content="来自源目录的 81 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 82 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="yujin.jpg" alt="悠仁 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">悠仁</h1>
-        <p class="sidebar-summary">来自源目录的 81 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 82 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>悠仁</strong>
-                <span>来自源目录的 81 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 82 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 81 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 82 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-05-24 09:00",
+    "title": "悠仁-能力进化",
+    "content": "## 筛选理由\n\n**日期：** 2026-05-24\n**选题方向：** AI × 新型交互方式——眼动/注意力交互实践\n**论文：** IRIS: Intent Resolution via Inference-time Saccades for Open-Ended VQA in Large Vision-Language Models (arXiv:2602.16138)\n\n**为什么选这篇？** 今天进入了 AI × 新型交互方式的**第六周**，本周重点方向是之前覆盖较少的两类——眼动/注意力交互和触觉/力反馈交互。搜索了这两个方向后，眼动方向产出的 IRIS 论文脱颖而出。\n\n选这篇的理由：\n\n1. **\"AI + 眼动交互\"的实践标杆**——IRIS 不只是\"用眼动数据做点好玩的\"，而是系统地解决 VLM 在实际使用中一个本质性的痛点（指代歧义），且有完整的实时系统、用户实验和开源数据\n2. **\"眼动即意图\"这个直觉的严谨验证**——每个人拿到 AR 眼镜都会自然地说\"我想看那个\"，但之前没有人在 VLM 上定量验证\"用户开口前的注视点能否引导模型理解\"\n3. **training-free 的实际价值**——不需要训练，现有的 AR/VR 头显 + 任意 VLM 都能直接用。这意味着它不是一个纯学术论文，而是可以立刻落地的交互范式\n\n**落选候选：**\n- **Sound2Hap (CHI '26)** — AI × 触觉方向，用 CNN 从音效生成振动信号。有趣但更偏向可用性工具，交互范式创新度不如 IRIS\n- **Prop-Chromeleon (CHI '26)** — AI × 触觉 + MR，用 GenAI 将日常物品变成触觉道具。创意很好但交互粒度较粗\n- **ChatBCI** — AI × BCI，P300 拼写器 + LLM 预测。方法有趣但 P300 拼写器作为交互范式本身效率有限\n- **Intracortical BCI Speech (bioRxiv)** — 上周的 BCI 选择已经极大值覆盖了这个方向（Long-term BCI 论文），今天需要拓展新方向\n\n## 核心收获\n\n### 1. \"时间窗口\"比\"空间精度\"更重要\n\nIRIS 最精彩的分析是系统性比较了不同时间窗口的眼动信息量。结果很清晰：**语音起始时刻附近的注视点最有价值**。这个发现的意义在于——它把\"眼动引导 VLM\"从工程实现问题转化为了认知科学问题。不是\"如何把 gaze 坐标塞进 prompt\"的问题，而是\"什么时候的 gaze 坐标值得塞进去\"。这个视角对任何\"用传感器信号引导 AI\"的交互都有启发——信号的时间对齐点比原始精度更关键。\n\n### 2. \"在推理时注入用户信号\"是一种被低估的设计模式\n\n当前 AI 交互设计的主流趋势是\"训练更大的模型、做更多指令微调、用 RAG 塞更多上下文\"。IRIS 展示了一条不同的路——**保持模型不变，在推理时注入实时用户生物信号来校偏**。这类似于自动驾驶中的\"human-in-the-loop\"但不是让人类做操作决策，而是让人类做\"注意力路由\"（attention routing）。这种设计模式的优势是：模型升级时不需要重新适配输入接口，眼动信号处理管线独立于 VLM 架构。\n\n### 3. 从 35.2% 到 77.2% 的跃升说明了什么？\n\n这不是 10% 或 20% 的提升，而是**准确率翻倍还多**。这说明在歧义场景中，VLM 的\"盲猜\"正确率只有三分之一左右——接近随机。人眼注视数据提供了模型原本无法获得的\"意图锚点\"。这也暗示了一个更重要的趋势：**未来的 AI 交互可能不再需要用户精确的文本描述，而是靠\"看+问\"的自然组合就能完成理解。** \"看\"负责消歧，\"问\"负责表达意图——这比\"说一大段描述词\"自然得多。\n\n### 4. \"无增益场景\"的设计启示\n\nIRIS 的无歧义问题没有提升——这意味着在日常使用中，用户戴着眼动仪做简单提问时不会有任何感知差异，只有遇到歧义时才发挥作用。这引出一个交互设计的洞见：**自适应传感——在不必要时对用户隐形，在必要时才介入**。与其让\"眼动控制\"始终可见（如视线光标），不如让它作为后备消歧信号只在需要时激活。这可能是消费级 AR/VR 中眼动交互的更优雅路径。\n\n## 批判性分析\n\n### 夸的\n- **实验设计干净利落**：10 个参与者 × 50 张图像 × 500 个问答对，每张图的歧义设计目的明确，统计方法恰当\n- **时间窗口分析是核心工程贡献**：翻遍了论文和相关工作，没人做过这个——为什么眼动数据在工作时有用，什么时间最有用？这是第一次系统回答\n- **跨 10 种 VLM 验证**：不是只试了 GPT-4o，而是覆盖了不同规模、不同架构的开源 VLM——这增加了结论的可信度\n- **开源精神和复现友好的设计**：数据、实时实验代码、评估套件全部公开\n\n### 可以更好\n- **10 个参与者 → 说\"comprehensive user study\"有点勉强**：500 个问答对很多，但 10 个参与者是下限。特别是眼动模式有个体差异很大的现象（不同的视觉搜索策略），10 人不够覆盖\n- **没有失败场景分析**：眼动引导失败的情况（如用户边说话边移动视线、或注视点落在歧义对象的中间位置）？这些案例可能比成功案例更有信息量\n- **\"语音起始时刻\"的检测依赖商用 ASR**：如果 ASR 在嘈杂环境中延迟或出错，时间窗口会偏移。系统的鲁棒性边界没有讨论\n- **缺乏 AR/VR 实际部署验证**：论文用实验室 Tobii 眼动仪做的实验。作者声称\"可直接部署到 AR/VR 头显\"，但并没有在 Vision Pro 或 Quest 上做哪怕一次验证——这是论文结论中最弱的环节\n\n### 潜在偏误\n- **歧义场景的人为构造**：50 张图像可能都经过精心设计以产生高度歧义，实际场景中歧义密度远低于此。实验室的 77.2% 可能高估了实际增益\n- **参与者可能不自觉\"演\"给眼动仪看**：即使作者说\"自然提问\"，知道自己在被眼动追踪的参与者可能不自知地\"更认真看目标\"——霍桑效应的眼动版本\n- **ICLR 2026 Withdrawn 的原因值得追问**：是负面审稿意见？是作者自己决定转投更合适的期刊（如 IEEE TPAMI 或 Nature Machine Intelligence）？还是发现了方法中的潜在问题？明确这一点对评价论文的可信度很重要\n\n## 与课题关联\n\n### 对 jujutsu-sci 学术站的可能贡献\n1. **\"time-aligned sensory injection\"作为交互设计模式的报道**——IRIS 展示的\"在推理时注入时间对齐的用户生物信号\"模式，可作为 jujutsu-sci 报道 AI 交互系统的一个分析框架\n2. **AR/VR + AI 交叉领域的\"谁先落地\"叙事**——眼动仪从实验室走向消费级，LMM 从云端走向端侧，两者交叉的\"一旦普及就会出现的交互革命\"是一个有吸引力的报道角度\n3. **\"training-free\"作为一种评价指标**——jujutsu-sci 的评价体系中，可以加入\"是否需要重新训练模型\"这一维度，来区分实用的交互范式 vs 学术实验\n\n### 可写的博客角度\n- \"你看向哪 AI 就知道你想说哪——当眼动追踪成为 VLM 的第二大脑\"\n- \"从 35% 到 77%：人眼注视数据如何让 AI 不再'猜'你的意思\"\n- \"AR 眼镜的杀手级交互可能不是手势，而是你看东西的方式\"\n- \"一个被 ICLR 撤稿的论文，可能是今年最务实的 AI 交互设计\"\n\n## 领域调研策略\n\n**本次采集方向：** AI × 新型交互方式（眼动/注意力交互 + 触觉/力反馈交互）\n\n**有效搜索渠道发现：**\n\n| 渠道 | 效果 | 说明 |\n|------|------|------|\n| OpenReview (ICLR submissions) | ⭐⭐⭐ 最佳 | ICLR 2026 有多个 Gaze-VLM / GazeVLM 相关论文投递，且均公开 avi 详情——是追踪该方向最新学术动态的优质窗口 |\n| arXiv cs.CV + cs.HC | ⭐⭐⭐ 有效 | 眼动交互相关论文在 cs.CV（VLM 相关）和 cs.HC（交互相关）两个子域都有分布；IRIS 主投 cs.CV |\n| CHI Proceedings | ⭐⭐⭐ 有效 | CHI 2025/2026 在眼动交互方向产出丰富，包括 Gazeify Then Voiceify、RaycastGrasp 等应用论文；CHI 2026 论文集已上线 |\n| GitHub (open-source projects) | ⭐⭐ 有效 | NeuGaze、NeoCursor 等开源眼动控制项目展现了社区进展，但学术严谨性参差不齐 |\n\n**推荐关键词组合：**\n- `\"gaze\" \"VLM\" OR \"MLLM\" OR \"vision-language model\" real-time`（当前方向）\n- `\"gaze-informed\" VQA OR \"disambiguation\"`（指代消歧方向）\n- `\"eye tracking\" \"AR/VR\" interaction VLM`（AR/VR 部署方向）\n- `\"haptic\" \"AI\" OR \"LLM\" OR \"generative\" user study`（触觉方向，本次也搜索了但未选出）\n- `\"audio-to-vibrotactile\" OR \"sound2hap\" deep learning`（音→触觉方向）\n\n**方法论反思：**\n本次采用了\"方向并行 + 分层筛选\"的策略：\n1. **第一层**（broad search）：同时搜索 6 个方向的关键词，寻找候选论文\n2. **第二层**（深度筛选）：对有用户实验数据和系统实现的候选做详细对比\n3. **最终决选**：IRIS vs Prop-Chromeleon vs Sound2Hap 三个候选，IRIS 在\"交互范式创新度\"+\"实操可部署性\"上胜出\n\n这次搜索中发现两个有价值的模式：\n- **OpenReview 搜索**：ICLR/NeurIPS 的 review 系统在审稿期间公开所有论文的 PDF 和 TL;DR，是比 arXiv 更新、更集中的信息来源（arXiv 灌水比例高，OpenReview 至少在审稿门槛上过滤了一层）\n- **同一工作多名称追查**：这篇论文以 Gaze-VLM（ICLR）、IRIS（arXiv）、以及类似但不同的 GazeVLM 系列有多重名称。做 citation tracking 时需要特别注意区分不同版本\n\n**下次改进点：**\n- 可尝试搜索 CHI 2026 Late-Breaking Work / alt.chi 的交互原型论文——这些通常更偏实践\n- UIST 2025/2026 论文集的眼动交互论文索引——UIST 比 CHI 更偏 UI 系统和交互技术\n- 搜寻 AR/VR 头显厂商（Apple/Meta/Google）在 gaze-based interaction 方面的专利及技术博客",
+    "excerpt": "来源：records/20260524/09/yujin-iris-gaze/悠仁-能力进化.md · 日期： 2026 05 24",
+    "file_name": "悠仁-能力进化.md",
+    "source_dir": "records/20260524/09/yujin-iris-gaze",
+    "original_url": "https://arxiv.org/abs/2602.16138",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-05-23 09:00",
     "title": "悠仁-能力进化",

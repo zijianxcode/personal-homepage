@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV</title>
-    <meta name="description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 108 条。">
+    <meta name="description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 110 条。">
     <meta property="og:title" content="CV - 研究所">
-    <meta property="og:description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 108 条。">
+    <meta property="og:description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 110 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">CV</h1>
-        <p class="sidebar-summary">基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 108 条。</p>
+        <p class="sidebar-summary">基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 110 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>CV</strong>
-                <span>基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 108 条。</span>
+                <span>基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 110 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,8 +79,32 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "CV", "subtitle": "基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 108 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "CV", "subtitle": "基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 110 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-05-24 13:00",
+    "title": "IRIS: Intent Resolution via Inference-time Saccades for Open-Ended VQA in Large Vision-Language Models",
+    "content": "## 研究什么？\n\n本研究提出 **IRIS（Intent Resolution via Inference-time Saccades）**——一种**无需训练**（training-free）的实时交互框架，利用**眼动追踪数据**作为对齐信号，在大视觉语言模型（VLM）的开放视觉问答（VQA）中**消解指代歧义**。\n\n核心交互流程：用户看着一张图片自然提问 → 眼动仪捕捉注视位置 → 录音识别问题起止时间 → 系统将关键注视窗口内的眼动数据作为\"意图提示\"注入 VLM → VLM 生成更准确的回答。整个过程中，人眼充当了 VLM 的\"注意力控制器\"——告诉模型：\"我说的'那个'，就是我正在看的东西。\"\n\n## 为什么研究？\n\n当前的 VLM 在视觉问答中有个经典问题：**指代歧义**。当用户问\"这个颜色是什么？\"而画面中有多个物体时，模型无从知道\"这个\"到底指代什么。现有解决方案——比如设计复杂的 prompt 要求用户详细描述、训练专门的 grounding 模型、或者让用户手动标注区域——要么繁琐、要么需要重新训练整个模型、要么在实时交互中不可行。\n\n同时，**眼动追踪硬件正迅速普及**：Apple Vision Pro、Meta Quest 3/3S、主流 AR 眼镜和高端 VR 头显都已标配眼动追踪。这意味着\"眼动数据随手可得\"的交互环境正在形成，但之前很少有工作成功地将人眼自然注视作为\"实时 VLM 意图信号\"来使用。\n\n核心研究问题：**人类自然的眼动轨迹能否在推理时（inference-time）引导 VLM 理解用户的真实意图，从而消解 VQA 中的指代歧义？如果能，什么时间窗口内的眼动数据最有效？**\n\n## 别人做过什么？\n\nVLM 指代理解的研究路径大致有三条：\n\n1. **静态视觉 grounding 模型**——如 GLIP、Grounding DINO、OFA 等，在图像中定位用户文本描述的对象。但需要特定架构训练，不能直接适用于通用 VLM\n2. **人机交互中的注视辅助**——部分研究尝试将眼动信号用于 GUI 导航（如 AltText 点击猜测），或用于辅助语音助手的对象选择（如\"看那辆车\"），但从未将其作为 VLM 的实时推理时对齐信号使用\n3. **Gaze-informed AI**——有少量工作（如 Voila-A）将 gaze heatmap 编码为条件特征输入模型，但需要模型架构修改或联合训练，不是 training-free 方案\n\n**现有工作的关键缺口**：\n- 要么需要训练/微调模型（不是 plug-and-play）\n- 要么不是在自然问答场景中验证（使用人工标定的目光位置，而非用户自发说话时的自然注视）\n- 要么没有系统性地分析\"什么时间窗口的注视数据最有信息量\"这一核心问题\n\nIRIS 填补了这些缺口：**无需训练、实时可用、系统分析了眼动时间窗口与语义对齐的关系**。\n\n## 作者怎么研究？\n\n**实验设计：**\n\n| 维度 | 详情 |\n|------|------|\n| 参与者 | 10 人 |\n| 图像 | 50 张（每张包含多个可混淆的对象，用于制造指代歧义） |\n| 图像-问答对 | **500 个**（50 张 × 10 人，每人每张图提一个问题） |\n| 数据采集 | 同步录制眼动轨迹（Tobii Pro Fusion 眼动仪）+ 音频（问题起止时间） |\n| 问题类型 | 混有歧义问题（如\"What color is that? 画面中有杯子和球体）和无歧义问题 |\n\n**系统架构（三步流水线）：**\n\n1. **实时眼动追踪** — Tobii 眼动仪记录用户自发的注视点序列，无需用户刻意\"盯着目标\"\n2. **语音起始检测** — 通过语音识别确定用户开口提问的时间戳\n3. **VLM 推理 + 眼动条件注入** — 提取\"语音起始时间点附近 N 毫秒窗口\"内的注视点位置 → 将这些注视点坐标作为额外视觉上下文注入 VLM 的 prompt → 模型据此确定用户意图指向的对象\n\n关键创新：**\"时间窗口分析\"**——研究者系统性地测试了不同时间窗口（提问前 500ms、前 1000ms、前后各 250ms 等）的眼动数据对消歧效果的差异，找到了**最优窗口：语音起始附近的注视点信息量最大**。\n\n**VLM 评估：** 跨 10 种不同的 VLM 架构（不同规模、不同训练数据、不同注意力机制），验证眼动引导的通用性。\n\n## 发现了什么？\n\n1. **歧义问题准确率翻倍**：从 35.2%（纯图像输入）提升到 **77.2%**（加眼动信号）。注意：这是 open-ended VQA 的准确率——不提供答案选项，完全自由生成。\n2. **无歧义问题不受影响**：对明确指向的问题，眼动信号没有产生干扰。准确率变化在统计上不显著——说明眼动信号不会\"过度引导\" VLM 忽视实际明显的语义线索。\n3. **最优时间窗口是\"语音起始时刻\"**：提问前的瞬间注视点比提问后或更早的注视点信息量大得多。这符合直觉——人会在开口前锁定目标对象。\n4. **跨 VLM 架构一致性**：在 10 种不同 VLMs 上，眼动引导的改进效果一致，说明该方法不是特定于某种模型架构的\"hack\"。\n5. **发布贡献**：提供新的 gaze-informed VQA 基准数据集、实时实验协议和评估套件。\n\n## 价值和不足\n\n**价值：**\n\n- **AI × 眼动交互的范式突破**：证明人眼自然注视可以直接作为 VLM 的推理时对齐信号——无需训练、无需特定硬件集成，只要眼动仪可用即可\n- **\"眼动即意图\"的设计哲学**：直觉上人人都想过\"我看向哪就是我的意思\"，但这是首次在 VLM 上严谨验证这一假设，并定量找到了最优时间窗口\n- **实操即用**：AR/VR 设备即将标配眼动追踪，IRIS 的方案可以直接部署——VLM 不需要重新训练，系统只需要\"眼动流 + 音频流 → gaze prompt injection\"\n- **数据和方法开源**：benchmark 数据集和实时实验协议为社区提供了后续研究的基础设施\n\n**不足：**\n\n- **参与者数量有限**：10 人、500 个问答对，虽然结果统计显著，但规模不足以覆盖文化/年龄/经验的个体差异\n- **局限于 VQA 场景**：能否扩展到视频理解、多轮对话、机器人操作等其他交互场景？没有验证\n- **眼动仪精度依赖**：实验使用了实验室级 Tobii 眼动仪（精度 < 0.5°），消费级 AR 眼镜的眼动追踪精度较低（通常 1-3°），实际部署效果可能有差异\n- **无歧义问题缺少增益**：对大部分日常使用场景（大多数问题实际上不是歧义的），这个方法的增益为零——用户\"白费功夫\"戴了眼动仪但没获得好处\n- **只有 gaze 单一信号**：没有结合瞳孔反应、注视时长、注视序列等更丰富的眼动特征，仅使用了原始注视坐标\n- **ICLR 2026 已撤稿**：论文最初投稿 ICLR 2026 但已 withdrawn，目前以 arXiv 预印本形式存在。撤稿原因未公开，可能涉及审稿意见或作者策略调整\n\n**五条悟评分：8.6/10**\n\n| 维度 | 分数 | 说明 |\n|------|------|------|\n| 创新性 | 9 | training-free + inference-time gaze conditioning 的组合新颖；时间窗口的系统性分析是亮点 |\n| 影响力 | 8 | 方法直接可部署，数据开源，对 AR/VR + AI 交互社区可能产生实质影响；但 ICLR 撤稿可能影响信誉 |\n| 可操作性 | 9 | 不需要任何模型训练，代码和数据已开源，配套实时实验协议——实操友好度极高 |\n| 跨界连接力 | 9 | 计算机视觉(VLM) + 认知科学(眼动/注意) + HCI(交互设计) + AR/VR(部署场景)，四域交叉紧密 |\n| 时间考验力 | 7 | 结果统计显著，跨模型验证有力；但 10 人/500 对的规模偏小，需要更大的用户研究和更丰富的场景验证 |\n\n**元数据**\n- **标题**：IRIS: Intent Resolution via Inference-time Saccades for Open-Ended VQA in Large Vision-Language Models\n- **作者**：Parsa Madinei, Srijita Karmakar, Russell Cohen Hoffing, Felix Gervitz, Miguel P. Eckstein\n- **来源**：arXiv:2602.16138 (v2, 2026-05-05) / ICLR 2026 (Withdrawn)\n- **日期**：2026-02-18 (v1), 2026-05-05 (v2)\n- **领域标签**：#眼动交互 #VLM #交互范式 #指代消解 #AI+眼动 #AR/VR交互 #training-free #real-time\n- **评分**：8.6/10\n---\n<!-- citation-verification: 2026-05-24 13:00:00 -->\n<!-- arXiv:2602.16138 → confirmed: \"IRIS: Intent Resolution via Inference-time Saccades for Open-Ended VQA in Large Vision-Language Models\", last revised 5 May 2026 -->",
+    "excerpt": "来源：records/20260524/09/yujin-iris-gaze/论文总结.md · 本研究提出 IRIS（Intent Resolution via Inference time Saccades） ——一种 无需训练 （training free）的实时交互框架，利用 眼动追踪数据 作为对齐信号，在大视觉语言模型（VLM）的开放视觉问答（VQA）中 消解指代歧义 。",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260524/09/yujin-iris-gaze",
+    "original_url": "https://arxiv.org/abs/2602.16138",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-05-24 09:00",
+    "title": "Impact of Multimodal and Conversational AI on Learning Outcomes and Experience",
+    "content": "## 一、基本信息\n\n- **标题**：Impact of Multimodal and Conversational AI on Learning Outcomes and Experience\n- **作者**：Karan Taneja, Anjali Singh, Ashok K. Goel\n- **机构**：Georgia Institute of Technology, Design Intelligence Lab\n- **发表**：AIED 2026（人工智能教育国际会议，第26届，首尔，韩国）\n- **提交日期**：2026年4月2日（arXiv预印本）\n- **引用**：arXiv:2604.02221 [cs.HC]\n- **链接**：https://arxiv.org/abs/2604.02221\n\n---\n\n## 二、研究背景与问题\n\n### 研究背景\n多媒体学习理论（Mayer, 2001）早已证明，视觉与语言信息的整合能显著提升知识保持与迁移能力，尤其在 STEM 这类视觉密集型学科中。然而，当前教育领域的对话式 AI 系统——无论是智能辅导系统（ITS）还是通用聊天机器人——几乎全部依赖纯文本交互，未能充分利用多模态大语言模型（MLLMs）的图像生成与推理能力。\n\n与此同时，生成式 AI 在教育中的快速部署引发了深层矛盾：有研究表明 AI 聊天机器人能提升学习效果和参与度，但也有研究指出其可能导致过度依赖和元认知努力下降。关键问题在于——**对话式和多模态性对学习的独立与联合影响尚不明确**。\n\n### 研究问题\n1. 多模态（文本+图像）对话式 AI 系统是否比纯文本对话式 AI 系统带来更好的学习效果？\n2. 对话式交互本身（相对于传统教材搜索）是否提升学习体验和效果？\n3. 多模态性和对话式交互如何通过认知负荷机制共同影响学习？\n\n---\n\n## 三、方法设计\n\n### 实验设计\n- **设计类型**：随机对照实验（RCT），在线实验（Prolific平台）\n- **样本量**：N = 124 名参与者\n- **学习内容**：减数分裂细胞分裂（meiosis cell division），选自生物学教材\n- **实验流程**：前测 → 使用指定系统学习 → 后测 → 学习体验问卷\n\n### 三组对照条件\n\n| 条件 | 系统 | 核心特征 | 交互方式 |\n|------|------|---------|---------|\n| MuDoC | 多模态对话式AI | 生成图文穿插的回应，含引用和图注 | 对话式 + 多模态 |\n| TexDoC | 纯文本对话式AI | 与MuDoC相同但无图像输出 | 对话式 + 纯文本 |\n| DocSearch | 教材语义搜索 | 高亮显示教材相关内容，支持关键词搜索 | 传统搜索式 |\n\n### MuDoC系统设计要点\nMuDoC 2.0 基于 GPT-4o，采用 ReAct（Reason-and-Act）框架：\n1. 根据用户提问检索教材中的相关文本段落和图像\n2. 生成图文穿插的回应（HTML格式，含 `figure`、`figcaption`、`img` 标签）\n3. 所有内容均标注来源引用，支持点击跳转到教材原文\n4. TexDoC 去除图像检索管道，仅保留文本输出，其他完全一致（隔离多模态变量）\n\n---\n\n## 四、核心发现\n\n### 4.1 学习效果（后测得分）\n\n- **MuDoC（多模态AI）> TexDoC（纯文本AI）**：差异有统计学意义\n- MuDoC vs DocSearch：无显著差异\n- TexDoC vs DocSearch：无显著差异\n- 综合趋势：MuDoC 得分最高，DocSearch 居中，TexDoC 最低\n\n### 4.2 学习体验（问卷评分）\n\n- MuDoC 和 TexDoC 在学习体验评分上无显著差异，均较高\n- **DocSearch 评分显著低于两个AI系统**\n- 关键矛盾：**TexDoC 被评为\"最具吸引力、最易用\"的系统，却产生了最低的后测得分**\n\n### 4.3 \"学习错觉\"（Illusion of Learning）\n\n这是本研究最引人注目的发现：\n\n> TexDoC 用户认为自己在学习——他们觉得系统更吸引人、更容易使用——但实际学习效果是最差的。\n> 而多模态的 MuDoC 打破了这种错觉：视觉信息的加入迫使学习者投入更多认知努力，从而产生更扎实的理解。\n\n### 4.4 认知负荷理论（CLT）解释\n\n| 机制 | 效果 |\n|------|------|\n| **对话性（conversationality）** → 减少外部认知负荷 | 《- 学习者不需要自己导航搜索，AI直接回应 |\n| **多模态性（multimodality）** → 增加相关认知负荷 | 《- 图文整合需要更深层次的编码加工 |\n| **纯文本对话** → 认知负荷过低 → 虚假理解 | 《- 感觉懂了，实际上没懂 |\n| **多模态对话** → 认知负荷平衡 → 真实学习 | 《- 图文穿插迫使学习者进行深层加工 |\n\n---\n\n## 五、价值与贡献\n\n### 理论贡献\n1. **首次系统分离对话式和多模态性对学习的影响**：通过精心设计的消融实验（TexDoC），明确区分了两个因素的独立与联合效应\n2. **发现\"学习错觉\"现象**：纯文本对话式AI可能导致学习者的虚假自信，挑战了\"越吸引人=越有效\"的直觉\n3. **为认知负荷理论提供新证据**：在教育AI语境下验证了CLT的核心假设，为AI教育系统的理论设计提供指导\n\n### 实践价值\n1. **AI教育系统设计原则**：仅添加对话式交互是不够的，必须同步融入多模态内容才能产生真正的学习效果\n2. **教材数字化的新范式**：MuDoC提出的\"AI + 教材内容检索 + 图文生成\"可成为智能教科书的标准架构\n3. **评估AI教育工具的新视角**：用户体验评分不能替代学习效果测量，两者可能严重背离\n\n### 方法论优势\n- RCT设计（N=124），样本量适中但分配随机、控制严格\n- 三组对照有效分离变量（多模态性 vs. 对话性）\n- 前测-后测设计确保基线可比\n- 来自Georgia Tech设计智能实验室，多模态学习分析领域知名团队\n- 被AIED 2026接收，这是AIED领域的旗舰会议\n\n---\n\n## 六、局限与未来方向\n\n### 局限性\n1. **学习内容单一**：仅测试了生物学中减数分裂这一主题，结论对其他领域（如数学、编程、语言学习）的推广性有待验证\n2. **短期干预**：单次学习会话，未追踪长期知识保持（延迟后测）\n3. **在线实验生态效度**：Prolific平台被试可能无法完全代表真实课堂情境\n4. **DocSearch的基线设计**：语义搜索 + 高亮 ≠ 纯文本阅读，可能影响对\"对话性\"效应的精确归因\n5. **未测量认知负荷**：虽用CLT解释结果，但未直接测量参与者的认知负荷水平\n6. **样本多样性**：未报告人口统计学信息，可能存在选择偏差\n\n### 未来方向\n- 跨学科验证（数学图表、编程可视化、语言学习情境等）\n- 纵向追踪设计，评估长期学习效果和知识保留\n- 真实课堂部署（该团队已有教科书出版背景，可能推进实际部署）\n- 直接测量认知负荷（双任务法或自我报告量表）\n- 探索自适应多模态策略（何时插入图像、何时纯文本解释更优）",
+    "excerpt": "来源：records/20260524/09/megumi-mudoc-clt/论文总结.md · 标题 ：Impact of Multimodal and Conversational AI on Learning Outcomes and Experience",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260524/09/megumi-mudoc-clt",
+    "original_url": "https://arxiv.org/abs/2604.02221",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-05-23 13:06",
     "title": "GazeMind: A Gaze-Guided LLM Agent for Personalized Cognitive Load Assessment",

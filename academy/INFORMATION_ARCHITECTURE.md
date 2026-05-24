@@ -7,6 +7,7 @@ This site is a research dashboard built from source Markdown records. The homepa
 1. **Information Intake**
    - Primary user need: understand recent research news and keep awareness of the field.
    - The homepage links to the full paper feed and highlights the recent collection rhythm.
+   - Time search supports quick retrospection from the homepage, then hands the full result set to the archive page.
 
 2. **Gojo Ranking**
    - Primary homepage decision unit.
@@ -34,10 +35,12 @@ This site is a research dashboard built from source Markdown records. The homepa
 6. **Archive**
    - Complete chronological and searchable record layer.
    - Keeps old records discoverable without making the homepage repetitive.
+   - Accepts `dateRange` and `search` together, so users can combine time windows with keyword lookup.
 
 ## Homepage Contract
 
 - Lead with information intake and the Gojo 3-day ranking.
+- Keep time search lightweight on the homepage; show results on the archive page.
 - Keep role notes attached to their paper package instead of rendering them as independent homepage cards.
 - Merge research topic distribution and topic navigation into Research Radar.
 - Keep detail pages clean: no repeated title/source metadata blocks above the article body.
