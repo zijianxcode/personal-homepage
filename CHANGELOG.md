@@ -1,5 +1,21 @@
 # Changelog
 
+## v1.6.1 — 2026-05-30
+
+**主题：站点结构保护与发布验收加固**
+
+### 修复
+
+- 修复 CloudBase 根路径被 academy 内容覆盖导致个人主页消失的问题
+- 修复 `npm run deploy` 因缺少 `CNAME` 文件而构建失败、整站未能上传的问题
+
+### 加固
+
+- `verify:production` 同时验收 `/`（aspera ad astra）与 `/academy/`（研究所）
+- 新增 `scripts/verify-deploy-bundle.js`，上传前检查 `.cloudbase-deploy/` 结构
+- `health:production` 分层探测个人主页 + academy，根路径异常时 exit 3
+- 新增 [docs/SITE-STRUCTURE.md](./docs/SITE-STRUCTURE.md)：结构默认不变，禁止单独 deploy academy 到根路径
+
 ## v1.6.0 — 2026-05-30
 
 **主题：生产性能与发布链路优化**

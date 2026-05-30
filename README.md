@@ -6,12 +6,11 @@ Static personal homepage (Work / Info / Things). Dark theme, particle background
 
 ## Latest Update
 
-Updated on 2026-05-30 (`v1.6`):
+Updated on 2026-05-30 (`v1.6.1`):
 
-- **生产性能**：主站迁至 CloudBase CDN，国内访问更快更稳；DNS 从 GitHub Pages 切至 CloudBase
-- **发布收敛**：唯一入口 `./auto_sync_site.sh sync`，去除重复部署与 iCloud 旧路径
-- **应急机制**：三层备用入口 + `/emergency/` 说明页；GitHub Pages 作异构冷备
-- **验收自动化**：`verify:production` + `health:production` 纳入日常发布链
+- **结构保护**：`/`=个人主页、`/academy/`=研究所，默认不变；见 [docs/SITE-STRUCTURE.md](docs/SITE-STRUCTURE.md)
+- **发布加固**：部署包本地验收 + 线上根路径/academy 双验收，防止主页再次被覆盖
+- **v1.6.0**：CloudBase 生产迁移、单命令发布链、三层应急备用
 
 详见 [CHANGELOG.md](CHANGELOG.md) · [docs/DEPLOYMENT-STABLE.md](docs/DEPLOYMENT-STABLE.md)
 

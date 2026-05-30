@@ -1,11 +1,11 @@
 {
   "name": "personal-homepage",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "private": true,
   "description": "Static personal homepage",
   "scripts": {
     "build:cloudbase": "rm -rf .cloudbase-deploy && mkdir -p .cloudbase-deploy && cp *.html .cloudbase-deploy/ && (test -f CNAME && cp CNAME .cloudbase-deploy/ || true) && (test -f .nojekyll && cp .nojekyll .cloudbase-deploy/ || true) && cp -r Assets projects documents academy time-ink emergency .cloudbase-deploy/",
-    "deploy": "npm run test:site-integrity && npm run build:cloudbase && tcb hosting deploy .cloudbase-deploy . -e homepage-1gthisc4771d43ac",
+    "deploy": "npm run test:site-integrity && npm run build:cloudbase && node scripts/verify-deploy-bundle.js && tcb hosting deploy .cloudbase-deploy . -e homepage-1gthisc4771d43ac",
     "deploy:emergency-status": "test -f emergency/status.json && tcb hosting deploy emergency emergency/ -e homepage-1gthisc4771d43ac",
     "health:production": "node scripts/health-check.js",
     "health:production:sync": "node scripts/health-check.js; npm run deploy:emergency-status",
