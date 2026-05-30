@@ -40,6 +40,16 @@ if (forbiddenRootCopies.length > 0) {
   fail(`academy pages were copied to repo root: ${forbiddenRootCopies.join(', ')}`);
 }
 
+const academyMarkdown = fs
+  .readdirSync(academyDir)
+  .filter((name) => name.endsWith('.md'));
+
+if (academyMarkdown.length > 0) {
+  fail(
+    `academy/ must not contain markdown docs (they deploy to public URLs): ${academyMarkdown.join(', ')}`
+  );
+}
+
 const fontDir = path.join(root, 'Assets', 'fonts');
 if (fs.existsSync(fontDir)) {
   const invalidFonts = fs

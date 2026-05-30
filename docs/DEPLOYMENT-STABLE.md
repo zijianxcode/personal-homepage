@@ -92,3 +92,9 @@ npm run health:production
 
 - 应急说明页：`https://bananabox.plus/emergency/`
 - 健康探测：`npm run health:production`
+
+## 工程案例（方法论）
+
+升级过程中的设计思维与工程思维总结（可用于内部分享或讲课）：
+
+- [release-governance-case-study.md](./engineering/release-governance-case-study.md)

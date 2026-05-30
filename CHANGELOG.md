@@ -16,6 +16,15 @@
 - `health:production` 分层探测个人主页 + academy，根路径异常时 exit 3
 - 新增 [docs/SITE-STRUCTURE.md](./docs/SITE-STRUCTURE.md)：结构默认不变，禁止单独 deploy academy 到根路径
 
+### 文档与冗余清理（2026-05-30 晚）
+
+- 移除 `academy/*.md` 公网副本（12 份过时文档，含错误 DEPLOYMENT 说明）
+- 根目录 `更新记录-v1.5.md`、`安全整改记录` 迁入 `docs/archive/`
+- 新增 `docs/README.md` 文档索引；jujutsu-sci `docs/DEPLOYMENT.md` 改为指向站点权威 runbook
+- iCloud `学术小龙虾-web`：脚本已 DEPRECATED，新增 `DEPRECATED.md` 说明
+- 构建时自动剔除 `academy/*.md`；部署后 `purge-academy-markdown-from-hosting.sh` 清理 CloudBase 残留
+- `test:site-integrity` 禁止 `academy/` 下再出现 md
+
 ## v1.6.0 — 2026-05-30
 
 **主题：生产性能与发布链路优化**

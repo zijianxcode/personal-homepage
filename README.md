@@ -27,7 +27,7 @@ python3 -m http.server 8080
 - **Production (domestic)**: CloudBase static hosting via `npm run deploy`
 - **GitHub**: [zijianxcode/personal-homepage](https://github.com/zijianxcode/personal-homepage) stores source + mirrored `academy/`; push to `main` for backup only
 - **Academy sync entry**: run `./auto_sync_site.sh sync` in `/Users/zijian/Documents/Code/jujutsu-sci`
-- **Stable release doc**: [docs/DEPLOYMENT-STABLE.md](docs/DEPLOYMENT-STABLE.md)
+- **Stable release doc**: [docs/DEPLOYMENT-STABLE.md](docs/DEPLOYMENT-STABLE.md) · [docs/README.md](docs/README.md)
 
 ## academy Sync Rule
 
