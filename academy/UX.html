@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UX</title>
-    <meta name="description" content="基于关键词自动归类的体验与设计研究。 共 204 条。">
+    <meta name="description" content="基于关键词自动归类的体验与设计研究。 共 202 条。">
     <meta property="og:title" content="UX - 研究所">
-    <meta property="og:description" content="基于关键词自动归类的体验与设计研究。 共 204 条。">
+    <meta property="og:description" content="基于关键词自动归类的体验与设计研究。 共 202 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">UX</h1>
-        <p class="sidebar-summary">基于关键词自动归类的体验与设计研究。 共 204 条。</p>
+        <p class="sidebar-summary">基于关键词自动归类的体验与设计研究。 共 202 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>UX</strong>
-                <span>基于关键词自动归类的体验与设计研究。 共 204 条。</span>
+                <span>基于关键词自动归类的体验与设计研究。 共 202 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,7 +79,7 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "UX", "subtitle": "基于关键词自动归类的体验与设计研究。 共 204 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "UX", "subtitle": "基于关键词自动归类的体验与设计研究。 共 202 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
   {
     "date": "2026-05-30 09:00",
@@ -89,18 +89,6 @@
     "file_name": "论文总结.md",
     "source_dir": "records/20260530/09/yersis-2505-09875",
     "original_url": "https://arxiv.org/abs/2505.09875",
-    "original_label": "arXiv",
-    "session_type": "",
-    "session_label": ""
-  },
-  {
-    "date": "2026-05-30 09:00",
-    "title": "Beyond the AI Tutor: Social Learning with LLM Agents",
-    "content": "## 一、基本信息\n\n- **论文标题**：Beyond the AI Tutor: Social Learning with LLM Agents\n- **作者**：Kumar, R., Padmakumar, V., He, P., Anderson, B., Ashkinaze, J., et al.\n- **发表年份**：2026（arXiv:2604.02677, cs.HC, 2026年4月3日提交）\n- **DOI/链接**：https://arxiv.org/abs/2604.02677\n- **关键词**：multi-agent LLM, social learning, AI tutoring, peer learning, writing diversity, math education\n\n---\n\n## 二、研究问题与背景\n\n### 问题陈述\n\n目前绝大多数AI教育工具采用\"一对一辅导\"范式——一个LLM对一个学习者。但学习科学数十年的研究表明，多方交互（同伴建模、共建、多元视角碰撞）能产生二元辅导无法带来的学习收益。核心问题：**多智能体LLM配置能否产生超越单一AI辅导的学习效果？**\n\n### 理论框架\n\n- **社会学习理论**（Bandura, 1977）——同伴观察学习具有独立价值\n- **生产性失败**（Kapur, 2008）——暴露于错误和认知冲突促进深层理解\n- **同伴交互理论**（Webb, 1989; Chi et al., 2008）——同伴\"挣扎\"产生权威反馈无法替代的学习体验\n- **趋同思维 vs 发散思维**（Guilford, 1967）——不同任务类型需要不同交互设计\n\n---\n\n## 三、研究方法\n\n### 实验1：数学学习（收敛性问题解决）\n\n- **N**: 315名参与者（Prolific平台招募）\n- **设计**: 2×2 between-subjects\n  - 因素1：有无LLM导师（提供正确答案和解释）\n  - 因素2：有无LLM同伴（两个同伴分别犯不同类型的错误：算术错误 vs 概念错误）\n- **条件**：控制组、仅有导师、仅有同伴、导师+同伴\n- **任务**：SAT级别数学题 → 学习阶段（与AI交互解题）→ 独立测试（无AI辅助）\n- **测量指标**：独立测试准确率、自我效能感\n\n### 实验2：写作协作（发散性任务）\n\n- **N**: 247名参与者（Prolific平台招募）\n- **设计**: 3条件 between-subjects\n  - 控制组（无AI辅助）\n  - 单一LLM组（Claude或ChatGPT）\n  - 双智能体Duo组（Claude + ChatGPT同时协作）\n- **任务**：议论文和创意写作\n- **测量指标**：文章质量（人工评分）、观点多样性（embedding-based novelty metrics）\n\n---\n\n## 四、核心发现\n\n### 实验1：数学学习\n\n| 条件 | 独立测试准确率 | 关键发现 |\n|------|------|---------|\n| 控制组 | 最低 | — |\n| 仅有同伴 | ↑ | 即使没有导师，观察有错误的LLM同伴也有独立学习价值 |\n| 仅有导师 | ↑↑ | 单一导师有效但次优 |\n| **导师+同伴** | **最高** | 单调递增效应：智能体越多，学习越好 |\n\n**统计显著性**：导师+同伴条件显著优于其他所有条件（p < .05）\n\n### 实验2：写作协作\n\n| 条件 | 文章质量 | 观点多样性 | 关键发现 |\n|------|---------|-----------|---------|\n| 控制组 | 基线 | 高（自然） | — |\n| 单一LLM | ↑↑（显著提升） | **↓（同质化）** | 质量提升但观点趋同 |\n| **Duo双智能体** | ↑↑（同等提升） | **↑（恢复基线水平）** | 质量+多样性兼得 |\n\n### 核心结论\n\n1. **多智能体配置能产生真实收益**，但不是无条件的——任务类型决定效果\n2. **LLM同伴观察学习具有独立价值**：即使没有导师指导，观察\"犯错\"的同伴也能促进学习\n3. **同质化并非AI辅助的必然代价**：单一模型导致观点趋同，但多模型协作可以规避这一风险\n4. **同伴式配置比权威型单一导师更能提升自我效能感**，即使客观表现更低\n\n---\n\n## 五、教育启示\n\n### 实践建议\n\n1. **写作教学中避免单一AI工具依赖**：如果班级统一使用ChatGPT辅助写作，所有学生的作文观点会趋同，这违背了写作教育培养独立思考的核心目标\n2. **设计\"AI同伴生态\"而非\"AI超级导师\"**：有错误的AI同伴可能比\"完美答案机器\"更有教育价值\n3. **多模型策略保留思想多样性**：教育机构应考虑提供多个AI助手而非统一部署单一模型\n4. **收敛性任务（数学）适合多智能体，发散性任务（写作）需要多模型**\n\n### 理论贡献\n\n- 首次在受控实验中验证\"多智能体LLM学习环境\"的概念可行性\n- 将社会学习理论从人类-人类扩展到人类-多AI交互场景\n- 揭示了AI辅助写作中\"质量vs多样性\"的权衡及解决方案\n\n### 局限性\n\n1. 非真实课堂环境：Prolific在线实验，缺乏真实教育生态\n2. 多智能体交互被简化：参与者阅读AI回复而非实时对话\n3. 短期效果：单次实验，无长期追踪\n4. 模型特异性：GPT-5.2和Claude Opus 4.6并非通用可用\n5. 无教师干预：真实课堂中教师会调节AI使用方式\n\n---\n\n## 六、跨界连接\n\n### 与Learning Analytics的关联\n\n- 多智能体交互日志本身就是天然的LA数据源——可追踪学习者在不同AI同伴间的选择和切换模式\n- 观点多样性可作为写作教学中的形成性评估指标\n\n### 与AIED/CSCL的对话\n\n- 挑战了AIED长期追求的\"一对一AI导师\"范式\n- 呼应CSCL领域\"协作学习\"核心理念——现在将\"协作\"从人类-人类扩展到人类-多AI\n\n### 与CHI/HCI的关联\n\n- 多模型交互界面的设计空间值得探索\n- \"何时给学习者展示错误回答\"是一个关键的交互设计决策\n\n### 与教育政策的关联\n\n- 学校在部署AI教育工具时应考虑模型多样性\n- 单一供应商锁定（如全校统一使用某个AI工具）可能带来隐性的思想同质化风险",
-    "excerpt": "来源：records/20260530/09/megumi-multi-agent/论文总结.md · 论文标题 ：Beyond the AI Tutor: Social Learning with LLM Agents",
-    "file_name": "论文总结.md",
-    "source_dir": "records/20260530/09/megumi-multi-agent",
-    "original_url": "https://arxiv.org/abs/2604.02677",
     "original_label": "arXiv",
     "session_type": "",
     "session_label": ""
@@ -2298,18 +2286,6 @@
     "source_dir": "records/20260428/09/yersis-86a0",
     "original_url": "",
     "original_label": "",
-    "session_type": "",
-    "session_label": ""
-  },
-  {
-    "date": "2026-04-09 09:00",
-    "title": "从注视到引导：多模态眼动感知AI助手对用户认知需求的感知与适应",
-    "content": "**From Gaze to Guidance: Interpreting and Adapting to Users' Cognitive Needs with Multimodal Gaze-Aware AI Assistants**\n\n---\n\n**元数据**\n- 论文标题：From Gaze to Guidance: Interpreting and Adapting to Users' Cognitive Needs with Multimodal Gaze-Aware AI Assistants\n- 作者：Valdemar Danry（微软研究院 + MIT Media Lab）、Javier Hernandez（微软研究院）、Andrew Wilson（微软研究院）、Pattie Maes（MIT Media Lab）、Judith Amores（微软研究院）\n- 来源：UIST 2026（ACM Symposium on User Interface Software and Technology），arXiv:2604.08062\n- 日期：2026-04-09（预印本）/ 2026-11（会议）\n- 领域标签：#AI+眼动交互 #多模态LLM #认知辅助 #智能眼镜 #阅读辅助\n- 五条悟评分：**8.2/10**\n  - 创新性：8.5——首次将原始眼动注视视频流作为多模态LLM的直接输入，而非经过OCR或降维特征，用眼动行为作为认知需求的代理信号\n  - 影响力：8.0——UIST顶会论文，微软研究院出品，直接探索AI助手如何\"看\"用户的阅读困难，论文已获ACM版权，对智能眼镜+AI交互范式有引导意义\n  - 可操作性：8.5——提供了完整prompt模板、系统架构和数据分析代码（GitHub开源）；系统基于Meta Aria眼镜和GPT-4o实现，技术栈明确，可复现\n  - 跨界连接力：8.0——连接了眼动追踪（心理学/认知科学）、多模态AI（CS）、人机交互（HCI）和智能教育（Education）\n  - 时间考验力：7.5——2026年4月新鲜出炉，UIST尚未召开，但方法新颖，真实眼动序列作为LLM输入的想法有望成为范式\n\n---\n\n## 研究什么？\n\n本文提出并评估了一种**眼动感知的多模态AI助手（Gaze-Aware Cognitive AI Assistant）**，它能通过智能眼镜（Meta Aria）获取的**第一人称视角视频叠加上眼动轨迹**，实时解读用户的阅读行为（如反复注视、回跳、跳过段落等），从而推断用户可能在哪些内容上遇到认知困难，并据此提供**个性化的回顾性辅助**。\n\n核心创新点：不是将眼动数据降维成指标（如注视时长、回跳次数），而是将**带时间戳的注视点词语列表**作为多模态LLM的直接输入，让LLM自行解读行为背后的认知含义。\n\n## 为什么研究？\n\n当前LLM助手虽然强大，但**对用户的隐性行为信号基本\"失明\"**——它们只依赖用户的显式输入（问什么答什么），无法感知用户\"在何处停顿、何处反复看、何处跳过\"。而在日常生活中，人类正是通过观察他人的注视方向来推断对方的注意力、兴趣点和困惑状态的。\n\n关键困境：用户**并非总能准确感知自己理解何时断裂**，更难以精确表述\"我在哪里卡住了\"以及\"我需要什么类型的帮助\"。如果一个AI助手能通过眼动行为自动感知这些\"认知需求时刻\"，就能**在用户主动求助前主动提供帮助**。\n\n## 别人做过什么？\n\n相关工作有三个流派：\n1. **眼动追踪在教育和阅读中**：早期系统如Gaze Tutor和iDict用眼动检测阅读困难，但局限于OCR文本区域或预定义眼动指标，缺乏场景理解\n2. **眼动作为参考信号**：多模态系统用眼动做指代消解（egocentric reference resolution），但目标是提高交互效率，而非识别认知需求\n3. **XR中的眼动辅助**：AR/VR助理用眼动辅助目标识别，但强调指代扎根，而非助理解读认知需求\n\n本文差异化定位：将注视标注的第一人称视频作为LLM的**直接多模态输入**，用时间维度的行为模式解读来识别认知需求而非仅限于文本区域或降维指标。\n\n## 作者怎么研究？\n\n**系统架构**：\n- 硬件：Meta Aria智能眼镜（内置眼动追踪和场景摄像头）\n- 感知管线：头戴设备 → 30fps第一人称视频 + 眼动叠加 → GPT-4o多模态分析\n- 分析模块：LLM接收带时间戳的注视词语列表，生成自然语言\"认知需求分析\"（哪段难、哪个术语令人困惑、跳过什么内容）\n- 交互模块：基于分析结果的对话式AI助手，用苏格拉底式的提问和推理，使用**模糊化语言**（hedging language，\"看起来你可能在...\"），在解释前先和用户确认\n\n**实验设计**：\n- n=36受试者，**被试内设计**（within-subjects），两条件交叉，顺序平衡\n- 条件A（实验）：眼动感知助手——智能眼镜采集注视数据，LLM分析后提供援助\n- 条件B（对照）：纯文本助手——仅基于阅读材料文本分析，无眼动数据\n- 阅读材料：6篇不同难度的Wikipedia文章（Water Cycle到Topological Quantum Computing）\n- 测量指标：回忆测试、概念定义、概念清单得分、NASA-TLX认知负荷、LLM分析准确率评价、个性化评价、交互录音分析\n- 第三阶段：直接对比两种分析（眼动 vs 纯文本），受试者盲选偏好\n\n## 发现了什么？\n\n**主要结果**：\n1. **回忆成绩显著提升**（p<.05）——眼动感知条件下，用户的文本回忆得分显著高于纯文本条件\n2. **感知准确率显著更高**（p<.001）——受试者认为眼动分析对其阅读困难的诊断显著更准确\n3. **个性化感知显著更强**（p<.001）——受试者认为眼动分析显著更个性化\n4. **交互效率更高**（p<.01）——眼动感知条件下，用户说出的话**显著更少**（更少需要指引助手或澄清）\n5. **偏好优势**——63.9%受试者在第三阶段盲选中偏好眼动分析\n6. **NASA-TLX**：认知负荷方向性降低（精神需求、努力、挫败感）但未达统计显著\n\n**定性发现**：\n- 受试者形容眼动助手\"读心\"——\"它指出我刚刚卡住的确切概念\"\n- \"第二个（眼动）更精准……它指出我重读和停留的地方，而第一个（文本）只是假设我不懂复杂词汇\"\n- 部分受试者注意到眼动分析的**误判**——如将深读/跳读误判为困惑，说明眼动信号是提示性而非确定性\n- 受试者希望眼动助手\"不替我做所有思考\"，仍希望保留自主学习的空间\n\n**LLM裁判分析**：\n- 两种条件下助手的对齐度和需求确认率都很高\n- 眼动条件下用户\"引导对话\"和\"请求澄清\"的行为显著减少，表明检测环节减少了用户的求助负担\n\n## 价值和不足\n\n**价值**：\n1. 开辟了一个新范式：**让LLM用原始眼动行为流做认知推理**，而非经过降维处理\n2. 提供了全栈原型和完整prompt模板，可复现性强（GitHub开源代码）\n3. 在受控实验中验证了可行性和有效性，定量+定性双管齐下\n4. 对智能眼镜×AI助手的未来产品设计有明确指导——眼动是降低求助摩擦的关键信号\n5. 诚实报告了失败模式（误判、用户保留自主性的需求），避免过度乐观\n\n**不足**：\n1. 实验场景局限于**阅读任务**，尚未推广到更复杂的视觉场景（如编程、数据分析）\n2. 系统延迟尚不够实时（管线平均4.1秒），离真正实时的交互辅助还有距离\n3. 样本偏年轻，未见跨年龄/跨文化验证\n4. 依赖GPT-4o，能否迁移到开源模型/本地部署未探讨\n5. 用户注意力的差异化解读（回看=困惑 vs 回看=深度思考）仍是开放问题\n6. 眼动设备依赖Meta Aria，普及性受限",
-    "excerpt": "来源：records/20260530/09/from-gaze-to-guidance/论文总结.md · From Gaze to Guidance: Interpreting and Adapting to Users' Cognitive Needs with Multimodal Gaze Aware AI Assistants",
-    "file_name": "论文总结.md",
-    "source_dir": "records/20260530/09/from-gaze-to-guidance",
-    "original_url": "https://arxiv.org/abs/2604.08062",
-    "original_label": "arXiv",
     "session_type": "",
     "session_label": ""
   },
