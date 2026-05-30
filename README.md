@@ -6,12 +6,14 @@ Static personal homepage (Work / Info / Things). Dark theme, particle background
 
 ## Latest Update
 
-Updated on 2026-05-06 (`v1.5`):
-- Added a mobile UX baseline across the main site, project pages, `academy/`, and `time-ink/`
-- Improved responsive spacing, card gaps, title wrapping, and button touch targets for small screens
-- Kept particle and hover effects while reducing mobile runtime cost through visibility-aware animation loops
-- Added lazy iframe loading and stronger focus / active states for keyboard and touch interaction
-- Documented the mobile adaptation rules so future updates follow the same responsive logic
+Updated on 2026-05-30 (`v1.6`):
+
+- **生产性能**：主站迁至 CloudBase CDN，国内访问更快更稳；DNS 从 GitHub Pages 切至 CloudBase
+- **发布收敛**：唯一入口 `./auto_sync_site.sh sync`，去除重复部署与 iCloud 旧路径
+- **应急机制**：三层备用入口 + `/emergency/` 说明页；GitHub Pages 作异构冷备
+- **验收自动化**：`verify:production` + `health:production` 纳入日常发布链
+
+详见 [CHANGELOG.md](CHANGELOG.md) · [docs/DEPLOYMENT-STABLE.md](docs/DEPLOYMENT-STABLE.md)
 
 ## Run locally
 
@@ -23,13 +25,34 @@ python3 -m http.server 8080
 
 ## Deploy
 
-- **GitHub**: repo is [zijianxcode/personal-homepage](https://github.com/zijianxcode/personal-homepage). Push to `main` to update.
-- **ai-builders.space**: Connect this GitHub repo in the ai-builders.space dashboard.
-  - **Static**: set build output / root to repo root (serves `index.html` + `Assets/`).
-  - **Docker**: use the included `Dockerfile`; it runs `server.py` and serves the site on `PORT` (default 8000).
-- **CloudBase**: `npm run deploy` (requires `TCB_ENV_ID` in `.env`)
+- **Production (domestic)**: CloudBase static hosting via `npm run deploy`
+- **GitHub**: [zijianxcode/personal-homepage](https://github.com/zijianxcode/personal-homepage) stores source + mirrored `academy/`; push to `main` for backup only
+- **Academy sync entry**: run `./auto_sync_site.sh sync` in `/Users/zijian/Documents/Code/jujutsu-sci`
+- **Stable release doc**: [docs/DEPLOYMENT-STABLE.md](docs/DEPLOYMENT-STABLE.md)
 
-## New Project Path Rule
+## academy Sync Rule
+
+`academy/` is mirrored from `/Users/zijian/Documents/Code/jujutsu-sci` into this repo, then deployed to CloudBase as part of the full site.
+
+Production URL: [https://bananabox.plus/academy/](https://bananabox.plus/academy/)
+
+Release chain:
+
+```text
+jujutsu-sci-source → sync_from_source.py → jujutsu-sci → personal-homepage/academy/ → CloudBase
+```
+
+Do not use iCloud `学术小龙虾-web` for publishing.
+
+Manual fallback:
+
+```bash
+cd /Users/zijian/Documents/Code/personal-homepage
+npm run deploy
+npm run verify:production
+```
+
+Emergency access (when primary is down): [docs/EMERGENCY-ACCESS.md](docs/EMERGENCY-ACCESS.md)
 
 Any new site project added under this homepage must ship under the main domain as:
 
@@ -44,44 +67,10 @@ Required pattern:
 3. Link the project detail page CTA to `../<project-slug>/` so the live button resolves to the main-domain path
 4. Verify the production URL on `bananabox.plus/<project-slug>/` after each publish
 
-## academy Sync Rule
-
-`academy/` is a mirrored static subsite copied from the academic project:
-- Source project:
-  `/Users/zijian/Library/Mobile Documents/com~apple~CloudDocs/SCI/学术小龙虾-web`
-- Production URL:
-  [https://bananabox.plus/academy/](https://bananabox.plus/academy/)
-
-Important:
-- Updating `jujutsu-sci` alone does **not** update `bananabox.plus/academy/`
-- Updating local `academy/` files alone does **not** update production either
-- As of 2026-03-23, `bananabox.plus` is currently served by GitHub Pages (`main /`), so academy production refresh depends on this repo being pushed and Pages rebuilding successfully
-- Local sync, validation, and deploy package preparation can happen first, but GitHub push and CloudBase production publish require explicit user confirmation
-
-Any academy update must complete all three steps:
-1. Regenerate the academic site locally in `学术小龙虾-web`
-2. Sync the generated static files into this repo's `academy/` directory and push this repo
-3. Verify GitHub Pages has rebuilt `bananabox.plus`; if CloudBase is still used in parallel, redeploy CloudBase separately with the latest `academy/`
-
 Root safety rule:
 - Academy generated files must never be copied to the repo root.
 - The repo-root `index.html` is the personal homepage. The academy homepage must only live at `academy/index.html`.
-- If a sync produces root-level files such as `AI.html`, `papers.html`, `archive.html`, `ranking.html`, or a root `index.html` titled `研究所`, stop and fix the sync target before publishing.
-- `npm run build` and `npm run deploy` run `npm run test:site-integrity` first. If root `index.html` is polluted by academy content, or academy pages appear in the repo root, the command must fail and publishing must stop.
-- GitHub Actions also runs the same `site-integrity` check on every `main` push and pull request. Keep it required before merging or publishing academy sync changes.
-
-Recommended CloudBase publish pattern:
-```bash
-cd /tmp/personal-homepage-preview
-rm -rf .cloudbase-deploy
-mkdir -p .cloudbase-deploy
-npm run test:site-integrity
-cp *.html CNAME .cloudbase-deploy/
-cp -r Assets projects documents academy .cloudbase-deploy/
-TCB_ENV_ID='homepage-1gthisc4771d43ac' \
-  npm exec --yes --package @cloudbase/cli@2.12.2 -- \
-  tcb hosting deploy .cloudbase-deploy .
-```
+- `npm run build` and `npm run deploy` run `npm run test:site-integrity` first.
 
 ## Security Notes
 

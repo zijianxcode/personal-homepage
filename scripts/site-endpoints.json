@@ -1,0 +1,22 @@
+{
+  "primary": {
+    "label": "主站",
+    "academyUrl": "https://bananabox.plus/academy/",
+    "siteUrl": "https://bananabox.plus/",
+    "role": "production"
+  },
+  "cloudbaseDirect": {
+    "label": "CloudBase 直连",
+    "academyUrl": "https://homepage-1gthisc4771d43ac-1256690240.tcloudbaseapp.com/academy/",
+    "siteUrl": "https://homepage-1gthisc4771d43ac-1256690240.tcloudbaseapp.com/",
+    "role": "dns-or-cert-fallback",
+    "note": "自定义域名、DNS 或证书异常时可用；CloudBase 服务本身故障时无效"
+  },
+  "githubPages": {
+    "label": "GitHub Pages 冷备",
+    "academyUrl": "https://zijianxcode.github.io/personal-homepage/academy/",
+    "siteUrl": "https://zijianxcode.github.io/personal-homepage/",
+    "role": "provider-fallback",
+    "note": "CloudBase 整体不可用时使用；内容与 main 分支 push 同步"
+  }
+}

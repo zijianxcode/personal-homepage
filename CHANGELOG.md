@@ -1,47 +1,34 @@
 # Changelog
 
-## v1.5 — 2026-05-06
+## v1.6.0 — 2026-05-30
 
-- 建立主站移动端体验基线，覆盖首页、`research.html`、`visual-coding.html`、`experimental-project.html`、项目详情页、`academy/` 和 `time-ink/`。
-- 优化小屏布局密度：统一移动端边距、提高卡片间距、修复项目卡片英文断词、调整详情页标题与正文在手机端的自然换行。
-- Things 入口卡片在移动端保持单列可读，卡片内部留白、标题断行和点击区域更稳定。
-- 所有主要入口、返回、语言切换、GitHub / 体验按钮、许可弹窗按钮补齐 `focus-visible`、`:active` 和不小于 44px 的触控区域。
-- 保留粒子背景、hover、标题扭曲等视觉动效，同时加入可见性暂停、resize 防抖、移动端低 DPR 限制和离屏降耗。
-- 给 Visual Coding iframe 预览增加 `loading="lazy"`，减少移动端首屏资源竞争。
-- 补充移动端适配规范：后续新增页面必须沿用 20px 移动边距、舒展卡片间距、触控反馈、单列优先和动效降耗逻辑。
+**主题：生产性能与发布链路优化**
 
-## v1.4 — 2026-04-26
+### 性能与可用性
 
-- `Experimental Project` 新增 `003 / Paper Card` 项目卡片，并调整项目排序为最新项目在前。
-- 新增 `projects/paper-card.html` 三级项目页，接入完整案例内容、GitHub 入口和三张本地化案例配图。
-- `Paper Card` 详情页完成版式整理：正文内容收进居中大框，左右保留主站黑色背景，整体更贴近作品展示页。
-- `Experimental Project` 卡片文案排版按更偏编辑设计的方向重做，优化英文字体、中文衬线、字号、字距和行距。
-- 为实验项目卡片标题新增 hover 扭曲特效，形成轻微"黑洞吸附"式交互反馈，同时修复英文断词和断句问题。
+- 生产面从 GitHub Pages 迁至 **CloudBase 静态托管**，国内访问走腾讯云 CDN（`bananabox.plus` → CloudBase）
+- DNS 已切至 CloudBase CNAME，公网 apex / www 均验收通过
+- 新增 **三层应急入口**（主站 → CloudBase 直连 → GitHub Pages 冷备），应急说明页 `/emergency/`
+- GitHub Pages 保留为异构冷备（`github.io`，不绑定自定义域名）
 
-## v1.3 — 2026-04-08
+### 发布链路
 
-基线提交：`42164a4`
+- 日常发布收敛为单命令：`./auto_sync_site.sh sync`（jujutsu-sci 目录）
+- 自动完成：生成 HTML → 双仓库 push → CloudBase 整站部署 → 线上验收 → 应急状态同步
+- 废弃 iCloud 旧发布路径；Hermes 定时任务不再单独 `tcb hosting deploy academy/`
+- `quality-report.json` 加入 gitignore，避免质量报告阻断 HTML 同步
 
-- 新增 `Experimental Project` 二级页面，并接入 `001 / Easy Presentation` 与 `002 / Time-INK` 两个三级项目页。
-- `Time-INK` 已作为主站子路径项目正式接入，体验地址统一为 `https://bananabox.plus/time-ink/`。
-- 完成 `Time-INK` 静态托管与首屏可见性修复，解决子路径资源与首屏内容因动画初始态导致的"看似白屏"问题。
-- 首页入口视觉继续打磨：补齐 `Research` 入口打字 hover、`Experimental Project` EVA 风格标题，以及 `Info` 页中英文标题切换。
-- `research.html` 新增两篇论文展示项，并补充 `IEEE · SCI Q2` 与 `Frontiers in Artificial Intelligence · ESCI` 标注。
-- 学术子站 `academy/` 已纳入主站部署链路，并同步至 2026-04-03 的最新内容。
-- 把"主域名子路径发布"和"首屏内容默认可见"的规则正式写入项目规范与 AI 协作规则。
+### 新增脚本与文档
 
-## v1.2 — 2026-03-19
+- `npm run verify:production` — CloudBase + 公网验收
+- `npm run health:production` — 三层入口健康探测
+- `docs/DEPLOYMENT-STABLE.md` — 稳定发布说明
+- `docs/EMERGENCY-ACCESS.md` — 应急访问说明
 
-基线提交：`a146947`
+### 验收标准（发布成功须全部通过）
 
-- 完成一轮面向真实权限边界的安全整改，覆盖私信后台、访客会话、Things 受限内容和公共页面脚本执行面。
-- 管理员与访客能力改为服务端签发短期会话，不再依赖前端可见口令或可伪造标识。
-- Things 页面改为服务端校验许可码后动态返回内容，真实受限链接移出可追踪前端文件。
-- 新增 CloudBase 自建访客统计，先与原第三方统计并行影子运行，确保后续可平滑替代。
-- `floating-clock` 的 Three.js 依赖本地化，减少对外部 CDN 脚本执行的依赖。
-- 构建、部署、环境变量与 CloudBase 云函数启动流程补齐兼容层，线上版本已完成更新。
-
-### 安全复盘
-
-- 之前的问题并不是"代码不能跑"，而是"权限模型并不真实成立"。
-- 已把安全基线、发布门禁和复盘要求写入项目规范，后续涉及后台、受限内容、用户数据、外部脚本、认证的改动，必须先做安全检查再发布。
+```bash
+npm run test:site-integrity
+npm run verify:production
+npm run health:production
+```

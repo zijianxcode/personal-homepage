@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>应急访问 · 研究所</title>
+  <meta name="robots" content="noindex">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0a0a0a;
+      --panel: #141414;
+      --text: #f5f5f5;
+      --muted: rgba(255, 255, 255, 0.55);
+      --accent: #ff6b35;
+      --ok: #7dffb2;
+      --bad: #ff8a80;
+      --border: rgba(255, 255, 255, 0.12);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "PingFang SC", "Helvetica Neue", sans-serif;
+      background: radial-gradient(circle at top, #1a1a1a, var(--bg));
+      color: var(--text);
+      line-height: 1.6;
+    }
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 48px 20px 72px;
+    }
+    h1 {
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      margin: 0 0 12px;
+    }
+    .lede { color: var(--muted); margin-bottom: 28px; }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+    .card h2 {
+      margin: 0 0 8px;
+      font-size: 1.05rem;
+    }
+    .card p { margin: 0 0 12px; color: var(--muted); font-size: 0.95rem; }
+    .links { display: grid; gap: 10px; }
+    a.button {
+      display: block;
+      text-decoration: none;
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 14px;
+      background: rgba(255, 255, 255, 0.03);
+    }
+    a.button strong { display: block; margin-bottom: 4px; color: var(--accent); }
+    a.button span { color: var(--muted); font-size: 0.88rem; word-break: break-all; }
+    .status {
+      margin-top: 24px;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+    .status-ok { color: var(--ok); }
+    .status-bad { color: var(--bad); }
+    code {
+      background: rgba(255, 255, 255, 0.06);
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>应急访问</h1>
+    <p class="lede">主站暂时不可用时，请按顺序尝试下列备用入口。页面内容与主站同步发布，只是走不同的基础设施。</p>
+
+    <section class="card">
+      <h2>第一层 · 主站</h2>
+      <p>正常情况使用这一层。</p>
+      <div class="links">
+        <a class="button" href="https://bananabox.plus/academy/">
+          <strong>研究所主页</strong>
+          <span>https://bananabox.plus/academy/</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>第二层 · CloudBase 直连</h2>
+      <p>自定义域名、DNS 或证书异常，但 CloudBase 服务仍正常时使用。</p>
+      <div class="links">
+        <a class="button" href="https://homepage-1gthisc4771d43ac-1256690240.tcloudbaseapp.com/academy/">
+          <strong>研究所主页（直连）</strong>
+          <span>https://homepage-1gthisc4771d43ac-1256690240.tcloudbaseapp.com/academy/</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>第三层 · GitHub Pages 冷备</h2>
+      <p>CloudBase 整体不可用时使用。内容与 GitHub <code>main</code> 分支同步。</p>
+      <div class="links">
+        <a class="button" href="https://zijianxcode.github.io/personal-homepage/academy/">
+          <strong>研究所主页（GitHub）</strong>
+          <span>https://zijianxcode.github.io/personal-homepage/academy/</span>
+        </a>
+        <a class="button" href="https://zijianxcode.github.io/personal-homepage/">
+          <strong>个人主页（GitHub）</strong>
+          <span>https://zijianxcode.github.io/personal-homepage/</span>
+        </a>
+      </div>
+    </section>
+
+    <p class="status" id="liveStatus">正在读取最近探测结果…</p>
+  </main>
+  <script>
+    fetch('./status.json?_=' + Date.now())
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
+        const node = document.getElementById('liveStatus');
+        if (!data) {
+          node.textContent = '暂无实时探测结果。请直接尝试上面的备用链接。';
+          return;
+        }
+        const primary = (data.tiers || []).find((tier) => tier.key === 'primary');
+        const fallback = data.recommendedFallback;
+        if (primary && primary.ok) {
+          node.innerHTML = '<span class="status-ok">最近探测：主站正常</span> · ' + data.checkedAt;
+          return;
+        }
+        if (fallback) {
+          node.innerHTML =
+            '<span class="status-bad">最近探测：主站不可用</span> · 建议先用 ' +
+            '<a href="' + fallback.academyUrl + '">' + fallback.label + '</a> · ' +
+            data.checkedAt;
+          return;
+        }
+        node.innerHTML = '<span class="status-bad">最近探测：各层均不可用</span> · ' + data.checkedAt;
+      })
+      .catch(() => {
+        document.getElementById('liveStatus').textContent = '无法读取探测结果。请直接尝试上面的备用链接。';
+      });
+  </script>
+</body>
+</html>
