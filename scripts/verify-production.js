@@ -30,9 +30,13 @@ const fetchText = (url) =>
   });
 
 const localAcademy = fs.readFileSync(path.join(root, 'academy', 'index.html'), 'utf8');
+const localHome = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 const cssMatch = localAcademy.match(/site\.css\?v=[^"']+/);
 if (!cssMatch) {
   fail('Local academy/index.html is missing site.css version query.');
+}
+if (!/<title>\s*aspera ad astra\s*<\/title>/i.test(localHome)) {
+  fail('Local repo-root index.html is not the personal homepage.');
 }
 const expectedCss = cssMatch[0];
 
@@ -43,6 +47,20 @@ const cloudbaseBase =
   process.env.CLOUDBASE_ACADEMY_URL ||
   'https://homepage-1gthisc4771d43ac-1256690240.tcloudbaseapp.com/academy/';
 const publicBase = process.env.PUBLIC_ACADEMY_URL || 'https://bananabox.plus/academy/';
+const cloudbaseHome = process.env.CLOUDBASE_HOME_URL || 'https://homepage-1gthisc4771d43ac-1256690240.tcloudbaseapp.com/';
+const publicHome = process.env.PUBLIC_HOME_URL || 'https://bananabox.plus/';
+
+const verifyHomepage = async (label, baseUrl) => {
+  const url = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
+  const html = await fetchText(url);
+  if (!/<title>\s*aspera ad astra\s*<\/title>/i.test(html)) {
+    fail(`${label} homepage title is not "aspera ad astra" (${url}).`);
+  }
+  if (/<title>\s*研究所\s*<\/title>/i.test(html)) {
+    fail(`${label} homepage appears to be serving academy content (${url}).`);
+  }
+  console.log(`${label} homepage OK: ${url}`);
+};
 
 const verifyUrl = async (label, baseUrl) => {
   const url = baseUrl.endsWith('/') ? `${baseUrl}index.html` : `${baseUrl}/index.html`;
@@ -68,6 +86,13 @@ const verifyUrl = async (label, baseUrl) => {
 };
 
 (async () => {
+  await verifyHomepage('CloudBase', cloudbaseHome);
+  try {
+    await verifyHomepage('Public', publicHome);
+  } catch (error) {
+    console.warn(`Public homepage check skipped or failed: ${error.message}`);
+  }
+
   await verifyUrl('CloudBase', cloudbaseBase);
   try {
     await verifyUrl('Public', publicBase);
