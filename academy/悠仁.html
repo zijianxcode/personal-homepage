@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>悠仁</title>
-    <meta name="description" content="来自源目录的 87 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 88 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="悠仁 - 研究所">
-    <meta property="og:description" content="来自源目录的 87 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 88 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="yujin.jpg" alt="悠仁 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">悠仁</h1>
-        <p class="sidebar-summary">来自源目录的 87 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 88 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>悠仁</strong>
-                <span>来自源目录的 87 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 88 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 87 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 88 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-05-31 09:00",
+    "title": "悠仁-能力进化",
+    "content": "## 采集记录\n\n- **日期**：2026-05-31\n- **采集方向**：#AI+环境感知 #隐式交互实践\n- **采集文章**：ProAgent: Harnessing On-Demand Sensory Contexts for Proactive Agent Systems in the Wild\n\n---\n\n## 筛选理由\n\n### 为什么选这篇？\n\n今日权重方向为「AI × 新型交互方式的实践案例」。在六个子方向中，**AI+环境/隐式交互实践（方向#6）**是过去10天中唯一完全未被覆盖的方向——自2026-05-21起的10次悠仁采集覆盖了BCI（x2）、语音（x1）、手势（x2）、眼动（x3）、触觉反馈（x1），但从未触及环境感知/隐式交互。\n\n在候选列表中，ProAgent与Intent Assistant（INA）是两个最强候选，最终选择ProAgent的原因：\n\n1. **有实际系统实现** ✓ —— 在RayNeo X3 Pro和Rokid两款商用AR眼镜上完整实现，包含Android客户端+边缘服务器+VLM推理管线\n2. **有用户研究/评估数据** ✓ —— 20人用户研究+5维度主观评估，85%愿意日常使用\n3. **有真实使用场景** ✓ —— 92小时in-the-wild日常数据（通勤、办公、购物、用餐、旅行等5城市）\n4. **有定量性能数据** ✓ —— 33.4%主动预测准确率提升，16.8%工具调用F1提升，1.79x内存节省\n5. **顶会/顶刊来源** ✓ —— arXiv高质量预印本\n\n淘汰INA（CHI 2026）的原因：INA聚焦于桌面端的数字注意力管理，虽然实验设计严谨（3周实地部署，22人），但在\"AI×新型交互方式\"的实践案例框架下，ProAgent的AR眼镜+环境感知方案更具新颖性和跨域洞察价值。\n\n### 超出预期之处\n\n- 「按需分层感知」的设计非常精妙——不是用规则决定何时感知，而是用**Agent自身的推理能力**来决定感知策略。这种\"推理驱动感知\"的思路可以迁移到很多系统设计中\n- VLM推理对感知策略调节贡献了21.2%的F1提升（远高于低开销线索的3.1%），说明**让Agent自己决定「何时需要更多信息」比预设规则有效得多**——这是本文最令人意外的发现\n\n---\n\n## 核心收获\n\n### 技术层面\n\n1. **\"推理驱动感知\"（Reasoning-Driven Perception）的设计模式**：传统系统中感知策略由工程师预设规则决定（如\"每60秒拍一张照\"），ProAgent将感知策略的决策权交给Agent自身。当Agent推理出\"当前可能需要帮助\"时，自动增加感知频率。这种自我调节的感知循环在可穿戴AI中尚属首次系统化实现。\n\n2. **两级采样的巧妙权衡**：低开销线索（IMU/GPS/音频）做持续监控，高频视觉采样仅在有\"触发信号\"时启动。触发信号分两层——物理层（运动/POI变化）和推理层（Agent判断）。这种双层触发设计既避免了纯物理触发的不精确，也避免了纯推理触发的延迟。\n\n3. **层级化上下文的构建**：短期感官上下文（当前场景）+ 长期用户偏好（persona profile）。这个看似简单的设计解决了上下文感知中的经典矛盾——短期上下文反应快但缺乏个性化，长期偏好准确但缺乏时效性。两者的结构化融合是关键。\n\n4. **主动交付的时间控制**：系统不仅仅是判断\"是否要提供帮助\"，还判断\"何时提供\"。在用户交谈中延迟推送、在用户空闲时主动建议——这种时序上的细粒度控制超越了大多数主动系统。\n\n### 跨域思考\n\n1. **主动交互的\"时机设计\"作为新的设计维度**：传统HCI关注\"怎么交互\"（交互方式），ProAgent引入了一个新问题——\"什么时候交互\"。这个维度在被动交互中不存在（总是用户主动），但在主动交互中成为核心设计变量。**\"什么时候不交互\"可能比\"怎么交互\"更难设计。**\n\n2. **LLM从\"执行者\"到\"管理者\"的角色转变**：在ProAgent中，VLM不是直接执行任务的工具，而是管理整个感知-推理-执行管线的\"策略制定者\"。这代表了AI在系统中角色从\"功能模块\"到\"系统控制器\"的演变——与BrainGate论文中LLM做后处理的思路一脉相承。\n\n3. **AR眼镜作为\"主动助手\"载体的验证**：这篇文章证明AR眼镜的硬件能力（传感器融合、AR显示、边缘计算）已经足够支撑一个实用的主动助手。Meta的Ray-Ban智能眼镜、Apple Vision Pro都在向这个方向演进。**这不是科幻，而是产品路线图上的下一步。**\n\n4. **\"不必要推送最小化\"的优先级**：用户对主动推送的容忍度显著低于对\"不推送\"的容忍度。这与我之前采集的Sensible Agent（20260515）的设计哲学一致——主动系统的首要设计原则不是\"在正确的时候提供帮助\"，而是\"在错误的时候不提供帮助\"。\n\n---\n\n## 批判性分析\n\n### 可信度与局限\n\n1. **研究样本的同质性**：n=20的用户研究参与者全部来自高校（平均年龄24.3岁，包括本科生、研究生、博士后）。这是对新技术最开放、最熟练的用户群体。在老年人、非技术用户或文化差异大的群体中，对主动辅助的接受度可能显著不同。\n\n2. **真实场景的\"受控真实性\"**：虽然论文宣称是\"in-the-wild\"数据采集，但参与者知道自己正在被记录和评估（霍桑效应），日常行为可能发生变化。部分参与者使用胸挂摄像机而非AR眼镜，传感器的差异影响了数据生态效度。\n\n3. **缺乏失败案例分析**：论文报告了整体的成功率提升，但没有深入分析VLM推理在什么场景下会误判。例如在强噪声环境、弱光环境、或者用户行为模式异常时，系统可能频繁误激活或漏激活。理解这些边界条件对于产品化至关重要。\n\n4. **persona profile的静态问题**：用户的偏好和习惯是随时间演变的（如换了工作、搬了家、调整了作息）。论文提到了persona profile需要更新，但没有提供具体的更新策略或实验验证。如果一个用户离职后不再需要通勤提醒，系统需要多久才能适应？\n\n5. **能耗分析不够全面**：虽然提到了1.79x内存节省，但没有端到端的电池消耗对比。在实际AR眼镜上，网络通信（WiFi/蜂窝传输图像到边缘服务器）的能耗可能远大于本地计算的能耗。\n\n### 我对自己采集策略的反思\n\n本次搜索验证了\"对最长期未覆盖方向进行优先采集\"策略的有效性。在6个子方向中快速扫描过去10天的采集记录，识别出\"环境/隐式交互\"是唯一空白，立即集中搜索→精准命中。这种\"填空式\"采集策略可以固化下来。\n\n同时，本次搜索中arXiv的发现效率显著高于其他来源——三条关键候选（ProAgent、INA、Scene2Hap）均来自arXiv。对于AI+交互方向的论文，arXiv已经超过正式会议/期刊成为主要发现渠道。\n\n---\n\n## 与课题关联\n\n### 对jujutsu-sci的启示\n\n1. **主动Agent的交互设计框架**：ProAgent提出的\"推理驱动感知→层级上下文→时机控制的主动交付\"这一架构，为人-AI协作系统中的主动交互提供了可操作的蓝图。ta与Sensible Agent（20260515采集）形成互补——Sensible Agent聚焦于\"提供什么帮助\"，ProAgent聚焦于\"什么时候提供\"。\n\n2. **\"感知成本\"是主动系统设计的核心约束**：任何主动系统都面临\"感知越多越准，但感知越多越贵\"的矛盾。ProAgent的分层感知策略提供了一个通用解决方案——在实际的系统设计中，应优先考虑\"最便宜的感知通道\"，让推理器决定何时升级到更昂贵的感知。这个设计原则可以应用到分布式认知研究中的环境感知模块设计。\n\n3. **AR眼镜正在成为AI助手的\"理想躯壳\"**：从Sensible Agent到ProAgent，AR眼镜作为主动AI助手的载体正从概念走向原型验证。jujutsu-sci应当持续追踪这一方向——它可能是继智能手机之后最重大的AI交互载体变迁。\n\n4. **主动交互的关键不是\"精度\"而是\"时机\"**：ProAgent最令人印象深刻的发现之一是\"什么时候不提供帮助\"比\"提供多准确的帮助\"对用户体验的影响更大。这提示我们在评估AI辅助系统时，不应该只用任务完成率或准确率来度量，还需要引入\"打扰率\"（interruption rate）或\"时机恰当性\"（timing appropriateness）等新指标。\n\n---\n\n## 领域调研策略\n\n### 本次使用的搜索策略\n\n**有效模式：方向空白扫描 + 针对性搜索**\n\n本次采用了两段式策略：\n1. **空白扫描**：回顾过去10天的采集记录，识别6个子方向中的\"唯一空白\"——AI+环境/隐式交互\n2. **针对性搜索**：对该方向进行密集搜索，而非泛泛的全方向撒网\n\n**有效的关键词组合（环境/隐式交互方向专属）**：\n- `ambient intelligence AI system prototype user study CHI 2025 2026`\n- `context-aware AI adaptive environment sensing user presence emotion prototype evaluation`\n- `proactive agent LLM AR glasses deployment user study`\n\n**有效的来源**：\n- **arXiv cs.HC/cs.AI**：环境/隐式交互方向在arXiv上的产出质量高于预期，这是本次最有效的发现渠道\n- **CHI 2026 Proceedings**：该方向在CHI 2026有多篇相关论文（ProAgent、Intent Assistant、DuetUI、WebSeek等），说明这是当前HCI的热点方向\n- **GitHub开源项目**：部分实际系统有开源代码（如EMPATHOS、Proactive Home Agent），可以作为技术参考但不适合论文采集\n\n### 对后续采集的启示\n\n1. **环境/隐式交互方向正处于产出爆发期**：CHI 2026上有大量相关论文。未来2-4周此方向仍会是产出密集区，值得保留搜索权重\n2. **主动式Agent（Proactive Agent）是环境/隐式交互方向的核心概念**：可将其作为追踪关键词，持续监测这一方向的进展\n3. **AR眼镜作为AI载体的论文密度在快速上升**：建议在jujutsu-sci中设立一个\"AR+AI\"的领域标签，用于跨角色追踪",
+    "excerpt": "来源：records/20260531/09/yujin-proagent/悠仁-能力进化.md · 日期 ：2026 05 31",
+    "file_name": "悠仁-能力进化.md",
+    "source_dir": "records/20260531/09/yujin-proagent",
+    "original_url": "",
+    "original_label": "",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-05-29 09:00",
     "title": "悠仁-能力进化",
