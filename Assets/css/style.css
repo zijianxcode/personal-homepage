@@ -414,42 +414,18 @@ textarea:focus-visible {
     position: relative;
 }
 
-.work-item--sci::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 8px;
-    height: 1px;
-    background: linear-gradient(90deg, rgba(201, 168, 111, 0.55) 0%, rgba(201, 168, 111, 0.08) 100%);
-    opacity: 0;
-    transform: translateY(6px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
 .work-item--sci:hover {
     opacity: 1;
 }
 
-.work-item--sci:hover::after {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.work-item--sci .work-name {
+.work-item--sci .work-type {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    font-size: 22.4px;
+    font-size: 22.18px;
     font-style: normal;
     font-weight: 300;
     letter-spacing: 0.01em;
     color: var(--text);
-}
-
-.work-item--sci .work-type {
-    font-size: 16px;
-    font-weight: 500;
-    letter-spacing: 0.03em;
-    color: #d6b57a;
+    line-height: 1.3;
 }
 
 .work-item--sci {
