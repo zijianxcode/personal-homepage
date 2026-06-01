@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV</title>
-    <meta name="description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 119 条。">
+    <meta name="description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 120 条。">
     <meta property="og:title" content="CV - 研究所">
-    <meta property="og:description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 119 条。">
+    <meta property="og:description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 120 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">CV</h1>
-        <p class="sidebar-summary">基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 119 条。</p>
+        <p class="sidebar-summary">基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 120 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>CV</strong>
-                <span>基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 119 条。</span>
+                <span>基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 120 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,8 +79,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "CV", "subtitle": "基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 119 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "CV", "subtitle": "基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 120 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-06-01 13:08",
+    "title": "Giving Meaning to Movements: Challenges and Opportunities in Expanding Communication by Pairing Unaided AAC with Speech Generated Messages",
+    "content": "**采集日期**：2026-06-01\n\n**采集者**：悠仁（AI × 新型交互方式追踪）\n\n**领域标签**：`AI+手势交互` `辅助沟通` `可穿戴计算` `参与式设计` `Transformer` `人机交互`\n\n**评分**：8.0/10\n\n---\n\n## 1. 研究什么？\n\n本文研究如何将**非辅助AAC（unaided AAC，即身体手势/姿态表达）**与**辅助AAC（aided AAC，即语音生成设备）**结合，为有沟通障碍和运动障碍的用户（如脑瘫、肌萎缩侧索硬化症患者）提供更自然、更高效的交流方式。作者开发了 **AllyAAC**——一个可穿戴IMU传感器（腕带）+ 智能手机App系统，能够实时识别用户个性化的身体手势并将其映射为语音消息输出。\n\n核心研究问题：能否利用AI（特别是Transformer模型）来弥合非辅助AAC的快速自然表达与辅助AAC的标准化输出之间的鸿沟？\n\n## 2. 为什么研究？\n\nAAC（Augmentative and Alternative Communication）技术分为两类：\n\n- **辅助AAC**：使用外部设备（如语音生成系统）产生标准化输出，准确但慢、笨重、不自然\n- **非辅助AAC**：依赖身体手势等自然表达方式，速度快但需要双方共享对手势含义的理解\n\n现实中，两种方式各有利弊，但现有系统未能有效结合两者优势。尤其对于同时有运动和沟通障碍的用户，他们的手势往往是非典型性（atypical）的——同一个意图可能表现为不同的手势——这使得传统的标准手势识别系统失效。研究识别这些个性化、非典型手势的方法，对于改善数百万AAC用户的沟通体验至关重要。\n\n## 3. 别人做过什么？\n\n已有工作主要集中在：\n\n- **语音生成设备（SGD）**：基于触摸屏或眼动的辅助AAC系统，准确但交互速度受限\n- **手势识别系统**：针对标准手势（非残疾用户）的识别，但无法处理非典型性运动模式\n- **AAC领域中AI的应用**：已有一些研究探索机器学习在AAC中的应用，但大多聚焦于单一模态（仅辅助或仅非辅助）\n\n**研究空白**：几乎没有人系统性地研究如何将辅助与非辅助AAC融合，也缺乏针对非典型手势的大规模数据集和个性化识别模型。\n\n## 4. 作者怎么研究？\n\n**方法论**：18个月的参与式设计（Participatory Design）\n\n**阶段一：参与式设计（18个月）**\n- 与AAC用户密切合作，识别关键挑战和机会\n- 迭代设计AllyAAC系统原型\n\n**阶段二：系统实现——AllyAAC**\n- **硬件**：腕戴式IMU传感器（通过邮件寄送给社区顾问）+ Android App\n- **手势录制**：用户可录制个性化手势，从同步视频和IMU数据中交互式标注\n- **基线模型**：简单规则式手势识别器（10分钟内可配置）\n- **大型模型**：**基于Transformer的个性化手势识别模型**，采用三种预训练策略\n- **半自动标注管线**：用AI辅助标注减少人工标注时间\n\n**阶段三：实地研究（ATIA'25大会）**\n- 14名参与者在社交场景中测试系统\n- 收集超过60万个多模态数据点（视频+IMU），**这是首个针对非典型手势的此类数据集**\n- 基线模型在线测试 + 大型模型离线评估（因训练需2-3小时/人）\n\n**评估维度**：\n1. 半自动标注有效性\n2. 不同预训练策略的效果\n3. 大型模型的可解释性\n4. 基线 vs 大型模型的分类性能\n5. 人工对模型预测的评分\n\n## 5. 发现了什么？\n\n**关键发现**：\n\n1. **半自动标注显著提升效率**：F1=0.95（IoU阈值0.5），平均IoU=0.88。标注时间减少67.3%，从30.46秒/手势降至10.22秒/手势——**3.0倍加速**。\n\n2. **非典型手势识别极具挑战性**：规则式基线模型在非典型手势上F1低于60%，说明简单的模板匹配策略在此场景下完全不适用。\n\n3. **Transformer模型效果显著**：个性化大型模型平均精度>0.85，人工评估者间一致性高（AC1=0.92）。个性化预训练策略对提高非典型手势识别效果关键。\n\n4. **Trade-off揭示**：基线模型配置快（<10分钟）但性能差，Transformer模型训练时间长（2-3小时/人）但识别精度高——**易用性与性能之间存在根本性矛盾**。\n\n5. **失败案例同样有价值**：运动障碍用户的非典型手势存在显著个体差异，即使用于同一意图，手势形式也可能不同——这既是挑战也是研究贡献点。\n\n## 6. 价值和不足\n\n**价值**：\n- 首次系统性地探索了辅助与非辅助AAC的结合，提出了完整的设计原则和参考实现\n- 构建了首个面向非典型手势的大规模多模态数据集（600K+数据点）\n- 证明了Transformer模型（尤其是个性化预训练策略）在非典型手势识别中的有效性\n- 18个月参与式设计确保了系统真正从用户需求出发，而非实验室假设\n- 给出了具体可复现的设计原则和开发指导，对其他辅助技术系统有重要参考价值\n\n**不足**：\n- 大型模型训练需2-3小时/人，限制了实时部署的可行性\n- 14人样本量对个体差异性大的场景而言仍然偏小\n- 评估主要在大会（ATIA'25）环境中进行，长时间日常使用的效果未知\n- Transformer模型的离线评估而非实时部署评估\n- 手势集受限于参与式设计阶段定义的范围\n\n**跨界启示**：\n- 非典型手势识别的方法（个性化Transformer + 半自动标注管线）可迁移至其他个性化交互场景（如康复训练、特殊教育、老年人交互）\n- 参与式设计与AI模型开发的深度融合模式值得在AI+X场景中推广\n- 揭示了一个通用问题：**个性化与规模化之间的张力**在AI交互系统中普遍存在\n---\n<!-- citation-verification: 2026-06-01 13:08:49 -->\n<!-- arXiv:2318.37912 → NOT FOUND -->\n<!-- arXiv:2602.22131 → found: \"Giving Meaning to Movements: Challenges and Opportunities in Expanding Communication by Pairing Unaided AAC with Speech Generated Messages\" -->\n<!-- DOI:10.1145/3772318.3791273 → found: \"Giving Meaning to Movements: Challenges and Opportunities in Expanding Communication by Pairing Unaided AAC with Speech Generated Messages\" -->",
+    "excerpt": "来源：records/20260601/09/yujin-allyaac/论文总结.md · 论文标题 ：Giving Meaning to Movements: Challenges and Opportunities in Expanding Communication by Pairing Unaided AAC with Speech Generated Messages",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260601/09/yujin-allyaac",
+    "original_url": "https://doi.org/10.1145/3772318.3791273",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-05-31 14:09",
     "title": "论文总结",
