@@ -85,12 +85,26 @@ const verifyUrl = async (label, baseUrl) => {
   console.log(`${label} OK: ${url}`);
 };
 
+const verifyHomepageIndexHtml = async (label, baseUrl) => {
+  const url = baseUrl.endsWith('/') ? `${baseUrl}index.html` : `${baseUrl}/index.html`;
+  const html = await fetchText(url);
+  if (!/<title>\s*aspera ad astra\s*<\/title>/i.test(html)) {
+    fail(`${label} index.html is not the personal homepage (${url}).`);
+  }
+  if (/<title>\s*研究所\s*<\/title>/i.test(html)) {
+    fail(`${label} index.html is serving academy content (${url}).`);
+  }
+  console.log(`${label} index.html OK: ${url}`);
+};
+
 (async () => {
   await verifyHomepage('CloudBase', cloudbaseHome);
+  await verifyHomepageIndexHtml('CloudBase', cloudbaseHome);
   try {
     await verifyHomepage('Public', publicHome);
+    await verifyHomepageIndexHtml('Public', publicHome);
   } catch (error) {
-    console.warn(`Public homepage check skipped or failed: ${error.message}`);
+    fail(error.message);
   }
 
   await verifyUrl('CloudBase', cloudbaseBase);
