@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>全部记录</title>
-    <meta name="description" content="源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 883 条。">
+    <meta name="description" content="源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 885 条。">
     <meta property="og:title" content="全部记录 - 研究所">
-    <meta property="og:description" content="源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 883 条。">
+    <meta property="og:description" content="源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 885 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">全部记录</h1>
-        <p class="sidebar-summary">源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 883 条。</p>
+        <p class="sidebar-summary">源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 885 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>全部记录</strong>
-                <span>源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 883 条。</span>
+                <span>源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 885 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,7 +79,7 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "全部记录", "subtitle": "源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 883 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "全部记录", "subtitle": "源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 885 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
   {
     "date": "2026-06-03 13:35",
@@ -209,6 +209,30 @@
     "file_name": "野蔷薇-能力进化.md",
     "source_dir": "records/20260602/10/yersis-iatrobench",
     "original_url": "https://arxiv.org/abs/2603.13250",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-06-02 09:00",
+    "title": "论文总结",
+    "content": "## 1. 基本信息\n\n| 字段 | 内容 |\n|------|------|\n| **论文标题** | Leveraging the Learning Curve: Reusing Existing Architectural Patterns to Design and Implement MAS |\n| **作者** | Arthur Casals, Anarosa A. F. Brandão |\n| **发表** | arXiv:2606.00287, cs.MA (Multiagent Systems) |\n| **日期** | 2026-05-29（预印本） |\n| **领域标签** | #多智能体系统 #软件架构 #设计模式 #MAS #AI工程 |\n\n## 2. 研究什么？\n\n本文提出利用已有的分布式系统架构模式来设计和实现多智能体系统（MAS），减少从零开始构建的复杂度。核心思想是：MAS 本质上是一个分布式系统，因此可以复用成熟的分布式架构模式（如发布-订阅、消息队列、服务发现等），而不需要发明新的 MAS 专用架构。\n\n## 3. 为什么研究？\n\n当前 AI 领域的许多系统（如多 Agent 框架）虽然是\"多智能体\"的，但往往：\n- 各自发明自己的通信和协调机制\n- 忽略了软件工程领域几十年来积累的分布式系统架构经验\n- 导致系统难以扩展、维护和与其他系统集成\n\n作者认为，从软件工程角度看，MAS 的分布式本质使其天然适合复用现有的架构模式。\n\n## 4. 别人做过什么？\n\n- MAS 领域已有一些架构参考（如 JADE、BDI 框架）\n- 但大多数 MAS 框架是从 AI 角度而不是软件工程角度设计的\n- 分布式系统领域已有成熟的模式语言（如 POSA、企业集成模式）\n- 本文的创新在于将这两条线连接起来：用分布式系统模式指导 MAS 设计\n\n## 5. 发现了什么？\n\n提出引入一组最小的架构模式集合，使 MAS 开发者可以：\n- 复用现有的分布式基础设施（消息中间件、服务注册等）\n- 减少 MAS 系统的学习曲线（\"leverage the learning curve\"）\n- 使 MAS 更易于与其他 AI 系统和传统软件系统集成\n\n## 6. 价值与不足\n\n**价值**：从软件工程视角审视 MAS 架构问题，提议将 MAS 纳入主流分布式系统范畴而非自成一派。对 AI Agent 系统的工程化落地有参考价值。\n\n**不足**：目前是概念框架层面，缺少具体的实现评估或案例研究。需要更多实证数据来验证所提模式的有效性。",
+    "excerpt": "来源：records/20260602/09/yujin-mas-patterns/论文总结.md · | 字段 | 内容 |",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260602/09/yujin-mas-patterns",
+    "original_url": "https://arxiv.org/abs/2606.00287",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-06-02 09:00",
+    "title": "悠仁-能力进化.md",
+    "content": "## 今日筛选记录\n\n- **日期**：2026-06-02\n- **方向**：AI × 新型交互方式的实践案例\n- **来源**：用户推荐\n\n## 筛选理由\n\n用户直接推荐了 arXiv:2606.00287。\n\n**核心价值**：\n1. 从软件工程视角审视多智能体系统（MAS）架构——这个视角在当前的 AI Agent 热潮中被严重忽视\n2. 提出复用现有分布式系统模式来构建 MAS，而非另起炉灶——对 Agent 系统的工程化有指导意义\n3. 虽然是概念框架，但方向正确——AI Agent 系统正面临与早期分布式系统类似的\"各自发明\"困境\n\n## 核心收获\n\n### 新视角：MAS 首先是分布式系统\n\n大多数 MAS 框架从\"智能体自治\"出发设计架构，而本文从\"分布式系统\"出发。这一视角转换意味着：\n- 消息传递、服务发现、容错等分布式系统已有的解决方案可以直接复用\n- 减少了\"重新发明轮子\"的成本\n- 使 MAS 更容易融入现有软件生态\n\n### 对 AI Agent 工程化的启示\n\n当前\"多 Agent 框架\"（如 AutoGen、CrewAI、LangGraph 等）各自为政的现象，本质上与本文描述的问题一致。如果能建立 MAS 的\"通用架构模式\"，可能推动 Agent 系统的标准化和互操作性。\n\n## 批判性分析\n\n- 论文目前处于概念阶段，缺乏实现验证。最关键的问题是：什么是最小架构模式集合？没有具体答案\n- 没有讨论 Agent 特有的问题（如推理策略、记忆管理、工具使用）如何与分布式模式结合\n- 忽略了 Agent 的\"意向性\"——分布式系统模式处理的是组件间通信，而非智能体间的协商与协作",
+    "excerpt": "来源：records/20260602/09/yujin-mas-patterns/悠仁-能力进化.md · 日期 ：2026 06 02",
+    "file_name": "悠仁-能力进化.md",
+    "source_dir": "records/20260602/09/yujin-mas-patterns",
+    "original_url": "https://arxiv.org/abs/2606.00287",
     "original_label": "arXiv",
     "session_type": "",
     "session_label": ""
