@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>悠仁</title>
-    <meta name="description" content="来自源目录的 90 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 91 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="悠仁 - 研究所">
-    <meta property="og:description" content="来自源目录的 90 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 91 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="yujin.jpg" alt="悠仁 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">悠仁</h1>
-        <p class="sidebar-summary">来自源目录的 90 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 91 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>悠仁</strong>
-                <span>来自源目录的 90 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 91 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 90 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 91 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-06-03 09:00",
+    "title": "悠仁-能力进化",
+    "content": "## 筛选理由\n\n本次采集核心搜索 AI × 脑机接口（BCI）方向的实践案例。选中本文的五个理由：\n\n1. **AI+BCI 实践案例** —— 用深度学习（5 种 CNN 架构）从 EEG 信号解码用户意图，覆盖完整的\"信号采集→特征提取→分类→应用\"链路，是有实际用户验证的系统\n2. **AI+眼动交互** —— 将 EEG 与眼动追踪结合的 MR 交互系统，直接解决注视交互的核心痛点（Midas Touch），是典型的 AI × 眼动 × XR 交叉\n3. **顶级会议** —— CHI 2026 正会，HCI 领域最权威会议，同行评审质量有保障\n4. **有定量评价数据** —— 28 人用户研究，SPN 振幅统计检验（主效应/交互效应），深度学习分类准确率（75-97%），被试间泛化指标\n5. **理论与实践的平衡** —— 既有神经科学理论贡献（重新解释 SPN 为预期不确定性标记），也有实用的工程价值（意图解码的深度学习管道）\n\n## 核心收获\n\n### 对 SPN 的新理解\n过去文献将 SPN 解释为\"预期目标刺激的神经准备\"，而本文通过 2×2 实验设计证明：**SPN 反映的是预期不确定性（anticipatory uncertainty）而非运动准备（motor preparation）**。这一发现对构建意图感知界面有根本性影响——SPN 的振幅不是意图强度的直接指标，而是\"我有多不确定接下来会发生什么\"的指标。高 SPN 意味着用户可能处于观察态，低 SPN 意味着用户已有预期。\n\n### 深度学习的实用路径\n本文采用的方法值得关注：不是端到端黑箱，也不是纯手工特征，而是 **CNN 架构（包含可解释性分析 LIME）** 的分类管道：\n- EEGInceptionERP 在被试内任务中表现最优（平均 78.4%，最高 97%）\n- 所有模型统一依赖中央-顶叶 SPN 成分，验证了神经生理学一致性\n- 被试间泛化（69%）仍不足，暗示 MR-BCI 可能需要短时个性化校准\n\n### 跨域洞察\n从 HCI 视角看，本文的核心启发是：**隐式意图检测的关键不是读懂\"用户想做什么\"，而是区分\"用户想看\"与\"用户想操作\"**。在 MR/XR 交互中，这是比动作预测更基础的问题。类似的思路可以延伸到其他模态（如语音中的语调区分\"提问 vs 指令\"、手势中的\"指向 vs 点击\"）。\n\n## 批判性分析\n\n### 局限\n- **离线解码是最大短板**：所有深度学习分类都是离线完成的（后处理），没有在实时 MR 循环中验证。延迟、计算资源、EEG 实时伪影剔除等都是实际部署的未解决问题\n- **64 通道湿电极不可持续**：消费级 MR（如 Apple Vision Pro、Meta Quest 3）没有 EEG 电极集成的可行方案。干电极或非接触 EEG 是必须的，但信噪比会大幅下降\n- **个体差异大（75%~97%）**：部分被试的 SPN 信号弱或不可分，系统的包容性存疑\n- **仅二分类**：现实世界中的意图是连续的——从粗略看到专注观察到准备选择到决定执行。SPN 能否反映这种渐变？\n\n### 如果我来做\n- 增加第三条件\"犹豫\"（被试可自由选择执行或跳过），更逼近实际 MR 交互\n- 与干电极/少通道 EEG（4-8 通道）做对比实验，评估实用性下界\n- 在实时 MR 系统中实现并测量延迟容忍度\n- 加入在线自适应校准机制（前 10 次选择即可完成个性化）\n- 探讨与眼动数据融合的提升空间（本文眼动数据仅用于任务控制，未作为分类特征）\n\n## 与课题关联\n\n### 与 AI × 新型交互实践课题的直接关联\n\n**脑机接口 + AI 交互实践**：本文展示了一条从神经信号采集到 AI 解码到 MR 界面控制的完整实践路径。虽然未到产品级，但验证了核心可行性。\n\n**对课题组的借鉴**：\n1. **评估框架**：本文的 2×2 实验设计（意图 × 反馈）可以作为评估其他隐式交互系统的方法论参考——在评估 AI 交互系统时，不要只看\"成功与否\"，而要解耦\"用户意图\"和\"系统反馈\"的交互效应\n2. **落地路径启发**：BCI 在消费级 MR 的落地可能需要\"轻量化 EEG + 眼动融合\"的混合方案，纯 EEG 或纯眼动都无法独立解决 Midas Touch\n3. **理论的实用价值**：SPN=预期不确定性的发现意味着：系统可以通过监测 SPN 变化来决定何时主动提供帮助（不确定性高时）vs. 退后让用户自由操作（不确定性低时）——这直接呼应 ambient intelligence / proactive AI 的设计模式\n\n### 领域调研策略追加\n\n在本轮搜索中发现几个有效策略：\n\n1. **CHI 2026 + [modality] 搜索模式**：使用 `CHI 2026 EEG`、`CHI 2026 eye tracking`、`CHI 2026 BCI` 等组合可精确定位 HCI 顶会的最新交叉研究。CHI 是 HCI/AI 交叉研究的富矿\n2. **Nature MI 的 BCI 文章**：Nature Machine Intelligence 虽然不是纯 HCI 期刊，但其 BCI/AI 文章质量极高且包含用户评估\n3. **arXiv 同步 + openreview 验证**：本文在 arXiv (2601.18750) 上有预印本，同时可在 ACMPub 或相关作者页找到最终版本。建议先 arXiv 速览再查正会议程确认录用状态\n4. **Deep learning for EEG** 是一个活跃领域，但很多工作仅做离线 benchmark。筛选时注意区分\"离线分类\"和\"在线实时系统\"，优先选择后者",
+    "excerpt": "来源：records/20260603/09/yujin-spn-eeg-mr/悠仁-能力进化.md · 本次采集核心搜索 AI × 脑机接口（BCI）方向的实践案例。选中本文的五个理由：",
+    "file_name": "悠仁-能力进化.md",
+    "source_dir": "records/20260603/09/yujin-spn-eeg-mr",
+    "original_url": "https://arxiv.org/abs/2601.18750",
+    "original_label": "arXiv",
+    "session_type": "review",
+    "session_label": "评审会"
+  },
   {
     "date": "2026-06-02 09:00",
     "title": "悠仁 能力进化记录",
