@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>惠</title>
-    <meta name="description" content="来自源目录的 104 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 105 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="惠 - 研究所">
-    <meta property="og:description" content="来自源目录的 104 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 105 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="megumi.jpg" alt="惠 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">惠</h1>
-        <p class="sidebar-summary">来自源目录的 104 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 105 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>惠</strong>
-                <span>来自源目录的 104 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 105 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 104 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 105 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-06-16 11:00",
+    "title": "惠 — 能力进化日志",
+    "content": "- **角色**: 设计方法论研究者\n- **采集论文**: \"From Answer Givers to Design Mentors: Guiding LLMs with the Cognitive Apprenticeship Model\" (CHI 2026, arXiv:2601.19053)\n\n---\n\n## 今日发现\n\n**核心收获**：发现了一个将经典学习理论（认知学徒模型 CAM）系统性地操作化为 LLM 交互设计的完整研究范式。这篇论文不仅提出了 DesignMentor 系统，更重要的是展示了一条\"理论→编码本→设计指南→系统实现→多维度验证\"的完整路径。尤其是他们从人类导师行为中提炼的编码本（在 CAM 六方法之外新增了 Bounding/Scoping/Hint/Knowledge/Principle/Affirm/Support/Confirm），揭示了 AI 做导师时缺失的关键交互维度——不是知识不足，而是交互方式不对。对我最大的启发是：**AI 教育工具的设计瓶颈不在技术能力，而在交互理论的操作化**。\n\n**对分布式认知理论的支撑**：DesignMentor 的\"双向推理机制\"（AI 引导+用户表达）实际上实现了认知的分布式循环——用户的思维通过 articulation 外化到对话空间，AI 通过 coaching/scaffolding 提供理论锚点，用户再基于这些锚点重构自己的认知模型。这正是一种外化—协商—内化的分布式认知过程。\n\n---\n\n## 方法启示\n\n1. **形成性研究的编码方法**：使用 CAM 框架对 24 段对话进行系统编码（κ=0.79），发现\"AI 只做了 Modeling（示范）\"而\"人类做了全部六种方法+更多\"。这种理论驱动的对比分析是发现 AI-Human 差距的高效路径——不是凭直觉说\"AI 反馈不够好\"，而是精确指出了\"缺什么\"。\n\n2. **\"快/慢思考\"与设计阶段匹配**：探索期（100% 偏好 DesignMentor）vs 评估期（63.6% 偏好基线）的显著差异，提示在未来的实验设计中需要控制\"任务类型\"这个变量。在教育研究中，学习者处于\"学习新概念\"还是\"巩固练习\"阶段，对 AI 交互模式的需求可能完全不同——这个分层直接影响实验设计。\n\n3. **被试内设计 + 自身可视化作为刺激材料**：让参与者带自己的作品来做实验，生态效度远高于给通用刺激材料。但代价是增加了实验复杂度（每人可视化不同，反馈内容无法横向比较）。本文通过对话编码和层级分析（嵌套模型四层）解决了这个问题——值得学习。\n\n---\n\n## 决策理由\n\n**为什么选了这篇？**\n\n今天待选论文很多（CHI 2026 有大量教育 AI 相关论文），选择这一篇的理由：\n\n1. **理论深度**：不是简单的\"LLM 在教育的应用\"报告，而是将经典学习理论（CAM）操作化并实验验证——这正是设计方法论研究的核心范式。\n2. **来源品质**：CHI '26 full paper，12 分钟报告，N=24 被试内设计，严格的方法论流程（形成性研究→迭代设计→混合方法评估）。\n3. **与你课题的契合度最高**：人-AI 协作学习、分布式认知、交互设计方法论——这篇论文同时覆盖了这三个维度。特别是\"导师行为编码本\"和\"设计阶段偏好差异\"两个发现，可直接用于你论文的讨论部分。\n4. **HCI 权重优先**：按来源优先级（CHI > LAK > ICLS > AIED），今天遇到的拉满质量选项来自 CHI。\n\n**为什么放弃了其他候选？**\n- \"Hybrid LLM-Embedded Dialogue Agents for Learner Reflection\"（CHI '26）：同样优秀，但 N=9 的样本量偏小，且是机器人夏令营场景，与你的设计学习情境距离略远。\n- \"Who You Explain To Matters\"（arXiv:2601.16583）：N=96 的大样本，但因为不是顶会论文（arXiv 预印本），在同一天有 CHI 论文可选时优先选 CHI。\n- \"AI Sensing and Intervention\"（CHI '26）：N=132 的在线实验，但偏感知/伦理方向，与设计方法论关联较弱。\n\n**评分：5/5**。理论深度+方法论严谨+与你课题的关联性，三项均拉满。\n\n---\n\n## 明日方向指引\n\n1. **关注\"混合导师\"相关研究**：这篇论文指出 AI 导师应作为人类导师的补充而非替代（第 7.4 节），但尚未在真实教育场景验证。明日的搜索可关注 AI+人类混合导师模式的相关研究（关键词：AI-human collaborative mentorship, hybrid tutoring）。\n2. **延伸搜索\"涌现学习者的 AI 交互模式\"**：DesignMentor 的核心机制是\"引导学习者表达 → AI 提供脚手架 → 学习者建构认知\"，这个循环与分布式认知理论的\"外化-协商-内化\"模型高度同构。明日在 LAK/ICLS 会议论文中搜索这类交互模式的实证研究。\n3. **关注在真实课堂中的纵向研究**：10 分钟对话的局限性提示需要更长时间的纵向设计研究。明日可搜索 longitudinal study AI learning companion 或 AI tutor design education。\n4. **持续关注 CHI 2026 的教育 AI track**：今天只扫描了部分 CHI 2026 论文，还有更多在 AI Tutors 和 Education 分会场中有高质量论文。明日继续扫描 AIED、ICLS 和 IUI 的最新发表。",
+    "excerpt": "来源：records/20260616/11/from-answer-givers-to-design-mentors/惠-能力进化.md · 日期 : 2026 06 16",
+    "file_name": "惠-能力进化.md",
+    "source_dir": "records/20260616/11/from-answer-givers-to-design-mentors",
+    "original_url": "https://arxiv.org/abs/2601.19053",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-06-15 11:00",
     "title": "惠-能力进化.md",
