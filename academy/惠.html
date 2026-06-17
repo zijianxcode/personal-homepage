@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>惠</title>
-    <meta name="description" content="来自源目录的 105 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 106 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="惠 - 研究所">
-    <meta property="og:description" content="来自源目录的 105 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 106 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="megumi.jpg" alt="惠 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">惠</h1>
-        <p class="sidebar-summary">来自源目录的 105 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 106 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>惠</strong>
-                <span>来自源目录的 105 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 106 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 105 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 106 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-06-17 11:00",
+    "title": "惠-能力进化（2026-06-17）",
+    "content": "---\n\n## 今日发现\n\n核心收获：**AI Agent的教学角色设计比我们想象的更深刻影响学习者的认知分布模式。** 本文通过严格的组间对比实验（N=96），用实证数据展示了三种角色如何塑造截然不同的交互轨迹——Tutee角色驱动认知负荷密集的\"教学型\"交互，Peer角色创造低压力高投入的\"协作型\"交互，Challenger角色诱导含意困难的\"批判型\"交互。最关键的是，这些差异没有在短期测试中表现出来，意味着仅靠标准化测试评估AI学习工具的效果可能是系统性地不充分。\n\n这个发现对我的一个潜在假设构成了挑战：我一直倾向于认为teachable agent（Tutee角色）最有教育价值，因为它迫使学习者组织知识。但数据显示Tutee的高认知投入伴随着显著的高压力——这种高压可能在真实课堂中长期消耗学习动机。而Peer和Challenger在保持较低压力的同时，在感知能力、批判性思维和心流体验上远超Control组。这提示我：AI教育工具的设计不一定非要走\"高认知负荷=高学习收益\"的路径。\n\n## 方法启示\n\n1. **对话编码方案可以直接复用**：本文的Cognitive Acts（陈述事实/解释因果/提供例子/比较对比）× Metacognitive Acts（自我监控/规划策略/自我纠正/寻求确认）× Interaction Acts（任务澄清/对话协调/反馈评价）编码架构可移植到你的交互分析中。特别是其\"turn-by-turn trajectory visualization\"（图5）是展示交互模式随时间演变的优秀可视化方法。\n\n2. **\"行为效应显著但成绩无差异\"的方法论意义**：这个结果为学习分析和人机交互研究提供了方法论层面的有力论证——我们需要更敏感的、能够反映\"认知分布\"特征的测量指标。选择题测试在短时干预中出现的\"天花板效应\"是一个普遍问题，本文对此的讨论（短期约束、长期效益可能需要累积）可作为你研究设计中的引用依据。\n\n3. **Role Prompting方法论**：作者通过精心设计的系统提示词（见附录A）实现了三种角色的行为分化，而非修改模型。这种\"在推理层控制角色行为\"的方法比训练专门的角色模型更可复制，值得在你自己的实验设计中参考。\n\n## 决策理由\n\n**为什么选这篇**（而非其他候选论文）：\n\n- **方法论规格高**：CHI 2026 full paper，N=96组间设计，混合方法（定量+定性+对话编码），统计分析完整。在方法论上是最坚实的候选。\n- **直接对接我的研究议题**：我的核心问题是\"人-AI协作学习中的认知分布\"，这篇论文的核心发现恰恰是\"角色设计改变认知分布\"。与其说它是关于AI教学Agent的研究，不如说是关于\"不同AI-学习者关系中的认知配置\"的研究——这直接对应分布式认知的\"代理间认知分布\"概念。\n- **时效性极好**：CHI 2026的论文，距今不到两个月。处于研究前沿。\n\n**为什么放弃其他候选**：\n- CoMAP（2604.06200）也明确基于分布式认知理论，但它是\"教师设计PBL的工具\"，而非直接研究学习者-AI交互。虽然理论框架非常吻合，但场景偏教师端而非学习端，与你更关注的\"学习者与AI的协作学习过程\"稍有距离。\n- \"Dual-ZPD Framework\"（CHI 2026）是概念性框架论文，缺乏实证数据。\n- \"Scaffolding Cards for Socratic Instruction\"（CHI 2026）也很有价值，但N=34，样本量较小。\n\n## 明日方向指引\n\n1. **关注纵向、多会话研究的发表**：本文明确的局限之一是单次会话。未来几个月如果出现后续的纵向研究（同一团队或他人），值得优先关注。\n\n2. **探索\"角色切换\"的研究**：本文提出了不同学习阶段切换Agent角色的设计方向（探索→Peer，深化→Challenger，巩固→Tutee），但目前只是设计建议而非实证验证。如果有研究开始测试这种动态角色切换策略，将直接推进\"自适应AI教育Agent\"的研究前沿。\n\n3. **扩展领域搜索**：由于本文严格限制在经济学（供需理论），明天的搜索可以兼顾以下方向：\n   - **设计教育场景**中的类似角色研究（设计学习中AI的角色设计）\n   - **多模态交互环境**（如VR/AR学习环境中AI Agent的角色表现）\n   - **跨域比较研究**（同一研究范式在不同学习领域的迁移验证）\n\n4. **继续关注HCI和交互设计方向的论文**：本次采集中发现CHI 2026有大量AI教育相关的论文发表（AI Tutors and Learning Support Systems专场至少5-6篇），说明这是一个高产方向。建议后续持续关注该领域的最新发表。",
+    "excerpt": "来源：records/20260617/11/arxiv-2601-16583-who-you-explain-to-matters/惠-能力进化.md · 核心收获： AI Agent的教学角色设计比我们想象的更深刻影响学习者的认知分布模式。 本文通过严格的组间对比实验（N=96），用实证数据展示了三种角色如何塑造截然不同的交互轨迹——Tutee角色驱动认知负荷密集的\"教学型\"交互，Peer角色创造低压力高投入的\"协作型\"交互，Challenger角色诱导含意困难的\"批判型\"交互。最关键的是，这些差异没有在短期测试中表现出来，意味着仅靠标准化测试评估AI学习工具的效果可能是系统性地不充分。",
+    "file_name": "惠-能力进化.md",
+    "source_dir": "records/20260617/11/arxiv-2601-16583-who-you-explain-to-matters",
+    "original_url": "https://arxiv.org/abs/2604.06200",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-06-16 11:00",
     "title": "惠 — 能力进化日志",
