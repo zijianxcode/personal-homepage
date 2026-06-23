@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ML</title>
-    <meta name="description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 198 条。">
+    <meta name="description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 199 条。">
     <meta property="og:title" content="ML - 研究所">
-    <meta property="og:description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 198 条。">
+    <meta property="og:description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 199 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">ML</h1>
-        <p class="sidebar-summary">基于关键词自动归类的训练、优化与模型方法研究。 共 198 条。</p>
+        <p class="sidebar-summary">基于关键词自动归类的训练、优化与模型方法研究。 共 199 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>ML</strong>
-                <span>基于关键词自动归类的训练、优化与模型方法研究。 共 198 条。</span>
+                <span>基于关键词自动归类的训练、优化与模型方法研究。 共 199 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,8 +79,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "ML", "subtitle": "基于关键词自动归类的训练、优化与模型方法研究。 共 198 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "ML", "subtitle": "基于关键词自动归类的训练、优化与模型方法研究。 共 199 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-06-23 09:00",
+    "title": "GestureCoach: Rehearsing for Engaging Talks with LLM-Driven Gesture Recommendations",
+    "content": "- **发表**: UIST '25 (ACM Symposium on User Interface Software and Technology, October 2025, Busan)\n- **arXiv**: 2504.10706\n- **DOI**: 未标注\n\n---\n\n## 一、核心论点\n\nGestureCoach 是一个基于 LLM 的演讲手势推荐与排练系统，旨在帮助演讲者在排练过程中学会在恰当的时机使用合适的手势，从而提升演讲的感染力和表现力。其核心主张是：手势技能可以通过**AI驱动的主动引导式排练**得到系统性的提升，而无需依赖传统的演讲教练或多年的舞台经验。系统的独特之处在于它将手势推荐拆解为两个耦合的子任务——\"何时做手势\"（emphasis proposal）和\"做什么手势\"（gesture identification）——并用 LLM 分别处理，再通过一个带有动画头像手势提示的排练界面将推荐实时传递给用户。\n\n---\n\n## 二、背景与动机\n\n手势在人类沟通中扮演着不可或缺的角色，尤其是在公开演讲中。研究表明，语义手势（iconic、metaphoric、deictic）能显著提升听众的理解和参与度，同时帮助演讲者更清晰地表达思想。然而，现有的演讲排练系统大多聚焦于语音质量（语速、音调、停顿），极少有系统能够为手势使用提供具体、细粒度的指导。少数涉及手势的系统也仅限于高层次的笼统建议（如\"多用手势\"或\"少用手势\"），而非针对**具体语段的特定手势推荐**。造成这一空白的原因有两方面：一是缺乏从文本中自动识别手势需求的计算方法，二是缺少能够将手势推荐有效传递给非专业用户的人机交互设计。GestureCoach 正是针对这两个缺口提出的系统性解决方案。\n\n---\n\n## 三、方法与过程\n\nGestureCoach 由**两个核心模块和一个排练界面**组成。\n\n**强调提议模块（Emphasis Proposal Module）**：基于 Llama-2 7B，使用 LoRA 进行参数高效微调，训练数据来自 TED 演讲专家标注的手势区域。为解决标注数据有限的问题，采用了 GPT-4o 生成合成数据进行数据增强（每个原始样本生成5个变体），最终训练集达881条样本。该模块的输入是演讲者的讲稿文本，输出是应该伴随语义手势的文本片段（gesture regions），平均每个样本识别3.81个手势区域。\n\n**手势识别模块（Gesture Identification Module）**：采用 RAG（Retrieval-Augmented Generation）架构。先从 TED 专家手势中构建包含343个视频片段的手势数据库，每个片段标注了对应的语义类型（beat、iconic、metaphoric、deictic）。当强调提议模块识别出手势区域后，通过向量相似度检索最匹配的手势候选，再由 LLM 结合上下文选择最合适的手势。\n\n**排练界面**：桌面应用，演讲者排练时系统实时追踪语音，在讲稿中高亮显示手势区域，并通过动画头像演示推荐的手势动作。用户可接受、修改或拒绝推荐的手势。该界面基于一个早期 Wizard-of-Oz 原型（N=5）的迭代设计结果。\n\n**评估分两个阶段**：(1) 技术评估——对比微调模型 vs. 零样本 GPT-4o 在手势区域预测上的性能；(2) 用户研究——第一阶段 N=30 评估手势区域和手势推荐的合适性；第二阶段 N=10 的 within-subjects 研究对比使用 GestureCoach 排练 vs. 仅使用讲稿排练的效果，通过录像和专家标注分析实际演讲中的手势数量和多样性。\n\n---\n\n## 四、主要发现\n\n1. **强调提议模块显著优于零样本 LLM**：微调后的 Llama-2 7B 在识别手势区域上优于 off-the-shelf GPT-4o，尤其是在减少假阳性方面表现突出。\n\n2. **用户认可推荐手势的合适性**：N=30 的研究中，参与者对手势区域的合适性评分较高（M=4.20/5），手势与文本的匹配度也受到认可（M=3.9/5）。\n\n3. **手势多样性显著提升**：在 N=10 的排练研究中，使用 GestureCoach 排练后的演讲者使用了显著更多的**独特语义手势**（GestureCoach: M=18.90 vs. Notes: M=12.70, p=.009, Cohen's d=1.03，大效应量）。8/10 的演讲者在 GestureCoach 条件下手势数量更多。\n\n4. **用户体验优秀**：SUS 评分高达 90.83（满分100），8/10 的演讲者偏好 GestureCoach 而非仅有讲稿的排练方式，认为它增强了自信，使最终演讲更吸引人。\n\n5. **手势推荐的多种使用方式**：部分参与者完全接受推荐，另一些则将推荐作为灵感来源（\"提供了手势创意\" M=4.70/5），在使用中发展出自己的风格，体现了人-AI协作中不同程度的自主性。\n\n---\n\n## 五、局限性\n\n1. **依赖完整讲稿**：系统要求用户提供完整的逐字讲稿文本，这对习惯使用简要提纲的专家演讲者不够友好，限制了适用范围。\n\n2. **手势表现力有限**：动画头像只展示了手势的大致动线，缺乏对速度、力度、幅度等细节的表达，也没有涵盖头部运动和身体姿态。\n\n3. **文化适应性不足**：手势数据库虽涵盖多元文化背景，但某些文化背景下的手势可能不适用于其他文化用户，虽然提供了替代选择功能，但缺乏主动适应用户文化背景的能力。\n\n4. **领域泛化性存疑**：模型基于 TED 演讲数据微调，对其他类型（学术报告、产品发布、课堂教学）的泛化能力未经验证。\n\n5. **短时排练 vs. 长期习惯养成**：用户研究只评估了单次排练的效果，尚不清楚这种AI引导能否帮助演讲者将手势技能内化为长期习惯。\n\n---\n\n## 六、对你课题的启发\n\n这篇论文对你的研究有独特的价值，因为它提供了一种**AI作为交互行为教练**的实践案例，与你的\"人-AI协作学习\"方向高度相关。以下是几个具体的关联点：\n\n1. **分布式认知视角下的手势引导**：GestureCoach 将\"手势知识\"外化为界面提示和动画示范，形成一个人-AI分布式认知系统——AI承担专业知识（何时/如何做手势），人保留自主决策权（接受/修改/拒绝）。这种分配模式与你研究的\"在AI辅助下认知分布如何变化\"直接相关。\n\n2. **人-AI协作中的自主性梯度**：论文观察到用户对推荐手势的不同使用模式（完全遵循、作为灵感、选择性调整），这反映了人-AI协作中自主性不是一个二元状态而是一个连续梯度。这与你在学习情境中研究的\"学习者如何在AI辅助下保持主体性\"问题相通。\n\n3. **AI教练而非AI替代**：GestureCoach 的目标是**增强能力**而非**替代能力**——它教会用户未来独立使用手势，而不是代替用户做手势。这种\"AI作为能力建设者\"的范式对AI教育应用尤为重要。\n\n4. **手势作为一种交互技能的习得机制**：论文揭示了通过观察+模仿+反馈循环来习得交互技能的学习模型，这可以为AI辅助学习环境中的交互技能培训提供设计参考。\n\n5. **方法论的借鉴**：Wizard-of-Oz 原型→迭代设计→技术评估+双用户研究的评估路径，以及使用专家标注+合成数据增强的数据策略，都是你在设计AI协作学习研究时可以参照的实验设计范式。",
+    "excerpt": "来源：records/20260623/09/gesturecoach-2504.10706/论文总结.md · 论文标题 : GestureCoach: Rehearsing for Engaging Talks with LLM Driven Gesture Recommendations",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260623/09/gesturecoach-2504.10706",
+    "original_url": "https://arxiv.org/abs/2504.10706",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-06-22 11:00",
     "title": "Profiling Cognitive Offloading in LLM-mediated Synthesis Writing: Volume vs. Content",
