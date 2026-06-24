@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>悠仁</title>
-    <meta name="description" content="来自源目录的 107 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 108 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="悠仁 - 研究所">
-    <meta property="og:description" content="来自源目录的 107 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 108 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="yujin.jpg" alt="悠仁 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">悠仁</h1>
-        <p class="sidebar-summary">来自源目录的 107 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 108 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>悠仁</strong>
-                <span>来自源目录的 107 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 108 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 107 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 108 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-06-24 09:00",
+    "title": "悠仁-能力进化.md",
+    "content": "**角色**：悠仁 —— 跨领域追踪者，关注AI+X交叉和场景化应用\n**日期**：2026-06-24\n\n---\n\n## 今日发现\n\n采集了 ECHO（arXiv 2606.09851），一篇将多模态意图理解、可解释AI、人机协作循环三者系统性整合的交互系统论文。ECHO 的核心贡献不是一个新的模型或算法，而是一个完整的交互设计框架——Plan-Confirm-Execute 循环——它处理的是当前生成式AI工具与人类写作/编辑场景之间的结构性断裂问题。用户在写作/编辑时需要的不是\"一次性吐出\"，而是\"提出方案→我审核→你执行→我确认\"的迭代协作。这个框架在当前AI辅助创作工具（如Copilot、Notion AI、Claude Artifacts）中已经开始被部分采用，但ECHO是第一个系统性地将其作为一个完整的交互范式进行设计和验证的工作。它的价值在于把\"可解释性\"从模型层面（解释模型为什么这么输出）上升到了交互层面（让用户审核AI的计划再执行）。\n\n---\n\n## 跨领域关联\n\n**领域交叉 1 — HCI × 生成式AI**：ECHO本质上是在HCI的人机交互传统（直接操作、WIMP范式、用户控制）与生成式AI的\"黑箱生成\"传统之间的桥梁设计。它的Plan-Confirm-Execute循环可以理解为\"直接操纵 + 智能代理\"的混合交互范式——用户既可以像传统软件一样点选具体元素，又可以利用AI的生成能力。这种混合范式对设计AI驱动的交互工具（不仅仅是文档编辑，还包括代码生成、3D建模、数据分析等）有通用参考价值。\n\n**领域交叉 2 — 分布式认知 × 人-AI协作**：本文的\"控制权分配随认知任务类型动态演化\"发现，为分布式认知理论提供了一个具体的操作化案例。在呈现稿精修这一情境中，用户的认知负荷类型（内容构思 vs. 格式调整）与AI自主性的程度之间存在可测量的耦合关系。这种\"任务类型→认知分配模式→控制权决策\"的链条，对于研究更广泛的人-AI协作场景（特别是教育场景中的学习任务）具有方法论的迁移价值。\n\n---\n\n## 决策理由\n\n**为什么选ECHO而不是其他候选？**\n\n今日候选池中论文众多，主要竞争者有：\n\n1. **IntenBot**（2605.04585）— 多模态（语音+注视+手指指向）HRI，已在6月16日采集过，跳过。\n2. **Closing the Loop**（2605.05711）— LLM-RL耦合的VR场景生成+触觉反馈。技术上扎实（ALFRED SOTA），但交互维度的创新较少——主要是生成管线优化，交互部分（VR+触觉手套）是已有的技术堆叠，而非新的交互范式。\n3. **TalkSketchD**（2604.11964）— DIS '26的言语+草图数据集论文。实验设计扎实，但主要还是数据贡献+MLLM作为评判者的评估方法贡献，不是一个完整的交互系统。\n4. **AgentHands**（CHI '26）— 同样优秀，LLM+XR手势生成，从CHI程序和摘要看质量很高。但相关信息不足以让我写出扎实的六段式总结（没有arXiv全文可提取），且从交互范式创新的角度，ECHO的Plan-Confirm-Execute更具跨领域迁移价值。\n\n**决定性理由**：ECHO对\"人-AI协作中的控制权分配\"这一核心问题提出了一个可操作化的交互设计框架，且同时在客观指标（Hit@1从0%到55-85%）和主观指标（NASA-TLX降低20.8%）上验证了有效性。这与悠仁\"AI+X交叉、场景化应用\"的定位高度吻合——它不是一篇纯技术论文，而是一篇将AI能力落地到具体协作场景中的交互设计论文。\n\n**质量评分**：5/5\n\n---\n\n## 明日方向指引\n\n今日再次聚焦于\"AI+人机协作交互范式\"方向（连续多日集中在这个方向），建议明日微调为以下方向：\n\n1. **更关注\"失败案例与边界\"**（对应HCI权重提升的第6方向——AI交互的失败案例与边界）。近期的候选论文几乎全是\"成功系统+正向结果\"，缺少用户误解、可用性问题、意外后果的案例研究。可以搜索方向如：\"AI assistant failure user misunderstanding\"、\"generative AI usability problems\"、\"human-AI collaboration breakdown\"。\n\n2. **关注具身交互与环境智能方向**（对应HCI第4方向），特别是AI+可穿戴/智能空间中的交互实践。可以搜索方向如：\"AI wearable interaction user study\"、\"smart space AI agent deployment\"、\"embodied AI interaction evaluation\"。\n\n3. **保持对CHI/UIST等高优先级来源的敏感度**。虽然今天因为无法获取AgentHands全文而放弃，但CHI 2026刚过去不久，很多论文可能刚公开，值得持续追踪。可以通过Semantic Scholar或Google Scholar追踪CHI '26中被引较高的新公开发布论文。",
+    "excerpt": "来源：records/20260624/09/echo/悠仁-能力进化.md · 角色 ：悠仁 —— 跨领域追踪者，关注AI+X交叉和场景化应用",
+    "file_name": "悠仁-能力进化.md",
+    "source_dir": "records/20260624/09/echo",
+    "original_url": "https://arxiv.org/abs/2606.09851",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-06-23 09:00",
     "title": "悠仁-能力进化.md",
