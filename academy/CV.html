@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV</title>
-    <meta name="description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 139 条。">
+    <meta name="description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 141 条。">
     <meta property="og:title" content="CV - 研究所">
-    <meta property="og:description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 139 条。">
+    <meta property="og:description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 141 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">CV</h1>
-        <p class="sidebar-summary">基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 139 条。</p>
+        <p class="sidebar-summary">基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 141 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>CV</strong>
-                <span>基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 139 条。</span>
+                <span>基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 141 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,8 +79,32 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "CV", "subtitle": "基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 139 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "CV", "subtitle": "基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 141 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-06-27 09:00",
+    "title": "GuideAI: A Real-time Personalized Learning Solution with Adaptive Interventions",
+    "content": "**论文信息**\n- 标题：GuideAI: A Real-time Personalized Learning Solution with Adaptive Interventions\n- 作者：Ananya Shukla, Satvik Bajpai, Chaitanya Modi, Siddharth Siddharth\n- 发表：IUI 2026 (Proceedings of the 31st International Conference on Intelligent User Interfaces, pp. 1218–1234)\n- arXiv：2601.20402\n- DOI：10.48550/arXiv.2601.20402\n\n---\n\n## 一、核心论点\n\nGuideAI 的核心主张是：当前 LLM 驱动的学习系统虽然能力强大，但完全缺乏对学习者认知状态和生理状态的实时感知能力，因此无法做到真正个性化的自适应教学。本文提出一个多模态框架，通过整合眼动追踪、心率变异性、姿态检测和数字笔记行为四种生物感知信号，让 LLM 能够动态感知学习者的认知负荷、注意力波动和参与度水平，并据此实时调整学习内容和节奏。这一论点将自适应学习从\"基于知识追踪的路径规划\"推进到\"基于多模态生理-行为信号融合的实时认知状态感知\"层面。\n\n## 二、背景与动机\n\nLLM 作为学习工具的潜力已被广泛验证，但现有系统的自适应能力存在根本性局限。传统的自适应学习技术（结构化学习路径、知识追踪、通用自适应测试）只能在宏观层面调整学习内容，无法感知学习者在具体时刻的认知负荷过载、注意力流失或疲劳状态。同时，认知科学已经充分证明，学习效果的关键瓶颈往往不是内容本身，而是学习者的认知状态是否处于\"最佳学习区\"（Zone of Proximal Development）。这一矛盾构成了 GuideAI 的核心动机：如何让 AI 教学系统具备类似人类导师的感知能力，能够\"看到\"学习者何时困惑、何时分心、何时疲劳，并据此调整教学策略。\n\n## 三、方法与过程\n\nGuideAI 的系统架构分为三个核心模块。传感器模块采集眼动追踪（注视点、扫视模式、回视率）、心率变异性（通过可穿戴设备）、姿态检测（摄像头识别头部前倾、驼背等姿势）和数字笔记行为（截图分析笔记频率和内容）。处理模块将原始信号转化为 6 个认知维度的实时评估指标：认知负荷、注意力、参与度、理解度、压力、疲劳。推理模块运行一个闭环干预模型，基于评估结果动态选择干预策略。干预分为三个层级：微观层（调整内容节奏和复杂度）、中观层（注意力引导和情绪调节）、宏观层（元认知引导）。整个框架基于认知负荷理论、自我调节研究和 ZPD 理论设计，干预分为认知-注意力、生理、理解导向和挑战增强四个类别。系统支持文本、图像、音频、视频四种学习模态。\n\n## 四、主要发现\n\n研究通过两阶段验证：先导用户研究（N=66）提炼设计需求，主实验（N=25）评估效果。结果显示 GuideAI 在问题解决能力和回忆型知识评估两项指标上均有统计显著的提升。NASA-TLX 量表分析显示，使用 GuideAI 后学习者的心理需求降低 Δ=0.49（p<0.05）、体力需求降低 Δ=0.23（p<0.05）、努力程度降低 Δ=0.28（p<0.05）、挫败感降低 Δ=0.54（p<0.05），同时自评表现提升 Δ=0.34（p<0.05）。这些结果在所有四种学习模态（文本/图像/音频/视频）中保持一致性，表明 GuideAI 的认知负荷减轻效应具有跨模态鲁棒性。\n\n## 五、局限性\n\nGuideAI 存在几个明显的局限性。第一，主实验样本量（N=25）较小，且为短期单次实验，缺乏纵向跟踪数据来验证长期学习效果和习惯适应性。第二，生物感知设备（眼动仪、HRV 穿戴设备、摄像头）的部署门槛较高，距离大规模教育场景的实际应用还有硬件成本和隐私方面的障碍。第三，论文没有报告干预误报率——即系统在错误的时间（如学习者正在深度思考时）发出干预会带来怎样的负面影响。第四，六维认知状态的评估完全依赖传感器数据的间接推断，没有引入学习者的自我报告作为校准信号，可能存在系统误差。第五，实验参与者可能受到\"新奇效应\"影响——对生物感知教学系统的新奇感本身可能提升了参与度，而非干预机制本身的效果。\n\n## 六、对你课题的启发\n\nGuideAI 与你的人-AI 协作学习研究有多个交汇点。首先，GuideAI 的核心假设——AI 系统需要感知学习者的认知状态才能有效协作——与分布式认知理论中\"认知系统需要协调各组成部分的状态信息\"的命题高度一致。GuideAI 的传感器模块实际上是在构建一个分布式认知系统中的\"系统级感知层\"，让 AI 能够参与原本只有人类导师才能完成的认知状态监控。其次，GuideAI 的三层干预模型（微观/中观/宏观）为设计人-AI 协作学习的\"干预粒度\"提供了可操作的框架参考——在什么层级、什么时机进行干预，这对你的学习情境设计有直接的方法论价值。第三，GuideAI 将认知负荷理论、ZPD 和自我调节学习三种理论框架整合进一个实际操作系统中，这种\"从理论到系统\"的转换路径正是你课题中可以借鉴的研究范式。第四，GuideAI 的局限性也提示了你的研究需要注意的问题：生物感知的隐私边界、干预时机与认知干扰的权衡、以及长期使用中的适应效应。",
+    "excerpt": "来源：records/20260627/09/guideAI-adaptive-learning-biosensory/论文总结.md · 论文信息",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260627/09/guideAI-adaptive-learning-biosensory",
+    "original_url": "https://doi.org/10.48550/arXiv.2601.20402",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-06-26 09:00",
+    "title": "VisionClaw: Always-On AI Agents through Smart Glasses",
+    "content": "**论文信息**\n- 标题：VisionClaw: Always-On AI Agents through Smart Glasses\n- 作者：Xiaoan Liu, DaeHo Lee, Eric J Gonzalez, Mar Gonzalez-Franco, Ryo Suzuki\n- 机构：University of Colorado Boulder\n- 发表：arXiv:2604.03486, cs.HC, 2026年4月\n- ACM分类：H.5.2 (User Interfaces), H.2.11 (Human-centered computing), I.2.10 (Vision and Scene Understanding)\n- 链接：https://arxiv.org/abs/2604.03486\n- 项目/代码：https://github.com/Intent-Lab/VisionClaw\n\n---\n\n## 1. 核心论点\n\n本文的核心论点是：将 always-on 可穿戴感知（egocentric vision + audio）与通用 AI agent 执行能力耦合，能够催生一种全新的人-AI交互范式——交互不再是被动的、命令驱动的屏幕操作，而是情境化的、机会触发的、持续流动的交互。具体而言，论文提出了 VisionClaw 系统，基于 Meta Ray-Ban 智能眼镜连接 Gemini Live（实时多模态感知）和 OpenClaw（agentic 执行后端），使语音驱动的任务可以从用户当前的视觉场景中直接触发，无需手机或电脑作为中介。论文通过实验室对照实验和纵向部署研究论证了这一整合的价值：感知与执行的紧密结合不仅提高了任务效率和可用性，更重要的是改变了交互的基本性质——任务在日常活动中机会性地涌现、执行被委托而非手动控制、对话在多类别间流畅串联。论文将这些发现总结为 always-on 可穿戴 AI agent 的新设计方向，为 Ubiquitous Computing 和 Human-AI Interaction 提供了经验基础。\n\n## 2. 背景与动机\n\n论文的核心动机在于弥合两条平行研究路径之间的断层。一方面，自主 AI agent 系统（如基于 LLM 的工具使用、网页导航、邮件撰写）已经展现了强大的数字执行能力，但它们主要面向桌面和智能手机环境，严重依赖屏幕交互，无法感知用户的物理世界上下文。另一方面，AI 驱动的智能眼镜可以\"看\"和\"听\"用户的周围环境，但现有实现大多局限于简单的问答和描述，缺乏执行真实世界任务的能力。换句话说，当前没有一个系统能同时做到\"随时看见\"和\"随时做事\"。这一断层限制了 AI agent 从数字世界进入物理世界的可能——用户必须在感知情境后切换到另一个设备去执行操作，这破坏了交互的连续性和沉浸感。此外，已有研究大多局限于短暂的实验室评估，缺乏对 always-on wearable AI agent 在日常生活中的长期使用模式的实证。VisionClaw 正是为了回答这些问题：当感知与执行在可穿戴设备上紧密耦合时，用户的实际行为会发生怎样的变化？\n\n## 3. 方法与过程\n\nVisionClaw 的系统架构由三个核心组件构成。硬件层使用 Meta Ray-Ban 智能眼镜，以 24fps 捕获视频并以 ~1fps 传输 JPEG 帧到服务端（50% 质量压缩以平衡带宽和成本），同时通过 AVAudioEngine 以 16kHz 单声道 PCM 捕获音频。感知层使用 Google Gemini Live API 进行实时多模态推理——Gemini Live 处理原生音频而非先转写文本，这保留了语调和韵律信息并降低了交互延迟。执行层通过 OpenClaw 提供 56+ 工具接口，包括网页浏览、邮件撰写、笔记创建、日历管理、IoT 控制等。评估部分包含两个互补研究。实验室研究（N=12，被试内设计）比较了三种条件：（1）Always-On Only：眼镜+Gemini Live，有视觉感知但无 agent 执行——参与者必须在眼镜询问后切换到手机手动执行；（2）Agent Only：手机上的 OpenClaw，有 agent 执行但无视觉感知——参与者必须显式打字或语音描述上下文；（3）VisionClaw（Always-On + Agent）：完整系统。每名参与者完成四个需要参考真实物理对象和文档的任务。纵向研究为 4 位作者的日常生活中使用 VisionClaw（自传体部署设计），累计 555 次语音发起的交互，25.8 小时，人均 13.8 个活跃日（5-19 天），人均每日 10.1 次交互。\n\n## 4. 主要发现\n\n实验室研究显示，VisionClaw 相比 Always-On Only 和 Agent Only 条件，任务完成速度提升 13-37%、感知难度降低 7-46%，NASA-TLX 中的心理需求、时间需求和挫败感均显著更低（p<0.05）。纵向部署揭示了六类使用场景：检索信息（30%）、购物（19%）、保存记录（16%）、通信沟通（14%）、回忆（12%）、设备控制（9%）。更重要的是，四类交互模式浮现：（1）开放式的多轮对话——六个类别并非独立操作，用户在一个对话流中可以流畅地在类别间跳跃（例如，先问电影场次、再问是否读过原著、最后保存引文）；（2）机会性的捕获与回忆——交互在日常活动中自然触发而非刻意发起；（3）无屏幕交互既\"安静\"也不\"可靠\"——减少注意力分散但缺乏反馈可见性，任务是否仍在运行常不明确；（4）交互随个人数据积累而演化——使用越久，agent 的个性化程度和主动性越强。39% 的操作涉及眼镜摄像头进行视觉 grounding，单次交互中位数 3.2 个工具执行，中位端到端延迟 12.2 秒。\n\n## 5. 局限性\n\n第一，技术层面的限制仍然显著：电池续航不足以支撑全天使用，任务执行不可靠且等待时间长，系统缺乏充分的反馈机制——没有适当的音频和视觉反馈，用户无法判断任务是仍在运行还是已静默失败，这降低了信任度。第二，研究方法的局限性：实验室研究样本较小（N=12），任务经过设计而非自然涌现；纵向部署为作者自传体设计（N=4），存在明显的参与偏差——作者对系统有技术理解和情感投入，推广性受限。第三，隐私问题被指出但未被系统解决：连续视频捕获耦合自主 agent 执行带来严重的隐私安全隐患——不仅涉及用户本人，还涉及被眼镜录到的旁观者。第四，系统的通用性存疑：基于 Meta Ray-Ban + Gemini Live + OpenClaw 的组合依赖特定的商业闭源平台，当前系统的生态锁定风险和分析可重复性问题未充分讨论。第五，交互的边界问题：始终在线的 agent 是否会侵入用户的注意资源、是否会模糊人与 AI 的界限、过度委托是否会削弱用户的决策能力——这些问题论文在讨论中提及但未展开实证。\n\n## 6. 对你课题的启发\n\n这篇文章对\"人-AI 协作学习\"和\"分布式认知\"视角有很强的关联意义。从分布式认知的框架来看，VisionClaw 实质上构建了一个新的人-技术认知系统：眼镜作为感知\"器官\"延伸了用户的视觉通道，Gemini Live 作为处理中心在感知与行动之间建立映射，OpenClaw 作为执行\"手臂\"实施物理世界的操作。这个三角结构非常接近分布式认知理论中的\"认知生态\"概念——认知不再是在单一大脑中发生的，而是在人、感知设备、AI 推理、执行代理之间动态分布。对于研究人-AI 协作学习而言，关键问题不是\"这个系统能做得多好\"，而是\"这个系统改变了什么认知关系\"：当感知和执行的中间环节被 AI 接管后，用户的认知负担如何重新分配？用户从\"如何做\"的层次退到了\"要什么\"的层次，这对于学习情境中的 transfer（迁移）和 metacognition（元认知）有什么影响？VisionClaw 的\"opportunistic task initiation\"发现表明，交互门槛降低会改变任务生成的模式——从\"计划-执行\"转向\"情境触发\"。如果将其映射到学习场景，学生是否会在这种环境下发展出不同的自我调节学习策略？这为学习技术设计提供了全新的问题空间：在 AI agent 自动感知和执行的条件下，学生的认知努力如何被重新导向更高层次的规划和反思？",
+    "excerpt": "来源：records/20260626/09/visionclaw-always-on-ai-agents-smart-glasses/论文总结.md · 论文信息",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260626/09/visionclaw-always-on-ai-agents-smart-glasses",
+    "original_url": "https://arxiv.org/abs/2604.03486",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-06-25 11:00",
     "title": "VizCrit：在设计工具中探索计算式反馈的可视化策略",
