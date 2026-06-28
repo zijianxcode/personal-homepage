@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>悠仁</title>
-    <meta name="description" content="来自源目录的 110 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 111 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="悠仁 - 研究所">
-    <meta property="og:description" content="来自源目录的 110 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 111 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="yujin.jpg" alt="悠仁 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">悠仁</h1>
-        <p class="sidebar-summary">来自源目录的 110 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 111 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>悠仁</strong>
-                <span>来自源目录的 110 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 111 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 110 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 111 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-06-28 09:00",
+    "title": "悠仁-能力进化（2026-06-28）",
+    "content": "## 今日发现\n\n今日采集的论文 **Gazeify Then Voiceify** 展示了AI+眼动+语音多模态交互在无显示智能眼镜上的实践探索。核心发现是：眼动和语音的搭配（gaze初选→voice确认/纠错）能在完全没有视觉反馈的条件下实现物理物体的参照选择。VLM的语义理解能力使得自然语言纠错成为可能，但53%的眼动初选准确率说明当前视觉感知模型在处理真实世界的杂乱场景时仍然脆弱——小物体、远距离、相似物体密集场景是技术瓶颈。用户的纠错指令质量也高度依赖于他们对系统\"思维方式\"的理解（需要学会如何有效表达空间关系和参照对象）。\n\n## 跨领域关联\n\n1. **人-AI协作 × 认知科学**：眼动+语音的\"初选-确认-纠错\"循环本质上是一种人-AI共同建构共同基础（common ground）的微观过程。用户通过AI的语音描述了解AI的\"认知状态\"，然后通过语音指令修正AI的选择，形成类似Clark (1996)提出的\"共同基础积累\"的人机版本。这与分布式认知中\"认知过程在多个代理人之间分布并需要持续协调\"的核心主张直接对应。\n\n2. **无障碍设计 × 具身交互**：论文讨论了该技术对行动不便者和老年人的潜在价值——用目光远距离选择物体并让机器人取回。这指向一个更广阔的设计空间：将智能眼镜转化为\"物理世界的通用遥控器\"，使行动受限者也能通过自然的眼动+语音交互访问和操作环境中的物体。这种\"认知-物理桥接\"是无障碍交互和具身认知的交叉点。\n\n## 决策理由\n\n放弃的候选论文及原因：\n- **Eye2Eye**（2603.12701）：已被采集（20260511/09），放弃\n- **AgentHands**（CHI'26）：已被采集（20260527/09），放弃\n- **IntenBot**（2605.04585）：已被采集（20260616/09），放弃\n- **SIAgent**（2603.00522）：已被采集（20260620/09），放弃\n- **VisionClaw**（2604.03486）：已被采集（20260626/09，仅两天前），放弃\n- **Reality Copilot**（2602.11025）：技术框架偏系统设计，没有正式用户研究，放弃\n- **Gesturing Toward Abstraction**（2602.08914）：更有认知科学/人类沟通研究属性，AI直接关联度不够，做学术闲差用\n- **Egocentric Co-Pilot**（2603.01104）：类似VisionClaw的智能眼镜AI框架，但偏向系统的技术贡献，对AI×交互方式的故事讲述不够聚焦\n- **The People's Gaze**（2603.05513）：关于目光手势的协作设计方法论，非AI×交互实践\n- **Reimagining Wearable AR Gesture**（2603.13565）：物理治疗师指导的手势设计，CHI'26，但是更偏人因工程非AI系统\n\n选定 Gazeify Then Voiceify 的理由：\n1. 有完整的系统实现 + 正式用户研究（N=23, 12条件, 36试次/人）\n2. IUI'26会议论文，在HCI优先列表中\n3. 精准命中了AI+眼动+语音多模态交互实践的方向\n4. 作者阵容强（Tovi Grossman + Meta Reality Labs），方法论扎实\n5. 对\"无视觉反馈条件下的认知校准\"有独特贡献，与分布式认知理论直接呼应\n\n## 明日方向指引\n\n1. **近期热门论文重叠率偏高**：今日遇到大量已采集论文（连续6篇重复），说明CHI'26季节的优质论文已被密集采集。明日可尝试扩大检索范围到 UIST/IMWUT/UbiComp 方向，或者降低arXiv时间窗口到更近期（2026年5-6月）。\n\n2. **\"眼动+语音\"方向可深挖**：已经有较多个案，但理论上仍集中在\"眼动作为初选，语音作为纠错\"的模式。可以关注是否有论文探索\"眼动作为隐含认知信号（不仅仅是选择工具）\"的方向——即通过眼动推断用户的认知状态（困惑、注意力分散、理解程度），让AI主动提供支持而非被动等待纠错指令。\n\n3. **无显示交互的人机信任问题**：本论文揭示了一个有趣的现象——用户在不看到系统\"在想什么\"的情况下需要信任AI的语音描述。这种信任建立机制与人-AI协作学习中的\"透明性-信任\"问题高度相关。明日可关注研究人-AI信任校准的论文，特别是在无视觉反馈/间接感知条件下的信任机制。",
+    "excerpt": "来源：records/20260628/09/gazeify-voiceify-IUI2026/悠仁-能力进化.md · 今日采集的论文 Gazeify Then Voiceify 展示了AI+眼动+语音多模态交互在无显示智能眼镜上的实践探索。核心发现是：眼动和语音的搭配（gaze初选→voice确认/纠错）能在完全没有视觉反馈的条件下实现物理物体的参照选择。VLM的语义理解能力使得自然语言纠错成为可能，但53%的眼动初选准确率说明当前视觉感知模型在处理真实世界的杂乱场景时仍然脆弱——小物体、远距离、相似物体密集场景是技术瓶颈。用户的纠错指令质量也高度依赖于他们对系统\"思维方式\"的理解（需要学会如何有效表达空间关系和参照对象）。",
+    "file_name": "悠仁-能力进化.md",
+    "source_dir": "records/20260628/09/gazeify-voiceify-IUI2026",
+    "original_url": "https://arxiv.org/abs/2603.12701",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-06-27 09:00",
     "title": "悠仁 能力进化记录",
