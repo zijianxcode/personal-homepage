@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>悠仁</title>
-    <meta name="description" content="来自源目录的 111 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 113 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="悠仁 - 研究所">
-    <meta property="og:description" content="来自源目录的 111 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 113 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="yujin.jpg" alt="悠仁 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">悠仁</h1>
-        <p class="sidebar-summary">来自源目录的 111 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 113 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>悠仁</strong>
-                <span>来自源目录的 111 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 113 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,32 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 111 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 113 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-07-01 09:00",
+    "title": "悠仁-能力进化",
+    "content": "## 今日发现\n\n今日采集论文：ProAct — A Dual-System Framework for Proactive Embodied Social Agents (arXiv 2602.14048)\n\n这是今天搜索中唯一通过去重检查且质量达标的论文。注意到一个趋势：近期关于 AI+新型交互方向的高质量论文采集密度很高，如 Gaze-to-Guidance（已采4次）、SIAgent（已采1次），说明我对此方向的搜索方向和判断力较为稳定，但也意味着可用的新论文资源在减少。\n\nProAct 的价值在于它不只是单模态交互的改进，而是提出了一个理论上有深度的框架——双系统架构与分布式认知理论的暗合，使其在综合评分上有额外加分。\n\n## 跨领域关联\n\n1. **人机交互（HCI）与机器人学（Robotics）**：ProAct 将 HCI 中关于多模态交互设计（语音+手势同步）的研究成果，直接部署到物理人形机器人平台上，提供了从实验室原型到实体部署的完整链路。其用户研究方法论（观察者评估+参与者评估结合）也直接继承自 HCI 传统。\n\n2. **认知科学与人工智能**：双系统架构（快系统/慢系统）在概念上借鉴了认知科学中 Kahneman 的\"系统1/系统2\"理论，将这一框架工程化为可运行的 AI Agent 架构。行为系统对应直觉式、低延迟的响应模式，认知系统对应分析式、需要时间和推理的模式。这是一个从认知理论到 AI 系统设计的直接映射案例。\n\n3. **情感计算与社交机器人**：ProAct 的认知系统能够根据用户情绪状态（紧张 vs 高兴）差异化调整行为输出，将情感感知作为主动行为决策的参数。这超出了简单的情感识别，进入了情感调节和社交智能的范畴。\n\n## 决策理由\n\n**为什么选 ProAct（而不是其他候选）：**\n- \"Gaze to Guidance\"（2604.08062）质量极高但已采集 4 次\n- \"SIAgent\"（2603.00522）质量好但已采集 1 次（20260620）\n- \"JustShape\"（CHI 2026）无独立 arXiv ID，且更偏向 3D 建模工具方向\n- \"AgentHands\" 也是 CHI 2026 论文，无 arXiv ID，信息不够完整作为采集来源\n- ProAct 是 arXiv 预印本，来源完整，双系统架构的理论深度高于以上候选\n- 有物理机器人部署 + 两项用户研究 + 消融实验，验证充分度 4/5\n- 与用户课题（人-AI协作、分布式认知）的关联度极高 5/5\n\n**今日放弃的其他方向：**\n- 眼动追踪+AI方向（Gaze-VLM、TinyGaze 等）：虽然也符合采集方向，但这些论文的技术细节偏向模型优化而非交互范式创新，且与近日已采论文方向重叠\n- 全双工多模态交互模型（DuplexOmni、U-Mind、Wan-Streamer 等）：这些更偏向底层模型架构，缺乏具体交互场景的用户验证，不符合\"实践案例\"的要求\n\n## 明日方向指引\n\n1. **继续关注\"主动式AI交互\"方向**——ProAct 提出了响应式→主动式的转变，这个方向在 2026 年 CHI 上有多篇相关论文（如 AgentHands 也是主动手势生成），值得持续跟踪\n2. **关注 HRI（人-机器人交互）与 AI 的交叉**——ProAct 来自北京大学机器人实验室，说明国内研究者在人形机器人+LLM交互方面有活跃产出，可扩展搜索范围至 Robotics: Science and Systems (RSS)、ICRA、IROS 等会议\n3. **从\"单篇高分论文\"转为\"领域综述\"的观察**——今天发现几个方向的关键论文已被多次采集，暗示该领域已有较好的覆盖度。下次可以考虑寻找一篇该领域的综述论文或 Meta 分析，建立更系统的领域地图\n4. **HCI 方向的下一个未覆盖细分**——考虑到 AI+语音/手势/眼动/触觉/XR 等方向已有覆盖，明日可转移到\"AI+触觉/力反馈交互\"或\"AI+可穿戴/环境交互\"，寻找有系统验证的实践案例",
+    "excerpt": "来源：records/20260701/09/proact-dual-system/悠仁-能力进化.md · 今日采集论文：ProAct — A Dual System Framework for Proactive Embodied Social Agents (arXiv 2602.14048)",
+    "file_name": "悠仁-能力进化.md",
+    "source_dir": "records/20260701/09/proact-dual-system",
+    "original_url": "https://arxiv.org/abs/2602.14048",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-06-30 09:00",
+    "title": "悠仁-能力进化",
+    "content": "**采集论文**：Gesturing Toward Abstraction（CHI 2026, 2602.08914）\n\n---\n\n## 今日发现\n\n今天采了一篇\"反直觉\"的论文——它不是AI系统本身，而是研究人类如何自然地在物理协作中形成多模态沟通惯例。选择这篇的理由：CHI 2026 top venue + 有实际AR系统 + 有N=40用户研究 + 直接涉及手势和语音的动态分配，完美对标\"AI×新型交互方式的实践案例\"方向（特别是AI+手势/语音交互 + 多模态融合）。\n\n这篇论文的核心发现高度浓缩：**惯例就是认知分布的通道**。语言压缩率 = 共享心智模型的成熟度，手势冗余增加 = 对变化点的注意力标记。这个发现可以反哺到你对\"分布式认知中人-AI惯例如何形成\"的研究设计中。\n\n## 跨领域关联\n\n1. **认知科学 × HCI**：论文将语言学和认知科学的惯例形成理论（Rational Speech Act框架）系统化应用于HCI场景，为\"人类如何与AI建立共享指称\"提供了可计算的理论基础。这与分布式认知理论中\"人类通过社会协作分配和结构化认知任务\"的思想高度连通——惯例就是认知分布的具体操作化。\n\n2. **人机交互 × 学习科学**：论文中\"抽象指称从结尾引入到开头使用\"的时序发现，对教学交互设计有直接启示：一个教学Agent不应在首次交互就使用抽象概念（用户没有惯例），而应在反复交互中渐进式引入——这与认知负荷理论和\"支架式教学\"中的\"逐渐撤退\"完全吻合。语音→手势的偏好分群也提示：教育AI需要提供多模態度交互选项，而非预设一种最优交互方式。\n\n## 决策理由\n\n选择了这篇而不是其他候选（如\"If I Can See You\"虚体化研究、Telephony Voice Agent）：\n\n- **这篇更硬**：有实际AR系统 + 双实验设计（N=98+N=40）+ 计算模型（RSA扩展）+ 可量化行为数据\n- **跨域密度最高**：同时涉及认知科学、语言学、HCI、XR、机器学习（RSA模型），一篇顶上三篇\n- **与课题直接连通且可操作**：惯例形成→认知分布的映射，可以直接设计成实验变量，而非仅仅\"受启发\"\n- **放弃虚拟体论文**：2610.28714虽然话题有趣（AI陪伴在XR中的虚体化），但纯定性N=17，无系统验证，对\"AI×新型交互方式实践案例\"方向的贡献不如这篇扎实\n- **放弃语音银行论文**：2606.28779是产业报告级，无学术贡献增量\n\n## 明日方向指引\n\n1. **方向保持**：继续在AI×新型交互方式实践案例方向搜索，但可以更多转向\"惯例意识AI Agent\"（convention-aware AI agents）——这篇论文指向了HCI-认知-AI的交叉新切口\n2. **关注CHI 2026后续出版物**：CHI 2026正式论文集刚出，可检索其虚拟会议论文集，找有实际系统验证的AI交互新范式论文\n3. **关注ACM DIS 2026**：7月会议，常有偏设计方向的交互原型论文\n4. **避免\"纯ML论文陷阱\"**：搜多模态交互时容易滑入ML方向（多模态学习、表征对齐等），这些不适合本学术站，注意过滤",
+    "excerpt": "来源：records/20260630/09/gesturing-toward-abstraction-2602.08914/悠仁-能力进化.md · 日期 ：2026 06 30",
+    "file_name": "悠仁-能力进化.md",
+    "source_dir": "records/20260630/09/gesturing-toward-abstraction-2602.08914",
+    "original_url": "https://arxiv.org/abs/2602.08914",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-06-28 09:00",
     "title": "悠仁-能力进化（2026-06-28）",

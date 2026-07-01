@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV</title>
-    <meta name="description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 144 条。">
+    <meta name="description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 145 条。">
     <meta property="og:title" content="CV - 研究所">
-    <meta property="og:description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 144 条。">
+    <meta property="og:description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 145 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">CV</h1>
-        <p class="sidebar-summary">基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 144 条。</p>
+        <p class="sidebar-summary">基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 145 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>CV</strong>
-                <span>基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 144 条。</span>
+                <span>基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 145 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,8 +79,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "CV", "subtitle": "基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 144 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "CV", "subtitle": "基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 145 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-07-01 09:00",
+    "title": "ProAct：面向主动社交具身Agent的双系统框架",
+    "content": "## 核心论点\n\n本文提出 ProAct，一个将实时多模态交互与长期社交推理解耦的双系统框架，旨在让具身社交Agent从被动响应升级为主动发起社交行为。核心洞察是：实时交互要求低延迟（毫秒级），而主动社交行为需要积累上下文和意图推断（秒级），这两种时间尺度天然冲突。ProAct 通过将交互流程拆分为一个低延迟的\"行为系统\"（Behavioral System）和一个较慢的\"认知系统\"（Cognitive System），并用异步意图注入机制（ControlNet + 流匹配模型）将认知系统产生的主动意图无缝融入行为系统的连续运动流，从而同时满足流畅性和主动性要求。该系统在物理人形机器人上部署，通过真实交互用户研究证明，ProAct 在感知主动性、社交存在感和整体参与度上显著优于纯响应式变体。\n\n## 背景与动机\n\n人类社交互动本质上是双向的——我们会主动察觉对方的需求、在对方开口之前就采取行动（如注意到空杯主动续水、感知犹豫主动鼓励）。这种\"主动性\"（proactivity）是区分真正社交伙伴与被动应答器的关键特征。然而，当前的具身社交Agent大多停留在响应式交互：它们只在收到明确输入后生成同步语音和手势，缺乏对积累上下文的推理能力和主动发起行为的能力。这一局限性源于实时交互的严格延迟预算（手势生成需 < 1秒/片段）与长期社交推理所需时间（数秒）之间的根本冲突。随着多模态大模型（MLLM）在同步语音-手势生成方面取得进展，以及物理人形机器人平台日趋成熟，解决主动性问题成为推动具身社交Agent从\"像人的响应\"迈向\"像人的主动社交\"的关键一步。\n\n## 方法与过程\n\nProAct 由两个并行运行的子系统组成：（1）**行为系统**（Behavioral System）负责实时多模态交互——使用 OpenAI GPT-4o Realtime API 作为 Omni-LLM 生成语音回复，同时通过基于流匹配（flow-matching）的条件运动生成模型以 ~0.6 秒生成 1 秒的运动片段，语音和手势两个通道异步并行运行；（2）**认知系统**（Cognitive System）在后台以固定周期（~3 秒）运行——包含一个上下文编码器（Context Encoder）将累积历史压缩为有限记忆，和一个行为规划器（Behavior Planner）评估动机和动作规划。行为系统与认知系统之间的关键连接是引入 ControlNet 的流匹配模型：认知系统产生的高层主动意图以异步方式注入到运动生成流中，实现从响应式手势到主动式手势的平滑过渡，不打断交互流畅性。训练数据方面，使用 Photoreal 数据集的 2.5 小时同步语音-运动数据和 SeG 数据集的 544 个剪辑（1,632 条标注），全部重定向到人形机器人 23 关节运动学结构。行为系统的 Omni-LLM 使用 GPT-4o Realtime，认知系统使用 GPT-4.1-mini，ASR 使用 Sherpa-ONNX。流匹配模型在 2 张 RTX 4090 上训练约 23 小时。\n\n## 主要发现\n\n两项用户研究评估了 ProAct 的效果。**观察者评估**（150 名参与者，观看 60 秒交互视频对比评分）和**参与者评估**（10 名参与者与物理人形机器人进行 5 分钟真实交互，20 组配对样本，6 维度 5 点李克特量表）一致显示：完整系统（含认知系统）在所有指标上均优于无认知系统的响应式基线——运动自然度（Motion Naturalness）、主动能动性（Active Agency）、感知存在感（Perceived Presence）、响应及时性（Response Timeliness）、交互舒适度（Interaction Comfort）和重新参与意愿（Willingness to Re-engage）均有显著提升。项目页面的视频演示展示了多个典型案例：Agent 主动提醒用户遗落物品、主动邀请和澄清误解、利用存储记忆帮助用户回忆物品位置、在检测到用户分心时自我打断并调整行为、根据用户情绪状态（紧张 vs 高兴）提供差异化情感支持。流匹配模型的生成时间（0.425-0.648 秒/秒运动）满足实时约束，ControlNet 机制的消融实验证实其产生的手势更加多样和自然。\n\n## 局限性\n\n第一，认知系统当前依赖 GPT-4.1-mini 作为推理引擎，每次推理周期约 3 秒，虽然满足主动意图注入的时间需求，但在需要更快速社交判断的场景下可能存在延迟。第二，用户研究样本量有限——真实交互实验仅 10 名参与者 20 组配对样本，结果的可推广性有待更大规模验证。第三，系统目前仅部署于单一物理人形机器人平台，运动重定向到 23 关节结构意味着不同形态机器人（如轮式平台、仿生非人形机器人）的迁移需要额外调适。第四，训练数据规模相对有限（2.5 小时音频-运动数据 + 544 个剪辑），数据的多样性和覆盖范围限制了手势库的表达力。第五，主动行为的\"正确性\"缺乏明确定义——认知系统可能产生不恰当的主动行为（如过度打断用户、误判用户状态），论文未充分讨论误判场景的安全性和社交后果。第六，现实交互中的长期连续性（10 分钟以上、跨天交互）未经测试。\n\n## 对你课题的启发\n\nProAct 的双系统架构（快系统 vs 慢系统）与分布式认知理论有深刻共鸣——它实际是将社交交互中的认知负载分配到两个不同时间尺度的子系统上，行为系统处理低层次实时协调（相当于人的\"自动加工\"），认知系统负责高层次意图推理（相当于\"控制加工\"）。对于你的人-AI 协作学习研究，这种架构提供了一种具体的技术实现路径：一个 AI 学习伙伴可以同时维持实时的教学互动（回答即兴问题、提供即时反馈）和长期的学习状态推理（追踪知识增长、规划学习路径）。更关键的是，ProAct 的异步意图注入机制——认知系统的推理结果不打断行为系统的流畅交互——暗示了一种\"不打断学习流\"的 AI 辅助设计原则：AI 助手的主动性应发生在恰当的时间窗口，不干扰学习者的自然认知流程。此外，该研究对主动行为质量的关注（何时主动、何时保持沉默）直接对应你的分布式认知框架中对\"认知分工\"（cognitive offloading）边界的思考——代理的主动程度需要在\"支持\"和\"干扰\"之间取得精确平衡。",
+    "excerpt": "来源：records/20260701/09/proact-dual-system/论文总结.md · 本文提出 ProAct，一个将实时多模态交互与长期社交推理解耦的双系统框架，旨在让具身社交Agent从被动响应升级为主动发起社交行为。核心洞察是：实时交互要求低延迟（毫秒级），而主动社交行为需要积累上下文和意图推断（秒级），这两种时间尺度天然冲突。ProAct 通过将交互流程拆分为一个低延迟的\"行为系统\"（Behavioral System）和一个较慢的\"认知系统\"（Cognitive System），并用异步意图注入机制（ControlNet + 流匹配模型）将认知系统产生的主动意图无缝融入行为系统的连续运动流，从而同时满足流畅性和主动性要求。该系统在物理人形机器人上部署，通过真实交互用户研究证明，ProAct 在感知主动性、社交存在感和整体参与度上显著优于纯响应式变体。",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260701/09/proact-dual-system",
+    "original_url": "",
+    "original_label": "",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-06-28 11:00",
     "title": "Reflective AI: A Slow Technology Approach for Design Education",
