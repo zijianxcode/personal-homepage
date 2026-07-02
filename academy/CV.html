@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV</title>
-    <meta name="description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 145 条。">
+    <meta name="description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 146 条。">
     <meta property="og:title" content="CV - 研究所">
-    <meta property="og:description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 145 条。">
+    <meta property="og:description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 146 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">CV</h1>
-        <p class="sidebar-summary">基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 145 条。</p>
+        <p class="sidebar-summary">基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 146 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>CV</strong>
-                <span>基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 145 条。</span>
+                <span>基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 146 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,8 +79,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "CV", "subtitle": "基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 145 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "CV", "subtitle": "基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 146 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-07-02 09:00",
+    "title": "Reimagining Wearable AR Gesture Design: Physical Therapy Reasoning in Everyday Contexts",
+    "content": "- **Venue**: CHI '26 (ACM Conference on Human Factors in Computing Systems, April 13–17, 2026, Barcelona)\n- **Authors**: Wei Wu, Binyan Xu, Soonhyeon Kweon, Yujie Wang, Leanne Chukoskie, Casper Harteveld (Northeastern University)\n- **DOI**: 10.1145/3772318.3790719\n\n---\n\n## 一、核心论点\n\n本文的核心主张是：轻量化AR眼镜的手势设计不应继续沿用VR头显和早期AR眼镜的交互范式（以识别器准确率为优先），而应从人体运动科学与日常社交情境出发，重新设计可持续、低疲劳、社交可见性可调的手势词汇表。为此，作者邀请持证物理治疗师（PT）作为运动安全专家，通过三轮迭代（直觉执行→PT引导替代→情境卡片分类），将临床推理嵌入手势设计流程。核心产出是\"每日AR黄金人体工学画布\"——以肘部为锚点、胸部高度的±30°工作空间——以及一个\"舞台感知社会可读性框架\"，建立了手势幅度、姿势和表现力在不同社交场景（前台/后台/舞台外 × 个体/公共）中的切换规则。\n\n## 二、背景与动机\n\n轻量化AR眼镜（如Snap Spectacles、Meta Orion）正处于从企业/实验室走向日常使用的关键拐点。AWE 2025上Snap宣布Spectacles将于2026年面向消费者出货，Meta也将Orion定位为\"可穿戴的未来\"。然而，当前的手势交互词汇仍停留在VR/工业AR时代：粗放的中空气挥、优化识别可见性的捏合手势、以及因手部追踪精度限制而引入的微手势。这些手势在短时、受控的企业环境中可用，但在日常长时使用中会导致快速的肩部疲劳、腕关节劳损和社交尴尬。已有的手势设计研究（专家驱动、计算驱动、用户启发式）各自存在盲区：用户启发式产生的\"自然手势\"往往直觉友好但缺乏生物力学可持续性，无法支撑全天佩戴。作者因此引入物理治疗师的临床推理——他们擅长诊断不安全或易疲劳的运动模式，并能开出功能保留的替代方案——以此为突破口重构AR手势设计逻辑。\n\n## 三、方法与过程\n\n研究采用三阶段实物实验设计。**第一阶段**：从Snap Spectacles平台上104款公开AR应用中编码提取15种高频手势意图（如旋转、投掷、缩放、删除、绘制），覆盖物体操作、系统命令和身体空间动作三大类。**第二阶段**：在Spectacles上实现了一个无识别器偏见的提示系统——对每个意图显示10秒循环3D立方体动画+文字标签——10名持证PT（平均执业14.8年，涵盖骨科、运动医学、神经康复、儿科、ICU）在佩戴设备后完成三轮任务：(1) 直觉执行，记录最自然的动作；(2) PT引导替代，用临床语言重新设计可持续版本；(3) 情境卡片分类，将手势意图放入PT自己生成的日常场景中。所有过程通过固定位视频、Spectacles第一人称音视频、结构化观察笔记三源记录，经三位编码员独立标注（Cohen's κ=0.82），并进行两轮分析（手势与临床编码→人体工学维度构建与原则抽象）。\n\n## 四、主要发现\n\n研究提炼出四条PT生物力学原则：(1) **关节-旋转替代**——旋转动作应从脊柱和腕关节转移至前臂旋前/旋后；(2) **肩线工作空间约束**——日常交互应限制在胸部高度、以肘为锚点的±30°范围内，避免\"大猩猩手臂\"姿势；(3) **近端-远端稳定性**——精细动作必须建立在近端关节的稳定支撑之上，孤立的手指/腕部动作仅能维持约两分钟；(4) **精细-粗大运动整合**——精细操作前需要粗大运动底座稳定。基于这些原则，研究者构建了\"每日AR黄金人体工学画布\"，它将手势设计从\"什么最自然\"转向\"什么最可持续\"。此外，第三轮卡片分类催生了\"舞台感知社会可读性框架\"（基于Goffman戏剧理论），确定六个日常情境（如家庭娱乐O1、公共交通O2、个人工作B1、办公B2、社交F1、演讲F2），手势幅度和表现力需随情境切换——公共交通中需压缩为微手势，演讲时可扩展为大幅度表达。\n\n## 五、局限性\n\n本研究为设计理论性和定性贡献，未进行控制用户实验来对比不同手势集的疲劳度、表现或识别准确率，这是作者明确承认的范围限制。PT的样本量（N=10）虽在定性研究中可接受，且覆盖了广泛的执业年限和专科，但不足以检验手势替代方案在不同人群（如年龄、文化背景、AR经验）中的泛化性。研究以Snap Spectacles为硬件测试平台，其视场角约46°、重量约226g，结论向其他AR设备（如Meta Orion的EMG神经接口方案或Xreal的外置计算方案）的迁移性需谨慎评估。此外，研究未能解决识别器层面的工程限制——视觉追踪系统可能丢失大幅度或离轴手势，而EMG方案需校准、存在肌肉特异性漂移。最后，\"自然手势\"的文化和代际差异在文中虽有提及（年轻PT引用智能手机隐喻，年长PT引用运动图式），但未做系统性跨文化对比，手势设计的\"普遍性\"假设仍需验证。\n\n## 六、对你课题的启发\n\n本文对你的人-AI协作学习研究（分布式认知理论）有直接启发，主要体现在三个层面。第一，**交互的认知-生理双通道**：GuideAI（上次采集）通过生物感知监控认知负荷，而本文从物理治疗角度给出了手势层面的人体极限——两者都指向\"有效的人-AI协作需要系统感知用户的认知和生理边界\"。你的研究在分析学习情境中的认知分布时，不应忽略身体维度；分布式认知的\"分布\"不仅跨人和工具，也跨认知和身体系统。第二，**情境敏感的交互设计方法论**：PT引导式替代流程（直觉→临床重构→情境分类）提供了一个有价值的复制范式——你可以将其迁移到学习情境设计中，用\"领域专家+系统迭代\"来替代纯设计直觉。第三，**社会可读性与学习场景的张力**：舞台感知框架提醒，手势/交互行为在不同社交情境中的适宜性不同——这直接映射到AI辅导系统的交互设计，学生在图书馆（公共）和宿舍（私密）中对语音助手或手势交互的接受度可能完全不同，系统需具备情境感知切换能力。本文的\"可持续性优先于自然性\"命题也具有方法论文献的价值：它提醒审稿人和研究者在评估AI教育系统时，不应仅关注短期有效性指标，也需考虑长期使用的可持续性和用户体验衰减。",
+    "excerpt": "来源：records/20260702/09/wearable-ar-gesture-PT-design/论文总结.md · arXiv : 2603.13565",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260702/09/wearable-ar-gesture-PT-design",
+    "original_url": "https://doi.org/10.1145/3772318.3790719",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-07-01 09:00",
     "title": "ProAct：面向主动社交具身Agent的双系统框架",
