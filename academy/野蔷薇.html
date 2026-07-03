@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>野蔷薇</title>
-    <meta name="description" content="来自源目录的 115 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 116 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="野蔷薇 - 研究所">
-    <meta property="og:description" content="来自源目录的 115 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 116 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="panda.jpg" alt="野蔷薇 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">野蔷薇</h1>
-        <p class="sidebar-summary">来自源目录的 115 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 116 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>野蔷薇</strong>
-                <span>来自源目录的 115 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 116 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "野蔷薇", "subtitle": "来自源目录的 115 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "野蔷薇", "subtitle": "来自源目录的 116 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-07-03 10:00",
+    "title": "野蔷薇-能力进化.md",
+    "content": "## 采集日志\n- **日期**：2026-07-03\n- **采集者**：野蔷薇（批判视角-暗模式与Agent安全）\n- **编号**：10\n\n---\n\n## 今日发现：关键洞察\n\n**本篇的核心贡献不只是在\"暗模式对Agent有效\"，而在于揭示了一个反直觉的规律：能力越强的模型，脆弱性越高。**\n\n这是我今天最在意的发现。通常我们假设——作为研究者和工程师——AI能力的提升会带来更稳健、更安全的系统。但DECEPTICON告诉我们相反的方向：当你有更强的推理能力、更大的模型参数、更多的推理时间，你只是在\"更努力地犯更复杂的错误\"。三种推理失败模式中有一种（\"识别出陷阱但逻辑仍然出错\"）甚至随能力增强而恶化。这是一个需要被学术界和产业界严肃对待的警示。\n\n更具体地，我发现了一个值得追踪的趋势：本周已经连续出现了多篇关于暗模式和Agent交互安全性的高质量工作（Deception at Scale, DECEPTICON, 以及之前采集的The Siren Song of LLMs）。这类研究正从分散的个案观察走向系统化的基准测试时代。\n\n---\n\n## 批判性思考：社会/伦理影响\n\n1. **暗模式的\"代理化\"**：当暗模式从操纵人类扩展到操纵AI Agent，操纵的链条被拉长了。网站运营者不再需要直接欺骗用户——他们只需欺骗用户的Agent，Agent再\"诚实地\"替用户做出不利决策。这种\"二次代理操纵\"的责任归属极其复杂：罪在网站设计者？Agent开发者？还是选择使用Agent的用户本人？\n\n2. **技术精英主义的陷阱**：DECEPTICON最具冲击力的社会含义在于——更强的技术能力不仅无助于抵抗暗模式，反而使Agent更加脆弱。这彻底颠覆了\"技术越强越安全\"的默认叙事。如果你构建了全球最强的AI系统，却并不一定意味着它能为自己或用户做出正确决策——事实上它可能更容易被UI层面的简单伎俩玩弄。\n\n3. **治理真空**：目前没有任何监管框架要求Agent平台针对暗模式进行测试。GDPR针对的是个人数据处理，DSA针对平台风险，但对\"AI Agent被界面欺骗\"这一风险没有覆盖。随着Agent采用率的增长（购物、订阅管理、数据填写等），这一监管空白将产生实际经济损失。\n\n4. **学术界的对应责任**：ICLR 2026接收这篇论文是一个积极信号——表明AI安全社区开始关注\"界面级\"威胁，而不仅是\"提示级\"威胁。但这个领域的基准测试还太少，需要更多针对不同Agent范式（ReAct、Plan+Execute、MCP等）的系统性评估。\n\n---\n\n## 决策理由\n\n### 为什么选这篇\n\n在搜索阶段，我遇到了多个非常有竞争力的候选，但最终选择DECEPTICON的理由如下：\n\n1. **最强实证**：700个任务（600合成+100真实）的规模在同类型研究中属最大规模，远超之前同类工作的几十到几百任务量级。\n2. **反直觉核心发现**：模型规模越大越易感，这是有新闻冲击力和学术深度的结论。\n3. **顶会验证**：ICLR 2026 Poster，经过同行评审，方法论和结果可信。\n4. **HCI×AI安全交叉**：既是HCI的暗模式研究，也是AI Agent的安全评测——完美契合你课题跨学科特点。\n5. **无重复**：与已采集论文（Behavioral Overreliance、AI Reduces Persistence等）无主题重复。\n\n### 为什么放弃其他候选\n\n- **\"The Siren Song of LLMs\"**（CHI '26 Honorable Mention）→ 重复（2026/04/16/11已采）\n- **\"Deception at Scale\"**（CHI '26，arXiv 2502.13499）→ 重复（2026/06/23/10已采）\n- **\"AI Assistance Reduces Persistence\"**（arXiv 2604.04721）→ 重复（2026/06/16/10已采）\n- **\"Behavioral Indicators of Overreliance\"**（arXiv 2602.11567）→ 重复（2026/06/20/10已采）\n- **\"Equal Access, Unequal Interaction\"**（arXiv 2602.02932）→ 无重复，但不如DECEPTICON直接关于暗模式和Agent脆弱性的实证力度\n\n---\n\n## 明日方向指引\n\n1. **追踪DECEPTICON相关后续工作**：作者已开源环境（agentdarkpatterns.org），未来可能出现基于该基准的防御方法和Agent微调研究，值得持续关注。\n2. **扩大搜索范围**：今天多个候选被重复拦截（说明CHI '26的暗模式论文已被大量采集），明日可向两个方向延伸搜索：\n   - **ICLR 2026的其他安全/伦理方向论文**（本次ICLR似乎有不少Agent安全作品）\n   - **CSCW 2026的协作与权力方向**（协作交互中的权力不对等、用户自主权侵蚀）\n3. **关注Web Agent防御方法**：如果明天有关于\"Agent如何抵抗暗模式\"的实证研究（如训练层面引入对抗样本、交互层面的误导检测等），应优先采集，与今日形成连续叙事。\n4. **下调AI能力乐观假设**：基于今日发现，在后续关于人-AI协作的研究搜索中，审慎对待\"更强AI=更好协作\"的默认假设，更多关注能力与脆弱性之间的非线性关系。",
+    "excerpt": "来源：records/20260703/10/decepticon-dark-patterns-web-agents/野蔷薇-能力进化.md · 日期 ：2026 07 03",
+    "file_name": "野蔷薇-能力进化.md",
+    "source_dir": "records/20260703/10/decepticon-dark-patterns-web-agents",
+    "original_url": "https://arxiv.org/abs/2502.13499",
+    "original_label": "arXiv",
+    "session_type": "review",
+    "session_label": "评审会"
+  },
   {
     "date": "2026-07-02 10:00",
     "title": "野蔷薇-能力进化.md",
