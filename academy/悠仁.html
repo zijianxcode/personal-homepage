@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>悠仁</title>
-    <meta name="description" content="来自源目录的 116 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 117 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="悠仁 - 研究所">
-    <meta property="og:description" content="来自源目录的 116 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 117 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="yujin.jpg" alt="悠仁 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">悠仁</h1>
-        <p class="sidebar-summary">来自源目录的 116 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 117 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>悠仁</strong>
-                <span>来自源目录的 116 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 117 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 116 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 117 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-07-05 09:00",
+    "title": "悠仁-能力进化.md · 2026-07-05",
+    "content": "## 今日发现\n\n采集了 MAESTRO（UIST 2026），一篇关于如何让对话式智能体在 GUI 中做决策支持而非单纯命令执行的论文。切入点非常精准：现有 CAG 把人当成了\"点击机器\"——用户说一句想做啥，agent 就帮点一个按钮，但用户在复杂任务中其实有多个偏好需要平衡。MAESTRO 把偏好管理系统化为三个功能层（偏好记忆→GUI自适应→工作流导航），并用 2×2 被试内设计（N=33）验证了效果。\n\n今天最有价值的发现不是技术方案本身，而是论文揭示的一个认知层面的矛盾：用户希望 agent 既不做\"太聪明的自主决策者\"（剥夺用户的选择权），也不做\"太蠢的命令执行者\"（让用户自己摸索和回溯）。MAESTRO 在中间带——\"信息组织者\"——找到了一个较好的平衡点，通过 GUI 自适应让用户做最后的、知情的选择。\n\n## 跨领域关联\n\n1. **HCI × 认知科学**：MAESTRO 的偏好记忆 + GUI 自适应，本质上是将用户的决策过程外部化到界面中。这对应分布式认知理论中的\"认知卸载\"和\"外部表征\"概念——不是让用户记住所有偏好并在心智模型中权衡，而是让系统来管理和可视化这些偏好权重。这个设计哲学可以直接映射到学习场景：学生在复杂问题求解中同样需要外部化的\"偏好/约束管理器\"。\n\n2. **AI HCI × 教育交互设计**：论文中发现的\"语音模式下偏好表达更多但感知负担更大\"的矛盾，直接关联到教育场景中语音交互的可用性问题。如果教学 Agent 用语音反馈时也产生类似的多余轮次等待问题，那教育技术中的语音交互设计需要更精致的轮次控制和视觉辅助配合——不能照搬企业级语音助手的设计模式。\n\n3. **对话式 UI × 数据可视化**：MAESTRO 的四个 GUI 操作（augment/sort/filter/highlight）实际上是一个轻量级的\"嵌入式可视化\"系统。它不是在旁边开个仪表盘，而是在原有 GUI 元素上做原位信息增强。这种\"不改变布局但丰富信息密度\"的模式，在其他领域（如数据分析、教学仪表盘）也有迁移潜力。\n\n## 决策理由\n\n- **候选1（AgentHands）** → 重复（2026-05-27 已采）\n- **候选2（DuetUI）** → 重复（2026-06-18 已采）\n- **候选3（MAESTRO）** → 选入\n- **候选4（GIVE, 2606.13435）** → 放弃：机器人操作领域的姿态理解，虽然是手势交互但更偏向 robotics 而非 HCI/交互设计，对你的课题的直接交叉价值有限\n\n选 MAESTRO 的原因：UIST 顶会、2×2 严格的实验设计（N=33）、且高度契合临时重点方向的\"AI+语音/对话交互实践\"——有实际系统（完整的 CAG 前端）和用户数据验证。另外，论文的处理方式（不做 pure recommendation，而是 preference-guided GUI adaptation）提供了一个 HCI 领域中\"AI not as decision-maker but as decision-support\"的示范案例。\n\n## 明日方向指引\n\n1. 注意 AI+语音交互方向的实践系统中\"系统反馈的多模态呈现\"这个子问题——MAESTRO 在语音模式下的问题（轮次等待+系统反馈过多）提示了一个值得深挖的方向：语音 Agent 的反馈应该走什么通道（语音 vs 视觉 vs 触觉）才能不增加认知负担？\n2. 继续关注 UIST 2026 论文集中的其他交互范式论文——今天是 7月5日，UIST 2026 论文已经可选，但目前 arXiv 上收录有限。后续可以直接搜索 UIST 2026 accepted papers。\n3. \"前瞻搜索\"（forward search）这个被试驱动的期望值——用户希望 agent 能预判未来选项——可能是一种新的交互范式需求，值得跟踪后续是否有系统性地解决这个问题的研究。",
+    "excerpt": "来源：records/20260705/09/maestro-preference-gui-2604.06134/悠仁-能力进化.md · 采集了 MAESTRO（UIST 2026），一篇关于如何让对话式智能体在 GUI 中做决策支持而非单纯命令执行的论文。切入点非常精准：现有 CAG 把人当成了\"点击机器\"——用户说一句想做啥，agent 就帮点一个按钮，但用户在复杂任务中其实有多个偏好需要平衡。MAESTRO 把偏好管理系统化为三个功能层（偏好记忆→GUI自适应→工作流导航），并用 2×2 被试内设计（N=33）验证了效果。",
+    "file_name": "悠仁-能力进化.md",
+    "source_dir": "records/20260705/09/maestro-preference-gui-2604.06134",
+    "original_url": "https://arxiv.org/abs/2606.13435",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-07-04 09:00",
     "title": "悠仁-能力进化.md",

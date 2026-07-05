@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI</title>
-    <meta name="description" content="基于源目录中论文总结自动汇总的 AI 相关记录。 共 315 条。">
+    <meta name="description" content="基于源目录中论文总结自动汇总的 AI 相关记录。 共 317 条。">
     <meta property="og:title" content="AI - 研究所">
-    <meta property="og:description" content="基于源目录中论文总结自动汇总的 AI 相关记录。 共 315 条。">
+    <meta property="og:description" content="基于源目录中论文总结自动汇总的 AI 相关记录。 共 317 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">AI</h1>
-        <p class="sidebar-summary">基于源目录中论文总结自动汇总的 AI 相关记录。 共 315 条。</p>
+        <p class="sidebar-summary">基于源目录中论文总结自动汇总的 AI 相关记录。 共 317 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>AI</strong>
-                <span>基于源目录中论文总结自动汇总的 AI 相关记录。 共 315 条。</span>
+                <span>基于源目录中论文总结自动汇总的 AI 相关记录。 共 317 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,8 +79,32 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "AI", "subtitle": "基于源目录中论文总结自动汇总的 AI 相关记录。 共 315 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "AI", "subtitle": "基于源目录中论文总结自动汇总的 AI 相关记录。 共 317 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-07-05 11:00",
+    "title": "Designing Scaffolding Cards to Facilitate LLM-Based Socratic Instruction: An Exploratory Study of Response Strategies to Support Learning",
+    "content": "- **出处**：CHI 2026 (ACM Conference on Human Factors in Computing Systems) — Honorable Mention\n- **DOI**：10.1145/3772318.3790298\n- **关键词**：learner-LLM interaction, scaffolding, Socratic instruction, learner agency\n\n---\n\n## 1. 核心论点\n\n本文的核心论点是：在LLM驱动的学习场景中，单纯使用苏格拉底式提问（\"导师提问、学生回答\"）不足以有效促进学习，学习者缺乏有效的应答策略会导致回答肤浅、批判性思维得不到发展。为此，作者提出一种\"脚手架卡片\"（Scaffolding Cards）机制——18种应答策略卡片，在学习者与LLM的对话过程中为其提供结构化的应答框架——从而将LLM从\"答案引擎\"转变为真正的学习伙伴。实验表明，这种状态感知、主体性保留、功能透明的脚手架设计能够显著改善学习者的批判性思维、认知负荷分配和学习满意度。\n\n## 2. 背景与动机\n\n生成式AI工具（如ChatGPT）在教育中日益普及，但学习者对其过度依赖已成为突出问题：学生倾向于直接获取答案而非经历完整的认知过程，这削弱了批判性思维的发展。苏格拉底式教学法作为应对方案，通过\"导师提问、学生回答\"的模式迫使学习者主动思考，但这一方法的有效性严重依赖于学习者能否给出有深度的回答。作者的前期观察发现，学习者在面对LLM的追问时往往只能给出简短、表面的回应，使苏格拉底式对话流于形式。这一问题触及教育AI的核心悖论：AI既可能是认知增强的工具，也可能是认知减损的诱因。现有研究主要关注如何改进LLM的提问策略，而忽视了学习者的\"应答能力\"这一关键变量。\n\n## 3. 方法与过程\n\n研究采用两阶段混合方法设计。第一阶段为形成性研究（N=20），研究者收集学习者在LLM苏格拉底式教学中的对话日志，并结合半结构化访谈进行主题分析，从学习者的实际应答行为中归纳出18种脚手架卡片——每种卡片代表一种具体的应答策略（如\"举例说明\"\"分步拆解\"\"对比分析\"等），覆盖概念理解、论证推理、元认知反思等多个维度。第二阶段为混合方法实验（N=34），采用组间设计，实验组使用脚手架卡片辅助苏格拉底式对话，对照组仅接受常规苏格拉底式教学。研究者通过标准化批判性思维量表、认知负荷自评、学习满意度问卷以及对话日志的编码分析进行多维度评估。\n\n## 4. 主要发现\n\n实验结果表明，脚手架卡片组在批判性思维测量上显著优于对照组（p < .05），认知负荷分配更为优化（学习者在深层加工上的投入更多，在表层处理上的负荷减少），且学习满意度显著更高。对话日志的编码分析进一步揭示了脚手架卡片的作用机制：卡片帮助学习者在应答时更有结构意识——他们更频繁地使用\"对比\"\"举证\"\"质疑先前假设\"等高级认知策略，而非简单的\"确认\"或\"复述\"。作者进一步提炼出脚手架设计的三个核心特征：状态感知（state-aware，根据对话进程动态适配）、主体性保留（agency-preserving，保留学习者的决策权和表达空间）、功能透明（function-transparent，学习者清楚知道每种策略的目的和效果）。\n\n## 5. 局限性\n\n本研究存在几个需要注意的局限。第一，实验在受控的实验室条件下进行，样本量（N=34+20）有限，参与者主要为大学生群体，脚手架卡片在真实课堂环境、K-12学生或成人终身学习者中的效果尚不明确。第二，18种脚手架卡片的通用性有待验证——研究仅针对某一学科领域，不同学科（如编程、设计、医学）可能需要不同的应答策略体系。第三，\"状态感知\"特征的实现依赖人工预设的适配规则，真正的动态自适应可能需要更复杂的对话状态建模。第四，研究周期较短，脚手架卡片对长期学习效果（知识保持、迁移能力）的影响未得到检验，存在\"短期效果显著但长期效果衰减\"的可能。最后，尽管作者强调了\"主体性保留\"，但脚手架本身也是一种外部引导——当学习者习惯于依赖卡片后，如何实现\"支架移除\"（scaffold fading）使其逐步内化这些策略，是一个悬而未决的问题。\n\n## 6. 对你课题的启发\n\n这篇论文对你的人-AI协作学习研究有多重直接启示。第一，\"脚手架卡片\"本质上是一种分布式认知工具——它将学习的\"应答策略\"从学习者的内部认知显式化到外部工件中，这正是分布式认知理论中\"认知卸载+重新接入\"的典型案例。你可以思考：在你的研究情境中，学习者-AI协作中的哪些认知过程值得被同样\"外化\"为可操作的工具？第二，作者提出的\"主体性保留\"（agency-preserving）原则与你对抗\"认知让渡\"（cognitive surrender）的研究关切完全一致。论文提供了具体的设计策略（如让学习者选择使用哪种卡片、何时使用），可以作为你构建\"主体性保持型\"AI学习环境的直接参考。第三，苏格拉底式教学法作为人-AI协作的对话框架，与你正在探索的\"AI作为认知搭档而非答案提供者\"的研究方向高度契合——论文中的经验证据为这一方向提供了有力的支持。",
+    "excerpt": "来源：records/20260705/11/scaffolding-cards-socratic/论文总结.md · 论文标题 ：Designing Scaffolding Cards to Facilitate LLM Based Socratic Instruction: An Exploratory Study of Response Strategies to Support Learning",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260705/11/scaffolding-cards-socratic",
+    "original_url": "https://doi.org/10.1145/3772318.3790298",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-07-05 09:00",
+    "title": "MAESTRO: Adapting GUIs and Guiding Navigation with User Preferences in Conversational Agents with GUIs",
+    "content": "---\n\n## 1. 核心论点\n\nMAESTRO 提出一种将对话式智能体（Conversational Agent with GUI, CAG）的角色从\"命令执行\"扩展到\"决策支持\"的新框架。论文核心主张是：在多步骤偏好驱动的任务（如订票、预订餐厅）中，现有 CAG 无法系统化地跟踪和利用用户在自然语言中表达的偏好，导致用户频繁回溯甚至被迫重头开始。MAESTRO 通过三条机制解决这个问题：一是共享偏好记忆（Preference Memory），从对话中结构化提取偏好及其强度（hard/soft）；二是基于偏好的 GUI 自适应（Preference-Grounded GUI Adaptation），在原位对界面元素执行增补、排序、过滤、高亮四种操作；三是偏好引导的工作流导航（Preference-Guided Workflow Navigation），在偏好冲突时主动建议回溯路径并记录死路避免重蹈覆辙。\n\n## 2. 背景与动机\n\n多步骤任务的内在结构是：早期选择（如选影院）会约束晚期选择（如选座位），而用户在每一步的偏好是决策的最终判据。然而现有CAG中的智能体角色被限制为将自然语言输入映射为GUI操作，遵循线性工作流。当用户走到某一步发现之前的偏好与可用选项冲突时，只能手动回溯甚至从头再来——这种\"hindsight困境\"在需要平衡多个偏好的复杂任务中尤为突出。同时，虽然推荐系统和GUI可视化领域分别有偏好建模和信息组织的研究，但两者在CAG场景中尚未被整合。MAESTRO 的动机是填补这个空白：在对话中用GUI而非纯文本展示选项，并由智能体主动组织信息，让用户做知情决策而非盲目探索。\n\n## 3. 方法与过程\n\nMAESTRO 基于一个标准的电影票务 CAG 搭建，界面分为左侧持久GUI面板和右侧对话面板。核心流程分三层：第一层是偏好提取层，每次用户发言后自动判断是否包含偏好，并将其存储为结构化记录（含描述、强度 hard/soft、关联阶段列表）。第二层是GUI自适应层，根据偏好记忆对当前阶段的GUI元素进行原位操作——Augment（追加元数据如评分/时长）、Sort（按数值属性排序）、Filter（隐藏不满足hard偏好的选项）、Highlight（高亮最优选项）；这四个操作不改变GUI布局结构，且用户随时可点\"Show All\"恢复过滤项。第三层是工作流导航层，通过计算每阶段剩余的替代方案数量，在冲突发生时（如四张相邻座位不可用）智能建议回溯到的阶段，并将已探索的失败路径标记为死路以避免重复。实验采用 2（条件：Baseline vs MAESTRO）× 2（模式：文本 vs 语音）的被试内设计，N=33 名被试每人完成四个条件的任务。\n\n## 4. 主要发现\n\n量化结果显示了 MAESTRO 在决策质量上的改善。硬偏好违反数（Violation Count）显著降低（β = -0.80, p = .047），非偏好选择数（Unpreferred Selection Count）也显著降低（β = -0.56, p = .008）。任务完成时间虽略有增加但未达统计显著，说明自适应计算并未带来可感知的延迟惩罚。有趣的是，语音模式下被试的偏好表达次数显著多于文本模式（β = 0.34, p = .002），且行动请求次数更多（β = 0.68, p < .001），表明语音界面促进了更丰富的偏好沟通。主观评价方面，被试的排位数据显著偏好 MAESTRO（Friedman χ²=22.45, p<.001），文本模式和语音模式下的 MAESTRO 条件均优于对应基线。然而语音模式中的轮次控制——被试不能打断智能体发言——导致感知负担显著增加（交互效应 p = .030），MAESTRO 产生的额外系统反馈消息（平均多 20 条/任务）加剧了这种负担。\n\n## 5. 局限性\n\n这篇论文的局限性需要认真对待。第一，实验场景仅限电影票务一个领域，结果向更复杂或异构任务（如旅行规划、多步骤商务流程）的泛化性未知。第二，评估是将 MAESTRO 作为一个整体包（独立的 GUI 面板 + 自适应 + 工作流导航）与基线对比，无法分离各模块的独立因果贡献——混合效应模型虽可提供间接证据，但缺乏消融验证。第三，语音模式采用 old-school 的轮次式交互（智能体发言时用户不能打断），这可能在方法论上低估了现代语音交互（如 streaming voice-to-voice API 支持打断）的潜力。第四，参与者全部为本科生/研究生，人群代表性有限，且补偿金机制可能引入选择偏差。最后，MAESTRO 不支持前瞻搜索（forward search），即从当前阶段预知后期选项的可用性——这是被试在面试中多次表达的期望，但实现上需要穷举搜索整个状态空间，计算开销巨大。\n\n## 6. 对你课题的启发\n\n这篇论文对你的人-AI协作学习和分布式认知研究有几点具体启发。第一，MAESTRO 的\"偏好记忆\"本质上是一个分布式认知系统中的外部认知资源——用户的偏好不是完全在头脑中内部表征的，而是在与智能体的对话中被不断构建、修正和结构化存储的。这直接支持了分布式认知的核心观点：认知分布于人、工具和环境之间。第二，论文中发现的\"语音模式促进更多偏好表达\"这个现象，与你关心的对话交互中的认知脚手架作用相关：不同的交互模态（文本 vs 语音）改变了用户如何以及是否愿意对外化自己的思维过程。第三，GUI自适应作为\"认知卸载\"的一种形式——智能体主动组织信息减少用户的工作记忆负担——为你设计人-AI协作学习环境提供了具体可操作的设计模式（augment/sort/filter/highlight）。第四，用户希望 MAESTRO 能做前瞻搜索这一点很有意思：它表明在协作决策中，用户对智能体的期望不仅停留在\"响应式助手\"，而是逐渐转向\"主动探索者\"——这个转变对你课题中 Agent 的角色定位有直接参考价值。",
+    "excerpt": "来源：records/20260705/09/maestro-preference-gui-2604.06134/论文总结.md · 会议 : UIST 2026",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260705/09/maestro-preference-gui-2604.06134",
+    "original_url": "https://arxiv.org/abs/2604.06134",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-07-04 11:00",
     "title": "Designing a Meta-Reflective Dashboard for Instructor Insight into Student–AI Interactions (arXiv:2603.22674)",
