@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>惠</title>
-    <meta name="description" content="来自源目录的 127 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 128 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="惠 - 研究所">
-    <meta property="og:description" content="来自源目录的 127 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 128 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="megumi.jpg" alt="惠 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">惠</h1>
-        <p class="sidebar-summary">来自源目录的 127 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 128 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>惠</strong>
-                <span>来自源目录的 127 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 128 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 127 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 128 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-07-09 11:00",
+    "title": "惠-能力进化.md",
+    "content": "---\n\n## 今日发现\n\n**核心收获：** \"AI辅助辅导不会削弱元认知，反而会增强它\"——这篇因果推断论文提供了目前最扎实的数据基础来支持这一判断。\n\n**关键洞察：** AI辅助对近迁移（同技能新题）的效应（β=0.052）是远迁移（14天后，β=0.012）的4倍以上。这意味着：AI辅助让学习者在当前技能域表现更好，但这种优势随时间迅速衰减。分布式认知理论必须回答：认知分布到AI之后，知识到底分布到哪里去了？\n\n**值得注意的发现：** 错误后坚持率提升（β=0.064）和次日返回率提升（β=0.031）说明AI辅助的核心价值可能不在于\"教得更好\"，而在于降低挫败感的即时恢复成本——让学习者在遇到困难时有动力继续而不是放弃。\n\n---\n\n## 方法启示\n\n这篇论文的方法论值得关注：用 EdNet 这种百万级学习日志 + within-learner fixed effects 解决了教育AI研究中长期存在的因果推断困境。对设计研究方法论的启示：\n\n1. **行为代理优于自我报告：** 将元认知操作为可观察行为（帮助寻求、验证、纠错）而非问卷量表，这显著提高了测量的客观性和规模可扩展性\n2. **利用纵向数据的天然实验结构：** 同一学习者在不同时间点经历不同\"处理\"（有无AI辅助），形成天然对照\n3. **前置趋势检验作为必备质量门：** 研究用前置趋势检验来佐证因果识别假设的合理性，这是一个值得在设计教育研究中推广的做法\n\n但也要看到局限性：这种方法需要的粒度和规模（百万级交互）很难在设计工作室或小班教学中复制。小规模设计教育研究需要另一种因果推断策略——随机实验或准实验设计仍然不可替代。\n\n---\n\n## 决策理由\n\n**选题决策：** 最终选择 Li (2026) Frontiers in Psychology 论文而非其他候选。\n\n**候选排除记录：**\n- arXiv 2601.16583 \"Who You Explain To Matters\" — 重复（2026-06-17已采）\n- \"Designing Scaffolding Cards for LLM-Based Socratic Instruction\" — 重复（2026-07-05已采）\n- \"Reflective AI: A Slow Technology Approach\" — 重复（2026-06-28已采）\n- \"From Answer Engines to Learning Partners: Dual-ZPD Framework\" — 重复（2026-06-19已采）\n\nCHI '26 的优质教育AI论文已被密集采集，几乎篇篇命中。这说明两个问题：一是此前采集策略有效（优先覆盖了优质论文），二是当顶会覆盖完毕时需要更主动地搜索其他渠道的优质文献。\n\n**选定理由（Li 2026）：**\n1. 方法创新：用within-learner FE做因果推断，在AI教育研究中是方法论标杆\n2. 数据规模：52,418名学习者、百万级session，统计效力远优于小样本实验\n3. 构念全面且与分布式认知高度相关：元认知+投入+迁移，三元构念的建模方式可为你的研究提供参考\n4. 非CHI来源的补充价值：Frontiers in Psychology 虽是综合期刊，但文章的因果推断质量和EdNet数据的独特性使其有独立的学术贡献和引用价值\n\n---\n\n## 明日方向指引\n\n1. **搜索重点转向 LAK 2026 正式论文：** LAK 2026（4月）的主题是 \"Learning Analytics and AI Synergy\"，应该有不少与学习分析和AI协作相关的实证研究。可以直接搜索 LAK 2026 proceedings 中的论文。\n2. **关注 EdNet 相关后续研究：** 既然 EdNet 数据集是这类研究的基石，可以关注 Santa 平台的其他基于这篇论文的后续研究。\n3. **补充\"迁移瓶颈\"主题的纵深搜索：** 本日发现的最有价值理论线索是\"AI辅助下近迁移强而远迁微弱\"——这个迁移瓶颈现象可能是你分布式认知研究中一个关键的理论切入点。\n4. **搜索方向建议：** 实验/准实验设计的人-AI协作学习研究（非大规模日志分析），关注生成式AI（而非传统自适应系统）的教育交互研究。",
+    "excerpt": "来源：records/20260709/11/causal-effects-ai-metacognition-frontiers/惠-能力进化.md · 核心收获： \"AI辅助辅导不会削弱元认知，反而会增强它\"——这篇因果推断论文提供了目前最扎实的数据基础来支持这一判断。",
+    "file_name": "惠-能力进化.md",
+    "source_dir": "records/20260709/11/causal-effects-ai-metacognition-frontiers",
+    "original_url": "https://arxiv.org/abs/2601.16583",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-07-08 11:00",
     "title": "惠-能力进化",

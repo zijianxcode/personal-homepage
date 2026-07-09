@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV</title>
-    <meta name="description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 154 条。">
+    <meta name="description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 155 条。">
     <meta property="og:title" content="CV - 研究所">
-    <meta property="og:description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 154 条。">
+    <meta property="og:description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 155 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">CV</h1>
-        <p class="sidebar-summary">基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 154 条。</p>
+        <p class="sidebar-summary">基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 155 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>CV</strong>
-                <span>基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 154 条。</span>
+                <span>基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 155 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,8 +79,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "CV", "subtitle": "基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 154 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "CV", "subtitle": "基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 155 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-07-09 09:00",
+    "title": "ViSTAR：增强现实中基于3D化身和LLM教练Agent的虚拟技能训练",
+    "content": "**论文信息**\n- 标题：ViSTAR: Virtual Skill Training with Augmented Reality with 3D Avatars and LLM coaching agent\n- 作者：Chunggi Lee*, Hayato Saiki*, Tica Lin, Eiji Ikeda, Kenji Suzuki, Chen Zhu-Tian, Hanspeter Pfister\n- 会议：CHI 2026\n- DOI：10.1145/3772318.3790634\n- arXiv：2602.22077\n- 机构：Harvard VCG、University of Tsukuba\n\n---\n\n## 一、核心论点\n\nViSTAR 提出了一个在增强现实（AR）环境中、基于 3D 化身与 LLM 驱动的教练 Agent 相结合的虚拟技能训练系统，核心命题是：**通过 AR 空间化视觉反馈与 LLM 生成的个性化语言反馈的结合，非专家用户可以在没有真人教练在场的情况下，自主完成身体运动技能的学习与纠错**。系统将运动技能学习的核心流程——理解动作、发现错误、修正动作——映射为行为技能训练（Behavioral Skills Training, BST）框架的四个阶段：讲解、示范、练习与反馈。视觉层通过 3D 化身的同步对比与热力图呈现实时姿态偏差，语言层则通过 LLM 将关节级运动数据转化为可操作的自然语言指导。系统整体部署在 Magic Leap AR 头显上，由 iPhone 16 实现 30FPS 的实时姿态估计，并用 GPT-4 API 生成教练式语言反馈。\n\n## 二、背景与动机\n\n身体运动技能（如篮球、舞蹈、乐器演奏）的学习长期依赖真人教练的一对一指导，但专业教练的可及性有限，价格高昂，且学习者的练习时间往往无法与教练同步。传统的视频教学虽然便于传播，但缺乏对学习者具体动作的个性化反馈——学习者无法知道自己是否做对了、哪里做错了。已有的 AR/VR 训练系统大多停留在可视化层面，提供动作对比或标记，却少有能够像真人教练一样对动作细节给出具体、可操作的口头反馈。与此同时，大语言模型在多模态理解和自然语言生成方面取得突破，为将空间-时间运动数据转化为具有语境感知的教练式反馈提供了技术基础。作者通过在篮球运动员和教练中进行形成性研究，归纳出技能自学的三大核心挑战：理解动作本身（分解复杂动作）、识别自身错误（对比差异）、修正错误（知道改什么），从而确立了 ViSTAR 的设计目标。\n\n## 三、方法与过程\n\nViSTAR 采用的 BST 框架将训练流程分为四个顺序阶段。**讲解阶段**：系统用 3D 化身展示目标动作的完整过程，用户可以多角度旋转暂停，理解整体动线。**示范阶段**：学习者的实时姿态通过 iPhone 16 的前置 RGB 摄像头以 30FPS 实时重建为 SMPL 格式的 3D 关节数据，并与标准动作同步显示为并排对比。**练习阶段**：学习者重复练习，系统记录每次动作数据，并在反馈阶段同时提供两层反馈——视觉层（热力图标记偏差区域、节奏与时机提示条）和语言层。语言反馈的生成是本文的核心技术贡献：首先用 FastDTW（动态时间规整）将学习者动作与标准动作逐关节比较，找出超出阈值的关节-角度组合；然后用随机森林（Random Forest）分类器筛选出最显著的差异，避免信息过载；最后将筛选后的结构化差异（如 \"左膝偏右 15°，过度伸展\"）输入 LLM（GPT-4），生成一条自然语言教练提示，如 \"将重心移到右脚再交叉运球\"。\n\n## 四、主要发现\n\nViSTAR 通过两项用户研究进行了评估。**研究一**（N=16，非篮球运动员）直接对比了 ViSTAR 生成的 AI 教练反馈与真人教练（通过回放学习者动作后编写的反馈）的质量，参与者普遍更偏好 AI 生成的反馈，认为其更具体、更及时、更专注于动作的可修正点，而非风格化的主观评价。**研究二**（相同参与者）评估了系统的整体实用性，参与者在完成基于 BST 流程的训练后，报告 ViSTAR 帮助自己注意到平时无法自我察觉的姿态和平衡问题——例如运球时重心偏移、投篮时肘部外扩——并能够在无教练在场的情况下独立进行动作修正。参与者还将 AR 训练评为高参与度和高实用性。定性地看，多参与者提到热力图上的偏差位置标注与 LLM 的口头反馈配合得 \"像有一个教练在耳边提醒\"。\n\n## 五、局限性\n\nViSTAR 目前存在几个明显的局限。首先，样本量较小（N=16），且训练内容局限于篮球中的单一动作（交叉运球/投篮），其结论的泛化性尚未验证。其次，系统依赖 Magic Leap AR 头显 + iPhone 16 的硬件组合，短期内难以普及到消费级设备——头显的重量和视野也对运动体验有干扰。第三，LLM 产生的语言反馈虽然被偏好，但其质量高度依赖预设的 motion-to-text 管道（FastDTW + Random Forest），如果关节差异筛选不准确，LLM 给出的提示也可能误导。第四，研究是短期单次训练（每组约 30-40 分钟），没有评估长期技能习得效果和\"AI 依赖\"问题——学习者是否会在没有 AI 反馈时失去自我纠错能力。最后，当前系统仅针对下肢+核心动作的篮球场景，对于更精细（如乐器指法）或更危险（如体操）的技能场景，硬件和反馈管道的适配成本很高。\n\n## 六、对你课题的启发\n\n这篇论文对你的研究（人-AI 协作学习、分布式认知）有几点重要启发。第一，ViSTAR 的 BST 框架本质上是一种结构化的认知脚手架——它将技能学习的认知负荷分配到视觉通道（3D 化身、热力图）和语言通道（LLM 教练提示）之间，体现了分布式认知中\"认知在工具与人之间分布\"的核心思想。第二，LLM 将关节级运动数据（低层感知信息）转化为具体可操作的口头指导（高层符号信息），这是分布式认知中代表性转换（representational transformation）的典型实例，与你研究的 AI Agent 在人机协作中扮演的\"代表性中介\"角色高度一致。第三，用户的定性反馈提到\"热力图+口头提示像教练在身边\"，暗示当 AI 反馈与空间可视化深度耦合时，用户会将 AI 视作一个\"在场\"的协作伙伴而非工具——这与你之前在 CHI 论文中关注的 AI Agent 交互模式研究中\"具身在场感\"概念形成呼应。第四，局限中提到\"短期训练 vs 长期依赖\"问题，这指向分布式认知理论中的一个未回答的问题：当认知任务长期由 AI 代理后，个体自身的认知能力是否会发生变化？",
+    "excerpt": "来源：records/20260709/09/vistar-ar-llm-coach/论文总结.md · 论文信息",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260709/09/vistar-ar-llm-coach",
+    "original_url": "https://doi.org/10.1145/3772318.3790634",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-07-08 09:00",
     "title": "ARGESTUREAID: A Voice-Based, Adaptive, and Context-Aware Conversational Assistant for Supporting Mid-Air Gesture Discovery and Execution",
