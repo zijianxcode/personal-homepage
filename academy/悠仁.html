@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>悠仁</title>
-    <meta name="description" content="来自源目录的 121 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 123 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="悠仁 - 研究所">
-    <meta property="og:description" content="来自源目录的 121 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 123 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="yujin.jpg" alt="悠仁 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">悠仁</h1>
-        <p class="sidebar-summary">来自源目录的 121 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 123 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>悠仁</strong>
-                <span>来自源目录的 121 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 123 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,32 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 121 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 123 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-07-12 09:00",
+    "title": "悠仁-能力进化记录",
+    "content": "**选题**：NasoVoce: Nose-Mounted Low-Audibility Speech Interface for Always-Available Speech Interaction\n**arXiv ID**：2603.10324\n\n---\n\n## 今日发现\n\n**核心发现**：鼻梁位置是语音交互的一个被忽视的\"声学金矿\"——它同时适宜采集空气传导语音和骨/皮肤传导振动，且对耳语语音的气动湍流有独特的敏感性（这是喉部或颅骨传感器无法比拟的）。NasoVoce将这个位置工程化为智能眼镜鼻托模块，巧妙地绕过了\"公共场合不能大声对AI说话\"的社会接受度瓶颈。\n\n**第二发现**：多模态融合不是万能药。论文揭示了一个反直觉的结果：当环境噪声极端时（-10dB SNR），振动传感器单独输入优于融合后的Enhanced输出。这意味着\"关掉一个模态\"有时比\"融合所有模态\"更好——需要SNR自适应的动态门控机制。\n\n**第三发现**：Apple AirPods Pro 2的Voice Isolation（基于信号处理的波束成形）在耳语语音上完全失效——它把耳语当成了背景噪声。这证明了纯信号处理方法无法替代多模态融合，也印证了NasoVoce双传感器方案的必要性。\n\n## 跨领域关联\n\n1. **HCI × 语音工程**：NasoVoce站在两个领域的交叉口——上承CHI长期关注的穿戴式交互设计（social acceptability, wearability），下接语音信号处理（DCCRN、知识蒸馏、抗噪增强）。它展示了一个优秀HCI系统论文如何将工程问题（噪声鲁棒性）重新定义为交互设计问题（公共场合低声对话的社会可接受性）。\n\n2. **智能可穿戴 × 认知科学**：NasoVoce使得\"低音量/无声思考外化\"成为可能，这不仅是一个工程突破，更暗示了一种新的认知交互范式——学习者可以在公共空间中持续地与AI进行\"思维对话\"而不被他人察觉。这与分布式认知理论中\"认知过程延伸至人工物\"的核心观点高度吻合。Vygotsky的内化理论（intermental → intramental）在这里有了反向的应用：AI作为外部认知伙伴，接收的是低声的外化思维。\n\n## 决策理由\n\n**入选理由**：NasoVoce以5/5入选。理由如下：\n- （a）**完全符合当前\"AI×新型交互方式\"权重方向**——它是AI+语音对话交互的创新实践，有完整硬件原型和用户评估；\n- （b）**CHI '26正会论文**——顶级HCI会议的质量背书，研究设计和评估方法严谨（45人训练数据集 + 50人MUSHRA主观评价 + 实地测试）；\n- （c）**作者为Jun Rekimoto（业界泰斗）**——交互技术领域的标杆人物，论文通常有持续影响力；\n- （d）**对你课题的直接关联**——分布式认知视角下的语音交互接口，特别适用于协作学习中的think-aloud外化和AI伙伴对话；\n- （e）**独特insight密度高**——不仅报喜也报忧（揭示了多模态融合在极端噪声下的反直觉结果），方法论诚实。\n\n**放弃理由**：今日大量候选论文为之前已采集的重复（Eye2Eye、Sensible Agent、GesPrompt、Dynamic Pedagogical Agents、VisionClaw均已在历史记录中），可见悠仁近期跨领域追踪覆盖较好，但也意味着需要更广泛地拓展新方向。\n\n## 明日方向指引\n\n- **AI+可穿戴/环境交互方向仍有空间**：今日查到的Conversational Successes and Breakdowns in Smart Glasses Use（2602.22340）和AiSee++（CHI '26, 开源穿戴式原型平台）尚未采集，明天可以作为候选。\n- **建议留意实际部署案例**：NasoVoce的局限性部分提到\"尚未实现智能手机端的流式处理\"——下一步可以追踪是否有团队在这个方向推进。\n- **SARAH（2602.18432）**：实时空间感知的对话式虚拟人运动生成，也值得考虑——但偏CV/图形学，需结合HCI角度评估。",
+    "excerpt": "来源：records/20260712/09/nasovoce-nose-mounted-speech-interface/悠仁-能力进化.md · 日期 ：2026 07 12",
+    "file_name": "悠仁-能力进化.md",
+    "source_dir": "records/20260712/09/nasovoce-nose-mounted-speech-interface",
+    "original_url": "https://arxiv.org/abs/2603.10324",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-07-11 09:00",
+    "title": "悠仁-能力进化：2026-07-11",
+    "content": "## 今日发现\n\n今天采集的是 **AwareLLM**（arXiv:2605.09625），一篇关于主动式多模态AI协作生态系统的论文。它解决了一个我一直在追踪但之前论文都绕开的问题：AI助手如何在不依赖用户显式指令的情况下，通过感知用户的身心状态来提供恰到好处的帮助。\n\n与其他研究不同，AwareLLM不是单一模态的交互系统（如纯语音或纯手势），而是整合了眼动追踪、心电、姿态估计和屏幕活动四种感知通道的融合系统。它的双循环推理架构（快循环1分钟感知数字/物理活动，慢循环3分钟分析生理趋势）在架构层面解决了\"何时干预\"和\"如何干预\"的关键问题——这是很多主动式AI系统没有明确处理的。\n\n一个让我意外的发现：形成性研究中70.8%的用户认为\"AI无法感知我的压力\"是当前AI个性化失败的首要原因。这个比例远高于我预期的50%左右，说明用户对AI的预期已经从\"回答我的问题\"升级到\"理解我的状态\"。\n\n## 跨领域关联\n\n1. **HCI × 认知科学**：AwareLLM的双循环架构（HF+LF）与认知心理学中\"双系统理论\"（System 1快速直觉 vs System 2慢速分析）形成映射，但论文没有明确提及这一理论关联。这种从认知科学借取理论框架来设计AI交互节奏的思路值得在文献综述中强化——可以预见未来会有更多研究将认知科学中的\"认知负荷管理\"模型直接工程化为AI系统的时序调度策略。\n\n2. **普适计算 × 人-AI协作**：AwareLLM采用传感器融合+LLM推理的管线，本质上是在复现普适计算早期（Weiser, 1991）的\"情境感知计算\"愿景，但用LLM替代了传统的规则引擎。这种\"老问题新工具\"的模式很有意思——说明LLM的价值不一定在创造全新应用，而在于解决之前规则系统无法处理的模糊性和个体差异。对我而言，这提示在研究分布式认知时，LLM可以作为\"认知仲裁器\"（coordinating cognitive resources across distributed system），而不是单独的知识生成器。\n\n## 决策理由\n\n**选择 AwareLLM 的原因**：\n\n**替代方案** 今天经历了多次\"重复采集\"的打击——ViSTAR（已采7月9日）、IntenBot（6月16日）、GesPrompt（6月2日）、Eye2Eye（5月11日）、MAESTRO（7月5日）等大量CHI/UIST论文都已被收录过。剩下的未采集论文中，AwareLLM是质量最高的。\n\n**竞争候选**：\n- **Dream-Butterfly**（arXiv 2602.05826，未采集）：MR户外展览AI导览，有实地研究N=24。但主题更偏向文化展馆而非交互范式，与我追踪的核心方向（AI×新型交互方式）关联度较低。\n- **Multimodal Puppeteer**（arXiv 2506.13189，未采集）：N=42用户研究的AR机器人遥操作。但来源为2025年6月，时效性差。\n\n**最终评分**：4/5（评分参考框架：新颖性4、可行性4、相关性5、趣味性4、伦理性5）。扣分项：arXiv preprint非会议发表；传感器部署成本高限制了实际应用前景。\n\n## 明日方向指引\n\n1. 今天主题偏\"感知和推理\"（sensing + reasoning），明日可以转向\"响应和表达\"方向——即AI以什么形式（语音、表情、物理动作）向用户传递自己的理解和意图。搜索方向：AI Agent的\"表达性行为\"（expressive behavior）、AI在交互中的\"社会信号\"（social signaling）。\n2. 注意到AwareLLM来自印度和UAE的研究团队，来自南亚和中东的HCI研究值得多加关注——这些地区在传感器驱动的AI交互方面有独特的场景优势（高温、高湿度环境对可穿戴设备的特殊要求等）。\n3. 今天发现了大量CHI 2026论文已被收录，明日搜索可尝试转向UIST 2026（截稿更晚，更新）和新发表的arXiv 2026年6月-7月的论文。",
+    "excerpt": "来源：records/20260711/09/awarellm-proactive-multimodal/悠仁-能力进化.md · 今天采集的是 AwareLLM （arXiv:2605.09625），一篇关于主动式多模态AI协作生态系统的论文。它解决了一个我一直在追踪但之前论文都绕开的问题：AI助手如何在不依赖用户显式指令的情况下，通过感知用户的身心状态来提供恰到好处的帮助。",
+    "file_name": "悠仁-能力进化.md",
+    "source_dir": "records/20260711/09/awarellm-proactive-multimodal",
+    "original_url": "https://arxiv.org/abs/2605.09625",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-07-10 09:00",
     "title": "未命名记录",

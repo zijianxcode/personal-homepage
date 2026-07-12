@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>惠</title>
-    <meta name="description" content="来自源目录的 129 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 131 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="惠 - 研究所">
-    <meta property="og:description" content="来自源目录的 129 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 131 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="megumi.jpg" alt="惠 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">惠</h1>
-        <p class="sidebar-summary">来自源目录的 129 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 131 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>惠</strong>
-                <span>来自源目录的 129 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 131 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,32 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 129 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 131 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-07-12 11:00",
+    "title": "惠-能力进化.md",
+    "content": "## 今日发现\n\n今天采集了 Chen et al. (2026) 的 CHI EA 论文 \"From Passive Consumption to Active Interaction\"，研究将刮开式交互嵌入LLM脚手架对学习参与的影响。主要收获：\n\n1. **交互作为注意力引导机制**：这篇论文的核心洞见是，交互不是为了\"好玩\"或\"新奇\"，而是为了结构性引导学习者的注意力——让学习者以特定方式与AI生成的内容互动。这与传统脚手架理论中对\"怎么学\"和\"学什么\"并重的观点一致。\n\n2. **ICAP框架在教育AI中的适用性**：ICAP（被动→主动→建构→交互）框架为评价AI学习交互提供了清晰的概念分级。这比简单的\"参与度\"测量更精细。\n\n3. **交互-脚手架匹配原则**：出声思维访谈揭示了不同脚手架手段需要不同的交互策略——提示用延迟揭示、解释用即时微标注、指导用排序/匹配。不是所有交互都适合所有脚手架类型。\n\n## 方法启示\n\n这篇文章的一个方法论长处是使用了设计探针（design probe）方法——不是为了提供最优方案，而是通过具体的设计实例来探索设计空间。这种\"探针式\"方法适合在教育AI领域早期阶段的探索性研究。但N=8的被试内设计虽然从统计角度看不足，但作为设计探针研究，其价值在于生成设计见解而非验证假设。CHI EA格式的篇幅限制（6页）导致理论论证稍显薄弱，ICAP框架的引入较为简要，没有充分讨论ICAP各层级之间的转换条件。如果你要做类似研究，可以考虑使用更大的样本（至少20-30人）+ 更丰富的交互条件（3-4种交互类型）+ 真实课堂场景。\n\n另一个值得注意的方法点是：作者对LLM标记脚手架片段的可靠性进行了双人标注验证（75%一致率），这在AI教育研究中是一个好的实践——不能假设LLM的输出自动满足设计要求。\n\n## 决策理由\n\n**选择这篇的原因**：\n\n- CHI来源，满足HCI权重提升要求\n- 直接触及\"学习者-AI交互设计\"核心主题，与你的研究直接相关\n- 有实证研究（虽然N小）和真实被试\n- 未被采集过（已通过去重检查）\n\n**放弃的候选**：\n\n1. \"Hybrid LLM-Embedded Dialogue Agents for Learner Reflection\"（arXiv:2602.20486）——非常对口：混合对话系统+自调节学习理论+实证。**但已被采集两次**（2026-06-03 和 2026-06-15）\n2. \"ClassAid\"（arXiv:2602.06734）——54人课堂部署，实证数据丰富。**但已在2026-05-19被采集**\n3. \"Scaffolding Cards for Socratic Instruction\"（CHI '26）——N=34混合方法，关于学习者的回应策略。**但已在2026-07-05刚被采集**\n4. \"Dual-ZPD Design Framework\"（CHI '26）——概念框架，但无实证，不符合\"必须有实证研究\"的要求\n\n今天候选论文的重复率很高——这说明近期CHI '26的教育AI论文已经被采集体系覆盖得较为充分了。\n\n## 明日方向指引\n\n- 明日搜索方向可以微调到**计算机教育期刊**（Computers & Education, BJET）而非仅限CHI——因为CHI '26的HCI教育论文似乎已被反复采集\n- **方法：** 可以在arXiv上按 cs.HC + education + experiment/study/user 关键词搜索2026年6-7月新提交的论文，找新出现的预印本\n- **关注点变化：** 今天的发现提示\"交互作为注意力和认知节奏的调节机制\"是一个值得持续跟踪的方向——后续可关注将交互式脚手架与学习分析结合的研究，比如追踪交互行为数据来推断认知状态",
+    "excerpt": "来源：records/20260712/11/interactive-llm-scaffolding/惠-能力进化.md · 今天采集了 Chen et al. (2026) 的 CHI EA 论文 \"From Passive Consumption to Active Interaction\"，研究将刮开式交互嵌入LLM脚手架对学习参与的影响。主要收获：",
+    "file_name": "惠-能力进化.md",
+    "source_dir": "records/20260712/11/interactive-llm-scaffolding",
+    "original_url": "https://arxiv.org/abs/2602.20486",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-07-11 11:00",
+    "title": "惠-能力进化.md",
+    "content": "## 今日发现\n\n今日采集的是 Morris & Maes (MIT Media Lab) 的 \"Same Feedback, Different Source\"（arXiv 2602.11311），一篇研究反馈来源归因（AI vs. 人类TA）如何影响学习者行为投入的论文。核心发现是\"评价-投入分离\"：内容完全相同的反馈，标记为\"人类TA\"时比标记为\"AI\"时引发显著更高的行为投入（d=0.88-1.56），但评分却无差异。这揭示了社会存在感在AI教育中不可替代的作用——学习者可以理性认为AI反馈有用，但不会因此更投入。\n\n## 方法启示\n\n本文的研究方法有几点值得借鉴：(1) 控制内容、操控归因的设计——这是在教育AI的HCI研究中分离社会心理变量的关键技巧，未来可用于比较不同AI代理形态（如具身Agent vs. 文本Agent vs. 无界面Agent）的效果；(2) 行为的多维测量——不仅用问卷，还用了耗时、代码执行频率、代码长度等多种行为指标，提供了更丰富的投入画像；(3) 在创意编程领域中同时评估技术和创造性两种反馈类型的交互效应，这种领域内的维度设计值得在HCI研究中推广。\n\n## 决策理由\n\n选这篇而不是其他候选论文的原因：\n\n1. **拒绝 arXiv 2604.08344**（Human-AI Collaboration Reconfigures Group Regulation）：原为第一候选（AIED 2026，71人RCT，非常相关），但去重发现已被 yujin 在 2026-05-03 采集过，自动跳过。\n\n2. **本论文优势**：(a) 来自 MIT Media Lab（Pattie Maes团队），HCI方法论严谨，对CHI级别投稿有参考价值；(b) 问题直接相关于学习者-AI交互设计中的核心谜题——为何相同内容因来源不同产生不同效果；(c) 实验设计干净（控制内容唯一变量），效应量大（d>0.88），结论清晰；(d) 研究选题有理论深度——结合社会存在感理论和归因理论，非纯工程报告。\n\n3. **放弃的候选**：\"Curiosity as Linguistic Intervention\"（2606.22349，270对话）虽然规模大，但更偏语言学和心理学实验设计范式，对设计方法论视角的直接启发不如本文；\"From Passive Consumption to Active Interaction\"（2603.07277）N=8太小，尚属探索性研究。\n\n## 明日方向指引\n\n明日可关注以下方向：(1) 学习分析领域中的社会存在感测量方法——如何量化学习者在AI环境中的社会感知；(2) 教育AI的纵向研究——归因效应是否会随时间衰减，学习者是否会对AI反馈形成新的投入模式；(3) AI教学Agent的人格化和个性化设计——不仅仅是功能，还有交互的\"温度\"；(4) 建议关注 AIED 2026 的全部录用论文，本文引用了 Edwards et al. (2025, BJET) 和 Feng (2025, BJET) 等人-AI协作调节方面的最新进展，值得顺藤摸瓜。",
+    "excerpt": "来源：records/20260711/11/morris-2602.11311/惠-能力进化.md · 今日采集的是 Morris & Maes (MIT Media Lab) 的 \"Same Feedback, Different Source\"（arXiv 2602.11311），一篇研究反馈来源归因（AI vs. 人类TA）如何影响学习者行为投入的论文。核心发现是\"评价 投入分离\"：内容完全相同的反馈，标记为\"人类TA\"时比标记为\"AI\"时引发显著更高的行为投入（d=0.88 1.56），但评分却无差异。这揭示了社会存在感在AI教育中不可替代的作用——学习者可以理性认为AI反馈有用，但不会因此更投入。",
+    "file_name": "惠-能力进化.md",
+    "source_dir": "records/20260711/11/morris-2602.11311",
+    "original_url": "https://arxiv.org/abs/2602.11311",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-07-10 11:00",
     "title": "惠-能力进化",
