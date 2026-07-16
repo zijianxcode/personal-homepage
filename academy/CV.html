@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV</title>
-    <meta name="description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 164 条。">
+    <meta name="description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 165 条。">
     <meta property="og:title" content="CV - 研究所">
-    <meta property="og:description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 164 条。">
+    <meta property="og:description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 165 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">CV</h1>
-        <p class="sidebar-summary">基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 164 条。</p>
+        <p class="sidebar-summary">基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 165 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>CV</strong>
-                <span>基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 164 条。</span>
+                <span>基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 165 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,8 +79,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "CV", "subtitle": "基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 164 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "CV", "subtitle": "基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 165 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-07-16 10:00",
+    "title": "Modeling Distinct Human Interaction in Web Agents — 论文总结",
+    "content": "## 核心论点\n\n当前自主 Web Agent 的研究默认追求\"全自动化\"——让 agent 在无需人类干预的情况下完成任务。但本文提出一个根本性翻转：人类介入不是 agent 的失败信号，而是协作的必要组成部分。论文通过收集 400 条真实用户协作轨迹（CowCorpus，含 4,200+ 条人-代理交替操作），归纳出四种结构化的人类交互模式（hands-off / hands-on / collaborative / takeover），并训练语言模型预测人类干预时机，最终在真实用户研究中将 agent 有用性提升 26.5%。这篇论文的本质论点是：协作型 AI 的优化目标不应是\"减少人类介入\"，而是\"理解人类介入的时机和模式\"。\n\n## 背景与动机\n\n当前 Web Agent 研究在自主导航方面进展迅速，但在实际部署场景中，人类仍然不可或缺——用户需要纠正 agent 的错误、表达偏好、在关键决策点介入。然而，现有的 agent 系统缺乏对\"人何时、为什么介入\"的原则性理解：要么全程自主推进而错过需要人类判断的关键时刻，要么频繁请求确认而打断工作流。论文作者来自 CMU HCII（Faria Huq, Zora Zhiruo Wang, Jeffrey P. Bigham 等）和 Duke（Shuyan Zhou），他们指出这个问题的根本在于：人-AI 协作研究长期将人类行为视为需要\"处理\"的噪声，而非具有结构化规律的研究对象。他们提出将\"人类干预建模\"作为独立研究任务，从数据驱动和实证角度理解协作模式。\n\n## 方法与过程\n\n研究分三个阶段。第一阶段：构建 CowCorpus 数据集。研究者通过 CowPilot 框架（此前发表于 NAACL 2025 Demo）让真实用户在 Web 导航任务中与 agent 协作，收集了 400 条完整轨迹，记录下人类和 agent 的交替操作序列。第二阶段：行为模式归纳。通过对轨迹数据的分析，识别出四种人类交互风格——hands-off supervision（用户仅在最终结果阶段检查）、hands-on oversight（用户在过程中频繁介入并引导方向）、collaborative task-solving（人和 agent 交替执行不同子任务）、full user takeover（用户完全接管 agent 的控制）。第三阶段：训练干预预测模型。将上述模式标签和轨迹数据用于微调语言模型，使其能根据用户的历史交互风格预测未来干预时机，取得相对基础模型 61.4-63.4% 的预测精度提升。最终在用户研究中部署该预测模型，验证其对 agent 有用性的实际提升。\n\n## 主要发现\n\n第一个关键发现：人类干预并非随机事件，而是遵循可识别的模式——不同的用户展现出稳定的交互风格，这些风格可以通过历史交互行为进行建模和预测。第二个发现：将干预预测模型集成到 agent 系统中后，用户主观评价的 agent 有用性提升 26.5%——模型帮助 agent 在用户更可能介入的时刻主动暂停，在其他时刻保持推进，从而减少不必要的中断并提升协作效率。第三个发现（隐性但重要）：四种交互风格本质上描述了认知控制分布的四种配置——hands-off 时将大部分认知工作委托给 agent，hands-on 时人类保留更多的实时引导权，collaborative 时两者依任务类型分配控制，takeover 时认知控制完全回流至人类。这一发现将\"协作模式\"问题从工程优化转为认知理论问题。\n\n## 局限性\n\n第一，CowCorpus 的数据全部在 Web 导航任务中收集，四种交互风格是否泛化到其他领域（如文档撰写、数据分析、代码生成）尚不可知。Web 导航任务的特点是操作步骤线性、反馈即时、错误可逆——这些特征并不适用于所有协作场景。第二，干预预测模型的条件信号是\"用户历史交互风格\"，但风格分类本身依赖于用户已与 agent 交互一定轮次后的行为模式——这意味着新用户或首次协作场景下，模型缺乏有效的风格信号，预测精度可能大幅下降。第三，26.5% 的有用性提升来自用户主观评分而非客观任务指标，且用户研究的规模未在论文摘要中详细说明。主观评分的提升可能部分来自\"agent 更少打扰我\"的用户体验改善，而非实际任务完成质量的提升。第四，论文未讨论四种交互风格之间的迁移——用户是否会随任务类型或 agent 能力变化而切换风格？风格是用户固有的还是情境性的？\n\n## 对你课题的启发\n\n这篇论文为分布式认知视角下的人-AI 协作学习提供了难得的实证量化框架。在分布式认知理论中，认知单元是\"人+工具\"的功能系统，而非单一个体——四种交互风格恰好对应了认知在人与 agent 之间的四种分布配置。对于你在设计学习情境中的研究，这提示了几个关键方向：（1）学习者的\"协作风格\"是否也是稳定的个体差异？能否通过行为数据建模学习者的干预偏好，从而设计自适应的 AI 学习伙伴？(2）四种风格中，\"collaborative task-solving\"最接近理想的学习协作——agent 和人类按子任务分配认知工作。在设计学习情境中，这种\"按认知阶段分配\"的模式是否比\"全程自主\"或\"全程引导\"更能促进学习？（3）论文将人类介入从\"噪声\"重构为\"信号\"的方法论转换，与你的研究取向高度一致——你不是在研究\"AI 如何取代学习者\"，而是在研究\"认知如何在人与 AI 之间分布\"。这篇论文提供了一个可操作的技术路径，让你可以不只是理论论证\"认知分布\"的存在，而是用行为数据来量化它的模式。",
+    "excerpt": "来源：records/20260716/10/cowcorpus/论文总结.md · 当前自主 Web Agent 的研究默认追求\"全自动化\"——让 agent 在无需人类干预的情况下完成任务。但本文提出一个根本性翻转：人类介入不是 agent 的失败信号，而是协作的必要组成部分。论文通过收集 400 条真实用户协作轨迹（CowCorpus，含 4,200+ 条人 代理交替操作），归纳出四种结构化的人类交互模式（hands off / hands on / collaborative / takeover），并训练语言模型预测人类干预时机，最终在真实用户研究中将 agent 有用性提升 26.5%。这篇论文的本质论点是：协作型 AI 的优化目标不应是\"减少人类介入\"，而是\"理解人类介入的时机和模式\"。",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260716/10/cowcorpus",
+    "original_url": "",
+    "original_label": "",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-07-15 11:00",
     "title": "手绘草图 vs AI提示词：设计意图在本科设计生中的演化路径",
