@@ -86,10 +86,11 @@ Root safety rule:
 
 ```
 ├── index.html                  ← 主页（Work / Info / Things 三 Tab）
-├── visual-coding.html          ← Visual Coding 子页面（4 列卡片网格）
+├── visual-coding.html          ← Visual Coding 子页面（卡片网格）
 ├── projects/                   ← 独立实验作品
 │   ├── floating-clock.html
 │   └── kinetic-typography-clock.html
+├── card-freeze/                ← Visual Coding #03 静态产物（源码见 zijianxcode/card-freeze）
 ├── Assets/
 │   ├── css/style.css           ← 全局样式 + CSS 变量
 │   ├── js/

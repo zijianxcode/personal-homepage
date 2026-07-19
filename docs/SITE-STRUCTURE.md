@@ -9,6 +9,7 @@
 | `/` | 个人主页（Work / Info / Things） | `aspera ad astra` |
 | `/academy/` | 学术研究所二级站 | `研究所` |
 | `/time-ink/` | Time Ink 项目 | 按项目页验收 |
+| `/card-freeze/` | Card Freeze（Visual Coding #03） | 按项目页验收 |
 | `/projects/` | 实验作品 | 按项目页验收 |
 | `/emergency/` | 应急说明（运维页，非内容站） | `应急访问` |
 
@@ -17,7 +18,7 @@
 ```text
 personal-homepage/
 ├── index.html              ← 个人主页（唯一）
-├── Assets/ projects/ documents/ time-ink/
+├── Assets/ projects/ documents/ time-ink/ card-freeze/
 ├── academy/                ← 学术内容（镜像自 jujutsu-sci）
 │   └── index.html          ← 研究所首页（唯一）
 └── emergency/              ← 应急说明与探测状态
