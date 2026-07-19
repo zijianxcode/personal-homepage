@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ML</title>
-    <meta name="description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 249 条。">
+    <meta name="description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 250 条。">
     <meta property="og:title" content="ML - 研究所">
-    <meta property="og:description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 249 条。">
+    <meta property="og:description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 250 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">ML</h1>
-        <p class="sidebar-summary">基于关键词自动归类的训练、优化与模型方法研究。 共 249 条。</p>
+        <p class="sidebar-summary">基于关键词自动归类的训练、优化与模型方法研究。 共 250 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>ML</strong>
-                <span>基于关键词自动归类的训练、优化与模型方法研究。 共 249 条。</span>
+                <span>基于关键词自动归类的训练、优化与模型方法研究。 共 250 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,8 +79,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "ML", "subtitle": "基于关键词自动归类的训练、优化与模型方法研究。 共 249 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "ML", "subtitle": "基于关键词自动归类的训练、优化与模型方法研究。 共 250 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-07-19 10:00",
+    "title": "CollabSkill: Evaluating Human-Agent Collaboration On Real-World Tasks",
+    "content": "- **机构**：Stanford HCI Group + CMU HCII + University of Rochester\n- **来源**：arXiv:2606.09833 (预印本，under review)\n- **领域**：HCI / Human-Agent Collaboration / Evaluation\n\n---\n\n## 1. 核心论点\n\n当前 AI agent 的主流评估范式——autonomous benchmark（如 SWE-bench、GDPVal）——测量的是 agent 独自完成任务的能力，但完全忽略了协作场景中最关键的变量：人的因素。CollabSkill 的核心论点是：agent 的自主能力排名 ≠ agent 的协作能力排名，两者之间存在有意义的偏离。论文用 93 名真实职业工作者与 4 种 agent 配对完成 386 个真实工作任务的实证数据证明：（1）在 autonomous benchmark 上领先的 Codex 在协作场景中排名落后于 Claude Code；（2）即便是共享同一底层 LLM 的 Claude Code 和 Claude Cowork，后者的排名更高——这说明界面设计（interface design）本身就是协作质量的一个独立维度。这套框架通过贝叶斯技能评分系统（Bayesian skill rating）显式建模人的协作能力，将人- agent 配对的表现解耦为两个独立的技能贡献——人的协作技能和 agent 的协作能力——从而在控制人际差异的前提下获得更可靠的 agent 排名。\n\n## 2. 背景与动机\n\nAI agent 正在重塑工作方式，但关于\"人到底怎么跟 agent 合作\"的实证研究极为稀缺。现有的评估体系——无论是 SWE-bench 式的纯代码任务 benchmark，还是 GAIA、WebArena 式的自主任务 benchmark——都在一个关键假设上偷懒了：agent 是独立工作的。但现实中，职业工作者使用 agent 的方式不是全权委托，而是交替决策、纠偏、调整 prompt、选择性接受或拒绝 agent 输出。这个过程中，人的技能水平（AI literacy、领域经验、prompt engineering 能力）对协作结果的影响可能比 agent 的模型能力更大。CollabSkill 的动机正是填补这个空缺：提供一个既能量化 agent 协作能力、又能揭示人的协作技能影响因素的评估框架。论文的背景还隐含了一个方法论批评——如果不控制人际差异，任何 agent 排名都是不可靠的，因为同一个 agent 被不同水平的人使用时结果可能天差地别。\n\n## 3. 方法与过程\n\nCollabSkill 的系统架构分为三层。第一层是任务基础设施：研究者从 O*NET 职业分类中选取 10 个行业领域（包括软件工程、数据分析、写作、设计等），为每个领域设计真实工作场景任务，并招募在该领域有平均 9.6 年职业经验的真实工作者（N=93）。每位参与者与随机分配的 agent 配对，在自己本机完成一项职业任务，提交交付物。第二层是评分层：独立的人类评分员根据任务要求和交付物质量给出 0-100 的分数。第三层是贝叶斯技能评分模型（Bayesian skill rating system）——这是方法论的核心创新。模型将每个工作 session 的评分分解为人的协作技能参数（θ_human）和 agent 的协作能力参数（θ_agent），通过跨 session 的配对数据估计这两个潜变量，从而分离\"这个人本身就很强\"和\"这个 agent 真的帮到了忙\"两种效应。实验采集了 1,500+ prompt、386 个 session 的数据，参与者还完成 pre/post 问卷测量 AI literacy、信任、自动化偏好等态度变量。\n\n## 4. 主要发现\n\n四个关键发现重构了我们对人-agent 协作的理解。第一，**autonomous benchmark 排名不可迁移到协作场景**：在 CollabSkill 框架下，Claude Code 以 74.8 的协作技能分排名第一，而 Codex 在 autonomous 环境下领先的优势在协作情境中消退。第二，**界面设计独立于模型能力影响协作质量**：Claude Cowork 排名高于 Claude Code——尽管两者共享同一底层 LLM，说明交互界面本身是协作 agent 的独立设计维度。第三，**实践经验比态度更能预测一个人的协作技能**：LLM 使用经验（Spearman ρ=0.297, p=0.041）和委托舒适度（ρ=0.238, p=0.041）显著预测了人的 CollabSkill 分数，而其他态度变量（如对 AI 的总体信任、对自动化的偏好）均未达到显著水平。第四，**动手协作改变人对 AI 能力的认知，但不改变人对工作控制权的偏好**：pre/post 比较显示，协作后参与者对 AI 自主能力的估计显著上调（Δ=-0.50, p<0.001），信任度提升（Δ=0.58, p=0.004），但他们对 AI 在工作中的期望自主水平没有变化（Δ=-0.16, p=0.105）——人学到了\"AI 能做到更多\"，但没有因此就愿意让 AI 掌控更有意义的工作。低技能参与者组的信任变化（+1.03）远大于高技能组（+0.16），说明协作体验对 AI literacy 的提升在初阶用户中更显著。\n\n## 5. 局限性\n\n尽管实验规模在同类研究中相当扎实，CollabSkill 仍存在几个不可忽视的局限性。**方法论层面**，贝叶斯技能评分模型假设人的技能和 agent 的能力在每个 session 中是可加的——这意味着它无法捕捉到人-agent 交互中的协同效应（synergy）或互相干扰效应（interference）。现实中，有的 agent 可能跟新手配合效果好但跟专家配合反而拖累，这种交互效应在当前模型中被忽略了。**生态效度层面**，虽然任务是真实职业场景，但参与者知道自己在参与研究，完成单次任务的心理状态和压力水平与日常工作中的持续协作不可同日而语——工具使用曲线（learning curve）的影响被压平了。**agent 选择范围**，仅测试了 4 个 agent（且都是 terminal-based ReAct 类型），不包含 GUI 类 agent 或不同交互范式的 agent——这限制了对\"界面设计影响协作质量\"这一结论的推广范围。**评分可靠性**，0-100 的单一评分可能掩盖复杂度差异——同一分数在不同任务上的含义可能完全不同，且评分员一致性数据未在可用摘要中充分报告。\n\n## 6. 对你课题的启发\n\n这篇论文对你研究\"人-AI 协作学习中的认知分布\"有方法论和理论双重价值。**方法论上**，贝叶斯解耦思路提供了一个可直接参考的测量框架——你在设计学习情境时同样面临\"学习效果到底是来自 AI 工具的能力还是来自学生本身的学习能力\"这一归因难题。CollabSkill 的 latent skill model 可以启発你设计类似的分析范式：将学习者-AI 协作表现分解为\"学习者的协作技能\"和\"AI 工具的脚手架质量\"两个独立维度，从而回答分布式认知理论中最核心的问题——认知到底分布在哪个节点上、谁为最终表现贡献了什么。**理论上**，论文最惊艳的发现——autonomous 排名 ≠ 协作排名——直接支持了你一直以来的研究立场：AI 的能力必须在真实协作情境中评估，孤立的能力指标没有生态效度。这说明分布式认知视角不是锦上添花的理论框架，而是研究人-AI 协作时必须穿透的认识论前提——因为人和 AI 一起工作时，两者各自的\"能力\"在交互中发生了质变。另一个对你课题有直接启发的细节是：协作后人对 AI 能力的估计变了但期望不变——这暗示\"信任\"和\"控制权偏好\"是两个独立维度，可能对应分布式认知中的\"认知可及性\"（accessibility）和\"认知归属\"（ownership）两个不同构念，在你设计学习情境的人-AI 协作模式时值得分开操作化。",
+    "excerpt": "来源：records/20260719/10/collabskill-human-agent-collaboration/论文总结.md · 作者 ：Yijia Shao, Zora Zhiruo Wang, Neel Ahuja, Yicheng Wang, Bowen Liu, Diyi Yang",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260719/10/collabskill-human-agent-collaboration",
+    "original_url": "https://arxiv.org/abs/2606.09833",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-07-17 11:00",
     "title": "AI as an Agent and Collaborative Space: Exploring the role of Generative AI in Small Group Synchronous and Asynchronous Collaborative Dynamics",

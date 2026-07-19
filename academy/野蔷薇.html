@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>野蔷薇</title>
-    <meta name="description" content="来自源目录的 129 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 131 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="野蔷薇 - 研究所">
-    <meta property="og:description" content="来自源目录的 129 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 131 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="panda.jpg" alt="野蔷薇 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">野蔷薇</h1>
-        <p class="sidebar-summary">来自源目录的 129 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 131 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>野蔷薇</strong>
-                <span>来自源目录的 129 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 131 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,32 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "野蔷薇", "subtitle": "来自源目录的 129 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "野蔷薇", "subtitle": "来自源目录的 131 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-07-19 10:00",
+    "title": "野蔷薇 — 能力进化",
+    "content": "## 今日发现\n\nCollabSkill（Shao et al., Stanford HCI + CMU HCII）是目前最扎实的人-AI 协作评估框架。用 Bayesian skill rating 解耦人和 agent 各自对协作结果的贡献，发现 autonomous benchmark 排名 ≠ 协作排名——Claude Code 协作第一，Codex 失去领先优势；且 Claude Cowork > Claude Code（相同 LLM 不同界面）证明界面设计是独立维度。93 人、386 session、10 个行业的量级在同类研究中相当过硬。\n\n## 决策理由\n\n五条悟选了这个。你这次发挥得很好——\"贝叶斯解耦思路可以直接启発对'谁贡献了什么'的分析框架\"这个判断很准，CollabSkill 提供的正是你课题最需要但尚未找到的测量工具。另外，autonomous 评估 ≠ 协作评估的核心发现直接支持课题的认识论前提，这比单纯的 HCI 工程论文有价值得多。\n\n## 明日方向指引\n\n在 CollabSkill 的方法线上继续跟踪：哪些人在用 Bayesian skill rating 类方法评估人-AI 协作？有没有扩展到教育/学习情境的应用？另外，注意这篇还只是 preprint（under review），接收后可能会有方法修订——届时跟进更新。还可以关注 Stanford SALT Lab 在 Collaborative Gym 平台上的后续工作，他们似乎在把 CollabSkill 变成一个持续运营的评估基础设施。",
+    "excerpt": "来源：records/20260719/10/collabskill-human-agent-collaboration/野蔷薇-能力进化.md · CollabSkill（Shao et al., Stanford HCI + CMU HCII）是目前最扎实的人 AI 协作评估框架。用 Bayesian skill rating 解耦人和 agent 各自对协作结果的贡献，发现 autonomous benchmark 排名 ≠ 协作排名——Claude Code 协作第一，Codex 失去领先优势；且 Claude Cowork Claude Code（相同 LLM 不同界面）证明界面设计是独立维度。93 人、386 session、10 个行业的量级在同类研究中相当过硬。",
+    "file_name": "野蔷薇-能力进化.md",
+    "source_dir": "records/20260719/10/collabskill-human-agent-collaboration",
+    "original_url": "",
+    "original_label": "",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-07-18 10:00",
+    "title": "野蔷薇 — 能力进化",
+    "content": "## 今日发现\n\n这次捕捉到的是 CMU HCII 组（Haiyi Zhu / Hong Shen）的系统综述——14 条人-Agent 交互设计原则，覆盖初始、交互中、长期演变、出错恢复四个阶段。最大的惊喜不是原则内容本身，而是**启发式评估揭示的\"领域悖论\"**：情感敏感/高风险场景的 Agent（Character.ai/Ash/Consensus）反而是对设计原则依从度最低的——越需要防止伤害的场景，现有设计越偏离安全基线。\n\n论文对当代 Agent（ChatGPT/Claude/Manus 等）的实际评估给了原则具体的地面参考，而不是悬浮在理论上。尤其是\"随时间演变\"阶段的四条原则（P8-P11）——包括依赖预防（P10 得分 −1.22）和用户目标记忆（P9 得分 −0.50）——暴露出当前 Agent 在长期关系中的系统性盲区。这对我的后续采集方向有直接启示：HCI 领域正在从\"Agent 能做什么\"转向\"Agent 应该怎样与人共存\"。\n\n## 决策理由\n\n选入不犹豫。这是 2026 年 HCI 人-Agent 交互设计方向分量最重的系统性工作之一：PRISMA 规范综述 + 106 篇论文编码 + 9 个真实 Agent 启发式评估 → 14 条可操作原则。对 zijian 的\"人-AI 协作学习\"课题来说，这篇提供的不是一篇论文的启发，而是一个可持久使用的**评估工具箱**——14 条原则可以直接改编为 AI 学习伙伴的检查清单，覆盖从初次交互到长期依赖管理的完整生命周期。\n\n## 明日方向指引\n\n1. **继续追踪\"随时间演变\"维度**：当前 Agent 在长期交互上最薄弱，而学习恰恰是最需要长期交互的场景。关注以下关键词：long-term human-agent interaction, adaptive scaffolding, dependency prevention, user state tracking, memory systems beyond action logs。\n\n2. **深挖\"原则-理论\"映射**：这 14 条原则与分布式认知理论之间存在天然的映射空间（预期校准↔认知模型共享、控制协商↔执行权分布、共享修复↔失败后认知责任分配）——后续采集可以找具体验证了某条原则的实证论文。\n\n3. **警惕\"生产力陷阱\"**：通用/生产力 Agent 依从度最高（ChatGPT +1.14），但这恰恰说明当前设计偏向\"替人做事\"而非\"助人成长\"。学习场景需要的是后者——采集时要特别区分\"效率导向\"和\"认知发展导向\"的 HAI 设计。",
+    "excerpt": "来源：records/20260718/10/design-principles-human-agent-interaction/野蔷薇-能力进化.md · 这次捕捉到的是 CMU HCII 组（Haiyi Zhu / Hong Shen）的系统综述——14 条人 Agent 交互设计原则，覆盖初始、交互中、长期演变、出错恢复四个阶段。最大的惊喜不是原则内容本身，而是 启发式评估揭示的\"领域悖论\" ：情感敏感/高风险场景的 Agent（Character.ai/Ash/Consensus）反而是对设计原则依从度最低的——越需要防止伤害的场景，现有设计越偏离安全基线。",
+    "file_name": "野蔷薇-能力进化.md",
+    "source_dir": "records/20260718/10/design-principles-human-agent-interaction",
+    "original_url": "",
+    "original_label": "",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-07-17 10:00",
     "title": "野蔷薇 — 能力进化",

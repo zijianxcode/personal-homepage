@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NLP</title>
-    <meta name="description" content="基于关键词自动归类的语言与文本研究。 共 263 条。">
+    <meta name="description" content="基于关键词自动归类的语言与文本研究。 共 264 条。">
     <meta property="og:title" content="NLP - 研究所">
-    <meta property="og:description" content="基于关键词自动归类的语言与文本研究。 共 263 条。">
+    <meta property="og:description" content="基于关键词自动归类的语言与文本研究。 共 264 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">NLP</h1>
-        <p class="sidebar-summary">基于关键词自动归类的语言与文本研究。 共 263 条。</p>
+        <p class="sidebar-summary">基于关键词自动归类的语言与文本研究。 共 264 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>NLP</strong>
-                <span>基于关键词自动归类的语言与文本研究。 共 263 条。</span>
+                <span>基于关键词自动归类的语言与文本研究。 共 264 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,8 +79,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "NLP", "subtitle": "基于关键词自动归类的语言与文本研究。 共 263 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "NLP", "subtitle": "基于关键词自动归类的语言与文本研究。 共 264 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-07-18 11:00",
+    "title": "LADICA: A Large Shared Display Interface for Generative AI Cognitive Assistance in Co-Located Team Collaboration",
+    "content": "## 基本信息\n- **标题**：LADICA: A Large Shared Display Interface for Generative AI Cognitive Assistance in Co-Located Team Collaboration\n- **作者**：Zheng Zhang, Weirui Peng, Xinyue Chen, Luke Cao, Toby Jia-Jun Li (University of Notre Dame / Columbia / Michigan)\n- **来源**：CHI 2025 (Proceedings of the ACM Conference on Human Factors in Computing Systems)\n- **DOI**：10.1145/3706598.3713289 | arXiv: 2409.13968\n\n---\n\n## 1. 核心论点\n\nLADICA 的核心设计理念是：生成式 AI 在共享大屏协作场景中应当扮演\"认知脚手架\"而非\"认知替代者\"——即通过多层次的外部表征（三层结构：idea repository → affinity lens → discussion reference），支持团队的元认知和宏观认知过程，而不是替团队做思考。论文明确基于 Fiore 的协作知识建构认知框架（数据→信息→知识），将共享显示屏视为分布式认知中的外部记忆体，AI 的角色是通过提示思考方向、揭示模式关联、同步口头讨论与外部工作空间来增强人-人协作，而非替代人的判断。14 人的 lab study 验证了 LADICA 的可用性，并揭示了 AI 在此类场景中的核心张力：如何既促进发散思维又不过度干预自然团队动态。\n\n## 2. 背景与动机\n\n面对面协作（co-located collaboration）具有独特的认知优势：隐式行为线索（姿态、表情、手势）、即时反馈、共享指代（\"这个\"\"那个\"可以直接用眼神对齐）。然而，它也面临社会-动机障碍（评价焦虑、社会懈怠）和认知挑战——团队需要同时进行多样化的发散思维（ideation）、分析收敛（grouping）、以及将口头讨论与外部白板内容同步。当前商业工具（Miro、Microsoft Teams AI、Lucidspark）的 AI 功能主要追求\"让 AI 生成内容\"，而非深入理解人类协作中的认知过程。更危险的是，某些工具试图用 AI 替代团队的思考过程——这直接违背面对面协作的本质价值：人与人之间的互动和参与。作者通过形成性研究（formative study）识别了团队在白板协作中面临的六种认知挑战，并将用户对\"AI 过度主导\"的担忧转化为四条设计目标，确立了一条清晰的边界：AI 提供方向提示而非直接生成答案。\n\n## 3. 方法与过程\n\n研究分为三个阶段：（1）**形成性研究**：招募 8 名参与者进行半结构化访谈和基于场景的设计工作坊，识别面对面协作中的认知挑战和用户对 AI 介入的期望与担忧。（2）**系统设计**：基于形成性研究结果和 Fiore 等人（2008）的协作知识建构框架，设计了 LADICA 的三层认知辅助结构——最底层 idea repository 支持发散思维和目标分解；中间层 affinity lens 支持多视角分组分析和层级化主题建构；顶层 discussion reference 通过关系提示和信息检索连接口头讨论与外部工作空间。系统使用 React + Flask + Firebase 实现多用户实时协作，AI 功能基于 GPT-4 Turbo API。（3）**用户研究**：14 名参与者（5男9女，平均年龄 23.9 岁，来自计算机科学、商业、人类学等多元背景）分为 3-4 人小组，在 65 寸触摸屏 + iPad 的设置下完成两项任务（旅行计划和学校政策讨论），每项 15 分钟，随后进行问卷调查和半结构化访谈。\n\n## 4. 主要发现\n\n（1）**AI 作为\"思维脚手架\"有效且被认可。** 参与者广泛使用了三层认知辅助：团队目标分解被使用 7 次（多发生在协作初期建立共同框架时），基于查询的想法扩展被使用 18 次，基于关系的想法扩展被使用 15 次。在 33 次想法扩展触发中，19 次参与者征求了其他成员意见后才决定探索方向——说明 AI 辅助没有削弱人-人互动，反而促进了协作决策。\n\n（2）**共享心智模型的构建得到增强。** 团队目标分解功能被视为\"陌生人团队的破冰者\"（P1），帮助团队\"立即弄清需要考虑的方向和要素\"（P5）。affinity-based 分组使参与者能\"从不同角度理解思想的相似与差异\"（P12），促进了\"建立共同基础\"（P6）的讨论。\n\n（3）**内部记忆与外部工作空间的对齐。** 讨论信息提取与检索功能被参与者高度评价——\"激烈讨论时很容易忘记刚说过什么……信息提取帮助恢复记忆\"（P4），\"让我们专注于讨论本身，而不是分心将内容转移到白板\"（P7）。这直接验证了分布式认知的核心机制：外部表征减轻了内部认知负荷。\n\n（4）**用户的审慎批评。** 想法提示偶尔过于泛化或离题（P4, P6, P7）；自动生成的关系提示随着想法增多而变得杂乱（P6）；有人担心\"降低创建笔记的努力成本可能让不那么勤奋的队友看起来也很投入\"（P8）；部分参与者认为手动激活信息提取不够直观，希望自动同步（P8, P10）。这些反馈揭示了\"AI 辅助的粒度\"和\"何时主动介入 vs 等待用户触发\"的核心设计张力。\n\n## 5. 局限性\n\n（1）**样本局限性**：全部 14 名参与者为大学生，在学术场景中测试。企业场景中面对面协作可能涉及社会层级、权力差异等额外因素，LADICA 的设计（如色彩区分用户身份使贡献透明化）在某些组织文化中可能引发负面效应。\n\n（2）**任务类型的有限性**：仅测试了旅行计划和学校政策讨论两类任务。团队协作的广度远超于此——工程设计、危机响应、创意设计等场景可能对认知辅助有截然不同的需求。\n\n（3）**技术局限**：固定 prompt 模板不适应具体场景导致建议偶尔泛化；多用户同时触发 AI 功能时响应延迟明显；基于 Web 的实现在多触控支持上受限于浏览器能力。\n\n（4）**缺乏纵向研究**：单次 35 分钟的 lab study 无法观察长期使用中的适应性行为——团队是否会过度依赖 AI 分组建议？提示的\"新鲜感效应\"消退后使用模式如何变化？这些都是关键但未回答的问题。\n\n（5）**理论深度可进一步加强**。尽管引用了 Fiore 的认知框架和分布式认知概念，论文在讨论部分对认知分布的机制解释偏描述性，未充分阐释三层表征结构如何具体映射到认知分布的不同维度（如注意分布、记忆分布、推理分布）。\n\n## 6. 对你课题的启发\n\n（1）**三层表征框架可直接迁移到学习情境。** LADICA 的三层结构（idea repository → affinity lens → discussion reference）本质上对应了协作学习的三个关键认知阶段：发散探索（个体贡献新知）→ 分析收敛（识别模式与关联）→ 深度讨论（通过对话建构新知）。你可以将这个框架作为\"AI 增强协作学习环境\"的设计蓝图——第一层支持学习者独立贡献理解，第二层支持 AI 辅助的多视角分组分析（如按概念相似性、按认知层次、按证据支持度），第三层支持学习者在讨论中锚定外部表征。\n\n（2）**外部记忆与认知负荷的实证证据。** 论文为\"外部表征如何减轻协作中的认知负荷\"提供了直接的实证支持——尤其是在\"讨论与白板内容的同步\"这一痛点上。对于你关注的\"人-AI 协作学习中认知如何分布\"问题，LADICA 提供了一个可操作的分析单元：口头表达（内部认知）→ AI 转录与关键信息提取（中间层）→ 白板上的 idea note（外部记忆）——这条\"认知外化管道\"是分布式认知理论在交互设计中的具体实现，值得在你的论文中作为设计案例引用。\n\n（3）**\"思维脚手架 vs 思维替代\"的设计边界。** 这是 LADICA 对你研究最重要的启示：AI 应该提示思考方向而非直接给出答案、应该揭示关联而非替团队下结论、应该自动提取信息但让团队决定如何使用。这个边界在你设计 AI 学习伙伴时同样关键——AI 应该基于学习者的知识状态提示\"还可以从这个角度思考\"，还是直接给出正确答案？LADICA 的选择（提示方向，要求人类努力）提供了设计原则层面的支持。\n\n（4）**透明度与控制权的课程设计启示。** 参与者明确希望 AI 辅助是可选的、手动激活的——这说明在学习和创造场景中，人对 AI 介入时机有强烈的掌控需求。LADICA 在形成性研究中发现的用户担忧（\"AI 主导自然团队动态\"\"降低批判性思维和创造力\"）与教育领域对 AI 学习工具的核心担忧完全一致。你的研究可以借鉴 LADICA 的\"可选激活 + 透明度设计\"模式来回应这些担忧。",
+    "excerpt": "来源：records/20260718/11/ladica/论文总结.md · 标题 ：LADICA: A Large Shared Display Interface for Generative AI Cognitive Assistance in Co Located Team Collaboration",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260718/11/ladica",
+    "original_url": "https://doi.org/10.1145/3706598.3713289",
+    "original_label": "DOI",
+    "session_type": "weekly",
+    "session_label": "周会讨论"
+  },
   {
     "date": "2026-07-17 11:00",
     "title": "AI as an Agent and Collaborative Space: Exploring the role of Generative AI in Small Group Synchronous and Asynchronous Collaborative Dynamics",
