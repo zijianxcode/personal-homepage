@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ML</title>
-    <meta name="description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 250 条。">
+    <meta name="description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 251 条。">
     <meta property="og:title" content="ML - 研究所">
-    <meta property="og:description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 250 条。">
+    <meta property="og:description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 251 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">ML</h1>
-        <p class="sidebar-summary">基于关键词自动归类的训练、优化与模型方法研究。 共 250 条。</p>
+        <p class="sidebar-summary">基于关键词自动归类的训练、优化与模型方法研究。 共 251 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>ML</strong>
-                <span>基于关键词自动归类的训练、优化与模型方法研究。 共 250 条。</span>
+                <span>基于关键词自动归类的训练、优化与模型方法研究。 共 251 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,8 +79,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "ML", "subtitle": "基于关键词自动归类的训练、优化与模型方法研究。 共 250 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "ML", "subtitle": "基于关键词自动归类的训练、优化与模型方法研究。 共 251 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-07-21 10:00",
+    "title": "Behavior Latticing: Inferring User Motivations from Unstructured Interactions",
+    "content": "**项目页**：https://stanfordhci.github.io/lattice/\n\n## 1. 核心论点\n\n这篇论文提出了一个根本性的诊断：今天的个人 AI 系统只知道\"用户在做什么\"，却不知道\"用户为什么做这些事\"。因此 AI 默认优化和重复用户已有的行为——用户用 ChatGPT 写作业，AI 就帮他写得更好——即便这恰恰违背了用户的深层需求（真正掌握知识）。论文的核心贡献是 behavior latticing 架构：一种从碎片化的、跨长时间跨度的行为观测中自底向上层层推断用户深层动机的方法。它不是对行为的简单总结，而是把看似无关的观察连接成网状的、可递归上推的洞察结构，使 AI 系统首次能从\"what\"走向\"why\"。\n\n## 2. 背景与动机\n\n个人 AI 系统的长期愿景（从早期的智能助手到今天的 AI agent）一直隐含一个前提：系统需要理解用户。但现有方法——用户建模、行为日志分析、偏好学习——都是对表层行为的统计描述而非对动机的推断。\"用户周三下午频繁在 YouTube 和文档之间切换\"是一个行为事实；\"用户在 deadline 压力下切换任务是一种逃避性分心\"则是一个动机洞察。后者需要跨越多个时间窗口去发现模式并构建解释性假说。论文指出，缺乏这种能力导致 AI 在表面上优化行为，实际上可能强化用户的不良模式。作者将这一鸿沟定义为\"what vs why\"鸿沟，并以此为设计目标。\n\n## 3. 方法与过程\n\nBehavior latticing 的核心机制包含两个关键属性。第一，**交织连接**（interweaving）：每个行为观察可以同时属于多个群组，每个群组可以综合多个观察——同一行为在不同上下文中有不同含义。例如，\"处理行政事务\"与\"自愿承担额外实验室工作\"结合，暗示过度承诺倾向；但与\"大量未完成高优先级任务\"结合，则呈现\"生产力拖延\"（productive procrastination）。第二，**层级递归**（hierarchical recursion）：下层洞察被分组后作为输入进入上层，产生更跨域的宏观结论。系统分三步：Observer 读取原始交互窗口并用推理模型推断用户的想法/感受；按 session 分组并合成洞察；跨 session 递归合并为更高阶模式。系统名为 DAWN，包含三个模块：behavior latticing 从截屏中生成用户洞察，洞察驱动 agent 任务选择，工具调用 MCP agent 执行操作。技术评估收集 174 个评分，与 SOTA 用户建模方法对比；端到端评估招募 12 名参与者进行至少 4 天的计算机使用监测，收集 140 个任务评分。\n\n## 4. 主要发现\n\n两项评估均支持核心主张。技术评估中，behavior latticing 生成的洞察在\"解释深度\"上显著优于 SOTA（M=1.17 vs M=-0.37, -3 到 3 的 Likert 量表），同时在\"准确性\"上没有妥协（M=1.30 vs M=1.72）。端到端评估中，基于用户洞察驱动的 agent 行动在\"满足用户底层需求\"上显著优于基线（t=2.69, p=0.01），同时在\"即时效用\"上持平。参与者的反馈中有一个反复出现的主题：\"dawned on me\"（恍然大悟）——他们看到了自己未曾意识到的行为模式。论文还配套发布了开源 Python 库（latticing, MIT 许可），将行为 latticing 包装为可泛化的技术组件。\n\n## 5. 局限性\n\n第一，观测模态单一。目前仅依赖屏幕截图，遗漏了语音、移动端、社交互动等重要的行为数据源——多模态输入的引入目前只是开放问题而非已解决。第二，隐私与伦理的沉默。让一个系统连续多天观察用户屏幕，然后推断用户的内在动机——论文对这一隐私敏感性的讨论非常薄弱，没有明确的 consent 框架或退出机制。第三，\"洞察深度\"与可操作性之间的鸿沟：系统能告诉你\"你在逃避高优先级任务\"，但如何据此采取有意义的、不打搅用户的干预，仍是未解问题。第四，12 名参与者的样本局限于 Stanford 环境（学术/技术人群），无法代表更广泛的用户群体；4 天的最短观察期可能只捕捉到一个时间窗口内的行为模式而非跨生活阶段的动态。第五，评估指标偏向解释深度而非决策质量——一个深刻的洞察如果不能被转化为有效的行动，其价值就要打折。\n\n## 6. 对你课题的启发\n\n这篇论文对你的人-AI 协作学习课题有三层启发，逐层深入。第一层（技术）：behavior latticing 提供了一个\"观察 → 抽象 → 理解\"的管道模板——在你的学习情境中，AI 伙伴如何从学习者的操作行为（选择什么工具、在哪里停顿、何时寻求帮助）推断其认知策略和元认知状态，而不只是记录\"学了什么\"。第二层（理论）：论文的\"what vs why\"二元对立与分布式认知中\"信息传递 vs 共同理解\"的区分密切对应。Salomon 的分布式认知强调，真正的认知分布不是信息的表面交换，而是意图和策略的共享——behavior latticing 恰好提供了一种计算机制来实现这种更深层的共享。第三层（设计）：DAWN 系统中\"洞察驱动 agent 行动\"的设计模式可以转化为你的协作学习系统中\"认知诊断驱动教学干预\"的架构——不是基于行为来自动化任务，而是基于动机推断来选择最合适的协作策略。但有一个重要警告：在课堂环境中部署类似 DAWN 的持续观测系统面临比论文所讨论的严重得多的伦理和隐私问题，这应该成为你研究设计中不可回避的一节。",
+    "excerpt": "来源：records/20260721/10/behavior-latticing-stanford/论文总结.md · 作者 ：Dora Zhao, Michelle S. Lam, Diyi Yang, Michael S. Bernstein（Stanford HCI Group）",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260721/10/behavior-latticing-stanford",
+    "original_url": "https://arxiv.org/abs/2604.07629",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-07-19 10:00",
     "title": "CollabSkill: Evaluating Human-Agent Collaboration On Real-World Tasks",

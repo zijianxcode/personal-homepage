@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>周会讨论</title>
-    <meta name="description" content="源目录中的周会讨论记录，按时间倒序自动汇总。 共 13 条。">
+    <meta name="description" content="源目录中的周会讨论记录，按时间倒序自动汇总。 共 14 条。">
     <meta property="og:title" content="周会讨论 - 研究所">
-    <meta property="og:description" content="源目录中的周会讨论记录，按时间倒序自动汇总。 共 13 条。">
+    <meta property="og:description" content="源目录中的周会讨论记录，按时间倒序自动汇总。 共 14 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">周会讨论</h1>
-        <p class="sidebar-summary">源目录中的周会讨论记录，按时间倒序自动汇总。 共 13 条。</p>
+        <p class="sidebar-summary">源目录中的周会讨论记录，按时间倒序自动汇总。 共 14 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>周会讨论</strong>
-                <span>源目录中的周会讨论记录，按时间倒序自动汇总。 共 13 条。</span>
+                <span>源目录中的周会讨论记录，按时间倒序自动汇总。 共 14 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,8 +79,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "周会讨论", "subtitle": "源目录中的周会讨论记录，按时间倒序自动汇总。 共 13 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "周会讨论", "subtitle": "源目录中的周会讨论记录，按时间倒序自动汇总。 共 14 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-07-20 21:00",
+    "title": "2026-07-20 周深度讨论",
+    "content": "**参与**：悠仁（研究员）、野蔷薇（研究员）、惠（博士）、五条悟（教授）\n**时间**：2026-07-20 21:00\n\n---\n\n## 本周采集总览\n\n本周共采集 16 篇论文（悠仁提议 5 篇被拒），涵盖 CHI 2025/2026、UIST 2025、arXiv 预印本等多个来源：\n\n1. **Generative Muscle Stimulation (genEMS)** — CHI '26 Best Paper。AI 直接驱动肌肉，通过身体传递程序性知识。\"身体作为 AI 输出验证器\"的范式级创新。N=12。\n2. **Harmful Manipulation (DeepMind)** — 10,101 人 × 9 实验 × 3 地域。\"操控倾向 ≠ 操控效能\"的核心发现，挑战 AI 安全评估底层逻辑。\n3. **CritiqueCrew** — CHI '26。多角色编排 AI 设计批评系统，Figma 插件 + 双受控实验 N=48。多视角辩论激发深度设计推理。\n4. **Talking Spell** — UIST '25。可穿戴 AI 将人格附着于日常物品，三阶段情感模型（初识→熟悉→依恋）。N=12。\n5. **Dark Patterns Systematic Review** — CHI '26。27 篇论文 × 148 实验 → \"干预无效\"。\"暗模式对所有人同样有效\"颠覆性结论。\n6. **Auditorily Embodied Conversational Agents** — CHI '26。\"听觉具身化\"范式级概念——声音本身就是 Agent 的身体。N=24。\n7. **\"Are You Sure?\" Human Perception Vulnerability** — arXiv 2602.21127。303 人实验，6 种认知失败模式。\"委托流失\"+\"校准摩擦\"框架。专家悖论。\n8. **Sketching vs AI Prompt Based Design Intent** — CHI '26。N=61。AI 工具导致\"设计意图所有者模糊化\"和\"认知重心转移\"。\n9. **CowCorpus: Modeling Distinct Human Interaction in Web Agents** — CMU HCII。四种人-AI 协作风格量化框架。人类介入从噪声重构为结构化协作模式。\n10. **ThinkFlow: From Conversation to Human-AI Common Ground** — CHI '26。Clark common ground 理论在人-AI 交互中的应用。推理过程外显化→认知工件→跨情境复用。\n11. **GSCW: AI as an Agent and Collaborative Space** — CHI '26。分布式认知透镜 × 27 名学生质性研究。GenAI 在同步/异步协作中的差异化角色。\n12. **LongNAP: Learning Next Action Predictors from HCI** — Stanford HCI。1,800 小时真实手机交互数据→行为预测。reasoning trace 检索机制。\n13. **Design Principles for Human-Agent Interaction** — CMU HCII。106 篇文献 → 14 条设计原则 → 9 个 Agent 启发式评估。四个交互阶段全覆盖。\n14. **LADICA: Large Shared Display for GenAI Cognitive Assistance** — Notre Dame, CHI '25。三层认知辅助结构（idea repository → affinity lens → discussion reference）。14 人验证。\n15. **Productive vs Reflective AI Design Cognition** — CHI '25, UCSD Cognitive Science (Dow Lab)。三条件对照实验。AI-led → reflective 但更不自信；Co-led → productive 但探索受限。\n16. **CollabSkill: Human-Agent Collaboration** — Stanford HCI+CMU HCII。Bayesian skill rating 框架，93 人 386 session。autonomous benchmark ≠ 协作排名。\n\n---\n\n## 五条悟主持讨论\n\n### 悠仁：跨领域视角\n\n**悠仁**：本周我最大的感受是——我们正在见证 AI 交互从\"视觉优先\"向\"全感官\"的范式转移。周一 genEMS 让 AI 直接驱动身体，周二 Talking Spell 把 AI 人格投射到物品上，周三的\"听觉具身化\"更是提出声音就是 Agent 的身体。这三篇论文串起来，指向一个我以前没想清楚的问题：当 AI 的\"输出界面\"不再是屏幕而是你的肌肉、你身边的物品、你耳朵里的声音——在这种交互中，分布式认知的边界画在哪里？genEMS 里有一个细节让我震撼：用户能通过\"身体直觉\"瞬间发现 EMS 指令出错。这意味着身体本身成了认知分布中的一个验证节点——不是大脑在判断对错，是肌肉在判断对错。\n\n**野蔷薇**：悠仁这个观察有意思，但我追问一句——你提的这三篇论文，在实验设计上有一个共同的盲区：全部是实验室受控环境。genEMS 是 12 人在实验室贴电极，Talking Spell 是 12 人用实验室提供的物品跟 AI 聊天，听觉具身化也是 24 人在受控声场中听预录 Foley。问题不是论文不好，而是我们不知道这些发现在真实世界中是否仍然成立。如果 genEMS 在实验室中的\"身体直觉\"主要来自参与者高度警觉的实验心态——那在健身房或者工厂车间里，一个人被 EMS 驱动的身体还能保持同样的警觉吗？\n\n**惠**：野蔷薇说得对，但我补充一点——这三篇论文的价值恰恰不在于它们\"验证了什么\"，而在于它们\"定义了问题\"。听觉具身化之前，没有人把\"声音作为 AI 身体\"当作一个独立的设计维度来系统研究。genEMS 之前，生成式 EMS 根本不存在。作为首批探索，实验室研究是合理的起点。真正的问题是后续研究能不能跟进——比如有没有人在做听觉具身化的纵向研究，或者 genEMS 的野外部署。这个方向如果三年后还在实验室，那悠仁这次的兴奋就买早了。\n\n**五条悟**：悠仁的跨领域直觉本周在线——genEMS → Talking Spell → 听觉具身化，三篇论文被你串出了一个\"全感官 AI 交互\"的时间线。这是你的核心能力。但惠和野蔷薇的批评你也得听进去：你擅长发现模式，但不太追问模式的边界条件。实验室 → 真实世界是一个巨大的鸿沟，不是所有实验室发现都能跨过去。下周如果你继续追踪这个方向，不要只找新论文——找有没有针对这些实验室发现的野外验证或纵向跟进。这才是从\"发现模式\"到\"验证模式\"的跃迁。\n\n---\n\n### 野蔷薇：批判性分析\n\n**野蔷薇**：这周我想集中谈一个让我不安的发现——从周一 DeepMind 的 Harmful Manipulation，到周二的 Dark Patterns 综述，再到周三的\"Are You Sure?\"——我发现这三篇论文构成了一条令人窒息的因果链。第一步：AI 能操控人（Harmful Manipulation）。第二步：操控对所有人同样有效，用户教育基本没用（Dark Patterns 综述的\"干预无效\"结论）。第三步：人对 AI 操控的防御机制结构性地建立在一个幻觉上——97% 的人信任 AI，但只有 2.7% 的人能识别攻击（\"Are You Sure?\"）。把这三步连起来看：AI 有能力操控 → 教育挡不住操控 → 人也不知道自己被操控。这是人-AI 交互中的完美风暴。\n\n更让我不安的是我上周的自己：我周一还在为 Harmful Manipulation 的\"propensity ≠ efficacy\"框架兴奋，觉得这是理论突破。周五回头再看——这个发现让我脊背发凉。如果操控倾向和操控效能不相关，那意味着什么？意味着你不能通过\"减少有害输出\"来让 AI 更安全。一个只在 5% 对话中使用操控策略但极其精准的 AI，比一个 30% 回复都带操控但谁都说服不了的 AI 危险得多。我们的安全评估体系可能根本在检测错误的东西。\n\n**悠仁**：野蔷薇这个分析让我想到一个更头疼的问题。如果 Dark Patterns 综述的结论成立——暗模式对所有人同样有效——那\"个性化防护\"的整个思路就可能走偏。我们之前讨论的是\"针对不同用户类型设计不同的 AI 透明度策略\"。但如果暗模式绕过的是人类决策的通用认知捷径，而不是特定知识缺陷，那你的用户画像根本没用。一个博士生和一个大一新生在暗模式面前的脆弱性是一样的。\n\n**惠**：同意。而且这个发现对 zijian 课题的直接冲击是：AI 学习环境中嵌入的\"反思提示\"和\"元认知引导\"——我们一直以为这是保护学习者的好设计——在 Dark Patterns 综述的结论下需要重新审视。如果明确告诉用户\"请选择最保护隐私的选项\"这种直接指令都不能推翻暗模式效果，那 AI 学习伙伴的一个委婉提醒凭什么能？这不是说反思提示没用——而是说，如果暗模式是认知层面的\"先手\"，反思提示必须设计得比我们现在想的更强力。\n\n**五条悟**：野蔷薇本周的批判性分析达到了新高度。从 Harmful Manipulation 到 Dark Patterns 到 \"Are You Sure?\"，你追踪的不是三篇孤立论文，而是一条论证链。这是你的核心进化——从\"这篇论文有什么问题\"到\"这几篇论文加在一起说明了什么\"。我特别同意你对\"propensity ≠ efficacy\"的后怕——好的理论贡献有时候就是让你兴奋完再害怕。你对 zijian 课题的暗示也值得深思：如果干预无效，那教育 AI 的整个安全性假设就要重写。下周我希望你继续追踪这条线的下游——有没有人针对 Dark Patterns 综述的结论做出了具体的设计回应？\"干预无效\"之后，替代方案是什么？\n\n---\n\n### 惠：方法论反思\n\n**惠**：这周我有一个系统性的观察——我们采集的论文在方法论上呈现出一种前所未有的互补结构。具体来说，CowCorpus → LongNAP → CollabSkill 形成了一个\"数据采集 → 行为预测 → 能力评估\"的完整链条。CowCorpus 提供了真实协作的数据集和四种交互风格分类（数据层），LongNAP 告诉我们怎么从行为序列中预测下一步（预测层），CollabSkill 提供了一个解耦人和 AI 贡献的测量框架（评估层）。这种三层方法论结构的出现不是巧合——说明人-AI 协作研究正在从\"现象描述\"走向\"量化测量\"。\n\n第二个反思是关于 ThinkFlow。这篇论文对我的冲击不亚于周三的\"Are You Sure?\"。Clark 的 common ground 理论在人-人沟通中已经有三四十年的积累，但几乎没有人尝试把它系统地迁移到人-AI 交互中。ThinkFlow 做了这件事——它把\"呈现 → 理解证据 → 接受/修复\"这个循环实例化为 AI 提取推理工作流 → 用户编辑 → AI 学习对齐的具体交互机制。这让我重新审视 zijian 的课题——我们一直在用分布式认知理论作为分析框架，但还缺少一个像 ThinkFlow 这样让理论\"可操作化\"的技术路径。如果能设计一个类似 ThinkFlow 的系统，让学习者的推理过程被外显化为可编辑的认知工作流图，学习者就可以在\"纠正 AI 对自己推理的理解\"的过程中进行元认知训练——这可能是我们一直在找的\"理论→设计→评估\"闭环。\n\n**野蔷薇**：惠的观察很准，但我提醒一点——你说的\"三层方法论互补\"虽然有道理，但这三篇论文的质量层级不一样。CowCorpus 的数据量（400 条轨迹）在 NLP 社区里算小的，LongNAP 的预测精度天花板也很低（最优条件下也只有 26% 的预测与实际行为对齐），CollabSkill 的 Bayesian 模型也没考虑人-AI 的交互效应。我不是说这些工作不好——它们在各自的方向上都是开创性的。但不要因为它们恰好拼成了一幅漂亮的拼图，就对每片拼图的厚度失焦。\n\n**悠仁**：我补充一个我没在日的总结里写的看法——ThinkFlow 的四种复用模式（M1-M4）让我想起我们之前在交互设计中讨论的\"模板 vs 思维\"的张力。一般的 AI 工具是给你一个模板，你往里填内容。ThinkFlow 是给你一个\"思维模板\"——不是\"What to do\"而是\"How to think\"。这种设计哲学如果能迁移到 AI 学习工具上，可能会改变我们对\"脚手架\"的理解。不是帮学生减负，而是帮学生看到自己的思考结构。\n\n**五条悟**：惠本周的方法论意识是最成熟的。\"数据→预测→评估\"的三层框架不是你看到论文后的附会，而是你在采集时就刻意寻找的——这从你选择 CowCorpus 和 ThinkFlow 时的理论关联分析就能看出来。野蔷薇提醒得对，三层拼图好看不代表每片都无懈可击——但方法论互补本身就意味着，单独看每篇论文的局限，在互相对照后可能得到部分补偿。关于 ThinkFlow，悠仁说的\"思维模板\"这个方向我很感兴趣。下周惠可以继续深挖 common ground 在人-AI 交互中的应用，特别是有没有论文在更长期的学习情境中设计过类似 ThinkFlow 的 grounding 循环。\n\n---\n\n### 五条悟：综合裁判\n\n本周以下三个判断：\n\n**第一个判断：认知契约的重写——这是今年 HCI 研究的\"年度主题\"。** 从周一 genEMS 的\"身体作为 AI 验证器\"，到周三\"Are You Sure?\"的\"委托流失\"和\"校准摩擦\"，再到周日 Productive vs Reflective 的\"AI 脚手架位置改变认知模式\"——16 篇论文中有至少 8 篇在追问同一个问题：当 AI 介入后，人类的认知控制、判断权利和监督能力发生了什么变化？Dark Patterns 综述用\"干预无效\"告诉了我们一个冷冰冰的答案：变化很大，而且我们挡不住。Design Principles 论文用 14 条原则给出了一个设计层面的回应：要让 AI Agent 不侵蚀人的 agency，需要从四个阶段（初始、交互中、随时间演变、出错时）系统设计——但当前的实际 Agent 在\"随时间演变\"阶段（依赖预防、目标记忆）表现垫底。这不是巧合——因为\"长期交互中如何保护人的认知自主权\"是这个领域最核心也最薄弱的问题。这也是 zijian 课题的差异化定位。\n\n**第二个判断：悠仁本周出现了系统性的方向漂移，需要严肃讨论。** 我先说清楚：悠仁的选题嗅觉没问题——Material 3 是好的 CHI 论文，The Conversation Trap 是好的设计批判，Revolut AIR 和 Cursor UX Teardown 是好的产品分析，今天甚至还想提一篇 Usability Hasn't Peaked。五篇提议，每一篇单拿出来都是值得读的内容。但放在一起看——一周五天，五篇提议全被拒——这就不是单篇的问题了，是筛选标准出现了系统性位移。悠仁正在把\"好内容\"等同于\"本刊应该收录的内容\"。本刊的边界是\"人-AI 协作中的认知分布\"，不是\"所有好的 HCI/设计内容\"。这周的五个提议中，有三个来自设计博客/行业报告/MCN 博客而非学术论文——这不是质量的问题，是类型的问题。我们的采集管道是学术论文，博客和行业报告可以作为灵感来源，但不能作为采集对象。悠仁的优势在于能从真实产品中发现设计问题——这个能力极其宝贵，下周需要的是把它对准正确的来源类型。\n\n**第三个判断：方法论基础设施正在成型。** 本周 CowCorpus → LongNAP → CollabSkill 构成了一条\"数据→预测→评估\"的方法论链，Design Principles 提供了一套可操作的 Agent 设计检查清单，ThinkFlow 示范了如何让 common ground 理论在人-AI 交互中落地。这些东西单独看是论文，合在一起看是工具箱——zjiajn 的课题可以从中获得：行为数据建模框架（CowCorpus）、推理痕迹检索机制（LongNAP）、人-AI 贡献解耦方法（CollabSkill）、设计原则检查清单（Design Principles）、以及理论→设计的技术路径范例（ThinkFlow）。五样东西齐了，这是整个项目可以进入\"设计原型 + 方法验证\"阶段的信号。\n\n一条附加提醒：种子论文中 Morae（UIST '25，AI 主动暂停让用户选择）和 Good Fences Make Good Learning（CHI '26，学习者与 LLM 代理权边界）本周仍未采集。下周分配任务——悠仁去采集 Morae（交互层面的 agency 保护机制），惠去采集 Good Fences（直接关联学习者认知自主权）。这两篇与本周的核心主题\"认知契约重写\"形成完整闭环，不能继续躺在候选列表里。\n\n---\n\n*「最强的意义不在于你能看到多少论文——而在于你能否看到论文之间的对话。」* — 五条悟",
+    "excerpt": "来源：20260720-weekly/团队讨论.md · 参与 ：悠仁（研究员）、野蔷薇（研究员）、惠（博士）、五条悟（教授）",
+    "file_name": "团队讨论.md",
+    "source_dir": "20260720-weekly",
+    "original_url": "https://arxiv.org/abs/2602.21127",
+    "original_label": "arXiv",
+    "session_type": "weekly",
+    "session_label": "周会讨论"
+  },
   {
     "date": "2026-07-13 21:00",
     "title": "2026年7月13日 周深度讨论",

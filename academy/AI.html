@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI</title>
-    <meta name="description" content="基于源目录中论文总结自动汇总的 AI 相关记录。 共 355 条。">
+    <meta name="description" content="基于源目录中论文总结自动汇总的 AI 相关记录。 共 357 条。">
     <meta property="og:title" content="AI - 研究所">
-    <meta property="og:description" content="基于源目录中论文总结自动汇总的 AI 相关记录。 共 355 条。">
+    <meta property="og:description" content="基于源目录中论文总结自动汇总的 AI 相关记录。 共 357 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">AI</h1>
-        <p class="sidebar-summary">基于源目录中论文总结自动汇总的 AI 相关记录。 共 355 条。</p>
+        <p class="sidebar-summary">基于源目录中论文总结自动汇总的 AI 相关记录。 共 357 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>AI</strong>
-                <span>基于源目录中论文总结自动汇总的 AI 相关记录。 共 355 条。</span>
+                <span>基于源目录中论文总结自动汇总的 AI 相关记录。 共 357 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,8 +79,32 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "AI", "subtitle": "基于源目录中论文总结自动汇总的 AI 相关记录。 共 355 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "AI", "subtitle": "基于源目录中论文总结自动汇总的 AI 相关记录。 共 357 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-07-21 11:00",
+    "title": "CoNode: Visualizing Workflows for Knowledge Reuse and Recombination in Team–AI Collaborative Design",
+    "content": "## 1. 核心论点\n\n生成式 AI 进入设计工具之后，几乎所有的产品都选择了一个默认路径：帮你生成最终产出（图像、文案、界面）。但 CoNode 的作者指出，设计团队在协作过程中产生的大量\"过程知识\"——语义标签、草图迭代、探索路径、推理过程——恰恰是 AI 时代最有价值却最容易被丢弃的部分。这些过程痕迹是脆弱的（fragile），不借助系统支持就会消失在聊天记录和文件版本中。论文的核心介入是：将 AI 工具从\"结果导向\"（outcome-oriented）重构为\"过程导向\"（process-oriented），用一个双层系统让设计知识跨轮次、跨协作者地保存、追踪、重组和再利用。这不是一个更好的生成器，而是一个设计知识的记忆与再组织系统。\n\n## 2. 背景与动机\n\n作者通过形成性研究（N=6）识别了现有团队-AI 协作设计中的三个核心问题：**语义-视觉碎片化**——AI 生成的内容与团队的语义讨论之间断裂，生成产物失去来源追溯；**上下文丢失**——跨 session 协作时，设计决策的\"为什么\"随创作者离开而消失；**跨工具断裂**——团队在不同 AI 工具之间切换时，工作流被打断，知识无法衔接。这三个问题共同指向一个根本困境：现有 AI 创造力工具把设计过程当作一系列离散的生成任务，而不是一个连贯的知识建构过程。这与工业设计实践形成尖锐矛盾——设计从来不是一锤子买卖，而是跨轮次、跨人的迭代演化。这个诊断构成了 CoNode 的设计动机：如何在 AI 辅助的设计环境中把 ephemeral 的过程痕迹变成 durable 的知识资产？\n\n## 3. 方法与过程\n\nCoNode 包含两个逻辑上递进的层。**第一层（基础交互范式）**：将生成式 AI 节点直接嵌入共享白板，通过 triplet workflows（输入块 → AI 节点 → 输出块）组织设计探索路径。用户创建输入块（语义文本、AI 编辑文本、草图、视觉参考），连接到 AI 节点（文本或图像生成模型），生成的输出自动链接回输入源，形成有向的、可追溯的探索路径网络。随着 triplet 积累，工作流自然展开，展示想法如何演化、分叉和合并。**第二层（过程知识层）**：引入 CoSense 模块和 workflow-level 功能。CoSense 提供两个核心能力：consolidation（当多个块在语义上聚集或反复追溯到同一来源时，主动识别活跃工作流并建议保存）和 recommendation（在块和 workflow 两个层面，通过语义相似性检索相关历史内容，并用 LLM 扩展语义多样性——如生成类比、预测跨域应用、提供相关性理由）。所有保存的工作流和资源块进入团队共享库。\n\n评估分三阶段：形成性研究（N=6）用以识别问题；Study I（N=12, 6 dyads）验证基础交互层；Study II（N=30, 15 dyads, within-subjects）将 CoNode 与一个保留相同界面和 AI 功能但移除所有 workfow-level 功能的基线对比。\n\n## 4. 主要发现\n\nStudy I 验证了 triplet workflows 对非线性、跨模态探索的支持。Study II 的主要结果表明：CoNode 在知识整合（consolidation）、复用（reuse）和重组（recombination）上均显著优于基线。具体而言，workflow 复用评分 CoNode 组显著更高（M=5.83 vs M=4.40, t=-7.049, p<.001），说明团队在 CoNode 中更有能力延续探索路径和保持设计连续性。更值得关注的是质性发现：CoNode 将团队-AI 协作从\"生成孤立产出\"转向了\"追踪和重用设计轨迹\"——使设计过程本身变得可见和可被审视。这种可见性提供了关键的上下文，让设计过程更透明、更可介入。换言之，CoNode 不只是在设计\"更好\"，而是在让团队\"更好地理解自己在设计什么\"。\n\n## 5. 局限性\n\n第一，知识库的冷启动问题。CoSense 的推荐引擎依赖已有的 workflow 和资源库，新团队或新项目中它的价值要大幅下降——论文没有讨论这个冷启动期的缓解策略。第二，领域限定于早期工业设计。虽然作者声称 CoNode 的设计原则可以泛化，但没有在其他设计领域（如 UX 设计、服务设计、建筑设计）进行验证。早期工业设计的特性——高度视觉化、语义标签密集、探索路径非线性——可能使 CoNode 是最适合这个领域的特殊解决方案而非通用框架。第三，评估时间跨度的短板。Study II 虽然样本量不错（N=30），但是一次性的实验室评估，无法回答\"团队在长期使用中是否真正改变了知识管理习惯\"这个问题。第四，AI 节点的\"黑箱化\"风险：triplet workflows 记录了输入和输出之间的连接，但没有暴露 AI 模型内部的推理过程——当设计团队需要质疑 AI 生成的建议时，缺乏足够的审计线索。第五，湖南大学+香港城市大学的团队构成意味着该系统在中文设计环境中的适配性未经检验，跨文化设计协作的场景也未覆盖。\n\n## 6. 对你课题的启发\n\n这篇论文在你的人-AI 协作学习课题中具有几乎量身定制的参考价值，原因有三。第一，CoNode 的\"outcome-oriented vs process-oriented\"框架与你课题中\"学习结果 vs 学习过程\"的张力是一一对应的。在学习情境中，AI 工具同样倾向于帮助学习者\"更快地产出答案\"而非\"更好地理解自己的思维路径\"。CoNode 的 triplet workflows 设计可以直接转化为学习过程中的\"认知路径可视化\"——不是展示学生做了什么，而是展示他们如何从一个想法发展到另一个想法。第二，CoSense 的 consolidation + recommendation 双功能本质上是一种认知外包的元认知脚手架：系统主动识别有意义的模式并建议复用——这恰好是分布式认知理论中\"技术物作为认知代理\"的核心机制。你可以将 CoSense 的设计模式迁移到协作学习工具中，让 AI 不仅回答学生问题，还能识别学习者的认知模式和策略使用，主动建议他们回顾/复用之前有效的学习路径。第三，CoNode 最深的启示在于它重新定义了\"AI 辅助\"的含义：不是替代人类的创造性工作，而是让人类的创造过程对自身变得可见和可被反思。这对你的课题意味着：在人-AI 协作学习中，AI 的最高价值可能不在于\"教得更好\"，而在于让学习者\"更清楚地看见自己是如何学习的\"——这是一种通过 AI 实现的分布式元认知。",
+    "excerpt": "来源：records/20260721/11/conode-chi2026/论文总结.md · 作者 ：Yang Zhou, Yi Xiao, Guangpeng Wei, Suxiang Ling, Ruoxuan Ma（湖南大学设计学院）, Chi Sing Leung（香港城市大学）",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260721/11/conode-chi2026",
+    "original_url": "https://doi.org/10.1145/3772318.3791216",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-07-21 10:00",
+    "title": "Behavior Latticing: Inferring User Motivations from Unstructured Interactions",
+    "content": "**项目页**：https://stanfordhci.github.io/lattice/\n\n## 1. 核心论点\n\n这篇论文提出了一个根本性的诊断：今天的个人 AI 系统只知道\"用户在做什么\"，却不知道\"用户为什么做这些事\"。因此 AI 默认优化和重复用户已有的行为——用户用 ChatGPT 写作业，AI 就帮他写得更好——即便这恰恰违背了用户的深层需求（真正掌握知识）。论文的核心贡献是 behavior latticing 架构：一种从碎片化的、跨长时间跨度的行为观测中自底向上层层推断用户深层动机的方法。它不是对行为的简单总结，而是把看似无关的观察连接成网状的、可递归上推的洞察结构，使 AI 系统首次能从\"what\"走向\"why\"。\n\n## 2. 背景与动机\n\n个人 AI 系统的长期愿景（从早期的智能助手到今天的 AI agent）一直隐含一个前提：系统需要理解用户。但现有方法——用户建模、行为日志分析、偏好学习——都是对表层行为的统计描述而非对动机的推断。\"用户周三下午频繁在 YouTube 和文档之间切换\"是一个行为事实；\"用户在 deadline 压力下切换任务是一种逃避性分心\"则是一个动机洞察。后者需要跨越多个时间窗口去发现模式并构建解释性假说。论文指出，缺乏这种能力导致 AI 在表面上优化行为，实际上可能强化用户的不良模式。作者将这一鸿沟定义为\"what vs why\"鸿沟，并以此为设计目标。\n\n## 3. 方法与过程\n\nBehavior latticing 的核心机制包含两个关键属性。第一，**交织连接**（interweaving）：每个行为观察可以同时属于多个群组，每个群组可以综合多个观察——同一行为在不同上下文中有不同含义。例如，\"处理行政事务\"与\"自愿承担额外实验室工作\"结合，暗示过度承诺倾向；但与\"大量未完成高优先级任务\"结合，则呈现\"生产力拖延\"（productive procrastination）。第二，**层级递归**（hierarchical recursion）：下层洞察被分组后作为输入进入上层，产生更跨域的宏观结论。系统分三步：Observer 读取原始交互窗口并用推理模型推断用户的想法/感受；按 session 分组并合成洞察；跨 session 递归合并为更高阶模式。系统名为 DAWN，包含三个模块：behavior latticing 从截屏中生成用户洞察，洞察驱动 agent 任务选择，工具调用 MCP agent 执行操作。技术评估收集 174 个评分，与 SOTA 用户建模方法对比；端到端评估招募 12 名参与者进行至少 4 天的计算机使用监测，收集 140 个任务评分。\n\n## 4. 主要发现\n\n两项评估均支持核心主张。技术评估中，behavior latticing 生成的洞察在\"解释深度\"上显著优于 SOTA（M=1.17 vs M=-0.37, -3 到 3 的 Likert 量表），同时在\"准确性\"上没有妥协（M=1.30 vs M=1.72）。端到端评估中，基于用户洞察驱动的 agent 行动在\"满足用户底层需求\"上显著优于基线（t=2.69, p=0.01），同时在\"即时效用\"上持平。参与者的反馈中有一个反复出现的主题：\"dawned on me\"（恍然大悟）——他们看到了自己未曾意识到的行为模式。论文还配套发布了开源 Python 库（latticing, MIT 许可），将行为 latticing 包装为可泛化的技术组件。\n\n## 5. 局限性\n\n第一，观测模态单一。目前仅依赖屏幕截图，遗漏了语音、移动端、社交互动等重要的行为数据源——多模态输入的引入目前只是开放问题而非已解决。第二，隐私与伦理的沉默。让一个系统连续多天观察用户屏幕，然后推断用户的内在动机——论文对这一隐私敏感性的讨论非常薄弱，没有明确的 consent 框架或退出机制。第三，\"洞察深度\"与可操作性之间的鸿沟：系统能告诉你\"你在逃避高优先级任务\"，但如何据此采取有意义的、不打搅用户的干预，仍是未解问题。第四，12 名参与者的样本局限于 Stanford 环境（学术/技术人群），无法代表更广泛的用户群体；4 天的最短观察期可能只捕捉到一个时间窗口内的行为模式而非跨生活阶段的动态。第五，评估指标偏向解释深度而非决策质量——一个深刻的洞察如果不能被转化为有效的行动，其价值就要打折。\n\n## 6. 对你课题的启发\n\n这篇论文对你的人-AI 协作学习课题有三层启发，逐层深入。第一层（技术）：behavior latticing 提供了一个\"观察 → 抽象 → 理解\"的管道模板——在你的学习情境中，AI 伙伴如何从学习者的操作行为（选择什么工具、在哪里停顿、何时寻求帮助）推断其认知策略和元认知状态，而不只是记录\"学了什么\"。第二层（理论）：论文的\"what vs why\"二元对立与分布式认知中\"信息传递 vs 共同理解\"的区分密切对应。Salomon 的分布式认知强调，真正的认知分布不是信息的表面交换，而是意图和策略的共享——behavior latticing 恰好提供了一种计算机制来实现这种更深层的共享。第三层（设计）：DAWN 系统中\"洞察驱动 agent 行动\"的设计模式可以转化为你的协作学习系统中\"认知诊断驱动教学干预\"的架构——不是基于行为来自动化任务，而是基于动机推断来选择最合适的协作策略。但有一个重要警告：在课堂环境中部署类似 DAWN 的持续观测系统面临比论文所讨论的严重得多的伦理和隐私问题，这应该成为你研究设计中不可回避的一节。",
+    "excerpt": "来源：records/20260721/10/behavior-latticing-stanford/论文总结.md · 作者 ：Dora Zhao, Michelle S. Lam, Diyi Yang, Michael S. Bernstein（Stanford HCI Group）",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260721/10/behavior-latticing-stanford",
+    "original_url": "https://arxiv.org/abs/2604.07629",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-07-20 11:00",
     "title": "Partnering with Generative AI: Experimental Evaluation of Human-Led and Model-Led Interaction in Human-AI Co-Creation",
