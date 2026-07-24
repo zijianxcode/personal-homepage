@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ML</title>
-    <meta name="description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 251 条。">
+    <meta name="description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 252 条。">
     <meta property="og:title" content="ML - 研究所">
-    <meta property="og:description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 251 条。">
+    <meta property="og:description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 252 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">ML</h1>
-        <p class="sidebar-summary">基于关键词自动归类的训练、优化与模型方法研究。 共 251 条。</p>
+        <p class="sidebar-summary">基于关键词自动归类的训练、优化与模型方法研究。 共 252 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>ML</strong>
-                <span>基于关键词自动归类的训练、优化与模型方法研究。 共 251 条。</span>
+                <span>基于关键词自动归类的训练、优化与模型方法研究。 共 252 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,8 +79,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "ML", "subtitle": "基于关键词自动归类的训练、优化与模型方法研究。 共 251 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "ML", "subtitle": "基于关键词自动归类的训练、优化与模型方法研究。 共 252 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-07-24 10:00",
+    "title": "论文总结：Reactive Writers",
+    "content": "**论文信息**\n- 标题：Reactive Writers: How Co-Writing with AI Changes How We Engage with Ideas\n- 作者：Advait Bhat (UW), Marianne Aubin Le Quéré (Princeton), Mor Naaman (Cornell Tech), Maurice Jakesch (Bauhaus University)\n- 会议：CHI 2026（Best Paper Honorable Mention）\n- 链接：https://arxiv.org/abs/2603.10374\n- DOI：10.1145/3772318.3791529\n\n---\n\n## 一、核心论点\n\n本文提出并实证了一个名为\"Reactive Writing\"（反应式写作）的新理论框架，描述了 AI 协同写作如何从根本上重塑人类的认知过程：写作的核心活动从\"我想到什么\"迁移为\"我是否同意这个建议\"。在 AI 内联建议持续介入的情况下，作者不再完成自主构思后再写作，而是被 AI 建议打断构思流程，转向以评价为主的认知模式——阅读建议、判断是否接受、在此基础上扩写。更关键的是，作者普遍感觉自己在完全掌控写作，但实际上 AI 通过\"概念种子\"效应，已经系统性地影响了他们最终表达的内容和观点。这种认知盲区使得 AI 写作助手成为一种隐蔽但强大的\"算法议程设置\"技术。\n\n## 二、背景与动机\n\n已有实验证据表明 AI 写作辅助不仅能改变文本表达，还能改变作者事后的个人观点（Jakesch et al., 2023; Williams-Ceci et al., 2025），但我们缺少对\"过程层面\"的理解——作者是如何一步步与 AI 建议互动的？内联建议如何打断和重塑构思、记忆提取、语言生成等基础认知过程（Flower & Hayes, 1981）？这种影响远超个人写作：如果 AI 建议系统性地引导作者表达特定话题而边缘化其他话题，随着 AI 辅助文本在网络上的扩散，语言模型中嵌入的偏见将固化为集体信息生态的一部分。本文填补这一过程性理解空白，研究两个核心问题：(1) 内联的有偏 AI 写作助手如何重塑作者的构思和写作过程？(2) AI 协同写作如何影响作者最终表达的观念？\n\n## 三、方法与过程\n\n研究采用混合方法设计。实验平台部署了一个有偏的内联 AI 写作助手（GPT-3.5-turbo），在社会媒体好坏问题上持明确立场。定性部分：19 名参与者完成 AI 辅助写作后，接受线索回溯式口语报告访谈（cued retrospective verbal protocol），在回看自己写作过程录像的同时口头报告当时的思考过程。定量部分：分析 1,291 个 AI 协同写作会话的交互日志，通过 BERTopic 提取 20 个主题，统计 AI 建议涉及的主题与最终论文中出现的主题之间的关联强度。选择有偏模型作为\"分析极端值\"是刻意设计——即使在宣称中立的系统中偏见也以更隐蔽的方式存在，极端化可以让过程机制更清晰地显现。\n\n## 四、主要发现\n\n三项核心发现构成 Reactive Writing 模型。\n\n**注意力捕获（Attention Capture）**：内联建议打断了作者的自然构思流程。当 AI 建议出现在光标处时，参与者立即停止原有思路转向评估建议。这种中断被归因于界面设计（建议直接出现在视觉焦点位置）和认知经济性（评估比自主生成更省力）的共同作用。\n\n**协议驱动的采纳（Agreement-Governed Inclusion）**：作者采纳建议的主要驱动因素是\"我同意这个说法\"而非\"这正是我想写的\"。建议中的新观点和框架被接受后，作者在此基础上进行扩写——AI 的概念种子由此进入文本并生根。关键悖论：作者持续感觉自己拥有完全的控制权和能动性（\"毕竟我可以随时编辑\"），但实际上 AI 的议程设置效应已经发生。\n\n**事后个性化（Post-hoc Personalization）**：作者会对 AI 建议进行编辑以保留个人声音、避免\"复制感\"，但他们往往保留了建议的底层框架和观点方向。这种编辑创造了\"我真的写了这个\"的错觉，进一步掩盖了 AI 的影响。定量分析证实：即使控制直接接受的文本量，接触过某个主题的 AI 建议仍显著预测该主题在最终论文中的出现——影响超出了逐字采纳，存在\"概念传播\"效应。\n\n## 五、局限性\n\n第一，研究使用的是一个刻意有偏的模型——在真实产品中，模型通常会经过对齐处理以降低明显偏见。这限制了生态效度，极端化设计揭示的机制在温和偏见场景中可能表现不同。第二，样本量 19 人虽然对定性研究达到主题饱和，但定量分析的 1,291 个会话来自同一批参与者，个体差异（如写作风格、AI 素养）对 reactive writing 程度的影响无法充分探索。第三，写作主题固定为\"社交媒体影响\"这一价值负载话题——在价值中性的写作任务（如技术报告）中，reactive writing 的机制可能显著不同。第四，研究只使用了一种界面设计（内联建议），不同界面（如侧边栏、弹出提示）可能产生不同的认知中断和评估模式。第五，没有追踪写后观点的长期变化，不知道 reactive writing 导致的观点偏移是暂时的还是持久的。\n\n## 六、对你课题的启发\n\n这篇论文对你的\"人-AI 协作学习中的认知分布\"研究有三层直接启发。\n\n**第一层：认知分布的可观测化**。Reactive Writing 模型提供了一个可操作的框架来追踪人-AI 协作中认知如何从\"生成\"向\"评价\"迁移。在你的设计学习情境中，可以借鉴其回溯式口语报告方法，观察学习者在 AI 辅助下进行设计反思/方案构思时，认知活动的分布变化——什么时候学习者还在主动生成，什么时候转入了评价模式？这对理解分布式认知中\"有效的认知负荷分配\"至关重要。\n\n**第二层：元认知盲区作为设计问题**。论文最惊人的发现是：作者普遍没有意识到 AI 影响了他们的思考——这种元认知盲区不是个别现象，而是 reactive writing 模式的系统性特征。在你的课题中，这意味着不能仅靠让学习者\"注意 AI 的影响\"来解决认知分布的隐性问题。需要从交互设计层面嵌入机制，如\"认知可见性提示\"——在 AI 建议介入时标记其来源和潜在偏向，帮助学习者保持对自身认知过程的监控。\n\n**第三层：算法议程设置与学习内容的隐性塑造**。论文将 AI 写作助手框架化为\"算法议程设置技术\"——AI 通过建议中的话题选择，隐性地决定了作者思考什么。在你的设计学习情境中，这揭示了 AI 不仅是工具，更是隐性的\"课程设计师\"——它推荐的框架、案例、视角可能系统性地引导学习者关注某些设计维度而忽略其他。这为你的研究增加了一个批判性维度：人-AI 协作学习不仅要考虑\"如何协作更有效\"，还要追问\"AI 在教什么、谁在决定应该学什么\"。",
+    "excerpt": "来源：records/20260724/10/reactive-writers/论文总结.md · 论文信息",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260724/10/reactive-writers",
+    "original_url": "https://arxiv.org/abs/2603.10374",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-07-21 10:00",
     "title": "Behavior Latticing: Inferring User Motivations from Unstructured Interactions",

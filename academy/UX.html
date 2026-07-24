@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UX</title>
-    <meta name="description" content="基于关键词自动归类的体验与设计研究。 共 336 条。">
+    <meta name="description" content="基于关键词自动归类的体验与设计研究。 共 338 条。">
     <meta property="og:title" content="UX - 研究所">
-    <meta property="og:description" content="基于关键词自动归类的体验与设计研究。 共 336 条。">
+    <meta property="og:description" content="基于关键词自动归类的体验与设计研究。 共 338 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">UX</h1>
-        <p class="sidebar-summary">基于关键词自动归类的体验与设计研究。 共 336 条。</p>
+        <p class="sidebar-summary">基于关键词自动归类的体验与设计研究。 共 338 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>UX</strong>
-                <span>基于关键词自动归类的体验与设计研究。 共 336 条。</span>
+                <span>基于关键词自动归类的体验与设计研究。 共 338 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,8 +79,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "UX", "subtitle": "基于关键词自动归类的体验与设计研究。 共 336 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "UX", "subtitle": "基于关键词自动归类的体验与设计研究。 共 338 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-07-24 10:00",
+    "title": "论文总结：Reactive Writers",
+    "content": "**论文信息**\n- 标题：Reactive Writers: How Co-Writing with AI Changes How We Engage with Ideas\n- 作者：Advait Bhat (UW), Marianne Aubin Le Quéré (Princeton), Mor Naaman (Cornell Tech), Maurice Jakesch (Bauhaus University)\n- 会议：CHI 2026（Best Paper Honorable Mention）\n- 链接：https://arxiv.org/abs/2603.10374\n- DOI：10.1145/3772318.3791529\n\n---\n\n## 一、核心论点\n\n本文提出并实证了一个名为\"Reactive Writing\"（反应式写作）的新理论框架，描述了 AI 协同写作如何从根本上重塑人类的认知过程：写作的核心活动从\"我想到什么\"迁移为\"我是否同意这个建议\"。在 AI 内联建议持续介入的情况下，作者不再完成自主构思后再写作，而是被 AI 建议打断构思流程，转向以评价为主的认知模式——阅读建议、判断是否接受、在此基础上扩写。更关键的是，作者普遍感觉自己在完全掌控写作，但实际上 AI 通过\"概念种子\"效应，已经系统性地影响了他们最终表达的内容和观点。这种认知盲区使得 AI 写作助手成为一种隐蔽但强大的\"算法议程设置\"技术。\n\n## 二、背景与动机\n\n已有实验证据表明 AI 写作辅助不仅能改变文本表达，还能改变作者事后的个人观点（Jakesch et al., 2023; Williams-Ceci et al., 2025），但我们缺少对\"过程层面\"的理解——作者是如何一步步与 AI 建议互动的？内联建议如何打断和重塑构思、记忆提取、语言生成等基础认知过程（Flower & Hayes, 1981）？这种影响远超个人写作：如果 AI 建议系统性地引导作者表达特定话题而边缘化其他话题，随着 AI 辅助文本在网络上的扩散，语言模型中嵌入的偏见将固化为集体信息生态的一部分。本文填补这一过程性理解空白，研究两个核心问题：(1) 内联的有偏 AI 写作助手如何重塑作者的构思和写作过程？(2) AI 协同写作如何影响作者最终表达的观念？\n\n## 三、方法与过程\n\n研究采用混合方法设计。实验平台部署了一个有偏的内联 AI 写作助手（GPT-3.5-turbo），在社会媒体好坏问题上持明确立场。定性部分：19 名参与者完成 AI 辅助写作后，接受线索回溯式口语报告访谈（cued retrospective verbal protocol），在回看自己写作过程录像的同时口头报告当时的思考过程。定量部分：分析 1,291 个 AI 协同写作会话的交互日志，通过 BERTopic 提取 20 个主题，统计 AI 建议涉及的主题与最终论文中出现的主题之间的关联强度。选择有偏模型作为\"分析极端值\"是刻意设计——即使在宣称中立的系统中偏见也以更隐蔽的方式存在，极端化可以让过程机制更清晰地显现。\n\n## 四、主要发现\n\n三项核心发现构成 Reactive Writing 模型。\n\n**注意力捕获（Attention Capture）**：内联建议打断了作者的自然构思流程。当 AI 建议出现在光标处时，参与者立即停止原有思路转向评估建议。这种中断被归因于界面设计（建议直接出现在视觉焦点位置）和认知经济性（评估比自主生成更省力）的共同作用。\n\n**协议驱动的采纳（Agreement-Governed Inclusion）**：作者采纳建议的主要驱动因素是\"我同意这个说法\"而非\"这正是我想写的\"。建议中的新观点和框架被接受后，作者在此基础上进行扩写——AI 的概念种子由此进入文本并生根。关键悖论：作者持续感觉自己拥有完全的控制权和能动性（\"毕竟我可以随时编辑\"），但实际上 AI 的议程设置效应已经发生。\n\n**事后个性化（Post-hoc Personalization）**：作者会对 AI 建议进行编辑以保留个人声音、避免\"复制感\"，但他们往往保留了建议的底层框架和观点方向。这种编辑创造了\"我真的写了这个\"的错觉，进一步掩盖了 AI 的影响。定量分析证实：即使控制直接接受的文本量，接触过某个主题的 AI 建议仍显著预测该主题在最终论文中的出现——影响超出了逐字采纳，存在\"概念传播\"效应。\n\n## 五、局限性\n\n第一，研究使用的是一个刻意有偏的模型——在真实产品中，模型通常会经过对齐处理以降低明显偏见。这限制了生态效度，极端化设计揭示的机制在温和偏见场景中可能表现不同。第二，样本量 19 人虽然对定性研究达到主题饱和，但定量分析的 1,291 个会话来自同一批参与者，个体差异（如写作风格、AI 素养）对 reactive writing 程度的影响无法充分探索。第三，写作主题固定为\"社交媒体影响\"这一价值负载话题——在价值中性的写作任务（如技术报告）中，reactive writing 的机制可能显著不同。第四，研究只使用了一种界面设计（内联建议），不同界面（如侧边栏、弹出提示）可能产生不同的认知中断和评估模式。第五，没有追踪写后观点的长期变化，不知道 reactive writing 导致的观点偏移是暂时的还是持久的。\n\n## 六、对你课题的启发\n\n这篇论文对你的\"人-AI 协作学习中的认知分布\"研究有三层直接启发。\n\n**第一层：认知分布的可观测化**。Reactive Writing 模型提供了一个可操作的框架来追踪人-AI 协作中认知如何从\"生成\"向\"评价\"迁移。在你的设计学习情境中，可以借鉴其回溯式口语报告方法，观察学习者在 AI 辅助下进行设计反思/方案构思时，认知活动的分布变化——什么时候学习者还在主动生成，什么时候转入了评价模式？这对理解分布式认知中\"有效的认知负荷分配\"至关重要。\n\n**第二层：元认知盲区作为设计问题**。论文最惊人的发现是：作者普遍没有意识到 AI 影响了他们的思考——这种元认知盲区不是个别现象，而是 reactive writing 模式的系统性特征。在你的课题中，这意味着不能仅靠让学习者\"注意 AI 的影响\"来解决认知分布的隐性问题。需要从交互设计层面嵌入机制，如\"认知可见性提示\"——在 AI 建议介入时标记其来源和潜在偏向，帮助学习者保持对自身认知过程的监控。\n\n**第三层：算法议程设置与学习内容的隐性塑造**。论文将 AI 写作助手框架化为\"算法议程设置技术\"——AI 通过建议中的话题选择，隐性地决定了作者思考什么。在你的设计学习情境中，这揭示了 AI 不仅是工具，更是隐性的\"课程设计师\"——它推荐的框架、案例、视角可能系统性地引导学习者关注某些设计维度而忽略其他。这为你的研究增加了一个批判性维度：人-AI 协作学习不仅要考虑\"如何协作更有效\"，还要追问\"AI 在教什么、谁在决定应该学什么\"。",
+    "excerpt": "来源：records/20260724/10/reactive-writers/论文总结.md · 论文信息",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260724/10/reactive-writers",
+    "original_url": "https://arxiv.org/abs/2603.10374",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-07-21 11:00",
     "title": "CoNode: Visualizing Workflows for Knowledge Reuse and Recombination in Team–AI Collaborative Design",
@@ -1110,6 +1122,18 @@
     "source_dir": "records/20260619/09/playwrite",
     "original_url": "https://doi.org/10.1145/3772318.3791159",
     "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-06-19 09:00",
+    "title": "设计案例分析：Linear's Elicitation Loop Pattern",
+    "content": "**来源信息**\n- 标题：Linear's Write with Agent: the Elicitation Loop pattern\n- 来源：Neodrop（产品交互拆解博客）\n- 日期：2026-06-19\n- 链接：https://neodrop.ai/post/MYMjXPyCoGj\n- 类型：产品设计案例分析（非学术论文）\n\n---\n\n## 一、核心论点\n\nLinear 在 2026 年 6 月 18 日发布的\"Agent Assisted Project Updates\"功能，其真正的设计价值不在于 AI 能写项目更新，而在于他们公开承认了第一次设计失败的原因——并提出了一个可复用的交互模式作为解决方案。Elicitation Loop（引导式循环）模式的核心原则是：当 AI 的输出需要主观判断且具有社会可见性时，一次性生成（one-shot）必然失败——不是因为模型不够好，而是因为用户在 AI 代替思考的瞬间认知脱钩，从\"作者\"退化为\"审批者\"。解决方案不是提高生成质量，而是引入精确的摩擦：让 AI 先提问，强制用户在做判断之前保持认知在场。这是一种\"用交互设计守护人类思考\"的范式。\n\n## 二、背景与动机\n\nLinear 的产品团队最初的设计假设很自然：Agent 能获取项目的变更记录、Slack 频道消息等上下文，直接生成一份完整的项目更新草稿。测试结果令人失望——输出在技术上是连贯的，但读起来\"像没有人写过\"，因为确实没有人真正写过。Linear 产品负责人 Nan Yu 的原话揭示了问题本质：\"用户在这个过程中大脑脱钩了。\"这一失败本质上不是 AI 技术问题，而是交互设计问题——当用户点击一个按钮就得到一份完整草稿时，他们的认知活动从\"主动构建意义\"切换到了\"被动模式匹配：这听起来对吗？\"后者的认知深度远低于前者，产出的文本因此空洞。这个案例的独特价值在于：它是一个顶级产品团队坦诚记录的一次失败，并从中抽象出了可推广的设计知识。\n\n## 三、方法与过程\n\nNeodrop 的拆解从 Linear 更新编辑器的三个交互区域入手。\n\n**区域一（顶部状态栏）**：Comment/Update 标签页 + \"On track\"状态指示器。状态是界面上唯一的彩色元素——不是无意的，而是因为\"健康状态\"是利益相关者扫读时实际阅读的数据，也是 PM 在写作之前必须做的第一个判断。\n\n**区域二（中央输入区）**：空白文本域，placeholder 用低对比度灰色写着\"Write a project update...\"。空白本身在做设计工作——它施加了用户必须写点什么的压力，而不是用模板预先锚定用户的思考框架。\n\n**区域三（底部操作栏）**：左侧\"Write with Agent\"按钮（灰色药丸、次要视觉层级），右侧\"Post update\"按钮（主要操作）。视觉层级传递的哲学是：你拥有更新，Agent 是一个你可以选择引入的资源。\n\n而在\"Write with Agent\"被触发后，Agent 不会直接生成草稿。它会先检查自上次更新以来的议题变更和文档修改，阅读关联 Slack 频道的消息，然后向用户提问：\"这次更新应该强调什么？最重要的变化是什么？缺少什么上下文？\"——这就是 Elicitation Loop。用户在回答这些问题的过程中，实际上已经完成了对项目进展的认知处理，Agent 只是在用户保持思考的前提下协助组织语言。\n\n## 四、主要发现\n\n四项设计洞察构成 Elicitation Loop 模式的核心。\n\n**设计洞察一：认知脱钩是 AI 写作的核心失败模式。** 不是模型能力不足，而是交互设计让用户在 AI 执行时停止了思考。从\"作者\"到\"审批者\"的退化是一个认知模式的切换——审批是更浅的认知活动。\n\n**设计洞察二：摩擦可以是特征。** 在多轮交互中，Agent 不是更快地给答案，而是\"先问问题\"。这种引入摩擦的设计看起来降低了效率，实际上通过保持用户认知在场，大幅提升了最终输出的质量和用户对输出的所有权。\n\n**设计洞察三：Agent 作为引导者而非替代者。** Agent 的角色从\"替你写\"变为\"帮你组织你已经知道但尚未明确的东西\"。它利用上下文（变更记录、Slack 消息）来问更精准的问题，但判断始终在用户手中。\n\n**设计洞察四：视觉层级编码设计哲学。** \"Write with Agent\"被设计为次要按钮——不是默认路径。这个视觉决策传递的是：Agent 是工具，你是作者。一旦 Agent 被设计为主要路径（如某些产品的\"AI 帮我写\"大按钮），认知脱钩在用户还没开始写之前就已经发生了。\n\n## 五、局限性\n\n第一，这是单一产品案例的非学术分析，没有系统性的用户研究支撑。Linear 的成功可能部分归因于其特定的用户群体（技术产品经理，本身有较高的主动性和批判性思维），在其他用户群体中 Elicitation Loop 可能显得繁琐。第二，Neodrop 的拆解来自公开信息，我们看不到 Linear 内部失败的详细数据——比如有多少用户直接跳过了 Agent 建议、有多少人感觉提问环节是负担。第三，Elicitation Loop 模式适用于需要主观判断的输出场景（如项目更新），但对于不需要判断的机械性任务（如格式转换），多轮交互反而增加负担。第四，博客分析本身可能夸大了模式的可推广性——\"用一个案例抽象出通用原则\"在认知上很有吸引力，但需要更多独立验证。\n\n## 六、对你课题的启发\n\nElicitation Loop 对你的\"人-AI 协作学习\"课题有三方面价值。\n\n**方法论层面**：这个案例展示了一种\"在交互中保持认知分布平衡\"的具体设计策略。你的课题研究学习者在 AI 辅助下的认知分布——什么时候认知应该分布在 AI 上（执行），什么时候应该保留在人类身上（判断）。Elicitation Loop 给出了一个设计原则：在需要主观判断和时间顺序敏感的认知节点上，设计应该主动\"拦截\"AI 的自动输出，用提问强制学习者保持认知在场。这可以直接转化为你设计实验条件时的交互原型。\n\n**理论层面**：Elicitation Loop 与 Reactive Writers（今天同步采集的另一篇 CHI 2026 论文）形成了\"问题-解法\"对应。Reactive Writers 从实证角度展示了认知从生成向评价迁移和元认知盲区的存在；Elicitation Loop 从产品设计角度展示了一种对抗这种迁移的交互策略——多轮引导式交互。两个材料一起，为你的课题提供了从\"识别问题\"到\"设计方案\"的完整链条。\n\n**批判性视角**：Elicitation Loop 虽然优雅，但隐含了一个假设——用户愿意被\"引导\"。在实际学习情境中，学习者可能因为时间压力或认知负荷而跳过提问环节（直接接受默认建议），或者 Agent 的提问本身带有框架偏见（问什么、不问什么已经是一种议程设置）。这提醒你，在设计学习情境中的人-AI 协作时，不仅要考虑\"如何让交互更好\"，还要警惕交互设计本身的权力结构——谁来提问、谁来回答、什么问题可以被问。",
+    "excerpt": "来源：records/20260724/09/elicitation-loop/论文总结.md · 来源信息",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260724/09/elicitation-loop",
+    "original_url": "https://neodrop.ai/post/MYMjXPyCoGj",
+    "original_label": "原文",
     "session_type": "",
     "session_label": ""
   },
