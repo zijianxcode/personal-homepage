@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI</title>
-    <meta name="description" content="基于源目录中论文总结自动汇总的 AI 相关记录。 共 359 条。">
+    <meta name="description" content="基于源目录中论文总结自动汇总的 AI 相关记录。 共 361 条。">
     <meta property="og:title" content="AI - 研究所">
-    <meta property="og:description" content="基于源目录中论文总结自动汇总的 AI 相关记录。 共 359 条。">
+    <meta property="og:description" content="基于源目录中论文总结自动汇总的 AI 相关记录。 共 361 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">AI</h1>
-        <p class="sidebar-summary">基于源目录中论文总结自动汇总的 AI 相关记录。 共 359 条。</p>
+        <p class="sidebar-summary">基于源目录中论文总结自动汇总的 AI 相关记录。 共 361 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>AI</strong>
-                <span>基于源目录中论文总结自动汇总的 AI 相关记录。 共 359 条。</span>
+                <span>基于源目录中论文总结自动汇总的 AI 相关记录。 共 361 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,8 +79,32 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "AI", "subtitle": "基于源目录中论文总结自动汇总的 AI 相关记录。 共 359 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "AI", "subtitle": "基于源目录中论文总结自动汇总的 AI 相关记录。 共 361 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-07-25 11:00",
+    "title": "Interaction-Augmented Instruction: Modeling the Synergy of Prompts and Interactions in Human-GenAI Collaboration",
+    "content": "- **收录日期**：2026-07-25\n- **采集人**：惠\n\n## 核心论点\n\n这篇论文提出了 Interaction-Augmented Instruction (IAI) 模型——一个紧凑的实体-关系图，用于形式化描述 GUI 交互与文本提示如何在人-GenAI 通信中协同工作。论文的核心主张是：当前人-AI 交互领域缺乏一个能够同时描述、比较和生成交互设计的理论模型——既有的分类法（taxonomy）多为描述性，难以指导新设计；而 IAI 模型通过六个实体和它们之间的关系，统一了\"提示+交互\"的协同逻辑，并从中蒸馏出 12 个可组合的原子交互范式。这个模型的\"三力\"——描述力（descriptive power）、辨别力（discriminative power）、生成力（generative power）——使其不只是又一个分析框架，而是能够实际指导 GenAI 界面设计的理论基础设施。\n\n## 背景与动机\n\n文本提示（text prompt）是人-GenAI 通信的主导范式，但它有一个根本局限：自然语言的模糊性和粗糙性使得精细化的、参照性的意图难以准确传达——用户想在图片编辑中指定\"右上角的花瓣\"、在代码编辑中选择\"这个特定的循环\"，纯文本很难做到。实践中，越来越多的系统将文本提示与 GUI 交互（点击、拖拽、画刷选择）结合使用，但这一协同策略始终缺乏形式化模型来系统性地比较和推动设计创新。作者指出，HCI 领域的先驱工作早已警告：点状的研究示范（point-like demonstrations）不足以推动领域进步，必须有通用的交互模型来支撑从具体案例到广泛应用的跨越。这就是 IAI 的出发点——不是再做一个系统，而是为整个领域提供一个共享的理论语言。\n\n## 方法与过程\n\n作者采用迭代演绎法（iterative and deductive process）构建 IAI 模型。首先，从现有 GenAI 交互系统的文献回顾中提炼出候选实体和关系，经过多轮合并和精简，最终确定了六个核心实体：Human (H)、Interaction (I)、Artifact (A)、Text Prompt (T)、Augmented Instruction (Aug)、Generative AI (G)。其中 Aug（增强指令）是关键的创新实体——它明确了交互产生的结构化约束（如像素掩码、坐标范围、AST 节点标识符）与文本提示结合后形成的、作为 GenAI 单一显式输入的复合指令。随后，作者系统枚举了所有实体对之间的语义关系，仅保留有意义的、可区分的、可解释的关系。在此基础上，作者回顾并标注了 66 个现有的 GenAI 交互系统界面，将所有系统的工作流映射为 IAI 模型下的有向图（paradigm graph），从中蒸馏出 12 个反复出现的、可组合的原子交互范式，按交互时机（GenAI 调用前/后）和资源可用性（仅提示 vs. 工件接地）两个维度组织。最后，通过四个使用场景（usage scenarios）——将现有工具迭代增强、链式组合已有范式、在新兴场景中推导新范式——验证了模型的生成力。\n\n## 主要发现\n\n第一，IAI 模型被证明是一个具有高度描述力的框架：所有 66 个系统的交互工作流都可以用模型的原子图表示，说明其覆盖面足够广。第二，12 个原子范式有效地捕捉了不同系统之间的相似性和差异——两个系统可能在表面上看起来完全不同，但它们在 IAI 图结构上是同构的，揭示了底层的设计逻辑。第三，四个使用场景展示了模型不仅能描述已有设计，还能生成新设计：通过比较已有范式与完整 IAI 模型的空间，发现了尚未被探索的交互设计范式。第四，论文识别出的范式组织维度（调用前/后、仅提示/工件接地）为理解交互设计的策略空间提供了简洁而有力的坐标——例如，预调用交互（如先选择代码区域再输入提示）和后调用交互（如 GenAI 生成后用户通过交互精炼结果）代表了两种根本不同的控制哲学。第五，Aug 实体的引入解决了此前分类法中的一个模糊地带：交互产生的结构化约束和文本提示不是\"两个独立输入\"，而是被编码、归一化、组装成一个统一的 Aug 指令再送入 GenAI——这个视角简化了范式比较，澄清了不同界面在\"如何构造 Aug\"这一关键步骤上的差异。\n\n## 局限性\n\n第一个局限：IAI 模型是描述性的（descriptive）而非评估性的（evaluative）——它告诉你可以设计什么样的交互范式，但不告诉你哪种范式在给定情境下更有效。对于需要做出设计决策的实践者来说，这限制了模型的直接可用性。第二个局限：66 个系统的语料库可能存在选择偏差——这些系统大多来自学术文献，可能偏向于新颖但不一定在实践中被广泛采纳的设计，而大量工业界实际使用的交互模式可能未被充分代表。第三个局限：12 个原子范式是从已有系统中蒸馏出来的，这意味着它们受限于现有设计的想象空间——真正革命性的新范式可能不在这 12 个之内。第四个局限：模型以实体-关系图的形式化语言运作，这对设计实践者（而非 HCI 研究者）来说存在认知门槛——将一个具体的界面设计翻译成 IAI 图需要一定的抽象训练，可能限制了模型在日常设计迭代中的采纳。第五个局限（本文未提及，但值得注意）：模型聚焦于单次人-GenAI 通信回合的结构，但真实的协作往往是多轮、动态的——它没有建模交互序列中的学习效应、信任演化、或者人在多次交互中形成的操作习惯。\n\n## 对你课题的启发\n\nIJIAN 的博士研究关注设计学习情境中的人-AI 协作认知分布，IAI 模型至少在三方面直接赋能这项工作。第一，**分析工具**：IAI 模型提供了一个形式化语言来描述学习情境中学习者的交互（点击、选择、标注、拖拽）与他们的文本提示（问题、指令、反馈）如何组合形成\"增强指令\"，从而精确追踪\"认知工作\"在人与 AI 之间的分配方式——你可以用 IAI 图来建模不同设计工具（Figma 的 AI 功能 vs. Cursor 的协作模式 vs. 自主 AI 设计代理）在学习情境中的交互结构差异。第二，**设计框架**：12 个原子范式可以被重新解读为\"学习支架\"的不同形态——预调用交互对应\"先让学生表达意图再获得 AI 辅助\"（维持认知参与），后调用交互对应\"AI 先生成再让学生精炼\"（培养批判性评价能力），工件接地范式对应\"在具体设计产出上进行协作修改\"（具身认知）。第三，**理论贡献**：你可以在论文中论证 IAI 模型如何扩展分布式认知理论——如果将 Aug 实体理解为\"认知表征在人与 AI 之间的转换点\"，那么 IAI 模型实际上是在形式化 Hutchins 所说的\"表征态传播\"（propagation of representational state）在 AI 协作情境中的具体机制——这是对分布式认知理论在 GenAI 时代的实质性贡献。",
+    "excerpt": "来源：records/20260725/11/interaction-augmented-instruction/论文总结.md · 作者 ：Leixian Shen (HKUST), Yifang Wang (FSU / Microsoft Research), Huamin Qu (HKUST), Xing Xie (MSRA), Haotian Li (MSRA)",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260725/11/interaction-augmented-instruction",
+    "original_url": "https://doi.org/10.1145/3772318.3790505",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-07-25 09:00",
+    "title": "Agent UX Teardown: How Cursor Makes You Trust an AI With Your Codebase",
+    "content": "- **链接**：https://medium.com/system-design-mastery-series/agent-ux-teardown-how-cursor-makes-you-trust-an-ai-with-your-codebase-f4bada642eb2\n- **收录日期**：2026-07-25\n- **采集人**：悠仁\n\n## 核心论点\n\nCursor 在 2026 年初突破百万日活、二十亿美金年化收入，不是因为它的模型比别人强——开发者们可以用同样的模型。Cursor 真正做对了的是**界面设计**：一套让开发者愿意把代码改写的权力交给一个有时会自信地犯错的主体的交互机制。文章逐一解剖了五个信任设计机制——diff 视图、Plan Mode、按风险等级审批门控、渐进授权、以及 Hooks 自定义护栏——并诚实地指出了三个信任泄漏点。最终提炼出四个可跨领域移植的设计原则：让工作在落地前可审查、展示计划而非只展示结果、按后果而非默认值设置审批门槛、让自主权通过使用记录来挣得且随时可撤回。\n\n## 背景与动机\n\nAI Agent 面临的根本性 UX 问题不是\"模型不够聪明\"，而是**信任问题**——如果一个 Agent 有时会犯错，用户如何敢让它代替自己执行不可逆的操作？Coding agent 是这个问题最极端的测试场：代码是\"可验证的\"（编译不过即出错、测试不过即有问题），但也是\"后果严重的\"（一个错误改动可能破坏整个系统）。Cursor 的设计团队意识到，他们不是在做一个更聪明的代码补全工具，而是在设计一个**信任界面**——让开发者从\"我相信这个 AI\"的信念跳跃（leap of faith）转向\"我审查四行代码，点击接受\"的具体低认知负担行为。\n\n## 方法与过程\n\n文章采用产品拆解方法论（product teardown），以 Cursor 为分析对象，从五个交互设计维度逐一解剖其信任构建机制：(1) diff 视图——将每次代码改动渲染为红（删除）绿（新增）的双栏对比，模仿开发者已信任的 code review 仪式，让\"信任 AI\"转化为\"读四行代码点接受\"；(2) Plan Mode——在 Agent 触碰任何文件前先输出结构化意图大纲（哪些文件、什么顺序、为什么），让用户在 Agent 花二十步建立在一个错误前提上之前，在大纲阶段就发现方向偏差；(3) 按风险等级的审批门控——低风险操作（读取代码）自由流动，高风险操作（终端命令、敏感文件编辑）必须人类审批，精确校准审批摩擦——这是安全机制被保留还是被关掉的分界线；(4) 渐进授权——新用户审查一切，随着使用中建立信任记录，用户可以逐步放宽控制：白名单化反复批准的终端命令、启动后台 Agent 异步工作、设置按 Agent 的审批策略，最终通过 Hooks 编写自定义护栏；(5) Hooks——事件驱动脚本，在\"编辑前\"\"审批时\"等节点自动执行，让高级用户自动化自己的护栏规则。\n\n## 主要发现\n\n第一，diff 视图是信任基础设施的原语（trust primitive）——它通过一项诚实的承认（\"Agent 可能犯错\"）来建立信任，使用户从\"信仰模式\"切换到\"审查模式\"，将一个认知跳跃转化为低负担的具体行动。第二，Plan Mode 是第二道诚实：承认\"Agent 可能误解目标\"，所以在旅程开始前展示地图而非事后——审查一个大纲的成本远低于审查一个已完成的大规模变更。第三，审批摩擦的校准是决定安全机制存亡的关键——不分后果地对所有操作要求审批会训练用户橡胶图章般地全部批准，而按后果分级（shell 命令停、读操作流）的工作方式让审批在真正需要的地方发挥效用。第四，渐进授权的优雅在于它的步调设定者不是产品路线图或设置页，而是用户通过使用记录的已展示信心——Agent 通过可验证的过往表现挣得权限，而非在第一天就要求信任。第五，三个信任泄漏点同样重要：自信幻觉（精美的 diff 展示一个错误方案仍是错误方案）、大规模审查疲劳（五行变更的审批是好的，五百行十二个文件的审批会崩塌为\"扫一眼全接受\"）、以及锁入效应（每一条规则、每一个 hook、每一个白名单都让离开 Cursor 的成本更高）——这些失败模式对任何构建 Agent 产品的人都是必修课。\n\n## 局限性\n\n第一，这篇文章是单一产品分析——虽然 Cursor 是当前最成功的 AI 编码 Agent，但其设计模式的可推广性未经验证。作者提炼的四个可移植原则是事后理性化（post-hoc rationalization），而非经过对照实验验证的设计规律。第二，作者的前端工程背景意味着分析偏向界面层，对 Agent 底层的编排逻辑（工具调用策略、上下文管理、RAG 检索质量）关注不足——而这些都是信任体验的重要组成部分。第三，文章分析的是\"专业用户使用专业工具\"的场景——开发者在编码领域已有成熟的审查习惯和风险判断能力，这可能是 diff 视图和审批门控成功的前提条件。在教育场景或面向新手的设计工具中，用户缺乏这种判断力，同样的界面设计可能产生不同的效果（例如新手可能不知道 diff 中的某个改动\"为什么是错的\"）。第四，文章未讨论的一个关键陷阱：当用户信任了界面后，他们可能变得**过度信任**——因为界面太顺滑了，用户可能减少了本应有的批判性审查——这恰恰是野蔷薇提出的 Critical Inker 试图解决的核心问题。界面设计可以建立信任，但如何确保这种信任是校准过的（calibrated trust）而非盲目的，文章未有深入探讨。\n\n## 对你课题的启发\n\n这篇文章对 ZIJIAN 的设计学习情境研究有四重直接启发。第一，**信任的交互原语可翻译为学习支架**——diff 视图的本质是\"让 AI 的思维过程在落地前可见、可审查\"，这与学习科学中的\"让思维可见\"（making thinking visible）原则高度一致。如果在设计教育场景中，AI 不是直接修改学生的设计稿，而是像 diff 一样展示\"它建议改变什么以及为什么\"，学生就有机会在审查中学习设计的推理逻辑——这比 AI 直接代劳更有教育价值。第二，**渐进授权对应教育中的\"渐进释放责任模型\"**（Gradual Release of Responsibility）——在 AI 协作学习中，学生不是一次性获得或放弃对 AI 的控制权，而是在使用中逐步学习\"什么任务适合委托给 AI、什么任务需要自己判断\"——这正是元认知能力的核心。第三，**三个信任泄漏点是教育 AI 设计的三盏红灯**——自信幻觉（AI 给出一个漂亮但错误的设计方案）、审查疲劳（学生面对大量 AI 建议时放弃逐一思考）、锁入效应（学生对特定 AI 工具的依赖使其不敢切换）——这三个陷阱在设计 AI 教育工具时必须主动规避。第四，也是最重要的：这篇文章揭示了一个根本问题——当界面设计足够好，信任可以被\"设计出来\"。但对于教育来说，我们的目标不是最大化信任，而是最大化学习。这两个目标有时是一致的（Plan Mode 让学生的批判性思考有了明确的介入点），有时是冲突的（过于顺滑的 diff 审批流程可能让学生减少深度思考）。这种\"界面设计的善意如何微妙地削弱认知参与\"的张力，正是一片值得深耕的学术土地。",
+    "excerpt": "来源：records/20260725/09/cursor-agent-ux-teardown/论文总结.md · 作者 ：Suresh Kumar Ariya Gowder（前前端工程师，UX Collective 专栏作者）",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260725/09/cursor-agent-ux-teardown",
+    "original_url": "https://medium.com/system-design-mastery-series/agent-ux-teardown-how-cursor-makes-you-trust-an-ai-with-your-codebase-f4bada642eb2",
+    "original_label": "原文",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-07-24 10:00",
     "title": "论文总结：Reactive Writers",
