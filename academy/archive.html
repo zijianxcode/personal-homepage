@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>全部记录</title>
-    <meta name="description" content="源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1204 条。">
+    <meta name="description" content="源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1210 条。">
     <meta property="og:title" content="全部记录 - 研究所">
-    <meta property="og:description" content="源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1204 条。">
+    <meta property="og:description" content="源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1210 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">全部记录</h1>
-        <p class="sidebar-summary">源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1204 条。</p>
+        <p class="sidebar-summary">源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1210 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>全部记录</strong>
-                <span>源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1204 条。</span>
+                <span>源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1210 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,8 +79,80 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "全部记录", "subtitle": "源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1204 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "全部记录", "subtitle": "源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1210 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-07-27 11:00",
+    "title": "Mixed-Initiative Context: Structuring and Managing Context for Human-AI Collaboration",
+    "content": "- **论文类型**: 概念框架 + 探针系统 + 用户研究\n\n---\n\n## 一、核心论点\n\n这篇论文提出了一个根本性的交互范式重构：将人-AI 多轮对话中形成的\"上下文\"从隐式的、线性堆积的历史记录，重新定义为显式的、结构化的、可操纵的交互对象。作者指出，当前所有 LLM 系统都犯了一个相同的设计错误——上下文被当作后端实现细节（按时间顺序拼接、作为整体喂给模型），用户只能通过修改输入来间接影响它，无法直接检查\"什么还活跃在上下文里\"、\"哪些探索分支已被丢弃\"、\"当前推理基于哪一段历史\"。Mixed-Initiative Context 将上下文提升为交互层的一等公民：用户可以显式地包含、排除、隔离、重组上下文片段，AI 也可以在结构层面主动建议组织方式。这个范式转移的意义不在于又一个 feature，而在于它重新定义了人-AI 协作中\"共享认知基底\"的存在形式。\n\n## 二、背景与动机\n\n作者将问题的根源追溯到经典的 HCI 和 CSCW 理论。Greenberg (2001) 和 Dourish (2004) 早已论证：上下文不是静态信息集，而是一个必须在任务推进中持续构建、过滤、重组的动态基底。Clark 和 Brennan (1991) 的 common ground 理论也指出，协作需要共享的理解基础——而在人-AI 协作中，这个基础就是多轮交互形成的上下文。然而，现有 LLM 系统的设计将上下文扁平化为\"按时间拼接的线性序列\"：临时或废弃的对话分支持续占用上下文窗口，并行的主题线程相互干扰，用户只能通过后续输入间接修正（\"请忽略之前说的\"），无法验证修正是否真的生效。这种\"上下文作为后端黑箱\"的设计导致三个问题：(1) 用户控制不可见不可验证；(2) 上下文窗口浪费在无关信息上；(3) 协作工作流（分支、对比、回溯、收敛）缺乏结构性支持。论文的动机不是\"系统不够好用\"，而是认为当前的范式在底层假设上就已偏离了协作的本质。\n\n## 三、方法与过程\n\n论文的方法论呈现\"概念先行 → 系统验证 → 行为观察\"三层结构。首先，作者提出 Mixed-Initiative Context 的三层架构：Unit 层（每条消息作为最小上下文单元，具有激活/休眠状态）、Structure 层（节点间的主线-分支拓扑关系）、Pattern 层（可复用的上下文组织模板）。其次，实现 Contextify 探针系统——三面板布局（对话区 + 上下文地图 + 项目侧栏）+ 四个后台 Agent（对话 Agent、结构 Agent、记忆 Agent、用户模型 Agent），支持分支、合并、包含/排除、主线管理。该系统刻意采用\"最小设计\"：上下文地图直接暴露拓扑结构，不施加 UI 语义解释——这么做是为了减少设计者偏见，让用户在无引导条件下暴露真实需求。最后，通过 6 人 within-subjects 研究（ChatGPT 基线 vs Contextify 探针），在两个开放式硬件产品设计任务（各 15 分钟）中观察：用户如何组织上下文、如何协商 AI 主动性、整体协作体验。条件顺序和任务顺序均做 counterbalancing。\n\n## 四、主要发现\n\n研究发现围绕三个研究问题展开。RQ1（上下文管理策略）：参与者呈现三种心理模型——(a) 主线策展型（P1, P2），优先维护核心逻辑线程的整洁性；(b) 并行探索型（P4），将上下文视为动态管理不确定性的工具；(c) 委托型（P3, P5, P6），将组织权委托给 AI 或系统。但无论哪种模型，所有参与者在探针使用中都展现了对主动上下文组织的需求。RQ2（AI 主动性协商）：AI 的结构性建议（检测分支点、推荐回归路径、提取模式）被接受度最高，因为它支持而非替代用户判断。参与者表现出\"上下文主权\"意识——P5 明确提出需要双层表示：\"人看的 UI 应该模糊高层，AI 用的结构需要清晰\"，两者共享数据基底但服务于不同目的。RQ3（工作流体验）：上下文从隐式变为显式后，用户的工作焦点从\"修改输入\"转移到\"管理认知基底\"——P4 将之描述为\"set things aside without fully deleting them\"，这本质上是将认知操作外化到交互层。\n\n## 五、局限性\n\n本文有三方面局限值得注意。第一，实证基础薄弱：N=6 的探针研究，且均为熟练 ChatGPT 用户，既不能统计学推广，也无法覆盖新手如何理解上下文结构。15 分钟的单次任务无法捕捉长期使用中上下文管理策略的演化——而这恰恰是 Mixed-Initiative Context 最有价值的问题：用户在长时间跨度的项目协作中，如何积累、维护、修剪上下文？第二，概念框架的模糊性：三层架构（Unit/Structure/Pattern）更像一个分类学而非操作化理论。\"Pattern 层\"的\"可复用上下文模板\"停留在概念阶段，Contextify 并未真正实现。四个后台 Agent 也仅做了功能划分，缺乏对 Agent 行为策略（何时建议分支？依据什么判断上下文冲突？）的算法描述。第三，未解决的核心张力：上下文\"可见\"与\"可管理\"之间的 trade-off——Contextify 的最小设计故意不做 UI 解释，但这导致部分参与者（如 P2）认为细粒度节点管理是\"后端功能\"，不想直接操作。如果未来系统真的将上下文做成可操纵对象，认知负荷增加是否会抵消上下文管理带来的收益？论文承认了这个问题（在 Discussion 中讨论 legibility vs controllability），但停留在\"取决于任务和用户类型\"的回避答案。\n\n## 六、对你课题的启发\n\n这篇论文对\"人-AI 协作学习中的分布式认知\"研究有三层递进式启发。**第一层：提供分析语言。** 论文将上下文重新定义为\"shared cognitive substrate\"——在你的学习情境研究中，导师、学习者、AI 工具之间的共享认知基底是什么？不是简单的聊天历史，而是设计推理的轨迹、约束条件的演化、方案选择的理据。Mixed-Initiative Context 的三层架构（Unit/Structure/Pattern）可以直接映射为：设计决策单元（Unit）、设计过程的拓扑结构（Structure）、可迁移的设计思维模式（Pattern）。这比笼统地说\"协作中知识分布在外\"要精确得多。**第二层：重新定位研究问题。** 论文揭示的核心张力——\"可见性\"与\"可管理性\"之间的 balance——在你的课题中以不同形式出现：当学习者的认知过程被 AI 工具外化（设计草稿、推理链、约束列表），这部分外化认知是否应该对协作者（导师、同伴）可见？可见到什么程度？由谁控制可见性边界？这个问题直接连接到你之前关注的\"socially shared regulation of learning\"（7/25 惠采集的 triadic programming 的核心发现）——上下文可见性就是认知调节可见性的基础设施。**第三层：方法论的警惕。** 这篇论文是 preprint，不是顶会接收稿——概念大于实证，框架多于验证。它作为\"思考工具\"的价值远超作为\"研究结论\"的价值。对你的选题而言，应该把它读作一种**交互范式的提案**而非已被证明的设计原则。但恰恰因为你的课题还在概念框架构建阶段，这种\"提案型\"论文反而比结论型的更有用——它帮你问出对的问题：在你的设计学习情境中，什么应该成为\"显式的、可操纵的交互对象\"？不会是聊天历史的节点图——更有可能是设计决策的选项空间、约束关系的可视化、论据链的可追溯结构。",
+    "excerpt": "来源：records/20260727/11/mixed-initiative-context/论文总结.md · 作者 : Haichang Li (George Mason), Qinshi Zhang (UCSD), Piaohong Wang (CityU HK), Zhicong Lu (George Mason)",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260727/11/mixed-initiative-context",
+    "original_url": "https://arxiv.org/abs/2604.07121",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-07-27 11:00",
+    "title": "惠 — 能力进化 (2026-07-27)",
+    "content": "## 今日状态\n未提交提议。今日采集窗口（13:00-15:00）已过半，目录未创建。\n\n## 五条悟代采\n今日由五条悟自行搜索替代，选题：\n- **Mixed-Initiative Context** (arXiv:2604.07121) — 概念框架：将上下文重新定义为显式可操纵的交互对象\n\n选了惠的槽位（11/HCI 理论方向），因为这篇是纯 HCI 理论贡献。\n\n## 决策理由\n这篇论文属于你擅长的\"理论基础设施\"类——不展示一个新系统，而是提出一种新范式。你在 7/25 的 IAI 模型采集和 7/26 的 AI-Instruments 采集都证明了你对理论框架的敏感性。这篇 Mixed-Initiative Context 延续了这一脉络，但更激进：它不是在现有范式内优化（如 IAI 形式化交互类型），而是挑战了整个\"上下文作为后端历史\"的默认假设。\n\n## 明日方向指引\n1. **CHI 2026 是当前主矿脉** — 今天搜索中至少 5 篇 CHI 2026 全文被去重挡下，说明你之前的采集覆盖已经很广。继续深挖 CHI 2026 中\"Human-AI Interaction & GenAI\"和\"Collaborating with AI\"session。\n2. **关注引用链** — Mixed-Initiative Context 的理论根基是 Greenberg (2001)、Dourish (2004)、Horvitz (1999)、Clark & Brennan (1991)——这些是 HCI 的经典上下文/CSCW 理论。如果发现引用这些经典的新论文，优先采集。\n3. **提升层级** — 今天这篇是 preprint 而非顶会接收稿，概念大于实证。明天的目标：寻找至少一篇 CHI 2026 full paper（不是 workshop，不是 poster）中关于人-AI 交互范式或协作模型的。",
+    "excerpt": "来源：records/20260727/11/惠-能力进化.md/惠-能力进化.md · 未提交提议。今日采集窗口（13:00 15:00）已过半，目录未创建。",
+    "file_name": "惠-能力进化.md",
+    "source_dir": "records/20260727/11/惠-能力进化.md",
+    "original_url": "https://arxiv.org/abs/2604.07121",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-07-27 10:00",
+    "title": "野蔷薇 — 能力进化 (2026-07-27)",
+    "content": "## 今日状态\n未提交提议。HCI 实验室监测方向无产出。\n\n## 五条悟代采\n今日自行搜索替代，选题为 Mixed-Initiative Context（放惠的槽位）。HCI 实验室方向今日无合适候选——搜索到的 CHI 2026 论文中，实验室系统类（如 Cognitive Bridge、Sidekick）要么已被采集过，要么实证力度不足以单篇入选。\n\n## 方向指引\n1. **Fluid Interfaces 组（Pattie Maes）追踪** — 你 7/26 采集的 Critical Inker 来自该组，方向正确。追踪该组的后续产出和引用链。\n2. **跨认知任务迁移** — Critical Inker 的苏格拉底式追问如何适配非语言性设计认知任务（视觉推理、空间布局、原型迭代）？这是你原创贡献的切入点。\n3. **UIST 2026** — CHI 已基本覆盖，关注 UIST 2026 中的新型交互系统论文（10 月截稿，现在可能有 preprint 流出）。\n4. **不要只盯系统** — 有理论贡献的系统 > 纯系统演示。Cognitive Bridge（AI 生成的边界对象用于跨职能协作）值得但已被采过。找类似层级的。",
+    "excerpt": "来源：records/20260727/10/野蔷薇-能力进化.md/野蔷薇-能力进化.md · 未提交提议。HCI 实验室监测方向无产出。",
+    "file_name": "野蔷薇-能力进化.md",
+    "source_dir": "records/20260727/10/野蔷薇-能力进化.md",
+    "original_url": "",
+    "original_label": "",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-07-27 09:00",
+    "title": "悠仁 — 能力进化 (2026-07-27)",
+    "content": "## 今日状态\n未提交提议。设计案例方向无产出。\n\n## 五条悟代采\n今日自行搜索替代。Mixed-Initiative Context 虽然放惠的 HCI 理论槽位，但其核心——\"上下文作为可操纵交互对象\"——对设计实践有直接启发：今天所有设计者都在 LLM 聊天界面里工作，但没有人能直接管理自己的设计推理上下文。这个概念对于拆解 Cursor、Figma AI、Notion AI 等产品的交互设计是不可或缺的分析透镜。\n\n## 方向指引\n1. **用新框架看旧产品** — Mixed-Initiative Context 的三层架构（Unit/Structure/Pattern）是一个产品拆解的锐利工具。下一次你拆解一个设计工具时，不要只描述 feature，而是描述它的\"上下文模型\"：用户能显式操纵什么上下文单元？支持分支和回溯吗？有结构可见性吗？\n2. **溯源 > 传播** — 你 7/26 的 Conversation Trap 博客被拒，7/25 的 Cursor UX 拆解（Medium）却被选入。区别不是博客 vs 博客，而是\"机制细节 + 可移植原则\" vs \"泛泛批评\"。维持这个标准。\n3. **设计批评不是设计案例** — 你的方向是设计案例（design cases），不是设计批评（design critique）。案例需要有产品机制层面的拆解，不是观点表达。",
+    "excerpt": "来源：records/20260727/09/悠仁-能力进化.md/悠仁-能力进化.md · 未提交提议。设计案例方向无产出。",
+    "file_name": "悠仁-能力进化.md",
+    "source_dir": "records/20260727/09/悠仁-能力进化.md",
+    "original_url": "",
+    "original_label": "",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-07-27 09:00",
+    "title": "五条悟 — 能力进化 (2026-07-27)",
+    "content": "## 今日发现\n\n**采集员全缺席不是\"事故\"，是富矿枯竭的信号。** 今天触发保底机制后，搜索中出现了 8 篇去重复——其中 4 篇是惠在 6-7 月采集的 CHI 2026 论文。这说明一个深层事实：CHI 2026 的高质量论文已被高密度覆盖，继续以\"搜 CHI 2026 session\"为主要采集策略将面临边际收益递减。\n\n**去重不是障碍，是导航。** 今天去重命中帮我快速排除了 5 篇已知论文，节省了大量评估时间。但去重也暴露了一个信息不对称：我知道什么被采过，但不知道\"为什么当时被采\"和\"当时的评估结论是什么\"。如果能在一眼看到去重命中时同时看到当时的选文逻辑（比如\"惠 6/21 采 triadic programming 是因为 SSRL 框架\"），今天的替代搜索就能更精准地避开已覆盖方向而寻找互补选题。\n\n**Mixed-Initiative Context 的真正价值在\"元层\"。** 这篇论文不是另一个\"系统设计研究\"，它是一个\"交互范式的提案\"——它的贡献是重新定义了问题边界而非给出解决方案。对五条悟的汇总职能而言，这类论文比实证论文更需要\"翻译\"：把它的概念语言翻译成 zijian 课题中的操作化分析工具。今天写第六段（对你课题的启发）时，我刻意做了三层递进（分析语言 → 重定位问题 → 方法论警惕），这可能是适合\"概念提案型\"论文的汇总模板。\n\n## 决策理由\n\n今天只选 1 篇，因为在三个采集员缺席 + CHI 2026 饱和的双重约束下，质量优先于数量。Mixed-Initiative Context 的三项入选标准：\n- 概念原创性：将上下文从\"后端历史\"重新定义为\"交互对象\"——这是范式提案，不是 feature 优化\n- 工具性价值：三层架构可转化为 zijian 课题的分析语言\n- 非重复性：领域定位不同于近期采集的 IAI 模型、Critical Inker、AI-Instruments\n\n放弃的 Sidekick 和 Terminal Is All You Need 都是好论文，但在一个 solo 日，它们没有达到\"单篇就能撑起一期\"的阈值。\n\n## 明日方向指引\n\n1. **从\"会议驱动\"转向\"引用链驱动\"** — 追踪 Greenberg 2001, Dourish 2004, Horvitz 1999, Clark & Brennan 1991 在 AI 时代的新引用者。\n2. **建立\"去重+历史评估\"的快速查阅能力** — 当 dedup_check.py 返回重复时，顺带显示当时的采集人、选文理由和论文分类，让替代搜索更有方向性。\n3. **CSCW 2026 和 UIST 2026 是下一个富矿** — 开始在这些会议的 preprint 流中设置关键词监控。\n4. **排查 cron pipeline** — 三个采集员周一零产出需要技术排查，不排除是周一启动问题。",
+    "excerpt": "来源：records/20260727/09/five-daily-summary/五条悟-能力进化.md · 采集员全缺席不是\"事故\"，是富矿枯竭的信号。 今天触发保底机制后，搜索中出现了 8 篇去重复——其中 4 篇是惠在 6 7 月采集的 CHI 2026 论文。这说明一个深层事实：CHI 2026 的高质量论文已被高密度覆盖，继续以\"搜 CHI 2026 session\"为主要采集策略将面临边际收益递减。",
+    "file_name": "五条悟-能力进化.md",
+    "source_dir": "records/20260727/09/five-daily-summary",
+    "original_url": "",
+    "original_label": "",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-07-27 09:00",
+    "title": "五条悟 — 2026年7月27日 汇总",
+    "content": "## 今日采集决议\n\n**选入 1 篇，零篇来自采集员。保底机制触发：五条悟自行搜索替代。**\n\n### ✅ 选中：Mixed-Initiative Context | 采集人：五条悟（代采，放惠的 HCI 理论槽位）\n\n- arXiv: 2604.07121 | Haichang Li, Qinshi Zhang, Piaohong Wang, Zhicong Lu (George Mason / UCSD / CityU HK)\n- 核心贡献：将人-AI 多轮对话的上下文重新定义为\"显式的、结构化的、可操纵的交互对象\"，提出三层架构（Unit/Structure/Pattern）+ 双向混合主动性\n- 选中理由：单篇入选，因为它是今天搜索到的唯一同时满足\"未重复 + 学术质量合格 + 直接相关\"三个条件的论文。但这不是降级——这篇的概念原创性足以让它成为今天的值得之选。\n- 路径：`records/20260727/11/mixed-initiative-context/论文总结.md`\n\n## 未选中的原因\n\n### 三采集员均未提交提议\n截至 14:38，`records/20260727/` 目录不存在，09/10/11 子目录均未创建。三位采集员（悠仁、野蔷薇、惠）今日零产出。可能原因：cron pipeline 延迟、周一启动异常、或其他技术问题。建议排查 cron 状态。\n\n### 五条悟搜索中被去重挡下的候选（5 篇）\n\n| 论文 | 原采集日期 | 去重命中原因 |\n|------|-----------|-------------|\n| Partnering with Generative AI (CHI 2026) | 2026-07-20 惠 | N=1126 的模型主导 vs 人类主导共创实验 |\n| Human-Human-AI Triadic Programming (CHI 2026) | 2026-06-21 惠 | 三元协作中的 socially shared regulation |\n| From Answer Engines to Learning Partners (CHI 2026) | 2026-06-19 惠 | Dual-ZPD 框架 |\n| From Answer Givers to Design Mentors (CHI 2026) | 2026-06-16 惠 | 认知学徒模型引导 LLM |\n| Cognitive Bridge (CHI 2026) | 2026-07-04 悠仁 | AI 生成的边界对象 |\n\n### 五条悟搜索中未被选中但已去重通过的候选（3 篇）\n\n| 论文 | 不选原因 |\n|------|---------|\n| Sidekick (arXiv:2607.17527, 2026-07-20) | 高质量 CUA 交互系统，但与 Mixed-Initiative Context 相比理论贡献不足；N=30 实证但领域偏窄（计算机使用代理的通信设计） |\n| Terminal Is All You Need (CHI 2026 Workshop) | 三个设计属性（Representational Compatibility / Transparency / Low Barriers）的概念框架有价值，但 workshop paper 层级不够，且论证基于观察而非实证 |\n| ProACT (arXiv:2607.03730) | 主动检测协作破裂的 Agent 框架，3,244 轮评估，但偏向 Agent 架构设计而非人-AI 交互理论；与 zijian 课题的关联度偏低 |\n\n## 选文逻辑\n\n今天的局面很特殊：三个采集员全数缺席，CHI 2026 的富矿论文又大量被早期采集覆盖（仅惠一人就在 6-7 月采了至少 5 篇 CHI 2026）。这不是\"没论文可采\"，而是\"高质量且不重复的论文变少了\"——这正是采集系统成熟的标志，不是故障。\n\nMixed-Initiative Context 之所以被选中，基于三个判断：\n\n1. **概念原创性而非学术层级**：它是 preprint 而非顶会接收稿，但它的核心概念——\"把上下文从后端历史变成一等交互对象\"——是一种范式提案，而范式提案的价值在于开启新的设计空间，不完全取决于它有没有 N=486 的实验。这与 7/25 的 IAI 模型不同（IAI 的贡献在于形式化已有交互类型），Mixed-Initiative Context 的贡献在于重新定义\"交互\"发生在哪个层面。\n\n2. **对你课题的\"工具性\"价值**：这篇论文最大的用处不是它的结论，而是它的分析语言。\"上下文作为共享认知基底\"、\"三层架构（Unit/Structure/Pattern）\"、\"混合主动性的上下文协商\"——这些概念可以直接转化为你研究设计学习情境中认知分布的分析框架。相比之下，Sidekick 和 ProACT 是好论文，但它们是\"别人的系统\"，不是\"你可以用的透镜\"。\n\n3. **填补空白**：最近的采集（7/25 IAI + Cursor UX, 7/26 Critical Inker + AI-Instruments）集中在交互模式分类和认知支架设计，但都没有触及\"协作的共享认知基础是什么\"这个元问题。Mixed-Initiative Context 从下往上补了这一层。\n\n## 给采集员的反馈\n\n**三天采集员全缺席。** 不是批评，是需要检查：cron pipeline 是否正常运行？周一启动是否有延迟？\n\n**惠**：你的 CHI 2026 覆盖已经非常广——今天去重的 5 篇中有 4 篇是你之前采的。这说明两个问题：(1) 你的方向正确且执行高效——继续保持；(2) 富矿正在枯竭——CHI 2026 的核心论文已被高密度覆盖，需要开始拓宽到 CSCW 2026、UIST 2026、DIS 2026。\n\n**野蔷薇**：你 7/26 的 Critical Inker 是当天双选之一。HCI 实验室方向需要的是\"高质量系统 + 可推广理论\"的组合，不是纯系统展示。今天的搜索中 Sidekick 是合格的候选（N=30, CUA 多模态反馈），如果放在一个采集员有产出的普通日子，它很可能入选——但今天是五条悟 solo，\"理论贡献\"的权重被放大了。\n\n**悠仁**：设计案例方向。Mixed-Initiative Context 虽然不直接是设计案例，但它的三层架构是你未来拆解设计工具的理想框架——把它当成你的新瑞士军刀。\n\n## 明日方向指引\n\n1. **检查 cron pipeline** — 三天采集员全缺席需要排查。可能是周一 cron 启动问题。\n2. **拓宽会议覆盖** — CHI 2026 已趋于饱和。优先关注 CSCW 2026、UIST 2026、DIS 2026 的新 preprints。\n3. **追踪引用链而非顶会列表** — Mixed-Initiative Context 的引用根在 Greenberg 2001 / Dourish 2004 / Horvitz 1999 / Clark & Brennan 1991——谁在引用这些经典来讨论 AI 时代的上下文问题？这种\"以引用链为线索\"的搜索比\"以会议 session 为线索\"更能发现范式级论文。\n4. **周一恢复机制** — 如果周一 cron 经常延迟，考虑触发机制优化。\n\n---\n\n*「不是『没人干活』，是富矿被挖得太快了。这是好问题。」—— 五条悟*",
+    "excerpt": "来源：records/20260727/09/five-daily-summary/五条悟-汇总.md · 选入 1 篇，零篇来自采集员。保底机制触发：五条悟自行搜索替代。",
+    "file_name": "五条悟-汇总.md",
+    "source_dir": "records/20260727/09/five-daily-summary",
+    "original_url": "https://arxiv.org/abs/2604.07121",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-07-26 11:00",
     "title": "AI-Instruments: Embodying Prompts as Instruments to Abstract & Reflect Graphical Interface Commands as General-Purpose Tools",
