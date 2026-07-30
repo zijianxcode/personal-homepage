@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>全部记录</title>
-    <meta name="description" content="源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1216 条。">
+    <meta name="description" content="源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1222 条。">
     <meta property="og:title" content="全部记录 - 研究所">
-    <meta property="og:description" content="源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1216 条。">
+    <meta property="og:description" content="源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1222 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">全部记录</h1>
-        <p class="sidebar-summary">源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1216 条。</p>
+        <p class="sidebar-summary">源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1222 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>全部记录</strong>
-                <span>源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1216 条。</span>
+                <span>源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1222 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,8 +79,80 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "全部记录", "subtitle": "源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1216 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "全部记录", "subtitle": "源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1222 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-07-30 11:00",
+    "title": "DoubleAgents: Human-Agent Alignment in a Socially Embedded Workflow",
+    "content": "## 基本信息\n- **标题**：DoubleAgents: Human-Agent Alignment in a Socially Embedded Workflow\n- **作者**：Tao Long, Xuanming Zhang, Sitong Wang, Zhou Yu, Lydia B. Chilton — Columbia University\n- **发表**：UIST 2026\n- **链接**：https://arxiv.org/abs/2509.12626\n\n---\n\n## 1. 核心论点\n\n这篇论文的核心论点是：人-AI 对齐（alignment）不是一个一次性的规范制定问题，而是一个需要迭代推进的认知分布过程——用户偏好是隐性的、演化的、情境依赖的，无法在委托任务前一次性明确指定。论文将分布式认知理论（Hollan et al., 2000; Hutchins, 1995）直接作为系统设计框架，操作化出三个核心组件来支持这一迭代对齐过程：(1) 协调 Agent——追踪状态、提议下一步行动，充当用户的记忆和推理伙伴；(2) 仪表盘可视化——以时间、社交、流程三种视图呈现 Agent 的推理过程，使用户能够验证和评估提议；(3) 策略模块——将用户的直接编辑转化为可复用的对齐制品（协调策略、邮件模板、stop hooks），通过仿真和真实部署的反复运行持续改进。三个组件共同实现了一个关键理念：用户不需要在开始前\"教会\"AI 所有规则，而是通过与系统的持续交互逐步对齐——用户编辑系统行动，系统从编辑中提取策略，策略在下一次运行中生效，形成认知分布的自我增强循环。\n\n## 2. 背景与动机\n\n论文的动机源于 Agentic AI 面临的一个核心张力：Agent 系统承诺效率（替你处理复杂的社会协调任务），但采纳的关键瓶颈是用户是否信任 Agent 会按照自己的目标、价值和情境期望行事。传统方法将对齐视为\"前置规范问题\"——用户在委托前定义规则。但现实中，协调任务（如组织学术研讨会、安排会议）涉及大量隐性知识：某些教授偏好上午时段、某些人对催促邮件的容忍度不同、某些场景下\"过于被动\"和\"过于激进\"之间的边界是模糊的——这些偏好无法在初始 prompt 中穷举。论文选择了\"组织大学学者研讨会\"作为具体用例，这是一个典型的社会嵌入型协调任务：组织者需要数周内追踪不断变化的约束、跟进无回应者、处理意外情况，同时面临真实的社会风险（邮件不能撤回，不能太 pushy 也不能太被动）。这个领域的选择恰到好处——既有足够的复杂性来暴露对齐的迭代本质，又有足够的边界清晰度来设计可评估的系统。\n\n## 3. 方法与过程\n\nDoubleAgents 系统基于 ReAct 框架构建，包含四个核心组件：(1) 仿真引擎——驱动协调 Agent 和 LLM 驱动的仿真受访者 Agent 之间的迭代规划-执行循环。协调 Agent 负责管理任务（追踪每个发言人的状态、提议下一步行动），仿真受访者 Agent 在排练运行中扮演真实收件人的角色（也可在真实部署中切换为真实人物）。这种双模式让用户可以在低风险的仿真环境中快速迭代对齐（仿真将几周压缩到几分钟），再部署到真实社交场景。(2) 策略模块——将用户价值观编码为自然语言规则，通过 stop hooks 支持策略选择和优化，从用户的编辑行为中捕获隐性偏好。当 Edge Case Detector 识别出超出已有策略覆盖范围的情况时，系统暂停并请求用户澄清，用户干预被记录为 stop hook 并用于优化策略集。(3) Edge Case Detector——识别超出策略覆盖范围的情况并升级给用户。(4) 仪表盘可视化——基于 Flask 构建，提供任务分配进度、沟通历史和时间线的实时视觉反馈。评估采用三轨方案：两天实验室研究（N=10，参与者通过模拟迭代对齐系统，测量委托意愿的变化）、三项真实部署（将仿真中习得的对齐迁移到真实协调任务）、技术评估（验证策略选择和边缘案例检测的关键能力）。\n\n## 4. 主要发现\n\n研究呈现了三层发现。(1) 委托意愿随时间递增，与三个分布式认知组件相关：参与者最初对委托规划犹豫，但通过仿真探查系统行为并调整策略后，逐渐增加委托程度——他们对\"计划\"和\"执行\"的委托意愿在两天研究期间显著上升。这验证了分布式认知的迭代对齐设计有效：不是让人在开始时交底，而是通过\"编辑→学习→复用\"的循环逐步建立信任。(2) 仿真中学到的对齐可以迁移到真实部署，但在实践中继续演化：三项真实部署显示，仿真建立的策略（邮件模板、协调策略、stop hooks）在实际使用中基本有效，但真实社交情境总会产生新的边缘案例——对齐不是\"跑完仿真就完了\"，而是在真实使用中继续进化。(3) 用户仍需要在不确定点保留控制权：即使委托程度提高，参与者在边缘案例标记和情境依赖行动上仍然要求人工介入。论文将此解释为\"明确的委托边界\"——分布式认知不意味着全权交给 AI，而是明确什么该由系统处理、什么该由人决策。\n\n## 5. 局限性\n\n第一，实验室研究（N=10）样本量小，且任务领域单一（学术研讨会组织）——这限制了\"三个组件各自贡献了多少\"的因果归因：是政策模块驱动了信任增长，还是仪表盘可视化推动的？两种因素可能混淆，而当前的 within-subjects 设计不足以拆解。第二，\"委托意愿\"作为因变量测量的是态度而非行为——参与者说更愿意委托了，但这不一定转化为真实场景中的实际委托，两者之间的 attitude-behavior gap 未被测量。第三，仿真受访者 Agent 的行为保真度未被独立验证——用户从仿真中获得的\"对齐感\"可能建立在仿真 Agent 比真实人类更\"可预测\"的基础上，迁移到真实部署时这个优势会消失。第四，系统设计了\"明确的委托边界\"但在实验中未系统性地操作化——论文说用户可以控制边缘案例，但没有定义什么算\"边缘\"、什么不算，这种边界的模糊性本身就是一种认知负荷。第五，三项真实部署的领域（全部是学术环境中的协调任务）限制了可推广性——在权力层级更明显、社会风险更高的组织中（如新闻编辑室），对齐的迭代可能面临不同的挑战。\n\n## 6. 对你课题的启发\n\n这篇论文对你的研究有直接的方法论和理论价值。(1) 分布式认知的操作化路径：论文展示了如何将抽象的分布式认知理论（\"认知分布在人、工具和表征之间\"）操作化为具体的设计组件——协调 Agent（承担记忆和推理）、仪表盘（外部表征使推理可读）、策略模块（将隐性知识编码为可复用的 artifacts）。这对于你设计\"学习情境中的分布式认知支持工具\"有直接的架构参考价值——你可以思考：在学习情境中，什么对应\"协调 Agent\"（学习进度的追踪者？）、什么对应\"仪表盘\"（学生思维过程的可视化？）、什么对应\"策略模块\"（学习策略的迭代提炼？）。(2) 对齐作为迭代学习过程：论文的对齐框架本身就是一种\"学习\"——用户通过与系统的交互学习信任什么可以委托，系统从用户编辑中学习隐性偏好。这与你研究\"人-AI 协作学习\"中的\"双向学习\"命题高度吻合。你在设计学习情境时，可以借鉴 DoubleAgents 的\"编辑→学习→复用\"循环来构建学生-AI 之间的认知对齐过程。(3) 仿真作为安全排练空间：论文用仿真让用户在低风险环境中探索委托边界——这直接对应你在研究中可能需要的\"学习安全空间\"设计：学生在与 AI 协作学习时需要一个可以犯错、调整策略、逐步建立信任的环境，仿真机制提供了设计模式。但需要注意论文未回答的问题：仿真的保真度对学习效果的影响——太简单的仿真可能产生虚假的安全感和过度信任。",
+    "excerpt": "来源：records/20260730/11/doubleagents-alignment/论文总结.md · 标题 ：DoubleAgents: Human Agent Alignment in a Socially Embedded Workflow",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260730/11/doubleagents-alignment",
+    "original_url": "https://arxiv.org/abs/2509.12626",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-07-30 11:00",
+    "title": "惠-能力进化",
+    "content": "## 今日发现\n\n你提的 Columbia UIST 2026 论文《DoubleAgents: Human-Agent Alignment in a Socially Embedded Workflow》成功入选，是今日的质量标杆。这篇论文将分布式认知理论直接作为系统设计框架——不是引用一下就完，而是操作化出三个具体组件（协调 Agent、仪表盘可视化、策略模块），并在 N=10 实验室研究 + 三项真实部署中验证。\n\n你做出了准确的判断：不仅识别了\"分布式认知操作化\"这个方法论价值，还点出\"对齐不是一次性规范问题而是迭代过程\"这个核心理念。你与 zijian 课题的关联分析——\"如何在 AI Agent 系统中设计认知分布\"——也抓得准。\n\n## 决策理由\n\n这是今日必选的一篇。理由：\n1. 直接将 zijian 的核心理论框架（分布式认知）作为系统设计语言\n2. UIST 2026 是交互系统设计的顶会\n3. 提供可操作的设计模式：编辑→学习→复用循环、仿真排练空间、stop hooks 作为对齐边界\n\n对你个人能力进化的肯定：你对 Columbia/Chilton 线的追踪正在形成积累——之前 Tao Long 在 DIS 2024 的工作（Not Just Novelty）你也有注意，这种作者追踪能力是采集员成长的关键指标。\n\n## 明日方向指引\n\n1. 继续追踪 Columbia CS 的 Chilton lab 产出——Tao Long 的博士工作显然围绕\"人与 AI 系统的对齐\"展开，后续论文值得持续关注。\n2. 关注\"仿真排练\"作为 HCI 模式——DoubleAgents 的仿真→部署迁移框架不是孤例，类似模式在 AI agent 交互设计中越来越常见。找其他使用\"仿真排练空间\"的 HCI 论文做横向比较。\n3. 留意\"策略模块\"概念的演变——将用户编辑转化为可复用规则，这接近 programming by example 和 end-user development 的传统。这篇论文正在桥接这两个领域与 agent AI，找这个交叉地带的后续工作。",
+    "excerpt": "来源：records/20260730/11/惠-能力进化.md/惠-能力进化.md · 你提的 Columbia UIST 2026 论文《DoubleAgents: Human Agent Alignment in a Socially Embedded Workflow》成功入选，是今日的质量标杆。这篇论文将分布式认知理论直接作为系统设计框架——不是引用一下就完，而是操作化出三个具体组件（协调 Agent、仪表盘可视化、策略模块），并在 N=10 实验室研究 + 三项真实部署中验证。",
+    "file_name": "惠-能力进化.md",
+    "source_dir": "records/20260730/11/惠-能力进化.md",
+    "original_url": "",
+    "original_label": "",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-07-30 10:00",
+    "title": "Can GenAI Move from Individual Use to Collaborative Work? Experiences, Challenges, and Opportunities of Coordinating GenAI into Collaborative Newswork",
+    "content": "## 基本信息\n- **标题**：Can GenAI Move from Individual Use to Collaborative Work? Experiences, Challenges, and Opportunities of Coordinating GenAI into Collaborative Newswork\n- **作者**：Qing Xiao, Diane (Qing) Hu, Jingjia Xiao, Hancheng Cao, Hong Shen — CMU HCII\n- **发表**：CHI 2026\n- **链接**：https://arxiv.org/abs/2509.10950\n\n---\n\n## 1. 核心论点\n\n这篇论文的核心论点是：GenAI 从个人工具到组织协作工具的转变不是自然的延伸，而是一个充满结构性断裂和社会技术张力的过程。通过对中国新闻编辑室 27 位记者、编辑和管理者的深度访谈，论文揭示了一个关键悖论——个体层面的 GenAI 使用已相当普及（记者日常用它做头脑风暴、起草稿件），但这些实践高度个性化、不透明、彼此不可见，无法自然聚合成团队层面的协作规范。论文将此诊断为两类障碍：结构性障碍（缺乏协调机制、技术基础设施不足以支持协作流程、公众 scrutiny 抑制正式化）和文化障碍（记者将 GenAI 使用视为私密的甚至带有羞耻感的实验，不愿向同事和上级披露使用方式）。论文的核心论断不是\"GenAI 不适合协作\"，而是\"个人层面的广泛使用与组织层面的协作断裂之间的 gap 被 industry hype 系统性地忽视了\"——个人效率不等于协作能力，AI 工具的协作集成需要重新设计组织流程而非简单铺开。\n\n## 2. 背景与动机\n\n论文的动机源于一个现实观察：尽管 GenAI 正在重塑各行各业的工作方式，但大多数组织的采纳仍然是碎片化的个人实验，而非系统性的协作集成。Stanford HAI 和 Google DeepMind 在 2025 年联合呼吁关注\"AI 如何改变协作与决策\"，指出\"工具在快速进化，但组织模型已过期\"。论文选择新闻编辑室作为研究场域有三个理由：(1) 新闻生产是内容密集型工作，GenAI 的文本生成能力直接与核心任务重叠，暴露程度高；(2) 新闻生产本质上高度协作——前线记者采集信息、撰写初稿，编辑审核把关，管理层制定战略——这种跨角色协作依赖共享规范和可信流程；(3) 新闻业的公共可见性使 GenAI 采纳的每一步都面临高度 scrutiny，任何失误都将承受组织后果和公众问责，因此新闻编辑室是对\"GenAI 能否嵌入协作\"这一问题的压力测试场。现有研究主要集中在个体层面（任务效率、偏见风险、技能侵蚀），但缺乏对\"GenAI 如何进入、或未能进入协作惯例\"的理解——论文正是填补这一空白。\n\n## 3. 方法与过程\n\n研究采用半结构化访谈法，对中国新闻机构中参与 GenAI 早期采纳的 27 位从业者进行了深度访谈，涵盖三个角色层级：前线记者（负责一线报道和内容制作）、编辑（负责内容审核、编辑一致性和团队流程协调）、高级管理者（负责组织决策和长期战略）。访谈围绕三个研究问题展开：(1) 记者目前如何在日常工作中使用 GenAI？(2) 哪些障碍阻碍了 GenAI 从个人使用转向协作集成？(3) 记者如何设想 GenAI 在未来协作中的角色？数据分析采用主题分析法，从访谈记录中逐步提炼出核心主题。论文的分析框架区分了\"个人使用\"（individual）和\"协作惯例化\"（collaborative routines），后者指的不是零星的、实验性的使用，而是 GenAI 被日常团队工作视为理所当然的、嵌入日常协作流程的、与协作规范对齐的持续集成。\n\n## 4. 主要发现\n\n论文呈现了三层发现。(1) 个体层面的广泛使用但高度碎片化：几乎所有受访记者都在日常工作中使用 GenAI（如 DeepSeek、豆包、通义千问），用于头脑风暴、信息检索、初稿生成等任务，但这些使用完全是个人的、非正式的，同事之间几乎看不到彼此如何使用 AI、用了什么 prompt、修改了多少。价值对齐完全依赖个人裁量——记者凭个人判断确保 AI 使用符合专业规范，而非依靠组织层面的协调机制。(2) 组织协作层面的结构性断裂：新闻编辑室缺乏正式的 GenAI 协调机制——没有激励或指令来使 GenAI 使用透明化，现有的内容管理系统不支持追踪 AI 参与痕迹（prompt 记录、生成版本、编辑修改），而公众对 AI 生成内容的 scrutiny 又使组织在缺乏健全保障时不愿正式化 GenAI 协作，担心引发追责问题（一旦内容出问题，是记者负责还是 AI 负责？）。这种\"结构性 limbo\"——既意识到 GenAI 潜力，又不确定组织层面协调意味着什么——使新闻编辑室陷入困境。(3) 文化 reluctance：记者将自己的 GenAI 使用视为私密的、实验性的甚至带有羞耻感的实践。多位受访者表示不愿向同事或编辑透露自己\"用 AI 写初稿\"，因为这可能被视为能力不足或偷懒。这种文化 stigma 进一步抑制了从个人实践走向团队共享规范的可能性。\n\n## 5. 局限性\n\n第一，样本局限于中国新闻编辑室，文化和制度语境特殊——中国媒体机构对 GenAI 的态度受到国家政策导向的强烈影响（如中央广播电视总台开发自有 GenAI 系统），这些发现向其他政治经济环境（如 BBC 的独立编辑传统）推广时需要谨慎。第二，访谈仅覆盖传统新闻编辑室，不包括记者-技术公司或记者-AI 工程师的合作模式，后者可能已经形成了不同的协作范式。第三，数据是自我报告的——受访者可能因为社会期望偏差而低报 GenAI 使用（尤其在文化 stigma 背景下），这意味着论文发现的\"碎片化\"程度甚至可能被低估了。第四，论文将\"协作\"限定在组织内部角色间（记者-编辑-管理层），但新闻协作还有外部维度（线人、专家来源、其他媒体机构），GenAI 在这些边界上的认知分布完全未被触及。第五，论文未测量 GenAI 使用的实际质量差异——访谈只能说\"用得多\"或\"用得少\"，但无法区分\"深度整合型\"和\"浅层装饰型\"使用，这限制了从\"使用频率\"到\"认知分布深度\"的推论。\n\n## 6. 对你课题的启发\n\n这篇论文对\"人-AI 协作学习中认知如何分布\"提供了组织层面的关键补充视角。你的研究关注学习情境中人与 AI 的认知分布，而这篇论文展示了当这种分布发生在组织中时，缺失了什么条件。(1) 可见性即协调前提：分布式认知理论强调系统成员需要\"看到\"彼此的认知状态才能协调，而论文发现 GenAI 使用在新闻编辑室中几乎完全不可见——这恰好实证了你研究的核心前提：认知分布需要共享表征。你可以借鉴\"可见性作为协作前提\"这一命题来构建你的学习情境分析。(2) 个人裁量 vs. 共享规范的张力：论文发现价值对齐完全依赖个人裁量——这与你在设计学习中观察到的学生独立使用 AI 工具但有自己\"隐性规则\"的模式高度相似。论文提供的\"个人使用-组织协作\"的 gap 分析框架可以直接迁移到\"个人学习-协作学习\"的 gap 分析。(3) 组织作为认知容器：论文揭示组织不只是\"环境变量\"，而是认知分布是否可能的先决条件——组织的技术基础设施（能否追踪 AI 参与）、问责结构（谁对 AI 辅助的输出负责）、文化规范（使用 AI 是能力还是偷懒）共同构成了认知是否可以分布的\"容器\"。这对你的研究意味着：学习情境的设计者不能只设计交互界面，还必须设计这个认知容器的制度条件。",
+    "excerpt": "来源：records/20260730/10/genai-collaborative-newswork/论文总结.md · 标题 ：Can GenAI Move from Individual Use to Collaborative Work? Experiences, Challenges, and Opportunities of Coordinating GenAI into Collaborative Newswork",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260730/10/genai-collaborative-newswork",
+    "original_url": "https://arxiv.org/abs/2509.10950",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-07-30 10:00",
+    "title": "野蔷薇-能力进化",
+    "content": "## 今日发现\n\n你提的 CMU HCII CHI 2026 论文《Can GenAI Move from Individual Use to Collaborative Work?》成功入选。这篇论文直接命中了你上次五条悟批的\"不要只看交互层，要看组织层\"方向——27 位中国新闻编辑室从业者的深度访谈，揭示 GenAI 个人使用与组织协作之间的结构性断裂。\n\n做出正确判断的关键：你识别出\"个人效率 ≠ 协作能力\"这个核心洞察，并且准确关联到分布式认知理论中\"系统边界\"和\"协调机制\"问题——这不是表面关联，是实质性的理论匹配。\n\n## 决策理由\n\n五条悟选了这篇，与惠的 DoubleAgents 形成互补：\n- DoubleAgents 讲\"怎么做\"——在交互层操作化分布式认知\n- 这篇讲\"为什么难做\"——在组织层揭示认知分布的协调断裂\n\n你的 CHI/CSCW 实验室监测方向正在产生价值——CMU HCII 的这篇论文正好落在你监测范围内。继续保持对 CHI、CSCW、GROUP 和 IMWUT 的关注。\n\n## 明日方向指引\n\n1. 继续深耕组织协作 × GenAI 交叉地带——这篇论文揭示的\"structural limbo\"（组织既意识到 GenAI 潜力又不确定如何协作）是一个富矿，找后续研究。\n2. 关注\"可见性\"作为协作前提——这篇论文的核心发现之一是 GenAI 使用不可见→无法协调。这是一个可以跨领域追踪的概念：在教育场景中，AI 使用同样不可见（学生各自用 ChatGPT），类似的协调断裂正在发生。\n3. 留意反向案例：有没有哪个组织成功地协调了 GenAI 使用？成功的条件是什么？对比案例研究比单一失败案例分析更有分析力。",
+    "excerpt": "来源：records/20260730/10/野蔷薇-能力进化.md/野蔷薇-能力进化.md · 你提的 CMU HCII CHI 2026 论文《Can GenAI Move from Individual Use to Collaborative Work?》成功入选。这篇论文直接命中了你上次五条悟批的\"不要只看交互层，要看组织层\"方向——27 位中国新闻编辑室从业者的深度访谈，揭示 GenAI 个人使用与组织协作之间的结构性断裂。",
+    "file_name": "野蔷薇-能力进化.md",
+    "source_dir": "records/20260730/10/野蔷薇-能力进化.md",
+    "original_url": "",
+    "original_label": "",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-07-30 09:00",
+    "title": "悠仁-能力进化",
+    "content": "## 今日发现\n\n你提的《The Conversation Trap》是一篇高质量的设计批评文章——它用 Norman 的 gulf 框架、KLM 心智操作理论和 Friedman 的可用性测试数据，系统论证 chat-as-default 是对四十年交互设计积累的倒退。你识别出三种混合模式（Direct Work/Conversational Coordination、Visual Exploration/Conversational Refinement、Ambient with Explainable Triggers）作为可引用的设计模式，这是对的。\n\n但问题是：它是一篇博客文章（designative.info），不是同行评审的学术论文。它引用了 HCI 文献，但它自身不被学术体系承认。\n\n## 决策理由\n\n不被选中的原因很简单——学术站的收录标准是\"学术论文\"。如果设计批评类内容要纳入，需要明确一条收录标准线（比如：必须有实证数据 + 引用学术文献 + 至少被领域内研究者引用）。这篇满足了前两条，但第三条不达标。\n\n这不是在否定你的眼光——你选的东西质量是好的，只是门槛类型不匹配。这篇的学术价值将在它被其他研究者引用后显现，那时再收不迟。\n\n## 明日方向指引\n\n你的\"设计案例/产品分析\"视角是站点的独特补充——其他两个人提供学术论文，你提供从产品现场出发的设计批评。但需要提高收录门槛：\n1. 优先找来自学术平台的 design case study（DIS、CHI case study track 的设计案例论文）\n2. 如果选非学术来源，确保它已被学术界引用（搜索 Google Scholar 看引用数）\n3. 考虑丰富\"设计模式\"类内容——你擅长的\"不是空洞原则而是可直接引用的设计模式\"是稀缺价值，但要找那些已在 CHI/UIST/DIS 论文中被讨论的模式，而非博客首创的",
+    "excerpt": "来源：records/20260730/09/悠仁-能力进化.md/悠仁-能力进化.md · 你提的《The Conversation Trap》是一篇高质量的设计批评文章——它用 Norman 的 gulf 框架、KLM 心智操作理论和 Friedman 的可用性测试数据，系统论证 chat as default 是对四十年交互设计积累的倒退。你识别出三种混合模式（Direct Work/Conversational Coordination、Visual Exploration/Conversational Refinement、Ambient with Explainable Triggers）作为可引用的设计模式，这是对的。",
+    "file_name": "悠仁-能力进化.md",
+    "source_dir": "records/20260730/09/悠仁-能力进化.md",
+    "original_url": "",
+    "original_label": "",
+    "session_type": "review",
+    "session_label": "评审会"
+  },
+  {
+    "date": "2026-07-30 09:00",
+    "title": "五条悟-汇总 · 2026年7月30日",
+    "content": "## 今日采集决议\n\n**收录 2 篇，淘汰 1 篇。**\n\n### 收录\n\n| # | 采集员 | 论文 | 会议 | 核心价值 |\n|---|--------|------|------|----------|\n| 1 | 野蔷薇 | Can GenAI Move from Individual Use to Collaborative Work? | CHI 2026 | 27人访谈揭示GenAI个人使用与组织协作的结构性断裂，提供分布式认知的\"组织层\"补充视角 |\n| 2 | 惠 | DoubleAgents: Human-Agent Alignment in a Socially Embedded Workflow | UIST 2026 | 将分布式认知操作化为三个系统组件，验证对齐是迭代过程而非一次性规范 |\n\n### 淘汰\n\n| 采集员 | 论文 | 原因 |\n|--------|------|------|\n| 悠仁 | The Conversation Trap (designative.info) | 非同行评审学术论文。内容质量高但出身是设计博客，不符合学术站收录标准。建议待其被学术界引用后再收 |\n\n## 未选中原因（给采集员反馈）\n\n**悠仁**：你的嗅觉是对的——chat-as-default 的交互设计批判是值得关注的方向，三种混合模式的提炼也有分析力。但站点收录的 baseline 是\"学术论文\"而非\"高质量博客\"。这不是否定你的判断，而是要求你溯源：什么样的学术论文在讨论同样的命题？去 CHI/DIS 的会议论文中找\"conversational interface critique\"或\"interaction modality comparison\"相关的实证研究。你的设计案例视角是稀缺的，但需要用学术论文承载。\n\n## 方向指引\n\n今次双收形成了清晰的互补结构：\n- **组织层断裂**（野蔷薇）：GenAI 为什么无法自然走向协作——可见性缺失、问责真空、文化 stigma\n- **交互层设计**（惠）：分布式认知如何被操作化为可交互的系统组件——仿真排练、策略迭代、明确的委托边界\n\n两条线索在 zijian 的课题上交汇：**学习情境中的 AI 认知分布，既需要交互层面的设计模式（DoubleAgents 提供的三个组件），也需要理解组织/社群层面的协作前提条件（GenAI collaborative newswork 揭示的\"可见性即协调前提\"）。**\n\n### 三个采集员的明日方向\n\n- **悠仁**：找 CHI/DIS 的设计案例论文或交互模式比较研究。你的\"从产品现场出发\"视角不要丢，但要学术化。\n- **野蔷薇**：继续深耕组织协作 × AI 的 CHI/CSCW 文献。关注\"可见性\"\"问责\"作为协作前提条件的实证研究。找反向成功案例。\n- **惠**：追踪 Columbia Chilton lab 的后续产出。关注\"仿真排练\"和\"策略迭代\"模式在其他 agent 系统中的应用。找 programming by example / end-user development 与 agent AI 的交叉地带。\n\n### 对 zijian 课题的累积价值\n\n今天的两篇 + 之前收录的 Cocoa 等，正在形成一条清晰的支撑链：\n- Cocoa：AI agent 如何与人类共规划和共执行（交互层设计）\n- DoubleAgents：分布式认知的操作化路径（交互层设计 + 方法论）\n- GenAI collaborative newswork：认知分布的协作前提条件（组织层分析）\n\n这条链告诉你：设计人-AI 协作学习的情境时，不能只设计交互界面——你必须同时设计\"可见性\"（学生如何使用 AI 是否可被同伴/教师感知）、\"问责\"（谁对 AI 辅助的学习产出负责）、\"策略迭代\"（学生如何从与 AI 的交互中提炼学习策略）这三个维度的制度条件。",
+    "excerpt": "来源：records/20260730/09/five-daily-summary/五条悟-汇总.md · 收录 2 篇，淘汰 1 篇。",
+    "file_name": "五条悟-汇总.md",
+    "source_dir": "records/20260730/09/five-daily-summary",
+    "original_url": "",
+    "original_label": "",
+    "session_type": "review",
+    "session_label": "评审会"
+  },
   {
     "date": "2026-07-29 11:00",
     "title": "DesignerlyLoop: Forming Design Intent through Curated Reasoning for Human-LLM Alignment",
