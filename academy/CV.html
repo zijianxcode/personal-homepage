@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV</title>
-    <meta name="description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 175 条。">
+    <meta name="description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 176 条。">
     <meta property="og:title" content="CV - 研究所">
-    <meta property="og:description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 175 条。">
+    <meta property="og:description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 176 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">CV</h1>
-        <p class="sidebar-summary">基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 175 条。</p>
+        <p class="sidebar-summary">基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 176 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>CV</strong>
-                <span>基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 175 条。</span>
+                <span>基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 176 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,7 +79,7 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "CV", "subtitle": "基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 175 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "CV", "subtitle": "基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 176 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
   {
     "date": "2026-08-03 11:00",
@@ -2154,6 +2154,18 @@
     "source_dir": "records/2026/03/12/13",
     "original_url": "",
     "original_label": "",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2025-05-23 11:00",
+    "title": "Novobo: Supporting Teachers' Peer Learning of Instructional Gestures by Teaching a Mentee AI-Agent Together",
+    "content": "- **关键词**：human-AI interaction, teachable agent, generative AI, gestures, teaching, learning by teaching\n\n---\n\n## 一、核心论点\n\n教学手势（instructional gestures）是一种隐性、具身的专业知识——教师如何用手势辅助讲解、强调重点、引导注意力——但这些技能很难通过传统方式（看录像、一对一辅导）进行培训。本文提出 Novobo，一个可教的 AI agent（teachable agent），定位为\"学徒/实习教师\"，让教师群体通过共同教 AI 来外化、分享和共同构建教学手势的知识。核心设计逻辑是：将 AI 从\"权威/导师\"翻转为\"学徒/mentee\"，利用 learning-by-teaching 范式，让教师在对 AI 的提问—点评—示范—解释的四步循环中，将原本难以言传的隐性知识显性化，并在同行协作中互相学习。30 位教师、10 次协作会话的实证评估表明，共同教一个 AI mentee 降低了知识分享的社交压力，促进了隐性知识的外化和教师群体共享理解的构建。\n\n---\n\n## 二、背景与动机\n\n教学手势是课堂教学的重要组成部分——它们增强沟通效果、帮助学生理解抽象概念。但培训教学手势面临着典型的隐性知识困境：这些技能高度情境化、难以言传，且每个教师的个人风格和身体表达不同，\"一刀切\"的视频教程或专家指导难以有效传递。已有研究表明，发展这类具身性专业知识需要同行学习（peer learning）——教师在互相观摩、讨论和示范中共同构建知识。\n\n在 HCI 领域，teachable agent（可教 AI agent）已被广泛用于学生的学习场景——学生通过\"教\"AI 来加深自己的理解。但这一范式极少被迁移到教师专业发展领域。作者指出这是一个被忽视的机会：如果教师群体共同教一个 AI \"学徒\"，他们在协作教学过程中会自然地讨论、示范、协商——这正是同行学习发生的机制。而 GenAI 和 LLM 的进展为构建一个能接收多元输入（文字 + 身体动作）并生成可评估的\"新手教学手势\"的 AI agent 提供了技术基础。\n\n---\n\n## 三、方法与过程\n\n**系统设计**：Novobo 被设计为 AI 实习教师，拥有教学手势的理论知识但缺乏实践经验。交互遵循四步循环：\n\n1. **提问（Posing Question）**：教师群体输入教学情境（可选预设或自定义），Novobo 生成多个手势描述，并说明背后的教学意图和理论依据（设计特征 DF1：可折叠的理论知识卡片）。\n2. **点评（Commentary）**：教师对每个生成的手势进行星级评分并写出评语（优点、不足、改进建议），提交后 Novobo 回应\"自己学到了什么\"（DF3：AI 作为学徒的 framing）。\n3. **示范（Demonstration）**：Novobo 邀请教师示范他们认为合适的手势。界面呈现骨架镜像（skeletal mirror view），教师的身体动作被实时捕捉为抽象的骨架表征（DF2），去除了面部和个人身份信息，既保护隐私又降低了被评价的社交压力。\n4. **解释（Explanation）**：教师可以解释他们为何选择这种手势、背后的教学意图，完成一个完整的外化—协商—内化循环。\n\n**实证评估**：招募 30 位教师，分为 10 组（每组 3 人），进行协作会话研究。每组使用 Novobo 完成多个教学情境的手势设计。研究问题：（RQ1）可教 AI agent 在多大程度上、以何种方式支持教师的同行学习？（RQ2）教师如何体验和回应 Novobo 的核心设计特征？数据来源包括会话录音、界面交互日志、骨架动作数据、半结构化访谈。\n\n---\n\n## 四、主要发现\n\n**RQ1 的发现**：Novobo 有效地促进了教师的同行学习。教师通过对话和身体演示将隐性知识外化——他们在讨论\"什么样手势好\"的过程中自然暴露了自己的教学信念、风格偏好和实用经验。教 AI 的过程成为知识分享的催化剂而非目标本身。关键机制是：因为要\"教 AI\"，教师需要清晰地表达、协商、并达成关于手势质量的共识——这创造了一个结构化但不压抑的同行学习空间。多位教师报告，\"共同教一个学习中的 AI\"比\"互相评价对方\"的社交压力低得多——AI 作为第三方缓冲，降低了同行之间直接的评判感。\n\n**RQ2 的发现**：骨架镜像（DF2）是设计中影响最大的特征——它使教师能够安全地展示身体动作而不暴露身份，同时将注意力集中在手势本身而非个人外表。四步循环被证明是有效的交互框架，但教师反馈指出\"点评\"阶段对评价负担略重——给每个 AI 生成的手势打分和写评语需要投入较多认知资源。整体而言，在 10 次会话后，教师群体内部形成了对教学手势的共同词汇和判断标准——即初步构建了共享理解（shared understanding）。\n\n---\n\n## 五、局限性\n\n（自主判断，不限论文自述）\n\n**一、\"教 AI\"的效果 vs \"同伴讨论\"的效果难以分离。** 本研究的实验设计没有设立对照组（如：教师不使用 Novobo 而直接互相讨论教学手势）。因此无法判断教师的知识外化和同行学习是由\"教 AI\"这一机制驱动的，还是简单地由\"三位教师聚集讨论\"驱动的。AI 在这里可能是催化剂量也可能只是背景噪音。要真正论证 teachable agent 的独特价值，需要与\"无 AI 的同行讨论\"\"有 AI 但不以 teachable 方式呈现\"等条件对比。\n\n**二、短期会话 vs 长期专业发展的差距。** 10 次会话（单次或短期内的多组）捕捉的是即时互动效果——知识外化、初始共享理解的形成。但教师专业发展是一个数月到数年的过程。本文未追踪教师在会话结束后是否真正内化了学习到的手势知识、是否将其迁移到真实课堂教学中。这是一个关键的外部有效性问题：在实验室里和同事一起教 AI 学到的手势，到了真实课堂上会用到吗？\n\n**三、教学手势的文化特异性。** 手势高度依赖文化背景——同一个手势在不同文化中可能有完全不同的含义。30 位教师的文化背景、教学科目、年级层次未被系统分析（或至少未在摘要中呈现），这限制了\"教学手势的共同标准\"这一发现的推广范围。中国教师的课堂手势文化可能与欧美教师不同，这种差异应被纳入讨论。\n\n**四、骨架镜像的局限。** 虽然骨架镜像降低了社交压力，但也剥离了手势表达中重要的非骨架维度——面部表情、手部细微动作（手指形态）、身体朝向和空间使用。教学手势不仅仅是大肢体动作，精细的手指指示、面部表情的配合同样是核心组成部分。骨架化可能使某些手势类型被系统性地忽视。\n\n---\n\n## 六、对你课题的启发\n\n这篇论文对你\"人-AI协作学习中的分布式认知\"课题有四层启发：\n\n**第一层：可教 AI 作为认知分布的设计策略。** Novobo 的核心洞察是：将 AI 从\"知识提供者\"翻转为\"知识接收者\"，认知的分布结构就彻底改变了。当 AI 是 mentee 而非 mentor，认知劳动（评估、纠正、示范、解释）全部落在人类一方——但正是这种\"反向负担\"促使了协作和知识显性化。这一设计与你在研究\"匹配 AI agent 工作逻辑\"时的思考形成有趣的对照：不是让人适应 AI 提供的信息结构，而是让 AI 的\"无知\"成为一种设计资源，驱动人的认知参与。\n\n**第二层：\"共同教 AI\"作为分布式认知的分析情境。** 本文呈现了一个天然的多主体分布式认知场景：认知分布于三位教师群体（不同经验、不同风格）、AI agent（提供初始生成但不完美的输出）、以及共享表征工具（骨架镜像、手势记录）之间。这种多主体的认知分布结构与你正在构思的设计学习情境高度同构——你可以借鉴 Novobo 的四步循环框架作为基线交互设计，在此基础上调整认知分布的方式（例如改变 AI 在循环中的角色粒度、引入更多或更少的共享表征工具）。\n\n**第三层：隐性知识显性化与 AI 角色设计。** Novobo 展示了 AI 如何成为一种\"迫使隐性知识显性化\"的装置——因为要教 AI、要评价 AI 生成的手势，教师被迫将自己原本含混的\"直觉觉得不好\"转化为可交流的\"哪里不好、为什么不好、怎样更好\"。这对你的设计学习情境研究有直接的方法论启示：在设计中，让学生\"教 AI\"可能是比\"让 AI 教学生\"更有效的认知分布策略——前者要求学生完成更深的加工和结构化表达。\n\n**第四层：需要警惕的陷阱。** 本文也提醒你一个需要小心的问题：如果学生/教师在\"教 AI\"的情境中表现出知识外化和深度加工，这可能是真实的认知参与，也可能只是被任务结构\"逼出来的\"表面行为——一篇论文可能无法区分这两种情况。你设计研究时需要纳入纵向追踪和真实行为迁移的度量，以避免将\"任务诱导的认知行为\"误读为\"学习发生\"。",
+    "excerpt": "来源：records/20260805/11/novobo-teachable-agent-gestures/论文总结.md · 作者 ：Jiaqi Jiang, Kexin Huang, Huan Zeng, Duo Gong, Roberto Martínez Maldonado, Pengcheng An（香港理工大学等）",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260805/11/novobo-teachable-agent-gestures",
+    "original_url": "https://doi.org/10.1145/3772318.3791469",
+    "original_label": "DOI",
     "session_type": "",
     "session_label": ""
   },
