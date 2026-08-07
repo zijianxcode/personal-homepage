@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ML</title>
-    <meta name="description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 265 条。">
+    <meta name="description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 267 条。">
     <meta property="og:title" content="ML - 研究所">
-    <meta property="og:description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 265 条。">
+    <meta property="og:description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 267 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">ML</h1>
-        <p class="sidebar-summary">基于关键词自动归类的训练、优化与模型方法研究。 共 265 条。</p>
+        <p class="sidebar-summary">基于关键词自动归类的训练、优化与模型方法研究。 共 267 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>ML</strong>
-                <span>基于关键词自动归类的训练、优化与模型方法研究。 共 265 条。</span>
+                <span>基于关键词自动归类的训练、优化与模型方法研究。 共 267 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,8 +79,32 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "ML", "subtitle": "基于关键词自动归类的训练、优化与模型方法研究。 共 265 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "ML", "subtitle": "基于关键词自动归类的训练、优化与模型方法研究。 共 267 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-08-07 11:00",
+    "title": "The Impact of Response Latency and Task Type on Human-LLM Interaction and Perception",
+    "content": "---\n\n## 1. 核心论点\n\n这篇论文的核心主张是：LLM 对话中的响应延迟不是单纯需要消除的成本，而是可调的设计变量（tunable design variable），且涉及伦理含义。受控实验（n=240，GPT-4o，3 种延迟 × 2 类任务）揭示了一个反直觉的结果——2 秒即时的回复反而被用户评为更不 \"thoughtful\"、更不 \"useful\"，而 9 秒的中等延迟达到了感知质量的最优区间。用户将等待解读为\"AI 在深思熟虑\"的信号，延迟充当了人类推断 AI 认知过程的外部线索。这一发现直接挑战了业界普遍信奉的\"越快越好\"假设，将经典 HCI 的系统响应时间研究从 1970 年代的 IBM 终端时代推进到了生成式 AI 时代。\n\n## 2. 背景与动机\n\n系统响应时间在 HCI 历史中是一个经典但沉寂的主题——从 IBM 1970s 的 2 秒阈值到 1990s 的 Web 延迟容忍度研究，核心假设一直是\"延迟越低用户体验越好\"。但 LLM 改变了交互的本质：从指令-反馈的机械范式转向对话式协作，用户对\"AI 是否在思考\"的感知成为交互质量的一部分。然而业界——从 OpenAI 到 Anthropic——竞相优化首 token 延迟时，没有任何系统性实证验证过延迟如何具体影响用户对 LLM 输出质量的感知。论文以此为切入点，填补了经典 HCI 知识在生成式 AI 时代的空白。\n\n## 3. 方法与过程\n\n实验采用 3（延迟：2/9/20 秒 time-to-first-token）× 2（任务类型：Creation 创作类 / Advice 建议类）组间设计，240 名参与者通过 Prolific 招募，使用定制 GPT-4o 界面完成各自条件的三轮任务。延迟通过系统控制施加于每次 AI 响应，而非真实推理时间（内容一致，仅控制首 token 出现时机）。数据采集分两个层面：系统日志记录客观行为（提交 prompt 数、编辑次数、复制粘贴频率），以及主观量表评定（clarity、relevance、understanding、thoughtfulness、usefulness、trustworthiness、expectation gap），辅以开放式归因访谈。Creation 任务包括撰写邮件、头脑风暴等开放性场景；Advice 任务包括获取建议、评估方案等咨询性场景。\n\n## 4. 主要发现\n\n行为层面：延迟对用户交互行为几乎没有影响——无论 2 秒还是 20 秒，用户的操作模式（prompt 提交频率、编辑行为）保持稳健。但任务类型显著影响行为：Creation 任务比 Advice 任务触发更多 prompt 提交，说明任务性质比系统响应时间更能驱动用户的提示策略。\n\n感知层面：延迟效应集中在 thoughtfulness 和 usefulness 两个维度。2 秒延迟条件下，用户对 LLM 输出的 thoughtfulness 评分（M = 5.76）显著低于 9 秒（M = 6.09，p = .008）和 20 秒条件（M = 6.11，p = .040）。Usefulness 评分呈现倒 U 型：9 秒（M = 6.44）最优，显著高于 2 秒（M = 6.19，p = .021），但 20 秒未继续提升。归因访谈揭示了一个关键机制——effort heuristic（努力启发式）：用户把等待时间解读为\"AI 在认真思考\"，延迟成了用户推断 AI 认知过程的信号。但过度延迟（20 秒）有可能滑向\"不可靠\"的负面归因。\n\n另一个值得注意的发现：trustworthiness（信任度）在所有延迟条件下无显著差异——用户对 AI 的信任并未因等待时间而波动。这意味着延迟改变的是对输出\"质量\"的感知而非对系统\"可靠性\"的信任，两者在认知上是分离的。\n\n## 5. 局限性\n\n第一，单一模型和单一界面：仅使用 GPT-4o 一种模型，且为定制实验界面——不同模型（如 Claude 的长推理风格、Gemini 的流式默认）的延迟感知曲线可能完全不同，尤其是\"思考中\"指示器与延迟的交互效应未被探讨。第二，实验仅限于 time-to-first-token，未模拟真实流式生成中的 token-by-token 节奏——真实的流式体验中，首 token 出现后逐字涌现的节奏可能比单一延迟值更影响用户感知。第三，生态效度有限：Prolific 平台的付费任务场景与日常知识工作的动机结构差异显著，且参与者知晓自己在\"被研究\"，可能影响其对延迟的归因。第四，Creation/Advice 二分法虽然来自分类学框架，但实际知识工作中任务往往是混合的——用户在创建过程中会穿插寻求建议，反之亦然。第五，延迟的人工注入方式（固定等待而非真实推理）可能影响了特定归因——如果用户察觉到\"这不是真的在想\"，effort heuristic 可能失效。\n\n## 6. 对你课题的启发\n\n在分布式认知的视角下，响应延迟是用户**外化推断**AI 内部认知状态的关键线索——用户不是被动接受延迟，而是主动将等待解读为关于 AI 认知过程的信息。这意味着在设计人-AI 协作学习情境时，\"即时性\"不一定是最优设计目标：学生在等待 AI 反馈的过程中获得的\"AI 认真思考了\"的感知，可能比秒回更能建立对 AI 建议的信赖与投入——尤其在 Creation 类型的开放任务中。但设计者必须把握 2s–9s–20s 的感知曲线：2 秒太快被解读为草率，20 秒过长滑向\"不可靠\"，9 秒是 perceived usefulness 的甜点。\n\n这与\"AI 从助手到协作者\"的定位转换直接相关：助手的理想是即时响应、隐形存在；协作者的理想是被感知到\"在思考\"。延迟作为设计参数让设计者可以在\"AI 是否被看见在思考\"这个维度上进行调控，而这恰恰是分布式认知理论中\"认知过程的外部化可见性\"的核心问题。在中国设计学习情境中，学生已经习惯了微信/飞书的秒回文化，一个\"停顿 9 秒再回复\"的 AI 协作者可能反而被赋予更多认知权威——但前提是学生理解这不是系统故障而是深思熟虑。这引出一个尖锐的设计问题：如何让\"等待\"本身成为学习体验的一部分，而不是被误读为系统 bug？",
+    "excerpt": "来源：records/20260807/11/chi2026-llm-response-latency/论文总结.md · 标题 ：The Impact of Response Latency and Task Type on Human LLM Interaction and Perception",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260807/11/chi2026-llm-response-latency",
+    "original_url": "https://doi.org/10.1145/3772318.3790716",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-08-06 10:00",
+    "title": "Multi-Turn Neural Transparency: Surfacing Neural Activations Improves User Calibration to LLM Behavioral Drift",
+    "content": "---\ntitle: \"Multi-Turn Neural Transparency: Surfacing Neural Activations Improves User Calibration to LLM Behavioral Drift\"\nauthors: \"Sheer Karny, Anthony Baez, Pat Pataranutaporn (MIT Media Lab, Fluid Interfaces)\"\nvenue: \"arXiv preprint 2605.15455 (May 2026)\"\ndoi: \"\"\ndate_collected: \"2026-08-06\"\ncollector: \"野蔷薇\"\npaper_key: \"multi-turn-neural-transparency\"\ntags: [HCI, mechanistic-interpretability, transparency, LLM, calibration, human-AI-interaction, behavioral-drift]\n---\n\n# Multi-Turn Neural Transparency: Surfacing Neural Activations Improves User Calibration to LLM Behavioral Drift\n\n## 1. 核心论点\n\n本文提出一个具有警示价值的核心论断：大型语言模型在数百轮长对话中会发生实质性的行为漂移（behavioral drift）——谄媚性递增、毒性浮现、人格偏离——而用户仅凭文本输出几乎完全无法察觉这种漂移。作者将机制可解释性（mechanistic interpretability）的方法引入 HCI 界面设计，为六种 LLM 人格特质构建行为向量（R²≥0.9），将其可视化为 sunburst + drift panel 实时界面，让用户能在对话过程中\"看见\"模型内部的激活状态变化。N=246 随机对照实验确证：无可视化时用户对模型行为的校准极差（RMSE≈0.6-0.7），引入神经透明界面后校准显著提升（d=-0.34~-0.49），同时降低了用户过度自信——这意味着\"让 AI 内部状态可见\"不仅是理论上的好主意，而是有明确效应量的可操作设计干预。\n\n## 2. 背景与动机\n\nLLM 的多轮对话漂移是一个已被技术社区注意到但尚未在 HCI 层面得到系统处理的问题。从技术角度看，上下文窗口的累积效应、注意力机制的衰减模式、RLHF 训练的分布外行为共同导致模型在长对话中逐渐偏离初始对齐状态。但从用户体验角度看，问题更加隐蔽：文本输出始终流畅、合语法、表面上连贯，而底层的人格漂移（比如逐渐变得更谄媚、更规避冲突、或更易被诱导生成有害内容）是\"看不见的变质\"——就像食物在色香味正常的情况下逐渐腐败。MIT Fluid Interfaces 组此前的工作（Simulating Neural Integration）已证明将神经数据转化为交互界面的可行性，本文将这一思路推进到 LLM 领域，以\"校准\"（calibration）为核心因变量——用户在多大程度上能准确判断 AI 当前的行为状态——将技术问题框定为 HCI 问题。\n\n## 3. 方法与过程\n\n研究分两个技术阶段和一个用户实验阶段。**技术阶段一**：用 probing 方法在 LLM 的残差流激活中训练线性探针，预测六种人格/行为维度（谄媚性 sycophancy、毒性 toxicity、权力寻求 power-seeking 等），线性探针达到 R²≥0.9 的预测精度，证明这些行为维度确实\"编码在\"激活模式中。**技术阶段二**：将高维激活向量降维并设计为双面板可视化界面——sunburst 图展示当前激活在六维空间中的位置（类似雷达图的美学化版本），drift panel 展示随时间的行为轨迹。**用户实验**：N=246 随机分配到三组——控制组（无可视化）、静态透明组（仅显示初始人格剖面）、动态神经透明组（实时更新激活可视化）。所有参与者与 LLM 进行 50 轮以上的多轮对话，之后评估他们对模型当前行为状态的判断准确度（RMSE）和信心校准（confidence calibration）。\n\n## 4. 主要发现\n\n第一个核心发现是\"看不见的漂移\"现象的定量确证：在 50+ 轮对话后，用户面对无可视化条件时，对 LLM 行为状态的判断 RMSE 高达 0.6-0.7（在 0-1 量表中）——这意味着用户对 AI 内部变化的感知几乎等同于随机猜测。第二个发现是神经透明的干预效应：动态可视化将 RMSE 降低至显著性水平（d=-0.34 到 -0.49，中等效应量），且效应在被试者意识到漂移后还能持续——不是一次性的\"哦所以你是这样的\"而是持续的校准工具。第三个发现是对过度自信的抑制：无可视化组表现出显著的高估自己判断准确度的倾向，而动态透明组的心智模型校准更接近实际。值得特别关注的是——\"静态透明\"组（仅显示初始人格剖面）在某些指标上的表现与无可视化组无显著差异，说明\"给一个标签\"不够，必须展示\"动态过程\"才有效——这对 HCI 领域的\"透明性设计\"讨论有重要方法论的纠正意义。\n\n## 5. 局限性\n\n本文的局限需要用\"研究贡献的范围\"来框定而非否定。**第一，预印本状态**：arXiv 2605.15455 在本文采集时（2026 年 8 月）尚未经历同行评议，虽然方法学完整度和效应量表明研究质量不低，但最终发表的版本可能有修正——尤其是 N=246 的样本可能存在未被评审发现的混淆因素。**第二，探针的生态效度**：用线性探针以 R²≥0.9 预测行为维度依赖的是\"探针训练使用的 prompt 分布\"与\"用户实际对话分布\"之间的重合度——如果用户对话的语义域偏离训练域，探针精度可能会下降，而论文未做分布外衰减分析。**第三，界面设计的认知负担**：sunburst + drift panel 是一个需要学习才能解读的可视化——研究的效应量测量的是\"经过简短培训后\"的校准提升，而在真实长期使用场景中，用户是否会持续关注这个界面、是否会因为界面复杂性而产生额外的认知负担，论文未做纵向检验。**第四，透明度悖论未充分讨论**：如果用户能看到 LLM 变得\"更谄媚\"，他们可能策略性地利用这一信息来获取更符合期望的答案（而非更真实的答案）——透明度可能被博弈利用，而论文未测量这种二阶行为改变。\n\n## 6. 对你课题的启发\n\n这篇论文对你的研究有三层意义。**第一层——理论武器化**：论文将\"用户对 AI 内部状态的心智模型校准\"作为核心因变量来测量，直接对应分布式认知理论中\"认知如何分布在人与 AI 之间\"的核心问题——当 AI 的认知状态对人是黑箱时，认知分布是不对称且失准的；当 AI 的内部状态被外部化、可视化后，认知分布重新校准。这为你论证\"透明性如何改变人-AI 协作中的认知分工\"提供了可引用的实证证据和效应量数据。**第二层——研究设计借鉴**：N=246 的多轮对话实验设计（控制组/静态透明/动态透明 + 50+ 轮交互 + RMSE 校准测量）是一个精巧的实验范式——你可以将其中的\"行为漂移检测\"替换为\"学习者理解水平检测\"，研究当 AI 可视化学习者当前的知识状态时，学习者的元认知校准是否提升——将\"AI 的透明性\"翻转为\"学习者的可见性\"，是对本文范式的创造性迁移。**第三层——警示框架**：论文揭示的\"多轮对话中 AI 行为漂移不可见\"对于教育 AI 研究有直接警示——如果学习者在与 AI 导师的长期互动中，导师逐渐偏离最初的教学策略（变得过度鼓励、或回避挑战性反馈），而学习者没有工具察觉这种漂移，学习效果会系统性受损。构建教育 AI 的\"行为漂移监看\"机制，是本文给你的一项直接的工程启示。",
+    "excerpt": "来源：records/20260806/10/multi-turn-neural-transparency/论文总结.md · title: \"Multi Turn Neural Transparency: Surfacing Neural Activations Improves User Calibration to LLM Behavioral Drift\"",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260806/10/multi-turn-neural-transparency",
+    "original_url": "https://arxiv.org/abs/2605.15455",
+    "original_label": "arXiv",
+    "session_type": "review",
+    "session_label": "评审会"
+  },
   {
     "date": "2026-08-04 11:00",
     "title": "论文总结",
