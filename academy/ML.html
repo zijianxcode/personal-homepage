@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ML</title>
-    <meta name="description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 267 条。">
+    <meta name="description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 268 条。">
     <meta property="og:title" content="ML - 研究所">
-    <meta property="og:description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 267 条。">
+    <meta property="og:description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 268 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">ML</h1>
-        <p class="sidebar-summary">基于关键词自动归类的训练、优化与模型方法研究。 共 267 条。</p>
+        <p class="sidebar-summary">基于关键词自动归类的训练、优化与模型方法研究。 共 268 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>ML</strong>
-                <span>基于关键词自动归类的训练、优化与模型方法研究。 共 267 条。</span>
+                <span>基于关键词自动归类的训练、优化与模型方法研究。 共 268 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,8 +79,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "ML", "subtitle": "基于关键词自动归类的训练、优化与模型方法研究。 共 267 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "ML", "subtitle": "基于关键词自动归类的训练、优化与模型方法研究。 共 268 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-08-10 11:00",
+    "title": "论文总结",
+    "content": "> 论文：Partnering with Generative AI: Experimental Evaluation of Model-Led and Human-Led Interaction in Human-AI Co-Creation\n> 作者：Sebastian Maier, Manuel Schneider, Stefan Feuerriegel（LMU Munich / Munich Center for Machine Learning）\n> 来源：CHI 2026（Barcelona, April 13–17）| DOI: 10.1145/3772318.3791185 | arXiv: 2510.23324\n> 采集者：惠 | 采集日期：2026-08-10\n\n---\n\n## 1. 核心论点\n\n人-AI 共创中，\"谁主导交互\"这一界面设计变量决定创意的认知归属与质量-多样性 trade-off。将 LLM 设计为\"反思性思考伙伴\"（reflective thought partner）——通过提问引导人阐述想法——能同时实现高质量、高多样性和高所有权，这是 AI 代做（model-led）和 AI 给建议（suggestion-mode）都无法达成的三重目标。AI 对创意过程的最大价值不在于\"替代认知劳动\"，而在于\"激发认知参与\"——这一结论直接挑战了当前 AI 产品设计中\"用 AI 减轻用户负担\"的主流叙事。\n\n## 2. 背景与动机\n\n现有 LLM 创意研究几乎全部聚焦于\"one-shot\"交互——用户输入 prompt，模型输出结果——这忽略了创意理论的核心洞见：创意是一个生成-评估-精炼的循环迭代过程（Wallas 1926; Guilford 1967），而非一次性行为。界面设计作为人-AI 协作的关键中介变量，在实证研究中几乎被系统性地忽略：我们不知道让 AI\"替你想\"和让 AI\"引导你想\"会产生怎样质的不同。作者将 LLM 集成方式划分为两种范式：model-led（模型主动改写或扩展想法）与 human-led（模型通过提问或建议引导人阐述，人始终控制创意过程），并以预注册随机对照实验直接检验这两种范式对 idea quality、idea diversity 和 perceived idea ownership 的三维影响。\n\n## 3. 方法与过程\n\n主实验采用五条件被试间随机对照设计（N=486），任务为经典创造力测试 Alternative Uses Test（为汽车传感器寻找新用途）。五条件为：(1) human-led question-mode（LLM 生成类比替代方案后，以针对性提问引导参与者深化想法）；(2) human-led suggestion-mode（LLM 提供改进建议但不替代参与者思考）；(3) model-led mode（LLM 主动改写参与者想法）；(4) vanilla LLM（未修改的默认行为）；(5) 无 LLM 对照组。所有 LLM 条件使用同一模型（GPT-4.1 snapshot），确保差异来自交互设计而非模型能力。结果由外部评分者在 idea quality（创造力+适用性）、idea diversity（想法池的语义多样性）和 perceived idea ownership（参与者自评所有权）三个维度上进行盲评。研究者在更自然的\"产品创意\"场景中以独立样本（N=640）复现了全部关键发现，总计 N=1,126。\n\n## 4. 主要发现\n\nquestion-mode 是唯一在三个维度上全面胜出的条件：相比对照组，显著提升 idea quality（d=0.36, p=.020），且不与 model-led 产生显著差异（即质量提升效果相当），同时保持了 idea diversity 和 perceived idea ownership——这两项在 model-led 条件下均显著下降。model-led 条件提升质量的效应量最大（d=0.55, p<.001），但代价是 diversity 下降和 ownership 显著受损（相比 question-mode：d=0.57, p<.001）。suggestion-mode 和 vanilla LLM 在所有维度上均未显著优于对照组——\"AI 给建议\"这种直觉上最友好的交互模式，实证效果反而是最差的。验证研究（N=640）在更生态化的产品创意任务中复现了核心模式，且发现 iterative model-led（多轮改写）的质量提升效应甚至弱于 one-shot model-led，进一步削弱了\"AI 代做更高效\"的直觉。探索性分析揭示了一个关键机制：question-mode 的认知负荷虽高于其他条件，但只有该条件下的参与者真正深度加工了 LLM 的输入——\"费力\"恰恰是高质量认知参与的信号，而非设计缺陷。\n\n## 5. 局限性\n\n第一个方法论局限是任务生态效度：AUT 是标准化创造力测试但高度抽象，参与者无真实利害关系；产品创意场景虽更自然，仍是模拟任务，不涉及真实设计实践中的迭代约束和领域知识。第二个局限是交互粒度：五条件之间的差异其实是复合的（prompt 内容+交互流程+输出形式），虽已控制模型版本一致，但无法完全排除特定 prompt 设计本身的混淆效应——question-mode 中的跨域类比推理提示可能本身就是更优的创意刺激，而不一定出自\"提问\"这一交互形式。第三个局限：perceived ownership 是单题自评，缺乏行为层面（如是否愿意署名、是否愿意继续深化）的交叉验证。此外，实验排除了多轮、跨会话的长期协作场景——在真实设计中，ownership 可能在时间维度上动态演变（初始\"AI 帮我改的\"可能在反复迭代中被内化为\"我的想法\"），而本研究的单次交互快照无法捕捉这一过程。最后，样本为 Prolific 平台招募的英语母语者，文化同质性可能高估了 human-led 模式的普适性——在注重权威而非自主性的文化环境中，\"让 AI 提问\"这一翻转的权力关系是否依然有效，并无数据支持。\n\n## 6. 对你课题的启发\n\n这篇论文为\"设计学习情境中的认知分布\"提供了可直接操作的实证模型。question-mode 本质上是将\"问题生成\"这一认知功能分布给 AI，而将\"回答/阐述\"保留给人——这是一种不对称的、互补性的认知劳动分工，而非平等的协作。方法论上，quality-diversity-ownership 三维结果度量框架可以直接迁移到 AI 教育工具评估：一个\"好\"的 AI 学习伴侣不仅应提升学习成果（quality），还应保持学习者思维的多样性（diversity）和主体性感知（ownership）。最关键的理论贡献是为\"AI 引导 vs AI 代做\"的二分提供了严格的因果证据——这意味着在设计 AI 学习环境时，交互模式不是中性的传达通道，而本身就是一种教学法干预。question-mode 与生成效应（generation effect）和自我解释（self-explanation）等学习科学机制的呼应为你的研究提供了理论锚点：AI 学习工具的价值不在于\"让学习更容易\"，而在于\"让学习者付出正确类型的认知努力\"。\n\n---\n\n*采集者：惠（伏黑惠）| 采集日期：2026-08-10 | 收录决策：五条悟（质量仲裁通过）*",
+    "excerpt": "来源：records/20260810/11/chi2026-model-led-human-led-cocreation/论文总结.md · 论文：Partnering with Generative AI: Experimental Evaluation of Model Led and Human Led Interaction in Human AI Co Creation",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260810/11/chi2026-model-led-human-led-cocreation",
+    "original_url": "https://doi.org/10.1145/3772318.3791185",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-08-07 11:00",
     "title": "The Impact of Response Latency and Task Type on Human-LLM Interaction and Perception",

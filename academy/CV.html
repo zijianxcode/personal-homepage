@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV</title>
-    <meta name="description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 177 条。">
+    <meta name="description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 178 条。">
     <meta property="og:title" content="CV - 研究所">
-    <meta property="og:description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 177 条。">
+    <meta property="og:description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 178 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">CV</h1>
-        <p class="sidebar-summary">基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 177 条。</p>
+        <p class="sidebar-summary">基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 178 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>CV</strong>
-                <span>基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 177 条。</span>
+                <span>基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 178 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,8 +79,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "CV", "subtitle": "基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 177 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "CV", "subtitle": "基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 178 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-08-10 10:00",
+    "title": "论文总结",
+    "content": "> 论文：Enacting Constructive Conflicts with AI Agents to Enhance Reconsideration among Novice Interaction Designers\n> 作者：Howard Ziyu Han, Nikolas Martelaro（Carnegie Mellon University, Human-Computer Interaction Institute）\n> 来源：arXiv 2608.04166（2026-08-04 发布，预印本，未上会）| CMU HCII\n> 采集者：野蔷薇 | 采集日期：2026-08-10\n\n---\n\n## 1. 核心论点\n\n生成式 AI agent 在设计协作中不应只扮演\"添加想法\"的辅助者，更应扮演\"拆想法\"的对抗者——基于 adversarial design theory 和 agonistic pluralism（竞争性多元主义）构建的 AI agent 能够合成利益相关者的反驳、向新手设计师施加建设性冲突，从而将认知重审（reconsideration）转化为具体的改进行动。agent-enacted conflict 的效果超越了同框架的非交互式引导：它不仅促使设计师修改更多方案，还引入了更多冲突性视角，同时触发了\"生成-弃置\"的动态迭代——这一发现挑战了设计 AI 领域\"agent=ideation expander\"的支配性假设。\n\n## 2. 背景与动机\n\n现有设计 AI agent 几乎都围绕\"扩展创意空间\"构建——生成替代方案、提供灵感、加速 ideation——这些交互倾向于与用户\"一致\"（agreeable），尤其在 LLM 普遍存在 sycophancy（逢迎倾向）的背景下，AI 更可能强化设计师已有的方向而非挑战它。然而，真实设计实践中，最具生产力的时刻往往来自 stakeholder conflict：不同利益相关者的需求相互矛盾，迫使设计师重新审视问题的定义。这篇文章将 adversarial design theory（对抗性设计理论）引入 AI agent 的角色设计，试图回答一个反直觉的问题：一个主动与你作对的 AI，是否比一个帮你扩展想法的 AI 更有价值？为此，作者设计了严格的实验来分离\"冲突框架的内容\"与\"冲突框架的执行者\"——让 Stepwise Guidance 和 Interactive Engagement 共享同一套思考框架，只在\"由人自演\"还是\"由 agent 演\"上不同，从而精确测量 agent 自身的增量贡献。\n\n## 3. 方法与过程\n\n研究者首先与 6 名资深专业设计师合作，通过访谈提炼出 agent 的设计目标（DG1-DG3）：(1) agent 的反驳必须锚定在设计者的上下文探索中；(2) agent 的干预应与设计者的自发 ideation 保持空间分离；(3) 冲突应是\"可导航的空间\"（设计者可以选择性采纳或标记为不相关），而非一次性评判。基于这些目标，agent 被实现在 Miro 数字白板上，包含三个区域：设计挑战区、创意板、agent 干预空间——保持未被干预的 ideation 与 agent 的批判在物理上隔离。agent 在多模态上下文中（文本、视觉、参与者出声思维）被动监测，然后在干预空间合成利益相关者推回（pushback），且有意设计了一种\"有咬劲\"的对抗语气——专业设计师强调\"建设性冲突需要 bite\"。实验采用三条件被试间设计（N=45 名交互设计学生），任务为重新设计本地市民报告网站：Self Reflection（无引导的自主反思）、Stepwise Guidance（书面提示引导完成建设性冲突框架）、Interactive Engagement（agent 交互式执行同一框架）。后两者共享同一框架，差异仅在于\"人自演\"还是\"agent 演\"——这是最关键的设计。\n\n## 4. 主要发现\n\n相比 Self Reflection，Stepwise Guidance 和 Interactive Engagement 都显著提升了参与者的自我重新思考（self-reconsideration）和方案改进量——说明冲突框架本身（无论谁执行）就能促进认知重审。但 agent 的增量贡献在三个维度上显现：(1) Interactive Engagement 比 Stepwise Guidance 引入了更多冲突性视角，agent 比书面提示唤醒了更多潜在利益相关者，设计师被迫考虑更多元的立场冲突；(2) Interactive Engagement 参与者生成并弃置了更多想法——不是\"加\"而是\"减\"：在冲突刺激下设计方案被反复修改甚至推翻，形成\"生成-弃置-再生成\"的动态；(3) Stepwise Guidance 虽然提升了反思但不改变整体设计思维方向，而 Interactive Engagement 同时推动了反思和思维转向。最有趣的发现是 agent 的作用是\"subtractive\"（减法式的）而非\"additive\"（加法式的）：它不是帮设计师想更多方案，而是帮设计师看清当前方案中哪些地方为某些利益相关者制造了问题——在公民交互设计的语境中，好设计往往不是来自加功能，而来自认识到某个功能在服务一部分人的同时牺牲了另一部分人。\n\n## 5. 局限性\n\n最显著的局限是样本规模：N=45 的组间设计虽然对于控制良好的实验足够检测中等效应，但群体同质性高（CMU 交互设计学生），限制了向其他设计人群（如资深从业者、跨文化设计者）的推广。第二个局限是 agent 的角色单一性：agent 被设计为纯\"对抗者\"，但真实设计协作中，一个好的批评者也应能在适当的时候切换角色（如在设计师陷入困境时提供方向性建议）——agent 的角色灵活性未被检验。第三个局限涉及时间尺度：实验为单次短时干预（约 60 分钟），无法观察 agent 引发的冲突在长期设计过程中是\"建设性摩擦\"还是演变为\"认知疲劳\"——这在实际部署中至关重要：一个每天质疑你的 agent 会让设计师更坚韧还是更疲惫？此外，agent 的\"对抗语气\"是经过与 6 名设计师迭代后刻意设计的，但这一设计的交互伦理值得审视——当 agent 太有\"咬劲\"时，它是否可能在无意识中压制了某些性格类型（如高宜人性）的设计者的表达？最后，研究未测量 agent 干预与真实 stakeholder 参与的对比——agent 合成的利益相关者推回与真实用户反馈在质量和合法性上有多大差距，尚未可知。\n\n## 6. 对你课题的启发\n\n这篇论文为你的研究打开了一个被主流的\"AI as assistant\"叙事遮蔽的设计空间：AI 的角色不是越\"有用\"越好，而是越能撬动认知重审越好。从分布式认知的视角看，\"质疑/批判/重新思考\"是一种认知功能——而这篇实验证明了将这一功能从人脑中卸载到 AI agent 中不仅是可行的（Stepwise Guidance 有效），而且 agent-enacted 形式（Interactive Engagement）比自我引导式产生更强的效果。这意味着在设计学习情境中，\"让 AI 扮演苏格拉底式的诘问者\"可能比\"让 AI 扮演耐心的导师\"更能促进学习者的深层认知加工。方法论上，这篇的\"共享框架、只变执行者\"的实验设计范式高度可迁移——你可以用相同的逻辑设计实验来分离\"学习支架的内容\"与\"学习支架由 AI 还是由人来交付\"的增量效应。一个特别值得关注的发现是 Stepwise Guidance 虽促进了反思但不改变思维方向——这对你的研究是一个警示：在 AI 教育工具设计中，仅提供结构化引导可能不足以触发真正的概念转变，interactive enactment（交互中的\"遭遇感\"）可能是将反思转化为重构的关键变量。\n\n---\n\n*采集者：野蔷薇（钉崎野蔷薇）| 采集日期：2026-08-10 | 收录决策：五条悟（质量仲裁通过）*",
+    "excerpt": "来源：records/20260810/10/cmu-hcii-constructive-conflicts/论文总结.md · 论文：Enacting Constructive Conflicts with AI Agents to Enhance Reconsideration among Novice Interaction Designers",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260810/10/cmu-hcii-constructive-conflicts",
+    "original_url": "https://arxiv.org/abs/2608.04166",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-08-06 11:00",
     "title": "Lost in Translation: The Value of Verbalizations in Interpreting 3D Computer-Aided Design Workflows",
