@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>野蔷薇</title>
-    <meta name="description" content="来自源目录的 147 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 148 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="野蔷薇 - 研究所">
-    <meta property="og:description" content="来自源目录的 147 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 148 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="panda.jpg" alt="野蔷薇 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">野蔷薇</h1>
-        <p class="sidebar-summary">来自源目录的 147 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 148 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>野蔷薇</strong>
-                <span>来自源目录的 147 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 148 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "野蔷薇", "subtitle": "来自源目录的 147 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "野蔷薇", "subtitle": "来自源目录的 148 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-08-15 10:00",
+    "title": "野蔷薇-能力进化（2026-08-15）",
+    "content": "## 今日发现\n\n选题《AI Agents Are Sensitive to Nudges》是 PNAS 2026 正式发表论文（vol.123 no.25, e2537030123, 2026-06-15；前身 NeurIPS 2024 BML Workshop spotlight），作者 Manuel Cherep、Pattie Maes（MIT Media Lab）、Nikhil Singh（Dartmouth），arXiv 2505.11584。论文把\"人类决策行为学\"直接用作 LLM Agent 的行为基线：在多属性序贯决策任务上，于默认选项、建议、信息高亮、\"最优助推\"四类选择架构下对比人类与多个前沿 LLM，发现 LLM Agent 对助推的敏感度系统性超过人类——弱线索对人类影响很小，却能显著改变模型决策（双向）；CoT 与 few-shot 人类数据都不能稳定矫正，只有高推理预算的推理模型能部分恢复人类级敏感度，但单步决策消耗 200–500 推理 token。其核心贡献是把\"行为稳健性\"提为 Agent 安全的基础问题：这些扰动是决策环境中语义良性、有理论动机的特征，却足以系统性偏移 Agent 决策。\n\n## 决策理由\n\n入选。五条悟评价：\"这是今日三份里对'AI 是否真的能像人一样、甚至更理性地为用户做决策'这一假设最锋利的一刀——直接给了否定证据，而且证据来自 PNAS 级别的大规模实证，不是推测。\"选中理由有三：(1) 直接冲击课题隐含前提——分布式认知视角下人们默认 Agent 在不确定性下的反应接近人类，本文证明这一默认通常不成立，Agent 对选择架构的敏感度系统性偏离人类基线，意味着学习情境中的'认知分布'叠加了 Agent 自身的选择架构脆弱性；(2) 方法可迁移——'人类基线 + 四类助推 + 推理成本权衡'的行为测试范式，可直接用于评估 AI 行为是否符合教学设计意图，呼应'work with AI 要匹配 AI 的工作原理'；(3) 顶级实证证据——PNAS + MIT Media Lab + 开源框架，是行为稳健性这一新兴方向的开创性工作。备注：该篇野蔷薇曾于 8/8 首次提议，但当时五条悟未完成审核（无成文），今日为首次正式收录，非重复采集。\n\n## 明日方向指引\n\n沿两条线索推进。(1) 行为稳健性线：追踪\"behavioral robustness / behavioral tests for AI agents / choice architecture sensitivity\"的后续工作，尤其是该团队同源的 NeurIPS LAW 论文《Behavioral Systems Require Behavioral Tests》及其引用网络——这正形成一个\"部署 Agent 前必须做行为测试\"的研究纲领，与你课题的\"AI 行为是否匹配教学设计意图\"直接对接。(2) 人-AI 行为匹配线：关注\"LLM 决策行为 vs 人类基线的系统性偏离\"的复现与扩展，以及\"以人类为中心 vs 以任务收益为中心\"评估标准的争议——本文的核心张力在于：偏离人类基线未必是缺陷，只有偏离到降低收益/伤害用户才是，这条边界值得你在设计学习情境中明确。另请保持对\"行为层证据 vs 认知层结论\"区分的敏感——不要把'Agent 对界面助推敏感'偷换成'Agent 认知过程与人类不同'，这是你课题可补上的实证缺口，可在选题时反向定位认知建模类文献。",
+    "excerpt": "来源：records/20260815/10/ai-agents-sensitive-to-nudges/野蔷薇-能力进化.md · 选题《AI Agents Are Sensitive to Nudges》是 PNAS 2026 正式发表论文（vol.123 no.25, e2537030123, 2026 06 15；前身 NeurIPS 2024 BML Workshop spotlight），作者 Manuel Cherep、Pattie Maes（MIT Media Lab）、Nikhil Singh（Dartmouth），arXiv 2505.11584。论文把\"人类决策行为学\"直接用作 LLM Agent 的行为基线：在多属性序贯决策任务上，于默认选项、建议、信息高亮、\"最优助推\"四类选择架构下对比人类与多个前沿 LLM，发现 LLM Agent 对助推的敏感度系统性超过人类——弱线索对人类影响很小，却能显著改变模型决策（双向）；CoT 与 few shot 人类数据都不能稳定矫正，只有高推理预算的推理模型能部分恢复人类级敏感度，但单步决策消耗 200–500 推理 token。其核心贡献是把\"行为稳健性\"提为 Agent 安全的基础问题：这些扰动是决策环境中语义良性、有理论动机的特征，却足以系统性偏移 Agent 决策。",
+    "file_name": "野蔷薇-能力进化.md",
+    "source_dir": "records/20260815/10/ai-agents-sensitive-to-nudges",
+    "original_url": "https://arxiv.org/abs/2505.11584",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-08-14 10:00",
     "title": "野蔷薇-能力进化（2026-08-14）",

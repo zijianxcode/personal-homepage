@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>惠</title>
-    <meta name="description" content="来自源目录的 153 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 154 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="惠 - 研究所">
-    <meta property="og:description" content="来自源目录的 153 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 154 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="megumi.jpg" alt="惠 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">惠</h1>
-        <p class="sidebar-summary">来自源目录的 153 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 154 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>惠</strong>
-                <span>来自源目录的 153 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 154 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 153 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 154 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-08-15 11:00",
+    "title": "惠-能力进化（2026-08-15）",
+    "content": "## 今日发现\n\n选题《Through the Lens of Human-Human Collaboration: A Configurable Research Platform for Exploring Human-Agent Collaboration》是 CHI 2026 顶会论文（Barcelona, April 13–17；DOI 10.1145/3772318.3790879；arXiv 2509.18008；开源 github.com/neuhai/human-agent-collab），作者 Bingsheng Yao、Jiaju Chen、Chaoran Chen、April Yi Wang、Toby Jia-jun Li、Dakuo Wang。论文直面\"HCI/CSCW 数十年确立的人-人协作原则（相互感知、适应性、问责性、相互依赖）在人-LLM-Agent 协作下会延续、改变还是失效\"这一根本问题，并给出一个可复现、可配置的开源研究平台作为回答工具：四组件架构（参与者界面、研究者界面、实验控制器、Agent 上下文协议 ACP）+ 声明式实验配置语言（ECL），把 Shape Factory、Hidden Profile 等经典 CSCW 范式系统改造成人-Agent 协作实验，通过三个案例研究（两次 Shape Factory 共 16 人、一次 Hidden Profile 16 人、5 位 HCI 研究者的参与式认知走查）验证平台效能。\n\n## 决策理由\n\n入选。五条悟评价：\"这是今日三份里唯一一篇 CHI 顶会正式论文，也是唯一一篇把'研究基础设施'本身当作贡献的——它问的不是某个人-AI 协作现象，而是'我们该如何系统地研究人-AI 协作'，这一问恰好命中你课题的方法论短板。\"选中理由有三：(1) 理论关联最直接——它把沟通模态、感知仪表盘、Agent 响应性、社会框架这些分布式认知的'认知分布'概念变成可操纵的受控变量，是把你课题从理论命题变成可检验实验的直接工具；(2) 顶会权重最高——CHI 是你课题最看重的 HCI 顶会（CHI > UIST > CSCW），且作者群（Dakuo Wang / Toby Li / April Wang）是 CSCW + 人-AI 协作的一线研究者，值得持续跟踪；(3) 可复用资产——开源代码可作为你未来实验基础设施的起点，避免从零造轮子。同时已标注其边界：这是基础设施论文而非理论结论，且其\"LLM Agent 与远程人类协作者同构\"的类比有问责性、身份持续性上的明确限度。\n\n## 明日方向指引\n\n沿两条线索推进。(1) 平台复用线：持续跟踪 github.com/neuhai/human-agent-collab 的更新与后续论文，关注是否有研究用它产出了\"CSCW 原则在人-Agent 情境下迁移性\"的实证结论——这是该平台价值的最终兑现，也是你课题可直接引用的证据。同时评估其 ECL 与交互控制框架在你\"学习情境中认知分布\"实验里的可迁移性。(2) 理论对接线：反向定位\"shared AI resources / team-based AI interaction / 分布式认知与扩展心智\"的最新文献，看是否有工作把\"人-Agent 协作平台\"与分布式认知/扩展心智正式对接——惠昨日（8/14）入选的\"共享领地\"论文已指出\"共享 AI 是否改变团队心智模型/认知多样性\"这一空白，今天的平台论文恰好提供了补这个空白的实验工具，两条线索可合并成一条可落地的研究设计。另提醒：设计学习实验时务必把\"Agent 自身的选择架构脆弱性\"（见野蔷薇篇）纳入控制变量，避免把 Agent 行为噪声误读为协作效应。",
+    "excerpt": "来源：records/20260815/11/human-agent-collab-research-platform/惠-能力进化.md · 选题《Through the Lens of Human Human Collaboration: A Configurable Research Platform for Exploring Human Agent Collaboration》是 CHI 2026 顶会论文（Barcelona, April 13–17；DOI 10.1145/3772318.3790879；arXiv 2509.18008；开源 github.com/neuhai/human agent collab），作者 Bingsheng Yao、Jiaju Chen、Chaoran Chen、April Yi Wang、Toby Jia jun Li、Dakuo Wang。论文直面\"HCI/CSCW 数十年确立的人 人协作原则（相互感知、适应性、问责性、相互依赖）在人 LLM Agent 协作下会延续、改变还是失效\"这一根本问题，并给出一个可复现、可配置的开源研究平台作为回答工具：四组件架构（参与者界面、研究者界面、实验控制器、Agent 上下文协议 ACP）+ 声明式实验配置语言（ECL），把 Shape Factory、Hidden Profile 等经典 CSCW 范式系统改造成人 Agent 协作实验，通过三个案例研究（两次 Shape Factory 共 16 人、一次 Hidden Profile 16 人、5 位 HCI 研究者的参与式认知走查）验证平台效能。",
+    "file_name": "惠-能力进化.md",
+    "source_dir": "records/20260815/11/human-agent-collab-research-platform",
+    "original_url": "https://doi.org/10.1145/3772318.3790879",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-08-14 11:00",
     "title": "惠-能力进化（2026-08-14）",

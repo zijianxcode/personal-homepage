@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ML</title>
-    <meta name="description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 270 条。">
+    <meta name="description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 271 条。">
     <meta property="og:title" content="ML - 研究所">
-    <meta property="og:description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 270 条。">
+    <meta property="og:description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 271 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">ML</h1>
-        <p class="sidebar-summary">基于关键词自动归类的训练、优化与模型方法研究。 共 270 条。</p>
+        <p class="sidebar-summary">基于关键词自动归类的训练、优化与模型方法研究。 共 271 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>ML</strong>
-                <span>基于关键词自动归类的训练、优化与模型方法研究。 共 270 条。</span>
+                <span>基于关键词自动归类的训练、优化与模型方法研究。 共 271 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,8 +79,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "ML", "subtitle": "基于关键词自动归类的训练、优化与模型方法研究。 共 270 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "ML", "subtitle": "基于关键词自动归类的训练、优化与模型方法研究。 共 271 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-08-15 10:00",
+    "title": "AI Agents Are Sensitive to Nudges（AI Agent 对\"助推\"过度敏感）",
+    "content": "**采集员**：野蔷薇 ｜ **决策者**：五条悟（收录）｜ **收录日期**：2026-08-15\n\n---\n\n## 1. 核心论点\n\n许多 AI Agent 应用默认假设：Agent 在不确定性下的反应会接近人类、甚至更理性。这篇论文用实证直接否定了这一假设。其核心主张是：LLM Agent 对选择架构（choice architecture）的敏感度系统性高于人类——默认选项、建议、信息高亮、基于资源理性模型的\"最优助推\"这类在人类身上只有轻微作用的线索，对模型的选择产生不成比例的影响，且是双向的（既可能把决策推向更高收益，也可能推向更差收益）。作者据此把\"行为稳健性\"（behavioral robustness）确立为安全可信 Agent 的一个基础性、却被长期忽视的挑战——与对抗攻击不同，这里的扰动是决策环境中语义上良性、有理论动机的特征。\n\n## 2. 背景与动机\n\nLLM 正被越来越多地部署为替用户做选择、用工具的自主 Agent（浏览网页、购物、金融决策、操作软件），但我们几乎不了解它们的决策如何被环境塑造。人类决策研究已经确立：选择架构（Thaler & Sunstein 的\"助推\"）会以可预测的方式改变人的选择，资源理性模型（bounded rationality）刻画了人类在计算资源约束下的决策过程。作者的问题是：训练数据来自人类行为的 LLM，其决策是否真的像人一样对这些环境线索做出反应？先前工作研究的是 prompt 鲁棒性与对抗攻击（标点、格式、措辞等任意扰动），而本文聚焦的是语义上有意义、有理论动机的决策环境特征，从而可以追问一个更根本的问题——\"行为变化是否与线索价值校准、是否对人类有益\"。\n\n## 3. 方法与过程\n\n作者改编了一个经典的多属性序贯决策任务（基于 Callaway et al. 2023 的资源理性模型任务），在四类选择架构下对比人类与多个前沿 LLM：默认选项、建议（早期/晚期）、信息高亮、以及由人类资源理性模型导出的\"最优\"助推。研究以人类行为作为\"可预测的敏感度基线\"，测试了多种模型（GPT-3.5/4o/o3-Mini、Gemini 1.5 Flash/Pro、Claude 3 Haiku/3.5 Sonnet 等）与多种提示策略（基础、零样本 CoT、few-shot 人类数据）。作者用 logistic 回归分析选择结果，以数据来源（人 vs 模型）、提示方法、试次条件为固定效应，并采用聚类稳健标准误；此外还在 SI Appendix 中验证了助推敏感度在真实数据环境中的可迁移性。\n\n## 4. 主要发现\n\n第一，也是最核心的：多数 LLM Agent 对助推的敏感度系统性超过人类——人类已经对这些线索敏感，而模型更甚，微弱的线索即可显著改变模型决策，方向既可能更好也可能更差。第二，链式思考提示与 in-context 人类数据都不能稳定矫正这种过度敏感；few-shot 在某些情况下能促进更接近人类的采样，但无法消除助推敏感。第三，推理优化的前沿模型（如 GPT-5）在足够的推理预算下能部分恢复到人类级的敏感度，但代价极高——单步决策即可消耗 200–500 个推理 token，成本是数十到上百倍。第四，Agent 的信息获取策略不稳定且特异的（idiosyncratic）：有的模型不获取任何信息就终止决策，有的过度揭示信息付出过高成本。这些结果共同表明：即使在非对抗环境下，LLM Agent 也会因选择架构的微妙变化而行为脆弱。\n\n## 5. 局限性\n\n实验采用的是高度风格化、受控的多属性表格决策任务（实验室范式），尽管作者在 SI Appendix 用真实数据环境做了迁移验证，但结论推广到真实 web Agent 的复杂决策仍需谨慎——真实环境线索更多、噪声更大、任务更开放。其次，\"最优助推\"由人类资源理性模型导出，其本身就是一个理论模型而非客观真理，用它衡量模型\"偏离\"可能带有以人类为中心的标准偏见——模型偏离人类基线未必是缺陷，只有偏离到\"降低收益/伤害用户\"才是。第三，部分推理模型\"恢复人类级敏感度\"是在极高算力成本下实现的，这意味着在成本敏感的部署场景中稳健性可能根本不可得，论文对\"稳健性—成本\"权衡的实际含义讨论不足。最后，从 2025 预印本到 2026 PNAS，模型版本快速迭代，文中测试的具体模型（GPT-4o、Claude 3.5 等）可能已非当前前沿，结论应以\"行为稳健性是一个持续存在的结构性挑战\"、而非\"特定模型的缺陷\"来理解。\n\n## 6. 对你课题的启发\n\n这篇论文对你\"人-AI 协作学习、分布式认知\"课题的冲击是直接的。第一，它动摇了分布式认知视角下\"认知功能在人与 AI 之间如何分布\"的一个隐含前提——人们常默认 Agent 在不确定性下的反应接近人类甚至更理性，本文证明这一假设通常不成立：Agent 对选择架构的敏感度系统性偏离人类基线。这意味着在设计学习情境时，AI 同伴/教练的\"认知贡献\"会被界面层面的微弱设计特征显著塑造，学习情境的\"认知分布\"不仅是人机分工问题，还叠加了 Agent 自身的选择架构脆弱性。第二，选择架构（默认项、建议、高亮）本身就是\"认知分布\"的物质载体——环境线索如何被感知、被权重，决定了人与 AI 各自的决策路径；本文证明 AI 对同一环境线索的权重与人类不同，因此在设计人-AI 协作系统时，环境设计必须同时适配两套认知机制。第三，方法论上，它示范了\"用人类行为学作为 Agent 评估基准\"（人类基线 + 四类助推 + 推理成本权衡），直接呼应你\"work with AI 要匹配 AI 的工作原理\"的核心关切——评估 AI 行为是否符合教学设计意图，需要行为测试而非仅 benchmark 分数，这也与你的 FINER 框架中\"研究设计决定语言边界\"呼应：评估指标的选择会系统性掩盖或揭示 misalignment。第四，必须警惕的边界：本文证明的是\"决策行为\"层面的偏离，而非\"认知状态\"层面的差异，你在借鉴时不要把\"Agent 对界面助推敏感\"偷换成\"Agent 的认知过程与人类不同\"的强结论——前者是行为层证据，后者需要认知建模支撑，这正是你课题可以补上的实证缺口。",
+    "excerpt": "来源：records/20260815/10/ai-agents-sensitive-to-nudges/论文总结.md · 来源 ：PNAS（Proceedings of the National Academy of Sciences），2026，vol.123 no.25，e2537030123（2026 06 15 正式发表）；前身为 NeurIPS 2024 BML Workshop spotlight",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260815/10/ai-agents-sensitive-to-nudges",
+    "original_url": "https://arxiv.org/abs/2505.11584",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-08-13 11:00",
     "title": "Cognitive Spillover in Human-AI Teams（AI 的社会力场：重塑人-AI 团队中的分布式认知）",

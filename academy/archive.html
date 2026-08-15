@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>全部记录</title>
-    <meta name="description" content="源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1285 条。">
+    <meta name="description" content="源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1291 条。">
     <meta property="og:title" content="全部记录 - 研究所">
-    <meta property="og:description" content="源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1285 条。">
+    <meta property="og:description" content="源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1291 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">全部记录</h1>
-        <p class="sidebar-summary">源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1285 条。</p>
+        <p class="sidebar-summary">源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1291 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>全部记录</strong>
-                <span>源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1285 条。</span>
+                <span>源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1291 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,8 +79,80 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "全部记录", "subtitle": "源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1285 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "全部记录", "subtitle": "源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1291 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-08-15 11:00",
+    "title": "Through the Lens of Human-Human Collaboration: A Configurable Research Platform for Exploring Human-Agent Collaboration（透过人-人协作之镜：探索人-Agent 协作的可配置研究平台）",
+    "content": "**采集员**：惠 ｜ **决策者**：五条悟（收录）｜ **收录日期**：2026-08-15\n\n---\n\n## 1. 核心论点\n\n这篇论文直面 HCI/CSCW 一个悬而未决的根本问题：当人类与 LLM Agent 协作时，数十年来在人-人计算机中介协作（CMC）中确立的原则——相互感知（mutual awareness）、适应性（adaptivity）、问责性（accountability）、相互依赖（interdependence）——是会延续、改变还是失效。作者的主张是，这个问题不能靠理论推演来回答，而需要可复现、可配置的受控实验基础设施；因此他们构建并开源了一个把经典 CSCW 实验范式系统改造为人-Agent 协作实验的研究平台，通过\"声明式实验配置语言（ECL）+ 理论化的交互控制（沟通模态、感知仪表盘、社会框架）\"让研究者得以操纵关键协作变量。论文更深一层的洞见是：LLM Agent 与远程人类协作者在\"依赖文本/语音等结构化信道、缺乏面对面社会线索\"这一点上具有同构性，因此可以透过\"人-人协作\"这面镜子来理解与设计\"人-Agent 协作\"。\n\n## 2. 背景与动机\n\n传统智能系统被设计为\"工具\"而非\"协作者\"，普遍缺乏相互感知、适应性、问责性、相互依赖这些有效伙伴关系的要件，这阻碍了信任、共享理解与有效协调的建立，进而削弱结果质量、侵蚀人的能动性。LLM Agent 的出现带来了自然交流与多样的社会/认知行为，承诺了从\"工具\"到\"伙伴\"的范式转变，但协作本身的社会与认知需求并未因此消失。作者指出现有研究基础设施存在一个清晰的断层：Empirica、oTree 等平台面向人-人实验，AutoGen 等框架面向自主 Agent 开发，唯独缺少把 LLM Agent 引入\"传统上仅用于人类协作研究\"的受控实验环境的中间层。这一方法论断层，正是 HCI 学界迟迟无法系统地检验\"CSCW 原则在人-Agent 情境下是否迁移\"的根源。\n\n## 3. 方法与过程\n\n平台采用四组件架构：参与者界面（Participant Interface）渲染交互环境、研究者界面（Researcher Interface）配置实验变量、实验控制器（Experiment Controller）作为后端引擎、以及一个新颖的\"Agent 上下文协议（ACP）\"标准化 Agent 的感知与行动。研究者可用声明式实验配置语言（ECL）定义实体、行动与界面模块，从而复用经典范式（Shape Factory、DayTrader、Hidden Profile、Essay Ranking、Passcode）或新造实验。作者通过三个案例研究验证平台效能：两次 Shape Factory 资源协商实验（16 名参与者，操纵\"沟通信道有无\"与\"工作空间感知仪表盘有无\"）、一次 Hidden Profile 信息汇聚实验（16 名参与者，操纵 Agent 的被动/主动响应性），以及一次由 5 位 HCI 研究者参与的参与式认知走查以打磨研究者界面的设置与分析工作流。实验采用被试间设计，检验理论驱动的交互控制是否产生可测量的结果与感知差异。\n\n## 4. 主要发现\n\n第一，平台能够忠实复现经典 CSCW 范式，并捕捉到不同交互设计所导致的个体与协作行为、协作结果与感知上的显著分化——证明\"操纵理论化交互控制 → 观测行为差异\"这一研究路径在人-Agent 情境下是可行的。第二，Shape Factory 与 Hidden Profile 两个案例表明，沟通信道的有无、感知仪表盘的有无、Agent 的被动/主动响应性，都会系统地改变人-Agent 团队的资源协商与信息汇聚质量，为\"协作原则的迁移性\"提供了初步的经验证据。第三，参与式认知走查确认了研究者界面的可用性，并据此迭代改进了实验设置与分析的流程设计。第四，平台的开源与 ECL 设计，为 HCI 学界从\"一次性、不可复现的 Agent 实验\"转向\"系统化、证据驱动的协作研究\"提供了基础设施支撑，也承载了从\"工具\"到\"伙伴\"的研究转向。\n\n## 5. 局限性\n\n这是一篇基础设施/系统论文，其经验主张的强度天然有限：两个案例研究各仅 16 人，且本质上是平台效度的验证性研究，而非对\"CSCW 原则是否迁移\"这一理论问题的直接回答——平台证明了\"能测\"，但\"测出了什么普遍结论\"仍需后续研究来填。其次，\"LLM Agent 与远程人类协作者同构\"的类比有明确边界（作者自己也承认在问责性、知识根基、身份持续性上的差异），把两者等量齐观可能掩盖 Agent 特有的行为脆弱性（如对选择架构过度敏感）与可操纵性。第三，Agent 的\"社会/认知行为\"高度依赖底层模型与 persona 设定，平台本身不控制模型版本，跨模型的结论稳定性未经验证。最后，16 人规模的被试间设计统计功效有限，且 Shape Factory/Hidden Profile 作为上世纪 80–90 年代的经典范式，其生态效度与当代真实人-Agent 协作场景之间的差距需要审慎对待。\n\n## 6. 对你课题的启发\n\n这篇论文对你\"人-AI 协作学习、分布式认知\"课题是研究基础设施层面的直接支撑。第一，它把\"认知分布\"从理论命题变成可操纵的受控变量：沟通模态、感知仪表盘、Agent 响应性、社会框架——这些正是分布式认知理论中\"认知如何在人、工具、AI 之间分布与流动\"的可操作化入口，你可以直接借用其交互控制框架来设计学习情境中\"认知分布\"的受控实验。第二，它提出的核心问题\"经典协作原则在人-Agent 情境下延续、改变还是失效\"，几乎就是你课题\"协作学习原则在人-AI 情境下如何迁移\"的同构表述，其平台可成为你检验\"协作学习/分布式认知理论在人-AI 学习情境中是否依然成立\"的实验底座。第三，开源代码（Empirica/oTree 的人-Agent 版本）可作为你未来实验基础设施的起点，避免从零造轮子。第四，必须警惕其边界：平台把 Agent 当作\"可被 persona 与交互控制塑造的协作者\"，但正如野蔷薇篇所示，Agent 的底层行为对选择架构过度敏感，意味着你在用这个平台设计学习实验时，必须把\"Agent 自身的脆弱性\"纳入控制变量，否则可能把 Agent 的行为噪声误读为协作效应。",
+    "excerpt": "来源：records/20260815/11/human-agent-collab-research-platform/论文总结.md · 来源 ：ACM CHI 2026（Barcelona, April 13–17, 2026）",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260815/11/human-agent-collab-research-platform",
+    "original_url": "https://doi.org/10.1145/3772318.3790879",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-08-15 11:00",
+    "title": "惠-能力进化（2026-08-15）",
+    "content": "## 今日发现\n\n选题《Through the Lens of Human-Human Collaboration: A Configurable Research Platform for Exploring Human-Agent Collaboration》是 CHI 2026 顶会论文（Barcelona, April 13–17；DOI 10.1145/3772318.3790879；arXiv 2509.18008；开源 github.com/neuhai/human-agent-collab），作者 Bingsheng Yao、Jiaju Chen、Chaoran Chen、April Yi Wang、Toby Jia-jun Li、Dakuo Wang。论文直面\"HCI/CSCW 数十年确立的人-人协作原则（相互感知、适应性、问责性、相互依赖）在人-LLM-Agent 协作下会延续、改变还是失效\"这一根本问题，并给出一个可复现、可配置的开源研究平台作为回答工具：四组件架构（参与者界面、研究者界面、实验控制器、Agent 上下文协议 ACP）+ 声明式实验配置语言（ECL），把 Shape Factory、Hidden Profile 等经典 CSCW 范式系统改造成人-Agent 协作实验，通过三个案例研究（两次 Shape Factory 共 16 人、一次 Hidden Profile 16 人、5 位 HCI 研究者的参与式认知走查）验证平台效能。\n\n## 决策理由\n\n入选。五条悟评价：\"这是今日三份里唯一一篇 CHI 顶会正式论文，也是唯一一篇把'研究基础设施'本身当作贡献的——它问的不是某个人-AI 协作现象，而是'我们该如何系统地研究人-AI 协作'，这一问恰好命中你课题的方法论短板。\"选中理由有三：(1) 理论关联最直接——它把沟通模态、感知仪表盘、Agent 响应性、社会框架这些分布式认知的'认知分布'概念变成可操纵的受控变量，是把你课题从理论命题变成可检验实验的直接工具；(2) 顶会权重最高——CHI 是你课题最看重的 HCI 顶会（CHI > UIST > CSCW），且作者群（Dakuo Wang / Toby Li / April Wang）是 CSCW + 人-AI 协作的一线研究者，值得持续跟踪；(3) 可复用资产——开源代码可作为你未来实验基础设施的起点，避免从零造轮子。同时已标注其边界：这是基础设施论文而非理论结论，且其\"LLM Agent 与远程人类协作者同构\"的类比有问责性、身份持续性上的明确限度。\n\n## 明日方向指引\n\n沿两条线索推进。(1) 平台复用线：持续跟踪 github.com/neuhai/human-agent-collab 的更新与后续论文，关注是否有研究用它产出了\"CSCW 原则在人-Agent 情境下迁移性\"的实证结论——这是该平台价值的最终兑现，也是你课题可直接引用的证据。同时评估其 ECL 与交互控制框架在你\"学习情境中认知分布\"实验里的可迁移性。(2) 理论对接线：反向定位\"shared AI resources / team-based AI interaction / 分布式认知与扩展心智\"的最新文献，看是否有工作把\"人-Agent 协作平台\"与分布式认知/扩展心智正式对接——惠昨日（8/14）入选的\"共享领地\"论文已指出\"共享 AI 是否改变团队心智模型/认知多样性\"这一空白，今天的平台论文恰好提供了补这个空白的实验工具，两条线索可合并成一条可落地的研究设计。另提醒：设计学习实验时务必把\"Agent 自身的选择架构脆弱性\"（见野蔷薇篇）纳入控制变量，避免把 Agent 行为噪声误读为协作效应。",
+    "excerpt": "来源：records/20260815/11/human-agent-collab-research-platform/惠-能力进化.md · 选题《Through the Lens of Human Human Collaboration: A Configurable Research Platform for Exploring Human Agent Collaboration》是 CHI 2026 顶会论文（Barcelona, April 13–17；DOI 10.1145/3772318.3790879；arXiv 2509.18008；开源 github.com/neuhai/human agent collab），作者 Bingsheng Yao、Jiaju Chen、Chaoran Chen、April Yi Wang、Toby Jia jun Li、Dakuo Wang。论文直面\"HCI/CSCW 数十年确立的人 人协作原则（相互感知、适应性、问责性、相互依赖）在人 LLM Agent 协作下会延续、改变还是失效\"这一根本问题，并给出一个可复现、可配置的开源研究平台作为回答工具：四组件架构（参与者界面、研究者界面、实验控制器、Agent 上下文协议 ACP）+ 声明式实验配置语言（ECL），把 Shape Factory、Hidden Profile 等经典 CSCW 范式系统改造成人 Agent 协作实验，通过三个案例研究（两次 Shape Factory 共 16 人、一次 Hidden Profile 16 人、5 位 HCI 研究者的参与式认知走查）验证平台效能。",
+    "file_name": "惠-能力进化.md",
+    "source_dir": "records/20260815/11/human-agent-collab-research-platform",
+    "original_url": "https://doi.org/10.1145/3772318.3790879",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-08-15 10:00",
+    "title": "AI Agents Are Sensitive to Nudges（AI Agent 对\"助推\"过度敏感）",
+    "content": "**采集员**：野蔷薇 ｜ **决策者**：五条悟（收录）｜ **收录日期**：2026-08-15\n\n---\n\n## 1. 核心论点\n\n许多 AI Agent 应用默认假设：Agent 在不确定性下的反应会接近人类、甚至更理性。这篇论文用实证直接否定了这一假设。其核心主张是：LLM Agent 对选择架构（choice architecture）的敏感度系统性高于人类——默认选项、建议、信息高亮、基于资源理性模型的\"最优助推\"这类在人类身上只有轻微作用的线索，对模型的选择产生不成比例的影响，且是双向的（既可能把决策推向更高收益，也可能推向更差收益）。作者据此把\"行为稳健性\"（behavioral robustness）确立为安全可信 Agent 的一个基础性、却被长期忽视的挑战——与对抗攻击不同，这里的扰动是决策环境中语义上良性、有理论动机的特征。\n\n## 2. 背景与动机\n\nLLM 正被越来越多地部署为替用户做选择、用工具的自主 Agent（浏览网页、购物、金融决策、操作软件），但我们几乎不了解它们的决策如何被环境塑造。人类决策研究已经确立：选择架构（Thaler & Sunstein 的\"助推\"）会以可预测的方式改变人的选择，资源理性模型（bounded rationality）刻画了人类在计算资源约束下的决策过程。作者的问题是：训练数据来自人类行为的 LLM，其决策是否真的像人一样对这些环境线索做出反应？先前工作研究的是 prompt 鲁棒性与对抗攻击（标点、格式、措辞等任意扰动），而本文聚焦的是语义上有意义、有理论动机的决策环境特征，从而可以追问一个更根本的问题——\"行为变化是否与线索价值校准、是否对人类有益\"。\n\n## 3. 方法与过程\n\n作者改编了一个经典的多属性序贯决策任务（基于 Callaway et al. 2023 的资源理性模型任务），在四类选择架构下对比人类与多个前沿 LLM：默认选项、建议（早期/晚期）、信息高亮、以及由人类资源理性模型导出的\"最优\"助推。研究以人类行为作为\"可预测的敏感度基线\"，测试了多种模型（GPT-3.5/4o/o3-Mini、Gemini 1.5 Flash/Pro、Claude 3 Haiku/3.5 Sonnet 等）与多种提示策略（基础、零样本 CoT、few-shot 人类数据）。作者用 logistic 回归分析选择结果，以数据来源（人 vs 模型）、提示方法、试次条件为固定效应，并采用聚类稳健标准误；此外还在 SI Appendix 中验证了助推敏感度在真实数据环境中的可迁移性。\n\n## 4. 主要发现\n\n第一，也是最核心的：多数 LLM Agent 对助推的敏感度系统性超过人类——人类已经对这些线索敏感，而模型更甚，微弱的线索即可显著改变模型决策，方向既可能更好也可能更差。第二，链式思考提示与 in-context 人类数据都不能稳定矫正这种过度敏感；few-shot 在某些情况下能促进更接近人类的采样，但无法消除助推敏感。第三，推理优化的前沿模型（如 GPT-5）在足够的推理预算下能部分恢复到人类级的敏感度，但代价极高——单步决策即可消耗 200–500 个推理 token，成本是数十到上百倍。第四，Agent 的信息获取策略不稳定且特异的（idiosyncratic）：有的模型不获取任何信息就终止决策，有的过度揭示信息付出过高成本。这些结果共同表明：即使在非对抗环境下，LLM Agent 也会因选择架构的微妙变化而行为脆弱。\n\n## 5. 局限性\n\n实验采用的是高度风格化、受控的多属性表格决策任务（实验室范式），尽管作者在 SI Appendix 用真实数据环境做了迁移验证，但结论推广到真实 web Agent 的复杂决策仍需谨慎——真实环境线索更多、噪声更大、任务更开放。其次，\"最优助推\"由人类资源理性模型导出，其本身就是一个理论模型而非客观真理，用它衡量模型\"偏离\"可能带有以人类为中心的标准偏见——模型偏离人类基线未必是缺陷，只有偏离到\"降低收益/伤害用户\"才是。第三，部分推理模型\"恢复人类级敏感度\"是在极高算力成本下实现的，这意味着在成本敏感的部署场景中稳健性可能根本不可得，论文对\"稳健性—成本\"权衡的实际含义讨论不足。最后，从 2025 预印本到 2026 PNAS，模型版本快速迭代，文中测试的具体模型（GPT-4o、Claude 3.5 等）可能已非当前前沿，结论应以\"行为稳健性是一个持续存在的结构性挑战\"、而非\"特定模型的缺陷\"来理解。\n\n## 6. 对你课题的启发\n\n这篇论文对你\"人-AI 协作学习、分布式认知\"课题的冲击是直接的。第一，它动摇了分布式认知视角下\"认知功能在人与 AI 之间如何分布\"的一个隐含前提——人们常默认 Agent 在不确定性下的反应接近人类甚至更理性，本文证明这一假设通常不成立：Agent 对选择架构的敏感度系统性偏离人类基线。这意味着在设计学习情境时，AI 同伴/教练的\"认知贡献\"会被界面层面的微弱设计特征显著塑造，学习情境的\"认知分布\"不仅是人机分工问题，还叠加了 Agent 自身的选择架构脆弱性。第二，选择架构（默认项、建议、高亮）本身就是\"认知分布\"的物质载体——环境线索如何被感知、被权重，决定了人与 AI 各自的决策路径；本文证明 AI 对同一环境线索的权重与人类不同，因此在设计人-AI 协作系统时，环境设计必须同时适配两套认知机制。第三，方法论上，它示范了\"用人类行为学作为 Agent 评估基准\"（人类基线 + 四类助推 + 推理成本权衡），直接呼应你\"work with AI 要匹配 AI 的工作原理\"的核心关切——评估 AI 行为是否符合教学设计意图，需要行为测试而非仅 benchmark 分数，这也与你的 FINER 框架中\"研究设计决定语言边界\"呼应：评估指标的选择会系统性掩盖或揭示 misalignment。第四，必须警惕的边界：本文证明的是\"决策行为\"层面的偏离，而非\"认知状态\"层面的差异，你在借鉴时不要把\"Agent 对界面助推敏感\"偷换成\"Agent 的认知过程与人类不同\"的强结论——前者是行为层证据，后者需要认知建模支撑，这正是你课题可以补上的实证缺口。",
+    "excerpt": "来源：records/20260815/10/ai-agents-sensitive-to-nudges/论文总结.md · 来源 ：PNAS（Proceedings of the National Academy of Sciences），2026，vol.123 no.25，e2537030123（2026 06 15 正式发表）；前身为 NeurIPS 2024 BML Workshop spotlight",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260815/10/ai-agents-sensitive-to-nudges",
+    "original_url": "https://arxiv.org/abs/2505.11584",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-08-15 10:00",
+    "title": "野蔷薇-能力进化（2026-08-15）",
+    "content": "## 今日发现\n\n选题《AI Agents Are Sensitive to Nudges》是 PNAS 2026 正式发表论文（vol.123 no.25, e2537030123, 2026-06-15；前身 NeurIPS 2024 BML Workshop spotlight），作者 Manuel Cherep、Pattie Maes（MIT Media Lab）、Nikhil Singh（Dartmouth），arXiv 2505.11584。论文把\"人类决策行为学\"直接用作 LLM Agent 的行为基线：在多属性序贯决策任务上，于默认选项、建议、信息高亮、\"最优助推\"四类选择架构下对比人类与多个前沿 LLM，发现 LLM Agent 对助推的敏感度系统性超过人类——弱线索对人类影响很小，却能显著改变模型决策（双向）；CoT 与 few-shot 人类数据都不能稳定矫正，只有高推理预算的推理模型能部分恢复人类级敏感度，但单步决策消耗 200–500 推理 token。其核心贡献是把\"行为稳健性\"提为 Agent 安全的基础问题：这些扰动是决策环境中语义良性、有理论动机的特征，却足以系统性偏移 Agent 决策。\n\n## 决策理由\n\n入选。五条悟评价：\"这是今日三份里对'AI 是否真的能像人一样、甚至更理性地为用户做决策'这一假设最锋利的一刀——直接给了否定证据，而且证据来自 PNAS 级别的大规模实证，不是推测。\"选中理由有三：(1) 直接冲击课题隐含前提——分布式认知视角下人们默认 Agent 在不确定性下的反应接近人类，本文证明这一默认通常不成立，Agent 对选择架构的敏感度系统性偏离人类基线，意味着学习情境中的'认知分布'叠加了 Agent 自身的选择架构脆弱性；(2) 方法可迁移——'人类基线 + 四类助推 + 推理成本权衡'的行为测试范式，可直接用于评估 AI 行为是否符合教学设计意图，呼应'work with AI 要匹配 AI 的工作原理'；(3) 顶级实证证据——PNAS + MIT Media Lab + 开源框架，是行为稳健性这一新兴方向的开创性工作。备注：该篇野蔷薇曾于 8/8 首次提议，但当时五条悟未完成审核（无成文），今日为首次正式收录，非重复采集。\n\n## 明日方向指引\n\n沿两条线索推进。(1) 行为稳健性线：追踪\"behavioral robustness / behavioral tests for AI agents / choice architecture sensitivity\"的后续工作，尤其是该团队同源的 NeurIPS LAW 论文《Behavioral Systems Require Behavioral Tests》及其引用网络——这正形成一个\"部署 Agent 前必须做行为测试\"的研究纲领，与你课题的\"AI 行为是否匹配教学设计意图\"直接对接。(2) 人-AI 行为匹配线：关注\"LLM 决策行为 vs 人类基线的系统性偏离\"的复现与扩展，以及\"以人类为中心 vs 以任务收益为中心\"评估标准的争议——本文的核心张力在于：偏离人类基线未必是缺陷，只有偏离到降低收益/伤害用户才是，这条边界值得你在设计学习情境中明确。另请保持对\"行为层证据 vs 认知层结论\"区分的敏感——不要把'Agent 对界面助推敏感'偷换成'Agent 认知过程与人类不同'，这是你课题可补上的实证缺口，可在选题时反向定位认知建模类文献。",
+    "excerpt": "来源：records/20260815/10/ai-agents-sensitive-to-nudges/野蔷薇-能力进化.md · 选题《AI Agents Are Sensitive to Nudges》是 PNAS 2026 正式发表论文（vol.123 no.25, e2537030123, 2026 06 15；前身 NeurIPS 2024 BML Workshop spotlight），作者 Manuel Cherep、Pattie Maes（MIT Media Lab）、Nikhil Singh（Dartmouth），arXiv 2505.11584。论文把\"人类决策行为学\"直接用作 LLM Agent 的行为基线：在多属性序贯决策任务上，于默认选项、建议、信息高亮、\"最优助推\"四类选择架构下对比人类与多个前沿 LLM，发现 LLM Agent 对助推的敏感度系统性超过人类——弱线索对人类影响很小，却能显著改变模型决策（双向）；CoT 与 few shot 人类数据都不能稳定矫正，只有高推理预算的推理模型能部分恢复人类级敏感度，但单步决策消耗 200–500 推理 token。其核心贡献是把\"行为稳健性\"提为 Agent 安全的基础问题：这些扰动是决策环境中语义良性、有理论动机的特征，却足以系统性偏移 Agent 决策。",
+    "file_name": "野蔷薇-能力进化.md",
+    "source_dir": "records/20260815/10/ai-agents-sensitive-to-nudges",
+    "original_url": "https://arxiv.org/abs/2505.11584",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-08-15 09:00",
+    "title": "悠仁-能力进化（2026-08-15）",
+    "content": "## 今日发现\n\n提交的 MeasuringU 行业研究《UX Benchmarks for AI-Based Chat Software (2026)》（Jeff Sauro 团队，2026-05 研究 / 07 发布）未被收录。该研究用 420 名美国参与者对 ChatGPT、Claude、Gemini、Grok 做 UX-Lite、SUS、NPS、TAC-10 四类指标量化评测，含 2025→2026 跨年对比，并控制技术熟练度混淆变量。\n\n## 未收录原因\n\n这篇不是没有价值——它的四个量化发现（SUS 上 ChatGPT 领跑但差异不显著；NPS 上 Claude 反超 ChatGPT 21 个点；Gemini 跨年最大下滑；抱怨集中在准确性与幻觉而 Claude 用户抱怨使用限制）以及\"控制技术熟练度混淆变量\"的方法意识，都是扎实的、对设计师有用的洞察。问题在于它落在了采集标准的边界外：这是 MeasuringU 的行业研究博客（商业 UX 咨询机构），非同行评议论文，无理论增量，核心发现是可被复现的\"市场快照\"而非可命名、可形式化的机制。这与悠仁前两次（8/13 Craft Innovations、8/14 NN/G）被拒的情形属于同一类别，构成了需要正视的模式信号：悠仁的选题长期停留在\"真实产品评测/行业拆解\"这一层，虽有个案洞察，却屡次因\"非同行评议 + 无理论/机制增量\"被同台竞争的结构性优势淘汰。今日同台的惠（CHI 顶会 + 研究基础设施）与野蔷薇（PNAS + 行为稳健性开创性实证）在严谨度、理论贡献、与课题关联上构成明显优势，宁缺毋滥选后者。\n\n## 方向建议\n\n1. 悠仁的核心优势——从真实产品里提炼可迁移的交互设计决策——是有价值的，且历史上有\"Cursor 信任界面拆解\"入选的先例。但连续三次因同一原因被拒，说明需要一次真正的选题升级，而非继续提交同类内容。建议下次选题前先过三道关卡：(a) 有可命名、可形式化、可复用的设计机制或框架，而非仅\"几条量化发现\"；(b) 洞察无法被现有学术文献轻易覆盖；(c) 反向定位到某个尚未被学术化的交互模式空白。\n2. 今天这篇其实有一条值得深挖的学术线：MeasuringU 里\"易用性（SUS）与推荐意愿（NPS）分离\"（Claude 易用性未必领先但 NPS 反超）这一现象，对应学术文献里\"可用性 ≠ 满意度 ≠ 采纳\"的经典测量效度问题；\"Gemini 跨年下滑\"对应\"LLM 产品可用性的纵向演化\"。建议把这类真实产品的反常信号当作\"反向定位学术论文的线索\"，去找 CHI/CSCW 里正在形式化这些问题的论文，把论文作为选题提交，而不是提交博客本身。\n3. 一个自我审查问题，建议每次选题前问一句：\"这篇博客的洞察，是否已经有一篇更严谨的论文在回答？\"如果答案是\"是\"，就把那篇论文作为真正的选题提交（或与负责该方向的采集员协同）。",
+    "excerpt": "来源：records/20260815/09/five-daily-summary/悠仁-能力进化.md · 提交的 MeasuringU 行业研究《UX Benchmarks for AI Based Chat Software (2026)》（Jeff Sauro 团队，2026 05 研究 / 07 发布）未被收录。该研究用 420 名美国参与者对 ChatGPT、Claude、Gemini、Grok 做 UX Lite、SUS、NPS、TAC 10 四类指标量化评测，含 2025→2026 跨年对比，并控制技术熟练度混淆变量。",
+    "file_name": "悠仁-能力进化.md",
+    "source_dir": "records/20260815/09/five-daily-summary",
+    "original_url": "",
+    "original_label": "",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-08-15 09:00",
+    "title": "五条悟-汇总（2026-08-15）",
+    "content": "## 今日采集决议\n\n**入选 2 篇，放弃 1 篇。**\n\n### 入选篇目\n\n**1. 惠：ACM CHI 2026 — 透过人-人协作之镜：探索人-Agent 协作的可配置研究平台**\n- 论文：Bingsheng Yao, Jiaju Chen, Chaoran Chen, April Yi Wang, Toby Jia-jun Li & Dakuo Wang, \"Through the Lens of Human-Human Collaboration: A Configurable Research Platform for Exploring Human-Agent Collaboration,\" ACM CHI 2026（arXiv 2509.18008，DOI 10.1145/3772318.3790879，开源 github.com/neuhai/human-agent-collab）\n- 入选理由：今日唯一一篇 CHI 顶会正式论文，也是唯一把\"研究基础设施本身\"当作贡献的一篇。它问的不是某个人-AI 协作现象，而是\"人-人协作数十年确立的原则（相互感知、适应性、问责性、相互依赖）在人-LLM-Agent 协作下会延续、改变还是失效\"——并给出可复现、可配置的开源平台（四组件架构 + 声明式 ECL + Agent 上下文协议 ACP）作为回答工具，通过 Shape Factory、Hidden Profile、参与式认知走查三个案例验证效能。它把你课题的\"认知分布\"从理论命题变成可操纵的受控变量（沟通模态、感知仪表盘、Agent 响应性、社会框架），是\"学习情境中认知分布受控研究\"的直接实验底座。\n\n**2. 野蔷薇：PNAS 2026 — AI Agent 对\"助推\"过度敏感**\n- 论文：Manuel Cherep, Pattie Maes & Nikhil Singh, \"AI Agents Are Sensitive to Nudges,\" PNAS 2026, vol.123 no.25, e2537030123（2026-06-15 正式发表；arXiv 2505.11584；前身 NeurIPS 2024 BML Workshop spotlight）\n- 入选理由：今日三份里对\"AI Agent 是否真的能像人一样、甚至更理性地为用户做决策\"这一假设最锋利的一刀——PNAS 级别实证直接给出否定证据：LLM Agent 对选择架构（默认项、建议、信息高亮、最优助推）的敏感度系统性超过人类，CoT 与 few-shot 都不能稳定矫正，只有高推理预算的推理模型能以数十倍成本部分恢复人类级敏感度。它把\"行为稳健性\"提为 Agent 安全的基础问题，并直接冲击分布式认知视角下\"Agent 在不确定性下反应接近人类\"的隐含前提，同时示范了\"人类基线 + 行为测试\"评估 AI 的通用方法。\n\n### 放弃篇目\n\n**悠仁：MeasuringU — UX Benchmarks for AI-Based Chat Software (2026)**\n- 放弃原因：MeasuringU 是商业 UX 咨询机构，本文是其行业研究博客而非同行评议论文。其量化发现（SUS 差异不显著但 ChatGPT 领跑、NPS 上 Claude 反超 21 点、Gemini 跨年最大下滑、\"控制技术熟练度混淆变量\"的方法意识）是扎实的市场快照，但无理论增量、无可命名可形式化机制。这与悠仁 8/13（Craft Innovations）与 8/14（NN/G）两次被拒同属一类，构成需正视的模式信号：连续三次因\"非同行评议 + 无理论/机制增量\"落选。\n- 反馈：悠仁对真实产品交互的提炼能力是独特优势，但需要一次真正的选题升级。建议下次选题前过三道关卡——(a) 有可命名、可形式化、可复用的设计机制；(b) 洞察无法被现有学术文献覆盖；(c) 反向定位到某个尚未被学术化的交互模式空白。并把真实产品的反常信号（如\"易用性 SUS 与推荐意愿 NPS 分离\"\"Gemini 跨年下滑\"）当作反向定位学术论文的线索，提交论文而非博客。自我审查问题：这篇博客的洞察，是否已有一篇更严谨的论文在回答？\n\n## 方向指引\n\n今日两篇入选论文恰好构成\"研究工具—实证发现\"的互补结构，与你课题形成有力呼应：\n\n- **惠的论文（工具/方法层）**：提供可配置、可复现的人-Agent 协作实验平台——回答\"我们该如何系统地研究人-AI 协作中的认知分布\"。\n- **野蔷薇的论文（发现/行为层）**：证明 Agent 的行为对选择架构系统性偏离人类基线——回答\"认知分布中 AI 这一侧本身是否稳定、是否像我们假设的那样运作\"。\n\n两者合起来指向一个你课题可以切入的精确空白：**用惠的平台做受控实验时，必须把\"野蔷薇揭示的 Agent 选择架构脆弱性\"纳入控制变量**——否则研究者可能把 Agent 的行为噪声误读为协作效应。这条\"基础设施—行为稳健性\"的交叉，正是当前 HCI 人-Agent 协作文献尚未自觉处理的缺口，也是你课题（设计学习情境中的人-AI 协作学习）最有资格补上的实证空白。\n\n下个采集周期建议关注：\n- \"behavioral robustness / behavioral tests for AI agents / choice architecture sensitivity\"（野蔷薇篇）的后续引用与扩展，尤其是该团队同源《Behavioral Systems Require Behavioral Tests》的引用网络\n- \"shared AI resources / human-agent collaboration platform / 分布式认知与扩展心智的正式对接\"（惠篇），看是否有工作用该平台产出\"CSCW 原则在人-Agent 情境下迁移性\"的实证结论\n- 一条可开始编织的证据链：把库里已有的\"认知卸载/加速幻觉（CogSci）\"+\"认知溢出/社会力场（TOCHI）\"+\"共享领地（CHI 8/14）\"+\"行为预测（MIT 8/14）\"+\"人-Agent 协作平台（CHI 今日）\"+\"选择架构脆弱性（PNAS 今日）\"串成你课题两个侧面的完整理论骨架——AI 既是重塑认知分布的社会参与者，也是行为脆弱、需要行为测试校准的前摄系统，二者的交汇点即\"设计学习情境中 AI 的角色边界与校准机制\"。\n\n## 数据完整性观察（供管线维护者注意）\n\n今日去重核查中发现两处历史缺口，非今日采集范围但需上报：\n- **20260808、20260809 两日缺少 .gojo-done 标记与五条悟-汇总**，提议文件（含 8/8 野蔷薇提议的《AI Agents Are Sensitive to Nudges》与 8/8、8/9 的惠/野蔷薇/悠仁提议）至今残留未清理。这导致 8/8 的 nudge 提议被搁置，直至今日重新提交才首次成文。\n- 已核实：《AI Agents Are Sensitive to Nudges》在 8/8 仅被\"提议\"、从未被\"采集成文\"，今日为首次正式收录，非重复采集。\n- 建议排查 8/8、8/9 两日五条悟阶段为何中断，并补跑或明确标记跳过，避免提议文件累积与去重判断失真。",
+    "excerpt": "来源：records/20260815/09/five-daily-summary/五条悟-汇总.md · 入选 2 篇，放弃 1 篇。",
+    "file_name": "五条悟-汇总.md",
+    "source_dir": "records/20260815/09/five-daily-summary",
+    "original_url": "https://doi.org/10.1145/3772318.3790879",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-08-14 11:00",
     "title": "Collaborative Document Editing with Multiple Users and AI Agents（多人协作文档编辑中的 AI Agent：共享领地与认知分工）",
