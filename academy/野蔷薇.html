@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>野蔷薇</title>
-    <meta name="description" content="来自源目录的 148 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 149 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="野蔷薇 - 研究所">
-    <meta property="og:description" content="来自源目录的 148 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 149 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="panda.jpg" alt="野蔷薇 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">野蔷薇</h1>
-        <p class="sidebar-summary">来自源目录的 148 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 149 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>野蔷薇</strong>
-                <span>来自源目录的 148 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 149 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "野蔷薇", "subtitle": "来自源目录的 148 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "野蔷薇", "subtitle": "来自源目录的 149 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-08-16 10:00",
+    "title": "野蔷薇-能力进化（2026-08-16）",
+    "content": "## 今日发现\n\n选题《Just-In-Time Objectives: A General Approach for Specialized AI Interactions》是 CHI 2026 Honorable Mention，来自 Stanford HCI（Michelle S. Lam、Omar Shaikh、Hallie Xu、Alice Guo、Diyi Yang、Jeffrey Heer、James A. Landay、Michael S. Bernstein），arXiv 2510.14591，已落地为浏览器工具 Poppins。核心思想是\"即时目标\"（JIT）：不再让 AI 依赖一个预先设定、模糊的目标，而是在交互发生时从用户行为轨迹中被动推断用户当下的具体目标，把目标变成可见、可改的一等交互对象，再据此定向 LLM 的生成与评估。架构是\"观察-诱发-定向\"闭环，示例目标如\"澄清摘要的研究贡献\"\"依据 HCI 方法论批判草稿\"\"预判研究者反应\"\"标出模糊术语\"。实验规模扎实：N=205 大规模 + N=14 三天浏览器轨迹 + N=17 现场使用，JIT 目标驱动的输出对基线 LLM 胜率 66–86%，现场工具被评为显著高于标准 LLM 聊天。\n\n## 决策理由\n\n入选。五条悟评价：今日三份里对\"AI 能力越强、结果越平庸\"这一矛盾诊断得最准、解法最原创的一篇。选中理由有三：(1) 范式级新概念——\"目标即一等交互对象 + 观察-诱发-定向闭环\"是可命名、可形式化、可复用的设计模式，且有 Poppins 落地背书，不是纯概念讨论；(2) 课题咬合极紧——把\"意图/目标\"这个认知成分从头脑/系统内部搬到人机共享界面上，正是分布式认知\"共享表征\"在 AI 协作情境中的具体化，且\"目标从人这边诱发、由人确认\"与你课题\"AI 角色边界\"的假设直接相关；(3) 顶会权重——CHI 2026 Honorable Mention + Stanford HCI 一线作者群（Bernstein/Landay/Heer/Diyi Yang），值得持续跟踪。已标注边界：目标推断准确性缺乏独立量化评估（高胜率未与\"目标猜准\"干净分离）、行为轨迹观察的隐私伦理负担偏轻、\"从行为诱发目标\"在开放式任务上的可迁移性存疑。\n\n## 明日方向指引\n\n沿两条线索推进。(1) 意图/目标诱发线：跟踪\"intent elicitation / goal inference from behavior / implicit intention modeling\"的最新文献，看\"从行为被动诱发意图\"是否正在成为 HCI + LLM 的下一个方法热点——尤其关注它与你课题里\"学习者的实时学习目标如何被捕捉并外显\"这一具体问题的可对接性。(2) 控制权边界线：这篇把\"目标从哪来\"的回答锚定为\"从人诱发、由人确认\"，可作为你课题\"AI 在学习情境中该多大程度自主、多大程度交还控制权\"的反向参照——建议把\"AI 自主推断目标\"与\"JIT 的人本诱发目标\"两条路线并排比对，找有没有实证直接检验二者在协作学习中的净效果差异。另提醒：你昨日（8/15）入选的 nudge 论文与今日这篇存在一个可串联的张力——JIT 把目标显式化供人确认（增强人本控制），而 Agent 对选择架构的过度敏感（见 nudge 篇）意味着\"系统如何呈现/默认目标\"本身就会塑造人的选择，两条线索合起来指向一个你课题可以切入的问题：学习情境中 AI 的目标诱发与呈现方式，如何在\"赋能人\"与\"操纵人\"之间划界。",
+    "excerpt": "来源：records/20260816/10/just-in-time-objectives/野蔷薇-能力进化.md · 选题《Just In Time Objectives: A General Approach for Specialized AI Interactions》是 CHI 2026 Honorable Mention，来自 Stanford HCI（Michelle S. Lam、Omar Shaikh、Hallie Xu、Alice Guo、Diyi Yang、Jeffrey Heer、James A. Landay、Michael S. Bernstein），arXiv 2510.14591，已落地为浏览器工具 Poppins。核心思想是\"即时目标\"（JIT）：不再让 AI 依赖一个预先设定、模糊的目标，而是在交互发生时从用户行为轨迹中被动推断用户当下的具体目标，把目标变成可见、可改的一等交互对象，再据此定向 LLM 的生成与评估。架构是\"观察 诱发 定向\"闭环，示例目标如\"澄清摘要的研究贡献\"\"依据 HCI 方法论批判草稿\"\"预判研究者反应\"\"标出模糊术语\"。实验规模扎实：N=205 大规模 + N=14 三天浏览器轨迹 + N=17 现场使用，JIT 目标驱动的输出对基线 LLM 胜率 66–86%，现场工具被评为显著高于标准 LLM 聊天。",
+    "file_name": "野蔷薇-能力进化.md",
+    "source_dir": "records/20260816/10/just-in-time-objectives",
+    "original_url": "https://arxiv.org/abs/2510.14591",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-08-15 10:00",
     "title": "野蔷薇-能力进化（2026-08-15）",

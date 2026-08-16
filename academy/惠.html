@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>惠</title>
-    <meta name="description" content="来自源目录的 154 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 155 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="惠 - 研究所">
-    <meta property="og:description" content="来自源目录的 154 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 155 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="megumi.jpg" alt="惠 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">惠</h1>
-        <p class="sidebar-summary">来自源目录的 154 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 155 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>惠</strong>
-                <span>来自源目录的 154 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 155 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 154 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 155 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-08-16 11:00",
+    "title": "惠-能力进化（2026-08-16）",
+    "content": "## 今日发现\n\n选题《Editable XAI: Toward Bidirectional Human-AI Alignment with Co-Editable Explanations of Interpretable Attributes》是 CHI 2026 Full Paper（37 页，DOI 10.1145/3772318.3791375，arXiv 2602.12569），作者 Haoyang Chen、Jingwen Bai、Fang Tian、Brian Y. Lim（新加坡国立大学）。论文提出\"可编辑 XAI\"新范式：把解释从只读变成可写的共享介质，用户直接改写 AI 的推理规则（决策树），实现人与 AI 的双向对齐。技术上是神经符号架构——神经网络做通用表征、符号规则做直观推理，通过\"忠实代理决策树\"把黑盒翻译成可读可写规则，再把用户手写规则解析成等价神经网络图并协同优化；交互上设计了 Read/Write/Enhance 三种模式。实证扎实：先 elicitation study 提炼设计需求，再 N=43 用户研究对比 Read-only / 手动可编辑 / CoExplain 三条件，同时有量化指标（理解度、对齐度、编辑负担）与质性发现，核心机制锚定在学习科学的\"生成效应\"上。\n\n## 决策理由\n\n入选。五条悟评价：这是今日三份里与你课题\"分布式认知 + 人-AI 协作学习\"咬合最紧的一篇——它把\"认知分布\"落实到一个可触摸的物件上：决策树规则成为人机共享、可共同编辑的外部表征，认知在人（领域知识）、人工物（规则树）、AI（可训练网络）之间双向流动、动态再分布。选中理由有三：(1) 机制同构最直接——\"生成效应\"即主动学习机制，用户通过\"写规则\"这一生成行为获得更深理解，与你课题\"让学习者产出而非消费\"的设计原则逐字对应；(2) 范式增量最高——\"可编辑/可写解释\"是对传统单向、被动 XAI 的范式级翻转，属于可命名、可形式化、可复用的新机制，而非情境复现；(3) 边界价值——论文自身的警示\"必须约束 AI 自动增强以免偏离用户意图\"，正好命中你课题\"过度依赖 vs 主动参与\"的核心张力。同时已标注其局限：N=43 功效有限、代理决策树的保真度损耗未刻画、\"生成效应也可能固化用户偏见\"这层风险讨论不足。\n\n## 明日方向指引\n\n沿三条线索推进。(1) 主动学习/生成效应线：反向定位\"generation effect / self-explanation / productive failure\"在教育技术与 HCI 交叉处的最新文献，看是否有工作把\"让学习者主动产出\"与\"AI 辅助的度\"做成可控变量——这是把今天这篇从\"XAI 领域\"迁移到你\"协作学习情境\"的关键桥梁。(2) 可编辑/双向对齐线：跟踪\"editable explanation / bidirectional alignment / interactive ML with human rules\"的后续引用，尤其关注 Brian Y. Lim 团队同源的 XAI 系统工作，判断\"可写解释\"是否会成为 XAI 的下一个主流走向。(3) 张力深化线：今天这篇暴露的\"生成效应是把双刃剑（既促进理解又固化偏见）\"值得单独挖——找找有没有实证研究直接检验\"用户主动注入知识的对齐收益 vs 偏见固化风险\"的净效应，这可能是你课题里\"AI 该替学习者做多少、该让学习者自己做多少\"这个设计决策的理论依据。",
+    "excerpt": "来源：records/20260816/11/editable-xai/惠-能力进化.md · 选题《Editable XAI: Toward Bidirectional Human AI Alignment with Co Editable Explanations of Interpretable Attributes》是 CHI 2026 Full Paper（37 页，DOI 10.1145/3772318.3791375，arXiv 2602.12569），作者 Haoyang Chen、Jingwen Bai、Fang Tian、Brian Y. Lim（新加坡国立大学）。论文提出\"可编辑 XAI\"新范式：把解释从只读变成可写的共享介质，用户直接改写 AI 的推理规则（决策树），实现人与 AI 的双向对齐。技术上是神经符号架构——神经网络做通用表征、符号规则做直观推理，通过\"忠实代理决策树\"把黑盒翻译成可读可写规则，再把用户手写规则解析成等价神经网络图并协同优化；交互上设计了 Read/Write/Enhance 三种模式。实证扎实：先 elicitation study 提炼设计需求，再 N=43 用户研究对比 Read only / 手动可编辑 / CoExplain 三条件，同时有量化指标（理解度、对齐度、编辑负担）与质性发现，核心机制锚定在学习科学的\"生成效应\"上。",
+    "file_name": "惠-能力进化.md",
+    "source_dir": "records/20260816/11/editable-xai",
+    "original_url": "https://doi.org/10.1145/3772318.3791375",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-08-15 11:00",
     "title": "惠-能力进化（2026-08-15）",
