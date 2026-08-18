@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV</title>
-    <meta name="description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 178 条。">
+    <meta name="description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 179 条。">
     <meta property="og:title" content="CV - 研究所">
-    <meta property="og:description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 178 条。">
+    <meta property="og:description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 179 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">CV</h1>
-        <p class="sidebar-summary">基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 178 条。</p>
+        <p class="sidebar-summary">基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 179 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>CV</strong>
-                <span>基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 178 条。</span>
+                <span>基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 179 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,8 +79,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "CV", "subtitle": "基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 178 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "CV", "subtitle": "基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 179 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-08-18 09:00",
+    "title": "Bridging Gulfs in UI Generation through Semantic Guidance（语义引导弥合 UI 生成中的执行与评估鸿沟）",
+    "content": "**采集员**：悠仁 ｜ **决策者**：五条悟（收录）｜ **收录日期**：2026-08-18\n\n---\n\n## 1. 核心论点\n\n生成式 AI 让\"文本生 UI\"成为可能，但用户卡在两个经典的交互鸿沟里：执行鸿沟（用户说不清设计意图、不知道该在 prompt 里写什么）与评估鸿沟（用户读不懂 AI 为什么生成这个结果、改一句 prompt 却得到天翻地覆的变化）。论文的核心主张是：与其让 prompt 直接当指令，不如在人的意图与 AI 输出之间插入一层\"显式语义中间表示\"——把 UI 设计所需的语义（Product→Design System→Feature→Component 四层）结构化地摆出来，让用户填、让 AI 读、让生成结果能回溯到语义。这样一来，\"要说什么\"（执行）与\"怎么读输出\"（评估）这两个鸿沟被同一个共享语义层同时弥合，生成式 UI 设计从黑箱试错变成可检视、可解释、可迭代的系统化工作流。\n\n## 2. 背景与动机\n\nUI 设计天然是多面而相互依赖的对象——视觉美学、交互模式、信息架构、用户语境必须协同收敛，改一处往往牵动全局，而生成式系统对这些信息结构既不提示也不解释。更糟的是，用户即使知道自己要什么，也常常缺乏表达它的词汇：\"modern\" 可以指扁平、Material、玻璃拟态等完全不同的设计语言，导致 prompt 既欠规范又含糊。作者把这两类困难明确映射到 Norman 的\"执行鸿沟 / 评估鸿沟\"理论，指出生成式 UI 的两个鸿沟尤其宽：用户既难以通过 prompt 表达意图，也难以理解 prompt 如何影响输出，而且两个鸿沟在迭代中相互放大——每次精修都建立在对上一次输出的错误理解之上。作者由此转向一个可操作的问题：设计语义能否作为一种中介表征，把\"说不清\"和\"看不懂\"同时解决。\n\n## 3. 方法与过程\n\n方法分两条腿走。第一条是归纳：作者对主流 UI 生成服务的提示指南做主题分析（thematic analysis），提炼出 UI 生成所需的关键语义元素，发现它们呈层级化且相互依赖——从高层的产品愿景（Product）到设计系统（Design System）再到功能（Feature）与组件（Component），形成四层框架。第二条是构建系统：基于该框架实现一个 Web 应用，用三个机制把语义框架操作化——\"结构化规约\"引导用户逐层表达设计意图、\"透明分析\"（用 GPT-5 读生成代码与截图、抽取实际实现的语义并回溯到输入的语义）揭示 AI 如何理解与落实语义、\"关系感知的精细化\"支持局部/区块/全局三种作用域的编辑以维持迭代一致性。评估采用与聊天式基线的对比用户研究，14 名从业者参与，覆盖意图表达、输出解读、迭代精修三个维度的量化与质性测量。\n\n## 4. 主要发现\n\n结果在三个维度上都显著改善，且效应量不小：输出可解读性（Output Interpretability, p=.004, r=.82，均值 3.86→5.93）、透明感（Transparent, p=.004, r=.87）、协作感（Collaborative, p=.005, r=.80，4.43→6.00）表明参与者感到系统从\"不透明的生成器\"变成了\"可理解的伙伴\"。修改易度（Ease of Modification, p=.010, r=.71）、可控性（Controllability, p=.006, r=.73）、目标达成感（Match Goal, p=.045, r=.59）共同说明\"语义层面的操纵\"给了用户在迭代中更强的掌控与可预测性。质性材料进一步揭示三个机制各自的作用：语义槽与关系\"脚手架化\"意图表达以抑制欠规范；双向映射（意图↔产物）让输出可回溯到塑造它的语义；作用域编辑把修改的影响局部化，缓解语义漂移。\n\n## 5. 局限性\n\n论文自己承认语义层有代价：初始学习成本、以及对高度开放式创意探索的可能约束。但站在外部看，问题更深：14 名从业者的样本极小，量化结论的统计功效与生态效度都有限，且均为自我报告的感知指标，缺客观的行为测量（如生成质量、迭代次数、出错率）。系统的\"透明分析\"依赖 GPT-5 对生成代码与截图的语义抽取，这一抽取本身是一个黑盒，论文未刻画其保真度——若抽取错误，\"可回溯\"就会变成\"可回溯到一个错误\"。四层语义框架来自对主流提示指南的主题分析，本质是对现有工具设计惯例的归纳，可能把既有工具的设计偏见（乃至\"设计系统\"这一特定范式）固化为\"标准语义\"，反而排除了另类的设计表达方式。最值得警惕的是：论文把\"语义中间表示\"当作中性桥梁，但语义层本身就是一种规范权力——谁定义这四个层级、定义哪些语义，就在替用户框定\"可以想什么\"，这一批判维度在文中完全缺席。\n\n## 6. 对你课题的启发\n\n对你\"人-AI 协作学习、分布式认知\"课题，这是今日三份里在\"设计学习情境\"上咬合最紧的一篇。第一，\"语义中间表示\"正是分布式认知的操作化形态：它是一个外化于人的共享表征，把人的意图（Product→Component 的语义槽）与 AI 的输出双向连接，认知工作分布在人、语义结构、AI 三者之间——与你\"设计学习情境中认知如何在人与 AI 之间分布\"是同构问题，可直接作为理论案例分析。第二，四层语义层级提示 AI 时代的\"设计系统\"不再只是视觉规范，而是人与 AI 共享的语义结构；把设计系统从静态指南转化为\"可交互的认知脚手架\"这条思路，可直接引向你的设计学习工具设计。第三，执行/评估鸿沟的弥合机制，正好对应协作学习中学习者\"如何向 AI 表达需求、如何解读 AI 产出\"这两个核心困难，而\"局部/区块/全局\"的作用域编辑为你设计\"AI 该在多大粒度上让学习者自己控制\"提供了具体的控制粒度参照。",
+    "excerpt": "来源：records/20260818/09/semantic-guidance-ui-generation/论文总结.md · 来源 ：ACM CHI 2026（Full Paper）",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260818/09/semantic-guidance-ui-generation",
+    "original_url": "https://doi.org/10.1145/3772318.3791966",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-08-10 10:00",
     "title": "论文总结",

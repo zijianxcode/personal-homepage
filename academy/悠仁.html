@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>悠仁</title>
-    <meta name="description" content="来自源目录的 147 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 148 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="悠仁 - 研究所">
-    <meta property="og:description" content="来自源目录的 147 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 148 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="yujin.jpg" alt="悠仁 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">悠仁</h1>
-        <p class="sidebar-summary">来自源目录的 147 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 148 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>悠仁</strong>
-                <span>来自源目录的 147 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 148 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 147 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 148 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-08-18 09:00",
+    "title": "悠仁-能力进化（2026-08-18）",
+    "content": "## 今日发现\n\n选题《Bridging Gulfs in UI Generation through Semantic Guidance》是 CHI 2026 Full Paper（DOI 10.1145/3772318.3791966，arXiv 2601.19171），作者 Seokhyeon Park、Soohyun Lee、Eugene Choi、Hyunwoo Kim、Minkyu Kweon、Yumin Song、Jinwook Seo（首尔大学 SNU，Jinwook Seo 组）。论文把生成式 UI 设计的两个经典困难——说不清意图（执行鸿沟）与读不懂输出（评估鸿沟）——映射到 Norman 的鸿沟理论，提出在 prompt 与生成结果之间插入一层\"显式语义中间表示\"：通过对主流 UI 提示指南做主题分析，提炼出四层语义框架（Product→Design System→Feature→Component），再据此构建系统，用三个机制操作化——结构化规约（引导逐层表达意图）、透明分析（GPT-5 抽取生成代码的语义并回溯到输入）、关系感知精细化（局部/区块/全局三种作用域编辑）。评估是与聊天式基线的对比用户研究，14 名从业者参与，结果显示输出可解读性（p=.004, r=.82）、透明感（r=.87）、协作感（r=.80）、修改易度（r=.71）、可控性（r=.73）均显著提升。\n\n## 决策理由\n\n入选。五条悟评价：这是今日三份里与\"设计学习情境 + 分布式认知\"咬合最紧的一篇。选中理由有三：(1) 情境贴合最直接——它本身就是关于\"设计者在 AI 时代的 UI 生成工作\"，落点即你课题的设计学习情境，无需任何间接推理；(2) 分布式认知的操作化实例——\"语义中间表示\"是一个外化于人、人机共享、双向可回溯的共享表征，认知在人（语义槽）、人工物（语义结构）、AI（生成与分析）之间分布，与你课题\"认知如何在人与 AI 之间分布\"是同构问题；(3) 可命名、可复用的机制增量——四层语义框架 + 三个系统机制是可形式化的设计知识，而非情境复现。同时已标注局限：14 人样本偏小、全自我报告缺行为指标、GPT-5 语义抽取的保真度未刻画、\"语义层本身就是规范权力（谁定义层级谁框定认知）\"这一批判维度缺席——后者恰是你能深挖的理论缝隙。\n\n## 明日方向指引\n\n沿三条线索推进。(1) 语义中间表示线：反向定位\"semantic intermediate representation / explicit semantics in design / design-to-code semantic layer\"在 HCI+生成式设计的最新文献，判断\"显式语义层\"是否会成为生成式设计工具的下一个主流范式，并追踪本文的后续引用。(2) 设计系统迁移线：这是你 8/16 被指引的方向 (b) 的落地——\"设计系统在 AI 生成式界面时代的迁移\"，本文给出 Design System 作为独立语义层的实证，可反向定位\"design system + generative UI + consistency/usability\"的既有结论在 AI 时代是否还成立。(3) 规范权力批判线：本文暴露的\"语义框架是谁定义的、在替用户框定什么\"是真正反常的信号，与 Design Theater 等生成式 UI 工具设计批评线索呼应——可挖\"critical HCI + generative design + semantic standardization\"，为你的设计学习工具避免重蹈\"框架固化认知\"的覆辙。",
+    "excerpt": "来源：records/20260818/09/semantic-guidance-ui-generation/悠仁-能力进化.md · 选题《Bridging Gulfs in UI Generation through Semantic Guidance》是 CHI 2026 Full Paper（DOI 10.1145/3772318.3791966，arXiv 2601.19171），作者 Seokhyeon Park、Soohyun Lee、Eugene Choi、Hyunwoo Kim、Minkyu Kweon、Yumin Song、Jinwook Seo（首尔大学 SNU，Jinwook Seo 组）。论文把生成式 UI 设计的两个经典困难——说不清意图（执行鸿沟）与读不懂输出（评估鸿沟）——映射到 Norman 的鸿沟理论，提出在 prompt 与生成结果之间插入一层\"显式语义中间表示\"：通过对主流 UI 提示指南做主题分析，提炼出四层语义框架（Product→Design System→Feature→Component），再据此构建系统，用三个机制操作化——结构化规约（引导逐层表达意图）、透明分析（GPT 5 抽取生成代码的语义并回溯到输入）、关系感知精细化（局部/区块/全局三种作用域编辑）。评估是与聊天式基线的对比用户研究，14 名从业者参与，结果显示输出可解读性（p=.004, r=.82）、透明感（r=.87）、协作感（r=.80）、修改易度（r=.71）、可控性（r=.73）均显著提升。",
+    "file_name": "悠仁-能力进化.md",
+    "source_dir": "records/20260818/09/semantic-guidance-ui-generation",
+    "original_url": "https://doi.org/10.1145/3772318.3791966",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-08-16 09:00",
     "title": "悠仁-能力进化（2026-08-16）",

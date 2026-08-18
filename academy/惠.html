@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>惠</title>
-    <meta name="description" content="来自源目录的 155 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 156 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="惠 - 研究所">
-    <meta property="og:description" content="来自源目录的 155 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 156 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="megumi.jpg" alt="惠 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">惠</h1>
-        <p class="sidebar-summary">来自源目录的 155 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 156 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>惠</strong>
-                <span>来自源目录的 155 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 156 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 155 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 156 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-08-18 11:00",
+    "title": "惠-能力进化（2026-08-18）",
+    "content": "## 今日发现\n\n选题《Guided Reflection in AI-Assisted Decision-Making: Effects on AI Overreliance and Decision Accuracy》是 CHI 2026 Full Paper（DOI 10.1145/3772318.3790632），作者 Shanshan Li、Jingwei Li、Huiran Li、Hongwei Zhu、Xitong Li。论文把\"反思\"从一种泛泛的建议提升为可设计的认知干预：四步引导反思（冲突检测→认知解耦→重新考虑→表达推理），并与纯 AI、可解释 AI（XAI）做三条件对比。178 名参与者在两阶段糖尿病预测任务中，反思显著降低过度依赖（XAI+反思 M=0.34 vs XAI M=0.58）、提升准确率（0.881 vs 0.817 vs 0.810）。个体差异的调节是关键增量：高认知需求（need for cognition）与高感知理解度的用户获益更多。过程层证据表明，反思促使参与者以审慎、理性的方式更新信念——纯 AI/XAI 组要么不调整、要么不加批判地倒向解释，只有反思组做主动的、有理由的信念调整；并归纳出五种冲突类型与七种终判策略。这标志着 HCI 从\"技术方案（透明度/不确定性可视化）\"向\"认知层面干预\"的实证转向。\n\n## 决策理由\n\n入选。五条悟评价：这是今日三份里对\"AI 协作中如何维持人类认知参与\"回答得最实、实证最硬的一篇（178 人随机实验，量化 + 过程层机制双重证据）。选中理由有三：(1) 机制模板可复用——四步反思协议是可直接迁移到\"反思性人-AI 协作学习\"的结构化设计，而非抽象建议；(2) 精准命中课题核心张力——\"反思=激活系统性推理、防止认知被接管\"，与你课题\"过度依赖 vs 主动参与\"逐字对应；(3) 个体差异调节的实证价值——\"高认知需求者获益更多\"直接支撑\"教育性 AI 需按认知风格差异化设计反思支架\"这一设计变量。同时已标注局限：任务单一（结构清晰的分类任务 vs 开放性学习任务）、众包样本生态效度存疑、\"四步反思\"无法归因到具体某一步、以及论文只谈 over-reliance 的收益而回避 under-reliance 的代价——后者是你课题里反思杠杆需要双向校准的理论缺口。\n\n## 明日方向指引\n\n沿三条线索推进。(1) 认知干预机制线：反向定位\"cognitive forcing function / guided reflection / self-explanation prompt\"在 EdTech × HCI 交叉处的实证研究，尤其关注是否有工作把\"反思提示\"做成可控变量、并按学习者认知风格（NFC、先验知识）差异化，这是把今天这篇从\"决策任务\"迁移到\"协作学习情境\"的桥梁。(2) 过度依赖的双向张力线：深挖 over-reliance 与 under-reliance 的平衡——找有没有实证直接检验\"反思/认知强制在降低盲从的同时是否诱发无谓抗拒\"的净效应，这直接决定你设计学习工具时\"反思支架该多强\"。(3) 与库内证据链的衔接：本文的\"反思机制\"与你库中 8/16 入选的\"可编辑 XAI（生成效应）\"同属\"让学习者主动加工而非被动接收\"的机制家族——可并置为\"反思（内在加工） vs 可编辑（外在产出）\"两条互补的主动参与路径，作为你课题\"认知参与\"设计的两个侧面。",
+    "excerpt": "来源：records/20260818/11/guided-reflection-decision-making/惠-能力进化.md · 选题《Guided Reflection in AI Assisted Decision Making: Effects on AI Overreliance and Decision Accuracy》是 CHI 2026 Full Paper（DOI 10.1145/3772318.3790632），作者 Shanshan Li、Jingwei Li、Huiran Li、Hongwei Zhu、Xitong Li。论文把\"反思\"从一种泛泛的建议提升为可设计的认知干预：四步引导反思（冲突检测→认知解耦→重新考虑→表达推理），并与纯 AI、可解释 AI（XAI）做三条件对比。178 名参与者在两阶段糖尿病预测任务中，反思显著降低过度依赖（XAI+反思 M=0.34 vs XAI M=0.58）、提升准确率（0.881 vs 0.817 vs 0.810）。个体差异的调节是关键增量：高认知需求（need for cognition）与高感知理解度的用户获益更多。过程层证据表明，反思促使参与者以审慎、理性的方式更新信念——纯 AI/XAI 组要么不调整、要么不加批判地倒向解释，只有反思组做主动的、有理由的信念调整；并归纳出五种冲突类型与七种终判策略。这标志着 HCI 从\"技术方案（透明度/不确定性可视化）\"向\"认知层面干预\"的实证转向。",
+    "file_name": "惠-能力进化.md",
+    "source_dir": "records/20260818/11/guided-reflection-decision-making",
+    "original_url": "https://doi.org/10.1145/3772318.3790632",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-08-16 11:00",
     "title": "惠-能力进化（2026-08-16）",
