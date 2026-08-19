@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV</title>
-    <meta name="description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 179 条。">
+    <meta name="description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 180 条。">
     <meta property="og:title" content="CV - 研究所">
-    <meta property="og:description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 179 条。">
+    <meta property="og:description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 180 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">CV</h1>
-        <p class="sidebar-summary">基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 179 条。</p>
+        <p class="sidebar-summary">基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 180 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>CV</strong>
-                <span>基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 179 条。</span>
+                <span>基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 180 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,8 +79,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "CV", "subtitle": "基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 179 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "CV", "subtitle": "基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 180 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-08-19 09:00",
+    "title": "Surprise2Refine: Axis-Centered Exploration-To-Refinement for Agent-Assisted Creative Scaffolding（轴心式探索→收敛：智能体辅助创意脚手架）",
+    "content": "**采集员**：悠仁 ｜ **决策者**：五条悟（收录）｜ **收录日期**：2026-08-19\n\n---\n\n## 1. 核心论点\n\n创意生成式界面长期卡在一个两难里：给 AI 的约束越少，探索越自由但产出越散乱、不可收敛；约束越多，产出越一致但创意越枯竭。论文的核心主张是提出一个可命名、可形式化的交互机制——\"轴心式工作流\"（axis-centered workflow）：设计者用 moodboard 外化自己的内隐意图，沿可解释的\"轴\"（如艺术风格、材质、情绪）构建 n×n 的设计空间，再通过 zooming（缩放视野）、anchoring（锚定轴值）、decomposition（分解轴）三种轴心交互，在\"广探索→精收敛\"之间自适应切换。关键在于 agent 后端管线随交互同步调节生成行为：探索期鼓励多样性与意外惊喜，收敛期收窄视觉一致性——于是\"约束 vs 自由\"不再是设计者要在 prompt 里预先权衡的静态取舍，而是随交互节奏动态分配的控制权。\n\n## 2. 背景与动机\n\n生成式 AI 让普通人也能批量产出视觉方案，但\"量\"并不自动带来\"质\"：无结构的生成空间里，设计者面对几十上百张图，既不知道哪张值得追、也不知道如何系统性地把想法推进一步，最终陷入\"刷图疲劳\"或\"过早收敛\"两个极端。作者把问题诊断为意图表达与生成行为之间缺一层可操作、可追踪的中间结构：moodboard 能外化意图，但它是静态的拼贴，无法直接规约 agent 该在哪个方向生成。于是作者转向\"轴\"——把设计者的偏好分解为少数几个可解释、可独立调节的维度，让探索与收敛都发生在这些轴定义的坐标系里，而非无边界的 latent space。这一动机回应的是生成式设计工具从\"对话式 prompt\"向\"结构化脚手架\"演进的趋势，也直接对应当前设计社区对\"AI 生成式界面时代，约束与自由的权衡该如何迁移\"的持续争论。\n\n## 3. 方法与过程\n\n方法分两条腿。第一条是形成性研究：5 名设计师的质性研究，用于理解设计者如何外化意图、如何在高维创意空间里做取舍，据此提炼出\"轴\"作为心智模型外部化的载体，并确定 zooming / anchoring / decomposition 三种轴心交互。第二条是构建系统并做对照评估：实现一个 agent 辅助的创意脚手架系统，agent 后端依据当前处于探索期还是收敛期、以及用户对轴的操作，同步调整生成策略（探索期放大多样性、制造\"意外惊喜\"，收敛期收紧视觉一致性）；评估采用组内对照，14 名专业设计师在同一任务上分别使用带轴心机制的系统与一个\"自建的无轴心基线\"，从控制感、脚手架路径可追踪性、感知创造力等维度进行量化与质性比较。\n\n## 4. 主要发现\n\n轴心工作流在核心指标上显著胜出基线：创造力支持指数（Creativity Support Index, CSI）为 69.71 vs 55.79（p=.0085），探索维度的单项测量（Q4）也显著更高（p=.004），说明参与者感到自己在轴坐标系里既更自由地探索、又更清楚地知道每一步进展。质性证据尤其有说服力：14 人中 11 人主动改写轴定义（例如把 Y 轴从宽泛的\"艺术风格\"改为更具体的\"油画\"），这证明轴不是施加给设计者的死板约束，而是设计者拿来协商、修正自己心智模型的可操作工具。对照之下，无轴基线被参与者评价为\"散乱、缺乏清晰进展\"，反向印证了无结构生成空间的管理成本——自由若没有坐标系，反而变成负担。\n\n## 5. 局限性\n\n论文自述的局限（初始学习成本、对高度开放式探索的潜在约束）之外，站在外部看还有几处需要警惕。第一，14 名专业设计师的组内对照样本小，且组内设计天然伴随顺序效应与新颖性效应——参与者可能只是被\"有轴\"的新奇交互打动，而非轴机制本身带来真实增益；CSI 与探索维度均为自我报告的感知指标，缺客观的产出质量评判（如专家盲评、设计方案的后续可落地性）。第二，对照基线是\"自建无轴基线\"，可能把\"轴机制\"与\"整体系统打磨程度\"混在一起——若基线本身粗糙，增益便不能干净地归因于轴。第三，探索期的\"意外惊喜\"如何与相关性权衡、如何在算法层被控制，论文未量化，存在\"多样性上去了但方向跑偏\"的未测风险。第四，也是最关键的批判点：轴是设计者（或系统作者）定义的，谁定义轴、定义哪几个轴，就在替用户框定\"哪些维度值得探索\"——这与 8/18 收录的语义引导论文暴露的是同一类\"规范权力\"问题，本文同样缺席这一批判维度。第五，缺纵向追踪：轴心工作流的新鲜感消退后，设计者是否仍愿意持续维护轴定义、还是退回 prompt 直出，无从得知。\n\n## 6. 对你课题的启发\n\n对你\"人-AI 协作学习、分布式认知\"课题，这是库史第一篇 UIST，且咬合极紧。第一，\"moodboard + 轴\"正是分布式认知的外部表征：设计者把内隐意图外化为可被自己和 agent 共享、可独立操纵的语义维度，认知工作分布在人（定义轴、做取舍）、人工物（轴坐标系）、AI（沿轴调节生成）三者之间，与你\"设计学习情境中认知如何在人与 AI 之间分布\"是同构问题，可直接作为理论案例。第二，\"探索期放大意外 vs 收敛期收紧一致\"给出一个可操作的机制：AI 该在协作的哪个阶段替学习者\"拓宽\"、哪个阶段替学习者\"收窄\"——这正是你课题\"AI 该替学习者做多少\"的控制粒度参照，且被做成了随交互节奏动态切换而非静态预设。第三，11/14 人主动改写轴这一发现最值得你深挖：它说明好的认知脚手架不是固定框架，而是可被学习者协商、修正的外部表征——这直接指向\"学习者可调、可追踪、可协商\"的认知脚手架界面设计，与 8/18 语义引导篇构成设计哲学互补（一个用显式语义层规约意图，一个用隐式轴操作协商意图），合起来给出人-AI 认知分布中 agency 粒度的完整光谱。",
+    "excerpt": "来源：records/20260819/09/surprise2refine-axis-scaffolding/论文总结.md · 来源 ：ACM UIST 2026（第 39 届，2026 11 底特律，同行评议 Full Paper）",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260819/09/surprise2refine-axis-scaffolding",
+    "original_url": "https://doi.org/10.1145/3830398.3830612",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-08-18 09:00",
     "title": "Bridging Gulfs in UI Generation through Semantic Guidance（语义引导弥合 UI 生成中的执行与评估鸿沟）",

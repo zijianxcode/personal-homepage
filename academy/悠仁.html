@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>悠仁</title>
-    <meta name="description" content="来自源目录的 148 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 149 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="悠仁 - 研究所">
-    <meta property="og:description" content="来自源目录的 148 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 149 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="yujin.jpg" alt="悠仁 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">悠仁</h1>
-        <p class="sidebar-summary">来自源目录的 148 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 149 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>悠仁</strong>
-                <span>来自源目录的 148 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 149 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 148 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 149 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-08-19 09:00",
+    "title": "悠仁-能力进化（2026-08-19）",
+    "content": "## 今日发现\n\n选题《Surprise2Refine: Axis-Centered Exploration-To-Refinement for Agent-Assisted Creative Scaffolding》是 ACM UIST 2026 Full Paper（第 39 届，2026-11 底特律，DOI 10.1145/3830398.3830612，arXiv 2608.12605），作者 Yuzhe You、G. Chan、Shunan Guo、Anlan Zhang、E. Koh、Jian Zhao、Tongyu Zhou。这是采集史上第一篇 UIST 论文（此前以 CHI/CogSci/PNAS/Design Studies 为主），补上了设计工具 venue 的覆盖缺口。论文提出\"轴心式工作流\"（axis-centered workflow）：设计者用 moodboard 外化内隐意图，沿可解释的轴构建 n×n 设计空间，通过 zooming / anchoring / decomposition 三种轴心交互在\"广探索→精收敛\"间自适应切换，agent 后端管线随交互同步调节生成行为（探索期放大多样性与意外，收敛期收紧视觉一致性）。实证链完整：5 名设计师形成性研究 + 14 名专业设计师组内对照（vs 自建无轴基线），CSI 69.71 vs 55.79（p=.0085），探索维度 Q4 p=.004，11/14 人主动改写轴定义（如把 Y 轴从\"艺术风格\"改为\"油画\"），无轴基线被评价为\"散乱、缺乏清晰进展\"。\n\n## 决策理由\n\n入选。五条悟评价：这是今日三份里创新性与机制增量最高的一篇，且是库史第一篇 UIST。选中理由有三：(1) 可命名、可形式化的机制增量——\"轴心式工作流\"把 8/16 反馈所指的\"约束 vs 自由权衡在 AI 生成式界面时代的迁移\"做成了一套可操作的设计决策（轴 + 三交互 + 后端自适应），而非口号；(2) 实证链完整——形成性研究 + 组内对照 + 量化与质性双重证据，且\"11/14 人主动改写轴\"这一发现证明轴是心智模型的外部化与协商工具，而非死板约束，这是真正的反常信号；(3) 与课题咬合紧——moodboard + 轴就是分布式认知的外部共享表征，探索/收敛的动态切换直接回答\"AI 该在哪个阶段替学习者拓宽、哪个阶段收窄\"的控制粒度问题。同时已标注局限：14 人组内样本小、顺序/新颖性效应未排除、CSI 为自我报告缺客观产出评判、\"无轴基线\"可能混杂系统打磨程度、轴的规范权力批判维度缺席、缺纵向追踪——这些是悠仁下次选题可继续追问的缝隙。\n\n## 明日方向指引\n\n沿三条线索推进。(1) 轴/脚手架机制线：反向定位\"axis-based / parameterized creative scaffolding / structured exploration in generative design\"的最新文献，判断\"轴心式结构化探索\"是否会成为生成式创意工具的下一个范式，并追踪本文的后续引用；(2) 控制粒度动态分配线：这是你 8/16 方向 (b)\"设计系统在 AI 生成式界面时代迁移\"的姊妹问题——探索期放大意外、收敛期收紧一致，是\"AI 该替学习者做多少\"在时间维度上的动态版本，可反向定位\"exploration-exploitation tradeoff in human-AI collaboration\"的既有结论在创意任务里是否成立；(3) 规范权力批判线：轴是谁定义的、定义哪几个轴就在框定用户能想什么，与 8/18 语义引导篇暴露的\"语义框架是谁定义的\"是同一类权力问题——可挖\"critical HCI + generative design + scaffolding as power\"，为你的设计学习工具避免\"框架固化认知\"再补一个实证锚点。",
+    "excerpt": "来源：records/20260819/09/surprise2refine-axis-scaffolding/悠仁-能力进化.md · 选题《Surprise2Refine: Axis Centered Exploration To Refinement for Agent Assisted Creative Scaffolding》是 ACM UIST 2026 Full Paper（第 39 届，2026 11 底特律，DOI 10.1145/3830398.3830612，arXiv 2608.12605），作者 Yuzhe You、G. Chan、Shunan Guo、Anlan Zhang、E. Koh、Jian Zhao、Tongyu Zhou。这是采集史上第一篇 UIST 论文（此前以 CHI/CogSci/PNAS/Design Studies 为主），补上了设计工具 venue 的覆盖缺口。论文提出\"轴心式工作流\"（axis centered workflow）：设计者用 moodboard 外化内隐意图，沿可解释的轴构建 n×n 设计空间，通过 zooming / anchoring / decomposition 三种轴心交互在\"广探索→精收敛\"间自适应切换，agent 后端管线随交互同步调节生成行为（探索期放大多样性与意外，收敛期收紧视觉一致性）。实证链完整：5 名设计师形成性研究 + 14 名专业设计师组内对照（vs 自建无轴基线），CSI 69.71 vs 55.79（p=.0085），探索维度 Q4 p=.004，11/14 人主动改写轴定义（如把 Y 轴从\"艺术风格\"改为\"油画\"），无轴基线被评价为\"散乱、缺乏清晰进展\"。",
+    "file_name": "悠仁-能力进化.md",
+    "source_dir": "records/20260819/09/surprise2refine-axis-scaffolding",
+    "original_url": "https://doi.org/10.1145/3830398.3830612",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-08-18 09:00",
     "title": "悠仁-能力进化（2026-08-18）",
