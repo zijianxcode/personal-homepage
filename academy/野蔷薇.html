@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>野蔷薇</title>
-    <meta name="description" content="来自源目录的 149 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 150 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="野蔷薇 - 研究所">
-    <meta property="og:description" content="来自源目录的 149 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 150 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="panda.jpg" alt="野蔷薇 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">野蔷薇</h1>
-        <p class="sidebar-summary">来自源目录的 149 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 150 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>野蔷薇</strong>
-                <span>来自源目录的 149 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 150 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "野蔷薇", "subtitle": "来自源目录的 149 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "野蔷薇", "subtitle": "来自源目录的 150 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-08-20 10:00",
+    "title": "野蔷薇-能力进化（2026-08-20）",
+    "content": "## 今日发现\n\n选题《Hedwig: Dynamic Autonomy for Coding Agents Under Local Oversight》是 ACM CAIS 2026 Demo Track（1st Conference on Agentic and AI Systems，San Jose，pp. 1293–1299，8 页，DOI 10.1145/3786335.3813223，arXiv 2605.11495），作者 Tanjal Shukla, K. J. Kevin Feng, Leijie Wang, Mohammad Rostami, Amy X. Zhang（UW DUB 组）。论文提出 Hedwig，一个 CLI 编码 agent，主张自主权不应由静态权限/指令文件固定，而应跨会话从开发者实际决策与反馈中动态习得：历史交互（批准/拒绝/修正）训练出一条在线策略（回归分类器），决定未来类似动作是否需要 check-in；治理分两层——CLI 层强制\"硬约束\"与检索式\"行为指引\"分离，会话末摘要区分\"策略触发 vs 模型触发\"的 check-in。基础是 21 名软件工程师的形成性调查，证实了\"校准挫败感\"与演化的监督偏好。核心价值是把\"信任驱动的动态自主性调节\"范式做成了可运行系统。\n\n## 决策理由\n\n入选，作为今日第二篇。五条悟评价：三份里创新范式最鲜明，且来自 agent/HCI 交叉顶配实验室（Amy X. Zhang 组）。选中理由：(1) 与课题的\"认知分工动态协商\"高度同构——信任积累→放权、陌生任务→收权，正是\"认知分布如何随交互演化\"的可运行实例；(2) 与惠篇互补——惠讲\"以何风格介入\"，本篇讲\"介入程度如何随时间演化\"，合起来覆盖\"何时 + 何角色 + 何程度\"三问；(3) 治理分层（硬约束 + 行为指引 + 可解释 check-in 分离）为可审计的 AI 伙伴设计提供了可借用的架构。但必须点明质量门槛：这是 demo track（8 页短篇），**论文自述未来工作才做用户研究验证**，21 人调查只提供需求 grounding、未验证系统本身——这是提案未点明、需要野蔷薇下次核实的关键事实。已标注局限：在线策略泛化未评估、冷启动偏置放大、硬约束仍是静态预设、动态放权的安全性未讨论。\n\n## 明日方向指引\n\n沿两条线索推进。(1) 实证填充线：本篇是\"机制新颖但缺实证验证\"的典型，直接跟踪 Hedwig 的后续用户研究（一旦有实验室用开发者验证了\"动态自主权是否真的减少 oversight 负担 / 无意改动\"，立即以\"实证填充版\"升级收录），或反向定位\"adaptive autonomy / dynamic trust calibration / longitudinal human-AI collaboration\"里已落地的对照研究。(2) 迁移线：把\"信任-自主权耦合模型\"从编码 agent 迁移到学习 agent，定位\"learner-aware scaffolding / adaptive help timing in AI tutoring\"，看\"感知学习者状态→动态调节介入程度\"是否已有实证，为你课题的\"学习代理自主性调节\"框架补上对照证据。注意：CAIS 2026 是新会（1st 届），其 demo track 的评审强度低于 CHI/UIST Full Paper，后续选题对\"会议届次 + track 类型\"要作为质量门槛的一环主动标注，避免把 demo 短篇与 Full Paper 混为同级。",
+    "excerpt": "来源：records/20260820/10/hedwig-dynamic-autonomy/野蔷薇-能力进化.md · 选题《Hedwig: Dynamic Autonomy for Coding Agents Under Local Oversight》是 ACM CAIS 2026 Demo Track（1st Conference on Agentic and AI Systems，San Jose，pp. 1293–1299，8 页，DOI 10.1145/3786335.3813223，arXiv 2605.11495），作者 Tanjal Shukla, K. J. Kevin Feng, Leijie Wang, Mohammad Rostami, Amy X. Zhang（UW DUB 组）。论文提出 Hedwig，一个 CLI 编码 agent，主张自主权不应由静态权限/指令文件固定，而应跨会话从开发者实际决策与反馈中动态习得：历史交互（批准/拒绝/修正）训练出一条在线策略（回归分类器），决定未来类似动作是否需要 check in；治理分两层——CLI 层强制\"硬约束\"与检索式\"行为指引\"分离，会话末摘要区分\"策略触发 vs 模型触发\"的 check in。基础是 21 名软件工程师的形成性调查，证实了\"校准挫败感\"与演化的监督偏好。核心价值是把\"信任驱动的动态自主性调节\"范式做成了可运行系统。",
+    "file_name": "野蔷薇-能力进化.md",
+    "source_dir": "records/20260820/10/hedwig-dynamic-autonomy",
+    "original_url": "https://doi.org/10.1145/3786335.3813223",
+    "original_label": "DOI",
+    "session_type": "review",
+    "session_label": "评审会"
+  },
   {
     "date": "2026-08-16 10:00",
     "title": "野蔷薇-能力进化（2026-08-16）",

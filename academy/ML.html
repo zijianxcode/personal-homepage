@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ML</title>
-    <meta name="description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 272 条。">
+    <meta name="description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 273 条。">
     <meta property="og:title" content="ML - 研究所">
-    <meta property="og:description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 272 条。">
+    <meta property="og:description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 273 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">ML</h1>
-        <p class="sidebar-summary">基于关键词自动归类的训练、优化与模型方法研究。 共 272 条。</p>
+        <p class="sidebar-summary">基于关键词自动归类的训练、优化与模型方法研究。 共 273 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>ML</strong>
-                <span>基于关键词自动归类的训练、优化与模型方法研究。 共 272 条。</span>
+                <span>基于关键词自动归类的训练、优化与模型方法研究。 共 273 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,8 +79,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "ML", "subtitle": "基于关键词自动归类的训练、优化与模型方法研究。 共 272 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "ML", "subtitle": "基于关键词自动归类的训练、优化与模型方法研究。 共 273 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-08-20 10:00",
+    "title": "Hedwig: Dynamic Autonomy for Coding Agents Under Local Oversight（Hedwig：本地监督下编码智能体的动态自主权）",
+    "content": "**采集员**：野蔷薇 ｜ **决策者**：五条悟（收录）｜ **收录日期**：2026-08-20\n\n---\n\n## 1. 核心论点\n\n编码 agent 能力越强，开发者越难决定该给它多少自主权：给多了会产生无意改动、隐蔽 bug 和范围漂移，给少了又沦为昂贵的半自动工具。论文的核心主张是：自主权不应由静态的权限设置或一次性指令文件固定，而应由 agent **跨会话从开发者的实际决策与反馈中动态习得**——在赢得信任的工作上减少摩擦、自主行动，在陌生领域自动收紧监督。据此作者提出 Hedwig，一个 CLI 编码 agent，它把\"信任驱动的动态自主性调节\"机制化：历史交互（批准、拒绝、修正）训练出一条在线策略，决定未来类似动作是否需要向开发者发起 check-in，从而让\"人机之间的认知分工\"成为一个随时间演化的协商过程，而非预设的静态契约。\n\n## 2. 背景与动机\n\n编码 agent 已能检视仓库、跨文件编辑、跑命令、调试，这些能力要求对开发环境的深度访问，也因此带来无意改动、隐蔽 bug 与范围漂移等风险。实地观察显示，专业开发者的有效使用是高度受控的：他们保留对设计决策、验证与代码审查的责任，而不是端到端授权。问题在于，期望的自主权水平随开发者、任务、时间线与项目而变——有人想审每处编辑，有人只在关键里程碑介入。现有校准手段都假设偏好是稳定且可预先表达的：静态权限、AGENTS.md 指令文件、profile 设定，全都无法应对\"自主权偏好随任务与时间漂移\"这一现实。作者用 21 名重度使用编码 agent 的软件工程师的形成性调查证实了这种\"校准挫败感\"与演化中的监督偏好，并指出高质量的行为反馈比预先陈述的偏好更可靠——这为\"从交互中学习\"而非\"预先配置\"的范式提供了动机根基。\n\n## 3. 方法与过程\n\n方法是一条\"形成性调查 + 系统原型\"的路径。第一步，对 21 名专业程序员做形成性调查，理解开发者如何校准自主权、偏好如何演化，据此确立 Hedwig 的设计。第二步，实现 Hedwig CLI agent，它有两个核心组件：其一，记录 developer-agent 交互并归类为两个治理层级——由 CLI 直接强制的\"硬约束\"（hard constraints）与按需检索的\"行为指引\"（behavioral guidance）；行为指引以紧凑的反馈片段与逻辑笔记存储（捕获开发者的修正、架构决策、先前推理），在未来任务相关时检索进 prompt，让模型复用过往决策。其二，当 agent 提出读取、计划、check-in 或代码更新时，Hedwig 对照活动硬约束、检索到的行为上下文、当前任务与规范、以及交互历史（批准/拒绝/修正）进行审计；随时间推移，这段历史训练出一条在线策略（回归分类器），调节未来类似动作是否需要 check-in。硬约束在 CLI 层独立于模型推理被强制执行，会话末摘要把\"策略触发\"与\"模型触发\"的 check-in 分开，使每个监督决策对开发者可解释。技术栈为本地 Python CLI + 云端 LLM（Claude Sonnet 4.6）+ VS Code 集成，源码开源。\n\n## 4. 主要发现\n\n论文的主要产出是一个可运行的范式示范，而非大规模实证结论。Hedwig 展示了\"agent 跨会话学习演化行为准则\"的可行性：行为指引的定性检索（塑造 agent 如何推理）与策略引擎的独立治理（决定 agent 被允许做什么）二者分离，前者复用开发者过去的修正与架构决策，后者依据历史信号调节监督——例如路径风险、先前拒绝倾向更高审查，而某工具文件上多次批准会降低未来该路径的 check-in 门槛。这种\"赢得信任处减少摩擦、陌生处收紧监督\"的行为已在系统中落地，并与开发者偏好随任务漂移的调查发现形成呼应。作者将其定位为\"从静态授权迈向基于信任的纵向协作\"这一新范式的潜力证明，明确把正式用户研究留作未来工作。\n\n## 5. 局限性\n\n这是三份提议中质量门槛最需要审慎标注的一篇，且提案未点明的关键事实是：它是 CAIS 2026 **demo track**（8 页短篇），并非完整实证论文。第一，也是最硬的：**没有任何用户研究验证 Hedwig 本身的效果**——论文结论明言\"Future work includes conducting user studies with developers to validate our design\"，即\"动态自主性是否真的减少了 oversight 负担、是否真的减少了无意改动\"尚未被检验，21 人调查只提供了需求 grounding，未验证系统。第二，在线策略（回归分类器）的训练与泛化完全未评估：它在一个项目/代码库上学到的放权模式，迁移到不同团队、不同代码规范、不同风险偏好时是否成立，无从得知。第三，冷启动与偏置放大风险：策略从历史交互学习，早期几次错误的批准/拒绝可能被固化成系统性偏差，且论文未讨论如何纠偏。第四，\"硬约束\"仍需开发者预先设定，本质仍是静态配置的一层，动态层只是叠加其上——它没有完全摆脱它要替代的范式。第五，安全性未讨论：赢得信任后动态放权，若 agent 恰在此时犯错，放权机制本身可能构成风险放大通道。第六，demo 的篇幅限制了纵向时间尺度的证据，跨会话学习究竟需要多长交互史才能收敛到可靠策略，缺乏数据。\n\n## 6. 对你课题的启发\n\n对你\"人-AI 协作学习、分布式认知\"课题，这篇的价值不在实证强度，而在它把一个抽象的理论命题做成了可运行的机制。第一，分布式认知视角下，人与 AI 的认知分工不是静态的，而是随信任、任务熟悉度动态协商的——Hedwig 把这种动态协商机制化（信任积累→放权、陌生任务→收权），正是\"认知分布如何在人机之间随时间演化\"的一个设计实例，可作为你理论框架的对照案例。第二，\"信任-自主权耦合\"模型可直接迁移为\"学习代理自主性调节\"的设计框架：好的学习伙伴应该像 Hedwig 一样，能感知学习者当前状态，动态调节自己介入的程度（何时自主示范、何时求助、何时退后观察），而不是固定\"助手\"或\"工具\"二选一——这与你课题\"AI 该替学习者做多少\"的控制粒度问题同构。第三，它的\"硬约束（CLI 层强制）+ 行为指引（检索式）+ 可解释的 check-in 分离\"这套治理分层，为\"在协作学习中如何保证 agent 既不过度介入又守住安全底线\"提供了一个可借用的架构思路——尤其\"策略触发 vs 模型触发 check-in 分离\"对可解释、可审计的 AI 伙伴设计有直接价值。第四，它的核心局限（无用户研究验证）恰好提醒你：机制新颖不等于机制有效，你的研究设计里\"观测认知分布如何真的随交互演化\"正是它缺的那一环。",
+    "excerpt": "来源：records/20260820/10/hedwig-dynamic-autonomy/论文总结.md · 来源 ：ACM CAIS 2026 Demo Track（1st ACM Conference on Agentic and AI Systems, San Jose, CA, May 26–29, 2026；pp. 1293–1299，8 页）",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260820/10/hedwig-dynamic-autonomy",
+    "original_url": "https://doi.org/10.1145/3786335.3813223",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-08-16 11:00",
     "title": "Editable XAI: Toward Bidirectional Human-AI Alignment with Co-Editable Explanations of Interpretable Attributes（可编辑 XAI：以可共同编辑的可解释属性解释实现双向人机对齐）",

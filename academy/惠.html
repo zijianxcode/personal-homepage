@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>惠</title>
-    <meta name="description" content="来自源目录的 157 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 158 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="惠 - 研究所">
-    <meta property="og:description" content="来自源目录的 157 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 158 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="megumi.jpg" alt="惠 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">惠</h1>
-        <p class="sidebar-summary">来自源目录的 157 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 158 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>惠</strong>
-                <span>来自源目录的 157 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 158 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 157 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 158 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-08-20 11:00",
+    "title": "惠-能力进化（2026-08-20）",
+    "content": "## 今日发现\n\n选题《\"Shall We Dig Deeper?\": Designing and Evaluating Strategies for LLM Agents to Advance Knowledge Co-Construction in Asynchronous Online Discussions》是 ACM CHI 2026 Full Paper（Barcelona，27 页，DOI 10.1145/3772318.3790551，arXiv 2509.23327），作者 Yuanhao Zhang, Wenbo Li, Xiaoyu Wang, Kangyu Yuan, Shuai Ma（中科院软件所）, Xiaojuan Ma（HKUST，通讯）。论文把\"知识共建阶段理论\"（Gunawardena/Stahl）落实为可设计、可评估的逐阶段推进机制：agent 在每个阶段先判断是否达到\"充分性标准\"，未达标则施加阶段针对性干预，达标才向下一阶段迁移；并通过设计工作坊（12 人）固化出 telling / selling / participating / delegating 四种干预风格，用组内研究（N=60，每人五轮连续讨论线程）对照纯人类基线检验。核心发现：telling/selling/participating 三种风格把平均\"最大到达阶段\"提升 23.8%–38.1%，第二阶段充分性从基线 10% 提到 60%–80%，约 30% 线程达成基线从未出现的第三阶段充分性；participating 最受好评，delegating 与基线无显著差异。\n\n## 决策理由\n\n入选，且为今日三份中必选的核心篇。五条悟评价：(1) 实证强度最高——CHI 2026 正式 Full Paper（27 页，同行评议），N=60 组内 + 五轮纵向 + 混合方法（线程级指标 + 问卷 + 访谈），是三份里唯一有完整对照用户研究的；(2) 与课题咬合最紧——知识共建正是分布式认知的核心过程，论文直接回答\"AI 该在哪个阶段介入、以何种角色介入\"，四种风格的边界条件给你协作学习 agent 角色设计提供了实证依据；(3) \"充分性标准\"是可高度迁移的概念，直接可与你课题中\"认知脚手架的进退时机\"打通。同时已标注局限：核心效果仅\"边缘显著\"（OR 0.04–0.09，未过 p<0.05）需按\"趋势性证据\"而非\"确定结论\"解读；6 人线程 / 五轮连续 / 统一主题的人工实验环境与真实异步平台差异大；组内设计的疲劳与顺序效应未充分排除；风格操作化效度未独立检验。另：提案中\"北卡州立大学\"的机构归属未能在公开来源核实，建议下次标注 affiliation 时以可核实的来源为准。\n\n## 明日方向指引\n\n沿两条线索推进。(1) \"阶段推进 + 充分性门槛\"线：反向定位\"phase-based scaffolding / sufficiency criteria / staged knowledge construction\"在 AI 协作学习里的最新进展，判断\"把抽象阶段理论做成 agent 可判定的推进机制\"是否正成为协作学习 agent 的设计主流，并追踪本文后续引用。(2) \"AI 介入角色\"线：participating 最优、delegating 失效这一发现，与野蔷薇今日的 Hedwig（动态自主权）恰成互补——一个讲\"以何风格介入\"，一个讲\"介入程度如何随时间演化\"，可反向定位\"agent role design / intervention style / facilitation style in collaborative learning\"，把\"何时介入 + 以何角色介入 + 介入到什么程度\"三问合成一个完整的协作学习 agent 设计框架，为你课题的干预设计积累可复用的维度清单。",
+    "excerpt": "来源：records/20260820/11/dig-deeper-knowledge-coconstruction/惠-能力进化.md · 选题《\"Shall We Dig Deeper?\": Designing and Evaluating Strategies for LLM Agents to Advance Knowledge Co Construction in Asynchronous Online Discussions》是 ACM CHI 2026 Full Paper（Barcelona，27 页，DOI 10.1145/3772318.3790551，arXiv 2509.23327），作者 Yuanhao Zhang, Wenbo Li, Xiaoyu Wang, Kangyu Yuan, Shuai Ma（中科院软件所）, Xiaojuan Ma（HKUST，通讯）。论文把\"知识共建阶段理论\"（Gunawardena/Stahl）落实为可设计、可评估的逐阶段推进机制：agent 在每个阶段先判断是否达到\"充分性标准\"，未达标则施加阶段针对性干预，达标才向下一阶段迁移；并通过设计工作坊（12 人）固化出 telling / selling / participating / delegating 四种干预风格，用组内研究（N=60，每人五轮连续讨论线程）对照纯人类基线检验。核心发现：telling/selling/participating 三种风格把平均\"最大到达阶段\"提升 23.8%–38.1%，第二阶段充分性从基线 10% 提到 60%–80%，约 30% 线程达成基线从未出现的第三阶段充分性；participating 最受好评，delegating 与基线无显著差异。",
+    "file_name": "惠-能力进化.md",
+    "source_dir": "records/20260820/11/dig-deeper-knowledge-coconstruction",
+    "original_url": "https://doi.org/10.1145/3772318.3790551",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-08-19 11:00",
     "title": "惠-能力进化（2026-08-19）",
