@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI</title>
-    <meta name="description" content="基于源目录中论文总结自动汇总的 AI 相关记录。 共 398 条。">
+    <meta name="description" content="基于源目录中论文总结自动汇总的 AI 相关记录。 共 400 条。">
     <meta property="og:title" content="AI - 研究所">
-    <meta property="og:description" content="基于源目录中论文总结自动汇总的 AI 相关记录。 共 398 条。">
+    <meta property="og:description" content="基于源目录中论文总结自动汇总的 AI 相关记录。 共 400 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">AI</h1>
-        <p class="sidebar-summary">基于源目录中论文总结自动汇总的 AI 相关记录。 共 398 条。</p>
+        <p class="sidebar-summary">基于源目录中论文总结自动汇总的 AI 相关记录。 共 400 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>AI</strong>
-                <span>基于源目录中论文总结自动汇总的 AI 相关记录。 共 398 条。</span>
+                <span>基于源目录中论文总结自动汇总的 AI 相关记录。 共 400 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,8 +79,32 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "AI", "subtitle": "基于源目录中论文总结自动汇总的 AI 相关记录。 共 398 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "AI", "subtitle": "基于源目录中论文总结自动汇总的 AI 相关记录。 共 400 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-08-21 11:00",
+    "title": "\"Criticmate: Stagewise Human–AI Co-Critique in Single-Screen UI Evaluation\"（Criticmate：单屏 UI 评估中分阶段的人-AI 共同评审）",
+    "content": "**采集员**：惠 ｜ **决策者**：五条悟（收录）｜ **收录日期**：2026-08-21\n\n---\n\n## 1. 核心论点\n\n论文的核心主张是：当前 AI 界面评估工具把\"评估\"当作一个单次通过（single-pass）、黑箱的过程，既限制了模型自身的推理质量，也把人挡在门外。作者用 Endsley 的态势感知（Situation Awareness, SA）理论把单屏移动 UI 的启发式评估重构为分阶段（stagewise）的人-AI 共同评审——把评估拆成感知（Perception：屏幕上有什么）、理解（Comprehension：这些元素意味着什么、做什么）、预测（Projection：会带来什么问题与怎么修）三个可编辑阶段。第二个主张是：让中间推理产物（intermediate reasoning artifacts）对人可见、可编辑，是人保持介入性而不牺牲 AI 效率的关键机制。\n\n## 2. 背景与动机\n\nAI 越来越多地被用于 UI 评估这类认知性任务，但主流做法是\"输入截图→输出一份评审报告\"的单次通过黑箱：模型只在内部一次性完成推理，人只能接受或重跑，无法中途纠正方向，也无法理解 AI\"看到了什么、如何理解、为何得出某结论\"。这既使模型推理的错误在早期阶段被放大，也削弱了人对评估结果的信赖与参与。作者选择 Endsley 的 SA 理论作为重构的脚手架——SA 把专家的态势感知分解为 Perception→Comprehension→Projection 三级，恰好提供了一套把\"黑箱评估\"拆成可检查、可编辑步骤的理论支点，从而让\"理论如何转化为可操作的交互结构\"成为本研究的核心问题。\n\n## 3. 方法与过程\n\n作者先把 SA 三阶段落实为评估的三个可编辑阶段（Perception / Comprehension / Projection），并实现为 Criticmate 交互系统：系统在每个阶段暴露中间推理产物（如识别出的界面元素清单、对元素语义与功能的解读、预测的问题与修复建议），允许用户在阶段之间查看并编辑这些产物，再驱动下一阶段的推理。评估采用双轨：一是离线基准（offline benchmarks），把 Criticmate 的分阶段评审与单次通过式评审对比，看谁的评审更接近人类专家、更均衡（better balanced）；二是受控用户研究（controlled user study），测量分阶段共评审相比单次通过方式，在信任、参与度与感知自主性（perceived autonomy）上的差异。\n\n## 4. 主要发现\n\n离线基准显示，分阶段的人-AI 共评审产出的批评\"更像专家\"（more expert-like）且\"更均衡\"（better balanced）——即不再偏向某类问题而忽略另一类，说明把推理拆成可检查的阶段确实改善了评估质量。用户研究则显示，Criticmate 在显著提升用户信任与参与度（trust and engagement）的同时，并未降低感知自主性（perceived autonomy）——这击中了人-AI 协作的一个经典两难：让人介入通常以牺牲效率或\"被 AI 牵着走\"的感觉为代价，而 Criticmate 通过\"阶段间可编辑\"实现了\"人可介入却不失控\"。综合起来，论文证明了\"分阶段、可编辑的人机共同推理\"这一范式在 UI 评估这类认知任务上，能同时兼顾推理质量与人的可介入性。\n\n## 5. 局限性\n\n第一，评估对象被限定在\"单屏移动 UI 的启发式评估\"这一相对窄的任务类型，三阶段结构（Perception/Comprehension/Projection）是否可迁移到更复杂的交互流程（跨屏任务流、多轮会话式界面）未经验证——论文标题里的\"Single-Screen\"本身就是边界声明。第二，\"感知自主性不降低\"是主观自评指标，用户可能高估自己的实际控制力；缺乏对\"编辑中间产物\"这一行为在多大程度上真实改变了最终评审结果的客观测量。第三，离线基准中\"更像专家、更均衡\"的判据依赖一套专家标注作为金标准，该金标准的构建方式、专家数量与一致性在摘要层面未充分披露，存在金标准本身偏颇的风险。第四，三阶段拆解源于 SA 理论这一特定认知工程框架，它是否就是 UI 评估最优的分解粒度，还是只是\"理论便利\"（theory convenience）的选择，论文未做对照消融。第五，与所有受控用户研究一样，其生态效度有限——真实设计师在高压力、多任务下的评估行为可能与实验情境差异较大。\n\n## 6. 对你课题的启发\n\n这一篇是\"分布式认知\"在你课题里最干净的一个实证样本。第一，Criticmate 暴露的中间推理产物（Perception 的元素清单、Comprehension 的语义解读、Projection 的问题预测）本质上就是分布式认知意义上的认知工件（cognitive artifact）——认知被外化到这些工件上，人通过查看、编辑工件与 AI 共享同一个认知任务，这为\"认知如何在人与 AI 之间分布\"提供了一个可操作、可复用的界面结构。第二，\"分阶段暴露 + 可编辑\"直接回答了你课题的核心设计问题：在人-AI 协作学习中，学习者的认知参与该在哪个环节、以何种形式被接进来——把 AI 反馈拆成\"看到了什么→如何理解→预测什么后果\"三个阶段，让学习者逐阶段检查与修正，正是\"认知脚手架的分段进退\"在评估/反馈场景的落地版。第三，SA 理论与分布式认知同属认知工程传统、共享\"信息工件塑造认知\"的前提，这篇论文示范了如何把抽象认知理论转译为具体界面结构——这给你\"基于理论设计学习交互\"的研究路径提供了一个正面的方法范例。第四，\"人可介入而不降低自主性\"的实证结果，为你反驳\"AI 介入学习必然削弱学习者自主\"的常见质疑提供了跨情境证据。",
+    "excerpt": "来源：records/20260821/11/criticmate-stagewise-cocritique/论文总结.md · 来源 ：ACM CHI 2026 Full Paper（Barcelona, Spain, April 13–17, 2026；同行评议）",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260821/11/criticmate-stagewise-cocritique",
+    "original_url": "https://doi.org/10.1145/3772318.3790929",
+    "original_label": "DOI",
+    "session_type": "review",
+    "session_label": "评审会"
+  },
+  {
+    "date": "2026-08-21 10:00",
+    "title": "\"Where's the Structure? A Systematic Literature Review of Empirical Research on Human-AI Collaboration and Hybrid Intelligence for Learning\"（结构在哪里？：关于人-AI 协作与混合智能促进学习的实证研究系统文献综述）",
+    "content": "**采集员**：野蔷薇 ｜ **决策者**：五条悟（收录）｜ **收录日期**：2026-08-21\n\n---\n\n## 1. 核心论点\n\n论文的核心主张是把 CSCL 领域久经检验的一条教训迁移到\"人-AI 协作学习\"（human-AI collaboration / hybrid intelligence for learning）这个新兴领域：非结构化的互动不产生有效学习。正如人类-人类协作学习（CSCL）早已发现，仅仅让参与者\"在一起互动\"不会自动带来认知收益，人机协作学习同样面临结构缺失的困境，作者要追问的正是标题那一声\"结构在哪里\"。第二层主张是方法论性的：当前该领域研究过于异质、探索性过强，以至于还无法像 Alexander 设计模式那样把设计知识形式化为一套可复用的 pattern language，但综述归纳出的三个协作结构可以充当\"模式种子\"（pattern seeds），为未来的形式化奠基。\n\n## 2. 背景与动机\n\nAI 已广泛进入教育情境，其中一条主流路径是\"人-AI 协作\"（亦称\"混合智能\" hybrid intelligence），即人与 AI 组件交互以促进人的学习。作者指出问题所在：这类系统大量涌现，却缺乏对\"协作过程如何被结构化、结构如何支撑学习\"的系统梳理——尤其对照 CSCL 领域\"结构化协作\"（scripted collaboration）的丰富传统（Dillenbourg、Stahl 等）。他们据此设定目标：对 62 项实证研究做系统综述，刻画协作过程、协作结构与应用情境，并提取新兴设计知识与研究空白，为研究者和技术设计者提供一个\"如何把 AI 增强型协作技术做得更结构化\"的起点。\n\n## 3. 方法与过程\n\n论文遵循 PRISMA 指南（Page et al., 2021）做系统文献综述，采用混合方法，明确以质性、解释性分析为主而非定量综合——理由是当前领域异质且处于探索期。作者把研究问题（RQs）细化为多个信息性问题（informative questions, IQs），并沿 Miles & Huberman（1994）的\"预期数据缩减方案\"逐级收敛。最终从 62 项实证研究中归纳出协作过程（含 AI 的角色/贡献方式：assistant、coach、teammate）、协作结构（IQ3.1 归纳出的三个结构）、结构的实现方式（社会性实现 vs 嵌入界面 vs LLM 中间路径）以及结构设定的时点（设计时、学习设计时、执行时、假想的部署时）。\n\n## 4. 主要发现\n\n第一，协作结构方面，归纳出三个可作为\"模式种子\"的结构——\"人创建、AI 评估\"（对应 Wiethof & Bittner 的 Decision Support 模式）、\"AI 创建/作答、人精炼\"（对应其 Exploration 模式）；值得注意的是，其\"Creation\"模式（人与 AI 的学习过程同时且不可分地发生）在审阅论文中完全缺席，说明\"人机同时共创\"在实证层面仍是空白。第二，结构实现方式上，多数研究依赖\"社会性实现\"（如教师指令），灵活、低成本但不可靠且编排负荷高；把结构嵌入技术界面更可靠；LLM 提供了介于两者之间的\"中间路径\"——比硬编码 UI 更灵活，却不能保证产生\"预期互动\"。第三，作者给出诚实的方法论判断：由于结构缺乏重复、且比较干预对学习效果的研究稀少，现在还为时过早去形式化设计知识——\"评估对学习本身的效果（而非仅产物质量或任务效率）仍然罕见\"是领域的关键缺口。第四，角色层面，AI 多以 assistant/coach/teammate 出现，\"peer/equal\"（模仿知识水平相当的同学）这一角色几乎未被探索却被作者认为最值得深挖，并与 Sharples（2023）的 possibility engine、Socratic opponent、collaboration coach 等功能分类形成互补。\n\n## 5. 局限性\n\n第一，这是未同行评议的 arXiv 预印本（2026-05-30 提交），方法细节与结论尚未经正式评审过滤，引用时须以\"预印本\"标注并核对后续正式版本。第二，作者明确承认综述无法形式化设计知识、只能给出\"模式种子\"，这意味着论文提供的是全局图景与方向感，而非可直接套用的设计配方——它对实践者的操作性价值有限，更像一张\"研究地图\"。第三，62 项研究的纳入标准与筛选边界（如何界定\"for learning\"、是否排除非正式学习情境）在预印本中未完全透明，存在口径偏宽或偏窄的风险。第四，质性综合高度依赖作者的解释框架（Miles & Huberman 的归约逻辑），三个协作结构的归纳是否穷尽、是否受作者 CSCL 理论立场影响，需外部研究者复验。第五，该领域研究的发表偏倚（更倾向报告成功的人机协作）未被系统讨论，可能使\"结构缺席\"这一结论被高估或低估。\n\n## 6. 对你课题的启发\n\n这一篇是你课题的\"文献地基\"级素材，直接锚定你\"人-AI 协作学习 + 分布式认知\"的定位。第一，它把\"结构缺失\"确立为该领域的核心问题，正与你课题的核心张力同构：分布式认知追问\"认知如何分布\"，而这篇综述追问\"支撑认知分布的结构在哪里\"——结构（script/artifact/角色分工）正是认知得以在人机之间有序分布的前提，这给你的理论框架提供了一个现成的文献支点。第二，三个协作结构（人创建-AI 评估 / AI 创建-人精炼）以及缺席的\"人机同时共创\"，可直接映射到你设计学习情境时\"认知任务在人与 AI 之间如何切分\"的设计决策——尤其是\"AI 评估人的产出\"这一结构在教育的天然适配性，与你关注的\"AI 反馈/评估如何塑造学习\"高度吻合。第三，综述点明的关键缺口——\"评估对学习本身的效果而非产物质量仍然罕见\"——恰好是你课题可以切入的方法论空白：当你设计学习情境时，把因变量从\"任务产出质量\"上移到\"学习效果/认知分布演化\"，正是这篇综述在召唤的研究方向。第四，\"peer/equal\"角色与 Sharples 的 Socratic opponent 等功能分类，为你在协作学习 agent 的角色设计上提供了一副可对照的坐标系。",
+    "excerpt": "来源：records/20260821/10/wheres-the-structure-slr/论文总结.md · 来源 ：arXiv 预印本（未同行评议；cs.CY / cs.AI / cs.HC）",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260821/10/wheres-the-structure-slr",
+    "original_url": "https://arxiv.org/abs/2606.05222",
+    "original_label": "arXiv",
+    "session_type": "review",
+    "session_label": "评审会"
+  },
   {
     "date": "2026-08-20 11:00",
     "title": "\"Shall We Dig Deeper?\": Designing and Evaluating Strategies for LLM Agents to Advance Knowledge Co-Construction in Asynchronous Online Discussions（我们该挖得更深吗？：设计并评估 LLM 智能体在异步在线讨论中推进知识共建的策略）",
