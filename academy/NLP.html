@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NLP</title>
-    <meta name="description" content="基于关键词自动归类的语言与文本研究。 共 306 条。">
+    <meta name="description" content="基于关键词自动归类的语言与文本研究。 共 307 条。">
     <meta property="og:title" content="NLP - 研究所">
-    <meta property="og:description" content="基于关键词自动归类的语言与文本研究。 共 306 条。">
+    <meta property="og:description" content="基于关键词自动归类的语言与文本研究。 共 307 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">NLP</h1>
-        <p class="sidebar-summary">基于关键词自动归类的语言与文本研究。 共 306 条。</p>
+        <p class="sidebar-summary">基于关键词自动归类的语言与文本研究。 共 307 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>NLP</strong>
-                <span>基于关键词自动归类的语言与文本研究。 共 306 条。</span>
+                <span>基于关键词自动归类的语言与文本研究。 共 307 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,8 +79,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "NLP", "subtitle": "基于关键词自动归类的语言与文本研究。 共 306 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "NLP", "subtitle": "基于关键词自动归类的语言与文本研究。 共 307 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-08-22 10:00",
+    "title": "AdaLens: Interactive Storyline for Monitoring and Steering Long-Running Agentic Data Analysis",
+    "content": "- 载体：arXiv: 2608.17834（2026-08-18 提交，cs.AI / cs.HC，投稿 IEEE TVCG，预印本未同行评议）\n- 链接：https://arxiv.org/abs/2608.17834\n\n## 一、核心论点\n\nAdaLens 的核心论点是：当 LLM 驱动的数据分析从\"单步、逐轮问答\"进化为\"长时运行、多分支并行、自主决策\"的 agentic 工作流时，人类分析师的角色从\"逐步操作者\"退居为\"高层监督者\"，于是界面设计出现两个此前被忽略的硬需求——observability（可观察性：看清 agent 依据什么推理、基于什么证据推进）与 steerability（可引导性：在运行中途低成本地舍弃低价值方向、深化有希望的方向）。作者主张，这两个需求不能靠零散的进度指示或逐轮问答来满足，而必须共同锚定在同一个共享表征上：把 agent 的分析计划、执行进度、中间发现与数据列参与轨迹统一编码为一条\"故事情节线\"（storyline）。这样一来，agent 的推理过程就从黑箱变成了人类可读、可干预的共享工件，使\"监督长时运行 agent\"这一新任务第一次有了可操作的界面载体。换言之，agent 自主性越强，人类越需要把注意力从\"亲手操作\"转移到\"读懂并干预 agent 的认知过程\"，而 storyline 正是为这种认知分工转型设计的界面基础设施。\n\n## 二、背景与动机\n\n背景是 LLM 正在把数据科学推向日益自主、agentic 的工作流：近年系统已支持多步骤、长时运行的分析任务，agent 可以自行规划、执行、评估并决定下一步。但当工作流变得自主且长时间运行后，传统的逐轮问答式界面暴露出结构性缺陷——它们虽然提升了过程可见性、开放了若干干预点，却仍为\"离散、逐轮交换\"而设计，无法表征长时运行分析中并行展开的分支与不断演化的决策结构。作者把这一缺口概括为\"长时运行 agentic 数据分析中的交互式监督\"（interactive oversight）问题，指出 observability 与 steerability 是这一监督任务的两大关键要求。动机由此清晰：不是要造一个更聪明的 agent，而是要为\"人类如何监督一个越来越自主的 agent\"补上缺失的界面理论层。这与分布式认知关心的\"认知计算被移交出去后，人类保留什么、又需要什么界面条件来维持主体性\"形成呼应。\n\n## 三、方法与过程\n\n方法上，AdaLens 是一条典型的交互系统研究路径。作者首先通过设计研究把\"长时运行 agentic 数据分析的监督\"问题空间结构化，提炼出 storyline 这一统一表征，将分析计划、执行进度、中间发现与数据列参与轨迹四类信息整合进同一条可视化叙事线。随后，他们把引导与控制动作直接锚定在这些可见元素上，形成双层交互：Focus / Ignore / Elaborate 等意图级引导用于调整方向，Create / Pause / Terminate 等执行级控制用于决定进程的走向与存续。系统评估采用\"两个案例研究 + 一项用户研究\"的组合，其中用户研究以 SUS 量表（87.08 分）等指标检验系统对分析师\"监控 + 引导\"长时运行 agent 的支持效果。作者来自浙江大学交互数据组（Yingcai Wu 教授团队、CAD&CG 国家重点实验室），工作以预印本形式提交至 IEEE TVCG（2026-08-18）。\n\n## 四、主要发现\n\n论文的核心发现落在一个设计命题上：把\"意图级引导\"与\"执行级控制\"分离，并让两者都锚定在 storyline 的可视化元素上，能够有效支撑分析师对长时运行 agent 的监督。两个案例研究展示了 storyline 如何让分析计划、中间发现与数据列参与轨迹变得可追踪，从而支撑分析师在运行中途判断\"该深化哪个方向、该舍弃哪个方向\"。用户研究（SUS 87.08）则提供了系统可用性的量化证据，表明这种\"故事情节线 + 双层控制\"的设计在实际分析任务中是可学习、可用的。更深一层，AdaLens 实证了\"agent 的推理过程可以、也应当被外化为人类可读的共享工件\"这一更普遍的命题——它把可观察性与可引导性从抽象口号落实为具体的界面机制。\n\n## 五、局限性（自主判断）\n\n需要指出几点硬局限。其一，证据强度上，两项案例研究与一项用户研究的组合虽能说明\"系统可用、可支撑监督\"，但样本与任务域都较窄，SUS 作为主观可用性指标无法证明 storyline 表征相对于其它可视化方案（如树形、甘特图、时间线）的独特增益——缺少对照消融，storyline 的\"统一表征\"卖点尚未被严格检验。其二，论文聚焦数据分析这一特定领域，其 storyline 的语义（数据列、分析计划、中间发现）高度领域绑定，能否迁移到通用 agentic 任务尚未论证。其三，\"意图级引导 vs 执行级控制\"的二分本身是一个设计假设，用户研究中分析师是否真的需要、并高频使用这种分离，缺乏更细粒度的行为证据支撑。其四，作为预印本尚未经过同行评议，TVCG 的评审结果与后续修订可能改变部分结论的表述。最后，系统评估关注的是\"监督有效性\"，但长期运行中人类监督者自身的认知负荷、以及\"过度依赖 story 而放弃亲自验证 agent 结论\"的风险，都未被纳入测量。\n\n## 六、对你课题的启发（人-AI 协作学习、分布式认知）\n\n对你的人-AI 协作学习 + 分布式认知课题，AdaLens 提供了两个可直接迁移的概念杠杆。第一，storyline 本质上是分布式认知中的共享表征（shared representation / external representation）——它决定人类能否读懂被外包给 agent 的认知过程、能否在关键时刻介入，这与设计学习情境中\"如何让学习者保持对 AI 辅助过程的认知主体性\"是同构问题；你可以把\"AI 应外化什么中间产物给学习者看\"作为教学设计的一个独立维度。第二，\"意图级引导（Focus/Ignore/Elaborate）vs 执行级控制（Create/Pause/Terminate）\"的双层设计，直接回答了协作学习中\"何时让 AI 自主推进、何时把控制权交还学习者\"的脚手架粒度问题——它提示你可以把 AI 协作学习中的控制权设计为分层而非全有全无，让学习者在\"调整方向\"与\"叫停/放行\"之间做更细的选择。据此，你研究设计中的\"认知分布可观测化\"清单可以新增两个条目：共享表征的形态（story 或其它外化工件）与引导/控制的层级切分。",
+    "excerpt": "来源：records/20260822/10/adalens-storyline-agentic-analysis/论文总结.md · 来源：浙江大学 Interactive Data Group（Yingcai Wu 教授团队，CAD&CG 国家重点实验室）",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260822/10/adalens-storyline-agentic-analysis",
+    "original_url": "https://arxiv.org/abs/2608.17834",
+    "original_label": "arXiv",
+    "session_type": "review",
+    "session_label": "评审会"
+  },
   {
     "date": "2026-08-21 11:00",
     "title": "\"Criticmate: Stagewise Human–AI Co-Critique in Single-Screen UI Evaluation\"（Criticmate：单屏 UI 评估中分阶段的人-AI 共同评审）",
