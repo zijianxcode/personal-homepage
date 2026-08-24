@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>论文总结</title>
-    <meta name="description" content="源目录中的论文总结，按时间倒序自动汇总。 共 402 条。">
+    <meta name="description" content="源目录中的论文总结，按时间倒序自动汇总。 共 404 条。">
     <meta property="og:title" content="论文总结 - 研究所">
-    <meta property="og:description" content="源目录中的论文总结，按时间倒序自动汇总。 共 402 条。">
+    <meta property="og:description" content="源目录中的论文总结，按时间倒序自动汇总。 共 404 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">论文总结</h1>
-        <p class="sidebar-summary">源目录中的论文总结，按时间倒序自动汇总。 共 402 条。</p>
+        <p class="sidebar-summary">源目录中的论文总结，按时间倒序自动汇总。 共 404 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>论文总结</strong>
-                <span>源目录中的论文总结，按时间倒序自动汇总。 共 402 条。</span>
+                <span>源目录中的论文总结，按时间倒序自动汇总。 共 404 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,8 +79,32 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "论文总结", "subtitle": "源目录中的论文总结，按时间倒序自动汇总。 共 402 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "论文总结", "subtitle": "源目录中的论文总结，按时间倒序自动汇总。 共 404 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-08-24 11:00",
+    "title": "Exploring the Potential of Metacognitive Support Agents for Human-AI Co-Creation",
+    "content": "- 载体：DIS '25（Designing Interactive Systems Conference，Funchal，DOI 10.1145/3715336.3735785）；arXiv: 2506.12879（2025-06-15 提交）\n- 链接：https://arxiv.org/abs/2506.12879\n\n## 一、核心论点\n\n本文的核心论点是：GenAI 设计工具非但没有自动提升设计质量，反而可能通过\"认知卸载\"（cognitive offloading）削弱设计师的认知参与，导致问题探索不足、规格定义不完整、结果评估能力下降。作者据此提出一种新的交互范式——\"元认知支持代理\"（metacognitive support agents）：不是替设计师产出方案，而是通过反思性提问、任务规划与外化等手段，帮助设计师\"更反思地\"与 GenAI 协作。论文用一个 Wizard of Oz 探索性原型研究证明，这种把 AI 定位为\"思考的脚手架\"而非\"答案的引擎\"的方向是可行的：有代理支持的用户产出了比无支持用户更可行的设计，且不同支持策略的影响存在差异。这一结论把\"认知卸载\"从被动的负面效应，重新定位为一个可以被主动设计干预的变量。\n\n## 二、背景与动机\n\n动机来自一个具体的从业者困境：尽管 GenAI 设计工具潜力巨大，专业设计师却常常难以把 AI 真正融入工作流。作者识别出两个根本性的认知障碍——其一，意图表述（intent formulation）要求用户在一开始就把所有设计准则明确拆解为独立参数，这对设计的探索性本质是反直觉的；其二，认知卸载让设计师在设计过程中的认知投入下降，进而引发问题探索不足、规格欠定义、以及对自己产出结果评估能力的弱化。这种\"卸载—空心化\"的链条与教育领域\"AI 答案引擎造成空心思维\"的担忧同源，但本文把它落到了专业设计工作流这一更可测量的情境里。动机由此清晰：与其继续把 AI 当生成器优化，不如追问\"AI 能否反过来促进设计师的元认知活动\"，从而在提升产出的同时保住人的认知主体性。\n\n## 三、方法与过程\n\n研究采用严格的设计研究范式：作者先通过探索性原型（exploratory prototyping）构想元认知支持代理，再用 Wizard of Oz 诱导研究（Wizard of Oz elicitation study）探测其价值。20 名机械设计师参与实验，累计约 19 小时的 think-aloud 视频被采集，作为还原认知过程的主要证据。研究系统性地比较了多种元认知支持策略——包括苏格拉底式反思提问（Socratic reflective questioning）、任务规划加草图外化（task planning + sketch externalization）、以及专家自由式支持（expert free-form support）——以检验不同策略对设计过程与产出的差异化影响。这一\"探针 + WoZ + 多策略对照\"的组合，使\"元认知支持\"这一抽象概念得以在真实设计任务中被操作化、被测量，符合 DIS 一贯的探索性设计研究标准。论文以 DIS '25 全文形式发表，作者阵容中的 Kenneth Holstein（人机互补与可教代理研究）与 Nikolas Martelaro（人机交互设计）为该方向的代表性研究者。\n\n## 四、主要发现\n\n核心发现是\"元认知支持\"确实有效，但并非所有策略等价。有代理支持的参与者产出了比无支持对照组更可行的设计（more feasible designs），这为\"AI 应促进而非替代设计师思考\"提供了实证依据。更重要的是，不同元认知支持策略之间的影响存在差异——反思性提问、规划外化与专家式支持各自触及认知过程的不同环节，其收益与代价并不相同。论文由此勾勒出元认知支持代理的设计机会空间与权衡（tradeoffs），并指出一个关键风险：过度依赖（over-reliance）可能让支持代理反过来成为新的卸载源，从而抵消其促进反思的初衷。这一发现为后续\"如何设计 AI 反思伙伴\"的工作划定了边界条件。\n\n## 五、局限性（自主判断）\n\n这篇工作的局限需要直言。其一，研究是 Wizard of Oz 探索性原型研究，所谓\"代理\"由研究者后台模拟，不是真实运行的自主系统，因此\"元认知支持代理\"在工程上是否可实现、其成本与鲁棒性如何，本文并未回答。其二，样本为 20 名机械设计师、单一任务域，结论能否推广到其它设计门类（如界面设计、服务设计）或非设计类的人-AI 协作任务，仍是开放问题。其三，\"更可行的设计\"这一结果衡量依赖专家对可行性的主观判断，论文对判断标准与评分者间一致性（inter-rater reliability）的披露是否充分，需以全文为准谨慎对待。其四，三种支持策略的划分带有研究者先验，其是否穷尽元认知支持的设计空间、是否存在更好的策略组合，缺少自下而上的生成过程来佐证。最后，过度依赖作为\"风险\"被提出，但未被系统测量——支持代理究竟在何种条件下会从\"促进反思\"滑向\"新的卸载\"，本文只给了方向判断而非证据。\n\n## 六、对你课题的启发（人-AI 协作学习、分布式认知）\n\n这是今日三份提议中与课题咬合最紧的一篇，因为它把分布式认知的核心机制——认知卸载——当作可干预的设计变量，而非需要回避的副作用。其一，论文提供的三种元认知支持策略（反思性提问、规划外化、专家式支持）本质上是在回答\"AI 如何促进人的反思\"这一交互设计问题，与你在学习情境中设计 AI 反思伙伴（如 SRL 理论驱动的反思对话）落在同一个设计空间，可直接迁移借鉴其策略划分与权衡结论。其二，\"支持代理 vs 生成代理\"的二分，为你的脚手架设计提供了一个关键的分界线：学习情境中，AI 何时该替学习者完成步骤、何时该退一步追问与提示，正是\"认知如何在人机间分布\"的操作化问题。其三，过度依赖风险的提出，提示你在设计反思支架时必须同时设计\"防卸载\"机制，避免支架本身变成新的认知外包渠道——这与分布式认知理论中\"认知责任应保持在关键节点由人承担\"的判断一致。结合库内 8/13 cognitive-offloading-speedup-illusion（卸载的速度幻觉）与 8/18 guided-reflection（引导反思），本文把\"认知卸载\"这条线索从\"现象描述\"推进到了\"主动干预设计\"的层面。",
+    "excerpt": "来源：records/20260824/11/metacognitive-support-agents-cocreation/论文总结.md · 作者：Frederic Gmeiner, Kaitao Luo, Ye Wang, Kenneth Holstein, Nikolas Martelaro（Carnegie Mellon University 等）",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260824/11/metacognitive-support-agents-cocreation",
+    "original_url": "https://arxiv.org/abs/2506.12879",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-08-24 10:00",
+    "title": "Reflections and New Directions for Human-Centered Large Language Models (HCLLM)",
+    "content": "- 载体：arXiv: 2605.06901（2026-05-07 提交，预印本，未同行评议）\n- 链接：https://arxiv.org/abs/2605.06901\n\n## 一、核心论点\n\n本文的核心论点是对\"以模型技术能力为中心\"这一主流 LLM 研究范式的系统性挑战：随着大模型渗透商业、教育、金融、医疗、法律与科学，仅仅优化技术指标已不足以应对其社会影响，必须转向以\"人类优先级\"（human priorities）为中心来构建、评估与部署这些系统。作者提出\"人本大语言模型\"（Human-Centered Large Language Models, HCLLM）框架，把自然语言处理（NLP）、人机交互（HCI）与负责任 AI 三条彼此长期割裂的脉络整合到同一个坐标系里。其关键主张是：人类关切、偏好、价值与目标不应只在训练后（post-training）草草打一个补丁，而应在从系统设计、数据来源、模型训练、评估到负责任部署的每一个环节都以严谨态度贯穿始终。论文以\"未来工作\"（future of work）为案例，示范了这一框架如何落到具体议题上。\n\n## 二、背景与动机\n\n动机来自一个紧迫的现实张力：LLM 的全球影响力在快速扩大，但开发者社区对\"人的需求\"的处理往往是滞后、零散、装饰性的——评估偏重技术基准（benchmark），部署偏重能力上限，人的价值与目标被压缩为事后的安全过滤。作者观察到，NLP 领域精于建模、HCI 领域精于理解用户、负责任 AI 领域精于治理，三者各自有成熟的工具与关切，却缺乏一个能把它们统一起来的框架，导致\"人的考量\"在语言模型的流水线里既无处不在、又无处安身。本文的出发点因此是整合性的：不是提出一个新的模型或数据集，而是对\"整个领域该以什么为中心做研究议程\"给出反思性重构。这种纲领性（programmatic）的写作动机，使其更适合作为理论定位与文献综述的锚点，而非单个系统的技术贡献。\n\n## 三、方法与过程\n\n方法上，这是一篇整合性的框架论文（position/framework paper），而非实证研究。作者来自 Stanford HCI Group 的 CS329H（人本大语言模型）课程，是一场由 James Landay（HCI 领军学者）与 Diyi Yang（NLP/社会计算领军学者）共同领衔的大规模协作，署名作者约六十人，覆盖 HCI、NLP 与责任 AI 的多重视角。论文的论证结构是\"逐环节\"展开的：从系统设计、数据来源（data sourcing）、模型训练、评估到负责任部署，逐一给出人本的洞察与对开发者的具体建议。作者特别强调要在\"伦理、经济与技术\"三重目标之间做出权衡，而不是把伦理当作与其它两者割裂的附加项。论文最后以一个案例研究收束——把这些洞察应用到\"与 HCLLM 共处的未来工作\"这一议题上，示范框架如何从抽象主张落到具体社会场景。\n\n## 四、主要发现\n\n作为框架论文，其\"发现\"不是实验数据，而是一套可复用的整合性主张。其一，它确立了 HCLLM 的坐标系：把\"人类优先级\"作为贯穿全流水线的第一性约束，而非终点的过滤器。其二，它逐环节给出了人本化的可操作建议——例如数据来源阶段如何纳入代表性偏差的考量、评估阶段如何在技术评估之外补充人本评估维度（如对用户目标、价值、认知与情感的影响）。其三，它明确把\"伦理、经济、技术\"三者并置为必须同时求解的张力，拒绝\"先技术后补伦理\"的顺序假设。其四，\"未来工作\"案例表明，HCLLM 框架可以直接用于分析具体的社会后果（如职业替代、人机分工），使框架不止于抽象纲领而具备分析工具属性。\n\n## 五、局限性（自主判断）\n\n这篇工作的局限同样需要直言。其一，这是预印本（未同行评议），且是纲领性框架论文，其主张的正确性未经实证检验，更多是\"领域内资深视角的共识性重构\"而非新知识发现。其二，约六十人的课程协作规模在带来视角广度的同时，也带来口径统一与深度的风险——\"逐环节建议\"的颗粒度在不同环节之间可能不均，某些环节的建议接近常识性重申。其三，框架本身对\"人类优先级\"如何被测量、被排序、以及在人与人的价值冲突时如何取舍，缺乏可操作的判定程序，\"human priorities\"这一核心概念有滑向空洞口号的风险。其四，未来工作案例只覆盖单一场景，框架在其它高冲突场景（如医疗、法律）下的可迁移性未被检验。最后，它整合的是西方（尤其美国）学术语境下的 HCI/NLP/责任 AI 传统，对非西方语境下\"人本\"含义的文化差异着墨甚少。\n\n## 六、对你课题的启发（人-AI 协作学习、分布式认知）\n\n这篇为你研究提供的是\"理论基础设施\"层面的价值。其一，HCLLM 框架回答的恰恰是\"以什么为中心来设计 AI 与人的协作系统\"——它主张人类目标、认知与价值优先于模型能力优化，这正是你\"设计学习情境中认知如何分布\"这一命题的前提假设：如果系统不以学习者的认知发展为中心，认知分布的设计就无从谈起。其二，框架中\"人本评估 vs 技术评估\"的区分，为你的研究提供了超越单一任务指标的评估视角——衡量\"AI 参与下的学习成效\"，不应只看产出质量或速度，而应加入对学习者认知投入、反思深度、价值与目标达成的评估，这与库内 8/13 对\"速度幻觉\"的警示一脉相承。其三，\"未来工作\"案例中的人机分工议题，直接对应你关心的\"人-AI 协作中谁承担哪部分认知\"，可作为你讨论学习情境中认知责任分配的宏观参照。需要提醒的是，本文是纲领而非操作化工具，你应把它当作定位你研究所在的坐标系，而不是直接可引用的方法来源。",
+    "excerpt": "来源：records/20260824/10/human-centered-llm-framework/论文总结.md · 作者：Caleb Ziems, Dora Zhao, Rose E. Wang, ... James Landay, Diyi Yang（Stanford HCI Group，CS329H 课程大规模协作，约 60 名共同作者）",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260824/10/human-centered-llm-framework",
+    "original_url": "https://arxiv.org/abs/2605.06901",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-08-22 11:00",
     "title": "A Taxonomy of Human–MLLM Interaction in Early-Stage Sketch-Based Design Ideation",
