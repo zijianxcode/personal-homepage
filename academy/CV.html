@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV</title>
-    <meta name="description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 181 条。">
+    <meta name="description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 182 条。">
     <meta property="og:title" content="CV - 研究所">
-    <meta property="og:description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 181 条。">
+    <meta property="og:description" content="基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 182 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">CV</h1>
-        <p class="sidebar-summary">基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 181 条。</p>
+        <p class="sidebar-summary">基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 182 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>CV</strong>
-                <span>基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 181 条。</span>
+                <span>基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 182 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,8 +79,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "CV", "subtitle": "基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 181 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "CV", "subtitle": "基于关键词自动归类的视觉、图像、视频与 3D 研究。 共 182 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-08-26 11:00",
+    "title": "DesignTrace: Exploring, Iterating and Tracking Design Alternatives with GenAI",
+    "content": "- 载体：CHI 2026 正刊全文（Barcelona，2026-04-13，pp.1-22），DOI 10.1145/3772318.3791036\n- 链接：https://doi.org/10.1145/3772318.3791036\n\n## 一、核心论点\n\n本文的核心论点是：现有 GenAI 设计工具把重点放在\"产出\"（生成图像）而非\"过程\"（设计备选方案的演化、反思与追踪），导致设计师在利用生成式能力的同时丧失了对探索过程的控制与反思。作者据此提出\"设计痕迹\"（design trace）这一新的交互范式——把设计理由（design rationale）外部化为命令历史、状态追踪与交互式分支结构等可操作制品，让\"演化、反思、追踪\"从隐性的认知负担变成显性的界面结构。论文用\"9 名设计师形成性研究 + 12 名专业设计师实证评估\"的完整证据链证明：围绕显式设计痕迹重新构想 GenAI 界面，能让设计师在享受生成能力红利的同时维持对设计变体探索的控制。这一结论把焦点从\"更强的生成模型\"移向\"更清晰的痕迹表征\"，指向当前 AI 设计工具范式的结构性缺口。\n\n## 二、背景与动机\n\n动机来自设计实践与 GenAI 术语之间的错配。专业设计师靠反复生成\"变体\"来探索设计空间、细化概念、做出知情决策，探索、反思与精化在设计实践中紧密交织；但 GenAI 词汇里的 \"variation\" 指的是扩散过程里不同随机噪声生成的图像，而非设计师有意识地改动既有方案以探索新可能的设计变体。这种术语错配带来了超越提示工程的实际挑战——设计师常快速接受一个\"看起来还行\"却次优的变体，再手动修补。加上生成资产的来源（原始提示、参数、迭代路径）难以追踪，碎片化的 GenAI 工具又割裂了资产与工作流，设计师既有的\"记录设计演化\"策略（标注系统、草图）在 AI 时代失效了。动机由此清晰：与其继续优化\"生成\"，不如追问\"如何在生成式工具里为设计备选方案的演化、反思与追踪提供显式支持\"。\n\n## 三、方法与过程\n\n研究采用\"形成性研究 + 工具构建 + 实证比较\"的完整设计研究链。作者先对 9 名设计师开展初步研究，确认现有 GenAI 工具缺乏对\"迭代演化、反思、追踪设计备选方案\"的显式支持这一结构性缺口；据此构建 DesignTrace——一个早期阶段的 GenAI 设计工具，让设计师在交互式设计空间中试验语义相关的视觉变体，其表征通过命令历史、状态追踪与交互式分支结构捕捉视觉与语义想法的演进。工具提供六类能力：从灵感图与系统建议中提取语义属性、用套索选区把属性应用到局部或整图、在共享语义类别下分支多个备选、自定义提示模板、局部编辑并回看编辑历史、折叠废弃版本。随后用 12 名专业设计师的实证研究检验两个关键假设：palette 是否帮助表达、探索与反思设计意图，分支结构是否帮助维持跨迭代的视觉一致性、记住并回访早期决策、看见想法之间的联系。作者阵容中的 Wendy E. Mackay 是创意支持工具与设计认知方向的奠基性研究者（h-index 53），延续了\"设计者如何在迭代中追踪与回访设计备选方案\"这一经典 HCI 研究线索。\n\n## 四、主要发现\n\n核心发现是\"把过程做成界面\"确实有效。研究显示 DesignTrace 的 palette 帮助设计师表达、探索并反思自己的设计意图；而交互式分支结构帮助他们在多次迭代间维持视觉一致性、记住并回访先前的设计决策、看到不同想法之间的联系。由此论文确立了结论：围绕显式设计痕迹重新构想 GenAI 界面，能让设计师在享受生成能力的同时维持对设计变体探索的控制。这同时印证了论文开篇的诊断——现有 GenAI 工具偏重产出而缺乏对\"演化、反思、追踪\"的显式支持，而填补这一缺口的不是更强的生成模型，而是更清晰的痕迹表征。研究以设计实践者最熟悉的方式证明，\"记录、比较、回退\"这些传统设计工作流中的朴素需求，恰恰是 GenAI 时代最被忽略、也最值得被界面重新承载的东西。\n\n## 五、局限性（自主判断）\n\n这篇工作的局限需要直言。其一，DesignTrace 是早期阶段原型，12 名专业设计师的样本规模与受控研究时长，相较于\"设计痕迹能否随任务复杂度与时间尺度扩展\"这一核心承诺仍显单薄；长期、跨项目使用中痕迹堆积是否会演变成\"屏幕越复杂、用户越迷失\"的负担，本文尚未回答。其二，研究在受控实验情境中评估，缺乏在真实工业设计工作流（多利益相关方、版本评审、交接）中的部署验证，痕迹在协作而非个体情境下的价值是未知的。其三，对\"设计痕迹\"价值的判断主要依赖设计师的自陈与观察，缺少对设计质量、探索广度、决策效率等下游产出的客观量化，所谓\"维持控制\"仍偏主观。其四，工具把\"设计理由\"具象化为命令历史、状态与分支三类痕迹，但这三类是否穷尽了设计师追踪演化所需的表征形式，缺少自下而上的生成过程来论证。最后，论文对 GenAI 输出随机性与不一致性给痕迹追踪带来的挑战（来源、参数、迭代路径）只是\"提及\"而未被系统解决——当生成资产本身缺乏稳定身份时，痕迹能否可靠建立仍是开放问题。\n\n## 六、对你课题的启发（人-AI 协作学习、分布式认知）\n\n这是今日三份提议中与课题在\"分布式认知\"维度咬合最紧的一篇，因为它把\"设计理由外部化为环境中的可操作制品\"做成了一手实证，正是\"认知分布于人、制品与环境之间\"的落地样例。其一，\"痕迹即认知外部化\"的机制，直接对应学习情境中\"学习者如何借助外部化表征维持认知主线\"——DesignTrace 的分支结构与命令历史，可类比为学习者在 AI 辅助下为自己保留的\"思考轨迹 / 决策历史\"，提示你设计 AI 学习支架时应显式提供可回访、可比较的认知痕迹，而非只给答案。其二，论文揭示的核心张力——设计师在\"接受 AI 生成\"与\"保持设计意图自主\"之间摇摆——与学习情境中学习者使用 AI 时的能动性分配问题同构，其\"语义资产复用以支持反思\"的发现可迁移为\"学习者如何借助语义化的知识表征维持反思\"的设计依据。其三，\"生成式能力红利 × 人的控制权\"的平衡，为课题\"AI 何时替学习者完成、何时保留控制\"提供了设计工具领域的实证参照。结合库内 8/24 metacognitive-support-agents（支持代理 vs 生成代理二分）、8/19 Surprise2Refine、8/20 Dig Deeper（共构与外部化），本文把\"设计理由外部化\"从抽象概念推进到了\"具体交互制品（trace / palette / node）\"的层面。",
+    "excerpt": "来源：records/20260826/11/designtrace-genai-design-alternatives/论文总结.md · 作者：Xiaohan Peng, Debanjana Haldar, Wendy E. Mackay, Janin Koch（LISN, Université Paris Saclay / CNRS / Inria，法国）",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260826/11/designtrace-genai-design-alternatives",
+    "original_url": "https://doi.org/10.1145/3772318.3791036",
+    "original_label": "DOI",
+    "session_type": "review",
+    "session_label": "评审会"
+  },
   {
     "date": "2026-08-24 11:00",
     "title": "Exploring the Potential of Metacognitive Support Agents for Human-AI Co-Creation",

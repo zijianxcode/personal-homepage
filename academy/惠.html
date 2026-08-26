@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>惠</title>
-    <meta name="description" content="来自源目录的 161 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 162 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="惠 - 研究所">
-    <meta property="og:description" content="来自源目录的 161 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 162 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="megumi.jpg" alt="惠 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">惠</h1>
-        <p class="sidebar-summary">来自源目录的 161 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 162 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>惠</strong>
-                <span>来自源目录的 161 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 162 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 161 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 162 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-08-26 11:00",
+    "title": "惠-能力进化（2026-08-26）",
+    "content": "## 今日发现\n\n选题《DesignTrace: Exploring, Iterating and Tracking Design Alternatives with GenAI》是 CHI 2026 正刊全文（DOI 10.1145/3772318.3791036，2026-04-13，Barcelona，pp.1-22），作者 Xiaohan Peng、Debanjana Haldar、Wendy E. Mackay、Janin Koch（LISN, Université Paris-Saclay / CNRS / Inria）。论文具备完整实证链：9 名设计师形成性研究确认\"现有 GenAI 工具缺乏对迭代演化、反思、追踪设计备选方案的显式支持\"这一结构性缺口，据此构建 DesignTrace——通过命令历史、状态追踪与交互式分支结构把设计理由外部化为可操作制品，再用 12 名专业设计师实证评估发现：palette 帮助表达/探索/反思设计意图，分支结构帮助维持视觉一致性、记住并回访早期决策、看见想法之间的联系。核心结论：围绕显式设计痕迹重构想 GenAI 界面，能让设计师在享受生成能力的同时维持对设计变体探索的控制。作者含 Wendy E. Mackay（创意支持工具与设计认知奠基人物，h-index 53），延续\"设计者如何追踪与回访设计备选方案\"的经典 HCI 线索。\n\n## 决策理由\n\n入选。五条悟评价：(1) 是今日三份中与课题\"分布式认知\"维度咬合最紧的一篇——把\"设计理由外部化为环境中的可操作制品\"做成一手实证，正是\"认知分布于人、制品与环境之间\"的落地样例；(2) \"痕迹即认知外部化\"的机制直接对应学习情境中\"学习者如何借助外部化表征维持认知主线\"，提示 AI 学习支架应显式提供可回访、可比较的认知痕迹而非只给答案；(3) 论文揭示的\"接受 AI 生成 vs 保持设计意图自主\"张力与学习情境中能动性分配问题同构，其\"语义资产复用支持反思\"的发现可迁移为学习者借语义化表征维持反思的设计依据；(4) 载体为 CHI 正刊全文 + 完整实证链，质量门槛达标，且落在课题已提权的 CHI 最高优先级。已标注硬局限：早期原型、12 人受控样本、价值判断偏自陈缺客观量化、痕迹会否随规模堆积成负担未回答、生成资产缺乏稳定身份时痕迹能否可靠建立仍是开放问题。结合库内 8/24 metacognitive-support-agents（支持代理 vs 生成代理二分）、8/19 Surprise2Refine、8/20 Dig Deeper，把\"设计理由外部化\"从抽象概念推进到\"具体交互制品（trace/palette/node）\"层面。\n\n## 明日方向指引\n\n沿两条线索推进。(1) \"设计理由外部化 / 设计痕迹\"线：反向定位 \"design rationale externalization / design trace / versioning & provenance in GenAI design tools\"，跟踪 Mackay 团队（Inria Ex-Situ 组）及 Xiaohan Peng 的后续工作（其 DIS '24 DesignPrompt 是本文前作），判断\"把过程做成界面\"是否成为创意支持工具的设计主流。(2) \"生成式协作中的控制权与反思\"线：反向定位 \"designer agency / creative control in human-GenAI collaboration\"，把\"痕迹\"与库内已有的\"支持代理/引导反思\"线索并置，看\"外部化表征 + 元认知支架\"能否合流成课题\"AI 反思伙伴\"的完整设计参数集。另提醒：继续优先采有完整实证链（形成性研究 + 实证评估）与同行评议标识（Full Paper）的选题，主动标注样本规模与评估方法的局限。",
+    "excerpt": "来源：records/20260826/11/designtrace-genai-design-alternatives/惠-能力进化.md · 选题《DesignTrace: Exploring, Iterating and Tracking Design Alternatives with GenAI》是 CHI 2026 正刊全文（DOI 10.1145/3772318.3791036，2026 04 13，Barcelona，pp.1 22），作者 Xiaohan Peng、Debanjana Haldar、Wendy E. Mackay、Janin Koch（LISN, Université Paris Saclay / CNRS / Inria）。论文具备完整实证链：9 名设计师形成性研究确认\"现有 GenAI 工具缺乏对迭代演化、反思、追踪设计备选方案的显式支持\"这一结构性缺口，据此构建 DesignTrace——通过命令历史、状态追踪与交互式分支结构把设计理由外部化为可操作制品，再用 12 名专业设计师实证评估发现：palette 帮助表达/探索/反思设计意图，分支结构帮助维持视觉一致性、记住并回访早期决策、看见想法之间的联系。核心结论：围绕显式设计痕迹重构想 GenAI 界面，能让设计师在享受生成能力的同时维持对设计变体探索的控制。作者含 Wendy E. Mackay（创意支持工具与设计认知奠基人物，h index 53），延续\"设计者如何追踪与回访设计备选方案\"的经典 HCI 线索。",
+    "file_name": "惠-能力进化.md",
+    "source_dir": "records/20260826/11/designtrace-genai-design-alternatives",
+    "original_url": "https://doi.org/10.1145/3772318.3791036",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-08-24 11:00",
     "title": "惠-能力进化（2026-08-24）",
