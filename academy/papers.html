@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>论文总结</title>
-    <meta name="description" content="源目录中的论文总结，按时间倒序自动汇总。 共 408 条。">
+    <meta name="description" content="源目录中的论文总结，按时间倒序自动汇总。 共 410 条。">
     <meta property="og:title" content="论文总结 - 研究所">
-    <meta property="og:description" content="源目录中的论文总结，按时间倒序自动汇总。 共 408 条。">
+    <meta property="og:description" content="源目录中的论文总结，按时间倒序自动汇总。 共 410 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">论文总结</h1>
-        <p class="sidebar-summary">源目录中的论文总结，按时间倒序自动汇总。 共 408 条。</p>
+        <p class="sidebar-summary">源目录中的论文总结，按时间倒序自动汇总。 共 410 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>论文总结</strong>
-                <span>源目录中的论文总结，按时间倒序自动汇总。 共 408 条。</span>
+                <span>源目录中的论文总结，按时间倒序自动汇总。 共 410 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,8 +79,32 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "论文总结", "subtitle": "源目录中的论文总结，按时间倒序自动汇总。 共 408 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "论文总结", "subtitle": "源目录中的论文总结，按时间倒序自动汇总。 共 410 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-08-28 11:00",
+    "title": "KNIT: Computational Boundary Objects for Real-Time Convergence in Interdisciplinary Teams",
+    "content": "- 载体：CHI 2026 正刊全文（Barcelona，2026-04-13，DOI 10.1145/3772318.3791921）\n- 链接：https://doi.org/10.1145/3772318.3791921\n\n## 一、核心论点\n\n本文的核心贡献是提出\"计算边界对象\"（computational boundary objects）这一概念，把 Star & Griesemer 的边界对象理论与 Carlile 的 3T 框架（句法/语义/语用三种知识边界）向前推进到\"AI 生成工件主动介导知识转化\"的计算化阶段。作者论证：AI 生成的工件不是被动的信息载体，而是具备\"动态响应、结构稳定、再生能力\"三属性的活性中介，能够实时外化团队中匿名化的个体输入、浮现解释差异并使之可供协商。论文最锋利的判断是——在跨学科团队收敛过程中，AI 的主要机制是\"表征转换\"（representational transformation）而非\"自动化\"（automation），这直接挑战了\"AI 替代认知\"的默认叙事，并明确把 AI 定位为\"既非工具也非队友，而是协作意义得以被建构的那个分布式系统的一部分\"。\n\n## 二、背景与动机\n\n动机源于跨学科团队（尤其健康科技创业团队）在快速迭代中的真实困境：不同学科视角、利益相关者优先级与不断演化的\"问题框定\"需要在会话现场持续对齐，而既有协作工具只支持发散（divergence）、事后综合（post hoc synthesis）或一般性协商，恰恰在\"收敛\"这一最需要脚手架的阶段缺位。Kolfschoten 与 Brazier 早已指出这一持久局限——\"丰富的发散探索 + 有限的收敛机制\"。作者据此提出 KNIT（Knowledge Negotiation and Integration Tool，知识协商与整合工具）框架与 Web 应用，把 AI 定位为跨学科协商中的\"现场中介\"（live mediator），聚焦\"收敛发生的时刻\"而非收敛之前或之后。经由参与式共设计，团队共同选定\"价值主张\"（value proposition，即\"产品为谁、解决什么问题、创造什么价值\"的结构化陈述）作为焦点工件，因为它既贴近创业语言，又天然横跨句法、语义、语用三层知识边界，为观察团队如何协商意义与利益提供了一个\"重要而可控\"的现场。\n\n## 三、方法与过程\n\n研究采用真实场景工作坊 + 框架化编码的实证路径。KNIT 通过匿名化输入捕获、利益相关者导向的重构（stakeholder-centred reframing）、可视化语义聚类（semantic clustering）三件套，把个体的分散输入外化为共享工件，从而让\"解释差异\"浮出水面并可供协商。评估在 7 个早期健康科技团队（共 28 名参与者）的真实工作坊中进行，研究者以 Carlile 3T 框架对 190 个\"边界跨越片段\"（boundary-crossing episodes，即协作者尝试跨学科边界分享、解释或协商知识的离散时刻）进行编码。分析区分了不同 KNIT 组件所支撑的不同边界工作：AI 驱动的重构通过外化利益相关者视角支撑语用协商，语义聚类通过让\"分歧与漂移\"立即可见来帮助团队建立共享意义；并据此归纳出可复现的收敛路径与失败模式。\n\n## 四、主要发现\n\n结果有三层。其一，量化上，KNIT 支撑的边界跨越在句法（95.0%）、语义（86.3%）、语用（84.8%）三个层面依次递减——句法跨越近乎自动，语义跨越依赖共享解释，语用跨越最具抵抗性、必须依赖利益相关者导向的重构。其二，机制上，识别出可复现的语用收敛四阶段循环：以利益相关者视角锚定协商（STAKE-PERS）→ 用例子与证据论证立场（EVAL-SUPP）→ 通过换框架重构问题（INS-REFR）→ 编辑输出以反映协商后的理解并接受（EVAL-EDIT / EVAL-ACPT）；而失败样本则停滞于\"只有批评、没有具体化\"（stall at critique without specification）。其三，理论上，论文从实证中提炼出\"计算边界对象\"的三属性（动态响应、结构稳定、再生能力）与三条设计原则（再生可塑性 regenerative plasticity、归因模糊性 attributional ambiguity、利益相关者锚定 stakeholder anchoring），并论证传统边界对象的柔性来自\"解释模糊性\"，而计算边界对象的可塑性来自\"主动再生\"——这是对边界理论的关键推进。\n\n## 五、局限性（自主判断）\n\n需要直言几处局限。其一，样本为 7 个团队 28 人，虽对质性编码研究而言不小，但全部来自\"健康科技创业团队\"这一单一情境，其收敛模式与设计原则能否迁移到其他领域（如教育、公共政策、成熟组织）未经检验，论文自己也将边界止于 healthtech。其二，\"边界跨越成功率\"（95.0% / 86.3% / 84.8%）是研究者按 Carlile 3T 编码后的比例，编码一致性（inter-coder reliability）与\"成功/失败\"的操作化切点未在摘要层可见，量化数字的稳健性需以全文核对为准。其三，四个贡献中\"AI 是分布式意义建构系统的一部分\"这一强主张，依赖的是\"工件被团队接受并改变协商走向\"的观察性证据，属\"生成性机制\"而非因果证明，无法排除霍桑效应（参与者因知晓在研究中的表现提升）或引导者效应（工作坊主持者本身促成收敛）。其四，\"表征转换而非自动化\"作为对立叙事虽锋利，但论文并未系统排除\"部分团队其实只是在使用 AI 的自动化整理功能\"这一替代解释，其\"转换\"与\"自动化\"的边界在不同组件间可能并不清晰。\n\n## 六、对你课题的启发（人-AI 协作学习、分布式认知）\n\n这篇论文与课题的分布式认知基础构成直接对话，价值在三处。其一，\"AI 作为分布式意义建构系统的一部分\"是课题\"认知分布\"立场在团队协作场景下的系统化实证，其机制链——外部化匿名个体输入 → 生成共享工件 → 使解释差异浮出水面 → 可供协商——与\"在设计学习情境中研究认知分布\"（外部表征如何承载并协调分布认知）在结构上同构，可直接迁移为\"学习小组 + AI 中介工件\"的研究设计模板。其二，\"表征转换而非自动化\"的洞见对 AI 教育工具的设计立场有理论分量：AI 在学习协作中的价值在于转化表征以促进协商，而非替代学习者的认知过程——这为\"AI 反思伙伴\"应做什么、不应做什么划了一条清晰的原则线（应重构问题让差异可见，不应直接给答案）。其三，三条设计原则（再生可塑性、归因模糊性、利益相关者锚定）可作为设计学习情境中人-AI 协作界面的参考框架——尤其\"归因模糊性\"（让个体贡献匿名化以降低人际压力、让争论转向观点而非人身）对课堂小组协作的 AI 脚手架设计有直接可操作性。",
+    "excerpt": "来源：records/20260828/11/knit-computational-boundary-objects/论文总结.md · 作者：Echo (Chuqiao) Wan、Carrie Yin、Akira Ito、Ziwei Gao、Jasper Jia、Yuki Taoka、Shigeki Saito、Malak Sadek、Céline Mougenot（帝国理工学院等）",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260828/11/knit-computational-boundary-objects",
+    "original_url": "https://doi.org/10.1145/3772318.3791921",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-08-28 10:00",
+    "title": "\"I want to be pushed, I want to grow\": Enabling social workers to design evaluations of LLM augmentation in their work",
+    "content": "- 载体：arXiv 2608.22459（cs.HC，预印本，2026-08-23 提交，Accepted at AIES 2026）\n- 链接：https://arxiv.org/abs/2608.22459\n\n## 一、核心论点\n\n本文提出\"工作者驱动的 AI 测量\"（worker-driven AI measurement）这一新范式：一线工作者应自下而上地共同决定\"AI 应该增强哪些任务\"、\"成功增强意味着什么\"以及\"如何测量它\"，把 AI 评估的定义权从开发者与管理方交还给实际使用者。作者论证，当前主流的 AI 评估路径由技术方自上而下定义成功标准，使用者鲜有发言权，而这套\"谁定义、谁测量\"的元层面权力结构，恰恰决定了 AI 增强工作是否真的服务于工作本身。论文以 19 名学校社工的真实案例证明：工作者完全有能力把自己专业与生活经验提炼为可操作的、可区分模型优劣的评估基准（benchmark），从而把\"评估\"从技术专有物转化为一线实践者的参与式产物。\n\n## 二、背景与动机\n\n动机源于一个结构性不对称：工作者被日益要求采纳 AI 系统辅助工作，却几乎从不被邀请定义\"有意义的 AI 增强\"长什么样、又如何评估它。既有的 AI 评估生态——无论是基准测试、排行榜还是研究者主导的用户研究——几乎全部由开发方或管理方设定\"成功\"的操作化定义，工作者的隐性知识与一线判断被系统性地排除在评估循环之外。作者选择学校社工这一\"高判断、低技术权威\"的专业群体作为案例，因为社工工作高度依赖对情境、关系与假设的反思，恰好是检验\"工作者能否、如何定义 AI 增强\"的理想情境。其落点在于：把\"测量\"本身从一种控制工具，重构为一种工作者能动性的表达。\n\n## 三、方法与过程\n\n研究采用案例研究 + 参与式工作坊的路径，与一家本地学校社工组织的 19 名工作者协作，历经 8 场工作坊迭代。流程分三步：工作者首先发展出自己关于 AI 评估的测量目标，随后将这些目标系统化，最后共同设计一个基准，用于捕获\"一个 LLM 能在多大程度上'挑战'他们反思自己在日常工作中固有的假设与偏见\"。过程中，工作者基于自身的专业与生活经验协作设计并反复打磨了一套\"LLM-as-a-judge\"（以 LLM 作为评判者）的评分量规（rubric）。验证阶段，作者发现工作者打分与 LLM 评判者打分之间高度一致，且该工作者自建的基准能够区分六个最先进的 LLM 的性能差异。\n\n## 四、主要发现\n\n发现有三层。其一，可行性上，一线工作者确实能够把隐性的专业判断外化为可操作的测量目标与评分量规——\"挑战我反思自身假设与偏见\"这一抽象价值被成功转化为可测量的基准维度，证明\"评估的定义权\"并非技术专家的专利。其二，有效性上，工作者创建的基准在技术层面同样成立：工作者与 LLM 评判者的评分高度一致，且基准能有效区分六个 SOTA LLM，说明\"以一线视角定义的评估\"并未牺牲测量区分度。其三，范式上，论文据此主张\"工作者驱动的 AI 测量\"可作为既有自上而下 AI 评估路径的互补方法——它不是取代技术基准，而是在\"谁定义成功\"这一层级引入新的声音。题名\"我想被推动、我想成长\"（I want to be pushed, I want to grow）点明工作者的真实诉求：他们希望 AI 增强的是反思与成长，而非替代。\n\n## 五、局限性（自主判断）\n\n需直言几处局限。其一，单案例、单职业、单组织——19 名学校社工来自同一家本地组织，\"工作者驱动\"能否推广到其他职业（如医护、律师、教师）或更大规模组织未经检验，且学校社工天然偏好\"反思/成长\"导向的测量目标，可能高估了这一范式的普适性。其二，\"工作者与 LLM 评判者高度一致\"本身是双刃剑：这一致既可能是量规足够清晰，也可能提示 LLM 评判者在复制工作者已知的答案分布，两者在证据层面难以区分，而论文摘要未交代一致性的度量方式与校准过程。其三，研究者（Holstein 组）同时是方法的设计者与促进者，参与式工作坊存在引导者效应，工作者的\"测量目标\"在多大程度上是自发的、在多大程度上是被脚手架诱导的，未得到对照。其四，预印本尚未经同行评议（虽已 Accepted at AIES 2026，正式版本可能仍有修订），且\"worker-driven measurement 与 top-down 互补\"的框架仍停留在号召层面，缺乏与现有评估生态对接的可操作路径。\n\n## 六、对你课题的启发（人-AI 协作学习、分布式认知）\n\n这篇论文对课题的启发落在\"认知分布的元层面\"。其一，它把分布式认知从\"任务如何在人机间分配\"推进到\"谁来定义分配与成功标准\"——认知不仅分布在工作流里，也分布在\"谁有权定义评估\"这一元层面，这是课题\"认知分布\"议题一个被长期忽略的分析维度。其二，其参与式工作坊方法论（让使用者共同定义测量目标）与课题\"在设计学习情境中研究认知分布\"的方法论一脉相承，可直接迁移为\"让学习者/使用者定义 AI 协作成功标准\"的研究设计——一个可操作的研究问题是：若学习者自己定义\"什么是好的 AI 协作学习\"，其认知分布与能动性会如何变化？其三，\"AI 应挑战我反思假设而非替代我\"这一社工诉求，精准对应课题\"AI 反思伙伴\"的设计立场——它给出了\"挑战型脚手架\"（challenge-based scaffolding）而非\"答案型脚手架\"的实证锚点，可反哺课题对\"反思性使用 vs 创造性使用\"（8/27 Designers Sweat）与\"支持代理 vs 生成代理\"（8/24）的设计参数。",
+    "excerpt": "来源：records/20260828/10/worker-driven-ai-measurement/论文总结.md · 作者：Anna Kawakami、Chloe Qianhui Zhao、Renee Shelby、Fernando Diaz、Haiyi Zhu、Kenneth Holstein（CMU HCII 等）",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260828/10/worker-driven-ai-measurement",
+    "original_url": "https://arxiv.org/abs/2608.22459",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-08-27 11:00",
     "title": "When Designers Sweat: Behavioral Traces of GenAI Co-Creation",
