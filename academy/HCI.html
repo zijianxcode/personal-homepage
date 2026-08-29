@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HCI</title>
-    <meta name="description" content="基于关键词自动归类的人机交互与协作研究。 共 357 条。">
+    <meta name="description" content="基于关键词自动归类的人机交互与协作研究。 共 359 条。">
     <meta property="og:title" content="HCI - 研究所">
-    <meta property="og:description" content="基于关键词自动归类的人机交互与协作研究。 共 357 条。">
+    <meta property="og:description" content="基于关键词自动归类的人机交互与协作研究。 共 359 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">HCI</h1>
-        <p class="sidebar-summary">基于关键词自动归类的人机交互与协作研究。 共 357 条。</p>
+        <p class="sidebar-summary">基于关键词自动归类的人机交互与协作研究。 共 359 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>HCI</strong>
-                <span>基于关键词自动归类的人机交互与协作研究。 共 357 条。</span>
+                <span>基于关键词自动归类的人机交互与协作研究。 共 359 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,8 +79,32 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "HCI", "subtitle": "基于关键词自动归类的人机交互与协作研究。 共 357 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "HCI", "subtitle": "基于关键词自动归类的人机交互与协作研究。 共 359 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-08-29 11:00",
+    "title": "Interaction as Intelligence: Deep Research With Human-AI Partnership（Deep Cognition 系统）",
+    "content": "- 载体：CHI 2026 Extended Abstracts（CHI EA '26，2026-04-13，DOI 10.1145/3772363.3798906）；arXiv 2507.15759（cs.CL，2025-07-21 提交）；NeurIPS 2025 亦有展示\n- 链接：https://arxiv.org/abs/2507.15759 ｜ DOI 10.1145/3772363.3798906\n- 注：CHI EA 版标题为 \"Interaction as Intelligence: A Transparent, Fine-Grained Multi-Agent Deep Research System for Human-Agent Collaboration\"\n\n## 一、核心论点\n\n论文提出 \"Interaction as Intelligence\"（交互即智能）命题：在长时程深度研究任务中，交互不是访问 AI 能力的附属接口，而是智能本身的基本维度。传统深度研究系统采用 \"input-wait-output\" 范式——用户下指令、AI 黑箱处理、返回结果——这导致错误级联（error cascade）、研究边界僵化（无法在研究过程中修正问题）与专业知识整合机会的流失。论文主张把人的角色从\"下指令\"重构为\"认知监督\"（cognitive oversight），即在关键节点以策略性干预引导 AI 的思维过程。\n\n## 二、背景与动机\n\n动机源于现有 deep research 系统（Gemini Deep Research、OpenAI Deep Research、Grok 等）的交互范式缺陷：它们把交互降格为\"意图输入—结果输出\"的管道，用户在 AI 长程思考过程中被排除在外。当 AI 在研究过程中跑偏、边界僵化时，用户无法及时介入，错误被放大、问题无法在研究过程中得到修正。作者认为，随着 AI 系统承担越来越长的思考链，有意义的交互从\"可选增强\"转变为\"有效智能的必要组成\"——这正是 \"Interaction as Intelligence\" 命题的立足点，也是对 \"input-wait-output\" 范式的直接重构。\n\n## 三、方法与过程\n\n论文实现 Deep Cognition 系统，落地三大设计支柱：(1) 透明、可控、可中断的交互——实时展示 AI 推理并允许在任意节点介入；(2) 细粒度双向对话；(3) 共享认知上下文——系统无需显式指令即可观察并适应用户行为。用户研究以 13 名研究生为被试，将 Deep Cognition 对比 Gemini Deep Research / OpenAI Deep Research / Grok 3 Deeper Search，测量六项交互指标；并在 BrowseComp-ZH 等挑战性研究问题上评估任务表现。\n\n## 四、主要发现\n\n发现两层。其一，交互指标上，认知监督范式在六项指标全面优于最强基线：透明度 +20.0%、细粒度交互 +29.2%、实时干预 +18.5%、协作易度 +27.7%、结果值得付出 +8.8%、可中断性 +20.7%。其二，任务表现上，在挑战性研究问题上较 deep research 系统提升 31.8–50.0 个百分点，BrowseComp-ZH 准确率 72.73%。用户行为分析还发现 \"hands-on / hands-off\" 动态自主模式——用户在研究不同阶段策略性切换干预强度，这一发现对协作式 AI 系统的交互设计有直接指导价值。\n\n## 五、局限性（自主判断）\n\n需直言几处局限。其一，载体身份需澄清：本采集对象的 CHI 版是 Extended Abstracts（EA，海报/WIP 类），非 CHI Full Paper；arXiv 版（cs.CL）才是 26 人署名的完整版，且系统由 opensii.ai 团队开发，带有商业研究属性，需警惕\"系统推广\"叙事对研究发现的包装。其二，13 名研究生的小样本、单一用户群体（高能力研究生），且六项交互指标为自设问卷指标（软指标），\"优于最强基线\"的比较仅在三个商业系统间进行，缺乏与学术 SOTA 的对照。其三，\"31.8–50.0 pp 提升\"基于作者自建的 BrowseComp-ZH 等基准，存在\"自建基准自证\"的风险，外部效度有待第三方独立检验。其四，\"Interaction as Intelligence\" 是纲领性命题，论文以单系统验证支撑如此宏大的认识论主张，命题与证据之间存在体量落差。\n\n## 六、对你课题的启发（人-AI 协作学习、分布式认知）\n\n这篇论文对课题有双重价值。其一，理论层面，\"人类以认知监督方式参与 AI 思维过程\"给出了一种可检验的认知分工模型——人在关键节点干预、AI 承担长程执行——这正是课题\"在设计学习情境中研究认知分布\"的可操作化参照；其\"共享认知上下文\"（系统吸收用户行为并自适应）与分布式认知的共享表征思想直接同构，为\"认知如何在人-机之间流动\"提供了具体系统实例。其二，反向印证层面，课题目标\"work with AI 要匹配 AI 的工作原理\"在此得到互补视角：论文主张让 AI 的思考过程对人类可见可干预（让 AI 适配人的认知节奏），与\"人适配 AI\"是两翼，二者并置可为课题提供\"认知对齐\"的双向分析框架。\"hands-on/hands-off 动态自主模式\"更直接提示：学习情境中的 AI 协作，学习者可能需要在不同认知阶段策略性切换干预强度，这是\"认知分布\"在时间维度上的新问题。",
+    "excerpt": "来源：records/20260829/11/interaction-as-intelligence-deep-cognition/论文总结.md · 作者：Lyumanshan Ye、Xiaojie Cai、Xinkai Wang、Pengfei Liu 等（SII GAIR / 上海交通大学 / opensii.ai；arXiv 完整版 26 人，CHI EA 版 13 人）",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260829/11/interaction-as-intelligence-deep-cognition",
+    "original_url": "https://arxiv.org/abs/2507.15759",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-08-29 10:00",
+    "title": "From Substitution to Scaffolding: Breaking the Self-Reinforcing Harm Cycle of AI in Education (and Beyond)",
+    "content": "- 载体：arXiv 2608.17451（cs.HC，预印本，2026-08-18 提交；已收 ACM AI Leadership Summit，尚未正式出版）\n- 链接：https://arxiv.org/abs/2608.17451\n\n## 一、核心论点\n\n论文主张 AI 在教育中的核心风险不是\"学生用 AI 作弊\"这类表层问题，而是\"错位\"（misalignment）：消除人类努力的 AI 会侵蚀教育本应培养的能力本身。作者把这一风险组织为一个四维度整合框架——认知（cognition）、能动性（agency）、情绪福祉（emotional well-being）、伦理（ethics）——四者被一个自强化循环所联结：认知卸载（cognitive offloading）减少努力、削弱能动性、进而加剧情绪与伦理上的伤害。论文据此提出单一设计原则 \"scaffold, do not substitute\"（脚手架，而非替代），并论证这一原则超越教育，适用于一切中介人类思维的 AI 系统。\n\n## 二、背景与动机\n\n动机源于一个时间性不对称：AI 在教育中被采纳的速度，远超其后果被理解的速度。作者观察到，当 AI 直接给出答案、消除人类努力时，它同时消解了教育存在的目的——培养持久的人类能力。这一论点把风险从\"学生依赖\"的表层叙事，提升到\"AI 与教育目标根本错位\"这一结构性问题。作者选择国际文凭（IB）学生的议论文作为证据来源，因为这类写作要求学生就\"AI 的影响\"进行反思性论证，恰好能暴露学习者自身对 AI 风险的感知，从而为\"风险是否真实\"提供来自使用者一侧的证词。\n\n## 三、方法与过程\n\n论文以对 49 篇国际文凭（IB）议论文的探索性分析为核心经验基础，这些论文的主题是\"AI 的影响\"。作者对文本做质性分析，统计发现 80% 的论文报告\"AI 依赖减少了思考\"。更重要的是，这些论文一致地表达出学生\"想要怎样的 AI\"：延迟给答案、促进回忆、用提问代替解答来鼓励反思——这些诉求与学习科学的既有原则（如检索练习 retrieval practice、合意困难 desirable difficulties）高度一致。在此基础上，作者把分散的风险维度整合为四维度自强化循环框架，提出 \"scaffold, do not substitute\" 的设计原则，并勾勒出一个面向\"培养持久人类能力\"的研究议程。\n\n## 四、主要发现\n\n发现有三层。其一，经验层面：80% 的 IB 学生自述 AI 依赖削弱了思考，说明学习者自己能清晰感知到\"替代式 AI\"的认知代价，风险并非外部研究者强加的判断。其二，规范层面：学生期望的 AI 形态（不给答案、促进回忆、提问引导）与学习科学原则高度吻合，说明\"好 AI\"的标准不是技术新颖性，而是与人类学习机制的对齐——这为\"以学生声音反推设计原则\"提供了证据路径。其三，理论层面：四维度自强化循环把分散的风险（认知退化、能动性丧失、情绪依赖、伦理侵蚀）整合为一个互相强化的机制链条，为\"AI 如何损害或增强人类能力\"提供了一个可检验的分析结构。\n\n## 五、局限性（自主判断）\n\n需直言几处局限。其一，经验证据薄弱：49 篇 IB 议论文是单一教育情境（国际文凭、以英语为媒介的精英教育）的小样本质性材料，且记录的是学生的\"感知\"而非可测量的学习结果，从\"80% 报告减少思考\"到\"替代式 AI 损害能力\"之间存在推断跳跃——感知风险不等于实际因果。其二，\"四维度自强化循环\"是概念框架而非经检验的因果模型，各维度之间的影响方向与强度未被经验证实，\"自强化\"这一关键机制尚停留在理论主张层面。其三，\"scaffold, do not substitute\"作为单一原则过于概括，真实教学情境中\"何时替代、何时脚手架\"需要更细的判别标准，论文未给出可操作的判据。其四，预印本尚未经同行评议（虽已收 ACM AI Leadership Summit，但该会非 HCI 顶会），框架的学术严谨性仍有待正式评议检验。\n\n## 六、对你课题的启发（人-AI 协作学习、分布式认知）\n\n这篇论文与课题的核心问题直接对话。其一，认知卸载（cognitive offloading）正是分布式认知理论的核心机制——它精确描述了\"系统如何接管本应由学习者承担或保留的认知劳动\"，论文从教育视角为\"认知应在何时、以何种方式分布在人与 AI 之间\"提供了系统化论证，可直接作为课题\"认知分布边界\"的理论文献。其二，\"脚手架而非替代\"这一设计原则与课题\"在设计学习情境中研究认知分布\"的目标高度一致——它把抽象原则落到可操作的设计取向上（延迟给答案、促进回忆、提问引导），可直接转化为课题中 AI 协作工具的设计参数集。其三，论文对\"观察性证据→因果主张\"保持的谨慎（学生感知≠因果），与课题对研究方法论边界的敏感一致，可作为综述中\"认知卸载\"主题的支撑或对立文献——其四维度自强化循环框架本身也是一个可被挑战的理论主张，值得在课题中检验与反驳。",
+    "excerpt": "来源：records/20260829/10/substitution-to-scaffolding-ai-education/论文总结.md · 作者：Lucile Favero、Juan Antonio Pérez Ortiz、Tanja Käser（EPFL ML4ED）、Nuria Oliver（ELLIS Alicante）",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260829/10/substitution-to-scaffolding-ai-education",
+    "original_url": "https://arxiv.org/abs/2608.17451",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-08-28 11:00",
     "title": "KNIT: Computational Boundary Objects for Real-Time Convergence in Interdisciplinary Teams",

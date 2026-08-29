@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>全部记录</title>
-    <meta name="description" content="源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1343 条。">
+    <meta name="description" content="源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1348 条。">
     <meta property="og:title" content="全部记录 - 研究所">
-    <meta property="og:description" content="源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1343 条。">
+    <meta property="og:description" content="源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1348 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">全部记录</h1>
-        <p class="sidebar-summary">源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1343 条。</p>
+        <p class="sidebar-summary">源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1348 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>全部记录</strong>
-                <span>源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1343 条。</span>
+                <span>源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1348 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,8 +79,68 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "全部记录", "subtitle": "源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1343 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "全部记录", "subtitle": "源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1348 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-08-29 11:00",
+    "title": "Interaction as Intelligence: Deep Research With Human-AI Partnership（Deep Cognition 系统）",
+    "content": "- 载体：CHI 2026 Extended Abstracts（CHI EA '26，2026-04-13，DOI 10.1145/3772363.3798906）；arXiv 2507.15759（cs.CL，2025-07-21 提交）；NeurIPS 2025 亦有展示\n- 链接：https://arxiv.org/abs/2507.15759 ｜ DOI 10.1145/3772363.3798906\n- 注：CHI EA 版标题为 \"Interaction as Intelligence: A Transparent, Fine-Grained Multi-Agent Deep Research System for Human-Agent Collaboration\"\n\n## 一、核心论点\n\n论文提出 \"Interaction as Intelligence\"（交互即智能）命题：在长时程深度研究任务中，交互不是访问 AI 能力的附属接口，而是智能本身的基本维度。传统深度研究系统采用 \"input-wait-output\" 范式——用户下指令、AI 黑箱处理、返回结果——这导致错误级联（error cascade）、研究边界僵化（无法在研究过程中修正问题）与专业知识整合机会的流失。论文主张把人的角色从\"下指令\"重构为\"认知监督\"（cognitive oversight），即在关键节点以策略性干预引导 AI 的思维过程。\n\n## 二、背景与动机\n\n动机源于现有 deep research 系统（Gemini Deep Research、OpenAI Deep Research、Grok 等）的交互范式缺陷：它们把交互降格为\"意图输入—结果输出\"的管道，用户在 AI 长程思考过程中被排除在外。当 AI 在研究过程中跑偏、边界僵化时，用户无法及时介入，错误被放大、问题无法在研究过程中得到修正。作者认为，随着 AI 系统承担越来越长的思考链，有意义的交互从\"可选增强\"转变为\"有效智能的必要组成\"——这正是 \"Interaction as Intelligence\" 命题的立足点，也是对 \"input-wait-output\" 范式的直接重构。\n\n## 三、方法与过程\n\n论文实现 Deep Cognition 系统，落地三大设计支柱：(1) 透明、可控、可中断的交互——实时展示 AI 推理并允许在任意节点介入；(2) 细粒度双向对话；(3) 共享认知上下文——系统无需显式指令即可观察并适应用户行为。用户研究以 13 名研究生为被试，将 Deep Cognition 对比 Gemini Deep Research / OpenAI Deep Research / Grok 3 Deeper Search，测量六项交互指标；并在 BrowseComp-ZH 等挑战性研究问题上评估任务表现。\n\n## 四、主要发现\n\n发现两层。其一，交互指标上，认知监督范式在六项指标全面优于最强基线：透明度 +20.0%、细粒度交互 +29.2%、实时干预 +18.5%、协作易度 +27.7%、结果值得付出 +8.8%、可中断性 +20.7%。其二，任务表现上，在挑战性研究问题上较 deep research 系统提升 31.8–50.0 个百分点，BrowseComp-ZH 准确率 72.73%。用户行为分析还发现 \"hands-on / hands-off\" 动态自主模式——用户在研究不同阶段策略性切换干预强度，这一发现对协作式 AI 系统的交互设计有直接指导价值。\n\n## 五、局限性（自主判断）\n\n需直言几处局限。其一，载体身份需澄清：本采集对象的 CHI 版是 Extended Abstracts（EA，海报/WIP 类），非 CHI Full Paper；arXiv 版（cs.CL）才是 26 人署名的完整版，且系统由 opensii.ai 团队开发，带有商业研究属性，需警惕\"系统推广\"叙事对研究发现的包装。其二，13 名研究生的小样本、单一用户群体（高能力研究生），且六项交互指标为自设问卷指标（软指标），\"优于最强基线\"的比较仅在三个商业系统间进行，缺乏与学术 SOTA 的对照。其三，\"31.8–50.0 pp 提升\"基于作者自建的 BrowseComp-ZH 等基准，存在\"自建基准自证\"的风险，外部效度有待第三方独立检验。其四，\"Interaction as Intelligence\" 是纲领性命题，论文以单系统验证支撑如此宏大的认识论主张，命题与证据之间存在体量落差。\n\n## 六、对你课题的启发（人-AI 协作学习、分布式认知）\n\n这篇论文对课题有双重价值。其一，理论层面，\"人类以认知监督方式参与 AI 思维过程\"给出了一种可检验的认知分工模型——人在关键节点干预、AI 承担长程执行——这正是课题\"在设计学习情境中研究认知分布\"的可操作化参照；其\"共享认知上下文\"（系统吸收用户行为并自适应）与分布式认知的共享表征思想直接同构，为\"认知如何在人-机之间流动\"提供了具体系统实例。其二，反向印证层面，课题目标\"work with AI 要匹配 AI 的工作原理\"在此得到互补视角：论文主张让 AI 的思考过程对人类可见可干预（让 AI 适配人的认知节奏），与\"人适配 AI\"是两翼，二者并置可为课题提供\"认知对齐\"的双向分析框架。\"hands-on/hands-off 动态自主模式\"更直接提示：学习情境中的 AI 协作，学习者可能需要在不同认知阶段策略性切换干预强度，这是\"认知分布\"在时间维度上的新问题。",
+    "excerpt": "来源：records/20260829/11/interaction-as-intelligence-deep-cognition/论文总结.md · 作者：Lyumanshan Ye、Xiaojie Cai、Xinkai Wang、Pengfei Liu 等（SII GAIR / 上海交通大学 / opensii.ai；arXiv 完整版 26 人，CHI EA 版 13 人）",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260829/11/interaction-as-intelligence-deep-cognition",
+    "original_url": "https://arxiv.org/abs/2507.15759",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-08-29 11:00",
+    "title": "惠-能力进化（2026-08-29）",
+    "content": "## 今日发现\n\n选题《Interaction as Intelligence: Deep Research With Human-AI Partnership》是 CHI 2026 Extended Abstracts（CHI EA '26，DOI 10.1145/3772363.3798906）收录的系统论文，arXiv 完整版 2507.15759（cs.CL，2025-07-21 提交），作者 Lyumanshan Ye、Xiaojie Cai、Xinkai Wang、Pengfei Liu 等（SII-GAIR / 上海交大 / opensii.ai，arXiv 版 26 人）。论文提出 \"Interaction as Intelligence\" 命题——在长时程深度研究任务中，交互是智能本身的基本维度，而非访问 AI 能力的附属接口；系统 Deep Cognition 把人的角色从\"下指令\"重构为\"认知监督\"（cognitive oversight），三大支柱为透明可中断的推理展示、细粒度双向对话、共享认知上下文。13 名研究生用户研究对比 Gemini/OpenAI/Grok 深度研究，六项交互指标提升 8.8%–29.2%，任务表现提升 31.8–50.0 pp，BrowseComp-ZH 准确率 72.73%；并发现 \"hands-on/hands-off\" 动态自主模式。\n\n## 决策理由\n\n入选（附载体更正）。五条悟评价：(1) \"Interaction as Intelligence\" 是 AI 时代交互设计的纲领性命题，把交互从\"接口\"提升为\"智能维度\"，对 \"input-wait-output\" 范式的重构切中深度研究系统的核心缺陷；(2) 与课题直接对应——\"人类以认知监督方式参与 AI 思维过程\"给出可检验的认知分工模型，\"共享认知上下文\"与分布式认知的共享表征思想同构，均可作为课题\"设计学习情境中认知分布\"的操作化参照；(3) 三大设计支柱（透明/可中断/共享上下文）均可操作、可移植到学习情境。但需更正一处载体事实：本对象 CHI 版为 Extended Abstracts（EA，海报/WIP 类），非 Full Paper 正刊，且 arXiv 完整版分类为 cs.CL（非 cs.HC），系统带商业属性（opensii.ai）——提议\"Proceedings of the 2026 CHI Conference 正刊\"的表述不准确，已按实际载体（CHI EA '26 + arXiv cs.CL 完整版）修正收录。已标注硬局限：13 人小样本、六项软指标自设、自建 BrowseComp-ZH 基准自证、单系统验证宏大命题的体量落差。\n\n## 明日方向指引\n\n沿两条线索推进。(1) \"认知监督/共享认知上下文\"线：反向定位 \"cognitive oversight / shared cognitive context / interruptible AI reasoning / process-transparent agents\"，跟踪 Pengfei Liu（上交大）与 opensii.ai 团队的后续（尤其是否有 CHI Full Paper 或更大样本的实证），注意区分\"系统展示\"与\"经同行评议的正式论文\"两种载体。(2) \"交互即智能/人机认知对齐\"线：反向定位 \"interaction as intelligence / human-AI cognitive alignment / input-wait-output critique\"，与库内 8/20 Hedwig 动态自主权、8/22 AdaLens 共享表征并置，看\"人机认知对齐\"能否成为课题\"work with AI 匹配 AI 工作原理\"的理论锚。另提醒：商业研究团队（opensii.ai、大厂 lab）的系统论文，采编时务必区分\"自建基准自证\"与\"第三方独立验证\"，并把 CHI EA（Extended Abstracts）与 CHI Full Paper 明确区分标注——EA 是海报/WIP 类别，审稿与体量与 Full Paper 不同，这是载体身份的关键一环。",
+    "excerpt": "来源：records/20260829/11/interaction-as-intelligence-deep-cognition/惠-能力进化.md · 选题《Interaction as Intelligence: Deep Research With Human AI Partnership》是 CHI 2026 Extended Abstracts（CHI EA '26，DOI 10.1145/3772363.3798906）收录的系统论文，arXiv 完整版 2507.15759（cs.CL，2025 07 21 提交），作者 Lyumanshan Ye、Xiaojie Cai、Xinkai Wang、Pengfei Liu 等（SII GAIR / 上海交大 / opensii.ai，arXiv 版 26 人）。论文提出 \"Interaction as Intelligence\" 命题——在长时程深度研究任务中，交互是智能本身的基本维度，而非访问 AI 能力的附属接口；系统 Deep Cognition 把人的角色从\"下指令\"重构为\"认知监督\"（cognitive oversight），三大支柱为透明可中断的推理展示、细粒度双向对话、共享认知上下文。13 名研究生用户研究对比 Gemini/OpenAI/Grok 深度研究，六项交互指标提升 8.8%–29.2%，任务表现提升 31.8–50.0 pp，BrowseComp ZH 准确率 72.73%；并发现 \"hands on/hands off\" 动态自主模式。",
+    "file_name": "惠-能力进化.md",
+    "source_dir": "records/20260829/11/interaction-as-intelligence-deep-cognition",
+    "original_url": "https://doi.org/10.1145/3772363.3798906",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-08-29 10:00",
+    "title": "From Substitution to Scaffolding: Breaking the Self-Reinforcing Harm Cycle of AI in Education (and Beyond)",
+    "content": "- 载体：arXiv 2608.17451（cs.HC，预印本，2026-08-18 提交；已收 ACM AI Leadership Summit，尚未正式出版）\n- 链接：https://arxiv.org/abs/2608.17451\n\n## 一、核心论点\n\n论文主张 AI 在教育中的核心风险不是\"学生用 AI 作弊\"这类表层问题，而是\"错位\"（misalignment）：消除人类努力的 AI 会侵蚀教育本应培养的能力本身。作者把这一风险组织为一个四维度整合框架——认知（cognition）、能动性（agency）、情绪福祉（emotional well-being）、伦理（ethics）——四者被一个自强化循环所联结：认知卸载（cognitive offloading）减少努力、削弱能动性、进而加剧情绪与伦理上的伤害。论文据此提出单一设计原则 \"scaffold, do not substitute\"（脚手架，而非替代），并论证这一原则超越教育，适用于一切中介人类思维的 AI 系统。\n\n## 二、背景与动机\n\n动机源于一个时间性不对称：AI 在教育中被采纳的速度，远超其后果被理解的速度。作者观察到，当 AI 直接给出答案、消除人类努力时，它同时消解了教育存在的目的——培养持久的人类能力。这一论点把风险从\"学生依赖\"的表层叙事，提升到\"AI 与教育目标根本错位\"这一结构性问题。作者选择国际文凭（IB）学生的议论文作为证据来源，因为这类写作要求学生就\"AI 的影响\"进行反思性论证，恰好能暴露学习者自身对 AI 风险的感知，从而为\"风险是否真实\"提供来自使用者一侧的证词。\n\n## 三、方法与过程\n\n论文以对 49 篇国际文凭（IB）议论文的探索性分析为核心经验基础，这些论文的主题是\"AI 的影响\"。作者对文本做质性分析，统计发现 80% 的论文报告\"AI 依赖减少了思考\"。更重要的是，这些论文一致地表达出学生\"想要怎样的 AI\"：延迟给答案、促进回忆、用提问代替解答来鼓励反思——这些诉求与学习科学的既有原则（如检索练习 retrieval practice、合意困难 desirable difficulties）高度一致。在此基础上，作者把分散的风险维度整合为四维度自强化循环框架，提出 \"scaffold, do not substitute\" 的设计原则，并勾勒出一个面向\"培养持久人类能力\"的研究议程。\n\n## 四、主要发现\n\n发现有三层。其一，经验层面：80% 的 IB 学生自述 AI 依赖削弱了思考，说明学习者自己能清晰感知到\"替代式 AI\"的认知代价，风险并非外部研究者强加的判断。其二，规范层面：学生期望的 AI 形态（不给答案、促进回忆、提问引导）与学习科学原则高度吻合，说明\"好 AI\"的标准不是技术新颖性，而是与人类学习机制的对齐——这为\"以学生声音反推设计原则\"提供了证据路径。其三，理论层面：四维度自强化循环把分散的风险（认知退化、能动性丧失、情绪依赖、伦理侵蚀）整合为一个互相强化的机制链条，为\"AI 如何损害或增强人类能力\"提供了一个可检验的分析结构。\n\n## 五、局限性（自主判断）\n\n需直言几处局限。其一，经验证据薄弱：49 篇 IB 议论文是单一教育情境（国际文凭、以英语为媒介的精英教育）的小样本质性材料，且记录的是学生的\"感知\"而非可测量的学习结果，从\"80% 报告减少思考\"到\"替代式 AI 损害能力\"之间存在推断跳跃——感知风险不等于实际因果。其二，\"四维度自强化循环\"是概念框架而非经检验的因果模型，各维度之间的影响方向与强度未被经验证实，\"自强化\"这一关键机制尚停留在理论主张层面。其三，\"scaffold, do not substitute\"作为单一原则过于概括，真实教学情境中\"何时替代、何时脚手架\"需要更细的判别标准，论文未给出可操作的判据。其四，预印本尚未经同行评议（虽已收 ACM AI Leadership Summit，但该会非 HCI 顶会），框架的学术严谨性仍有待正式评议检验。\n\n## 六、对你课题的启发（人-AI 协作学习、分布式认知）\n\n这篇论文与课题的核心问题直接对话。其一，认知卸载（cognitive offloading）正是分布式认知理论的核心机制——它精确描述了\"系统如何接管本应由学习者承担或保留的认知劳动\"，论文从教育视角为\"认知应在何时、以何种方式分布在人与 AI 之间\"提供了系统化论证，可直接作为课题\"认知分布边界\"的理论文献。其二，\"脚手架而非替代\"这一设计原则与课题\"在设计学习情境中研究认知分布\"的目标高度一致——它把抽象原则落到可操作的设计取向上（延迟给答案、促进回忆、提问引导），可直接转化为课题中 AI 协作工具的设计参数集。其三，论文对\"观察性证据→因果主张\"保持的谨慎（学生感知≠因果），与课题对研究方法论边界的敏感一致，可作为综述中\"认知卸载\"主题的支撑或对立文献——其四维度自强化循环框架本身也是一个可被挑战的理论主张，值得在课题中检验与反驳。",
+    "excerpt": "来源：records/20260829/10/substitution-to-scaffolding-ai-education/论文总结.md · 作者：Lucile Favero、Juan Antonio Pérez Ortiz、Tanja Käser（EPFL ML4ED）、Nuria Oliver（ELLIS Alicante）",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260829/10/substitution-to-scaffolding-ai-education",
+    "original_url": "https://arxiv.org/abs/2608.17451",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-08-29 10:00",
+    "title": "野蔷薇-能力进化（2026-08-29）",
+    "content": "## 今日发现\n\n选题《From Substitution to Scaffolding: Breaking the Self-Reinforcing Harm Cycle of AI in Education (and Beyond)》是 EPFL ML4ED（Tanja Käser）与 ELLIS Alicante（Nuria Oliver）合作的 cs.HC 预印本（arXiv 2608.17451，2026-08-18 提交，已收 ACM AI Leadership Summit），作者 Lucile Favero、Juan Antonio Pérez-Ortiz、Tanja Käser、Nuria Oliver。论文把 AI 在教育中的核心风险组织为\"认知—能动性—情绪—伦理\"四维度自强化循环，核心机制是认知卸载（cognitive offloading）：AI 消除人类努力的同时，侵蚀教育本应培养的能力本身。证据来自 49 篇 IB 学生议论文的探索性分析，80% 报告\"AI 依赖减少思考\"；而学生期望的 AI（延迟给答案、促回忆、以提问代替解答）与学习科学既有原则（检索练习、合意困难）高度一致，据此提出单一设计原则 \"scaffold, do not substitute\"。\n\n## 决策理由\n\n入选。五条悟评价：(1) 这是\"AI 教育\"方向少见的纲领性整合，用\"认知卸载\"这一分布式认知核心机制把四个分散的风险维度串成自强化循环，对\"AI 何时该接管、何时该留白\"给出了理论化框架；(2) 与课题咬合最紧的一篇——\"脚手架而非替代\"直接落在课题\"在设计学习情境中研究认知分布\"的目标上，认知卸载正是\"系统如何接管认知劳动\"这一核心问题的教育视角论证；(3) 作者 Tanja Käser（EPFL ML4ED，学习分析/教育 AI 权威）与 Nuria Oliver（ELLIS 主任，AI for social good 代表性人物）分量足够，来源可靠。已标注硬局限：49 篇 IB 议论文是单一精英教育情境的小样本、学生\"感知\"非可测量学习结果、\"80% 报告减少思考→替代式 AI 损害能力\"存在推断跳跃、四维度循环是概念框架非因果模型、\"scaffold vs substitute\"缺操作性判据、预印本未同行评议（AI Leadership Summit 非 HCI 顶会）。与库内 8/27 \"producing-to-validating AI deskilling\"（技能退化/认知角色迁移）形成直接对话，本文从教育情境补足了\"认知卸载如何损害能力\"的理论框架。\n\n## 明日方向指引\n\n沿两条线索推进。(1) \"认知卸载/脚手架\"线：反向定位 \"cognitive offloading / scaffold vs substitute / desirable difficulties / retrieval practice + AI\"，跟踪 Tanja Käser（EPFL ML4ED）与 Nuria Oliver（ELLIS Alicante）后续，尤其关注四维度框架是否被后续实证研究检验；与库内 8/27 deskilling、8/24 metacognitive-support-agents 并置，看\"认知卸载的代价\"与\"支持/生成二分\"能否合流成课题\"认知分布边界\"的理论支柱。(2) \"教育 AI 设计原则\"线：反向定位 \"AI in education design principles / scaffolding in AI tutoring systems\"，注意区分\"学习科学导向的脚手架\"与\"技术驱动的个性化\"两种叙事，为课题的\"学习情境设计\"积累可操作的设计参数。另提醒：本方向预印本占比高，继续主动标注\"预印本/已收非顶会\"身份，并区分\"学生感知\"与\"学习结果\"两类证据强度。",
+    "excerpt": "来源：records/20260829/10/substitution-to-scaffolding-ai-education/野蔷薇-能力进化.md · 选题《From Substitution to Scaffolding: Breaking the Self Reinforcing Harm Cycle of AI in Education (and Beyond)》是 EPFL ML4ED（Tanja Käser）与 ELLIS Alicante（Nuria Oliver）合作的 cs.HC 预印本（arXiv 2608.17451，2026 08 18 提交，已收 ACM AI Leadership Summit），作者 Lucile Favero、Juan Antonio Pérez Ortiz、Tanja Käser、Nuria Oliver。论文把 AI 在教育中的核心风险组织为\"认知—能动性—情绪—伦理\"四维度自强化循环，核心机制是认知卸载（cognitive offloading）：AI 消除人类努力的同时，侵蚀教育本应培养的能力本身。证据来自 49 篇 IB 学生议论文的探索性分析，80% 报告\"AI 依赖减少思考\"；而学生期望的 AI（延迟给答案、促回忆、以提问代替解答）与学习科学既有原则（检索练习、合意困难）高度一致，据此提出单一设计原则 \"scaffold, do not substitute\"。",
+    "file_name": "野蔷薇-能力进化.md",
+    "source_dir": "records/20260829/10/substitution-to-scaffolding-ai-education",
+    "original_url": "https://arxiv.org/abs/2608.17451",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-08-29 09:00",
+    "title": "五条悟-汇总（2026-08-29）",
+    "content": "## 今日采集决议\n\n**入选 2 篇，放弃 1 篇。**\n\n### 入选篇目\n\n**1. 野蔷薇：arXiv 预印本 — From Substitution to Scaffolding（认知卸载四维自强化循环 + 脚手架而非替代）**\n- 论文：Lucile Favero、Juan Antonio Pérez-Ortiz、Tanja Käser（EPFL ML4ED）、Nuria Oliver（ELLIS Alicante），\"From Substitution to Scaffolding: Breaking the Self-Reinforcing Harm Cycle of AI in Education (and Beyond),\" arXiv 2608.17451（cs.HC，2026-08-18 提交，已收 ACM AI Leadership Summit，未正式出版）\n- 入选理由：与课题咬合最紧的一篇。\"认知卸载\"正是分布式认知理论的核心机制，论文把它组织为\"认知—能动性—情绪—伦理\"四维度自强化循环，精确描述\"系统如何接管本应保留在学习者一侧的认知劳动\"。49 篇 IB 议论文的探索性分析中 80% 报告\"AI 依赖减少思考\"，而学生期望的 AI（延迟给答案、促回忆、提问引导）与学习科学原则高度一致，据此提出 \"scaffold, do not substitute\" 单一设计原则，并论证其超越教育、适用于一切中介人类思维的 AI 系统。作者 Tanja Käser（EPFL ML4ED）与 Nuria Oliver（ELLIS Alicante）是欧洲 AI 教育方向的代表研究者。已标注硬局限：49 篇单一精英教育情境的小样本质性材料、学生\"感知\"非可测量学习结果、\"80% 报告减少思考→损害能力\"的推断跳跃、四维度循环是概念框架非因果模型、原则缺操作性判据、预印本未同行评议。\n\n**2. 惠：CHI EA '26 + arXiv — Interaction as Intelligence（认知监督范式 + 共享认知上下文）**\n- 论文：Lyumanshan Ye、Xiaojie Cai、Xinkai Wang、Pengfei Liu 等（SII-GAIR / 上海交大 / opensii.ai），\"Interaction as Intelligence: Deep Research With Human-AI Partnership\"（CHI EA 版标题为 \"…A Transparent, Fine-Grained Multi-Agent Deep Research System for Human-Agent Collaboration\"），CHI 2026 Extended Abstracts（CHI EA '26，2026-04-13，DOI 10.1145/3772363.3798906）+ arXiv 2507.15759（cs.CL，2025-07-21）\n- 入选理由（附载体更正）：提出 \"Interaction as Intelligence\" 纲领性命题——交互是智能本身的基本维度而非访问 AI 能力的附属接口，系统 Deep Cognition 把人的角色从\"下指令\"重构为\"认知监督\"（cognitive oversight），三大支柱（透明可中断的推理展示、细粒度双向对话、共享认知上下文）均可操作、可移植到学习情境。13 名研究生对比 Gemini/OpenAI/Grok 深度研究，六项交互指标提升 8.8%–29.2%，任务表现提升 31.8–50.0 pp，并发现 \"hands-on/hands-off\" 动态自主模式。\"人类以认知监督参与 AI 思维过程\"给出可检验的认知分工模型，\"共享认知上下文\"与分布式认知的共享表征思想同构，直接对应课题\"认知分布\"的操作化。**载体更正**：提议称\"Proceedings of the 2026 CHI Conference 正刊\"不准确，经 Crossref 核验，本对象 CHI 版实为 Extended Abstracts（EA，海报/WIP 类，非 Full Paper），且 arXiv 完整版分类为 cs.CL（非 cs.HC）、系统带商业属性。已按实际载体修正收录。已标注硬局限：13 人小样本、六项软指标自设、自建 BrowseComp-ZH 基准自证、单系统验证宏大命题的体量落差。\n\n### 放弃篇目\n\n**悠仁：Liquid Glass vs Material 3 Expressive 移动设计系统对比（设计博客 Mantlr + Beryl Design）**\n- 放弃原因：属\"载体门槛 + 关联度\"双线放弃。(1) 载体上，来源是产品设计博客（Mantlr、Beryl Design），无 DOI、无 arXiv、无同行评议，非可引用、可去重追踪的学术研究产出；其\"Material Expressive 46 项研究、18000 参与者、识别关键 UI 元素快 4 倍\"等数据来自厂商自陈，无方法、无样本、无可核验的验证流程，无法满足学术站的数据完整性门槛。(2) 关联度上，\"界面把运动编码为系统变量即认知支架\"这一分布式认知关联属类比/隐喻层面的牵附，而非可对话的理论机制——与课题\"人-AI 协作学习\"的核心问题距离较远。\n- 反馈：悠仁\"设计系统如何在 2026 年分化\"的方向本身有追踪价值，\"默认嵌入 vs 事后开关补救\"的可访问性哲学、\"系统级设计语言的普及依赖生态而非规范\"的观察都是好的分析切口。问题在载体与理论关联。建议改造：(1) 若追踪\"设计系统/运动设计\"作为学科话题，应反向定位有同行评议的 \"design systems / motion design / micro-interaction + usability\" 研究（CHI/DIS 正刊或 arXiv），把 Liquid Glass / Material Expressive 作为其中一条设计案例/例证去采，而非把设计博客本身当采集对象；(2) 若想保留\"运动作为认知支架\"的理论角度，应定位 \"external representation / cognitive offloading in interface design\" 的实证文献，与课题的分布式认知立场做严格对接，而非类比。\n\n## 方向指引\n\n今日两篇入选构成\"理论机制\"与\"操作范式\"的互补，并与库内既有证据链自然拼接：\n\n- **野蔷薇（substitution → scaffolding）**：提供\"认知卸载如何损害/增强能力\"的理论机制——四维度自强化循环 + \"脚手架而非替代\"，对应课题\"认知分布边界\"的负向建构面（AI 何时该接管、何时该留白）。\n- **惠（Interaction as Intelligence）**：提供\"认知监督 + 共享认知上下文\"的可操作范式——三大设计支柱 + 动态自主模式，对应课题\"认知分布\"的正向操作化面（人机认知如何对齐）。\n\n两者并置，加上库内已有线索（8/27 Designers Sweat + Producing to Validating 认知角色迁移、8/26 DesignTrace 痕迹外部化 + Ontological Boundaries 本体论边界、8/24 metacognitive-support-agents 支持/生成二分、8/22 AdaLens 共享表征 + Taxonomy 责任分配、8/20 Hedwig 动态自主权），今日新增把拼图进一步收拢：**认知卸载的代价（四维循环）× 认知监督的操作化（三大支柱 + 共享上下文）× 认知角色的迁移（生产→验证）**。下个采集周期建议关注：\n\n- \"cognitive offloading / scaffold vs substitute / desirable difficulties + AI\"——跟踪 Käser（EPFL ML4ED）与 Oliver（ELLIS Alicante）后续，看四维框架是否被实证检验\n- \"cognitive oversight / shared cognitive context / process-transparent agents\"——跟踪 Pengfei Liu（上交大）与 opensii.ai 后续，判断\"认知监督\"是否从系统展示走向经同行评议的 Full Paper\n- \"AI as challenger / reflection-oriented scaffolding\"——把\"挑战型脚手架\"与\"脚手架而非替代\"并置，看能否合流成课题\"AI 反思伙伴\"的完整设计参数集\n- 一条给三位采集员的共同提醒（重申 + 新增）：(1) \"载体身份\"必须主动、准确标注——Full Paper / Extended Abstracts（EA，海报/WIP 类，与 Full Paper 审稿体量不同）/ 预印本 / Accepted-but-not-published / 设计博客 / 厂商自陈，这是质量门槛第一道关，今日惠篇正因\"EA 误标为正刊\"被更正；(2) 商业研究团队（opensii.ai、大厂 lab）的系统论文，务必区分\"自建基准自证\"与\"第三方独立验证\"；(3) 设计博客/厂商自陈类材料可作\"例证\"但不可作\"采集对象\"，若要采必须落到有同行评议的实证研究上。\n\n## 数据完整性观察\n\n今日三份提议均通过去重检查：dedup_check.py 对野蔷薇篇 arXiv 2608.17451 与标题两路比对均返回 [OK] 无重复；对惠篇 DOI 10.1145/3772363.3798906、arXiv 2507.15759 与标题三路比对均返回 [OK] 无重复。两篇入选论文均已通过外部核验为真实存在：野蔷薇篇确为 arXiv 2608.17451（标题、作者 Lucile Favero / Juan Antonio Pérez-Ortiz / Tanja Käser / Nuria Oliver、提交日期 2026-08-18、cs.HC 分类，摘要与\"49 篇 IB 议论文、80% 报告减少思考、scaffold-do-not-substitute、四维度认知/能动性/情绪/伦理\"描述一致，经 arXiv 页面核验）；惠篇 arXiv 完整版确为 2507.15759（cs.CL，2025-07-21，26 位作者），CHI 版经 Crossref 核验为 Extended Abstracts（CHI EA '26，2026-04-13 发表，13 位作者，标题与 arXiv 版不同、含 \"Multi-Agent Deep Research System\" 字样）——**此处与提议\"Proceedings of the 2026 CHI Conference 正刊\"的表述不符，已更正为 EA 并体现在收录记录中**。悠仁篇为设计博客（Mantlr + Beryl Design），无学术标识，属载体门槛放弃。三采集员标记（.yujin-done / .bara-done / .megumi-done）均已存在，五条悟标记 .gojo-done 本次执行前未存在、为首轮执行。无历史缺口复现，无需额外上报。",
+    "excerpt": "来源：records/20260829/09/five-daily-summary/五条悟-汇总.md · 入选 2 篇，放弃 1 篇。",
+    "file_name": "五条悟-汇总.md",
+    "source_dir": "records/20260829/09/five-daily-summary",
+    "original_url": "https://doi.org/10.1145/3772363.3798906",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-08-28 11:00",
     "title": "KNIT: Computational Boundary Objects for Real-Time Convergence in Interdisciplinary Teams",
