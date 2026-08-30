@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>全部记录</title>
-    <meta name="description" content="源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1348 条。">
+    <meta name="description" content="源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1353 条。">
     <meta property="og:title" content="全部记录 - 研究所">
-    <meta property="og:description" content="源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1348 条。">
+    <meta property="og:description" content="源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1353 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">全部记录</h1>
-        <p class="sidebar-summary">源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1348 条。</p>
+        <p class="sidebar-summary">源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1353 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>全部记录</strong>
-                <span>源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1348 条。</span>
+                <span>源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1353 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,8 +79,68 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "全部记录", "subtitle": "源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1348 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "全部记录", "subtitle": "源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1353 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-08-30 11:00",
+    "title": "MetaEmbody: Supporting Embodied Metaphor Ideation for Tangible Interaction Design",
+    "content": "- 载体：Proceedings of the 2026 Designing Interactive Systems Conference（DIS 2026 正刊，proceedings-article，2026-06-12 发表）\n- 链接：https://doi.org/10.1145/3800645.3812967\n\n## 一、核心论点\n\n论文主张具身隐喻（embodied metaphor）——把抽象功能锚定到熟悉的身体动作与经验，是实体交互（tangible interaction）设计的核心方法，但设计师、尤其是新手，在识别具身隐喻、超越表面类比、将其转化为可落地的实体交互概念时存在系统性困难。作者据此构建 MetaEmbody，一个支持具身隐喻构思（ideation）的 AI 辅助系统，帮助设计师完成\"情境类比→具身隐喻→实体交互概念\"的推导链。论文的深层立场是：生成式 AI 在设计中的应用长期停留在\"视觉隐喻混合\"层面，尚未触及交互意义与体验的探索，MetaEmbody 的目标正是把 AI 的参与推进到交互意义的深度生成。\n\n## 二、背景与动机\n\n动机来自理论需求与实践缺口的错位。概念隐喻理论（Conceptual Metaphor Theory）认为意义并非抽象的符号操作，而是通过身体与环境的交互经验生成——抽象功能被锚定到熟悉的身体动作（如\"抓取\"\"推拉\"\"称重\"）从而获得可理解性，这使具身隐喻天然成为实体交互设计的思想工具。然而现实中的 GenAI 设计工具（如文本生成图像、视觉隐喻混合）输出的是线性文本或视觉结果，与设计认知的身体化、非线性、情境化本质存在结构性错配，鲜有工具直接支持\"从具身隐喻出发构思实体交互\"这一环节。作者通过形成性研究确认了这种缺口的真实代价——尤其压在新手设计师身上，他们缺乏把抽象概念迁移到具身交互的成熟策略。\n\n## 三、方法与过程\n\n论文采用\"形成性研究定位困难 → 系统设计 → 对照用户研究\"的完整链路。第一步，形成性研究（N=10）识别出设计师在具身隐喻构思中的三类典型困难：难以识别合适的具身隐喻、难以超越表面类比（surface analogy）、难以把隐喻转化为具体的实体交互概念。第二步，据此构建 MetaEmbody，其界面围绕三个能力组织：探索情境类比、推导具身隐喻、塑造成实体交互概念，把原本依赖设计师经验迁移的隐性过程显性化、结构化。第三步，对照用户研究（N=20）评估该系统在激发具身思维、提升结果新颖性与可行性、改善人-AI 协作体验上的效果，并区分新手与经验设计师的收益差异。\n\n## 四、主要发现\n\n发现集中在两方面。其一，效果层面，MetaEmbody 在激发具身思维、提升设计结果的新颖性与可行性、改善人-AI 协作体验上均表现出正向效果，且对新手设计师的收益最大——说明系统的价值不在替代专家判断，而在补足新手尚未建立的具身隐喻迁移能力。其二，范式层面，论文用实证支撑了一个设计立场：生成式 AI 的应用价值可以从\"视觉隐喻混合\"推进到\"交互意义与体验的深度探索\"，AI 参与设计认知的合理位置是作为类比推理的脚手架，显性化设计师自己尚难完成的迁移步骤，而非直接产出最终方案。方法论上，\"形成性研究→系统设计→对照用户研究\"的完整闭环，也为 AI 设计工具的评估提供了一个规范范本。\n\n## 五、局限性（自主判断）\n\n需直言几处局限。其一，样本规模与来源：N=20 的用户研究（叠加 N=10 的形成性研究）体量偏小，且来自上海交大单一机构的设计语境，具身隐喻的\"有效性\"是否跨文化、跨设计领域成立，外推受限。其二，评估指标偏软：新颖性、可行性、协作体验多为自设问卷或主观评分，\"具身隐喻构思是否真的产出了更好的实体交互\"缺少客观的结果性测量（如成品的可用性、用户的体验质量），\"新颖\"与\"有效\"之间的鸿沟未被严格检验。其三，最值得警惕的一点是\"新手收益最大\"的解读：这一结果可能恰恰说明系统在替新手完成本该由学习者自己建立的认知迁移——是脚手架（scaffold）还是替代（substitute），论文未作严格区分，而这正是课题最关心的边界问题。其四，DIS 是设计研究会议，方法论的严谨性标准与 CHI Full Paper 或认知科学期刊不同，论文的因果主张（系统→具身思维提升）在对照设计的严格程度上仍有提升空间。\n\n## 六、对你课题的启发（人-AI 协作学习、分布式认知）\n\n这篇论文对课题有三重价值。其一，理论层面，具身隐喻天然是分布式认知的近亲——它假设意义不在头脑内部完成，而是通过身体动作、材料与环境的耦合生成，MetaEmbody 的实证表明 AI 参与能显性化这种类比推理过程，直接为课题\"认知在人-AI-身体-材料之间分布\"的立场提供了设计研究一侧的实证支撑。其二，学习情境层面，\"新手设计师收益最大\"把论文精确落到了课题的研究情境——设计学习：它给出了\"AI 何时该介入设计认知\"的一个具体边界判断的素材，即当学习者尚不能自行完成具身隐喻的迁移时，AI 的类比引导是脚手架而非替代；但这一判断是否成立，恰恰需要课题去严格检验（区分脚手架与替代）。其三，交互范式层面，论文诊断出文本生成式 LLM 的线性输出与设计认知的身体化、非线性本质之间的错配，并用结构化的类比探索界面重构了这种匹配——这是\"work with AI 要匹配 AI 的工作原理\"论点在设计工具一侧的具体实例，可作为课题设计学习情境中 AI 交互范式的参照实现。",
+    "excerpt": "来源：records/20260830/11/metaembody-embodied-metaphor-ideation/论文总结.md · 作者：Peicheng Guo、Jingzhe Zhang、Huilin Shi、Heyi Xu、Zhanxun Dong（上海交通大学设计学院）",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260830/11/metaembody-embodied-metaphor-ideation",
+    "original_url": "https://doi.org/10.1145/3800645.3812967",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-08-30 11:00",
+    "title": "惠-能力进化（2026-08-30）",
+    "content": "## 今日发现\n\n选题《MetaEmbody: Supporting Embodied Metaphor Ideation for Tangible Interaction Design》是 DIS 2026 正刊论文（Designing Interactive Systems Conference，proceedings-article，DOI 10.1145/3800645.3812967，2026-06-12 发表），作者 Peicheng Guo、Jingzhe Zhang、Huilin Shi、Heyi Xu、Zhanxun Dong（上海交通大学设计学院）。论文把具身隐喻（embodied metaphor，概念隐喻理论在实体交互设计中的应用：抽象功能锚定到熟悉的身体动作）与 AI 支持系统结合：形成性研究（N=10）定位设计师——尤其新手——在识别具身隐喻、超越表面类比、转化为实体交互概念时的三类典型困难，据此构建 MetaEmbody 帮助设计师完成\"情境类比→具身隐喻→实体交互概念\"推导链，对照用户研究（N=20）证明其在激发具身思维、提升新颖性与可行性、改善人-AI 协作体验上均有效，且新手收益最大。论文的范式主张是把生成式 AI 在设计中的应用从\"视觉隐喻混合\"推进到\"交互意义与体验的深度探索\"。\n\n## 决策理由\n\n入选。五条悟评价：(1) 理论根基扎实——具身隐喻天然是分布式认知的近亲（意义通过身体-材料-环境的耦合生成），MetaEmbody 的实证表明 AI 参与能显性化这种类比推理，直接支撑课题\"认知在人-AI-身体-材料之间分布\"的立场，这是三篇提议中理论对接最严格的一篇；(2) \"新手收益最大\"把论文精确落到课题的研究情境——设计学习，并给出\"AI 何时该介入设计认知\"的边界素材：当学习者尚不能自行完成具身隐喻迁移时，AI 的类比引导是脚手架而非替代；(3) 诊断出文本生成式 LLM 线性输出与设计认知身体化、非线性本质的错配，并用结构化类比界面重构匹配，是\"work with AI 要匹配 AI 工作原理\"论点在设计工具一侧的具体实例。已标注硬局限：N=20 小样本单一机构、评估指标偏软（新颖性/可行性/体验均为自设主观评分，缺结果性测量）、\"新手收益最大\"可能是\"替代而非脚手架\"的反向解读未严格区分、DIS 非认知科学级严谨标准。与库内既有惠选题（8/27 设计师行为追踪、8/26 DesignTrace 痕迹外部化、8/24 元认知支持代理）的差异在于理论根基（具身隐喻 vs 文本生成式 GenAI 工具）与交互目标（实体交互 vs 方案生成），形成互补而非重复。\n\n## 明日方向指引\n\n沿两条线索推进。(1) \"具身认知 × AI 设计工具\"线：反向定位 \"embodied metaphor / embodied cognition in interaction design / tangible interaction + AI support\"，跟踪上海交大设计学院此团队的后续（是否扩展样本、是否进入 CHI Full Paper），并关注\"具身隐喻有效性\"是否被更客观的结果性指标（成品可用性、体验质量）检验。(2) \"脚手架 vs 替代的边界\"线：把\"新手收益最大\"这一结果与库内 8/24 metacognitive-support-agents（支持/生成二分）、8/29 substitution-to-scaffolding（脚手架而非替代）并置，作为一个可检验的课题假设——\"AI 类比引导在何种条件下是脚手架、何种条件下退化为替代\"，这正是课题\"设计学习情境中 AI 何时该介入认知\"的核心问题，值得设计成具体的研究问题。另提醒：设计研究会议（DIS）的方法论严谨度与认知科学/CHI Full Paper 不同，采编时注意区分\"设计研究的因果主张\"与\"严格实验的因果证据\"，并主动标注样本规模与指标类型（软/硬）。",
+    "excerpt": "来源：records/20260830/11/metaembody-embodied-metaphor-ideation/惠-能力进化.md · 选题《MetaEmbody: Supporting Embodied Metaphor Ideation for Tangible Interaction Design》是 DIS 2026 正刊论文（Designing Interactive Systems Conference，proceedings article，DOI 10.1145/3800645.3812967，2026 06 12 发表），作者 Peicheng Guo、Jingzhe Zhang、Huilin Shi、Heyi Xu、Zhanxun Dong（上海交通大学设计学院）。论文把具身隐喻（embodied metaphor，概念隐喻理论在实体交互设计中的应用：抽象功能锚定到熟悉的身体动作）与 AI 支持系统结合：形成性研究（N=10）定位设计师——尤其新手——在识别具身隐喻、超越表面类比、转化为实体交互概念时的三类典型困难，据此构建 MetaEmbody 帮助设计师完成\"情境类比→具身隐喻→实体交互概念\"推导链，对照用户研究（N=20）证明其在激发具身思维、提升新颖性与可行性、改善人 AI 协作体验上均有效，且新手收益最大。论文的范式主张是把生成式 AI 在设计中的应用从\"视觉隐喻混合\"推进到\"交互意义与体验的深度探索\"。",
+    "file_name": "惠-能力进化.md",
+    "source_dir": "records/20260830/11/metaembody-embodied-metaphor-ideation",
+    "original_url": "https://doi.org/10.1145/3800645.3812967",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-08-30 10:00",
+    "title": "Human–AI Collaboration at Scale: Task Criticality, Agency, and Friction Across 250,000 Conversations",
+    "content": "- 载体：预印本（alphaxiv 直接托管，无标准 arXiv ID，alphaxiv 编号 2608.human-ai-collaboration-at-scale）；与 Anthropic 学术合作，系 Anthropic Insights 独立研究试点项目的三篇成果之一；2026-08 下旬发布，未上会、未同行评议\n- 链接：https://www.alphaxiv.org/abs/2608.human-ai-collaboration-at-scale\n\n## 一、核心论点\n\n论文主张我们对\"人如何在实际工作中与 AI 协作\"的理解仍停留在实验室与自陈层面，缺乏规模化、真实世界的行为证据，据此对 Claude.ai 的 249,834 条真实对话做隐私保护分析，系统回答三个问题：用户把什么工作交给 AI、人在协作中保留什么角色、协作在何处断裂。作者把整个分析收敛到一条贯穿始终的张力上——\"与 AI 协作究竟是构建人类能力（build capability），还是替代人类努力（substitute for effort）\"，并试图用大规模行为数据给出经验证据。其结论是：人主导（human-led）的协作是绝对主流，但协作是否真正增强能力，取决于用户如何参与，而非任务类型或模型能力本身。\n\n## 二、背景与动机\n\n动机来自一个结构性的数据缺口：实验室研究能测量协作的因果效应却脱离真实工作，而大厂手握最丰富的真实交互记录却极少对外部研究者开放，导致\"AI 是增强还是替代人类\"这一核心问题长期缺乏可核验的大规模证据。为此 Anthropic 启动 Anthropic Insights 试点项目，通过隐私保护工具（不暴露原始转录、仅返回聚合统计）把 Claude.ai 的真实使用数据开放给三个独立研究组——Stanford、Oxford、METR——允许其自选研究问题并发表可能与厂商立场相左的发现。本论文即 Stanford SALT lab 的产出，其立足点是：只有看到真实世界里几万人、几十万次对话中人们实际做了什么，才能判断协作在何种条件下让人更强、何种条件下让人更弱。\n\n## 三、方法与过程\n\n作者采用\"研究问题—标注框架—聚合分析\"三步。其一，任务关键性（task criticality）按三个维度评分——不可逆性（irreversibility）、外部可见性、影响（impact）——把对话分层为 ephemeral（临时）/ operational（操作）/ consequential（后果性）/ high-stakes（高风险）四档，并映射到九大领域。其二，人的能动性采用 Human Agency Scale（HAS，源自 Shao et al. 2025）从 H1（AI 独立行动）到 H5（人完全控制）量化人在每段对话中保留的控制与责任程度。其三，摩擦（friction）分析区分来源——用户侧（欠说明、对抗性意图）、模型侧（能力局限、幻觉）与复合型（双方叠加）——并追踪用户是否、以及如何从摩擦中恢复。所有标注均在 Anthropic Insights 的隐私保护框架内完成，研究者只接触聚合统计而非原始对话。\n\n## 四、主要发现\n\n发现分四层。其一，任务关键性上，用户交给 AI 的远不止琐事：56% 的可评估对话达到 consequential 及以上层级（ephemeral 20%、operational 24%、consequential 44%、high-stakes 12%），高关键性任务集中在法律金融（TCI 2.14）、商业与职业支持（1.75/1.70）等咨询与专业领域，对话长度从临时任务到高风险任务近翻倍（1.91×，6.5→12.4 轮）。其二，能动性上，人主导协作占 72%（H4 层级，\"人主导、AI 辅助\"），AI 自主模式（H1+H2）仅 18.2%，且任务类型并不决定能动性——同一类任务内部跨越完整的能动性谱系，说明用户是逐对话地主动构建自己的控制程度。其三，AI 教学（AI teaching）出现在 67% 的对话中，遍布所有主要领域，但\"这种教学是构建真实理解还是认知卸载\"取决于用户如何参与，收益分布不均。其四，摩擦出现在 49.7% 的对话中，但常是生产性的（导向澄清、修正或学习），78.7% 含摩擦的对话里用户会主动尝试恢复，只是不同恢复策略的有效性差异显著。\n\n## 五、局限性（自主判断）\n\n需直言几处局限。其一，载体身份最关键：这是 alphaxiv 直接托管的预印本，无标准 arXiv 编号、未上会、未经同行评议，且系 Anthropic 资助/合作的成果，数据由厂商平台提供并经过其隐私审查——即便试点设计允许发表不利于厂商的结论，\"厂商平台数据 + 厂商隐私审查\"这一结构本身决定了外部研究者无法独立复核原始标注，研究独立性与可复现性受限（第三方报道亦指出：隐私审查循环导致外部研究者无法像内部团队那样快速迭代问题，每次新数据集都需重新过审）。其二，样本边界窄：仅覆盖 Claude.ai 单一平台、约两个月窗口（2026 年 4–5 月）的被选对话，无法外推到其他产品、地区或任务形态，且\"AI teaching 收益不均\"这一核心判断建立在对用户参与方式的观察分类上，并未真正测量学习结果——\"构建理解 vs 认知卸载\"的区分仍是分类器的推断而非认知层面的证据。其三，聚合统计掩盖了对话内部的动态过程，\"用户通过 prompt 与迭代构建 agency\"的机制（究竟是何种 prompt 策略、何种迭代节奏在起作用）在聚合层面不可见。其四，HAS 量表沿用 Shao et al. 2025 的既有框架，其 H1–H5 的编码信度与边界在此大规模、跨领域语料上的适用性未在本论文内独立检验。\n\n## 六、对你课题的启发（人-AI 协作学习、分布式认知）\n\n这篇论文与课题的核心问题直接对话，且证据体量是课题现有文献中最大的。其一，它的中心张力——\"build capability vs substitute for effort\"——正是课题\"人-AI 协作学习\"要回答的那个问题的经验化表述：认知在人与 AI 之间如何分布，才不至于让协作变成能力的净流失。其二，Human Agency Scale（H1–H5）与 Task Criticality 三维度（不可逆性/外部可见性/影响）提供了一套可直接操作的分析框架，可用来审视设计学习情境中学习者在不同任务、不同阶段保留了多少认知控制——这比抽象的\"认知分布\"概念更可测量，可作为课题方法论的现成工具。其三，\"AI teaching 出现在 67% 对话但收益不均、取决于用户如何参与\"的发现，直接支持课题的立场——协作质量取决于交互设计与参与方式，而非模型能力本身，与\"work with AI 要匹配 AI 的工作原理\"论点同向；而\"生产性摩擦\"与\"恢复策略有效性差异显著\"则提示：学习情境中不应消除所有摩擦，而应设计能导向澄清与反思的摩擦，并教给学习者有效的恢复策略，这是课题可进一步检验的具体设计假设。",
+    "excerpt": "来源：records/20260830/10/human-ai-collaboration-at-scale/论文总结.md · 作者：Yijia Shao、Dora Zhao、Vishakh Padmakumar、Jennifer Wang、Diyi Yang（Stanford University，Social and Language Technologies Lab）",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260830/10/human-ai-collaboration-at-scale",
+    "original_url": "https://www.alphaxiv.org/abs/2608.human-ai-collaboration-at-scale",
+    "original_label": "原文",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-08-30 10:00",
+    "title": "野蔷薇-能力进化（2026-08-30）",
+    "content": "## 今日发现\n\n选题《Human–AI Collaboration at Scale: Task Criticality, Agency, and Friction Across 250,000 Conversations》是 Stanford SALT lab（Yijia Shao、Dora Zhao、Vishakh Padmakumar、Jennifer Wang、Diyi Yang）与 Anthropic 学术合作的预印本（alphaxiv 托管，无标准 arXiv ID，编号 2608.human-ai-collaboration-at-scale），系 Anthropic Insights 独立研究试点项目三篇成果之一（另两篇来自 Oxford、METR）。论文对 Claude.ai 的 249,834 条真实对话做隐私保护分析，回答\"用户把什么工作交给 AI、人在协作中保留什么角色、协作在何处断裂\"三问，收敛到核心张力\"build capability vs substitute for effort\"。关键数据：56% 可评估对话达 consequential 层级（ephemeral 20%/operational 24%/consequential 44%/high-stakes 12%），高关键性集中在法律金融（TCI 2.14）等咨询与专业领域；72% 对话为 H4 层级（人主导、AI 辅助，HAS 量表），AI 自主模式仅 18.2%；AI teaching 出现在 67% 对话但收益取决于用户参与方式；friction 出现在 49.7% 对话且常是生产性的，78.7% 含摩擦对话用户会主动恢复但策略有效性差异大。\n\n## 决策理由\n\n入选。五条悟评价：(1) 这是课题现有文献中证据体量最大的一篇——25 万条真实对话，非实验室情境，直接以经验数据回应\"AI 是增强还是替代人类能力\"这一课题核心问题，其中心张力\"build capability vs substitute for effort\"正是课题\"人-AI 协作学习\"问题的经验化表述；(2) Human Agency Scale（H1–H5）与 Task Criticality 三维度（不可逆性/外部可见性/影响）是可操作、可测量的分析框架，可直接用于审视设计学习情境中\"认知在人与 AI 之间如何分布\"，比抽象概念更落地；(3) \"AI teaching 收益取决于参与方式\"与\"生产性摩擦\"两个发现，与课题\"work with AI 要匹配 AI 的工作原理\"立场同向。已标注硬局限：预印本未上会未同行评议、厂商平台数据 + 厂商隐私审查的结构性独立性问题、单一平台两个月窄样本、\"能力构建 vs 认知卸载\"是分类器推断而非认知测量、聚合统计掩盖对话内部动态、HAS 量表跨领域信度未在本论文内独立检验。与库内 8/29 野蔷薇篇（substitution-to-scaffolding 认知卸载四维循环）形成直接对话：那篇给出\"认知卸载如何损害能力\"的教育侧理论框架，本篇给出\"人-AI 协作中能力构建 vs 替代\"的大规模行为证据，二者一理论一实证，共同支撑课题\"认知分布边界\"这一支柱。\n\n## 明日方向指引\n\n沿两条线索推进。(1) \"能力构建 vs 努力替代\"线：跟踪 Stanford SALT lab（Diyi Yang / Yijia Shao）的后续——注意 Anthropic Insights 试点项目是否扩展、本篇是否进入同行评议（CHI/CSCW 投稿），并关注同期产出的姊妹研究（Oxford 组的\"human oversight\"、METR 组的\"coding productivity\"、以及 Shao 的 Coco proactive co-assistant 工作）；反向定位 \"Human Agency Scale / task criticality / human-AI collaboration at scale\" 的实证文献，与库内 8/29 substitution-to-scaffolding、8/27 deskilling 并置，看\"认知卸载的代价\"与\"能力构建的边界\"能否合流。(2) \"生产性摩擦\"线：反向定位 \"productive friction / desirable difficulties in human-AI interaction / recovery strategies\"，这是本篇抛出但未深挖的新概念，可能是课题\"学习情境中如何设计摩擦与恢复\"的一个具体切入口。另提醒：本方向预印本占比高，务必主动标注\"预印本/未同行评议\"身份，并区分\"厂商平台自证\"与\"第三方独立验证\"——Anthropic Insights 试点虽允许发表不利结论，但数据与隐私审查均由厂商掌控，研究独立性需持续警惕。",
+    "excerpt": "来源：records/20260830/10/human-ai-collaboration-at-scale/野蔷薇-能力进化.md · 选题《Human–AI Collaboration at Scale: Task Criticality, Agency, and Friction Across 250,000 Conversations》是 Stanford SALT lab（Yijia Shao、Dora Zhao、Vishakh Padmakumar、Jennifer Wang、Diyi Yang）与 Anthropic 学术合作的预印本（alphaxiv 托管，无标准 arXiv ID，编号 2608.human ai collaboration at scale），系 Anthropic Insights 独立研究试点项目三篇成果之一（另两篇来自 Oxford、METR）。论文对 Claude.ai 的 249,834 条真实对话做隐私保护分析，回答\"用户把什么工作交给 AI、人在协作中保留什么角色、协作在何处断裂\"三问，收敛到核心张力\"build capability vs substitute for effort\"。关键数据：56% 可评估对话达 consequential 层级（ephemeral 20%/operational 24%/consequential 44%/high stakes 12%），高关键性集中在法律金融（TCI 2.14）等咨询与专业领域；72% 对话为 H4 层级（人主导、AI 辅助，HAS 量表），AI 自主模式仅 18.2%；AI teaching 出现在 67% 对话但收益取决于用户参与方式；friction 出现在 49.7% 对话且常是生产性的，78.7% 含摩擦对话用户会主动恢复但策略有效性差异大。",
+    "file_name": "野蔷薇-能力进化.md",
+    "source_dir": "records/20260830/10/human-ai-collaboration-at-scale",
+    "original_url": "",
+    "original_label": "",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-08-30 09:00",
+    "title": "五条悟-汇总（2026-08-30）",
+    "content": "## 今日采集决议\n\n**入选 2 篇，放弃 1 篇。**\n\n### 入选篇目\n\n**1. 野蔷薇：Stanford SALT lab × Anthropic 预印本 — Human-AI Collaboration at Scale（25 万条真实对话的\"能力构建 vs 努力替代\"证据）**\n- 论文：Yijia Shao、Dora Zhao、Vishakh Padmakumar、Jennifer Wang、Diyi Yang（Stanford University，Social and Language Technologies Lab），\"Human–AI Collaboration at Scale: Task Criticality, Agency, and Friction Across 250,000 Conversations\"（alphaxiv 预印本，编号 2608.human-ai-collaboration-at-scale，2026-08 下旬发布，未上会未同行评议；系 Anthropic Insights 独立研究试点项目三篇成果之一）。\n- 入选理由：课题现有文献中证据体量最大的一篇——对 Claude.ai 的 249,834 条真实对话做隐私保护分析，以经验数据回应\"AI 是增强还是替代人类能力\"。其中心张力\"build capability vs substitute for effort\"正是课题\"人-AI 协作学习\"问题的经验化表述。Human Agency Scale（H1–H5）+ Task Criticality 三维度（不可逆性/外部可见性/影响）是可操作、可测量的分析框架；\"AI teaching 出现在 67% 对话但收益取决于参与方式\"与\"生产性摩擦 + 恢复策略有效性差异\"两个发现，直接支持课题\"work with AI 要匹配 AI 工作原理\"的立场。已标注硬局限：预印本未同行评议、厂商平台数据+厂商隐私审查的结构性独立性问题、单平台两个月窄样本、\"能力构建 vs 认知卸载\"是分类器推断而非认知测量。\n\n**2. 惠：DIS 2026 正刊 — MetaEmbody（具身隐喻 × AI 设计工具，落到设计学习情境）**\n- 论文：Peicheng Guo、Jingzhe Zhang、Huilin Shi、Heyi Xu、Zhanxun Dong（上海交通大学设计学院），\"MetaEmbody: Supporting Embodied Metaphor Ideation for Tangible Interaction Design\"（Proceedings of the 2026 Designing Interactive Systems Conference，DIS 2026 正刊，DOI 10.1145/3800645.3812967，2026-06-12）。\n- 入选理由：三篇提议中理论对接最严格的一篇。具身隐喻天然是分布式认知的近亲（意义通过身体-材料-环境耦合生成），MetaEmbody 的实证表明 AI 参与能显性化类比推理过程，直接支撑课题\"认知在人-AI-身体-材料之间分布\"的立场；\"新手收益最大\"把论文精确落到课题的设计学习情境，给出\"AI 何时该介入设计认知\"的边界素材；诊断出 LLM 线性输出与设计认知身体化、非线性的错配，是\"work with AI 匹配 AI 工作原理\"在设计工具一侧的具体实例。已标注硬局限：N=20 小样本单一机构、评估指标偏软缺结果性测量、\"新手收益最大\"可能是\"替代而非脚手架\"的反向解读未严格区分。\n\n### 放弃篇目\n\n**悠仁：Labubu 盲盒混合开盒体验（CHI EA 2026 海报类）**\n- 放弃原因：属\"关联度 + 载体\"双线放弃。(1) 关联度上，PAC 框架（pacing-agency-co-presence）与\"可配置悬念\"本身是有价值的产品交互分析，但它与课题\"人-AI 协作学习\"的关联停留在类比层面（\"即时揭示 vs 延迟满足\"类比到\"AI 即时输出 vs 过程可见\"的张力），而非可对话的理论机制——这是牵附而非咬合，且本篇没有任何 AI 组件，AI 相关度为零，无法进入\"人-AI 协作\"的证据链。(2) 载体上，经 Crossref 核验，本对象为 CHI 2026 Extended Abstracts（EA，海报/WIP 类，2026-04-13），非 Full Paper，审稿与体量与正刊不同，作为学术站采集对象分量偏轻。\n- 反馈：悠仁\"拆解真实商业产品的交互决策\"这个采集嗅觉本身很好——从一个真实产品（Pop Mart Pop Now）出发提炼可迁移设计原则，是\"产品 feature 级交互分析\"的正确姿态。问题不在嗅觉，在落点。建议改造：(1) 若想保留\"悬念/节奏/揭示仪式\"这一理论角度，应反向定位有 Full Paper 分量的 \"suspense / delayed gratification / reveal mechanics / pacing in interaction design\" 实证文献（CHI/DIS 正刊或 arXiv），把 Labubu/Pop Now 作为其中一条设计案例去引，而非把 EA 海报本身当采集对象；(2) 若想对接课题的人-AI 关联，应明确寻找\"悬念结构在 AI 产品中的设计应用\"（如 AI 生成过程的可视化节奏、延迟揭示与信任构建），让\"即时输出 vs 过程可见\"从类比升级为可检验的设计研究问题。\n\n## 方向指引\n\n今日两篇入选构成\"宏观证据\"与\"微观机制\"的互补，并与库内既有证据链自然拼接：\n\n- **野蔷薇（Human-AI Collaboration at Scale）**：提供\"人-AI 协作中能力构建 vs 努力替代\"的宏观行为证据——25 万对话、HAS 能动性量表、Task Criticality 三维度、生产性摩擦，对应课题\"认知分布边界\"的经验层面（认知在人与 AI 之间如何分布才不导致能力净流失）。\n- **惠（MetaEmbody）**：提供\"AI 介入设计认知的边界\"的微观机制——具身隐喻的显性化、新手收益最大、线性输出 vs 身体化认知的错配，对应课题\"设计学习情境中 AI 何时该介入\"的设计层面。\n\n两者并置，加上库内已有线索（8/29 substitution-to-scaffolding 认知卸载四维循环 + interaction-as-intelligence 认知监督范式、8/27 Designers Sweat 认知角色迁移、8/26 DesignTrace 痕迹外部化、8/24 metacognitive-support-agents 支持/生成二分），今日新增把拼图进一步收拢：**能力构建 vs 替代的宏观证据（25 万对话）× AI 介入设计认知的微观边界（脚手架 vs 替代）× 认知卸载的代价（四维循环）× 认知监督的操作化（三大支柱）**。下个采集周期建议关注：\n\n- \"Human Agency Scale / task criticality / human-AI collaboration at scale\"——跟踪 Stanford SALT lab（Diyi Yang / Yijia Shao）后续，看 Anthropic Insights 试点是否扩展、本篇是否进入同行评议，并关注同期姊妹研究（Oxford 组 human oversight、METR 组 coding productivity、Shao 的 Coco proactive co-assistant）\n- \"productive friction / desirable difficulties / recovery strategies in human-AI interaction\"——本篇抛出但未深挖的概念，可能是课题\"学习情境中如何设计摩擦与恢复\"的具体切入口\n- \"embodied cognition / embodied metaphor + AI design tools\"——跟踪上海交大设计学院团队，看具身隐喻有效性是否被更客观的结果性指标检验\n- 一条给三位采集员的共同提醒（重申 + 新增）：(1) \"载体身份\"必须主动、准确标注——Full Paper / Extended Abstracts（EA，海报/WIP 类）/ 预印本 / Accepted-but-not-published，这是质量门槛第一道关，今日悠仁篇正因\"EA 未主动标注\"被放弃；(2) 预印本、尤其厂商平台合作的预印本（如 Anthropic Insights），务必区分\"厂商平台自证\"与\"第三方独立验证\"，研究独立性需持续警惕；(3) 与课题的关联必须是\"可对话的理论机制\"而非\"类比/隐喻层面的牵附\"——若一篇论文的 AI 相关度为零、只能靠类比搭到\"人-AI 协作\"上，它就不该进入本课题的证据链，除非采集者能把它升级为可检验的设计研究问题。\n\n## 数据完整性观察\n\n今日三份提议均通过去重检查（各提议备注已注明 dedup_check.py --title 通过，无历史重复）。五条悟进一步做了外部核验：惠篇 DOI 10.1145/3800645.3812967 经 Crossref 核验为真实存在——Proceedings of the 2026 Designing Interactive Systems Conference（DIS 2026 正刊，proceedings-article，2026-06-12 发表），作者 Peicheng Guo / Jingzhe Zhang / Huilin Shi / Heyi Xu / Zhanxun Dong 与提议一致，载体标注准确；悠仁篇 DOI 10.1145/3772363.3798946 经 Crossref 核验为真实存在——Proceedings of the Extended Abstracts of the 2026 CHI Conference（CHI EA，2026-04-13），确认载体为 Extended Abstracts 而非 Full Paper；野蔷薇篇 alphaxiv 页（2608.human-ai-collaboration-at-scale）可访问，全文关键数据与提议描述吻合（249,834 对话、56% consequential、72% H4、67% AI teaching、49.7% friction、78.7% 恢复），并经第三方新闻（LavX）佐证系 Anthropic Insights 试点项目三成果之一（Stanford / Oxford / METR，2026 年 4–5 月数据），作者 Yijia Shao / Dora Zhao / Vishakh Padmakumar / Jennifer Wang / Diyi Yang 与提议一致。三采集员标记（.yujin-done / .bara-done / .megumi-done）均已存在，五条悟标记 .gojo-done 本次执行前未存在、为首轮执行。无历史缺口复现，无需额外上报。",
+    "excerpt": "来源：records/20260830/09/five-daily-summary/五条悟-汇总.md · 入选 2 篇，放弃 1 篇。",
+    "file_name": "五条悟-汇总.md",
+    "source_dir": "records/20260830/09/five-daily-summary",
+    "original_url": "https://doi.org/10.1145/3800645.3812967",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-08-29 11:00",
     "title": "Interaction as Intelligence: Deep Research With Human-AI Partnership（Deep Cognition 系统）",
