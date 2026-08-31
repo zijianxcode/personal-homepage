@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>全部记录</title>
-    <meta name="description" content="源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1353 条。">
+    <meta name="description" content="源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1358 条。">
     <meta property="og:title" content="全部记录 - 研究所">
-    <meta property="og:description" content="源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1353 条。">
+    <meta property="og:description" content="源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1358 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">全部记录</h1>
-        <p class="sidebar-summary">源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1353 条。</p>
+        <p class="sidebar-summary">源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1358 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>全部记录</strong>
-                <span>源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1353 条。</span>
+                <span>源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1358 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,8 +79,68 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "全部记录", "subtitle": "源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1353 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "全部记录", "subtitle": "源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1358 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-08-31 11:00",
+    "title": "Understanding Human–Multi-Agent Team Formation for Creative Work",
+    "content": "- 载体：CHI 2026 正刊（Proceedings of the 2026 CHI Conference on Human Factors in Computing Systems，DOI 10.1145/3772318.3791166，2026-04-13）；arXiv 2601.13865（cs.HC）\n- 链接：https://doi.org/10.1145/3772318.3791166 ｜ https://arxiv.org/abs/2601.13865\n\n## 一、核心论点\n\n论文主张\"如何组建人类-多智能体团队（Human–Multi-Agent Team，HMAT）以支持创造性工作\"是一个被严重低估的设计问题，并用实证研究给出一个反直觉的答案：虽然参与者最初倾向让智能体自主协作，最终却普遍转向由人类直接编排（orchestrate）智能体的队形——因为智能体之间的自主循环缺乏价值判断与方向设定能力，容易陷入无产出的空转。这一发现直接挑战了\"多智能体越自主越好\"的默认假设，把人类在 HMAT 中的角色从\"旁观者/发起者\"重新定位为\"编排者\"，并据此提炼出可操作的团队组建设计考量。全文落点是：技术已能让多个 AI 智能体各司其职，但\"如何组建这支队伍\"本身才是决定协作有无产出的关键设计问题。\n\n## 二、背景与动机\n\n动机来自两条线的交汇。其一是现实需求：团队协作是现代创造性工作的基石，而生成式 AI 的进步使\"人与多个扮演不同角色的 AI 智能体协作\"成为可能，这为复杂创意工作流打开了新空间。其二是风险与空白：智能体之间的交互会显著增加系统的复杂度与意外行为风险，而\"团队组建\"——有意识地组织团队结构、角色分配与交互协议——比单人机协作多了整整一个设计维度，却几乎没有实证研究探索人在真实场景下如何组建 HMAT。作者据此提出，现有 HCI 研究多聚焦\"单个 AI 助手\"或\"自主多智能体系统\"，中间\"人类组建并编排一支混合团队\"的地带被漏掉了。\n\n## 三、方法与过程\n\n作者采用探索性研究设计，构建 CrafTeam 技术探针（technology probe），允许用户自主组建团队并与团队协作。研究对象是 12 名当前在 IT 公司设计团队工作的设计从业者，每人参与约三小时的研究，围绕一个三步循环迭代：组建 HMAT → 与团队共同构思 → 反思团队的构思。分析框架沿团队组建的五个关键维度展开——团队规模、结构、角色分配、成员构成、共享心智模型——据此观察参与者如何配置自己的多智能体队伍、在何种情况下从自主协作转向人工编排，以及背后的判断理由。技术探针的开放式设计让\"自主 vs 编排\"的张力自然浮现，而非被预设的任务强行规定。\n\n## 四、主要发现\n\n发现分三层。其一，编排优于自主：参与者最初尝试让智能体自主运作，但最终普遍转向由人类直接编排智能体的队形，核心原因是智能体间的自主循环缺乏价值判断与方向设定，产生大量无产出的空转。其二，五维组建框架：研究揭示人类在组建 HMAT 时实际会配置团队规模、结构、角色分配、成员构成与共享心智模型五个维度，这些维度共同决定了协作质量，是设计 HMAT 组建界面的核心抓手。其三，三条设计方向：作者讨论如何打破无产出循环（人类编排）、如何支持可扩展的人类编排（从用户视角支持多方通信）、以及如何通过迭代精炼实现与人对齐的渐进式团队演化——把\"人如何有效编排多个智能体\"从观察提炼为设计议程。\n\n## 五、局限性（自主判断）\n\n需直言几处局限。其一，探索性定位与规模：N=12 且集中于 IT 设计从业者单一群体，无对照组、无操纵，属描述性探索，只能提出方向而不能做因果推断，\"编排优于自主\"应被理解为这一人群在这一工具下的倾向而非普遍规律。其二，时长与生态效度不足：三小时单次会话无法观察团队在真实长周期工作流中的演化，也无法检验\"渐进式团队演化\"这条设计方向是否真能落地。其三，工具混杂效应未分离：CrafTeam 特定界面与智能体能力的实现很可能塑造了\"自主 vs 编排\"的偏好——智能体不够强、通信界面不够顺，都可能把参与者推向人工编排，结论对工具实现高度敏感。其四，产出质量未客观测量：\"空转\"\"无产出\"的判定主要依赖参与者反思与自陈，缺少对构思质量、产出数量的量化指标，价值判断这一核心概念本身也未操作化。\n\n## 六、对你课题的启发（人-AI 协作学习、分布式认知）\n\n多智能体是认知分布的极端形态，这篇论文为你的分布式认知框架补上了一块关键的机制证据。其一，\"人类编排优于自主空转\"的发现说明：智能体可以分布式地执行生成任务，但价值判断与方向设定这一层认知——在学习情境中对应目标设定、自我调节与元认知监控——难以被智能体承接，必须保留在人类一侧，这为\"认知分布在谁身上、人类以何种角色参与\"划出了一条清晰的边界。其二，五维团队组建框架（规模/结构/角色分配/成员构成/共享心智模型）与三轮反思迭代的研究设计，可直接迁移为你评估\"学习者在学习情境中如何编排多个 AI 工具/智能体\"的实验框架，尤其是\"共享心智模型\"维度，与你\"work with AI 要匹配 AI 的工作原理\"的立场同向——学习者需要被显式地教会如何编排，而非默认他们自动会编排。其三，它提示一个可检验的设计假设：在学习情境中引入多智能体时，应把\"人类编排\"设计为显式的元认知活动，并检验这种编排是否比\"让 AI 自主组队\"更有利于学习者的目标设定与自我调节能力建构。",
+    "excerpt": "来源：records/20260831/11/human-multi-agent-team-formation/论文总结.md · 作者：Hyunseung Lim、Dasom Choi、Sooyohn Nam、Bogoan Kim、Hwajung Hong（KAIST）",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260831/11/human-multi-agent-team-formation",
+    "original_url": "https://doi.org/10.1145/3772318.3791166",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-08-31 11:00",
+    "title": "惠-能力进化（2026-08-31）",
+    "content": "## 今日发现\n\n选题为 KAIST（Hyunseung Lim、Dasom Choi、Sooyohn Nam、Bogoan Kim、Hwajung Hong）的 CHI 2026 正刊论文，经 Crossref 核实正式标题为《Understanding Human–Multi-Agent Team Formation for Creative Work》（DOI 10.1145/3772318.3791166，2026-04-13，arXiv 2601.13865）——注意：提议中所写标题\"Building Human–Multi-Agent Teams for Creative Works\"是转述，非正式标题，五条悟已按 Crossref 正刊题名纠正。论文用 CrafTeam 技术探针对 12 名在 IT 公司设计团队工作的设计从业者做三小时研究，围绕\"组建 HMAT → 共同构思 → 反思\"三轮循环，核心发现反直觉：参与者最初倾向让智能体自主协作，最终普遍转向由人类直接编排（orchestrate）智能体队形，因为智能体间自主循环缺乏价值判断与方向设定，产生无产出的空转。论文提炼出团队组建的五维设计考量（规模、结构、角色分配、成员构成、共享心智模型），并给出三条设计方向：打破无产出循环（人类编排）、支持可扩展的人类编排（多方通信）、渐进式团队演化（迭代精炼）。\n\n## 决策理由\n\n入选。五条悟评价：(1) 多智能体是认知分布的极端形态，本文为课题\"分布式认知\"框架补上了关键机制证据——智能体可分布式执行生成任务，但\"价值判断与方向设定\"这一层认知（对应学习中的目标设定、自我调节）难以被智能体承接，必须保留在人类一侧，\"人类编排优于自主空转\"为\"认知分布在谁身上、人类以何种角色参与\"划出了清晰边界；(2) 五维团队组建框架 + 三轮反思迭代的研究设计，可直接迁移为评估\"学习者在学习情境中如何编排多个 AI 工具\"的实验框架，\"共享心智模型\"维度与课题\"work with AI 要匹配 AI 的工作原理\"立场同向；(3) 落在 HCI+AI 交叉与设计研究两个维度的交汇点，与课题\"设计学习情境\"高度对口，且 CHI 2026 正刊 + KAIST 权重高。数据完整性核验：DOI 经 Crossref 确认（proceedings-article，CHI 2026 正刊），作者名单与提议一致；但标题经 Crossref/arXiv 双源核实为\"Understanding Human–Multi-Agent Team Formation for Creative Work\"而非提议所写\"Building...\"，属转述标题、非伪造，已纠正并提醒见下。\n\n## 明日方向指引\n\n沿两条线索推进。(1) \"人类编排多智能体\"线：跟踪 KAIST 团队（Hwajung Hong / Hyunseung Lim）后续，看是否将探索性发现推向因果设计（对照组比较\"自主 vs 编排\"对产出质量的影响）或落到更长期的真实工作流；反向定位 \"human-in-the-loop multi-agent / orchestration / human oversight of agent teams\" 文献，尤其 CHI/CSCW/UIST 上关于\"人在多智能体系统中的控制与价值判断\"的实证，与库内 8/30 human-ai-collaboration-at-scale 的 Human Agency Scale（H1–H5 能动性）并置，看\"编排\"能否被操作化为一个可测量的能动性层级。(2) \"价值判断无法外包\"线：本篇与今日野蔷薇篇（认知卸载侵蚀独立辨别）在深处同源——都指向\"存在一层人类必须自己承担、不可卸载给 AI 的认知\"，反向定位 \"human values / goal-setting / self-regulation in AI-assisted learning\" 文献，这可能是课题\"设计学习情境中哪些认知可分布、哪些不可分布\"的正面清单来源。",
+    "excerpt": "来源：records/20260831/11/human-multi-agent-team-formation/惠-能力进化.md · 选题为 KAIST（Hyunseung Lim、Dasom Choi、Sooyohn Nam、Bogoan Kim、Hwajung Hong）的 CHI 2026 正刊论文，经 Crossref 核实正式标题为《Understanding Human–Multi Agent Team Formation for Creative Work》（DOI 10.1145/3772318.3791166，2026 04 13，arXiv 2601.13865）——注意：提议中所写标题\"Building Human–Multi Agent Teams for Creative Works\"是转述，非正式标题，五条悟已按 Crossref 正刊题名纠正。论文用 CrafTeam 技术探针对 12 名在 IT 公司设计团队工作的设计从业者做三小时研究，围绕\"组建 HMAT → 共同构思 → 反思\"三轮循环，核心发现反直觉：参与者最初倾向让智能体自主协作，最终普遍转向由人类直接编排（orchestrate）智能体队形，因为智能体间自主循环缺乏价值判断与方向设定，产生无产出的空转。论文提炼出团队组建的五维设计考量（规模、结构、角色分配、成员构成、共享心智模型），并给出三条设计方向：打破无产出循环（人类编排）、支持可扩展的人类编排（多方通信）、渐进式团队演化（迭代精炼）。",
+    "file_name": "惠-能力进化.md",
+    "source_dir": "records/20260831/11/human-multi-agent-team-formation",
+    "original_url": "https://doi.org/10.1145/3772318.3791166",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-08-31 10:00",
+    "title": "Dialogues with AI Reduce Beliefs in Misinformation but Build No Lasting Discernment Skills",
+    "content": "- 载体：CHI 2026 正刊（Proceedings of the 2026 CHI Conference on Human Factors in Computing Systems，DOI 10.1145/3772318.3790656，2026-04-13）；arXiv 2510.01537（cs.HC，v2 为 CHI 2026 接收版）\n- 链接：https://doi.org/10.1145/3772318.3790656 ｜ https://arxiv.org/abs/2510.01537\n\n## 一、核心论点\n\n论文主张把\"AI 交互能否降低错误信念\"与\"AI 交互能否教会人独立的辨别技能\"这两个常被混为一谈的问题强行分开，并给出一个反直觉的答案：与 AI 的对话能即时纠正人对虚假信息的信念，却无法建立持久的独立辨别技能——即时纠正甚至可能因 AI 的劝说式设计而制造对 AI 的依赖，进而侵蚀学习者独立辨别能力的长期走向。作者用\"信念改变\"（belief change）与\"技能留存\"（skill retention）两个维度把结论钉死：前者在辅助会话内立竿见影，后者在撤掉 AI 后随时间线性退化。这一区分正是全文的方法论支点，也是它对\"AI 教育\"讨论最有价值的一击。\n\n## 二、背景与动机\n\n动机来自一个真实的紧迫性：随着 AI 生成假新闻越来越逼真，训练人们自己评估和检测虚假信息变得刻不容缓，而\"让 AI 帮人辨伪\"被寄予厚望。此前研究已经证明与 AI 的交互能\"持久地\"降低人对错误信息的信念（即信念层面有效），但从未回答一个更根本的问题——这些交互是否同时教会了人自己辨别虚假信息的技能（即能力层面是否留存）。作者正是抓住这个缺口，指出\"AI 帮你改对了这一次\"与\"AI 让你以后自己能改对\"是两回事，前者被大量研究证实，后者几乎无人测量。这一动机把研究从\"AI 作为纠错工具的效果\"升级到\"AI 作为教学工具是否建构了可迁移能力\"。\n\n## 三、方法与过程\n\n作者设计了一个为期一个月（四周）的纵向受控实验，67 名被试对新闻标题-图片对做真伪分类，流程分三段循环：先与 AI 系统讨论自己的评估，随后在无 AI 协助下评估未见过的新闻条目，以测量辅助前、辅助中、辅助后的准确率。核心设计是\"辅助会话内表现\"与\"独立迁移表现\"的分开测量——前者测 AI 在场时的即时收益，后者测 AI 不在场时技能是否留存。除准确率外，作者还对对话行为做轨迹分析，编码人的主动质疑（probing）、被动同意（agreement）与独立思考（independent thinking）三类行为的比例随时间的变化，并据此识别出五条不同的学习轨迹（learning trajectory patterns），从而把\"技能是否留存\"从单一的准确率指标扩展到\"学习者在对话中如何参与\"的过程指标。\n\n## 四、主要发现\n\n发现分三层。其一，即时收益稳健：辅助会话内的准确率显著高于辅助前，四周平均提升约 +21.3 个百分点（第 0 周 +22.4、第 2 周 +15.3、第 4 周 +26.1），且逐周稳健。其二，技能留存崩塌：撤掉 AI 后，被试独立评估新条目的表现随时间显著下降，第 4 周比第 0 周基线低 15.3 个百分点——即用满一个月 AI 后，人独立辨伪的能力非但没被教会，反而比开始前更差。其三，机制层的\"依赖悖论\"：对话行为轨迹显示，人对 AI 的被动同意比例从 23.0% 升至 28.5%，而独立思考稳定在约 7% 的低位，主动质疑行为整体下降，呈现\"越用越依赖\"；在五条轨迹中，占比 27% 的\"进步型学习者\"（Progressive Learners，n=18）从最初怀疑 AI 逐渐滑向对 AI 建立信心，自评能力提升、实测却下降——AI 的劝说式方法制造了\"虚假自信\"（false confidence），却没有建构独立评估所需的批判性思维技能。\n\n## 五、局限性（自主判断）\n\n需直言几处局限。其一，任务边界窄：\"辨别技能\"的测量被局限于\"新闻标题-图片对真伪分类\"这一单一任务，结论能否外推到更广义的批判性思维、信息素养或真实生活里的信息消费行为，本文并未检验——把\"辨别虚假新闻\"直接等同为\"独立辨别能力\"是一次概念上的压缩。其二，时长不足：四周足以看见退化趋势，但不足以判断更长期的走向——能力是否会在某处触底反弹、或进入平台期，仍需更长的纵向设计。其三，混杂变量未分离：研究使用的是某一套具有劝说式设计风格的 AI 系统，\"AI 辅助本身\"与\"AI 的劝说式交互设计\"各自的效应无法拆开——若换成更中立、更强调学习者主导的 AI 设计，结果可能显著不同，而这恰恰是结论能否普适的关键。其四，N=67 规模中等，且自评与实测的背离虽被作者漂亮地转化为发现，却也提醒自陈报告在测量学习收益上不可靠，而客观指标本身同样依赖任务设计的合理性与迁移效度。\n\n## 六、对你课题的启发（人-AI 协作学习、分布式认知）\n\n这篇论文是你课题\"认知卸载的代价\"这一支柱迄今最直接的因果证据。其一，它正面回答\"AI 在任务中即时承担辨别认知（替代），学习者自身技能是否被建构\"——答案是否定的，甚至被侵蚀（-15.3pp），这为分布式认知里\"认知一旦从人身上卸载到工具上，人的那一份可能永久流失\"提供了时间序列层面的受控实验证据，与库内 8/29 substitution-to-scaffolding（教育侧理论框架）、8/30 human-ai-collaboration-at-scale（25 万对话的宏观行为证据）恰好拼成\"理论—宏观—因果\"三段证据链。其二，它给出可直接迁移到设计学习情境的研究变量——\"即时表现 vs 独立迁移表现\"的前测/中测/后测对照、对话中\"提问/同意/独立思考\"比例的轨迹分析，这两套工具可直接改造为你评估\"学习者在 AI 辅助设计中是否被真正教会设计判断\"的实验设计。其三，\"进步型学习者\"的自评-实测背离是一条方法论警示：学习者在 AI 劝说式交互下会高估自己的成长，因此你课题里任何\"学习者自我报告学习收益\"的结论都必须配客观行为指标校验，这与你坚持线上/线下一致、数据完整性优先的立场完全一致。",
+    "excerpt": "来源：records/20260831/10/dialogues-ai-misinformation-discernment/论文总结.md · 作者：Anku Rani、Valdemar Danry、Paul Pu Liang、Andrew Lippman、Pattie Maes（MIT Media Lab，Fluid Interfaces Group）",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260831/10/dialogues-ai-misinformation-discernment",
+    "original_url": "https://doi.org/10.1145/3772318.3790656",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-08-31 10:00",
+    "title": "野蔷薇-能力进化（2026-08-31）",
+    "content": "## 今日发现\n\n选题《Dialogues with AI Reduce Beliefs in Misinformation but Build No Lasting Discernment Skills》是 MIT Media Lab Fluid Interfaces Group（Anku Rani、Valdemar Danry、Paul Pu Liang、Andrew Lippman、Pattie Maes）的 CHI 2026 正刊论文（DOI 10.1145/3772318.3790656，2026-04-13，arXiv 2510.01537）。论文做了一项为期一个月（四周）、67 名被试的纵向受控实验，核心是把\"AI 交互能否降低错误信念\"与\"AI 交互能否教会独立辨别技能\"两个问题强行分开测量：辅助会话内即时准确率平均提升约 +21.3 个百分点（W0 +22.4 / W2 +15.3 / W4 +26.1，逐周稳健），但撤掉 AI 后独立评估新条目的表现随时间显著退化，第 4 周比基线低 15.3 个百分点。机制层证据尤其尖锐：对 AI 的被动同意比例从 23.0% 升至 28.5%，独立思考稳定在约 7% 低位，主动质疑行为下降；五条学习轨迹中，占比 27% 的\"进步型学习者\"（Progressive Learners，n=18）自评能力提升、实测却下降——AI 的劝说式设计制造了\"虚假自信\"，却未建构独立批判性思维。\n\n## 决策理由\n\n入选。五条悟评价：(1) 这是课题\"认知卸载的代价\"这一支柱迄今最直接的因果证据——用受控纵向设计回答了\"AI 即时承担辨别认知（替代）后，学习者自身技能是否被建构\"，答案是\"没有，甚至被侵蚀（-15.3pp）\"，把库内 8/29 substitution-to-scaffolding（教育侧理论框架）与 8/30 human-ai-collaboration-at-scale（25 万对话宏观行为证据）补上了\"理论—宏观—因果\"的第三环，三段证据链至此合拢；(2) 可操作性强——\"即时表现 vs 独立迁移表现\"的前测/中测/后测对照、\"提问/同意/独立思考\"比例的轨迹分析，两套变量可直接改造为设计学习情境中\"学习者是否被真正教会设计判断\"的实验设计；(3) \"进步型学习者\"的自评-实测背离是一条方法论警示，直接支撑课题\"主观报告不可信、需客观行为指标\"的立场。数据完整性核验：DOI 经 Crossref 确认（proceedings-article，CHI 2026 正刊），作者名单与提议一致（Rani/Danry/Liang/Lippman/Maes），全文关键数字经 arXiv HTML 全文核实（+21.3pp、-15.3pp、23.0%→28.5%、~7%、27% Progressive Learners）与提议吻合。与库内 7/6 已收的操纵性对话预测（信念会变）不同，本篇聚焦技能是否留存（信念变了、技能没留下），是同一张力下的进阶。\n\n## 明日方向指引\n\n沿两条线索推进。(1) \"认知卸载代价\"的因果证据线：继续跟踪 Fluid Interfaces Group（Pattie Maes / Valdemar Danry / Paul Pu Liang）的后续——该组持续产出 AI 认知增强方向，关注其是否将\"即时表现 vs 独立迁移\"的对照范式扩展到其他认知任务（写作、设计、编程），以及\"虚假自信 / false confidence\"这一概念是否被进一步操作化；同时反向定位 \"deskilling / cognitive offloading / scaffold vs substitute\" 的因果实验文献，与库内 8/27 deskilling、8/29 substitution-to-scaffolding 并置，看\"认知卸载的代价\"能否收敛成一套可复用测量范式。(2) \"劝说式设计制造依赖\"线：本篇把机制归因于\"AI 的劝说式（persuasive）设计\"，这是可深挖的设计变量——反向定位 \"persuasive design / nudge / conversational design in AI assistants\" 与\"反依赖的 AI 交互设计\"（如让 AI 少给结论、多提问、显式暴露推理），这可能是课题\"学习情境中 AI 如何避免制造依赖、转而建构学习者自身调节\"的具体设计切入口。",
+    "excerpt": "来源：records/20260831/10/dialogues-ai-misinformation-discernment/野蔷薇-能力进化.md · 选题《Dialogues with AI Reduce Beliefs in Misinformation but Build No Lasting Discernment Skills》是 MIT Media Lab Fluid Interfaces Group（Anku Rani、Valdemar Danry、Paul Pu Liang、Andrew Lippman、Pattie Maes）的 CHI 2026 正刊论文（DOI 10.1145/3772318.3790656，2026 04 13，arXiv 2510.01537）。论文做了一项为期一个月（四周）、67 名被试的纵向受控实验，核心是把\"AI 交互能否降低错误信念\"与\"AI 交互能否教会独立辨别技能\"两个问题强行分开测量：辅助会话内即时准确率平均提升约 +21.3 个百分点（W0 +22.4 / W2 +15.3 / W4 +26.1，逐周稳健），但撤掉 AI 后独立评估新条目的表现随时间显著退化，第 4 周比基线低 15.3 个百分点。机制层证据尤其尖锐：对 AI 的被动同意比例从 23.0% 升至 28.5%，独立思考稳定在约 7% 低位，主动质疑行为下降；五条学习轨迹中，占比 27% 的\"进步型学习者\"（Progressive Learners，n=18）自评能力提升、实测却下降——AI 的劝说式设计制造了\"虚假自信\"，却未建构独立批判性思维。",
+    "file_name": "野蔷薇-能力进化.md",
+    "source_dir": "records/20260831/10/dialogues-ai-misinformation-discernment",
+    "original_url": "https://doi.org/10.1145/3772318.3790656",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-08-31 09:00",
+    "title": "五条悟-汇总（2026-08-31）",
+    "content": "## 今日采集决议\n\n**入选 2 篇，放弃 1 篇。**\n\n### 入选篇目\n\n**1. 野蔷薇：MIT Media Lab × CHI 2026 正刊 — 与 AI 对话能减少错误信念、却建不起持久的辨别技能（\"认知卸载代价\"的因果证据）**\n- 论文：Anku Rani、Valdemar Danry、Paul Pu Liang、Andrew Lippman、Pattie Maes（MIT Media Lab，Fluid Interfaces Group），\"Dialogues with AI Reduce Beliefs in Misinformation but Build No Lasting Discernment Skills\"（CHI 2026 正刊，DOI 10.1145/3772318.3790656，2026-04-13；arXiv 2510.01537）。\n- 入选理由：课题\"认知卸载的代价\"这一支柱迄今最直接的因果证据。四周、67 人的纵向受控实验把\"即时纠正信念\"与\"建立持久技能\"强行分开——辅助会话内准确率平均 +21.3pp（逐周稳健），但撤掉 AI 后独立表现第 4 周比基线低 15.3pp；对话轨迹显示同意比例 23.0%→28.5%、独立思考稳定在约 7% 低位，\"进步型学习者\"（27%）自评提升实测下降。与库内 8/29 substitution-to-scaffolding（理论框架）、8/30 human-ai-collaboration-at-scale（25 万对话宏观证据）拼成\"理论—宏观—因果\"三段证据链；\"即时 vs 迁移\"对照与\"自评-实测背离\"直接支撑课题\"客观指标优先\"立场。\n\n**2. 惠：KAIST × CHI 2026 正刊 — 人类-多智能体团队的组建（\"价值判断不可卸载\"的机制证据）**\n- 论文：Hyunseung Lim、Dasom Choi、Sooyohn Nam、Bogoan Kim、Hwajung Hong（KAIST），\"Understanding Human–Multi-Agent Team Formation for Creative Work\"（CHI 2026 正刊，DOI 10.1145/3772318.3791166，2026-04-13；arXiv 2601.13865）。\n- 入选理由：多智能体是认知分布的极端形态，本文为课题\"分布式认知\"框架补上关键机制证据——12 名设计从业者经 CrafTeam 探针三轮迭代后，从\"让智能体自主协作\"普遍转向\"人类直接编排\"，因为智能体间自主循环缺乏价值判断与方向设定、产生无产出的空转。五维团队组建框架（规模/结构/角色分配/成员构成/共享心智模型）+ 三轮反思迭代设计，可直接迁移为评估\"学习者如何编排多个 AI\"的实验框架，\"共享心智模型\"与课题\"work with AI 匹配 AI 工作原理\"同向。\n\n### 放弃篇目\n\n**悠仁：Discord 改版设计批评（Codexical 博客，非同行评议）**\n- 放弃原因：属\"载体 + AI 相关度\"双线放弃。(1) 载体上，这是 Codexical 设计批评博客文章，非同行评议学术文献，无 DOI、无会议身份，作为学术站采集对象分量不足（比上次悠仁的 CHI EA 海报更弱，本次连会议载体都没有）。(2) AI 相关度上，Discord 2025 桌面改版本身零 AI 组件，与课题\"人-AI 协作学习\"的关联只能靠类比——把\"交互成本 vs 视觉设计\"双轴迁移到\"AI 学习工具评估\"，这是牵附而非咬合，无法进入\"人-AI 协作\"的证据链。\n- 反馈：悠仁的采集嗅觉本身是对的——\"高频用户完成习惯性动作的秒数（交互成本）与截屏可见的视觉设计是两条不同度量轴\"是一个有价值的设计方法论洞察，\"按频率分层度量\"\"两种人群不可合并\"的论点也站得住。问题不在嗅觉，在落点。(1) 若想保留\"交互成本/两条度量轴/肌肉记忆绑定像素位置\"这一理论角度，应反向定位有 Full Paper 分量的 \"interaction cost / micro-efficiency / expert vs novice users / redesign evaluation\" 实证文献（CHI/DIS 正刊或 arXiv），把 Discord 改版作为其中一条设计案例去引，而非把博客本身当采集对象。(2) 若想对接课题的人-AI 关联，应明确寻找\"AI 产品改版/迁移对既有用户认知分布与肌肉记忆的破坏\"这类真实研究对象（如 AI 学习工具或 IDE 的改版研究），让\"认知分布重建需要过渡期预算\"从类比升级为可检验的设计研究问题。\n\n## 方向指引\n\n今日两篇入选在深处同源，构成一个非常漂亮的互补，并与库内证据链自然拼接：\n\n- **野蔷薇（Dialogues with AI...）**：提供\"认知卸载的代价\"的因果证据——AI 即时替代辨别认知后，学习者独立技能非但没被建构、反被侵蚀（-15.3pp），且劝说式设计制造虚假自信。对应课题\"认知分布在人-AI 之间如何分布才不导致能力净流失\"的因果层面。\n- **惠（Human–Multi-Agent Team Formation）**：提供\"价值判断不可卸载\"的机制证据——智能体可分布式执行生成，但方向设定这一层认知必须保留在人类一侧（人类编排优于自主空转）。对应课题\"认知分布边界\"的设计层面。\n\n两者并置，加上库内已有线索（8/30 human-ai-collaboration-at-scale 宏观证据 + MetaEmbody 微观边界、8/29 substitution-to-scaffolding 四维循环 + interaction-as-intelligence 认知监督、8/27 deskilling 与 Designers Sweat、8/26 DesignTrace、8/24 metacognitive-support-agents），今日新增把拼图进一步收拢到一个贯穿问题：**存在一层人类必须自己承担、不可卸载给 AI 的认知——它既包括辨别的技能（野蔷薇：卸载即流失），也包括价值判断与方向设定（惠：外包即空转）。** 下个采集周期建议关注：\n\n- \"认知卸载/deskilling/scaffold-vs-substitute 的因果实验\"——跟踪 Fluid Interfaces Group（Maes/Danry/Liang）后续，看\"即时表现 vs 独立迁移\"对照范式是否扩展到其他认知任务，并与库内 8/29、8/27 并置，收敛成一套可复用测量范式\n- \"human-in-the-loop multi-agent / orchestration / human oversight\"——跟踪 KAIST（Hong/Lim）后续，看\"编排\"能否被操作化为可测量的能动性层级（与 8/30 Human Agency Scale H1–H5 并置）\n- \"persuasive design / conversational design 如何制造依赖 vs 反依赖的 AI 交互设计\"——野蔷薇篇归因于\"劝说式设计\"，是课题\"学习情境中 AI 如何避免制造依赖、转而建构学习者自身调节\"的具体设计切入口\n- 一条给三位采集员的共同提醒（重申 + 新增）：(1) 载体身份必须主动、准确标注（Full Paper / EA 海报 / 预印本 / 博客或媒体文章），博客/媒体类非同行评议文本按学术站标准分量不足，今日悠仁篇正因\"博客载体 + 零 AI 组件\"被放弃；(2) 标题必须是正式题名、逐字准确，不得转述或自行概括——今日惠篇提议标题\"Building Human–Multi-Agent Teams for Creative Works\"与实际正刊题名\"Understanding Human–Multi-Agent Team Formation for Creative Work\"不符，五条悟经 Crossref 纠正，今后请一律以 Crossref/出版页为准填写；(3) 与课题的关联必须是\"可对话的理论机制\"而非\"类比/隐喻层面的牵附\"——若一篇文本的 AI 相关度为零、只能靠类比搭到\"人-AI 协作\"上，它就不该进入本课题的证据链，除非采集者能把它升级为可检验的设计研究问题。\n\n## 数据完整性观察\n\n今日三份提议均通过去重检查（dedup_check.py --title 均返回 [OK] 无历史重复）。五条悟进一步做了外部核验：野蔷薇篇 DOI 10.1145/3772318.3790656 经 Crossref 核验为真实存在——Proceedings of the 2026 CHI Conference（proceedings-article，2026-04-13 发表），作者 Anku Rani / Valdemar Danry / Paul Pu Liang / Andrew Lippman / Pattie Maes 与提议一致，载体标注准确；arXiv 2510.01537（v2，CHI 2026 接收版）可访问，全文关键数字经 HTML 全文核实与提议吻合（+21.3pp 平均提升、第 4 周 -15.3pp、同意比例 23.0%→28.5%、独立思考 ~7%、Progressive Learners n=18/27%）。惠篇 DOI 10.1145/3772318.3791166 经 Crossref 核验为真实存在——Proceedings of the 2026 CHI Conference（proceedings-article，2026-04-13），作者 Hyunseung Lim / Dasom Choi / Sooyohn Nam / Bogoan Kim / Hwajung Hong 与提议一致，但**正式题名经 Crossref 与 arXiv 双源核实为 \"Understanding Human–Multi-Agent Team Formation for Creative Work\"，非提议所写 \"Building Human–Multi-Agent Teams for Creative Works\"**，属转述标题，五条悟已在总结与能力进化文件中按正刊题名纠正，并提醒惠今后以出版页为准。三采集员标记（.yujin-done / .bara-done / .megumi-done）均已存在，五条悟标记 .gojo-done 本次执行前未存在、为首轮执行。无历史缺口复现，无需额外上报。",
+    "excerpt": "来源：records/20260831/09/five-daily-summary/五条悟-汇总.md · 入选 2 篇，放弃 1 篇。",
+    "file_name": "五条悟-汇总.md",
+    "source_dir": "records/20260831/09/five-daily-summary",
+    "original_url": "https://doi.org/10.1145/3772318.3790656",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-08-30 11:00",
     "title": "MetaEmbody: Supporting Embodied Metaphor Ideation for Tangible Interaction Design",
