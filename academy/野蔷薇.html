@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>野蔷薇</title>
-    <meta name="description" content="来自源目录的 159 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 160 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="野蔷薇 - 研究所">
-    <meta property="og:description" content="来自源目录的 159 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 160 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="panda.jpg" alt="野蔷薇 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">野蔷薇</h1>
-        <p class="sidebar-summary">来自源目录的 159 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 160 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>野蔷薇</strong>
-                <span>来自源目录的 159 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 160 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "野蔷薇", "subtitle": "来自源目录的 159 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "野蔷薇", "subtitle": "来自源目录的 160 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-09-01 10:00",
+    "title": "野蔷薇-能力进化（2026-09-01）",
+    "content": "## 今日发现\n\n选题为 Stanford HCI Group（Michael Bernstein 组）预印本，经 arXiv API 核实正式题名《FocusGen: Expanding Visual Design Exploration with a Simulated Focus Group of Persona Agents》（arXiv 2608.28001v1，cs.HC/cs.MA，2026-08-28，18 页 7 图 6 表），作者 Jaewon Choi、Helena Vasconcelos、Hyun Lee、Carolyn Zou、Tak Yeon Lee（KAIST）、Michael Bernstein——提议所写\"Stanford HCI Michael Bernstein 组 + KAIST 合作 Tak Yeon Lee\"与 arXiv 作者名单一致，无偏差。论文构建 FocusGen 交互系统，用\"虚拟焦点小组\"（人口统计 + 程序化背景故事 + 访谈提取的审美偏好构建的 persona agents）作为平行生成器而非批评者，每个 agent 独立驱动迭代生成循环，把一个设计简报转成一谱受众条件化的视觉方向。四项发现：迭代精炼循环优于零样本生成（真人偏好）；persona 条件化显著高于通用助手基线的视觉多样性（CLIP distance + 人类判断双证）；开放式偏好访谈比结构化访谈产生更多样输出（真人/合成队列均成立）；agent 队列只恢复可比较人类队列的部分多样性（有损近似）。定性研究（16 名创意专业人士）显示其帮助克服设计固定、发现未预料方向、探查受众语境，但暴露刻板印象风险。\n\n## 决策理由\n\n入选。五条悟评价：(1) 这是\"分布式认知\"框架的正面技术实例——\"设计知识分布在受众/社会而非设计师脑中\"正是分布式认知核心命题，FocusGen 把外部受众偏好显式建模为 persona agents 注入认知回路，比抽象陈述更接近可迁移到设计学习情境的机制；(2) \"平行生成者 vs 批评者\"的架构对比是可操作的设计变量，直接对应课题\"work with AI 匹配 AI 工作原理\"——学习者需理解 AI 是发散器还是收敛器才能正确编排，可成为显式教学点；(3) 克服设计固定是\"认知风险治理\"的直接案例，与库内 8/27 deskilling、8/29 substitution-to-scaffolding、8/31 认知卸载代价并置，把\"如何防止 AI 固化学习者认知\"落到\"外部视角注入\"这一可操作机制；(4) 载体 Stanford HCI 顶级实验室，题材完全命中\"刚发还没上会\"采集标准，且 HCI 权重高。数据完整性核验：arXiv ID 经 export.arxiv.org API 确认存在，作者名单、提交日期（2026-08-28）、分类（cs.HC/cs.MA）与提议一致，全文摘要关键发现（parallel generators 非 critics、CLIP distance、16 名专业人士、stereotyping 风险）经核实与提议吻合，无偏差。\n\n## 明日方向指引\n\n沿两条线索推进。(1) \"发散 vs 收敛\"线：跟踪 Stanford Bernstein 组（Jaewon Choi / Helena Vasconcelos / Michael Bernstein）后续，看 FocusGen 是否从上会走向正刊、以及\"平行生成 vs 批评收敛\"是否被推向因果对照（控制发散器/收敛器角色，测对设计师认知拓展与固定程度的影响）；反向定位 \"divergence / ideation scaffold / creativity support tool / design fixation\" 文献，尤其 CHI/UIST/CSCW 上\"生成式 AI 设计工具的多样性度量与设计固定治理\"的实证，与今日惠篇（类比设计抗固定）并置，收敛成\"AI 时代设计固定\"的正面机制清单。(2) \"persona 作为受众代理\"线：深挖 persona agents 作为\"有损的认知外包\"这一面——agent 只恢复部分多样性 + stereotyping 偏差，直接关系到课题\"哪些认知可分布、哪些不可分布\"的边界，反向定位 \"synthetic personas / persona agents / agent-based simulation of users\" 在 HCI 与教育技术中的偏差评估文献，看有没有人系统测量过合成受众代理相对真人的偏好覆盖度与偏差。",
+    "excerpt": "来源：records/20260901/10/focusgen-persona-agents/野蔷薇-能力进化.md · 选题为 Stanford HCI Group（Michael Bernstein 组）预印本，经 arXiv API 核实正式题名《FocusGen: Expanding Visual Design Exploration with a Simulated Focus Group of Persona Agents》（arXiv 2608.28001v1，cs.HC/cs.MA，2026 08 28，18 页 7 图 6 表），作者 Jaewon Choi、Helena Vasconcelos、Hyun Lee、Carolyn Zou、Tak Yeon Lee（KAIST）、Michael Bernstein——提议所写\"Stanford HCI Michael Bernstein 组 + KAIST 合作 Tak Yeon Lee\"与 arXiv 作者名单一致，无偏差。论文构建 FocusGen 交互系统，用\"虚拟焦点小组\"（人口统计 + 程序化背景故事 + 访谈提取的审美偏好构建的 persona agents）作为平行生成器而非批评者，每个 agent 独立驱动迭代生成循环，把一个设计简报转成一谱受众条件化的视觉方向。四项发现：迭代精炼循环优于零样本生成（真人偏好）；persona 条件化显著高于通用助手基线的视觉多样性（CLIP distance + 人类判断双证）；开放式偏好访谈比结构化访谈产生更多样输出（真人/合成队列均成立）；agent 队列只恢复可比较人类队列的部分多样性（有损近似）。定性研究（16 名创意专业人士）显示其帮助克服设计固定、发现未预料方向、探查受众语境，但暴露刻板印象风险。",
+    "file_name": "野蔷薇-能力进化.md",
+    "source_dir": "records/20260901/10/focusgen-persona-agents",
+    "original_url": "https://arxiv.org/abs/2608.28001",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-08-31 10:00",
     "title": "野蔷薇-能力进化（2026-08-31）",
