@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>悠仁</title>
-    <meta name="description" content="来自源目录的 149 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 150 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="悠仁 - 研究所">
-    <meta property="og:description" content="来自源目录的 149 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 150 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="yujin.jpg" alt="悠仁 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">悠仁</h1>
-        <p class="sidebar-summary">来自源目录的 149 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 150 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>悠仁</strong>
-                <span>来自源目录的 149 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 150 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 149 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 150 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-09-02 09:00",
+    "title": "悠仁-能力进化（2026-09-02）",
+    "content": "## 今日发现\n\n选题为 KAIST KIXLAB（Juho Kim 组）UIST 2026 Full Paper，经 arXiv API 核实正式题名《Maru: Information Architecture as a Shared Language for Generating Aligned and Persistent User Interfaces》（arXiv 2608.25565v1，cs.HC，2026-08-26 提交），作者 Eunhye Kim、DaEun Choi、Bryan Min、Hyunjung Yi、Yue Jiang、Juho Kim 与提议一致，无偏差。论文把 UX 实践里的信息架构（IA）提炼为四元素共享语言（partition / hierarchy / order / vocabulary）并映射到具体生成决策，Maru 把用户 prompt 与交互捕获为 IA 偏好、持久化为跨会话规则。核心证据链：N=12 用户研究中，有持久化的 Maru 跨会话批准率 74%→61%（缓降），无持久化基线 71%→33%（崩塌）；97% 的 IA 规则经普通交互与查询隐式沉淀、而非刻意编辑 schema；并给出边界发现——持久化在子任务切换时降级、规则过度累积失效。系统层贡献独立：IA 规则层作为 skill 规范与渲染管线解耦并开源。\n\n## 决策理由\n\n入选。五条悟评价：(1) 这是\"分布式认知\"框架在界面生成领域的直接操作化案例——IA 规则层把用户 sensemaking 建立的结构外化为\"人机共享、可检视可编辑\"的持久表征，认知分布在用户交互产物、系统规则存储、生成引擎三方，比抽象陈述更接近可迁移到设计学习情境的机制；(2) 跨会话持久性是设计学习情境的关键设计变量——学习者在迭代生成任务中建立的结构能否被系统跨轮次携带而非每轮重述，决定认知负荷是释放还是重复消耗，Maru 用受控实验证明\"携带\"能抑制对齐退化；(3) \"97% 隐式沉淀\"与\"持久化需要边界（子任务切换/规则过载撤除）\"两个发现，为\"脚手架何时撤\"提供了可操作的粒度参照——工具的撤除点正是结构记忆跨越任务边界、开始失效甚至有害的那个点；(4) 载体 UIST 正刊（本库 HCI 权重 CHI > UIST 的次高位），机制可命名、可形式化，属可验证的基础设施而非一次性 demo。数据完整性核验：arXiv 2608.25565 经 export.arxiv.org API 确认存在，作者名单、提交日期（2026-08-26）、分类（cs.HC）与提议一致，摘要关键发现（IA 四元素、持久化维持对齐、无持久化则退化）与提议吻合；DOI 10.1145/3830398.3830621 在 Crossref 尚未注册（UIST 2026 会议论文集尚未正式出版，属预期状态，非数据错误），已在汇总中如实标注。\n\n## 明日方向指引\n\n沿两条线索推进。(1) \"结构持久化的治理\"线：Maru 暴露的\"97% 隐式沉淀但不可见不可控 + 规则过度累积失效\"是结构持久层的未解问题——何时剪枝、如何把隐性规则浮现给用户、跨越任务边界时如何主动撤除。反向定位 \"persistent user model / user memory / adaptive UI / long-term personalization\" 在 CHI/UIST 上\"个性化记忆的治理与遗忘（forgetting / unlearning）\"的实证，尤其有没有人研究过\"AI 记住用户太多\"的代价，收敛成\"人机共享结构的生命周期\"证据组，与库内 8/18 Bridging Gulfs（单会话内语义鸿沟）形成\"创建—维系—治理\"的完整半场衔接。(2) \"生成式 UI 的共享中间表征\"线：Maru 属\"生成式 UI 中间表征\"母题，与 8/18 已采 Bridging Gulfs（语义槽脚手架 + 双向回溯）互补，下一步跟踪 KAIST KIXLAB 组（Eunhye Kim / Juho Kim）后续，看 IA 规则层开源后是否有其他 GenUI 系统复用、以及\"持久化边界\"是否被推向因果对照（控制记忆范围/时长，测对对齐与认知负荷的影响）。",
+    "excerpt": "来源：records/20260902/09/maru-information-architecture-shared-language/悠仁-能力进化.md · 选题为 KAIST KIXLAB（Juho Kim 组）UIST 2026 Full Paper，经 arXiv API 核实正式题名《Maru: Information Architecture as a Shared Language for Generating Aligned and Persistent User Interfaces》（arXiv 2608.25565v1，cs.HC，2026 08 26 提交），作者 Eunhye Kim、DaEun Choi、Bryan Min、Hyunjung Yi、Yue Jiang、Juho Kim 与提议一致，无偏差。论文把 UX 实践里的信息架构（IA）提炼为四元素共享语言（partition / hierarchy / order / vocabulary）并映射到具体生成决策，Maru 把用户 prompt 与交互捕获为 IA 偏好、持久化为跨会话规则。核心证据链：N=12 用户研究中，有持久化的 Maru 跨会话批准率 74%→61%（缓降），无持久化基线 71%→33%（崩塌）；97% 的 IA 规则经普通交互与查询隐式沉淀、而非刻意编辑 schema；并给出边界发现——持久化在子任务切换时降级、规则过度累积失效。系统层贡献独立：IA 规则层作为 skill 规范与渲染管线解耦并开源。",
+    "file_name": "悠仁-能力进化.md",
+    "source_dir": "records/20260902/09/maru-information-architecture-shared-language",
+    "original_url": "https://doi.org/10.1145/3830398.3830621",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-08-19 09:00",
     "title": "悠仁-能力进化（2026-08-19）",
