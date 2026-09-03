@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>论文总结</title>
-    <meta name="description" content="源目录中的论文总结，按时间倒序自动汇总。 共 420 条。">
+    <meta name="description" content="源目录中的论文总结，按时间倒序自动汇总。 共 422 条。">
     <meta property="og:title" content="论文总结 - 研究所">
-    <meta property="og:description" content="源目录中的论文总结，按时间倒序自动汇总。 共 420 条。">
+    <meta property="og:description" content="源目录中的论文总结，按时间倒序自动汇总。 共 422 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">论文总结</h1>
-        <p class="sidebar-summary">源目录中的论文总结，按时间倒序自动汇总。 共 420 条。</p>
+        <p class="sidebar-summary">源目录中的论文总结，按时间倒序自动汇总。 共 422 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>论文总结</strong>
-                <span>源目录中的论文总结，按时间倒序自动汇总。 共 420 条。</span>
+                <span>源目录中的论文总结，按时间倒序自动汇总。 共 422 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,8 +79,32 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "论文总结", "subtitle": "源目录中的论文总结，按时间倒序自动汇总。 共 420 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "论文总结", "subtitle": "源目录中的论文总结，按时间倒序自动汇总。 共 422 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-09-03 11:00",
+    "title": "InspirationGraph for Progressive Design Space Exploration",
+    "content": "> 来源：CHI 2026 主会（Proceedings of the 2026 CHI Conference on Human Factors in Computing Systems, Barcelona, 2026-04-13~17），23 页，CCBY 开放获取\n> 作者：Suxiang Ling、Yi Xiao、Yang Zhou、Ruoxuan Ma、Guangpeng Wei（湖南大学设计学院）、Chi-Sing Leung（香港城市大学）\n> DOI：10.1145/3772318.3790779\n\n## 一、核心论点\n\nInspirationGraph 提出一种支持设计早期发散式探索的文生图（T2I）交互范式：用\"维度-属性词典\"（dimension–attribute dictionary）渐进引导新手构造 prompt，并用动态可编辑的树形结构组织与导航设计空间，让发散与收敛在同一个可视结构中交替进行。它诊断了一个根本性的交互范式错配——T2I 模型的线性、一次性（one-shot）交互天然契合收敛精化阶段，却压制设计早期最重要的发散思维。其核心主张是：AI 设计工具不应替设计师思考，而应帮设计师组织思考——把模糊意图拆解为可枚举的维度与属性、把探索路径外化为可增删改的树形结构，从而把\"如何在巨大设计空间中导航\"这一专家直觉，转化为新手也能借助的外部表征。\n\n## 二、背景与动机\n\nT2I 模型生成能力强、日益进入设计流程，但其对早期探索式 ideation 的支持仍然有限。根本原因在于交互范式：线性、单轮的交互对齐的是\"已有明确方向、只差精化\"的收敛阶段，而设计早期需要的是发散、试错、平行探索多种可能性。这一错配对新手设计师伤害尤其大——他们缺乏把模糊意图翻译成高质量 prompt 的经验，也缺乏在巨大设计空间中导航的结构支撑，更容易被单轮交互牵引到过早收敛。作者聚焦产品设计领域，试图把\"结构化探索\"这一此前多依赖专家直觉的能力，转化为可外置、可复现的工具机制，从而回答\"T2I 系统如何被重新想象以更好支持早期设计\"这一开放问题。\n\n## 三、方法与过程\n\n作者提出的交互范式包含两个核心构件：其一，维度-属性词典，用于渐进式构造 prompt——把模糊的设计意图拆解为可枚举的维度（如风格、材质、功能、形态）与对应属性，引导新手逐步组合而非一次性写出整段 prompt；其二，动态可编辑的树形结构，用于组织和导航设计空间——每个节点/分支对应一条探索路径，用户可增删改节点，从而在同一可视结构中交替进行发散（扩展分支）与收敛（修剪、深入某条路径）。基于此范式实现了原型工具 InspirationGraph，聚焦产品设计领域。评估为 24 人用户研究，考察结构化探索对发散思维与认知负荷的影响，并在量表之外分析不同设计师的 ideation 模式差异，提炼可操作的设计见解。（注：ACM 全文受 Cloudflare 访问限制，方法细节基于会议摘要与 Semantic Scholar/DBLP 元数据，未能读取完整用户研究协议与具体效应量。）\n\n## 四、主要发现\n\n24 人用户研究显示，结构化探索方法（词典 + 树形空间）支持发散思维并降低认知负荷——相比线性单轮交互，新手能在词典引导下更系统地拓展设计空间、在树形结构中保留并返回多条探索路径，而非被单轮生成牵引到过早收敛。研究同时揭示设计师之间存在差异化的 ideation 模式：不同参与者在利用维度-属性与树形结构的方式上并不一致，说明探索策略并非单一，工具需要容纳多种导航路径而非强加唯一流程。结论层面，作者确立\"维度-属性词典 + 树形空间\"为可复现的交互范式答案，并给出 T2I 系统如何被重新设计以更好支持早期设计的具体见解——这一范式被作者定位为可迁移到其他 AI 生成任务的通用结构。\n\n## 五、局限性\n\n24 人规模中等且聚焦单一领域（产品设计），结论向平面、建筑、服装等其他设计领域的迁移需谨慎；\"支持发散思维\"与\"降低认知负荷\"主要依赖主观量表与行为观察，摘要未披露是否设对照基线工具（如标准 T2I 界面）及具体效应量，缺乏严格的对照量化比较；维度-属性词典的构建与领域强绑定，跨领域迁移时词典的重建成本与可泛化性未被讨论；树形结构在分支爆炸时（探索路径大量累积）的导航复杂度与视觉可扩展性，是未解决的问题；\"帮助新手\"的主张缺少与专家设计师的直接对照，因而\"缩小新手与专家的差距\"这一隐含承诺缺少直接证据支撑。\n\n## 六、对你课题的启发\n\n核心机制是认知卸载的外部表征——把发散探索中大量\"下一步往哪想\"的工作记忆负担，转交给维度-属性词典与树形结构，这是分布式认知\"把认知过程外置到工具/表征中\"的教科书式设计实例，可作为\"AI 时代认知如何在人-工具之间分布\"的实证案例。它聚焦新手设计师而非专家，直接对应你关心的设计学习情境：研究结论（新手在何种结构支持下能更好地与生成式 AI 协作发散）可为设计教育中引入 AI 工具提供直接依据。更关键的是它与站内已收录的 DesignTrace（20260826）构成精确对照——DesignTrace 管\"怎么记录走过的路\"（跟踪/回看备选路径），InspirationGraph 管\"怎么组织尚未走过的空间\"（词典+树形导航未来路径），两者合起来才是完整的 AI 设计探索支持图景；这一对照提示你课题可进一步追问一个更深的理论问题——表征的结构（线性轨迹 vs 树形空间）如何塑造认知分布与学习质量。",
+    "excerpt": "来源：records/20260903/11/inspirationgraph-progressive-design-space/论文总结.md · 来源：CHI 2026 主会（Proceedings of the 2026 CHI Conference on Human Factors in Computing Systems, Barcelona, 2026 04 13~17），23 页，CCBY 开放获取",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260903/11/inspirationgraph-progressive-design-space",
+    "original_url": "https://doi.org/10.1145/3772318.3790779",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-09-03 10:00",
+    "title": "FaciliTrain: Practicing Facilitation Skills through AI-Simulated Group Dialogue",
+    "content": "> 来源：arXiv 2607.10850v1（cs.HC，2026-07-12）｜Accepted to CSCW Poster 2026（PACMHCI，Salt Lake City）\n> 作者：Hang Jiang（Northeastern & MIT）、Yuanxin Zhu（Cornell & MIT）、Diyi Yang（Stanford）、Yoon Kim（MIT）、Deb Roy（MIT）、Jad Kabbara（MIT）\n> 链接：https://arxiv.org/abs/2607.10850\n\n## 一、核心论点\n\nFaciliTrain 主张\"用 AI 模拟多方小组对话来训练人类引导者\"，让学习者站进 facilitator 的位置，面对三个 AI 虚拟参与者实时练习五种循证引导技巧，并在每次口语回应后获得结构化、反思导向的 AI 反馈。它把\"AI 作为练习对象训练人际技能\"这条线从既有的\"一对一、文本\"推进到\"多对一、语音\"，论证了语音通道与反思式反馈在人际技能训练中的独特价值。其最深层的论点是：分类法（taxonomy）能把内隐的引导直觉外化为可命名、可反思的共享表征，而语音作为\"深思回应的强制机制\"移除了文本可编辑的安全网，迫使学习者在真实的时间压力下做出承诺——这两者共同指向一个方向：AI 训练系统不应替人完成对话，而应制造\"让内隐技能显性化、让失败可见\"的练习条件。\n\n## 二、背景与动机\n\n有效引导支撑着包容性的小组对话——在极化或跨差异情境里，引导是否得当决定了对话产出理解还是僵局。但引导训练是资源密集型的：它依赖专家教练、真实练习伙伴与迭代反馈，难以规模化。近年来 LLM 已被定位为人际技能的练习伙伴（如 Rehearsal 证明 LLM 冲突解决练习能迁移到真实世界），但这条文献有两个与引导直接相关的空白：其一，绝大多数系统针对一对一、文本交互，而小组引导要求实时管理多个声音、桥接不同视角、在时间压力下用口语回应，语音 agent 作为沟通训练伙伴尤其未被探索；其二，一条平行工作把 AI 当引导者（AI-as-facilitator）去支持小组过程，而非培养人类引导者——但最需要引导的面对面小组对话恰恰不太可能委托给 AI。作者据此提出反向路径：用 AI 训练人类引导者，因为每个受训引导者都会回到自己的社区继续支持对话，产生 AI-as-facilitator 无法复制的乘数效应。\n\n## 三、方法与过程\n\n系统架构分三层：语音接口用 OpenAI tts-1 呈现场景并采集语音；语音理解模块用 whisper-1 转录、GPT-4o 分类技巧使用；反馈生成模块产出技巧级、反思导向的反馈而非二元对错判断。训练流程五步：技巧分类法概览 → 技巧定义与示例（含专家音频示范）→ 场景回放 → 口语回应 + AI 反馈 → 推进前示范（每次可重试至多三次，之后播放专家示范）。五项技巧取自群际对话研究（Schroeder et al. 2024）：Validation（验证）、Invitation（邀请）、Modeling Examples（示范）、Ask Follow-Up Questions（追问）、Making Connections（建立联系）。研究为混合方法、IRB 批准的 24 名 MIT 社区成员两阶段设计：形成性研究 N=12（全在 AI 反馈条件）聚焦可用性，产出两处系统改进（评估从单选改多选——因为\"没有唯一正确的引导方式\"；首次成功后的二次练习改为可选）；对照 pilot N=12 随机分治疗（AI 反馈 n=6）与对照（仅自练 n=6），Zoom 60 分钟四阶段（前测问卷 5min → 五技巧训练 20min → 评估任务 15min，三个 AI persona 就移民对话主题 → 后测问卷与访谈）。60 个引导回应由两研究者独立标注（inter-rater F1=0.93，SD=0.13），组间比较用双尾 Mann-Whitney U 检验，质性用反思性主题分析（Braun & Clarke 2006）。\n\n## 四、主要发现\n\n定量上，两条件在 live 评估任务的技巧准确率相当（治疗 F1=0.63、SD=0.12 vs 对照 F1=0.64、SD=0.04，p=.75），且两条件均无显著前后自评技能提升。唯一显著的定量结果是自评舒适度的分化：治疗组舒适度下降（Δ=−0.67）而对照组上升（Δ=+0.33，p=.018，rank-biserial r=.78），但两组基线不同（治疗 M=4.33 vs 对照 M=3.00，p=.023），因果归因复杂。质性四个主题：(1) 技巧分类法把内隐引导直觉外化——所有 12 名 pilot 参与者都承认自己早已直觉地验证、邀请、连接，但从未命名或自觉部署，系统的情境内标注让\"行动—概念\"的关联变得可见（\"我经常用，但不知道它们有名字、解释和例子\"）；(2) Making Connections 是最具认知要求的技巧——它需要在工作记忆中同时持有多个先前贡献并建构跨它们的意义桥，训练日志显示它与 Modeling Examples 有最高的未通过率，参与者反复重读全文的行为只在它身上出现；(3) 语音作为深思回应的强制机制——语音移除了提交前编辑的选项，强加真实引导所需的即时承诺（\"打字时我可以边写边改，语音逼我先想清楚再说\"），10/12 参与者认可语音为恰当模态；(4) 参与者压倒性偏好 AI 反馈胜过自练——即使治疗组批评反馈准确性也不愿放弃（\"我需要反馈，否则练习还有什么意义\"），连对照组也明确要 AI 反馈而非仅自省。\n\n## 五、局限性\n\n首要约束是统计功效：每条件仅 n=6，作者自己也把 null 结果解释为\"不确定\"而非\"无差异\"，定量结论基本不成立。其次，组间基线不均衡——治疗组含 2 名 intermediate 而对照组没有，构成潜在混杂，且治疗组更高的平均经验反而让\"两条件准确率相当\"更耐人寻味，但也更难归因。第三，两条件体验的是同一 AI 模拟对话，设计只能隔离\"反馈\"这一变量的效果，无法说明 AI 模拟本身相对其他练习情境（如角色扮演、真人搭档）的价值。第四，自评舒适度下降这一最\"反直觉\"的发现，其本身就被基线差异污染（p=.023），不宜过度解读为系统疗效，最多说明\"AI 反馈让表现差距实时可见、制造不舒服的自我审视\"。此外还有：MIT 群体样本限制外部效度；无纵向追踪，技能保持与真实世界迁移未验证；8/12 参与者指出 AI 对话风格单一（\"这是 ChatGPT 在说话，不是真人\"），话轮过于干净、无抢话、无冲突动态——模拟真实性是明显短板，而真实的协商情境包含不对等发言权、既有关系与选择性信息共享，当前脚本场景尚未覆盖。\n\n## 六、对你课题的启发\n\n这篇与你\"人-AI 协作学习 + 分布式认知\"的框架几乎同构：AI 承担了\"协作对象\"的角色，把人的认知资源从应付对话中解放出来、转向元认知（引导策略的显性化与反思），是\"认知如何在人机之间分布\"的活案例。其中最直接的理论接口是\"分类法外化内隐直觉\"——它正是分布式认知外化/物化机制的具体实现：工具把隐性知识变成可命名、可反思、可在人机间往返的共享表征，从而中介学习，这与你考察\"表征如何中介设计学习情境中的协作\"一一对应。\"语音作为 deliberate-response forcing function\"则提示你：模态不是中性的，移除编辑安全网、强加即时承诺会实质改变认知负荷结构与学习质量，这在你考察设计学习情境中的模态设计时可作为直接可检验的假设。最后，\"反馈让失败显性化、让人不舒服但可能更有效\"挑战了 AI 教育系统\"让人感觉良好\"的默认假设——受训者自信下降（p=.018）恰恰说明系统暴露了真实能力差距，这与你近期关注的反直觉结果处理、以及\"脚手架该指向识别差距还是维持自信\"的边界问题高度契合。",
+    "excerpt": "来源：records/20260903/10/facilitrain-ai-simulated-group-dialogue/论文总结.md · 来源：arXiv 2607.10850v1（cs.HC，2026 07 12）｜Accepted to CSCW Poster 2026（PACMHCI，Salt Lake City）",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260903/10/facilitrain-ai-simulated-group-dialogue",
+    "original_url": "https://arxiv.org/abs/2607.10850",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-09-02 11:00",
     "title": "How Designers Envision Value-Oriented AI Design Concepts with Generative AI",
