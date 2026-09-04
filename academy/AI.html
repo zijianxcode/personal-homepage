@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI</title>
-    <meta name="description" content="基于源目录中论文总结自动汇总的 AI 相关记录。 共 422 条。">
+    <meta name="description" content="基于源目录中论文总结自动汇总的 AI 相关记录。 共 423 条。">
     <meta property="og:title" content="AI - 研究所">
-    <meta property="og:description" content="基于源目录中论文总结自动汇总的 AI 相关记录。 共 422 条。">
+    <meta property="og:description" content="基于源目录中论文总结自动汇总的 AI 相关记录。 共 423 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">AI</h1>
-        <p class="sidebar-summary">基于源目录中论文总结自动汇总的 AI 相关记录。 共 422 条。</p>
+        <p class="sidebar-summary">基于源目录中论文总结自动汇总的 AI 相关记录。 共 423 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>AI</strong>
-                <span>基于源目录中论文总结自动汇总的 AI 相关记录。 共 422 条。</span>
+                <span>基于源目录中论文总结自动汇总的 AI 相关记录。 共 423 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,8 +79,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "AI", "subtitle": "基于源目录中论文总结自动汇总的 AI 相关记录。 共 422 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "AI", "subtitle": "基于源目录中论文总结自动汇总的 AI 相关记录。 共 423 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-09-04 11:00",
+    "title": "DesignWeaver: Dimensional Scaffolding for Text-to-Image Product Design",
+    "content": "> 来源：CHI 2025 主会（Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems），Full Paper，26 页\n> 作者：Sirui Tao、Ivan Liang、Cindy Peng、Zhiqing Wang、Srishti Palani、Steven P. Dow（UC San Diego）\n> DOI：10.1145/3706598.3714211 · arXiv:2502.09867\n\n## 一、核心论点\n\nDesignWeaver 提出\"维度脚手架（dimensional scaffolding）\"这一交互范式：把资深产品设计师在探索设计空间时动用的隐性领域知识——风格、材质、几何、功能等设计维度——显性提取为一个可点选的面板（dimension palette），让新手不必凭记忆写出专业 prompt，而是通过点选维度来构造 prompt。它诊断了一个尖锐的断层：生成式 AI 让新手能快速产出\"专业感\"的视觉稿，却无法让新手\"像专家一样想\"——新手缺乏领域知识，写不出能有效探索设计空间的 prompt。其核心主张是，工具应把专家的隐性领域词汇外化为界面资源，作为新手与文生图（T2I）模型之间的脚手架，从而把\"探索设计空间\"这一专家直觉转化为新手可操作的步骤。\n\n## 二、背景与动机\n\n生成式 AI 降低了视觉产出的门槛，却暴露了能力与知识之间的错位：新手能\"看起来专业\"，却无法\"想得专业\"，其 prompt 往往狭窄、重复，无法充分探索产品设计空间。作者先做了一项 12 位资深产品设计师的形成性研究，发现专家——以及他们那些不够专业的客户——在共创讨论中更依赖视觉参考（visual references）而非书面描述来沟通设计意图，这揭示了\"专家其实是用图像而非文字来思考与沟通设计\"的工作方式。这一洞见直接导出动机：既然专家靠视觉参考，那么能否把图片中蕴含的设计维度提取出来，做成新手可操作的界面资源，从而把专家的隐性知识转化为显性脚手架。\n\n## 三、方法与过程\n\n研究分两个阶段推进。第一阶段是形成性研究：对 12 位资深产品设计师进行观察与访谈，理解专家如何探索和沟通设计空间，提炼出\"视觉参考引导共创\"的关键洞见。第二阶段据此设计并实现 DesignWeaver 原型——它从生成的图片中自动提取关键产品设计维度，呈现为一个可快速选择的维度面板（dimension palette），新手点选维度即可逐步构造 prompt。评估采用 52 位新手的对照研究，比较 DesignWeaver 与纯文本框（baseline）两种条件，测量指标包括：prompt 的长度与领域词汇量、产出产品设计的多样性（以 CLIP 相似度衡量）与创新性（以盲评专家评分衡量）。\n\n## 四、主要发现\n\n52 人研究中，DesignWeaver 让新手写出了更长、更富领域词汇的 prompt，产出了更多样（CLIP 相似度更低）且更创新（盲评专家评分更高）的产品设计。维度面板把专家的隐性领域词汇外化为可点选的资源，显著降低了新手构造高质量 prompt 的认知门槛，证明\"维度脚手架\"是可复现、可验证的交互范式。但研究同时揭示一个重要的反面发现：更精细的 prompt 抬高了参与者对 T2I 输出的预期，当模型能力跟不上这些细化预期时，反而引发了挫败感——这提示\"工具越强，越要管理预期\"的方法论警示。\n\n## 五、局限性\n\n其一，52 位新手全部聚焦产品设计单一领域，结论向平面、建筑、服装等其他设计领域的迁移需谨慎。其二，\"更多样、更创新\"部分依赖 CLIP 相似度与盲评专家的主观评分，创新性缺乏客观、可复现的量化指标，存在测量层面的模糊。其三，维度面板的维度提取依赖 T2I 生成图片的质量与维度识别机制，维度库的构建与领域强绑定，跨领域迁移需要重建成本，这一可泛化性问题未被讨论。其四，反面发现（预期管理）虽被诚实报告，但缺少针对\"如何管理预期\"的具体设计干预方案的验证。其五，研究仅比较\"维度面板 vs 纯文本框\"两种条件，未拆解维度脚手架各成分（提取、呈现、选择）各自的贡献，也未与\"人类专家示例 prompt\"等更强基线对照。其六——也是最根本的——研究以\"新手产出更像专家\"为代理指标，却未验证维度脚手架是否真正促进新手的领域知识习得：新手究竟是\"借用了\"界面里的专家知识，还是\"学会了\"这些知识，这对教育场景而言是决定性的问题。\n\n## 六、对你课题的启发\n\n核心机制是分布式认知的教科书级实例：把专家的隐性领域知识（设计维度）外化为可操作的外部表征（dimension palette），认知负担从\"记忆领域词汇\"转移到\"识别与选择维度\"——知识不再只存在于新手脑子里，而分布在人与工具的协调之中，这直接呼应你\"认知如何在人与 AI 之间分布\"的核心问题。它同时是\"AI 作为脚手架而非答案机器\"的具体实现：维度面板外化、显性、可迭代，可作为设计学习情境中脚手架设计的直接参照。反面发现（精细 prompt 抬高预期 → 挫败感）则与你课题中\"认知卸载代价\"和\"脚手架撤除\"的议题相连：脚手架在提升能力的同时会抬高期待，当 AI 能力跟不上时反而伤害学习体验，提示脚手架设计必须同步管理预期。最值得深挖的是一个深层追问——维度面板到底让新手\"借用了专家知识\"还是\"习得了专家知识\"，这对应你课题中\"认知是分布的还是内化的\"这一核心张力，以及\"脚手架何时撤除、撤除后能力是否保留\"的边界问题。它与站内已收录的 DesignTrace（20260826，管\"记录走过的路\"）和 InspirationGraph（20260903，管\"树形组织未走过的空间\"）构成精确区分：DesignWeaver 是\"维度脚手架\"概念的奠基性命名工作（CHI 2025），管\"把领域知识维度外化为选择面板\"——三者合起来才是 AI 设计探索支持的完整图景。",
+    "excerpt": "来源：records/20260904/11/designweaver-dimensional-scaffolding/论文总结.md · 来源：CHI 2025 主会（Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems），Full Paper，26 页",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260904/11/designweaver-dimensional-scaffolding",
+    "original_url": "https://doi.org/10.1145/3706598.3714211",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-09-03 11:00",
     "title": "InspirationGraph for Progressive Design Space Exploration",

@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>全部记录</title>
-    <meta name="description" content="源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1373 条。">
+    <meta name="description" content="源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1376 条。">
     <meta property="og:title" content="全部记录 - 研究所">
-    <meta property="og:description" content="源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1373 条。">
+    <meta property="og:description" content="源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1376 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">全部记录</h1>
-        <p class="sidebar-summary">源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1373 条。</p>
+        <p class="sidebar-summary">源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1376 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>全部记录</strong>
-                <span>源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1373 条。</span>
+                <span>源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1376 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,8 +79,44 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "全部记录", "subtitle": "源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1373 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "全部记录", "subtitle": "源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1376 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-09-04 11:00",
+    "title": "DesignWeaver: Dimensional Scaffolding for Text-to-Image Product Design",
+    "content": "> 来源：CHI 2025 主会（Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems），Full Paper，26 页\n> 作者：Sirui Tao、Ivan Liang、Cindy Peng、Zhiqing Wang、Srishti Palani、Steven P. Dow（UC San Diego）\n> DOI：10.1145/3706598.3714211 · arXiv:2502.09867\n\n## 一、核心论点\n\nDesignWeaver 提出\"维度脚手架（dimensional scaffolding）\"这一交互范式：把资深产品设计师在探索设计空间时动用的隐性领域知识——风格、材质、几何、功能等设计维度——显性提取为一个可点选的面板（dimension palette），让新手不必凭记忆写出专业 prompt，而是通过点选维度来构造 prompt。它诊断了一个尖锐的断层：生成式 AI 让新手能快速产出\"专业感\"的视觉稿，却无法让新手\"像专家一样想\"——新手缺乏领域知识，写不出能有效探索设计空间的 prompt。其核心主张是，工具应把专家的隐性领域词汇外化为界面资源，作为新手与文生图（T2I）模型之间的脚手架，从而把\"探索设计空间\"这一专家直觉转化为新手可操作的步骤。\n\n## 二、背景与动机\n\n生成式 AI 降低了视觉产出的门槛，却暴露了能力与知识之间的错位：新手能\"看起来专业\"，却无法\"想得专业\"，其 prompt 往往狭窄、重复，无法充分探索产品设计空间。作者先做了一项 12 位资深产品设计师的形成性研究，发现专家——以及他们那些不够专业的客户——在共创讨论中更依赖视觉参考（visual references）而非书面描述来沟通设计意图，这揭示了\"专家其实是用图像而非文字来思考与沟通设计\"的工作方式。这一洞见直接导出动机：既然专家靠视觉参考，那么能否把图片中蕴含的设计维度提取出来，做成新手可操作的界面资源，从而把专家的隐性知识转化为显性脚手架。\n\n## 三、方法与过程\n\n研究分两个阶段推进。第一阶段是形成性研究：对 12 位资深产品设计师进行观察与访谈，理解专家如何探索和沟通设计空间，提炼出\"视觉参考引导共创\"的关键洞见。第二阶段据此设计并实现 DesignWeaver 原型——它从生成的图片中自动提取关键产品设计维度，呈现为一个可快速选择的维度面板（dimension palette），新手点选维度即可逐步构造 prompt。评估采用 52 位新手的对照研究，比较 DesignWeaver 与纯文本框（baseline）两种条件，测量指标包括：prompt 的长度与领域词汇量、产出产品设计的多样性（以 CLIP 相似度衡量）与创新性（以盲评专家评分衡量）。\n\n## 四、主要发现\n\n52 人研究中，DesignWeaver 让新手写出了更长、更富领域词汇的 prompt，产出了更多样（CLIP 相似度更低）且更创新（盲评专家评分更高）的产品设计。维度面板把专家的隐性领域词汇外化为可点选的资源，显著降低了新手构造高质量 prompt 的认知门槛，证明\"维度脚手架\"是可复现、可验证的交互范式。但研究同时揭示一个重要的反面发现：更精细的 prompt 抬高了参与者对 T2I 输出的预期，当模型能力跟不上这些细化预期时，反而引发了挫败感——这提示\"工具越强，越要管理预期\"的方法论警示。\n\n## 五、局限性\n\n其一，52 位新手全部聚焦产品设计单一领域，结论向平面、建筑、服装等其他设计领域的迁移需谨慎。其二，\"更多样、更创新\"部分依赖 CLIP 相似度与盲评专家的主观评分，创新性缺乏客观、可复现的量化指标，存在测量层面的模糊。其三，维度面板的维度提取依赖 T2I 生成图片的质量与维度识别机制，维度库的构建与领域强绑定，跨领域迁移需要重建成本，这一可泛化性问题未被讨论。其四，反面发现（预期管理）虽被诚实报告，但缺少针对\"如何管理预期\"的具体设计干预方案的验证。其五，研究仅比较\"维度面板 vs 纯文本框\"两种条件，未拆解维度脚手架各成分（提取、呈现、选择）各自的贡献，也未与\"人类专家示例 prompt\"等更强基线对照。其六——也是最根本的——研究以\"新手产出更像专家\"为代理指标，却未验证维度脚手架是否真正促进新手的领域知识习得：新手究竟是\"借用了\"界面里的专家知识，还是\"学会了\"这些知识，这对教育场景而言是决定性的问题。\n\n## 六、对你课题的启发\n\n核心机制是分布式认知的教科书级实例：把专家的隐性领域知识（设计维度）外化为可操作的外部表征（dimension palette），认知负担从\"记忆领域词汇\"转移到\"识别与选择维度\"——知识不再只存在于新手脑子里，而分布在人与工具的协调之中，这直接呼应你\"认知如何在人与 AI 之间分布\"的核心问题。它同时是\"AI 作为脚手架而非答案机器\"的具体实现：维度面板外化、显性、可迭代，可作为设计学习情境中脚手架设计的直接参照。反面发现（精细 prompt 抬高预期 → 挫败感）则与你课题中\"认知卸载代价\"和\"脚手架撤除\"的议题相连：脚手架在提升能力的同时会抬高期待，当 AI 能力跟不上时反而伤害学习体验，提示脚手架设计必须同步管理预期。最值得深挖的是一个深层追问——维度面板到底让新手\"借用了专家知识\"还是\"习得了专家知识\"，这对应你课题中\"认知是分布的还是内化的\"这一核心张力，以及\"脚手架何时撤除、撤除后能力是否保留\"的边界问题。它与站内已收录的 DesignTrace（20260826，管\"记录走过的路\"）和 InspirationGraph（20260903，管\"树形组织未走过的空间\"）构成精确区分：DesignWeaver 是\"维度脚手架\"概念的奠基性命名工作（CHI 2025），管\"把领域知识维度外化为选择面板\"——三者合起来才是 AI 设计探索支持的完整图景。",
+    "excerpt": "来源：records/20260904/11/designweaver-dimensional-scaffolding/论文总结.md · 来源：CHI 2025 主会（Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems），Full Paper，26 页",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260904/11/designweaver-dimensional-scaffolding",
+    "original_url": "https://doi.org/10.1145/3706598.3714211",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-09-04 11:00",
+    "title": "惠-能力进化（2026-09-04）",
+    "content": "## 今日发现\n\n选题为 UC San Diego（Steven P. Dow 组）CHI 2025 主会 Full Paper，经 arXiv API 与 Crossref 双路核实：正式题名《DesignWeaver: Dimensional Scaffolding for Text-to-Image Product Design》，DOI 10.1145/3706598.3714211 对应 Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems（published 2025-04-25），作者 Sirui Tao / Ivan Liang / Cindy Peng / Zhiqing Wang / Srishti Palani / Steven P. Dow 与提议完全一致。论文提出\"维度脚手架（dimensional scaffolding）\"范式：先经 12 位资深产品设计师形成性研究得出\"专家用视觉参考而非文字沟通设计\"的洞见，据此从生成图片中提取产品设计维度做成可点选面板（dimension palette），52 人新手对照实验证明它能写出更长、更领域化的 prompt，产出更多样（CLIP）且更创新（盲评）的设计，并诚实报告反面发现——精细 prompt 抬高预期导致挫败感。定位为与库内已收录 DesignTrace（20260826）、InspirationGraph（20260903）构成\"T2I 设计探索\"主题的第三篇，且是\"维度脚手架\"概念的奠基性命名工作（CHI 2025，早于两者的 CHI 2026）。\n\n## 决策理由\n\n入选。五条悟评价：(1) 载体过硬——CHI 2025 主会 Full Paper、已上会同行评审，是今日三份提议中唯一达到\"学术正刊\"质量门槛的载体，且经 arXiv + Crossref 双路核验数据完整无误；(2) 核心机制是分布式认知的教科书级实例——把专家隐性领域知识（设计维度）外化为可点选的外部表征，认知负担从\"记忆词汇\"转移到\"识别选择\"，直接对应\"认知如何在人与 AI 之间分布\"的核心问题；(3) 反面发现（精细 prompt 抬高预期 → 挫败感）有独特的方法论价值，与库内\"认知卸载代价\"\"脚手架撤除\"线索相连，是\"工具越强越要管理预期\"的实证警示；(4) 与你关心的设计学习情境直接相关——研究聚焦新手设计师、以\"缩小新手与专家差距\"为目标，可为 AI 辅助设计教育提供依据。需如实点明的过密风险：这是库内 T2I 设计探索主题的第三篇（继 DesignTrace 8/26、InspirationGraph 9/3 之后），但三者机制可精确区分（记录走过的路 / 组织未走过的空间 / 外化领域知识维度），且本篇是该概念的奠基性命名来源，故采入而不算重复，需在汇总中明确三者区分以避免证据链过度集中。\n\n## 明日方向指引\n\n沿两条线索推进。(1) \"外化 vs 内化\"的理论线：本篇最尖锐的未解问题是——维度面板让新手\"借用了专家知识\"还是\"习得了专家知识\"？反向定位 \"scaffolding fade / knowledge internalization / transfer after scaffolding removal\" 中把\"脚手架撤除后的能力保留\"作为因变量的对照实验，收敛成你课题\"认知是分布的还是内化的\"\"脚手架何时撤除\"的机制级证据。(2) \"预期管理\"的实践线：本篇反面发现（精细 prompt 抬高预期 → 挫败感）直接接 8/29 substitution-to-scaffolding 的脚手架边界议题，反向定位 \"expectation management / AI capability calibration / novice overconfidence in AI-assisted design\" 中验证\"如何管理用户对 AI 输出的预期\"的设计干预研究，为设计学习情境中\"脚手架如何同步校准预期\"提供依据。继续跟踪 Steven P. Dow（UCSD Design Lab）组的后续，看\"维度脚手架\"是否被推广到其他生成任务、以及是否出现\"撤除脚手架后能力保留\"的纵向研究。",
+    "excerpt": "来源：records/20260904/11/designweaver-dimensional-scaffolding/惠-能力进化.md · 选题为 UC San Diego（Steven P. Dow 组）CHI 2025 主会 Full Paper，经 arXiv API 与 Crossref 双路核实：正式题名《DesignWeaver: Dimensional Scaffolding for Text to Image Product Design》，DOI 10.1145/3706598.3714211 对应 Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems（published 2025 04 25），作者 Sirui Tao / Ivan Liang / Cindy Peng / Zhiqing Wang / Srishti Palani / Steven P. Dow 与提议完全一致。论文提出\"维度脚手架（dimensional scaffolding）\"范式：先经 12 位资深产品设计师形成性研究得出\"专家用视觉参考而非文字沟通设计\"的洞见，据此从生成图片中提取产品设计维度做成可点选面板（dimension palette），52 人新手对照实验证明它能写出更长、更领域化的 prompt，产出更多样（CLIP）且更创新（盲评）的设计，并诚实报告反面发现——精细 prompt 抬高预期导致挫败感。定位为与库内已收录 DesignTrace（20260826）、InspirationGraph（20260903）构成\"T2I 设计探索\"主题的第三篇，且是\"维度脚手架\"概念的奠基性命名工作（CHI 2025，早于两者的 CHI 2026）。",
+    "file_name": "惠-能力进化.md",
+    "source_dir": "records/20260904/11/designweaver-dimensional-scaffolding",
+    "original_url": "https://doi.org/10.1145/3706598.3714211",
+    "original_label": "DOI",
+    "session_type": "review",
+    "session_label": "评审会"
+  },
+  {
+    "date": "2026-09-04 09:00",
+    "title": "五条悟-汇总（2026-09-04）",
+    "content": "## 今日采集决议\n\n**入选 1 篇，放弃 2 篇。**\n\n### 入选篇目\n\n**惠：UC San Diego（Steven P. Dow 组）× CHI 2025 主会 Full Paper — DesignWeaver，用\"维度脚手架（dimensional scaffolding）\"把专家的隐性设计知识外化为可点选面板，让新手借界面资源探索设计空间（分布式认知的教科书级实例 + \"工具越强越要管理预期\"的反面警示）**\n\n- 论文：Sirui Tao、Ivan Liang、Cindy Peng、Zhiqing Wang、Srishti Palani、Steven P. Dow（UC San Diego），\"DesignWeaver: Dimensional Scaffolding for Text-to-Image Product Design\"（CHI 2025 Full Paper；arXiv 2502.09867；DOI 10.1145/3706598.3714211）。\n- 入选理由：载体过硬——CHI 2025 主会正刊、已上会同行评审，是今日三份提议中唯一达到学术正刊质量门槛的载体。核心机制是分布式认知的教科书级实例：先经 12 位资深设计师形成性研究得出\"专家用视觉参考而非文字沟通设计\"的洞见，据此从生成图片中提取设计维度做成可点选面板（dimension palette），52 人对照实验证明新手能写出更长、更领域化的 prompt，产出更多样（CLIP）且更创新（盲评）的设计。反面发现（精细 prompt 抬高预期 → 挫败感）有独特的方法论价值，直接接库内\"认知卸载代价 / 脚手架撤除\"线索。与库内 DesignTrace（8/26）、InspirationGraph（9/3）构成 T2I 设计探索主题的第三篇，但本篇是\"维度脚手架\"概念的奠基性命名来源（CHI 2025，早于两者），且三者机制可精确区分，故采入不构成重复。\n\n### 放弃篇目\n\n**1. 悠仁：GPTZero Advanced Scan 产品拆解（Medium 博客）— 案例鲜活，但非学术载体**\n\n- 提议：Redesigning GPTZero's Advanced Scan: A Product Teardown（Medium，作者 Nikethana N N，波士顿产品设计师）。\n- 放弃原因：载体不过关。这是一篇 Medium 产品拆解博客，非同行评审的学术文本，无规范用户研究方法、无对照、无效应量，达不到本库\"必须有用户研究验证\"的学术质量门槛。其核心洞察（verdict-first 层级、句子↔分析双向空间锚定、渐进披露、不确定性可视化）确有价值，且与\"外部表征如何支撑人的理解与修正\"高度相关，但属于设计实践随笔而非可引用的实证证据，不能顶正刊位置。\n- 反馈（给悠仁）：嗅觉是对的——\"AI 检测工具把概率判断翻译成句子级外部表征\"这个视角，正好是分布式认知下\"外部表征如何支撑师生解读、质疑、改写 AI 文本\"的生动案例。但动作应是\"由案例反向定位学术实证\"：把这个 teardown 当作线索，去找 CHI/CSCW/LAK 上\"AI 检测/不确定性可视化的交互设计\"或\"AI 写作检测对师生行为影响\"的实证论文来采，而不是把博客本身当作采入对象。GPTZero 官方承认旧版高亮失效并重写为 chunk 级分析，这条\"设计师批评 ↔ 厂商演进\"的对照很值得在找到学术载体后作为旁证引用。\n\n**2. 野蔷薇：MIT Media Lab × \"Socrates went Nuclear\" 预印本 — 发现极有价值，但载体与时机未变，且属重复提议**\n\n- 提议：Alexandre Clin Deffarges、Nataliya Kosmyna、Pattie Maes（MIT Media Lab Fluid Interfaces），\"Socrates went Nuclear: Comparing Interaction Strategies for AI systems in a Learning Context using Brain Sensing\"（arXiv 2609.00584v1，cs.AI，2026-09-01，预印本未上会）。\n- 放弃原因：这篇在 2026-09-02 的上一周期已被五条悟完整评估并放弃，两条理由今天**均未改变**：(1) 载体——仍是 9/1 刚发的预印本、尚未经过同行评议，按本库\"宁缺毋滥\"的质量门槛，未上会预印本不能与同日已上会正刊并列入选；(2) 同组过密——MIT Maes 组近期已连续采入（8/31《Dialogues with AI Reduce Beliefs in Misinformation》即同组），证据链来源过度集中、降低外部效度。上一周期已明确给出动作指引：\"建议等它上会、经过同行评议后再采\"，而仅过两天论文状态没有任何变化。\n- 反馈（给野蔷薇）：这是重复提议。上一篇汇总（9/2）已把这篇的放弃理由和后续动作写得非常清楚——发现极有价值（\"认知投入 ≠ 学习收益\"、Socratic 提示设计不当导致学习者推理后脱离，都是你课题\"认知卸载代价\"这条线的直接续篇），问题只在载体（未上会）与时机（同组第三篇）。正确的动作不是两天后原样重提，而是二选一：(a) 等它上会、经同行评议后再提；(b) 现在就用\"认知投入 ≠ 学习收益\"这条线索反向定位同主题的**已上会正刊**（CHI/CSCW/LAK 上\"AI 学习交互的认知代价 / 认知卸载 / 生理测量学习投入\"的实证）。若再次原样重提且状态未变，将不再重复评估。请把这篇的线索记入你自己的待跟踪清单，待 arXiv 状态更新（v2 或会议录用）后再回采。\n\n## 方向指引\n\n今日唯一入选（DesignWeaver）与库内既有证据链自然拼接，并暴露两条待推进线索：\n\n- **\"外化 vs 内化\"的理论线（本周期最高优先级）**：DesignWeaver 最尖锐的未解问题是——维度面板到底让新手\"借用了专家知识\"还是\"习得了专家知识\"？这与库内 8/29 substitution-to-scaffolding、8/31 认知卸载代价、9/2 Maru 的\"97% 隐式沉淀但不可见\"共同指向一个贯穿问题：**AI 脚手架撤除后，能力是否保留、认知是否内化**。反向定位 \"scaffolding fade / knowledge internalization / transfer after scaffolding removal / long-term learning with AI\"，把\"撤除后的能力保留\"作为因变量的纵向对照实验，是当前证据链最缺的一块。\n- **\"预期管理\"的实践线**：DesignWeaver 反面发现（精细 prompt 抬高预期 → 挫败感）与库内\"工具越强越要管理预期\"呼应。反向定位 \"expectation management / AI capability calibration / novice overconfidence in AI-assisted design\"，看有没有人把\"校准用户对 AI 输出的预期\"做成可验证的设计干预。\n- **给三位采集员的共同提醒（重申）**：载体质量与来源多样性是硬门槛——未上会预印本、Medium 博客/产品拆解、以及同一实验室的连续高频采入，都会削弱证据链分量，即便选题本身命中课题。若一篇文本发现很强但载体未过关，正确动作是\"记录线索、等上会\"或\"反向定位同主题正刊\"，而不是用预印本/博客顶替正刊位置，更不是原样重提已被明确放弃的篇目。今日悠仁篇（博客载体）与野蔷薇篇（预印本 + 重复提议）正是这两种错误动作的实例。\n\n## 数据完整性观察\n\n今日三份提议经去重检查：grep 全库确认 \"Socrates went Nuclear\" 仅出现在 9/2 汇总与今日野蔷薇提议中（无历史论文总结重复）、\"DesignWeaver\" 仅出现在今日惠提议中、\"GPTZero\" 仅出现在 2026/03/16 的升级迭代文件（作为学术诚信旁证提及，非论文采集）与今日悠仁提议中——三篇均无历史论文总结重复。五条悟进一步做外部核验：惠篇 arXiv 2502.09867 经 export.arxiv.org API 核实为真实存在（title \"DesignWeaver: Dimensional Scaffolding for Text-to-Image Product Design\"，作者 Sirui Tao / Ivan Liang / Cindy Peng / Zhiqing Wang / Srishti Palani / Steven P. Dow 与提议一致，published 2025-02-14），DOI 10.1145/3706598.3714211 经 Crossref 核实对应 Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems（published 2025-04-25），作者姓氏 Tao/Liang/Peng/Wang/Palani/Dow 与提议一致，数据无误。野蔷薇篇为 9/2 已核验过的同一 arXiv 2609.00584（未上会预印本，状态未变）。三采集员标记（.yujin-done / .bara-done / .megumi-done）已在各自流程生成，五条悟标记 .gojo-done 本次执行前未存在、为首轮执行。无历史缺口复现，无需额外上报。",
+    "excerpt": "来源：records/20260904/09/five-daily-summary/五条悟-汇总.md · 入选 1 篇，放弃 2 篇。",
+    "file_name": "五条悟-汇总.md",
+    "source_dir": "records/20260904/09/five-daily-summary",
+    "original_url": "https://doi.org/10.1145/3706598.3714211",
+    "original_label": "DOI",
+    "session_type": "review",
+    "session_label": "评审会"
+  },
   {
     "date": "2026-09-03 11:00",
     "title": "InspirationGraph for Progressive Design Space Exploration",
