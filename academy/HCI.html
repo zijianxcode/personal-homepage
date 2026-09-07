@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HCI</title>
-    <meta name="description" content="基于关键词自动归类的人机交互与协作研究。 共 374 条。">
+    <meta name="description" content="基于关键词自动归类的人机交互与协作研究。 共 376 条。">
     <meta property="og:title" content="HCI - 研究所">
-    <meta property="og:description" content="基于关键词自动归类的人机交互与协作研究。 共 374 条。">
+    <meta property="og:description" content="基于关键词自动归类的人机交互与协作研究。 共 376 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">HCI</h1>
-        <p class="sidebar-summary">基于关键词自动归类的人机交互与协作研究。 共 374 条。</p>
+        <p class="sidebar-summary">基于关键词自动归类的人机交互与协作研究。 共 376 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>HCI</strong>
-                <span>基于关键词自动归类的人机交互与协作研究。 共 374 条。</span>
+                <span>基于关键词自动归类的人机交互与协作研究。 共 376 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,8 +79,32 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "HCI", "subtitle": "基于关键词自动归类的人机交互与协作研究。 共 374 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "HCI", "subtitle": "基于关键词自动归类的人机交互与协作研究。 共 376 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-09-07 11:00",
+    "title": "StoryEnsemble: Enabling Dynamic Exploration & Iteration in the Design Process with AI and Forward-Backward Propagation",
+    "content": "- 载体：UIST 2025（第 38 届 ACM UIST，韩国釜山，2025-09-28~10-01），全文 36 页，DOI 10.1145/3746059.3747772；arXiv 2508.03182\n- 链接：https://doi.org/10.1145/3746059.3747772\n\n## 一、核心论点\n\n设计思维、Double Diamond、scenario-based design 等框架都倡导迭代、发散-收敛与用户中心叙事，但设计阶段之间强耦合，改后面往往要回改前面，反馈回路的代价高昂，实践中难以坚持。作者先做一个 15 名参与者的前瞻研究定位瓶颈，再提出 StoryEnsemble——把设计流程（persona→problem→solution→storyboard/scenario）建成 node-link 结构，借用反向传播思想，让 AI 把后一阶段的设计改动级联传播回前置工件（backward propagation），实现跨阶段动态迭代。核心创新在于把\"设计工件之间的依赖关系\"显式化为可传播的交互机制，属于 AI×设计工具里少见的流程级（而非单阶段生成式）贡献。\n\n## 二、背景与动机\n\n时间与资源约束常让设计师无法广泛探索、收集反馈、回访早期假设，从而难以在真实工作中守住设计框架的核心原则。收集有意义的反馈耗时费力，而反馈一旦提示重构问题或重想方案，就会触发一条代价高昂的回路：回访早期假设、返工 persona、problem statement、scenario、storyboard 等前置工件。这种开销常让人和团队放弃迭代。既有 AI 设计工具（头脑风暴、persona 生成、视觉内容生成）多聚焦设计流程的孤立阶段，忽略了设计\"迭代性\"与\"跨阶段互联性\"——一处改动需要在别处调整，而当前工具没有一个能管理跨阶段依赖、促进全程反思与迭代。作者要补的正是这个空白。\n\n## 三、方法与过程\n\n研究分两段。前瞻研究招募 15 名参与者（UX 从业者、学生、教师），定位跨阶段迭代的瓶颈与真实需求。据此开发 StoryEnsemble：一个把设计流程建成四类节点（persona、problem、solution、storyboard/scenario）的 node-link 交互系统，集成 AI，提供前向传播（forward propagation，把早期阶段改动级联到后续工件）与反向传播（backward propagation，从后续阶段反向重构上游决策）两种新颖交互。触发传播的交互有四种：手动编辑、AI 辅助修订、反馈纳入、节点间新建连接；系统识别受影响的相邻节点并显示 update/propagate 图标，用户可选择传播到链尾、链首，或逐节点手动更新。系统还支持多节点选择与批量操作（多 persona 生成 problem、多 problem 生成 solution、多节点批量请求反馈）。用户研究招募 10 名参与者，验证其快速多向迭代与灵活跨阶段导航，并以单节点编辑次数、前向/反向传播编辑次数等度量迭代行为。\n\n## 四、主要发现\n\n用户研究表明，StoryEnsemble 使快速、多向迭代与跨阶段灵活导航成为可能，参与者在保持设计一致性的同时，能把更多精力投到创意探索与迭代上。系统通过高亮阶段间潜在依赖，降低了手动维护一致性的负担，让用户不必在追踪工件间关键连接上分心。作者还观察到工具对 design learning/teaching 的支持潜力——参与者里含 UX 学生与教师，传播机制让设计流程的结构与依赖关系变得可见，可作为教学对象。整体上，该工作证明了把\"设计工件依赖关系\"显式化、并交给 AI 级联维护，能让框架所倡导的迭代实践在真实约束下更容易坚持。\n\n## 五、局限性（自主判断）\n\n其一，用户研究 N=10，且是工具原型的一次性评估，结论停在\"使迭代更流利\"的可用性与体验层面，没有证据表明它带来更好的设计产出质量或更深的学习——\"更流畅地迭代\"并不自动等于\"迭代出更好的设计\"。其二，传播机制把跨阶段一致性的维护部分外包给 AI，存在设计师对 AI 自动修订的工件失去 ownership、跳过主动反思的风险——AI 把上游假设自动改写后，学习者可能不再亲自回溯前置推理，这正是分布式认知里\"卸载何时促进、何时侵蚀\"的张力现场，但作者没有测量这种卸载的代价。其三，前瞻研究与用户研究都基于小样本，且任务偏教学与演练场景，生态效度有限，真实团队、真实约束下的传播行为可能不同。其四，\"反向传播\"借用了深度学习术语，但其交互语义是\"级联重生成\"而非真正的错误反向传播，命名带来的概念混淆可能误导对其机制边界的期待。\n\n## 六、对你课题的启发（人-AI 协作学习、分布式认知）\n\n这篇是你\"设计学习情境中研究认知分布\"的天然案例。其一，StoryEnsemble 把设计流程被 AI 重构后、认知负载如何在人-工件-阶段之间重新分布显式化了——跨阶段的设计推理部分卸载给传播机制，学生在迭代中可能不再需要手动回溯所有前置假设，这直接改变设计学习的认知轨迹与反思机会，是你\"认知分布\"框架下一个可讨论的技术样本。其二，\"改动如何在分布式系统中传播\"的隐喻与分布式认知理论（认知分布于工具、工件与协作网络）高度同构，你可把它作为\"把认知分布做成可交互机制\"的设计参照。其三，作者团队（Dow/Grossman）是创造力与 HCI 工具研究的顶级阵容，其\"前瞻研究定位瓶颈 + 工具设计 + 用户研究\"的实证规范，可直接作为你设计类研究的方法范本。其四，它留给你的批判点最锋利：AI 自动维护跨阶段一致性时，学习者\"亲自回溯前置假设\"这一反思动作可能被悄悄跳过——这与你警惕的\"AI 固化/侵蚀学习者认知\"直接接壤，可作为你研究设计中\"何时让 AI 传播、何时强迫学习者自己回溯\"的操纵变量。",
+    "excerpt": "来源：records/20260907/11/storyensemble-forward-backward-propagation/论文总结.md · 作者：Sangho Suh、Michael Lai、Kevin Pu（多伦多大学）、Steven P. Dow（加州大学圣迭戈分校）、Tovi Grossman（多伦多大学）",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260907/11/storyensemble-forward-backward-propagation",
+    "original_url": "https://doi.org/10.1145/3746059.3747772",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-09-07 10:00",
+    "title": "Informal Learning Emerges in Everyday Human-LLM Interaction",
+    "content": "- 载体：arXiv 2607.17643（cs.HC，2026-07-20 提交，预印本）\n- 链接：https://arxiv.org/abs/2607.17643\n\n## 一、核心论点\n\n论文正面回应一股流行但证据不足的担忧：LLM 越来越能替用户完成任务，日常使用可能沦为纯粹的认知卸载（cognitive offloading），从而侵蚀人们发展自身能力的机会。作者用 128,569 个真实人-LLM 对话做大规模自然语料分析，检验\"非正式学习行为是否也在这种日常场景中涌现\"——即用户是否在以保留学习机会的方式与 AI 打交道。结论是日常人-LLM 交互里既包含答案交付，也包含可测量、有选择性、条件性组织的非正式学习行为签名。作者据此主张把 AI 评估的靶心从\"答案交付效率\"移到\"是否保留了用户推理、检验想法、建构理解的机会\"。\n\n## 二、背景与动机\n\n\"LLM 让日常使用沦为认知卸载、助长技能退化\"是当前围绕 AI 的一股主流焦虑，但此前讨论大多停在观点层面，缺少在大规模真实使用数据上可操作、可检验的证据。非正式学习研究的传统对象是课堂与设计化教学，日常人-AI 交互作为一个潜在的学习现场几乎从未被系统测量过。为此作者把学习科学的核心框架——参与理论（Fredricks et al.）、ICAP 被动/主动/建构参与层级（Chi & Wylie 2014）、脚手架理论（Wood et al. 1976、Van de Pol et al. 2010）——逐一翻译成轮次级行为签名，使它们能在自然对话日志里落地。选题锚定 coding 与 writing 两类任务生态，因为它们是 LLM 被用于\"生产、修订、排障\"型知识工作的典型现场，也是卸载争议最集中的地方。\n\n## 三、方法与过程\n\n数据取自三个公开大规模对话语料库——WildChat（4.8M）、LMSYS-Chat-1M、ShareChat——聚焦 coding 与 writing 两类任务，最终得到 128,569 个对话、491,685 个用户轮、489,785 个助手轮。用户轮按认知努力深度编码为三层：被动接收（P）、主动使用或跟进（A）、建构性参与（C，用户阐述、检验、修订、扩展想法），建构性参与被定义为日志中最清晰的非正式学习可观察签名。助手轮则按\"主要交付请求内容\"还是\"提供脚手架式支持\"（诊断困难、拆解任务、解释理由、给反馈或提示、促进反思同时把工作留给用户）来编码。由于每条记录本身就是人-助手交换，作者没有采用 ICAP 的交互层（I）作为轮级用户标签，以免把对话格式本身误当作学习深度。标注采用\"理论驱动 codebook + 独立人工复核 + prompt 校准 + 解析器检查 + 语料级 LLM 辅助标注\"的迭代流程，两名作者独立标注验证样例并做一致性校验。分析从参与率，到建构性参与的生态组织，再到脚手架与用户参与的关联（对话级、支持形式级、相邻轮级三个尺度）层层推进。\n\n## 四、主要发现\n\n发现分三层。第一层，学习导向参与在日常人-LLM 交互中反复出现，但最深层的建构性参与是有选择性的：认知参与出现在约三分之一（31.9%）的用户轮中，建构性参与只出现在约百分之五（4.9%）。第二层，建构性参与呈生态性组织：在显式学习导向的 framing 下更常见，随任务生态变化，并在用户反复回到、追问、重塑任务材料的持续交换中最可见。第三层，助手脚手架支持稳定标记着更丰富的建构性参与，但这种关联并非均匀暴露——反馈式与解释式支持在对话级与建构性参与关联最清晰，而相邻轮分析显示支持-参与耦合受先验用户状态与支持形式的塑造。三者共同把日常人-LLM 交互定位在\"普通工具使用\"与\"设计化教学\"之间的中间地带。\n\n## 五、局限性（自主判断）\n\n其一，这是观察性语料分析，用行为签名推断\"非正式学习\"只能谈关联、不能谈因果——脚手架与建构性参与的稳定相关，无法排除\"本身更想学的用户更可能触发脚手架式回应\"这类反向或混淆解释。其二，\"非正式学习\"被操作化为日志里可观察的行为签名（尤其建构性参与），但学习是否真正发生、是否保持或迁移，语料层面完全无法检验——没有延迟保持或迁移测试，建构性参与的\"学习效果\"仍是假设，而非已被证成的证据。其三，语料级 LLM 辅助标注虽做了人工验证，但把学习科学构念落到 LLM 编码存在构念效度风险，标注器对\"建构性\"边界的判断可能与人类教师有系统性偏差。其四，样本限于 coding 与 writing 两类任务生态，且来自公开语料、用户自我选择进入，结论能否推广到更宽的任务类型与更日常的问答场景存疑。\n\n## 六、对你课题的启发（人-AI 协作学习、分布式认知）\n\n这篇几乎是你\"分布式认知\"框架在大规模真实数据上的一次直接落地。其一，它把\"认知卸载\"与\"非正式学习\"这对立叙事从口号变成可测量的轮级变量——认知参与 31.9% 与建构参与 4.9% 的落差，是\"认知在人-机之间如何分布\"的一个可引用实证锚点，你可直接用它反驳\"LLM 一律导致卸载\"的简化论。其二，ICAP 四层参与（被动/主动/建构/交互）与脚手架理论被翻译成轮级行为签名的整套做法，可直接作为你分析协作学习中\"认知分布层次\"的编码工具——尤其注意作者如何谨慎处理 ICAP 交互层（I）在对话数据中的构念陷阱，这一处理本身就有方法论示范价值。其三，它的条件性发现（用户 framing × 任务生态 × 支持形式 × 时序 × 先验状态）为你设计学习情境时\"何时直答、何时脚手架\"提供了实证坐标，并与库内\"substitution-to-scaffolding\"（8/29）线索自然接续。其四，它明确点出的观察性局限正是你能补位的地方——你的设计学习情境若做实验或纵向设计，就能推进它留下的\"关联还是因果\"问题，这一步恰好是你研究设计边界上的增量。",
+    "excerpt": "来源：records/20260907/10/informal-learning-everyday-human-llm-interaction/论文总结.md · 作者：Zixin Chen（香港科技大学）、Haotian Li（微软亚洲研究院）、Ziang Xiao（约翰霍普金斯大学）、Huamin Qu（香港科技大学）、Xing Xie（微软亚洲研究院）",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260907/10/informal-learning-everyday-human-llm-interaction",
+    "original_url": "https://arxiv.org/abs/2607.17643",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-09-06 11:00",
     "title": "Catalyst for Creativity or a Hollow Trend?: A Cross-Level Perspective on The Role of Generative AI in Design",

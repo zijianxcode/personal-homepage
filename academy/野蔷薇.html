@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>野蔷薇</title>
-    <meta name="description" content="来自源目录的 163 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 164 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="野蔷薇 - 研究所">
-    <meta property="og:description" content="来自源目录的 163 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 164 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="panda.jpg" alt="野蔷薇 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">野蔷薇</h1>
-        <p class="sidebar-summary">来自源目录的 163 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 164 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>野蔷薇</strong>
-                <span>来自源目录的 163 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 164 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "野蔷薇", "subtitle": "来自源目录的 163 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "野蔷薇", "subtitle": "来自源目录的 164 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-09-07 10:00",
+    "title": "野蔷薇-能力进化（2026-09-07）",
+    "content": "## 今日发现\n\n选题为 HKUST（Huamin Qu 组）、约翰霍普金斯大学（Ziang Xiao 组）、微软亚洲研究院（Xing Xie）跨机构合作的预印本。经 arXiv 摘要页与 HTML 全文核实，正式题名《Informal Learning Emerges in Everyday Human-LLM Interaction》（arXiv 2607.17643，2026-07-20 提交，预印本），作者 Zixin Chen（HKUST，第一作者）、Haotian Li（MSRA）、Ziang Xiao（JHU）、Huamin Qu（HKUST）、Xing Xie（MSRA）——提议所写实验室归属正确，第一作者实为 HKUST 的 Zixin Chen，提议以\"实验室\"而非\"作者名\"陈述，不影响判断但应留意顺序。论文用 128,569 个真实对话（WildChat/LMSYS-Chat/ShareChat，491,685 用户轮、489,785 助手轮，聚焦 coding 与 writing 两类任务生态），把参与理论（Fredricks）、ICAP 被动/主动/建构层级（Chi & Wylie）、脚手架理论（Wood、Van de Pol）翻译成轮次级行为签名，发现认知参与出现在 31.9% 的用户轮中、建构性参与出现在 4.9%，脚手架式助手支持稳定标记更丰富的建构参与，且该关联随用户 framing、任务生态、支持形式、时序与先验状态而变化。提议所述数据点（128,569 对话、491,685 用户轮、31.9%、4.9%、ICAP、脚手架）与 arXiv 摘要逐一吻合，无偏差。\n\n## 决策理由\n\n入选，且为本日两篇中的\"理论/机制\"篇。五条悟评价：(1) 这是把\"认知卸载 vs 非正式学习\"这对立叙事从口号变成可测量轮级变量的实证样本，认知参与 31.9% 与建构参与 4.9% 的落差是\"认知在人-机之间如何分布\"的可引用锚点，直接落到课题\"AI 辅助下学习者是否真的在学\"的核心问题上；(2) ICAP 四层参与与脚手架理论被翻译成轮级行为签名的整套编码做法，可直接作为你分析协作学习中\"认知分布层次\"的工具——尤其作者谨慎处理 ICAP 交互层（I）在对话数据中的构念陷阱，这一处理有方法论示范价值；(3) 其条件性发现（framing × 任务生态 × 支持形式 × 时序 × 先验状态）为\"何时直答、何时脚手架\"提供了实证坐标，与库内 8/29 substitution-to-scaffolding 线索自然接续；(4) 载体是 HKUST 可视化/HCI 顶级实验室 + MSRA + JHU 的跨机构合作，题材命中\"刚提交未上会\"的采集标准，且样本量在该问题上属最大一档。数据完整性核验：arXiv 2607.17643 经 dedup_check.py 与 arXiv 摘要/HTML 页双路确认无历史重复、真实存在，作者、样本、结论与提议吻合。\n\n## 明日方向指引\n\n沿三条线索推进。(1) \"ICAP/脚手架编码的构念效度\"线：本文用语料级 LLM 辅助标注把学习科学构念落到轮级签名，反向定位有没有人系统比较过\"LLM 编码 vs 人类教师编码\"在参与深度判定上的偏差与边界，这直接决定你课题里\"用行为签名测认知分布\"这一测量方案的可靠性，可与库内\"规则系统泛化陷阱 / holdout 验证\"的方法论教训（5/31）并置。(2) \"观察性关联 → 因果\"线：本文明确停在关联层面，反向定位有没有实验或纵向设计推进过\"脚手架如何因果地改变用户的建构性参与\"，这正好是你研究设计边界上的增量点，收敛成\"AI 学习干预中脚手架与参与的可检验因果\"证据清单。(3) \"任务生态\"的拓宽线：本文只做 coding 与 writing，反向定位有没有人把同一套轮级签名用到设计类任务（草图、原型、反馈迭代）上，看\"日常非正式学习\"的签名在你的设计学习情境里是否同样成立——这一问直接服务你的情境设计。",
+    "excerpt": "来源：records/20260907/10/informal-learning-everyday-human-llm-interaction/野蔷薇-能力进化.md · 选题为 HKUST（Huamin Qu 组）、约翰霍普金斯大学（Ziang Xiao 组）、微软亚洲研究院（Xing Xie）跨机构合作的预印本。经 arXiv 摘要页与 HTML 全文核实，正式题名《Informal Learning Emerges in Everyday Human LLM Interaction》（arXiv 2607.17643，2026 07 20 提交，预印本），作者 Zixin Chen（HKUST，第一作者）、Haotian Li（MSRA）、Ziang Xiao（JHU）、Huamin Qu（HKUST）、Xing Xie（MSRA）——提议所写实验室归属正确，第一作者实为 HKUST 的 Zixin Chen，提议以\"实验室\"而非\"作者名\"陈述，不影响判断但应留意顺序。论文用 128,569 个真实对话（WildChat/LMSYS Chat/ShareChat，491,685 用户轮、489,785 助手轮，聚焦 coding 与 writing 两类任务生态），把参与理论（Fredricks）、ICAP 被动/主动/建构层级（Chi & Wylie）、脚手架理论（Wood、Van de Pol）翻译成轮次级行为签名，发现认知参与出现在 31.9% 的用户轮中、建构性参与出现在 4.9%，脚手架式助手支持稳定标记更丰富的建构参与，且该关联随用户 framing、任务生态、支持形式、时序与先验状态而变化。提议所述数据点（128,569 对话、491,685 用户轮、31.9%、4.9%、ICAP、脚手架）与 arXiv 摘要逐一吻合，无偏差。",
+    "file_name": "野蔷薇-能力进化.md",
+    "source_dir": "records/20260907/10/informal-learning-everyday-human-llm-interaction",
+    "original_url": "https://arxiv.org/abs/2607.17643",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-09-06 10:00",
     "title": "野蔷薇-能力进化（2026-09-06）",

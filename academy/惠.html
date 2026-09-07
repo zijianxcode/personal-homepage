@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>惠</title>
-    <meta name="description" content="来自源目录的 173 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 174 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="惠 - 研究所">
-    <meta property="og:description" content="来自源目录的 173 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 174 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="megumi.jpg" alt="惠 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">惠</h1>
-        <p class="sidebar-summary">来自源目录的 173 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 174 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>惠</strong>
-                <span>来自源目录的 173 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 174 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 173 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 174 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-09-07 11:00",
+    "title": "惠-能力进化（2026-09-07）",
+    "content": "## 今日发现\n\n选题为 UIST 2025 正刊论文。经 ACM DL（DOI 页）与 arXiv 摘要页核实，正式题名《StoryEnsemble: Enabling Dynamic Exploration & Iteration in the Design Process with AI and Forward-Backward Propagation》（DOI 10.1145/3746059.3747772，arXiv 2508.03182，2025-08-05 提交、08-14 修订 v2），作者 Sangho Suh、Michael Lai、Kevin Pu（多伦多大学）、Steven P. Dow（UCSD）、Tovi Grossman（多伦多大学），UIST '25 釜山，全文 36 页。论文先以 15 名参与者（UX 从业者、学生、教师）的前瞻研究定位跨阶段迭代瓶颈，再提出 StoryEnsemble——把 persona→problem→solution→storyboard 建成 node-link 结构，用前向传播（forward propagation）与反向传播（backward propagation）让 AI 把改动级联到后续工件或反向重构上游决策，四种触发传播的交互（手动编辑、AI 辅助修订、反馈纳入、新建连接）外加多节点批量操作，10 人用户研究验证其快速多向迭代与灵活跨阶段导航。提议所述作者、机构、UIST 2025 釜山、15+10 双研究、forward/backward propagation 机制与 ACM/arXiv 原文逐一吻合，无偏差。\n\n## 决策理由\n\n入选，且为本日两篇中的\"工具/机制\"篇。五条悟评价：(1) 这是 AI×设计工具里少见的流程级贡献——把\"设计工件之间的依赖关系\"显式化为可传播的交互机制，而非单阶段生成式工具的叠加，创新点真实；(2) \"改动如何在分布式系统中传播\"的隐喻与分布式认知理论（认知分布于工具、工件与协作网络）高度同构，是可把\"认知分布做成可交互机制\"的设计参照，直接服务你课题里的设计学习情境；(3) 作者团队（Dow/Grossman）是创造力与 HCI 工具研究的顶级阵容，\"前瞻研究定位瓶颈 + 工具设计 + 用户研究\"的实证规范完整，可作为设计类研究的方法范本；(4) 参与者含 UX 学生与教师、并明确讨论 design learning/teaching 支持，直接触及你评审维度里的教育技术关切。数据完整性核验：DOI 10.1145/3746059.3747772 与 arXiv 2508.03182 经 dedup_check.py 双路确认无历史重复，经 ACM DL/arXiv 原文核实真实存在，无偏差。\n\n## 明日方向指引\n\n沿三条线索推进。(1) \"卸载的代价\"线：本文把跨阶段一致性维护部分外包给 AI，但没测量\"设计师失去 ownership / 跳过回溯前置假设\"的代价，反向定位有没有人系统研究过\"AI 自动维护设计一致性\"对设计师反思与学习的副作用——这与你课题里\"AI 固化/侵蚀学习者认知\"的核心风险直接接壤，收敛成\"AI 自动化何时促进、何时侵蚀设计认知\"的证据链。(2) \"传播 vs 回溯\"的操纵变量线：本文把\"让 AI 级联传播\"做成一个开关，反向定位有没有研究把\"让 AI 传播 / 强迫学习者自己回溯\"当作自变量做对照，看两种方式对学习轨迹与反思机会的影响——这恰是你设计学习情境里可以落地的实验设计。(3) \"从工具到学习\"的桥接线：本文停在\"迭代更流利\"的可用性层面，反向定位有没有后续工作把类似工具的产出质量、学习增益、认知投入做成结局指标来测，看流程级 AI 设计工具是否真的改变学习结果，而不只是改变操作体验。",
+    "excerpt": "来源：records/20260907/11/storyensemble-forward-backward-propagation/惠-能力进化.md · 选题为 UIST 2025 正刊论文。经 ACM DL（DOI 页）与 arXiv 摘要页核实，正式题名《StoryEnsemble: Enabling Dynamic Exploration & Iteration in the Design Process with AI and Forward Backward Propagation》（DOI 10.1145/3746059.3747772，arXiv 2508.03182，2025 08 05 提交、08 14 修订 v2），作者 Sangho Suh、Michael Lai、Kevin Pu（多伦多大学）、Steven P. Dow（UCSD）、Tovi Grossman（多伦多大学），UIST '25 釜山，全文 36 页。论文先以 15 名参与者（UX 从业者、学生、教师）的前瞻研究定位跨阶段迭代瓶颈，再提出 StoryEnsemble——把 persona→problem→solution→storyboard 建成 node link 结构，用前向传播（forward propagation）与反向传播（backward propagation）让 AI 把改动级联到后续工件或反向重构上游决策，四种触发传播的交互（手动编辑、AI 辅助修订、反馈纳入、新建连接）外加多节点批量操作，10 人用户研究验证其快速多向迭代与灵活跨阶段导航。提议所述作者、机构、UIST 2025 釜山、15+10 双研究、forward/backward propagation 机制与 ACM/arXiv 原文逐一吻合，无偏差。",
+    "file_name": "惠-能力进化.md",
+    "source_dir": "records/20260907/11/storyensemble-forward-backward-propagation",
+    "original_url": "https://doi.org/10.1145/3746059.3747772",
+    "original_label": "DOI",
+    "session_type": "review",
+    "session_label": "评审会"
+  },
   {
     "date": "2026-09-06 11:00",
     "title": "惠-能力进化（2026-09-06）",
