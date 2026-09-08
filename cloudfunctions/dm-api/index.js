@@ -28,6 +28,19 @@ const ADMIN_TOKEN_TTL_MS = 12 * 60 * 60 * 1000;
 const PERMIT_TOKEN_TTL_MS = 8 * 60 * 60 * 1000;
 const TOKEN_VERSION = 1;
 const DEFAULT_PERMIT_RESOURCE = "things";
+const DEFAULT_SITE_KEY = "personal-homepage";
+const DEFAULT_ALLOWED_ORIGINS = [
+  "https://bananabox.plus",
+  "https://www.bananabox.plus",
+  "https://zijianxcode.github.io",
+  "http://localhost:4173",
+  "http://127.0.0.1:4173",
+  "http://localhost:8080",
+  "http://127.0.0.1:8080",
+];
+const MAX_REQUEST_BODY_LENGTH = 64 * 1024;
+const MAX_PERMIT_CODE_LENGTH = 256;
+const MAX_DOCUMENT_ID_LENGTH = 128;
 
 const rateLimitMap = new Map();
 
@@ -50,11 +63,15 @@ function getSessionSecret() {
 }
 
 function getAllowedOrigins() {
-  const raw = process.env.ALLOWED_ORIGINS || "";
-  return raw
+  const raw = String(process.env.ALLOWED_ORIGINS || "").trim();
+  if (!raw) return DEFAULT_ALLOWED_ORIGINS;
+
+  const origins = raw
     .split(",")
     .map((item) => item.trim())
     .filter(Boolean);
+
+  return origins.length > 0 ? origins : DEFAULT_ALLOWED_ORIGINS;
 }
 
 function getOrigin(event) {
@@ -67,26 +84,24 @@ function buildCorsHeaders(event) {
     "Content-Type": "application/json",
     "Cache-Control": "no-store",
     "X-Content-Type-Options": "nosniff",
+    "X-Frame-Options": "DENY",
+    "Referrer-Policy": "no-referrer",
+    "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
     "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
     "Access-Control-Allow-Headers": "Authorization, Content-Type",
   };
 
   const allowedOrigins = getAllowedOrigins();
-  if (allowedOrigins.length === 0) {
-    headers["Access-Control-Allow-Origin"] = "*";
-    return headers;
-  }
+  headers.Vary = "Origin";
 
   const origin = getOrigin(event);
   if (origin && allowedOrigins.includes(origin)) {
     headers["Access-Control-Allow-Origin"] = origin;
-    headers.Vary = "Origin";
     return headers;
   }
 
   if (!origin && allowedOrigins.length === 1) {
     headers["Access-Control-Allow-Origin"] = allowedOrigins[0];
-    headers.Vary = "Origin";
   }
 
   return headers;
@@ -102,13 +117,24 @@ function jsonResponse(event, body, statusCode = 200) {
 
 function getClientIp(event) {
   const headers = event.headers || {};
+  const requestContext = event.requestContext || {};
+  const directIp =
+    requestContext.sourceIp ||
+    requestContext.sourceIpV4 ||
+    (requestContext.http && requestContext.http.sourceIp);
+
+  if (directIp) return String(directIp);
+
   const forwardedFor = headers["x-forwarded-for"] || headers["X-Forwarded-For"] || "";
   if (forwardedFor) {
-    return forwardedFor.split(",")[0].trim();
+    const forwardedIps = forwardedFor
+      .split(",")
+      .map((value) => value.trim())
+      .filter(Boolean);
+    if (forwardedIps.length > 0) return forwardedIps[forwardedIps.length - 1];
   }
 
-  const requestContext = event.requestContext || {};
-  return requestContext.sourceIp || requestContext.sourceIpV4 || "unknown";
+  return "unknown";
 }
 
 function getRateLimitState(key) {
@@ -238,6 +264,8 @@ function parseBody(event) {
     const raw = event.isBase64Encoded
       ? Buffer.from(event.body, "base64").toString("utf8")
       : event.body;
+
+    if (typeof raw !== "string" || raw.length > MAX_REQUEST_BODY_LENGTH) return {};
     return JSON.parse(raw);
   } catch {
     return {};
@@ -342,7 +370,17 @@ function normalizeAnalyticsVisitorId(visitorId) {
 function normalizePagePath(pagePath) {
   const value = String(pagePath || "/").trim();
   if (!value) return "/";
-  return value.slice(0, 256);
+  return value.replace(/[\u0000-\u001f\u007f]/g, "").slice(0, 256) || "/";
+}
+
+function normalizeSiteKey(siteKey) {
+  const value = String(siteKey || DEFAULT_SITE_KEY).trim().toLowerCase();
+  return /^[a-z0-9][a-z0-9-]{0,63}$/.test(value) ? value : "";
+}
+
+function normalizeDocumentId(value) {
+  const id = String(value || "").trim();
+  return id.length <= MAX_DOCUMENT_ID_LENGTH && /^[A-Za-z0-9_-]+$/.test(id) ? id : "";
 }
 
 async function getAnalyticsStatsDoc(siteKey) {
@@ -359,10 +397,10 @@ async function handleAnalyticsTrack(event) {
   const body = parseBody(event);
   const visitorId = normalizeAnalyticsVisitorId(body.visitorId);
   const pagePath = normalizePagePath(body.pagePath);
-  const siteKey = String(body.siteKey || "personal-homepage").trim() || "personal-homepage";
+  const siteKey = normalizeSiteKey(body.siteKey);
 
-  if (!visitorId) {
-    return jsonResponse(event, { error: "visitorId is required" }, 400);
+  if (!visitorId || !siteKey) {
+    return jsonResponse(event, { error: "visitorId and siteKey are required" }, 400);
   }
 
   const visitorGate = checkRateLimit(
@@ -654,17 +692,18 @@ async function handleAdminMessages(event) {
   }
 
   const { conversationId } = getQuery(event);
-  if (!conversationId) {
+  const safeConversationId = normalizeDocumentId(conversationId);
+  if (!safeConversationId) {
     return jsonResponse(event, { error: "conversationId is required" }, 400);
   }
 
-  await db.collection(CONVERSATIONS).doc(conversationId).update({
+  await db.collection(CONVERSATIONS).doc(safeConversationId).update({
     unreadByAdmin: 0,
   });
 
   const result = await db
     .collection(MESSAGES)
-    .where({ conversationId })
+    .where({ conversationId: safeConversationId })
     .orderBy("createdAt", "asc")
     .limit(200)
     .get();
@@ -686,7 +725,7 @@ async function handleAdminReply(event) {
   }
 
   const body = parseBody(event);
-  const conversationId = String(body.conversationId || "").trim();
+  const conversationId = normalizeDocumentId(body.conversationId);
   const safeContent = normalizeContent(body.content);
 
   if (safeContent === null) {
@@ -739,6 +778,10 @@ async function handlePermitAuth(event) {
 
   if (!code) {
     return jsonResponse(event, { error: "code is required" }, 400);
+  }
+
+  if (code.length > MAX_PERMIT_CODE_LENGTH) {
+    return jsonResponse(event, { error: "code is too long" }, 400);
   }
 
   if (!safeEqualText(code, permitConfig.code)) {

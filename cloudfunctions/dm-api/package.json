@@ -4,6 +4,10 @@
   "description": "Private message API for personal homepage",
   "main": "index.js",
   "dependencies": {
-    "@cloudbase/node-sdk": "^2.6.5"
+    "@cloudbase/node-sdk": "3.18.3"
+  },
+  "overrides": {
+    "@cloudbase/database": "1.5.1",
+    "axios": "1.20.0"
   }
 }

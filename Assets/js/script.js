@@ -635,6 +635,42 @@
     }
 
     // ==========================================
+    // Light / Dark Theme Toggle
+    // ==========================================
+
+    function initThemeToggle() {
+        var toggle = document.getElementById('theme-toggle');
+        if (!toggle) return;
+
+        var saved = localStorage.getItem('theme');
+        var isLight = saved === 'light';
+
+        function updateToggle() {
+            var lightIsOn = document.body.classList.contains('light-theme');
+            var label = lightIsOn ? 'Turn off light' : 'Turn on light';
+            var themeColor = document.querySelector('meta[name="theme-color"]');
+
+            toggle.setAttribute('aria-label', label);
+            toggle.setAttribute('aria-pressed', String(lightIsOn));
+            toggle.setAttribute('title', label);
+            if (themeColor) {
+                themeColor.setAttribute('content', lightIsOn ? '#f3efe7' : '#0a0a0a');
+            }
+        }
+
+        document.body.classList.toggle('light-theme', isLight);
+        updateToggle();
+
+        toggle.addEventListener('click', function () {
+            var lightIsOn = !document.body.classList.contains('light-theme');
+
+            document.body.classList.toggle('light-theme', lightIsOn);
+            localStorage.setItem('theme', lightIsOn ? 'light' : 'dark');
+            updateToggle();
+        });
+    }
+
+    // ==========================================
     // Things Entry Password
     // ==========================================
 
@@ -727,6 +763,7 @@
             initVisibility();
             initTabs();
             initLang();
+            initThemeToggle();
             initThingsEntryPassword();
             new ParticleBackground('canvas-container');
 
