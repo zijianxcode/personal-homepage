@@ -14,21 +14,26 @@ function assert(condition, message) {
 }
 
 const index = read("index.html");
+const uxEntryPosition = index.indexOf('data-permit-resource="ux-design-innovation"');
 const cultureEntryPosition = index.indexOf('data-permit-resource="cultural-brand-innovation"');
 const hciEntryPosition = index.indexOf('href="things-hci-prototyping.html?v=20260507-hci-permit"');
 const aiEntryPosition = index.indexOf('data-permit-resource="ai-innovative-design"');
 const digitalEntryPosition = index.indexOf('data-permit-resource="things"');
 const compositionEntryPosition = index.indexOf('data-permit-resource="composition-and-form"');
 
+assert(uxEntryPosition !== -1, "Things 首页缺少体验与智能产品创新入口资源标记");
 assert(hciEntryPosition !== -1, "Things 首页缺少 HCI 入口链接");
 assert(cultureEntryPosition !== -1, "Things 首页缺少文化品牌创新入口资源标记");
 assert(aiEntryPosition !== -1, "Things 首页缺少 ai-innovative-design 入口资源标记");
 assert(digitalEntryPosition !== -1, "Things 首页缺少原数字与体验资源标记");
 assert(compositionEntryPosition !== -1, "Things 首页缺少构成与形式入口资源标记");
+assert(uxEntryPosition < cultureEntryPosition, "体验与智能产品创新入口需要排在最新课程最前面");
 assert(cultureEntryPosition < compositionEntryPosition, "文化品牌创新入口需要排在构成与形式前面");
 assert(compositionEntryPosition < hciEntryPosition, "构成与形式入口需要排在最新课程最前面");
 assert(hciEntryPosition < aiEntryPosition, "新 HCI 入口需要排在 AI 入口前面");
 assert(aiEntryPosition < digitalEntryPosition, "新入口需要排在数字与体验前面");
+assert(index.includes("体验与智能产品创新"), "新入口缺少体验与智能产品创新中文标题");
+assert(index.includes("AGENT DESIGN"), "新入口缺少体验与智能产品创新英文标题");
 assert(index.includes("文化品牌创新"), "新入口缺少文化品牌创新中文标题");
 assert(index.includes("CULTURAL BRAND INNOVATION"), "新入口缺少文化品牌创新英文标题");
 assert(index.includes("构成与形式"), "新入口缺少构成与形式中文标题");
@@ -74,6 +79,14 @@ assert(culturePage.includes('data-things-context="CULTURAL BRAND INNOVATION"'), 
 assert(culturePage.includes("文化品牌创新"), "文化品牌创新子页面缺少中文标题");
 assert(culturePage.includes("Assets/js/things-page.js"), "文化品牌创新子页面需要使用共享内容加载逻辑");
 
+const uxPagePath = path.join(root, "things-ux-design-innovation.html");
+assert(fs.existsSync(uxPagePath), "缺少体验与智能产品创新受限子页面");
+const uxPage = read("things-ux-design-innovation.html");
+assert(uxPage.includes('data-things-resource="ux-design-innovation"'), "体验与智能产品创新子页面缺少资源标记");
+assert(uxPage.includes('data-things-context="UX&amp;DESIGN INNOVATION"'), "体验与智能产品创新子页面缺少英文标题");
+assert(uxPage.includes("体验与智能产品创新"), "体验与智能产品创新子页面缺少中文标题");
+assert(uxPage.includes("Assets/js/things-page.js"), "体验与智能产品创新子页面需要使用共享内容加载逻辑");
+
 const entryScript = read("Assets/js/script.js");
 assert(entryScript.includes("querySelectorAll('[data-things-permit-entry]')"), "首页入口脚本需要支持多个 Things 入口");
 assert(entryScript.includes("resource: resource"), "首页入口验证请求需要携带 resource");
@@ -107,6 +120,7 @@ const forbiddenValues = (process.env.FORBIDDEN_STRINGS || "")
 if (forbiddenValues.length > 0) {
   const filesToScan = [
     "index.html",
+    "things-ux-design-innovation.html",
     "things-cultural-brand-innovation.html",
     "things-hci-prototyping.html",
     "things-ai-innovative-design.html",

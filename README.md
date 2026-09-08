@@ -113,7 +113,7 @@ Root safety rule:
 - **Layout**: 桌面 60px 边距，移动端 20px 边距，响应断点 768px / 480px
 - **Mobile Baseline**: 手机端优先保证单列可读、卡片间距舒展、按钮触控区不小于 44px，hover 效果必须有 touch / active 等价反馈
 - **Motion**: 有目的的动画 — 引导注意力、提供反馈、建立空间关系
-- **Language**: 中/英双语，通过 `data-lang` 属性切换，CSS 控制显隐
+- **Language**: 中/英双语，通过 `data-lang` 属性切换，CSS 控制显隐；英文课程标题默认使用全大写，除非用户明确指定其他写法
 
 ## Tech Conventions
 
