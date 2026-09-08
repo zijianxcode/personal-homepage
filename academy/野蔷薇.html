@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>野蔷薇</title>
-    <meta name="description" content="来自源目录的 164 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 165 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="野蔷薇 - 研究所">
-    <meta property="og:description" content="来自源目录的 164 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 165 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="panda.jpg" alt="野蔷薇 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">野蔷薇</h1>
-        <p class="sidebar-summary">来自源目录的 164 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 165 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>野蔷薇</strong>
-                <span>来自源目录的 164 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 165 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "野蔷薇", "subtitle": "来自源目录的 164 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "野蔷薇", "subtitle": "来自源目录的 165 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-09-08 10:00",
+    "title": "野蔷薇-能力进化（2026-09-08）",
+    "content": "## 今日发现\n\n选题为 KAIST KIXLAB 主导的多作者合作（第一作者 Minsun Kim，含 Juho Kim、Alice Oh、Hwajung Hong、Tak Yeon Lee 等，另含 SNU 的 So-Yeon Ahn），围绕学生–ChatGPT 交互的教师可见性。经 arXiv 摘要页 + PDF 全文双重核实，一处载体信息需修正：提议写\"arXiv 2608.13587，提交于 2026-07-10，未上会的预印本\"，但 PDF 首页标注为 Companion Proceedings of the 16th International Conference on Learning Analytics & Knowledge（LAK26 伴侣论文集，学习分析领域顶级会议），arXiv 是并行版——即它已收录于 LAK26 Companion，载体等级高于\"未上会预印本\"，但 Companion 是短论文格式（正文约 4 页），分量低于 CHI/UIST 正刊，两处都应在总结里如实标注。方法细节核实：两阶段迭代共设计（Phase 1 六名大学 EFL 教师问卷+访谈→四个设计目标；Phase 2 原型上手+半结构化访谈→四条设计含义）、三个 LLM 组件（GPT-4 识别误用信号、自动作文评分、GPT-4 按学习目标分类 prompt）、界面遵循 Shneiderman overview–zoom–filter–details-on-demand。关键伦理设计核实：文中脚注明确 misuse\"不代表学术不端裁决，而是教师定义的、可能有教学风险的使用模式\"——这是它区别于\"作弊监测\"的关键，也是提议里\"把 AI 使用痕迹定义为教学可见性资产而非作弊证据\"的原文依据。提议所述痕迹分类法（misuse signals / goal-alignment cues / revision effort）、三层视图、微解释均与原文吻合，唯一偏差是载体描述。\n\n## 决策理由\n\n入选，为本日两篇中的\"教学端\"篇，与惠的设计端互为镜像。五条悟评价：(1) 直接命中课题核心——把\"认知劳动分布到学生+LLM 之间后，教师凭什么判断学习有没有发生\"从哲学担忧变成界面设计问题，PAD 的痕迹分类法 + 反过度监视微解释是设计学习情境里\"AI 参与度评审\"的现成原型；(2) 补上库内 9/6 Socrates went Nuclear 只测学生端、不涉教学端的另一半，两者并置构成\"学习发生的痕迹/神经证据 × 教师如何读取\"的完整链条；(3) 载体修正后含金量变化要如实说——LAK26 是学习分析顶会，收录即加分，但 Companion 短论文的证据强度有限，不能与 CHI 正刊同台称重，这决定它在库内的定位是\"原型/机制启发\"而非\"强实证\"；(4) 它刻意做的\"misuse 去污名化 + 微解释\"设计取舍，正是 AI 参与度评审里最容易做坏的地方，有明确的警示与示范双重价值。数据完整性核验：arXiv 2608.13587 经 dedup_check.py（arXiv ID）与 arXiv 摘要页/PDF 双路确认无历史重复、真实存在，作者、方法、结论与提议吻合（除载体描述外）。\n\n## 明日方向指引\n\n沿三条线索推进。(1) \"痕迹分类的可靠性\"线：本文三个 LLM 组件（尤其 GPT-4 识别误用信号）没有报告准确率/误报率，而误标一旦发生会放大教师干预的后果——反向定位有没有人系统验证过\"AI 对学生交互痕迹的分类可靠性（LLM 编码 vs 人类教师编码）\"，这直接决定你课题里\"用行为痕迹测认知分布\"的测量方案能不能立住，与库内 5/31\"规则系统 holdout 验证\"教训并置。(2) \"可见性 → 有效性\"线：PAD 给的是可见性而非有效性，学生到底学没学它不直接回答——反向定位有没有做过前后测或用户研究的教师仪表盘，看\"教师用了 AI 交互仪表盘后教学行为/学生结果是否真的改变\"，这是你从\"工具\"走到\"证据\"的必补环节。(3) \"痕迹分类法的迁移\"线：本文只做 EFL 写作、韩语语境——反向定位有没有人把同类\"误用/目标对齐/修改努力\"痕迹分类法用到设计类任务（草图、原型、反馈迭代）上，看这套分类法在你的设计学习情境里是否同样成立，直接服务你的情境设计。",
+    "excerpt": "来源：records/20260908/10/student-chatgpt-interaction-visible/野蔷薇-能力进化.md · 选题为 KAIST KIXLAB 主导的多作者合作（第一作者 Minsun Kim，含 Juho Kim、Alice Oh、Hwajung Hong、Tak Yeon Lee 等，另含 SNU 的 So Yeon Ahn），围绕学生–ChatGPT 交互的教师可见性。经 arXiv 摘要页 + PDF 全文双重核实，一处载体信息需修正：提议写\"arXiv 2608.13587，提交于 2026 07 10，未上会的预印本\"，但 PDF 首页标注为 Companion Proceedings of the 16th International Conference on Learning Analytics & Knowledge（LAK26 伴侣论文集，学习分析领域顶级会议），arXiv 是并行版——即它已收录于 LAK26 Companion，载体等级高于\"未上会预印本\"，但 Companion 是短论文格式（正文约 4 页），分量低于 CHI/UIST 正刊，两处都应在总结里如实标注。方法细节核实：两阶段迭代共设计（Phase 1 六名大学 EFL 教师问卷+访谈→四个设计目标；Phase 2 原型上手+半结构化访谈→四条设计含义）、三个 LLM 组件（GPT 4 识别误用信号、自动作文评分、GPT 4 按学习目标分类 prompt）、界面遵循 Shneiderman overview–zoom–filter–details on demand。关键伦理设计核实：文中脚注明确 misuse\"不代表学术不端裁决，而是教师定义的、可能有教学风险的使用模式\"——这是它区别于\"作弊监测\"的关键，也是提议里\"把 AI 使用痕迹定义为教学可见性资产而非作弊证据\"的原文依据。提议所述痕迹分类法（misuse signals / goal alignment cues / revision effort）、三层视图、微解释均与原文吻合，唯一偏差是载体描述。",
+    "file_name": "野蔷薇-能力进化.md",
+    "source_dir": "records/20260908/10/student-chatgpt-interaction-visible",
+    "original_url": "https://arxiv.org/abs/2608.13587",
+    "original_label": "arXiv",
+    "session_type": "review",
+    "session_label": "评审会"
+  },
   {
     "date": "2026-09-07 10:00",
     "title": "野蔷薇-能力进化（2026-09-07）",

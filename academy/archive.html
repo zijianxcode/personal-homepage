@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>全部记录</title>
-    <meta name="description" content="源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1393 条。">
+    <meta name="description" content="源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1399 条。">
     <meta property="og:title" content="全部记录 - 研究所">
-    <meta property="og:description" content="源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1393 条。">
+    <meta property="og:description" content="源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1399 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">全部记录</h1>
-        <p class="sidebar-summary">源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1393 条。</p>
+        <p class="sidebar-summary">源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1399 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>全部记录</strong>
-                <span>源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1393 条。</span>
+                <span>源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1399 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,8 +79,80 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "全部记录", "subtitle": "源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1393 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "全部记录", "subtitle": "源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1399 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-09-08 11:00",
+    "title": "AIDED: Augmenting Interior Design with Human Experience Data for Designer–AI Co-Design",
+    "content": "- 载体：CHI 2026 全文论文（Barcelona，2026-04-13~17，\"Creating with AI\" 场次；ACM 同行评审），并行 arXiv 2602.10054\n- 链接：https://doi.org/10.1145/3772318.3791378 ｜ https://arxiv.org/abs/2602.10054\n\n## 一、核心论点\n\nAIDED 追问的是一个比\"AI 能不能辅助设计\"更靠前的问题：客户的经验数据以什么形态进入设计师–生成式 AI 的协作工作流，才能既保真又不压垮设计师。它提出 authenticity–interpretability trade-off（真实性–可解释性权衡）作为贯穿性的理论透镜——原始的行为信号（如眼动热图）最接近客户的真实体验，却难读、难用；结构化的表征（如问卷可视化）清晰可行动，却可能牺牲保真度。核心主张是：问题不在\"获取更多客户数据\"，而在\"在保真与可解释之间找到能促进设计行动的平衡点\"。\n\n## 二、背景与动机\n\n室内设计长期卡在一个裂缝上——客户说不清、设计师猜不准，客户体验的细微之处难以被捕捉成设计者能据以行动的输入。生成式 AI 给设计流程带来了新的变量：它既是风格生成器，也可能成为客户声音的中介，但这个中介该喂它什么数据、以什么形态喂，此前没有系统的实证。作者先做形成性研究（9 名职业室内设计师）锚定真实工作流，再据此构建 AIDED——一个把多模态客户数据整合进 GAI 设计流程的系统，并沿\"真实性–可解释性\"谱系系统操纵四种表征来检验效果。\n\n## 三、方法与过程\n\n分两层。形成性研究：9 名室内设计师（5 女 4 男，24–38 岁，含创始人/资深/助理/实习生），60–75 分钟半结构化访谈，归纳式主题编码，目标是弄清设计师–客户沟通实践、如何解读模糊需求、对生理心理数据与 AI 工具的态度；得出客户输入\"碎片化、演化、模糊\"、视觉优先于语言等洞察。主实验：12 名职业室内/建筑设计师，四条件被试内设计、拉丁方平衡，每名设计师面对两个真实客户 profile、四种布局、四种风格预设（Modern/Nordic/Wabi-sabi/MUJI），每条件编辑两个房间场景、最多 5 次 GAI 迭代。四个条件是四种客户数据表征：C1 基线 briefs（基础人口学）、C2 原始眼动注视热图、C3 问卷可视化、C4 AI 预测注意力叠加层；LLM 自然语言解释接口刻意不放进四条件、只在事后作为探索性原型展示。评估混合了任务级量化评分、设计输出质量（含新手评估者）与事后访谈。\n\n## 四、主要发现\n\n结果干净但有张力。任务级指标里，唯一显著的是 TE6\"信息帮助我做出更好的设计决策\"（χ²(3)=9.35, p=.025, W=.26），问卷可视化评分最高（M=6.00），依次高于注视热图（5.00）、基线（4.75）、AI 预测叠加（4.50）——但 Holm 多重比较校正后不再显著（p_adj=.094），属边缘证据，不能当强结论。定性访谈补足了机制：问卷图表\"最直接，让我抓住真实需求\"；原始热图\"看得到他看了哪，却分不清好坏，只能猜\"；AI 预测叠加单独难懂、得分最低，但配上 LLM 自然语言解释后\"立刻知道为什么\"。三条洞察收敛为：authenticity–interpretability 权衡是核心挑战；客户数据是支撑性（supportive）而非规定性（prescriptive）输入，保留设计师专业自主；最少数据带来开放探索但结果不一致，丰富数据带来适当性与稳定性却牺牲变化性。\n\n## 五、局限性（自主判断）\n\n其一，统计稳健性不足——唯一显著的主效应在校正后滑到 p=.094，且样本仅 12 人、被试内设计，效应量中等，结论更像\"方向性证据 + 强定性解释\"，而非可推广的定量规律；作者在摘要里把\"问卷被信任、提升创造力\"写得比数据实际支持的更肯定，读者应打折采信。其二，风格预设未做平衡（作者明确承认没 enforce style counterbalancing），风格与表征的混淆无法排除，某风格本身更难/易编辑会污染条件间比较。其三，AI 预测叠加层与 LLM 解释是\"事后探索性原型\"而非实验条件内变量，所以\"AI 解释能救回叠加层的信任\"这条最吸睛的结论，其实没经过实验检验，只是事后访谈的印象。其四，样本是职业设计师（专业自主权高度敏感），结论向新手、向其他设计领域（室内→界面/交互）的迁移需要另证；authenticity–interpretability 这个轴本身也只覆盖了四种表征，谱系外的形态（如语音、叙事、共情性画像）没碰。\n\n## 六、对你课题的启发（人-AI 协作学习、分布式认知）\n\n这篇几乎是你\"分布式认知 + 共享表征\"问题在设计端的一个干净实验样本。其一，AIDED 实验的实质是问\"他人（客户）的认知状态经何种外部表征，才能在设计师–GAI 的分布系统里被有效读取\"——注视热图、问卷统计、AI 叠加是三种把\"一个心智的状态\"外化给另一个认知主体的媒介，结果直接给出媒介属性（保真度/负荷/可解释性）如何决定跨主体认知协调成败，这与你课题里\"AI 脚手架如何传递学习者状态\"是同一个设计变量。其二，它给出的 authenticity–interpretability 权衡可以泛化为你的核心问题：人-AI 协作学习中，共享表征在多大程度上保真于学习者经验、又在多大程度上牺牲给机器可解析性，边界在哪——这正是你做设计学习情境时绕不开的理论抉择。其三，\"AI 解释必须经自然语言中介才赢得信任\"这条发现，与野蔷薇 PAD 的\"反过度监视微解释\"互为镜像（一个设计端、一个教学端），两条线索合起来指向一个你课题可验证的假设：AI 生成的关于人（学习者/客户）的判断，若要被另一个人（教师/设计师）信任并行动，语言中介是必要而非可选的一环。",
+    "excerpt": "来源：records/20260908/11/aided-interior-design-human-experience/论文总结.md · 作者：Yang Chen Lin, Chen Ying Chien, Kai Hsin Hou, Hung Yu Chen, Po Chih Kuo（台湾清华大学资工系；Kuo 亦属 MIT；Chen 为独立设计师）",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260908/11/aided-interior-design-human-experience",
+    "original_url": "https://doi.org/10.1145/3772318.3791378",
+    "original_label": "DOI",
+    "session_type": "review",
+    "session_label": "评审会"
+  },
+  {
+    "date": "2026-09-08 11:00",
+    "title": "惠-能力进化（2026-09-08）",
+    "content": "## 今日发现\n\n选题为台湾清华大学资工系团队（Yang Chen Lin、Chen-Ying Chien、Kai-Hsin Hou、Hung-Yu Chen、Po-Chih Kuo，Kuo 亦属 MIT，Chen 为独立设计师），CHI 2026 \"Creating with AI\" 场次全文。经 arXiv 摘要页 + HTML 全文（ar5iv）双重核实，题名、作者、DOI（10.1145/3772318.3791378）、CCS 标注均与提议吻合。方法细节核实：形成性研究 9 名室内设计师（5 女 4 男，24–38 岁，60–75 分钟半结构化访谈，归纳式主题编码），主实验 12 名职业室内/建筑设计师、四条件被试内设计、拉丁方平衡，四条件为 C1 基线 briefs / C2 原始眼动注视热图 / C3 问卷可视化 / C4 AI 预测注意力叠加层，LLM 自然语言解释接口刻意不放四条件内、仅事后探索性展示。结果核实：任务级唯一显著维度是 TE6\"信息帮助我做出更好的设计决策\"（χ²(3)=9.35, p=.025, Kendall's W=.26），问卷可视化 M=6.00 > 注视热图 5.00 > 基线 4.75 > AI 叠加 4.50，但 Holm 校正后 p_adj=.094 不显著——这一点提议未提及，是本次核实补充的关键限定。定性访谈证据扎实：问卷\"最直接，抓住真实需求\"、热图\"分不清好坏只能猜\"、AI 叠加\"配 LLM 解释后立刻知道为什么\"。三条洞察（authenticity–interpretability 权衡、客户数据支撑性而非规定性、创造自由 vs 设计可靠性）与提议一致。提议所述\"真实性-可解释性谱系\"\"四种表征对比\"\"AI 解释需语言中介\"均无偏差。\n\n## 决策理由\n\n入选，为本日两篇中的\"设计端\"篇，与野蔷薇的教学端互为镜像。五条悟评价：(1) authenticity–interpretability 权衡直接对话分布式认知的共享表征问题——注视热图/问卷统计/AI 叠加是三种把\"一个心智的状态\"外化给另一认知主体的媒介，实验结果给出媒介属性如何决定跨主体认知协调成败，正是你课题里\"AI 脚手架如何传递学习者状态\"的同一个设计变量；(2) CHI 2026 正刊 + \"Creating with AI\" 场次 + interaction design theory + empirical studies in HCI 双 CCS 标注，理论与实证兼得，是设计向 HCI+AI 交叉的典型全文；(3) 但必须如实标注统计稳健性局限——唯一显著主效应校正后滑到 p=.094、n=12、效应量中等，摘要里\"问卷被信任、提升创造力\"的表述比数据实际支持的更肯定，采信时要打折，这条限定我已在论文总结\"局限性\"段落写明，供你引用时自带免责；(4) 与野蔷薇并置后，\"AI 生成的关于人的判断若要被他人信任并行动、语言中介是必要一环\"这个假设，是两篇共同指向的可验证命题，值得单独立为课题的一个子问题。数据完整性核验：DOI 与 arXiv 2602.10054 经 dedup_check.py 双路确认无历史重复，题名、作者、方法、结果与 arXiv 摘要/HTML 全文吻合。\n\n## 明日方向指引\n\n沿三条线索推进。(1) \"authenticity–interpretability 轴\"的泛化线：本文只覆盖四种表征、职业设计师、室内设计——反向定位有没有人把同一\"真实性–可解释性\"权衡用到学习/教学场景（学习者状态该以行为痕迹、结构化反馈还是 AI 摘要呈现给教师/脚手架），这直接服务你课题\"共享表征在多大程度上保真于学习者经验、又在多大程度上牺牲给机器可解析性\"这一核心问题。(2) \"统计稳健性\"线：本文 n=12 且主效应校正后不显著——反向定位有没有更大样本的 human-data interaction 实证，把\"问卷结构化表征优于原始热图\"从方向性证据升级成可推广结论，避免你的文献综述里把边缘结果当定论引用。(3) \"AI 解释需语言中介\"的合流线：本文与野蔷薇 PAD 的\"微解释\"互为镜像（设计端/教学端）——反向定位有没有实验直接操纵\"有无自然语言解释\"这一变量，检验它对\"人类是否信任并采纳 AI 关于人的判断\"的因果作用，这是你课题可落地的一个干净实验假设。",
+    "excerpt": "来源：records/20260908/11/aided-interior-design-human-experience/惠-能力进化.md · 选题为台湾清华大学资工系团队（Yang Chen Lin、Chen Ying Chien、Kai Hsin Hou、Hung Yu Chen、Po Chih Kuo，Kuo 亦属 MIT，Chen 为独立设计师），CHI 2026 \"Creating with AI\" 场次全文。经 arXiv 摘要页 + HTML 全文（ar5iv）双重核实，题名、作者、DOI（10.1145/3772318.3791378）、CCS 标注均与提议吻合。方法细节核实：形成性研究 9 名室内设计师（5 女 4 男，24–38 岁，60–75 分钟半结构化访谈，归纳式主题编码），主实验 12 名职业室内/建筑设计师、四条件被试内设计、拉丁方平衡，四条件为 C1 基线 briefs / C2 原始眼动注视热图 / C3 问卷可视化 / C4 AI 预测注意力叠加层，LLM 自然语言解释接口刻意不放四条件内、仅事后探索性展示。结果核实：任务级唯一显著维度是 TE6\"信息帮助我做出更好的设计决策\"（χ²(3)=9.35, p=.025, Kendall's W=.26），问卷可视化 M=6.00 注视热图 5.00 基线 4.75 AI 叠加 4.50，但 Holm 校正后 p adj=.094 不显著——这一点提议未提及，是本次核实补充的关键限定。定性访谈证据扎实：问卷\"最直接，抓住真实需求\"、热图\"分不清好坏只能猜\"、AI 叠加\"配 LLM 解释后立刻知道为什么\"。三条洞察（authenticity–interpretability 权衡、客户数据支撑性而非规定性、创造自由 vs 设计可靠性）与提议一致。提议所述\"真实性 可解释性谱系\"\"四种表征对比\"\"AI 解释需语言中介\"均无偏差。",
+    "file_name": "惠-能力进化.md",
+    "source_dir": "records/20260908/11/aided-interior-design-human-experience",
+    "original_url": "https://doi.org/10.1145/3772318.3791378",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-09-08 10:00",
+    "title": "Student–ChatGPT Interaction Visible: Designing a Teacher Dashboard for EFL Writing Education",
+    "content": "- 载体：Companion Proceedings of the 16th International Conference on Learning Analytics & Knowledge（LAK26 伴侣论文集，学习分析领域顶级会议；短论文），并行 arXiv 2608.13587（cs.HC）\n- 链接：https://arxiv.org/abs/2608.13587\n\n## 一、核心论点\n\n论文提出 PAD（Prompt Analytics Dashboard），一个面向 EFL 写作课教师的仪表盘，把学生与 ChatGPT 的交互痕迹（prompt–回答交换与作文修改历史）从\"难以解读的原始日志\"转译成教师可读、可行动的教学信号。核心主张是：当认知劳动分布到学生与 LLM 之间时，教师能否判断学习是否发生，取决于这些分布式的交互痕迹能否被可视化并加以解释。它刻意把 misuse（误用）定义为\"教师定义的、可能有教学风险的使用模式\"而非学术不端裁决，从而把 AI 使用痕迹重新定位为教学可见性资产，而不是作弊证据。\n\n## 二、背景与动机\n\nEFL 写作课上 ChatGPT 已经普及，但带来的不是\"要不要用\"的问题，而是\"教师怎么在有限课时里读懂学生与 AI 的交互\"。学生–LLM 交互产生海量难解读的数据，教师既没时间逐条翻阅，也缺少把原始痕迹转成教学判断的中间层。传统学习分析（LA）仪表盘多盯着绩效追踪（分数、完成度），但这篇要回答的是 AI 中介课堂里更根本的问题：教师凭什么在正确时机、对正确学生、做正确干预。它承接 KAIST 团队此前 RECIPE（如何把 ChatGPT 整合进 EFL 写作教育）与\"探索学生–ChatGPT 对话\"两条工作线，把注意力从学生端工具设计转到教师端可见性。\n\n## 三、方法与过程\n\n采用两阶段迭代共设计（co-design）。第一阶段，6 名把 ChatGPT 整合进写作课的大学 EFL 教师参与问卷与访谈，观察他们如何审查学生作文草稿与聊天日志，蒸馏出四个设计目标（快速总览、识别不良使用模式、深度分析作文与聊天日志、自定义 prompt）。第二阶段，基于第一阶段发现做出 PAD 原型，教师上手操作并做半结构化访谈，主题分析得出四条设计含义（简化分析解读、提高浏览日志效率、支持个性化反馈、支持教师自定义）。系统层面，学生端平台记录作文与聊天，三个 LLM 组件分别做：GPT-4 识别误用信号（无修改的生成请求、谈判式/求评估式聊天模式）、自动作文评分、GPT-4 按学习目标分类 prompt。界面遵循 Shneiderman 的 overview–zoom–filter–details-on-demand 范式，从人口池筛选、周粒度总览（聊天数、AI 评分、误用计数）、三标签页（聊天模式图表、学习目标过滤、向学生发消息）、滑块追踪作文修改，到逐条带标签的完整聊天历史。\n\n## 四、主要发现\n\n教师报告两项直接收益：扫描负担下降、干预时机更清晰。定性上，共设计暴露了教师对效率、教学可见性与伦理整合的三重需求，四条设计含义都指向\"把分析解释简化、把教师放回决策主体\"。设计上的关键取舍是\"反过度监视\"——用微解释（micro-explanations）与\"misuse 非学术不端\"的明确定义，把仪表盘从监控工具扭转为解释性教学工具。整体上，它演示了学习分析可以超越绩效追踪、进入 AI 中介课堂的解释性教学决策。但需要注意，这是一篇约 4 页的短论文，主要证据是定性共设计反馈，缺少对\"教师用了 PAD 之后教学行为是否真的改变\"的量化评估。\n\n## 五、局限性（自主判断）\n\n其一，载体与篇幅决定了证据强度：LAK Companion 是短论文格式，方法论停在\"迭代共设计 + 定性反馈\"，没有正式的用户研究或前后测，PAD 的效用目前是教师自述，不是被测量的教学结果。其二，三个 LLM 组件的可靠性（尤其 GPT-4 识别\"误用信号\"、按学习目标分类 prompt）没有报告准确率或误报率，而\"误用\"标签一旦误标，教师据此干预的后果会被放大——这正是它反过度监视立场下最需要先证明的东西。其三，样本是 6 名大学 EFL 教师、单一课程语境（韩语语境下的英语写作），痕迹分类法（误用/目标对齐/修改努力）能否迁移到其他学科、其他语言、其他 AI 使用模式存疑。其四，它把\"学习是否发生\"的判断最终还是外包给了教师的解读，PAD 给的是\"可见性\"而非\"有效性\"——学生到底学没学到，它不直接回答。\n\n## 六、对你课题的启发（人-AI 协作学习、分布式认知）\n\n这是\"分布式认知\"在教学仪表盘上的一次直接落地，价值三层。其一，PAD 的实质是给第三方（教师）装一台\"读学生+LLM 分布系统\"的仪器，把\"认知劳动分布到人机之间后，教学判断还能不能做\"这个问题，从哲学担忧变成界面设计问题——痕迹分类法 + 反过度监视微解释，几乎是你在设计学习情境里做\"AI 参与度评审\"的现成原型。其二，它补上库内 Socrates went Nuclear（只测学生端脑电）缺失的教学端一半，两者并置正好构成\"学习发生的神经/痕迹证据\"与\"教师如何读取这些证据\"的完整链条，你可以据此思考你的研究在\"学生端测量 vs 教师端可见性\"之间选哪一侧、还是两侧都要。其三，它暴露的关键局限——misuse 标签的准确率没被验证——正是你可以用实验去补的缺口：若你在设计课堂里做 AI 参与度评审，第一件事就该是验证\"痕迹分类的可靠性\"而非直接信任它，这与库内\"规则系统 holdout 验证\"的方法论教训一脉相承。",
+    "excerpt": "来源：records/20260908/10/student-chatgpt-interaction-visible/论文总结.md · 作者：Minsun Kim, Seon Gyeom Kim, Suyoun Lee, Yoosang Yoon, Junho Myung, Haneul Yoo, Jieun Han, Hyunseung Lim, Yoonsu Kim, So Yeon Ahn, Juho Kim, Alice Oh, Hwajung Hong, Tak Yeon Lee（KAIST）",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260908/10/student-chatgpt-interaction-visible",
+    "original_url": "https://arxiv.org/abs/2608.13587",
+    "original_label": "arXiv",
+    "session_type": "review",
+    "session_label": "评审会"
+  },
+  {
+    "date": "2026-09-08 10:00",
+    "title": "野蔷薇-能力进化（2026-09-08）",
+    "content": "## 今日发现\n\n选题为 KAIST KIXLAB 主导的多作者合作（第一作者 Minsun Kim，含 Juho Kim、Alice Oh、Hwajung Hong、Tak Yeon Lee 等，另含 SNU 的 So-Yeon Ahn），围绕学生–ChatGPT 交互的教师可见性。经 arXiv 摘要页 + PDF 全文双重核实，一处载体信息需修正：提议写\"arXiv 2608.13587，提交于 2026-07-10，未上会的预印本\"，但 PDF 首页标注为 Companion Proceedings of the 16th International Conference on Learning Analytics & Knowledge（LAK26 伴侣论文集，学习分析领域顶级会议），arXiv 是并行版——即它已收录于 LAK26 Companion，载体等级高于\"未上会预印本\"，但 Companion 是短论文格式（正文约 4 页），分量低于 CHI/UIST 正刊，两处都应在总结里如实标注。方法细节核实：两阶段迭代共设计（Phase 1 六名大学 EFL 教师问卷+访谈→四个设计目标；Phase 2 原型上手+半结构化访谈→四条设计含义）、三个 LLM 组件（GPT-4 识别误用信号、自动作文评分、GPT-4 按学习目标分类 prompt）、界面遵循 Shneiderman overview–zoom–filter–details-on-demand。关键伦理设计核实：文中脚注明确 misuse\"不代表学术不端裁决，而是教师定义的、可能有教学风险的使用模式\"——这是它区别于\"作弊监测\"的关键，也是提议里\"把 AI 使用痕迹定义为教学可见性资产而非作弊证据\"的原文依据。提议所述痕迹分类法（misuse signals / goal-alignment cues / revision effort）、三层视图、微解释均与原文吻合，唯一偏差是载体描述。\n\n## 决策理由\n\n入选，为本日两篇中的\"教学端\"篇，与惠的设计端互为镜像。五条悟评价：(1) 直接命中课题核心——把\"认知劳动分布到学生+LLM 之间后，教师凭什么判断学习有没有发生\"从哲学担忧变成界面设计问题，PAD 的痕迹分类法 + 反过度监视微解释是设计学习情境里\"AI 参与度评审\"的现成原型；(2) 补上库内 9/6 Socrates went Nuclear 只测学生端、不涉教学端的另一半，两者并置构成\"学习发生的痕迹/神经证据 × 教师如何读取\"的完整链条；(3) 载体修正后含金量变化要如实说——LAK26 是学习分析顶会，收录即加分，但 Companion 短论文的证据强度有限，不能与 CHI 正刊同台称重，这决定它在库内的定位是\"原型/机制启发\"而非\"强实证\"；(4) 它刻意做的\"misuse 去污名化 + 微解释\"设计取舍，正是 AI 参与度评审里最容易做坏的地方，有明确的警示与示范双重价值。数据完整性核验：arXiv 2608.13587 经 dedup_check.py（arXiv ID）与 arXiv 摘要页/PDF 双路确认无历史重复、真实存在，作者、方法、结论与提议吻合（除载体描述外）。\n\n## 明日方向指引\n\n沿三条线索推进。(1) \"痕迹分类的可靠性\"线：本文三个 LLM 组件（尤其 GPT-4 识别误用信号）没有报告准确率/误报率，而误标一旦发生会放大教师干预的后果——反向定位有没有人系统验证过\"AI 对学生交互痕迹的分类可靠性（LLM 编码 vs 人类教师编码）\"，这直接决定你课题里\"用行为痕迹测认知分布\"的测量方案能不能立住，与库内 5/31\"规则系统 holdout 验证\"教训并置。(2) \"可见性 → 有效性\"线：PAD 给的是可见性而非有效性，学生到底学没学它不直接回答——反向定位有没有做过前后测或用户研究的教师仪表盘，看\"教师用了 AI 交互仪表盘后教学行为/学生结果是否真的改变\"，这是你从\"工具\"走到\"证据\"的必补环节。(3) \"痕迹分类法的迁移\"线：本文只做 EFL 写作、韩语语境——反向定位有没有人把同类\"误用/目标对齐/修改努力\"痕迹分类法用到设计类任务（草图、原型、反馈迭代）上，看这套分类法在你的设计学习情境里是否同样成立，直接服务你的情境设计。",
+    "excerpt": "来源：records/20260908/10/student-chatgpt-interaction-visible/野蔷薇-能力进化.md · 选题为 KAIST KIXLAB 主导的多作者合作（第一作者 Minsun Kim，含 Juho Kim、Alice Oh、Hwajung Hong、Tak Yeon Lee 等，另含 SNU 的 So Yeon Ahn），围绕学生–ChatGPT 交互的教师可见性。经 arXiv 摘要页 + PDF 全文双重核实，一处载体信息需修正：提议写\"arXiv 2608.13587，提交于 2026 07 10，未上会的预印本\"，但 PDF 首页标注为 Companion Proceedings of the 16th International Conference on Learning Analytics & Knowledge（LAK26 伴侣论文集，学习分析领域顶级会议），arXiv 是并行版——即它已收录于 LAK26 Companion，载体等级高于\"未上会预印本\"，但 Companion 是短论文格式（正文约 4 页），分量低于 CHI/UIST 正刊，两处都应在总结里如实标注。方法细节核实：两阶段迭代共设计（Phase 1 六名大学 EFL 教师问卷+访谈→四个设计目标；Phase 2 原型上手+半结构化访谈→四条设计含义）、三个 LLM 组件（GPT 4 识别误用信号、自动作文评分、GPT 4 按学习目标分类 prompt）、界面遵循 Shneiderman overview–zoom–filter–details on demand。关键伦理设计核实：文中脚注明确 misuse\"不代表学术不端裁决，而是教师定义的、可能有教学风险的使用模式\"——这是它区别于\"作弊监测\"的关键，也是提议里\"把 AI 使用痕迹定义为教学可见性资产而非作弊证据\"的原文依据。提议所述痕迹分类法（misuse signals / goal alignment cues / revision effort）、三层视图、微解释均与原文吻合，唯一偏差是载体描述。",
+    "file_name": "野蔷薇-能力进化.md",
+    "source_dir": "records/20260908/10/student-chatgpt-interaction-visible",
+    "original_url": "https://arxiv.org/abs/2608.13587",
+    "original_label": "arXiv",
+    "session_type": "review",
+    "session_label": "评审会"
+  },
+  {
+    "date": "2026-09-08 09:00",
+    "title": "悠仁-能力进化（2026-09-08）",
+    "content": "## 今日发现\n\n你这次做到了昨天给你的方向指引里最关键的一步：把\"Material 3 Expressive\"这个研究问题从厂商博客换成了同行评审的学术来源——CHI 2026 正刊论文《Usability Hasn't Peaked: Exploring How Expressive Design Overcomes the Usability Plateau》（DOI 10.1145/3772318.3790373，作者 Frank Bentley、Lennard Schmidt、Alyssa Sheehan、Bianca Gallardo、Ying Wang，2026-04-13~17 Barcelona，SIGCHI 程序 4 月 16 日有汇报记录）。经 ACM DL 与 research.google 双路核实，论文真实存在，方法与数据点吻合：48 名多元参与者、眼动追踪、10 款真实应用（Gmail/Meet/Messages/Docs 等）受控对比 Material 3 Expressive 与现行 Material 3 基线，发现 Expressive 界面让用户注视正确元素快 33%、任务完成快 20%、45+ 岁用户注视提速 59% 抹平年龄差距、10 款中 8 款在审美上被显著偏好、5 个审美属性显著更高，直接反驳 Jakob Nielsen\"移动可用性已被榨干、只剩增量收益\"的可用性平台论，并诚实报告了新增灵活性的风险面。这是你连续第三次（7/30 博客、9/6 博客、今日正刊）终于落在学术载体上，嗅觉和执行力的闭环已经走通，这一步记功。\n\n## 决策理由\n\n放弃，但原因不是载体——载体这次完全达标，是你第一次真正够到收录门槛。放弃理由落在课题关联度排序上：今日三篇强手如林，野蔷薇（学生–LLM 交互的教学端可见性）与惠（设计师–AI 协作的共享表征）两篇直接落在\"人-AI 协作学习 / 分布式认知\"的正中心，而你这篇的核心是\"设计系统一致性 vs 表达性\"的可用性问题，AI 只在\"生成式 UI 继承收敛的设计惯例\"这一延伸假设里出现，本身不研究人-AI 协作，也不研究学习。与本课题的证据链，它隔着一层\"设计系统如何物化设计认知\"的翻译，才能接上\"认知分布\"这条线，而另外两篇是零翻译直接对话。此外，它的主题与昨日你被拒的 Material 3 Expressive 博客同源（载体已质变、数据已升级，但研究问题方向重叠）。所以今天的决定是\"三选二里关联度最弱的一篇让位\"，不是\"你的载体还不行\"——这两者要分清楚，别把今日的放弃误读成载体门槛又没过。\n\n## 明日方向指引\n\n你的\"从设计现场出发的范式转向\"视角是站点的独特补充，载体这一关你已经过了，下一关是\"与课题的可对话理论机制\"。三条路：(1) 若坚持设计系统方向，把\"一致性 vs 表达性\"锚到\"生成式 UI 时代\"——反向定位有没有人实证研究过\"AI 生成/继承设计系统时，收敛的默认值如何影响界面引导注意力的灵活性\"，把设计系统议题接回你的\"AI 生成脚手架是否按学习者状态灵活引导注意力\"这个设计变量；(2) 把\"表达性界面引导注意力、抹平年龄认知差异\"这个眼动发现，转向学习/教育场景——找\"面向学习者的界面视觉显著性、教育界面如何分配认知资源\"的实证论文，让注意力引导从\"可用性\"议题变成\"认知分布\"议题；(3) 最直接的一条：从\"设计系统\"转向\"人-AI 协作设计工具\"——你昨天已经在 Material 3 Expressive 的注意力引导上展现了眼动数据敏感度，把它用到\"AI 辅助界面设计 / 设计系统与 AI 的关系\"上，就自然落进课题核心。记住判别式：载体过关了，下一篇要比的是\"有没有可对话的理论机制\"，而不是\"是不是一个有趣的设计话题\"。",
+    "excerpt": "来源：records/20260908/09/悠仁-能力进化.md/悠仁-能力进化.md · 你这次做到了昨天给你的方向指引里最关键的一步：把\"Material 3 Expressive\"这个研究问题从厂商博客换成了同行评审的学术来源——CHI 2026 正刊论文《Usability Hasn't Peaked: Exploring How Expressive Design Overcomes the Usability Plateau》（DOI 10.1145/3772318.3790373，作者 Frank Bentley、Lennard Schmidt、Alyssa Sheehan、Bianca Gallardo、Ying Wang，2026 04 13~17 Barcelona，SIGCHI 程序 4 月 16 日有汇报记录）。经 ACM DL 与 research.google 双路核实，论文真实存在，方法与数据点吻合：48 名多元参与者、眼动追踪、10 款真实应用（Gmail/Meet/Messages/Docs 等）受控对比 Material 3 Expressive 与现行 Material 3 基线，发现 Expressive 界面让用户注视正确元素快 33%、任务完成快 20%、45+ 岁用户注视提速 59% 抹平年龄差距、10 款中 8 款在审美上被显著偏好、5 个审美属性显著更高，直接反驳 Jakob Nielsen\"移动可用性已被榨干、只剩增量收益\"的可用性平台论，并诚实报告了新增灵活性的风险面。这是你连续第三次（7/30 博客、9/6 博客、今日正刊）终于落在学术载体上，嗅觉和执行力的闭环已经走通，这一步记功。",
+    "file_name": "悠仁-能力进化.md",
+    "source_dir": "records/20260908/09/悠仁-能力进化.md",
+    "original_url": "https://doi.org/10.1145/3772318.3790373",
+    "original_label": "DOI",
+    "session_type": "review",
+    "session_label": "评审会"
+  },
+  {
+    "date": "2026-09-08 09:00",
+    "title": "五条悟-汇总（2026-09-08）",
+    "content": "## 今日采集决议\n\n**入选 2 篇，放弃 1 篇。**\n\n### 入选篇目\n\n**1. 野蔷薇：KAIST — \"Student–ChatGPT Interaction Visible\"，把\"AI 使用痕迹\"做成面向教师的可见性工具（教学端/原型篇）**\n- 论文：Minsun Kim、Seon Gyeom Kim、Suyoun Lee、Yoosang Yoon、Junho Myung、Haneul Yoo、Jieun Han、Hyunseung Lim、Yoonsu Kim、So-Yeon Ahn、Juho Kim、Alice Oh、Hwajung Hong、Tak Yeon Lee，\"Student–ChatGPT Interaction Visible: Designing a Teacher Dashboard for EFL Writing Education\"（LAK26 Companion Proceedings 伴侣论文集短论文，并行 arXiv 2608.13587）。\n- 入选理由：把\"认知劳动分布到学生+LLM 之间后，教师凭什么判断学习有没有发生\"从哲学担忧变成界面设计问题——PAD 用两次迭代共设计（6 名 EFL 教师）蒸馏出痕迹分类法（误用信号/目标对齐/修改努力），落到三层界面视图并刻意用微解释抑制过度监视，且明确把 misuse 定义为\"教师定义的可能有教学风险的模式\"而非学术不端裁决。这是分布式认知在教学仪表盘上的直接落地，补上库内 9/6 Socrates went Nuclear 只测学生端、不涉教学端的另一半。注意：经 PDF 核实，其真实载体是 LAK26 Companion 短论文（约 4 页），非提议所述\"未上会预印本\"，收录等级高于预印本但证据强度低于 CHI/UIST 正刊，在库内定位为\"原型/机制启发\"而非强实证。\n\n**2. 惠：台湾清华大学（×MIT）— CHI 2026 \"AIDED\"，把\"客户数据以什么形态进入设计师-AI 协作\"做成可迁移的理论透镜（设计端/机制篇）**\n- 论文：Yang Chen Lin、Chen-Ying Chien、Kai-Hsin Hou、Hung-Yu Chen、Po-Chih Kuo，\"AIDED: Augmenting Interior Design with Human Experience Data for Designer–AI Co-Design\"（CHI 2026 Barcelona，DOI 10.1145/3772318.3791378，arXiv 2602.10054）。\n- 入选理由：沿\"真实性-可解释性\"谱系，用 9 人形成性研究 + 12 名职业设计师的四条件被试内实验（基线 briefs / 原始注视热图 / 问卷可视化 / AI 预测叠加层）系统操纵客户数据的四种表征，得出 authenticity–interpretability trade-off 这一核心理论贡献：原始信号保真但难读，结构化表征清晰但可能过度简化，问题不在\"获取更多数据\"而在\"在保真与可解释间找到促进设计行动的平衡点\"。这直接对话课题的共享表征问题——四种表征是四种\"把一个心智的状态外化给另一认知主体\"的媒介，实验给出媒介属性如何决定跨主体认知协调成败。需如实标注统计限定：唯一显著主效应（TE6）在 Holm 校正后 p_adj=.094、n=12、效应量中等，摘要的强表述应打折采信。\n\n### 放弃篇目\n\n**悠仁：CHI 2026 \"Usability Hasn't Peaked\"（载体已达标，课题关联度排序让位）**\n- 论文：Frank Bentley、Lennard Schmidt、Alyssa Sheehan、Bianca Gallardo、Ying Wang，\"Usability Hasn't Peaked: Exploring How Expressive Design Overcomes the Usability Plateau\"（CHI 2026 Barcelona，DOI 10.1145/3772318.3790373）。\n- 放弃原因：**不是载体问题——载体这次完全达标，这是悠仁连续第三次尝试后第一次真正落在同行评审正刊上，必须记功。** 放弃理由落在课题关联度排序：其核心是\"设计系统一致性 vs 表达性\"的可用性问题（48 人眼动实验反驳 Nielsen 的可用性平台论），本身不研究人-AI 协作、也不研究学习，AI 只在\"生成式 UI 继承收敛惯例\"的延伸假设里出现；要接上课题的\"认知分布\"线，它隔着一层\"设计系统如何物化设计认知\"的翻译，而野蔷薇、惠是零翻译直接对话\"人-AI 协作学习 / 分布式认知\"。此外其主题与昨日被拒的 Material 3 Expressive 博客同源（载体已质变、数据已升级，但研究问题方向重叠）。\n- 反馈：悠仁的这次进步要单独肯定——它完成了\"博客→正刊\"的载体升级，方向判断（眼动数据检验\"回到设计基本功\"）也被证明是对的。放弃只是\"三选二里关联度最弱的一篇让位\"，不是\"载体还不行\"，两者要分清楚，避免悠仁把今日的放弃误读成载体门槛又没过。\n\n## 方向指引\n\n今日两篇构成\"教学端 × 设计端\"的镜像对照，并收敛出一个贯穿主题：\n\n- **野蔷薇（教学端，AI 交互痕迹的教师可见性）**：把\"学生+LLM 分布系统\"装上一台教师可读的仪器，用痕迹分类法 + 反过度监视微解释，回答\"认知劳动分布后教学判断还能不能做\"。对应课题\"AI 参与度评审\"的**可见性/原型**层面。\n- **惠（设计端，客户经验数据的表征保真度）**：把\"他人认知状态如何外化给另一认知主体\"做成可操纵的实验变量，得出 authenticity–interpretability trade-off，并暴露\"AI 关于人的判断需自然语言中介才被信任\"。对应课题\"共享表征在多大程度上保真于学习者经验、又多大程度上牺牲给机器可解析性\"的**机制**层面。\n\n两者并置后，一条可验证的假设浮现出来，建议列为课题子问题：**AI 生成的关于人（学习者/客户）的判断，若要被另一个人（教师/设计师）信任并据此行动，语言中介是必要而非可选的一环**——野蔷薇的\"微解释\"与惠的\"LLM 解释救回叠加层信任\"从两个独立语境指向同一结论，值得反向定位实验证据、并在你的设计学习情境里直接检验。下个采集周期建议关注：\n\n- \"痕迹分类的可靠性\"线——野蔷薇篇三个 LLM 组件没报告准确率/误报率，反向定位\"AI 对学生交互痕迹的分类可靠性（LLM 编码 vs 人类教师编码）\"，服务课题测量方案，与库内 5/31 holdout 验证教训并置。\n- \"可见性 → 有效性\"线——PAD 给的是可见性而非有效性，反向定位有没有做过前后测的教师仪表盘，看\"教师用了 AI 交互仪表盘后教学行为/学生结果是否真的改变\"。\n- \"authenticity–interpretability 轴泛化\"线——惠篇只做职业设计师/室内设计，反向定位有没有人把同一权衡用到学习/教学场景，看\"学习者状态该以行为痕迹、结构化反馈还是 AI 摘要呈现\"。\n- 一条给三位采集员的共同提醒（升级版）：悠仁今日已过载体关，判别式从\"是不是学术论文\"进阶到\"有没有可对话的理论机制、且是否落在人-AI 协作/学习的正中心\"。三篇都达标时，排序依据是课题关联度，不是载体或话题的新鲜度。\n\n## 数据完整性观察\n\n今日三份提议均通过去重检查（dedup_check.py 对 DOI/arXiv 三路均返回 [OK]，无历史重复）。五条悟进一步做了外部核验：野蔷薇篇 arXiv 2608.13587 经 arXiv 摘要页 + PDF 全文核实，发现一处载体偏差——提议写\"未上会预印本\"，实为 LAK26 Companion Proceedings 短论文（已在\"局限性\"与\"汇总\"中如实标注），作者、方法、结论与提议吻合。惠篇 DOI 10.1145/3772318.3791378 经 arXiv 摘要页 + HTML 全文（ar5iv）核实，题名、作者、形成性研究 9 人 + 主实验 12 人四条件、TE6 主效应与定性访谈证据均吻合，补充了\"Holm 校正后 p_adj=.094 不显著\"这一提议未提的统计限定。悠仁篇 DOI 10.1145/3772318.3790373 经 ACM DL（web_search 摘要）+ research.google + researchr + SIGCHI 程序页四路核实为 CHI 2026 正刊，48 人/眼动/33% 注视提速/20% 任务提速/45+ 岁 59%/8 款审美偏好与提议吻合。三采集员标记（.yujin-done / .bara-done / .megumi-done）均已存在，五条悟标记 .gojo-done 本次执行前未存在、为首轮执行。无历史缺口复现，无需额外上报。",
+    "excerpt": "来源：records/20260908/09/five-daily-summary/五条悟-汇总.md · 入选 2 篇，放弃 1 篇。",
+    "file_name": "五条悟-汇总.md",
+    "source_dir": "records/20260908/09/five-daily-summary",
+    "original_url": "https://doi.org/10.1145/3772318.3791378",
+    "original_label": "DOI",
+    "session_type": "review",
+    "session_label": "评审会"
+  },
   {
     "date": "2026-09-07 11:00",
     "title": "StoryEnsemble: Enabling Dynamic Exploration & Iteration in the Design Process with AI and Forward-Backward Propagation",

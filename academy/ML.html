@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ML</title>
-    <meta name="description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 287 条。">
+    <meta name="description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 289 条。">
     <meta property="og:title" content="ML - 研究所">
-    <meta property="og:description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 287 条。">
+    <meta property="og:description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 289 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">ML</h1>
-        <p class="sidebar-summary">基于关键词自动归类的训练、优化与模型方法研究。 共 287 条。</p>
+        <p class="sidebar-summary">基于关键词自动归类的训练、优化与模型方法研究。 共 289 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>ML</strong>
-                <span>基于关键词自动归类的训练、优化与模型方法研究。 共 287 条。</span>
+                <span>基于关键词自动归类的训练、优化与模型方法研究。 共 289 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,8 +79,32 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "ML", "subtitle": "基于关键词自动归类的训练、优化与模型方法研究。 共 287 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "ML", "subtitle": "基于关键词自动归类的训练、优化与模型方法研究。 共 289 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-09-08 11:00",
+    "title": "AIDED: Augmenting Interior Design with Human Experience Data for Designer–AI Co-Design",
+    "content": "- 载体：CHI 2026 全文论文（Barcelona，2026-04-13~17，\"Creating with AI\" 场次；ACM 同行评审），并行 arXiv 2602.10054\n- 链接：https://doi.org/10.1145/3772318.3791378 ｜ https://arxiv.org/abs/2602.10054\n\n## 一、核心论点\n\nAIDED 追问的是一个比\"AI 能不能辅助设计\"更靠前的问题：客户的经验数据以什么形态进入设计师–生成式 AI 的协作工作流，才能既保真又不压垮设计师。它提出 authenticity–interpretability trade-off（真实性–可解释性权衡）作为贯穿性的理论透镜——原始的行为信号（如眼动热图）最接近客户的真实体验，却难读、难用；结构化的表征（如问卷可视化）清晰可行动，却可能牺牲保真度。核心主张是：问题不在\"获取更多客户数据\"，而在\"在保真与可解释之间找到能促进设计行动的平衡点\"。\n\n## 二、背景与动机\n\n室内设计长期卡在一个裂缝上——客户说不清、设计师猜不准，客户体验的细微之处难以被捕捉成设计者能据以行动的输入。生成式 AI 给设计流程带来了新的变量：它既是风格生成器，也可能成为客户声音的中介，但这个中介该喂它什么数据、以什么形态喂，此前没有系统的实证。作者先做形成性研究（9 名职业室内设计师）锚定真实工作流，再据此构建 AIDED——一个把多模态客户数据整合进 GAI 设计流程的系统，并沿\"真实性–可解释性\"谱系系统操纵四种表征来检验效果。\n\n## 三、方法与过程\n\n分两层。形成性研究：9 名室内设计师（5 女 4 男，24–38 岁，含创始人/资深/助理/实习生），60–75 分钟半结构化访谈，归纳式主题编码，目标是弄清设计师–客户沟通实践、如何解读模糊需求、对生理心理数据与 AI 工具的态度；得出客户输入\"碎片化、演化、模糊\"、视觉优先于语言等洞察。主实验：12 名职业室内/建筑设计师，四条件被试内设计、拉丁方平衡，每名设计师面对两个真实客户 profile、四种布局、四种风格预设（Modern/Nordic/Wabi-sabi/MUJI），每条件编辑两个房间场景、最多 5 次 GAI 迭代。四个条件是四种客户数据表征：C1 基线 briefs（基础人口学）、C2 原始眼动注视热图、C3 问卷可视化、C4 AI 预测注意力叠加层；LLM 自然语言解释接口刻意不放进四条件、只在事后作为探索性原型展示。评估混合了任务级量化评分、设计输出质量（含新手评估者）与事后访谈。\n\n## 四、主要发现\n\n结果干净但有张力。任务级指标里，唯一显著的是 TE6\"信息帮助我做出更好的设计决策\"（χ²(3)=9.35, p=.025, W=.26），问卷可视化评分最高（M=6.00），依次高于注视热图（5.00）、基线（4.75）、AI 预测叠加（4.50）——但 Holm 多重比较校正后不再显著（p_adj=.094），属边缘证据，不能当强结论。定性访谈补足了机制：问卷图表\"最直接，让我抓住真实需求\"；原始热图\"看得到他看了哪，却分不清好坏，只能猜\"；AI 预测叠加单独难懂、得分最低，但配上 LLM 自然语言解释后\"立刻知道为什么\"。三条洞察收敛为：authenticity–interpretability 权衡是核心挑战；客户数据是支撑性（supportive）而非规定性（prescriptive）输入，保留设计师专业自主；最少数据带来开放探索但结果不一致，丰富数据带来适当性与稳定性却牺牲变化性。\n\n## 五、局限性（自主判断）\n\n其一，统计稳健性不足——唯一显著的主效应在校正后滑到 p=.094，且样本仅 12 人、被试内设计，效应量中等，结论更像\"方向性证据 + 强定性解释\"，而非可推广的定量规律；作者在摘要里把\"问卷被信任、提升创造力\"写得比数据实际支持的更肯定，读者应打折采信。其二，风格预设未做平衡（作者明确承认没 enforce style counterbalancing），风格与表征的混淆无法排除，某风格本身更难/易编辑会污染条件间比较。其三，AI 预测叠加层与 LLM 解释是\"事后探索性原型\"而非实验条件内变量，所以\"AI 解释能救回叠加层的信任\"这条最吸睛的结论，其实没经过实验检验，只是事后访谈的印象。其四，样本是职业设计师（专业自主权高度敏感），结论向新手、向其他设计领域（室内→界面/交互）的迁移需要另证；authenticity–interpretability 这个轴本身也只覆盖了四种表征，谱系外的形态（如语音、叙事、共情性画像）没碰。\n\n## 六、对你课题的启发（人-AI 协作学习、分布式认知）\n\n这篇几乎是你\"分布式认知 + 共享表征\"问题在设计端的一个干净实验样本。其一，AIDED 实验的实质是问\"他人（客户）的认知状态经何种外部表征，才能在设计师–GAI 的分布系统里被有效读取\"——注视热图、问卷统计、AI 叠加是三种把\"一个心智的状态\"外化给另一个认知主体的媒介，结果直接给出媒介属性（保真度/负荷/可解释性）如何决定跨主体认知协调成败，这与你课题里\"AI 脚手架如何传递学习者状态\"是同一个设计变量。其二，它给出的 authenticity–interpretability 权衡可以泛化为你的核心问题：人-AI 协作学习中，共享表征在多大程度上保真于学习者经验、又在多大程度上牺牲给机器可解析性，边界在哪——这正是你做设计学习情境时绕不开的理论抉择。其三，\"AI 解释必须经自然语言中介才赢得信任\"这条发现，与野蔷薇 PAD 的\"反过度监视微解释\"互为镜像（一个设计端、一个教学端），两条线索合起来指向一个你课题可验证的假设：AI 生成的关于人（学习者/客户）的判断，若要被另一个人（教师/设计师）信任并行动，语言中介是必要而非可选的一环。",
+    "excerpt": "来源：records/20260908/11/aided-interior-design-human-experience/论文总结.md · 作者：Yang Chen Lin, Chen Ying Chien, Kai Hsin Hou, Hung Yu Chen, Po Chih Kuo（台湾清华大学资工系；Kuo 亦属 MIT；Chen 为独立设计师）",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260908/11/aided-interior-design-human-experience",
+    "original_url": "https://doi.org/10.1145/3772318.3791378",
+    "original_label": "DOI",
+    "session_type": "review",
+    "session_label": "评审会"
+  },
+  {
+    "date": "2026-09-08 10:00",
+    "title": "Student–ChatGPT Interaction Visible: Designing a Teacher Dashboard for EFL Writing Education",
+    "content": "- 载体：Companion Proceedings of the 16th International Conference on Learning Analytics & Knowledge（LAK26 伴侣论文集，学习分析领域顶级会议；短论文），并行 arXiv 2608.13587（cs.HC）\n- 链接：https://arxiv.org/abs/2608.13587\n\n## 一、核心论点\n\n论文提出 PAD（Prompt Analytics Dashboard），一个面向 EFL 写作课教师的仪表盘，把学生与 ChatGPT 的交互痕迹（prompt–回答交换与作文修改历史）从\"难以解读的原始日志\"转译成教师可读、可行动的教学信号。核心主张是：当认知劳动分布到学生与 LLM 之间时，教师能否判断学习是否发生，取决于这些分布式的交互痕迹能否被可视化并加以解释。它刻意把 misuse（误用）定义为\"教师定义的、可能有教学风险的使用模式\"而非学术不端裁决，从而把 AI 使用痕迹重新定位为教学可见性资产，而不是作弊证据。\n\n## 二、背景与动机\n\nEFL 写作课上 ChatGPT 已经普及，但带来的不是\"要不要用\"的问题，而是\"教师怎么在有限课时里读懂学生与 AI 的交互\"。学生–LLM 交互产生海量难解读的数据，教师既没时间逐条翻阅，也缺少把原始痕迹转成教学判断的中间层。传统学习分析（LA）仪表盘多盯着绩效追踪（分数、完成度），但这篇要回答的是 AI 中介课堂里更根本的问题：教师凭什么在正确时机、对正确学生、做正确干预。它承接 KAIST 团队此前 RECIPE（如何把 ChatGPT 整合进 EFL 写作教育）与\"探索学生–ChatGPT 对话\"两条工作线，把注意力从学生端工具设计转到教师端可见性。\n\n## 三、方法与过程\n\n采用两阶段迭代共设计（co-design）。第一阶段，6 名把 ChatGPT 整合进写作课的大学 EFL 教师参与问卷与访谈，观察他们如何审查学生作文草稿与聊天日志，蒸馏出四个设计目标（快速总览、识别不良使用模式、深度分析作文与聊天日志、自定义 prompt）。第二阶段，基于第一阶段发现做出 PAD 原型，教师上手操作并做半结构化访谈，主题分析得出四条设计含义（简化分析解读、提高浏览日志效率、支持个性化反馈、支持教师自定义）。系统层面，学生端平台记录作文与聊天，三个 LLM 组件分别做：GPT-4 识别误用信号（无修改的生成请求、谈判式/求评估式聊天模式）、自动作文评分、GPT-4 按学习目标分类 prompt。界面遵循 Shneiderman 的 overview–zoom–filter–details-on-demand 范式，从人口池筛选、周粒度总览（聊天数、AI 评分、误用计数）、三标签页（聊天模式图表、学习目标过滤、向学生发消息）、滑块追踪作文修改，到逐条带标签的完整聊天历史。\n\n## 四、主要发现\n\n教师报告两项直接收益：扫描负担下降、干预时机更清晰。定性上，共设计暴露了教师对效率、教学可见性与伦理整合的三重需求，四条设计含义都指向\"把分析解释简化、把教师放回决策主体\"。设计上的关键取舍是\"反过度监视\"——用微解释（micro-explanations）与\"misuse 非学术不端\"的明确定义，把仪表盘从监控工具扭转为解释性教学工具。整体上，它演示了学习分析可以超越绩效追踪、进入 AI 中介课堂的解释性教学决策。但需要注意，这是一篇约 4 页的短论文，主要证据是定性共设计反馈，缺少对\"教师用了 PAD 之后教学行为是否真的改变\"的量化评估。\n\n## 五、局限性（自主判断）\n\n其一，载体与篇幅决定了证据强度：LAK Companion 是短论文格式，方法论停在\"迭代共设计 + 定性反馈\"，没有正式的用户研究或前后测，PAD 的效用目前是教师自述，不是被测量的教学结果。其二，三个 LLM 组件的可靠性（尤其 GPT-4 识别\"误用信号\"、按学习目标分类 prompt）没有报告准确率或误报率，而\"误用\"标签一旦误标，教师据此干预的后果会被放大——这正是它反过度监视立场下最需要先证明的东西。其三，样本是 6 名大学 EFL 教师、单一课程语境（韩语语境下的英语写作），痕迹分类法（误用/目标对齐/修改努力）能否迁移到其他学科、其他语言、其他 AI 使用模式存疑。其四，它把\"学习是否发生\"的判断最终还是外包给了教师的解读，PAD 给的是\"可见性\"而非\"有效性\"——学生到底学没学到，它不直接回答。\n\n## 六、对你课题的启发（人-AI 协作学习、分布式认知）\n\n这是\"分布式认知\"在教学仪表盘上的一次直接落地，价值三层。其一，PAD 的实质是给第三方（教师）装一台\"读学生+LLM 分布系统\"的仪器，把\"认知劳动分布到人机之间后，教学判断还能不能做\"这个问题，从哲学担忧变成界面设计问题——痕迹分类法 + 反过度监视微解释，几乎是你在设计学习情境里做\"AI 参与度评审\"的现成原型。其二，它补上库内 Socrates went Nuclear（只测学生端脑电）缺失的教学端一半，两者并置正好构成\"学习发生的神经/痕迹证据\"与\"教师如何读取这些证据\"的完整链条，你可以据此思考你的研究在\"学生端测量 vs 教师端可见性\"之间选哪一侧、还是两侧都要。其三，它暴露的关键局限——misuse 标签的准确率没被验证——正是你可以用实验去补的缺口：若你在设计课堂里做 AI 参与度评审，第一件事就该是验证\"痕迹分类的可靠性\"而非直接信任它，这与库内\"规则系统 holdout 验证\"的方法论教训一脉相承。",
+    "excerpt": "来源：records/20260908/10/student-chatgpt-interaction-visible/论文总结.md · 作者：Minsun Kim, Seon Gyeom Kim, Suyoun Lee, Yoosang Yoon, Junho Myung, Haneul Yoo, Jieun Han, Hyunseung Lim, Yoonsu Kim, So Yeon Ahn, Juho Kim, Alice Oh, Hwajung Hong, Tak Yeon Lee（KAIST）",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260908/10/student-chatgpt-interaction-visible",
+    "original_url": "https://arxiv.org/abs/2608.13587",
+    "original_label": "arXiv",
+    "session_type": "review",
+    "session_label": "评审会"
+  },
   {
     "date": "2026-09-07 11:00",
     "title": "StoryEnsemble: Enabling Dynamic Exploration & Iteration in the Design Process with AI and Forward-Backward Propagation",

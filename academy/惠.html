@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>惠</title>
-    <meta name="description" content="来自源目录的 174 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 175 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="惠 - 研究所">
-    <meta property="og:description" content="来自源目录的 174 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 175 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="megumi.jpg" alt="惠 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">惠</h1>
-        <p class="sidebar-summary">来自源目录的 174 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 175 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>惠</strong>
-                <span>来自源目录的 174 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 175 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 174 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 175 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-09-08 11:00",
+    "title": "惠-能力进化（2026-09-08）",
+    "content": "## 今日发现\n\n选题为台湾清华大学资工系团队（Yang Chen Lin、Chen-Ying Chien、Kai-Hsin Hou、Hung-Yu Chen、Po-Chih Kuo，Kuo 亦属 MIT，Chen 为独立设计师），CHI 2026 \"Creating with AI\" 场次全文。经 arXiv 摘要页 + HTML 全文（ar5iv）双重核实，题名、作者、DOI（10.1145/3772318.3791378）、CCS 标注均与提议吻合。方法细节核实：形成性研究 9 名室内设计师（5 女 4 男，24–38 岁，60–75 分钟半结构化访谈，归纳式主题编码），主实验 12 名职业室内/建筑设计师、四条件被试内设计、拉丁方平衡，四条件为 C1 基线 briefs / C2 原始眼动注视热图 / C3 问卷可视化 / C4 AI 预测注意力叠加层，LLM 自然语言解释接口刻意不放四条件内、仅事后探索性展示。结果核实：任务级唯一显著维度是 TE6\"信息帮助我做出更好的设计决策\"（χ²(3)=9.35, p=.025, Kendall's W=.26），问卷可视化 M=6.00 > 注视热图 5.00 > 基线 4.75 > AI 叠加 4.50，但 Holm 校正后 p_adj=.094 不显著——这一点提议未提及，是本次核实补充的关键限定。定性访谈证据扎实：问卷\"最直接，抓住真实需求\"、热图\"分不清好坏只能猜\"、AI 叠加\"配 LLM 解释后立刻知道为什么\"。三条洞察（authenticity–interpretability 权衡、客户数据支撑性而非规定性、创造自由 vs 设计可靠性）与提议一致。提议所述\"真实性-可解释性谱系\"\"四种表征对比\"\"AI 解释需语言中介\"均无偏差。\n\n## 决策理由\n\n入选，为本日两篇中的\"设计端\"篇，与野蔷薇的教学端互为镜像。五条悟评价：(1) authenticity–interpretability 权衡直接对话分布式认知的共享表征问题——注视热图/问卷统计/AI 叠加是三种把\"一个心智的状态\"外化给另一认知主体的媒介，实验结果给出媒介属性如何决定跨主体认知协调成败，正是你课题里\"AI 脚手架如何传递学习者状态\"的同一个设计变量；(2) CHI 2026 正刊 + \"Creating with AI\" 场次 + interaction design theory + empirical studies in HCI 双 CCS 标注，理论与实证兼得，是设计向 HCI+AI 交叉的典型全文；(3) 但必须如实标注统计稳健性局限——唯一显著主效应校正后滑到 p=.094、n=12、效应量中等，摘要里\"问卷被信任、提升创造力\"的表述比数据实际支持的更肯定，采信时要打折，这条限定我已在论文总结\"局限性\"段落写明，供你引用时自带免责；(4) 与野蔷薇并置后，\"AI 生成的关于人的判断若要被他人信任并行动、语言中介是必要一环\"这个假设，是两篇共同指向的可验证命题，值得单独立为课题的一个子问题。数据完整性核验：DOI 与 arXiv 2602.10054 经 dedup_check.py 双路确认无历史重复，题名、作者、方法、结果与 arXiv 摘要/HTML 全文吻合。\n\n## 明日方向指引\n\n沿三条线索推进。(1) \"authenticity–interpretability 轴\"的泛化线：本文只覆盖四种表征、职业设计师、室内设计——反向定位有没有人把同一\"真实性–可解释性\"权衡用到学习/教学场景（学习者状态该以行为痕迹、结构化反馈还是 AI 摘要呈现给教师/脚手架），这直接服务你课题\"共享表征在多大程度上保真于学习者经验、又在多大程度上牺牲给机器可解析性\"这一核心问题。(2) \"统计稳健性\"线：本文 n=12 且主效应校正后不显著——反向定位有没有更大样本的 human-data interaction 实证，把\"问卷结构化表征优于原始热图\"从方向性证据升级成可推广结论，避免你的文献综述里把边缘结果当定论引用。(3) \"AI 解释需语言中介\"的合流线：本文与野蔷薇 PAD 的\"微解释\"互为镜像（设计端/教学端）——反向定位有没有实验直接操纵\"有无自然语言解释\"这一变量，检验它对\"人类是否信任并采纳 AI 关于人的判断\"的因果作用，这是你课题可落地的一个干净实验假设。",
+    "excerpt": "来源：records/20260908/11/aided-interior-design-human-experience/惠-能力进化.md · 选题为台湾清华大学资工系团队（Yang Chen Lin、Chen Ying Chien、Kai Hsin Hou、Hung Yu Chen、Po Chih Kuo，Kuo 亦属 MIT，Chen 为独立设计师），CHI 2026 \"Creating with AI\" 场次全文。经 arXiv 摘要页 + HTML 全文（ar5iv）双重核实，题名、作者、DOI（10.1145/3772318.3791378）、CCS 标注均与提议吻合。方法细节核实：形成性研究 9 名室内设计师（5 女 4 男，24–38 岁，60–75 分钟半结构化访谈，归纳式主题编码），主实验 12 名职业室内/建筑设计师、四条件被试内设计、拉丁方平衡，四条件为 C1 基线 briefs / C2 原始眼动注视热图 / C3 问卷可视化 / C4 AI 预测注意力叠加层，LLM 自然语言解释接口刻意不放四条件内、仅事后探索性展示。结果核实：任务级唯一显著维度是 TE6\"信息帮助我做出更好的设计决策\"（χ²(3)=9.35, p=.025, Kendall's W=.26），问卷可视化 M=6.00 注视热图 5.00 基线 4.75 AI 叠加 4.50，但 Holm 校正后 p adj=.094 不显著——这一点提议未提及，是本次核实补充的关键限定。定性访谈证据扎实：问卷\"最直接，抓住真实需求\"、热图\"分不清好坏只能猜\"、AI 叠加\"配 LLM 解释后立刻知道为什么\"。三条洞察（authenticity–interpretability 权衡、客户数据支撑性而非规定性、创造自由 vs 设计可靠性）与提议一致。提议所述\"真实性 可解释性谱系\"\"四种表征对比\"\"AI 解释需语言中介\"均无偏差。",
+    "file_name": "惠-能力进化.md",
+    "source_dir": "records/20260908/11/aided-interior-design-human-experience",
+    "original_url": "https://doi.org/10.1145/3772318.3791378",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-09-07 11:00",
     "title": "惠-能力进化（2026-09-07）",
