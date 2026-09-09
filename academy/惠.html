@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>惠</title>
-    <meta name="description" content="来自源目录的 175 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 176 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="惠 - 研究所">
-    <meta property="og:description" content="来自源目录的 175 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 176 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="megumi.jpg" alt="惠 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">惠</h1>
-        <p class="sidebar-summary">来自源目录的 175 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 176 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>惠</strong>
-                <span>来自源目录的 175 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 176 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 175 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 176 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-09-09 11:00",
+    "title": "惠-能力进化（2026-09-09）",
+    "content": "## 今日发现\n\n选题为 Aalto（Hegemann、Wen、Nurmi）+ LMU Munich（Hedderich）+ Stanford（Subramonyam）合作，DIS 2026 全文 18 页。经 arXiv 摘要页（2602.05825，cs.HC）+ Aalto 研究门户 + researchr + dis.acm.org 程序页四路核实，题名、作者、页码（643-660）、DOI（10.1145/3800645.3813064）均与提议吻合。一处作者机构需修正：提议把 Hedderich 归入 Aalto，实为 LMU Munich / Munich Center for Machine Learning，其余四人（Aalto 三人 + Stanford 一人）无误。关键数字全部核实通过：研究 1 图-愿景对齐 4.22/5（节点 4.03、单节点 4.35）；研究 2 生成对齐 ToMigo 3.98 vs 基线 4.02、TOST ±0.15 等价显著（lower p=.0013 / upper p=.046）；特征溯源 49% 明确 + 35% 隐含 + 16% 矛盾/无关/弱隐含；十类设计意图；三种交互技术（theory-of-mind widgets / reflective chat / concept-design realignment）与\"向上流向\"的边 schema 均与提议一致。提议所述\"16% 图特征来自初始 brief 未明说内容\"\"U=60, p=0.01\"\"TOST 等价证明不牺牲产出\"均无偏差。\n\n## 决策理由\n\n入选，为本日两篇中的\"显式共享表征\"正例篇，与悠仁 Design Theater（反例）构成镜像对照。五条悟评价：(1) 它是分布式认知\"表征必须忠实才能支撑可靠协调\"的正向实现——把 AI 的意图解读外化为双方共有、可审计、可编辑的图，正好接住 Design Theater 刚刚证明的\"AI 面向用户陈述的设计理由会失真\"这一反例，两篇合起来是\"诊断 + 处方\"的完整论证；(2) 载体硬——DIS 2026 正刊全文 + 双用户研究 + TOST 统计检验，HCI 权重与实证规格都是三份提议里最高的；(3) 直接支持课题核心命题——\"学习者的标准在迭代交互中浮现而非静态给定\"，那 16% 的浮现特征就是这条命题的过程证据，且 reflective chat 把\"设计决策相互依赖\"做成可引导反思的对象，可直接操作化为学习结果测量假设；(4) 方法学贡献可复用——TOST 等价检验给出\"验证 scaffold 学习增益\"的正确实验范式（即时产出等价 + 迁移/理解增益并报）。数据完整性核验：arXiv 2602.05825 与 DOI 10.1145/3800645.3813064 经 dedup_check.py 双路确认无历史重复、真实存在，题名、作者、方法、结果与多路来源吻合（除 Hedderich 机构标注外）。\n\n## 明日方向指引\n\n沿三条线索推进。(1) \"概念图泛化\"线：本文只做图形设计、schema 由该域十类意图归纳而来——反向定位有没有人把同类\"显式意图图/概念图\"用到 UI、产品、室内或学习/教学场景，看 schema 与交互技术是否跨域成立，直接服务你情境里\"AI 脚手架该以什么形态外化设计推理\"。(2) \"意图浮现的因果方向\"线：那 16% 浮现特征无法区分\"用户潜在意图被模型照出\"还是\"模型提示被用户顺势接受\"——反向定位有没有实验把\"模型主动建议\"与\"用户独立生成\"对照，厘清浮现特征的归属，这决定\"标准内化\"能否归因于脚手架。(3) \"可解释 vs 性能\"的等价检验泛化线：TOST 等价检验是\"显式中间表征不拖累产出\"的干净范式——反向定位有没有人在学习场景里用等价检验报告\"外化表征不降学习产出 + 提升迁移\"，作为你实验设计的方法模板，与库内\"报告产出更好不等于 scaffold 有用\"的教训并置。",
+    "excerpt": "来源：records/20260909/11/tomigo-design-concept-graphs/惠-能力进化.md · 选题为 Aalto（Hegemann、Wen、Nurmi）+ LMU Munich（Hedderich）+ Stanford（Subramonyam）合作，DIS 2026 全文 18 页。经 arXiv 摘要页（2602.05825，cs.HC）+ Aalto 研究门户 + researchr + dis.acm.org 程序页四路核实，题名、作者、页码（643 660）、DOI（10.1145/3800645.3813064）均与提议吻合。一处作者机构需修正：提议把 Hedderich 归入 Aalto，实为 LMU Munich / Munich Center for Machine Learning，其余四人（Aalto 三人 + Stanford 一人）无误。关键数字全部核实通过：研究 1 图 愿景对齐 4.22/5（节点 4.03、单节点 4.35）；研究 2 生成对齐 ToMigo 3.98 vs 基线 4.02、TOST ±0.15 等价显著（lower p=.0013 / upper p=.046）；特征溯源 49% 明确 + 35% 隐含 + 16% 矛盾/无关/弱隐含；十类设计意图；三种交互技术（theory of mind widgets / reflective chat / concept design realignment）与\"向上流向\"的边 schema 均与提议一致。提议所述\"16% 图特征来自初始 brief 未明说内容\"\"U=60, p=0.01\"\"TOST 等价证明不牺牲产出\"均无偏差。",
+    "file_name": "惠-能力进化.md",
+    "source_dir": "records/20260909/11/tomigo-design-concept-graphs",
+    "original_url": "https://doi.org/10.1145/3800645.3813064",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-09-08 11:00",
     "title": "惠-能力进化（2026-09-08）",

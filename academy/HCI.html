@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HCI</title>
-    <meta name="description" content="基于关键词自动归类的人机交互与协作研究。 共 378 条。">
+    <meta name="description" content="基于关键词自动归类的人机交互与协作研究。 共 380 条。">
     <meta property="og:title" content="HCI - 研究所">
-    <meta property="og:description" content="基于关键词自动归类的人机交互与协作研究。 共 378 条。">
+    <meta property="og:description" content="基于关键词自动归类的人机交互与协作研究。 共 380 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">HCI</h1>
-        <p class="sidebar-summary">基于关键词自动归类的人机交互与协作研究。 共 378 条。</p>
+        <p class="sidebar-summary">基于关键词自动归类的人机交互与协作研究。 共 380 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>HCI</strong>
-                <span>基于关键词自动归类的人机交互与协作研究。 共 378 条。</span>
+                <span>基于关键词自动归类的人机交互与协作研究。 共 380 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,8 +79,32 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "HCI", "subtitle": "基于关键词自动归类的人机交互与协作研究。 共 378 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "HCI", "subtitle": "基于关键词自动归类的人机交互与协作研究。 共 380 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-09-09 11:00",
+    "title": "ToMigo: Interpretable Design Concept Graphs for Aligning Generative AI with Creative Intent",
+    "content": "- 载体：DIS 2026（ACM Designing Interactive Systems Conference，2026-06-13~17 新加坡）全文 18 页（pp. 643-660）；arXiv 2602.05825（cs.HC，2026-02-05 提交，v2）\n- 链接：https://doi.org/10.1145/3800645.3813064 ｜ https://arxiv.org/abs/2602.05825\n\n## 一、核心论点\n\nToMigo 主张把\"AI 对用户设计意图的解读\"从黑盒 prompt 翻译，改写成显式、可检查、可编辑的**设计概念图**——节点是目的/内容/风格的设计决策，边是带自然语言解释的推理关系（如 playful mood → bright colors → cartoon style）。它的核心断言是：一旦把\"意图理解\"变成人与 AI 都能看见、都能改动的共享表征，人机之间的认知协调就从一次性猜测变成可迭代的对齐。论文最具辨识度的一步，是把 AI 的\"心智理论\"（它以为用户想要什么）从隐藏内部状态升级为一等公民的可操纵产物，而不是停留在\"生成结果更贴近 prompt\"这个层面。\n\n## 二、背景与动机\n\n生成式 AI 频繁地以用户意想不到的方式消解歧义，产出与意图错位的结果。既有的意图澄清方法要么要求用户具备专业能力、要么依赖僵化的 prompt 工程流程，普通用户与设计师并不具备这些。真正的缺口在于：用户看不见、也无法影响 AI 究竟是如何理解他们意图的。作者据此要求一种表征，它同时满足三条性质——可解释（模块化、可探索）、可适配（节点与边可增删改）、且内在一致（局部编辑沿边传播、保持整体协调），从而让\"AI 以为你要什么\"这件事本身变成可审查、可修正的对象。\n\n## 三、方法与过程\n\n方法分两条线。其一，形成性预研究收集用户做图形设计生成时的意图数据，归纳出十类设计意图及其复杂相互依赖，据此合成图 schema——节点沿\"细粒度特征决策 → 整体设计目标\"的光谱排列，边带自然语言理由标签，并统一为\"从低层视觉选择流向目的\"的向上方向（这是数据中最频繁的关系模式）。其二，一个多模态大模型从参考图与文本中填充概念图，并强制其\"引用证据\"以抑制幻觉；配套三种交互技术：theory-of-mind widgets（直接查看/编辑节点）、reflective chat（用澄清性问题引导用户反思设计决策间的相互依赖）、concept-design realignment（图更新后沿边传播，用 image-to-image 重新生成以维持一致）。实证上是两个用户研究：研究 1 量化图与用户愿景的对齐度，研究 2 在带迭代的创作流程中考察浮现特征与\"厘清达成目标路径\"的增益。\n\n## 四、主要发现\n\n研究 1 中，概念图整体与用户愿景的对齐评分 4.22/5（std 0.77），关键特征节点 4.03，单节点对齐 4.35，即\"对多数设计想法，图能很好地对齐用户愿景\"。研究 2 中，ToMigo 生成设计的整体对齐 3.98 对比 SOTA prompt 增强基线 4.02，混合效应 TOST 在 ±0.15 容差内显著等价——**显式中间表征不牺牲产出质量**。特征溯源分析发现：49% 的特征在初始 brief 中明确提及、35% 为隐含，但有 16% 是矛盾/无关/仅弱隐含的——这 16% 往往在迭代中才变得显著，证明\"用户意图是动态浮现而非静态给定\"。此外 ToMigo 在\"帮用户厘清达成设计目标的路径\"维度显著优于基线（U=60, p=0.01），用户报告更强的控制感。\n\n## 五、局限性（自主判断）\n\n其一，领域极窄：两个研究都限定在图形设计单一创作域，graph schema 与十类意图能否迁移到 UI、室内、产品等设计任务未经验证。其二，\"对齐\"是用户 Likert 自评，不是对图是否忠实捕获\"真实意图\"的客观度量——用户可能给高分，而图仍遗漏了重要意图。其三，LLM 构图质量（节点与边是否真的忠实于证据）没有独立检验，论文证明的是\"用户觉得对齐得不错\"，不是\"推理边本身正确\"。其四，等价检验只能证明\"不比基线差\"而非\"更好\"，ToMigo 的价值主张落在可解释性与控制力（定性）而非产出更优，这决定了它的贡献是交互机制而非生成性能。其五，16% 的\"浮现特征\"存在因果歧义——它既可能反映用户潜在意图的浮现，也可能只是模型提示了用户原本没想过的东西、被用户顺势接受，二者对\"意图是否内生\"的解读完全不同。其六，研究面向职业创作任务，没有测量任何学习结果，图式外化能否帮助学习者内化设计推理结构，这篇不直接回答。\n\n## 六、对你课题的启发（人-AI 协作学习、分布式认知）\n\n这是分布式认知\"表征必须忠实\"约束的正向实现，与今日悠仁的 Design Theater 构成精密的负-正对：Design Theater 证明 AI 面向用户陈述的设计理由平均 25% 不落地（反例），ToMigo 给出正例机制——把意图解读外化为双方共有、可审计、可编辑的图，协调不靠单向投喂而靠双向对齐。它直接支持你研究里\"学习者的标准不是先在脑中完备再外化、而是在与 AI 迭代交互中浮现\"的主张——那 16% 的浮现特征就是这条命题在职业创作域的过程证据。落到设计变量：若 AI 脚手架外化概念图而非直接给成品，学习者对设计推理结构（决策之间的因果网络）的内化是否增强？ToMigo 的 reflective chat 专门引导对这种相互依赖的反思，这是可以直接操作化为学习结果测量（迁移/理解增益）的假设。方法学上它还给了一个可借鉴的检验策略——TOST 等价检验：你做学习条件对比时，若目标是验证 scaffold 的学习增益，应同时报告\"即时产出等价 + 迁移/理解增益\"，而不是只报产出更好，否则分不清是脚手架本身有用还是它没有拖后腿。",
+    "excerpt": "来源：records/20260909/11/tomigo-design-concept-graphs/论文总结.md · 作者：Lena Hegemann（Aalto）、Xinyi Wen（Aalto）、Michael A. Hedderich（LMU Munich / Munich Center for Machine Learning）、Tarmo Nurmi（Aalto）、Hariharan Subramonyam（Stanford）",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260909/11/tomigo-design-concept-graphs",
+    "original_url": "https://doi.org/10.1145/3800645.3813064",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-09-09 09:00",
+    "title": "Design Theater: Evaluating the Gap Between User-Facing Design Reasoning and Implementation in Generative UI Tools",
+    "content": "- 载体：arXiv 2607.22928v2（cs.AI，2026-07-24 提交、07-31 更新）；注释标注 Accepted at AAAI/AIES（AAAI 与 ACM 联合的 AI、伦理与社会会议）\n- 链接：https://arxiv.org/abs/2607.22928\n\n## 一、核心论点\n\n论文提出\"Design Theater\"（设计剧场）这一概念：生成式 UI 工具在输出界面的同时，会生成看似合理、自信流畅的用户可见\"设计理由\"（解释其布局、可访问性与设计选择），但这些理由与实际生成的界面常常几乎无关。核心主张是，这些理由层是一层表演性外壳，不能被当作对工具真实所做之事的忠实陈述。论文把这一现象从直觉批评转成可测量对象——引入一套基准与三个指标，量化\"声称的设计理由\"与\"实际实现\"之间的断裂。\n\n## 二、背景与动机\n\n生成式 UI 工具（v0、Bolt、ChatGPT、Claude、Firebase Studio）承诺通过自然语言描述\"民主化\"UI 设计，一键产出完整界面，并附上解释其设计决策的理由说明。随着这些理由开始说服非专家的评审者与利益相关方（而这些人恰恰无法独立核对界面实现），理由的可信度就从一个体验问题升级为负责任部署的安全问题。然而此前没有任何研究系统测量过\"工具声称的设计理由是否真的落实到了界面里\"，这块空白正是本文要补的。\n\n## 三、方法与过程\n\n作者构建了一个覆盖 24 个 UI 生成任务的基准，任务横跨结构化（structure）、样式化（styling）、功能性（functional）三类设计需求。用该基准评估了 5 款工具产出的 120 个界面。引入三个可复用指标：Thinking Fidelity Score（思考保真度——陈述的理由是否真的实现）、Principle Adherence Score（原则遵循度——工具是否实现了 prompt 中嵌入的 UX 原则）、Design Homogeneity Index（设计同质化指数——跨工具视觉与布局的趋同度）。通过逐条比对工具的用户可见理由与界面实际实现，量化\"言行一致\"的程度。\n\n## 四、主要发现\n\n平均超过 25% 的用户可见设计理由没有在生成的界面中实现，而功能性需求的实现失败率进一步升至 34%。工具平均只识别 prompt 中约一半的 UX 原则（均值 0.54），且五款工具中有四款对功能性原则的实现率 ≤6%。跨工具比较发现，不同工具在视觉外观与布局组织上趋于收敛（同质化），只在颜色选择上保留较大差异。整体上，它用系统数据坐实了\"设计剧场\"现象：工具敢于流畅地陈述理由，但理由与实现之间存在系统性的、可量化的脱节。\n\n## 五、局限性（自主判断）\n\n其一，这是一次快照审计——评估的是 2026 年 7 月时的 5 款特定工具，而生成式 UI 工具迭代极快，具体数字可能迅速过时，可迁移的是\"指标与基准\"而非\"哪款工具多差\"。其二，\"理由是否实现\"本身需要一个判定者（大概率是 LLM 或人工编码），论文对判定过程的可信度（评分者间一致性）未作为重点报告，25%/34% 的断裂率在多大程度上是真实脱节、多大程度上是评分方法的人为误差，需要保留。其三，基准任务是受控的合成任务，不是真实设计师的迭代工作流——真实用户可能根本不读理由、或会在多轮迭代里自行修补缺口，因此\"理由失真\"在真实使用中的实际危害被外推而非直接证明。其四，指标测量的是\"声称 vs 实现\"的落差，却没测后果：理由失真到底会不会误导用户，还是用户本来就更信任自己看到的界面而非工具的话术。其五，它是一篇批评性审计而非建设性方案，诊断了病灶但没有给出\"如何让理由忠实\"的设计处方（今日惠的 ToMigo 恰好是那个建设性补位）。\n\n## 六、对你课题的启发（人-AI 协作学习、分布式认知）\n\n这篇直接为分布式认知的\"表征必须忠实\"这条硬约束，提供了生成式界面上的量化证据：当认知系统中的一个节点（工具）产出的关于自身状态的表征（设计理由）有 25%–34% 是错的，人与该节点之间的协调就会静默失效——用户基于理由建立的共享理解是错的。这与你课题里最需要警惕的一个设计变量直接相关：若 AI 脚手架在给学习者产出成品的同时附上不可靠的理由说明，学习者会内化错误的设计因果，这比不给理由更糟——因为\"自信的错解释\"比\"没有解释\"更难被质疑。它与库内 Maru（共享语言）、Bridging Gulfs（语义槽）、DuetUI（双向上下文）形成互补：那些系统主张\"把中间表征显式化\"，而 Design Theater 证明——当系统自己面向用户陈述设计推理时，这个\"理由层\"本身就是新的失真源，需要被独立审计。落到测量上，它的三个指标（思考保真度/原则遵循度/同质化）是可复用的仪器，你可以把\"思考保真度\"这一构念迁移到你的脚手架评估里，去测\"AI 给学习者的解释是否真的对应它所做的操作\"；而\"同质化趋同\"这个附带发现还抛出一个二阶问题：若所有工具视觉趋同，学习者从 AI 产出中习得的设计语言是否也会被同质化——这是学习研究可以单独检验的一个点。",
+    "excerpt": "来源：records/20260909/09/design-theater-generative-ui/论文总结.md · 作者：Kashif Imteyaz、Kaif Imteyaz、Nakul Rajpal、Kaif Shaikh、Michael Muller（IBM Research）、Saiph Savage（Northeastern University）",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260909/09/design-theater-generative-ui",
+    "original_url": "https://arxiv.org/abs/2607.22928",
+    "original_label": "arXiv",
+    "session_type": "review",
+    "session_label": "评审会"
+  },
   {
     "date": "2026-09-08 11:00",
     "title": "AIDED: Augmenting Interior Design with Human Experience Data for Designer–AI Co-Design",

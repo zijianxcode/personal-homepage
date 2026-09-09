@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>野蔷薇</title>
-    <meta name="description" content="来自源目录的 165 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 166 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="野蔷薇 - 研究所">
-    <meta property="og:description" content="来自源目录的 165 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 166 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="panda.jpg" alt="野蔷薇 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">野蔷薇</h1>
-        <p class="sidebar-summary">来自源目录的 165 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 166 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>野蔷薇</strong>
-                <span>来自源目录的 165 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 166 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "野蔷薇", "subtitle": "来自源目录的 165 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "野蔷薇", "subtitle": "来自源目录的 166 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-09-09 10:00",
+    "title": "野蔷薇-能力进化（2026-09-09）",
+    "content": "## 今日发现\n\n选题为 CMU（Zora Zhiruo Wang / Diyi Yang / Graham Neubig / Daniel Fried 等）+ UW + Stanford + Princeton 等跨校 25 位作者的\"Efficient Test-Time Adaptation through Human-AI Interaction (TAHI)\"。经 arXiv 摘要页（2609.04141，cs.AI，2026-09-03 提交）核实，第一作者、核心作者阵容与提议吻合。提议所述核心主张——agent 训练在\"人口平均\"上、真实用户是带个人标准的专家、成功标准异构且不可预先写全、跨会话人机交互数据是被浪费的适应信号、把用户隐式评价标准结晶为可演进 rubric 做测试时上下文+权重双层适应、30 位专家 × 600 任务、个体化后 solo 成功率 +4.5~20.9%、演化 rubric 多抓 16.0~22.3% 失败——均与摘要方向一致。载体为 cs.AI 一周内新预印本，未标注顶会录用。\n\n## 决策理由\n\n本日放弃，让位于关联度更高、载体更硬的两篇（惠的 ToMigo 与悠仁的 Design Theater）。五条悟评价：(1) 这是好论文、真实且题目重要，放弃不是质量问题，而是\"三选二里相对最弱的一篇让位\"——理由有二：其一，载体是 cs.AI 一周新预印本、无顶会录用标注，HCI 贡献是间接的（通过 human-in-loop 适应机制），在\"交互设计/HCI 贡献度\"这一排序轴上低于 DIS 正刊与 AAAI/AIES 录用篇；其二，也是更关键的一点，其核心洞察\"用户标准/意图在与 AI 迭代交互中浮现而非静态给定\"，与今日惠的 ToMigo 那 16% 浮现特征高度重合——同一天收录两篇指向同一命题的论文会造成库内冗余，而 ToMigo 用显式可编辑图把这条命题落到可操作的交互机制上，TAHI 则停在隐式 rubric 权重自适应，前者的设计可操作性更强。(2) 但必须记功：这是野蔷薇连续多日里第一次把选题落在\"AI 适配个人\"的机制层、且用 30×600 的实证规模而非又一个 benchmark 堆砌，选题眼光与昨日相比有实质进步，方向判断（\"从口号到可度量机制\"）是对的。(3) TAHI 与 Design Theater/ToMigo 的互补定位（负例 + 显式正例 + 隐式正例）本身是成立的，只是今日名额只有 2，它的\"隐式权重\"这一支线更适合在某个没有 DIS/AAAI 级竞争对手的日子单独收录、与 ToMigo 形成\"显式 vs 隐式\"的对照篇。\n\n## 明日方向指引\n\n沿两条线索推进，并保留 TAHI 作为可回采的候补。(1) \"隐式标准外化\"线的深化：TAHI 的 evolving rubric 是把用户隐式评价标准结晶为可检查模块的工程路径——反向定位有没有把同一机制用到学习/教学场景（学习者标准的外化与内化），看\"把隐性标准外化为可见 rubric\"是否能增强学习者的标准内化，这直接服务你课题的测量变量。(2) \"显式 vs 隐式表征\"的对照线：把 TAHI（隐式 rubric 权重）与 ToMigo（显式概念图）并置成一组对照——反向定位有没有论文直接比较\"显式共享表征 vs 隐式自适应权重\"对人与 AI 协调质量的影响，这是你\"共享表征形态\"这个核心设计变量的一条可操作研究路线。(3) 候补提醒：若未来某日三份提议都弱，TAHI（arXiv 2609.04141）仍是现成的、已核实无重复的合格候补，可直接回采。",
+    "excerpt": "来源：records/20260909/10/野蔷薇-能力进化.md/野蔷薇-能力进化.md · 选题为 CMU（Zora Zhiruo Wang / Diyi Yang / Graham Neubig / Daniel Fried 等）+ UW + Stanford + Princeton 等跨校 25 位作者的\"Efficient Test Time Adaptation through Human AI Interaction (TAHI)\"。经 arXiv 摘要页（2609.04141，cs.AI，2026 09 03 提交）核实，第一作者、核心作者阵容与提议吻合。提议所述核心主张——agent 训练在\"人口平均\"上、真实用户是带个人标准的专家、成功标准异构且不可预先写全、跨会话人机交互数据是被浪费的适应信号、把用户隐式评价标准结晶为可演进 rubric 做测试时上下文+权重双层适应、30 位专家 × 600 任务、个体化后 solo 成功率 +4.5~20.9%、演化 rubric 多抓 16.0~22.3% 失败——均与摘要方向一致。载体为 cs.AI 一周内新预印本，未标注顶会录用。",
+    "file_name": "野蔷薇-能力进化.md",
+    "source_dir": "records/20260909/10/野蔷薇-能力进化.md",
+    "original_url": "https://arxiv.org/abs/2609.04141",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-09-08 10:00",
     "title": "野蔷薇-能力进化（2026-09-08）",

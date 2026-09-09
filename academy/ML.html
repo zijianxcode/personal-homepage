@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ML</title>
-    <meta name="description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 289 条。">
+    <meta name="description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 290 条。">
     <meta property="og:title" content="ML - 研究所">
-    <meta property="og:description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 289 条。">
+    <meta property="og:description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 290 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">ML</h1>
-        <p class="sidebar-summary">基于关键词自动归类的训练、优化与模型方法研究。 共 289 条。</p>
+        <p class="sidebar-summary">基于关键词自动归类的训练、优化与模型方法研究。 共 290 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>ML</strong>
-                <span>基于关键词自动归类的训练、优化与模型方法研究。 共 289 条。</span>
+                <span>基于关键词自动归类的训练、优化与模型方法研究。 共 290 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,8 +79,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "ML", "subtitle": "基于关键词自动归类的训练、优化与模型方法研究。 共 289 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "ML", "subtitle": "基于关键词自动归类的训练、优化与模型方法研究。 共 290 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-09-09 11:00",
+    "title": "ToMigo: Interpretable Design Concept Graphs for Aligning Generative AI with Creative Intent",
+    "content": "- 载体：DIS 2026（ACM Designing Interactive Systems Conference，2026-06-13~17 新加坡）全文 18 页（pp. 643-660）；arXiv 2602.05825（cs.HC，2026-02-05 提交，v2）\n- 链接：https://doi.org/10.1145/3800645.3813064 ｜ https://arxiv.org/abs/2602.05825\n\n## 一、核心论点\n\nToMigo 主张把\"AI 对用户设计意图的解读\"从黑盒 prompt 翻译，改写成显式、可检查、可编辑的**设计概念图**——节点是目的/内容/风格的设计决策，边是带自然语言解释的推理关系（如 playful mood → bright colors → cartoon style）。它的核心断言是：一旦把\"意图理解\"变成人与 AI 都能看见、都能改动的共享表征，人机之间的认知协调就从一次性猜测变成可迭代的对齐。论文最具辨识度的一步，是把 AI 的\"心智理论\"（它以为用户想要什么）从隐藏内部状态升级为一等公民的可操纵产物，而不是停留在\"生成结果更贴近 prompt\"这个层面。\n\n## 二、背景与动机\n\n生成式 AI 频繁地以用户意想不到的方式消解歧义，产出与意图错位的结果。既有的意图澄清方法要么要求用户具备专业能力、要么依赖僵化的 prompt 工程流程，普通用户与设计师并不具备这些。真正的缺口在于：用户看不见、也无法影响 AI 究竟是如何理解他们意图的。作者据此要求一种表征，它同时满足三条性质——可解释（模块化、可探索）、可适配（节点与边可增删改）、且内在一致（局部编辑沿边传播、保持整体协调），从而让\"AI 以为你要什么\"这件事本身变成可审查、可修正的对象。\n\n## 三、方法与过程\n\n方法分两条线。其一，形成性预研究收集用户做图形设计生成时的意图数据，归纳出十类设计意图及其复杂相互依赖，据此合成图 schema——节点沿\"细粒度特征决策 → 整体设计目标\"的光谱排列，边带自然语言理由标签，并统一为\"从低层视觉选择流向目的\"的向上方向（这是数据中最频繁的关系模式）。其二，一个多模态大模型从参考图与文本中填充概念图，并强制其\"引用证据\"以抑制幻觉；配套三种交互技术：theory-of-mind widgets（直接查看/编辑节点）、reflective chat（用澄清性问题引导用户反思设计决策间的相互依赖）、concept-design realignment（图更新后沿边传播，用 image-to-image 重新生成以维持一致）。实证上是两个用户研究：研究 1 量化图与用户愿景的对齐度，研究 2 在带迭代的创作流程中考察浮现特征与\"厘清达成目标路径\"的增益。\n\n## 四、主要发现\n\n研究 1 中，概念图整体与用户愿景的对齐评分 4.22/5（std 0.77），关键特征节点 4.03，单节点对齐 4.35，即\"对多数设计想法，图能很好地对齐用户愿景\"。研究 2 中，ToMigo 生成设计的整体对齐 3.98 对比 SOTA prompt 增强基线 4.02，混合效应 TOST 在 ±0.15 容差内显著等价——**显式中间表征不牺牲产出质量**。特征溯源分析发现：49% 的特征在初始 brief 中明确提及、35% 为隐含，但有 16% 是矛盾/无关/仅弱隐含的——这 16% 往往在迭代中才变得显著，证明\"用户意图是动态浮现而非静态给定\"。此外 ToMigo 在\"帮用户厘清达成设计目标的路径\"维度显著优于基线（U=60, p=0.01），用户报告更强的控制感。\n\n## 五、局限性（自主判断）\n\n其一，领域极窄：两个研究都限定在图形设计单一创作域，graph schema 与十类意图能否迁移到 UI、室内、产品等设计任务未经验证。其二，\"对齐\"是用户 Likert 自评，不是对图是否忠实捕获\"真实意图\"的客观度量——用户可能给高分，而图仍遗漏了重要意图。其三，LLM 构图质量（节点与边是否真的忠实于证据）没有独立检验，论文证明的是\"用户觉得对齐得不错\"，不是\"推理边本身正确\"。其四，等价检验只能证明\"不比基线差\"而非\"更好\"，ToMigo 的价值主张落在可解释性与控制力（定性）而非产出更优，这决定了它的贡献是交互机制而非生成性能。其五，16% 的\"浮现特征\"存在因果歧义——它既可能反映用户潜在意图的浮现，也可能只是模型提示了用户原本没想过的东西、被用户顺势接受，二者对\"意图是否内生\"的解读完全不同。其六，研究面向职业创作任务，没有测量任何学习结果，图式外化能否帮助学习者内化设计推理结构，这篇不直接回答。\n\n## 六、对你课题的启发（人-AI 协作学习、分布式认知）\n\n这是分布式认知\"表征必须忠实\"约束的正向实现，与今日悠仁的 Design Theater 构成精密的负-正对：Design Theater 证明 AI 面向用户陈述的设计理由平均 25% 不落地（反例），ToMigo 给出正例机制——把意图解读外化为双方共有、可审计、可编辑的图，协调不靠单向投喂而靠双向对齐。它直接支持你研究里\"学习者的标准不是先在脑中完备再外化、而是在与 AI 迭代交互中浮现\"的主张——那 16% 的浮现特征就是这条命题在职业创作域的过程证据。落到设计变量：若 AI 脚手架外化概念图而非直接给成品，学习者对设计推理结构（决策之间的因果网络）的内化是否增强？ToMigo 的 reflective chat 专门引导对这种相互依赖的反思，这是可以直接操作化为学习结果测量（迁移/理解增益）的假设。方法学上它还给了一个可借鉴的检验策略——TOST 等价检验：你做学习条件对比时，若目标是验证 scaffold 的学习增益，应同时报告\"即时产出等价 + 迁移/理解增益\"，而不是只报产出更好，否则分不清是脚手架本身有用还是它没有拖后腿。",
+    "excerpt": "来源：records/20260909/11/tomigo-design-concept-graphs/论文总结.md · 作者：Lena Hegemann（Aalto）、Xinyi Wen（Aalto）、Michael A. Hedderich（LMU Munich / Munich Center for Machine Learning）、Tarmo Nurmi（Aalto）、Hariharan Subramonyam（Stanford）",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260909/11/tomigo-design-concept-graphs",
+    "original_url": "https://doi.org/10.1145/3800645.3813064",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-09-08 11:00",
     "title": "AIDED: Augmenting Interior Design with Human Experience Data for Designer–AI Co-Design",

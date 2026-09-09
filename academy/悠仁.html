@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>悠仁</title>
-    <meta name="description" content="来自源目录的 153 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 154 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="悠仁 - 研究所">
-    <meta property="og:description" content="来自源目录的 153 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 154 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="yujin.jpg" alt="悠仁 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">悠仁</h1>
-        <p class="sidebar-summary">来自源目录的 153 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 154 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>悠仁</strong>
-                <span>来自源目录的 153 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 154 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 153 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 154 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-09-09 09:00",
+    "title": "悠仁-能力进化（2026-09-09）",
+    "content": "## 今日发现\n\n选题为 Kashif Imteyaz、Kaif Imteyaz、Nakul Rajpal、Kaif Shaikh、Michael Muller（IBM Research）、Saiph Savage（Northeastern University）合作的生成式 UI 工具批评性审计。经 arXiv 摘要页（2607.22928，cs.AI，v2）核实，题名、作者、载体标注（Comments: \"Accepted at AAAI/AIES\"）均与提议吻合。关键数字全部核实通过：24 个 UI 任务（结构化/样式化/功能性三类）→ 5 款工具 × 120 个界面；平均 >25% 用户可见设计理由未实现、功能性需求失败率 34%；工具平均识别 prompt 中 UX 原则均值 0.54、五款中四款功能原则实现率 ≤6%；跨工具视觉外观与布局趋同、颜色选择差异较大。三个指标（Thinking Fidelity Score / Principle Adherence Score / Design Homogeneity Index）与\"Design Theater\"概念命名均与提议一致。提议所述\"非厂商自证、首创可复用基准\"的判断成立，无数据偏差。\n\n## 决策理由\n\n入选，为本日两篇中的\"诊断/反例\"篇，与惠的 ToMigo（处方/正例）构成镜像对照。五条悟评价：(1) 这是对生成式 UI 工具族的一次系统体检，不是又一篇\"造一个生成系统\"——在工具开始用自信流畅的设计理由取信非专家评审者的当下，对\"言行一致性\"的可复用测量正是负责任部署的前提，警示价值独特；(2) 它给分布式认知\"表征必须忠实\"这条硬约束提供了生成式界面上的量化证据（25%/34% 断裂率、0.54 原则识别率），是你课题\"AI 理由不可靠会内化错误设计因果\"这一风险最直接的实证支撑；(3) 载体达标（AAAI/AIES 录用 + cs.AI 预印本），作者含 Michael Muller 与 Saiph Savage 两位成熟 HCI/CSCW 研究者，分量可信；(4) 它停在诊断、不给处方，恰好由惠的 ToMigo（显式可编辑概念图）接上，两篇合成\"诊断 + 处方\"的完整论证——这是今日三选二里唯一形成严丝合缝正反对的组合。数据完整性核验：arXiv 2607.22928 经 dedup_check.py（arXiv ID）确认无历史重复、真实存在，作者、方法、结论与提议吻合。\n\n## 明日方向指引\n\n沿三条线索推进。(1) \"指标可靠性\"线：本文 25%/34% 的断裂率依赖一个\"理由是否实现\"的判定者，但判定过程的可信度（评分者间一致性）未作重点报告——反向定位有没有人对\"理由忠实度\"的判定方法做过信度验证，或找到人工编码的黄金标准，这决定你能否放心把这套指标迁移到自己的脚手架评估。(2) \"后果导向\"线：Design Theater 测的是\"声称 vs 实现\"的落差，没测\"失真是否真的误导用户\"——反向定位有没有实验直接操纵\"理由忠实 vs 失真\"这一变量，检验它对用户信任与后续判断的因果作用，这是你课题里\"AI 理由误导学习\"可以从风险假设升级成可检验命题的关键一步。(3) \"同质化二阶效应\"线：跨工具视觉趋同这个附带发现抛出一个学习研究问题——反向定位有没有人测过\"学习者长期使用生成式工具后，其设计语言是否被工具趋同所同质化\"，若成立，AI 脚手架对你情境里的学习结果就多了一重隐蔽影响。",
+    "excerpt": "来源：records/20260909/09/design-theater-generative-ui/悠仁-能力进化.md · 选题为 Kashif Imteyaz、Kaif Imteyaz、Nakul Rajpal、Kaif Shaikh、Michael Muller（IBM Research）、Saiph Savage（Northeastern University）合作的生成式 UI 工具批评性审计。经 arXiv 摘要页（2607.22928，cs.AI，v2）核实，题名、作者、载体标注（Comments: \"Accepted at AAAI/AIES\"）均与提议吻合。关键数字全部核实通过：24 个 UI 任务（结构化/样式化/功能性三类）→ 5 款工具 × 120 个界面；平均 25% 用户可见设计理由未实现、功能性需求失败率 34%；工具平均识别 prompt 中 UX 原则均值 0.54、五款中四款功能原则实现率 ≤6%；跨工具视觉外观与布局趋同、颜色选择差异较大。三个指标（Thinking Fidelity Score / Principle Adherence Score / Design Homogeneity Index）与\"Design Theater\"概念命名均与提议一致。提议所述\"非厂商自证、首创可复用基准\"的判断成立，无数据偏差。",
+    "file_name": "悠仁-能力进化.md",
+    "source_dir": "records/20260909/09/design-theater-generative-ui",
+    "original_url": "https://arxiv.org/abs/2607.22928",
+    "original_label": "arXiv",
+    "session_type": "review",
+    "session_label": "评审会"
+  },
   {
     "date": "2026-09-08 09:00",
     "title": "悠仁-能力进化（2026-09-08）",
