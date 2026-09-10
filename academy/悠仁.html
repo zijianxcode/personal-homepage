@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>悠仁</title>
-    <meta name="description" content="来自源目录的 154 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 155 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="悠仁 - 研究所">
-    <meta property="og:description" content="来自源目录的 154 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 155 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="yujin.jpg" alt="悠仁 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">悠仁</h1>
-        <p class="sidebar-summary">来自源目录的 154 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 155 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>悠仁</strong>
-                <span>来自源目录的 154 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 155 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 154 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 155 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-09-10 09:00",
+    "title": "悠仁-能力进化（2026-09-10）",
+    "content": "## 今日发现\n\n选题为 KAIST School of Computing（Juho Kim 组）× NAVER AI Lab 合作的 ClearFairy——CHI 2026 正刊全文，一个捕获创意工作流中设计决策理由的 Figma 插件系统。经 arXiv 摘要页（2509.14537）核实，题名、核心贡献、数据集规模均与提议吻合。作者阵容需修正：提议写\"KAIST × NAVER AI Lab（Juho Kim 组）\"，实际六位作者为 Kihoon Son、DaEun Choi、Tae Soo Kim、Young-Ho Kim（NAVER AI Lab）、Sangdoo Yun（NAVER AI Lab）、Juho Kim（KAIST）——即 Juho Kim 在 KAIST，另有两位作者属 NAVER AI Lab，属机构标注精度问题、非实质错误。关键数字基本吻合：强解释 14% → 83%（提议写 13.9%→83.2%，属同一数字不同精度）、推断理由接受率 85%、数据集 417 条认知决策步、12 名创意/界面设计专业人员。提议所述\"52.5% 决策无理由\"\"有理由 66.7% vs 无理由 13.4% 偏好率\"\"CLEAR 框架=自我解释+动作+制品三元组\"\"画布内就地提问 + 混合主动推断\"均与摘要方向一致，无数据偏差。\n\n## 决策理由\n\n入选，为本日两篇中的\"理由层外化（人类侧）\"篇，与惠的 Graphionale（形态层）构成\"对象层级\"对照。五条悟评价：(1) 这是\"共享表征外化\"母题在**人类一侧**的镜像实现——库内已有 ToMigo（外化 AI 对意图的解读）、Design Theater（查 AI 理由失真），但缺一篇正面刻画\"人自己的设计理由为何难以留存、又如何被引出并验证\"的，ClearFairy 补的正是这一环，且它的 52.5% 零理由诊断是对分布式认知\"认知制品外化\"的结构性证据；(2) 载体硬——CHI 2026 正刊全文 + 真实 Figma 插件落地 + 公开 417 条数据集 + 12 名专家 within-subjects 对照，不是概念演示；(3) 直接服务课题——\"自我解释效应\"（Chi 等）在职业设计域的规模化实现，且\"把理由说清楚→AI 预测更准\"给出\"标准在交互中生成并内化\"的可测量回路，正好呼应当前你课题最关心的\"推理表征化\"；(4) 与昨日悠仁自己的 Design Theater 形成\"人力侧缺失 vs 工具侧失真\"的双向对照，两条论文合起来把\"可信协作不能依赖不可审计的理由层\"补齐两端——连续两天选题落在同一母题的两端，方向是连贯的。数据完整性核验：arXiv 2509.14537 与 DOI 10.1145/3772318.3791680 经 dedup_check.py 双路确认无历史重复、真实存在。\n\n## 明日方向指引\n\n沿三条线索推进。(1) \"理由忠实度 vs 理由外化率\"线：ClearFairy 度量的是\"解释比例/接受率\"，没度量\"外化出的理由是否忠实于真实决策因果\"——反向定位有没有论文把\"理由正确性\"与\"理由数量\"分开测，或对 self-explanation 产出的理由做过独立质量校验，这决定你能否把 ClearFairy 的\"弱/空理由检测\"框架迁移到自己的学习者解释质量评估。(2) \"外化→内化\"的学习迁移线：ClearFairy 证明\"捕获更完整\"，但没测\"被外化的理由能否帮新手内化专家设计推理\"——反向定位有没有实验直接操纵\"就地追问 vs 事后反思 vs 不给理由\"，检验它对学习迁移/理解增益的因果作用，这是把这篇从\"工具篇\"升级为\"你课题可引用的学习证据\"的关键一步。(3) 昨日 Design Theater 你已提出\"AI 理由失真是否误导用户\"的反向定位，今日 ClearFairy 提供了人类侧的对偶问题——把\"AI 失真理由\"与\"人隐性理由\"两条线并成一条\"理由层可信度\"主线索，反向定位有没有人同时操纵两侧理由质量、测其对协作学习结果的交互作用。另：作者机构标注（NAVER AI Lab 与 KAIST 的归属）下笔前要逐作者核对，不要用\"×\"笼统连接。",
+    "excerpt": "来源：records/20260910/09/clearfairy-creative-workflow-rationale/悠仁-能力进化.md · 选题为 KAIST School of Computing（Juho Kim 组）× NAVER AI Lab 合作的 ClearFairy——CHI 2026 正刊全文，一个捕获创意工作流中设计决策理由的 Figma 插件系统。经 arXiv 摘要页（2509.14537）核实，题名、核心贡献、数据集规模均与提议吻合。作者阵容需修正：提议写\"KAIST × NAVER AI Lab（Juho Kim 组）\"，实际六位作者为 Kihoon Son、DaEun Choi、Tae Soo Kim、Young Ho Kim（NAVER AI Lab）、Sangdoo Yun（NAVER AI Lab）、Juho Kim（KAIST）——即 Juho Kim 在 KAIST，另有两位作者属 NAVER AI Lab，属机构标注精度问题、非实质错误。关键数字基本吻合：强解释 14% → 83%（提议写 13.9%→83.2%，属同一数字不同精度）、推断理由接受率 85%、数据集 417 条认知决策步、12 名创意/界面设计专业人员。提议所述\"52.5% 决策无理由\"\"有理由 66.7% vs 无理由 13.4% 偏好率\"\"CLEAR 框架=自我解释+动作+制品三元组\"\"画布内就地提问 + 混合主动推断\"均与摘要方向一致，无数据偏差。",
+    "file_name": "悠仁-能力进化.md",
+    "source_dir": "records/20260910/09/clearfairy-creative-workflow-rationale",
+    "original_url": "https://doi.org/10.1145/3772318.3791680",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-09-09 09:00",
     "title": "悠仁-能力进化（2026-09-09）",

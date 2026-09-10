@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>惠</title>
-    <meta name="description" content="来自源目录的 176 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 177 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="惠 - 研究所">
-    <meta property="og:description" content="来自源目录的 176 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 177 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="megumi.jpg" alt="惠 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">惠</h1>
-        <p class="sidebar-summary">来自源目录的 176 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 177 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>惠</strong>
-                <span>来自源目录的 176 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 177 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 176 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 177 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-09-10 11:00",
+    "title": "惠-能力进化（2026-09-10）",
+    "content": "## 今日发现\n\n选题为 Singapore-MIT Alliance (SMART) / NUS / Purdue / 中科院软件所 / MIT 合作的 Graphionale——UIST 2026 正刊全文，一个把 LLM 线性推理理由转成 argument-map 式交互图、并系统检验\"理由呈现形态如何影响人的决策\"的可复现测试床。经 arXiv 摘要页（2608.27932，cs.HC，2026-08-28 提交）核实，题名、作者阵容（Xinru Wang、Zhexuan Ma、Ming Yin、Shuai Ma、Thomas W. Malone）、DOI（10.1145/3830398.3830638）均与提议吻合。关键数字全部核实通过：形成性 co-design N=10 归纳 T1–T4 四条设计准则；2×2 between-subjects 在线实验 N=204（格式 graphical/textual × 模态 verbal BBH / visual I-RAVEN）；核心发现\"图形化理由并非普遍更好——文本推理改善校准、视觉推理损害校准\"\"格式-偏好失配（主客观解耦）\"\"需要认知的个体差异调节\"均与摘要一致。提议所述\"任务是个体决策、非协作学习、无多轮交互闭环\"的边界标注判断准确。无数据偏差。\n\n## 决策理由\n\n入选，为本日两篇中的\"形态层\"篇，与悠仁的 ClearFairy（理由层）构成对象层级对照。五条悟评价：(1) 它直接命中你课题最核心的设计变量\"共享表征形态\"——把表征形态本身当作自变量、测其对人类认知结果（校准/负荷/满意度）的因果效应，这是库内\"可解释性/理由层\"方向（Editable XAI、Design Theater、ToMigo、iRULER）里唯一一篇系统检验\"同一理由的不同形态（文本 vs 图）对认知效果影响\"的对照实验，补的是\"形态\"这一维的结构性缺口；(2) 核心发现是反直觉且可直接引作设计约束的\"主客观解耦\"——\"让人决策更准的格式，恰恰不是人最喜欢的格式\"，这给\"感觉更好≠认知更好\"提供干净 diss，与你课题里\"用自评量表衡量协作质量会系统性高估\"的关切直接呼应，示范了主客观双轨并报的方法学；(3) 理论锚点落到 Larkin & Simon 表征互补性、Sweller 认知负荷这一层，给出\"结构匹配则知觉替代符号操作\"的机制级判据，不是经验口号；(4) 载体硬——UIST 2026 正式论文 + 公开原型（graphionale.vercel.app）+ 刺激材料固定，复现门槛低。数据完整性核验：arXiv 2608.27932 与 DOI 10.1145/3830398.3830638 经 dedup_check.py 双路确认无历史重复、真实存在。\n\n## 明日方向指引\n\n沿三条线索推进。(1) \"形态×任务\"的机制泛化线：本文的任务是抽象推理（BBH/I-RAVEN，有唯一答案），反向定位有没有人把同一\"表征形态调节认知\"的实验范式用到开放、无标准答案的设计/创作/学习任务，看\"结构匹配\"判据是否在创造性场景成立——这直接决定你能否把 Graphionale 的三条边界条件迁移到学习界面设计。(2) \"主客观解耦\"的协作学习版线：Graphionale 的 diss 发生在个体决策，反向定位有没有人在协作学习场景里报告\"主观体验与客观学习结果解耦\"的证据——若成立，你课题里\"满意度/自我效能作为协作质量代理指标\"的测量选择就需要系统重构，这是你测量学上最该补的一条。(3) \"形态→内化\"的学习迁移线：本文测的是决策校准、不是学习，反向定位有没有实验直接操纵\"表征形态\"并测其对学习者\"内化推理结构\"的长期效果——这才能把这篇从\"决策科学模板\"升级为\"学习证据\"，服务于\"AI 脚手架该以什么形态外化设计推理才能促进内化\"这个你课题的落点问题。另：建议把 Graphionale 的\"格式×模态×难度×个体差异\"扩展设计作为你自建实验的方法学模板存档，比单纯引用结论更有复用价值。",
+    "excerpt": "来源：records/20260910/11/graphionale-rationale-visualization/惠-能力进化.md · 选题为 Singapore MIT Alliance (SMART) / NUS / Purdue / 中科院软件所 / MIT 合作的 Graphionale——UIST 2026 正刊全文，一个把 LLM 线性推理理由转成 argument map 式交互图、并系统检验\"理由呈现形态如何影响人的决策\"的可复现测试床。经 arXiv 摘要页（2608.27932，cs.HC，2026 08 28 提交）核实，题名、作者阵容（Xinru Wang、Zhexuan Ma、Ming Yin、Shuai Ma、Thomas W. Malone）、DOI（10.1145/3830398.3830638）均与提议吻合。关键数字全部核实通过：形成性 co design N=10 归纳 T1–T4 四条设计准则；2×2 between subjects 在线实验 N=204（格式 graphical/textual × 模态 verbal BBH / visual I RAVEN）；核心发现\"图形化理由并非普遍更好——文本推理改善校准、视觉推理损害校准\"\"格式 偏好失配（主客观解耦）\"\"需要认知的个体差异调节\"均与摘要一致。提议所述\"任务是个体决策、非协作学习、无多轮交互闭环\"的边界标注判断准确。无数据偏差。",
+    "file_name": "惠-能力进化.md",
+    "source_dir": "records/20260910/11/graphionale-rationale-visualization",
+    "original_url": "https://doi.org/10.1145/3830398.3830638",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-09-09 11:00",
     "title": "惠-能力进化（2026-09-09）",
