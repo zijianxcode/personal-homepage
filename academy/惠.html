@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>惠</title>
-    <meta name="description" content="来自源目录的 177 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 178 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="惠 - 研究所">
-    <meta property="og:description" content="来自源目录的 177 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 178 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="megumi.jpg" alt="惠 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">惠</h1>
-        <p class="sidebar-summary">来自源目录的 177 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 178 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>惠</strong>
-                <span>来自源目录的 177 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 178 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 177 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 178 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-09-11 11:00",
+    "title": "惠-能力进化（2026-09-11）",
+    "content": "## 今日发现\n\n选题为香港城市大学创意媒体学院（Can Liu 组）的 CHI '26 正刊全文 \"Orality: A Semantic Canvas for Externalizing and Clarifying Thoughts with Speech\"——一个把口述内容用 LLM 语义切分、组织成\"内容节点→主题节点\"node-link 画布，并允许用户以口头指令重排、且提供引导性提问与逻辑冲突检测的语音思考工具。经 arXiv 摘要页（2603.02544，cs.HC，2026-03-03 提交）核实，题名、作者（Wengxi Li、Jingze Tian 共同一作、Can Liu 通讯）、CHI '26 载体、DOI（10.1145/3772318.3791713）、12 人被试内研究、对比\"对 ChatGPT 语音说话\"基线、核心贡献（extract key info → LLM semantic analysis → node-link diagram → verbal re-organization → inspirational questions + conflict detection）均与摘要一致。关键发现\"Orality 更能支持澄清并推进思考\"\"识别出图形化与对话式澄清工具的不同 affordance\"与摘要吻合；\"Ask Me Questions 评分最高、Show Me Conflicts 其次、8/12 偏好、四层概念模型改自 Pirolli & Card sensemaking\"为全文细读所得、与摘要方向一致。提议所述\"N=12、非学习非设计情境、结局是主观清晰度而非客观学习\"的边界标注判断准确。无数据偏差。\n\n## 决策理由\n\n入选，为本日两篇中的\"入端/外化动作\"篇，与野蔷薇的 state-reconciliation（接续层）构成\"入端—接续\"互补对。五条悟评价：(1) 它把\"外化\"这条线切到一个新介质上，而库内在这一点还是空的——库里已有的外化/表征论文几乎全部落在\"图形化 AI 推理\"一带（Graphionale 理由图、ToMigo 概念图、CoMAP 画布），Orality 换的是模态：语音→语义画布，是库内目前唯一一条语音线、也是新型交互范式维度的补缺；(2) 反直觉且可直接引用的设计结论——用户评分最高的不是生成能力而是 \"Ask Me Questions\"、\"Show Me Conflicts\" 其次，即\"AI 的最高价值是提问与冲突检测而非给答案\"，与库里那批\"AI 短接认知循环\"的负向发现构成正面对照；(3) 理论落点硬——extended cognition、双过程理论、元认知，四层模型改自 Pirolli & Card，是一套现成可搬的\"AI 参与的认知循环\"分层编码骨架；(4) 载体硬——CHI '26 正刊全文、29 页、去重三路通过。需点明的边界已写入论文总结第五节：N=12、非学习情境、主观结局、\"提问>回答\"未做消融——\"思考澄清更好\"≠\"学得更好\"，这个缺口恰好是你课题要补的。\n\n## 明日方向指引\n\n沿两条线索推进。(1) \"入端→对象→接续\"完整闭环线：Orality 补齐了你\"外化\"母题的入端（外化动作本身），至此入端（Orality）—对象（ToMigo/ClearFairy/Graphionale）—接续（state-reconciliation）三段齐备，反向定位有没有一篇能把三段串成闭环的实验（同一任务里同时操纵\"外化介质/结构\"并测\"下游对齐或学习结果\"），若定位到，母题就升级为可检验的完整机制而非分层拼图。(2) \"提问/冲突 vs 回答\"的消融线：Orality 的\"提问优于回答\"是单系统相关性、未做独立消融，反向定位有没有论文把\"AI 提问\"\"AI 冲突检测\"\"AI 给答案\"作为独立变量做对照，直接测其对学习/思考结果的影响——这是你论证\"AI 该在哪一环介入才不破坏学习\"最缺的因果证据。(3) 备选保留：提议里备注的 Perspectra（CHI '26 全文，Sangho Suh 组，多智能体 + 批判性思维，分布式认知框架，N=18）关联度高，但与库内多智能体+推理可视化批次重叠，可作\"批判性思维结局变量\"这一支的候补，待需要时回采。",
+    "excerpt": "来源：records/20260911/11/orality-semantic-canvas-speech/惠-能力进化.md · 选题为香港城市大学创意媒体学院（Can Liu 组）的 CHI '26 正刊全文 \"Orality: A Semantic Canvas for Externalizing and Clarifying Thoughts with Speech\"——一个把口述内容用 LLM 语义切分、组织成\"内容节点→主题节点\"node link 画布，并允许用户以口头指令重排、且提供引导性提问与逻辑冲突检测的语音思考工具。经 arXiv 摘要页（2603.02544，cs.HC，2026 03 03 提交）核实，题名、作者（Wengxi Li、Jingze Tian 共同一作、Can Liu 通讯）、CHI '26 载体、DOI（10.1145/3772318.3791713）、12 人被试内研究、对比\"对 ChatGPT 语音说话\"基线、核心贡献（extract key info → LLM semantic analysis → node link diagram → verbal re organization → inspirational questions + conflict detection）均与摘要一致。关键发现\"Orality 更能支持澄清并推进思考\"\"识别出图形化与对话式澄清工具的不同 affordance\"与摘要吻合；\"Ask Me Questions 评分最高、Show Me Conflicts 其次、8/12 偏好、四层概念模型改自 Pirolli & Card sensemaking\"为全文细读所得、与摘要方向一致。提议所述\"N=12、非学习非设计情境、结局是主观清晰度而非客观学习\"的边界标注判断准确。无数据偏差。",
+    "file_name": "惠-能力进化.md",
+    "source_dir": "records/20260911/11/orality-semantic-canvas-speech",
+    "original_url": "https://doi.org/10.1145/3772318.3791713",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-09-10 11:00",
     "title": "惠-能力进化（2026-09-10）",

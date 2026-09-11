@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>全部记录</title>
-    <meta name="description" content="源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1411 条。">
+    <meta name="description" content="源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1416 条。">
     <meta property="og:title" content="全部记录 - 研究所">
-    <meta property="og:description" content="源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1411 条。">
+    <meta property="og:description" content="源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1416 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">全部记录</h1>
-        <p class="sidebar-summary">源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1411 条。</p>
+        <p class="sidebar-summary">源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1416 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>全部记录</strong>
-                <span>源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1411 条。</span>
+                <span>源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1416 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,8 +79,56 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "全部记录", "subtitle": "源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1411 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "全部记录", "subtitle": "源目录中的全部 Markdown 记录，按时间倒序自动汇总。 共 1416 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-09-11 11:00",
+    "title": "惠-能力进化（2026-09-11）",
+    "content": "## 今日发现\n\n选题为香港城市大学创意媒体学院（Can Liu 组）的 CHI '26 正刊全文 \"Orality: A Semantic Canvas for Externalizing and Clarifying Thoughts with Speech\"——一个把口述内容用 LLM 语义切分、组织成\"内容节点→主题节点\"node-link 画布，并允许用户以口头指令重排、且提供引导性提问与逻辑冲突检测的语音思考工具。经 arXiv 摘要页（2603.02544，cs.HC，2026-03-03 提交）核实，题名、作者（Wengxi Li、Jingze Tian 共同一作、Can Liu 通讯）、CHI '26 载体、DOI（10.1145/3772318.3791713）、12 人被试内研究、对比\"对 ChatGPT 语音说话\"基线、核心贡献（extract key info → LLM semantic analysis → node-link diagram → verbal re-organization → inspirational questions + conflict detection）均与摘要一致。关键发现\"Orality 更能支持澄清并推进思考\"\"识别出图形化与对话式澄清工具的不同 affordance\"与摘要吻合；\"Ask Me Questions 评分最高、Show Me Conflicts 其次、8/12 偏好、四层概念模型改自 Pirolli & Card sensemaking\"为全文细读所得、与摘要方向一致。提议所述\"N=12、非学习非设计情境、结局是主观清晰度而非客观学习\"的边界标注判断准确。无数据偏差。\n\n## 决策理由\n\n入选，为本日两篇中的\"入端/外化动作\"篇，与野蔷薇的 state-reconciliation（接续层）构成\"入端—接续\"互补对。五条悟评价：(1) 它把\"外化\"这条线切到一个新介质上，而库内在这一点还是空的——库里已有的外化/表征论文几乎全部落在\"图形化 AI 推理\"一带（Graphionale 理由图、ToMigo 概念图、CoMAP 画布），Orality 换的是模态：语音→语义画布，是库内目前唯一一条语音线、也是新型交互范式维度的补缺；(2) 反直觉且可直接引用的设计结论——用户评分最高的不是生成能力而是 \"Ask Me Questions\"、\"Show Me Conflicts\" 其次，即\"AI 的最高价值是提问与冲突检测而非给答案\"，与库里那批\"AI 短接认知循环\"的负向发现构成正面对照；(3) 理论落点硬——extended cognition、双过程理论、元认知，四层模型改自 Pirolli & Card，是一套现成可搬的\"AI 参与的认知循环\"分层编码骨架；(4) 载体硬——CHI '26 正刊全文、29 页、去重三路通过。需点明的边界已写入论文总结第五节：N=12、非学习情境、主观结局、\"提问>回答\"未做消融——\"思考澄清更好\"≠\"学得更好\"，这个缺口恰好是你课题要补的。\n\n## 明日方向指引\n\n沿两条线索推进。(1) \"入端→对象→接续\"完整闭环线：Orality 补齐了你\"外化\"母题的入端（外化动作本身），至此入端（Orality）—对象（ToMigo/ClearFairy/Graphionale）—接续（state-reconciliation）三段齐备，反向定位有没有一篇能把三段串成闭环的实验（同一任务里同时操纵\"外化介质/结构\"并测\"下游对齐或学习结果\"），若定位到，母题就升级为可检验的完整机制而非分层拼图。(2) \"提问/冲突 vs 回答\"的消融线：Orality 的\"提问优于回答\"是单系统相关性、未做独立消融，反向定位有没有论文把\"AI 提问\"\"AI 冲突检测\"\"AI 给答案\"作为独立变量做对照，直接测其对学习/思考结果的影响——这是你论证\"AI 该在哪一环介入才不破坏学习\"最缺的因果证据。(3) 备选保留：提议里备注的 Perspectra（CHI '26 全文，Sangho Suh 组，多智能体 + 批判性思维，分布式认知框架，N=18）关联度高，但与库内多智能体+推理可视化批次重叠，可作\"批判性思维结局变量\"这一支的候补，待需要时回采。",
+    "excerpt": "来源：records/20260911/11/orality-semantic-canvas-speech/惠-能力进化.md · 选题为香港城市大学创意媒体学院（Can Liu 组）的 CHI '26 正刊全文 \"Orality: A Semantic Canvas for Externalizing and Clarifying Thoughts with Speech\"——一个把口述内容用 LLM 语义切分、组织成\"内容节点→主题节点\"node link 画布，并允许用户以口头指令重排、且提供引导性提问与逻辑冲突检测的语音思考工具。经 arXiv 摘要页（2603.02544，cs.HC，2026 03 03 提交）核实，题名、作者（Wengxi Li、Jingze Tian 共同一作、Can Liu 通讯）、CHI '26 载体、DOI（10.1145/3772318.3791713）、12 人被试内研究、对比\"对 ChatGPT 语音说话\"基线、核心贡献（extract key info → LLM semantic analysis → node link diagram → verbal re organization → inspirational questions + conflict detection）均与摘要一致。关键发现\"Orality 更能支持澄清并推进思考\"\"识别出图形化与对话式澄清工具的不同 affordance\"与摘要吻合；\"Ask Me Questions 评分最高、Show Me Conflicts 其次、8/12 偏好、四层概念模型改自 Pirolli & Card sensemaking\"为全文细读所得、与摘要方向一致。提议所述\"N=12、非学习非设计情境、结局是主观清晰度而非客观学习\"的边界标注判断准确。无数据偏差。",
+    "file_name": "惠-能力进化.md",
+    "source_dir": "records/20260911/11/orality-semantic-canvas-speech",
+    "original_url": "https://doi.org/10.1145/3772318.3791713",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-09-11 10:00",
+    "title": "Structured State Reconciliation for Human-AI Task Handover",
+    "content": "- 载体：arXiv 2608.28907（cs.HC 主分类，亦标 cs.AI），2026-08-28 提交，状态 \"In preparation for conference submission\"（预印本，尚未上会），CC BY 4.0\n- 链接：https://arxiv.org/abs/2608.28907 ｜ https://arxiv.org/html/2608.28907v1\n\n## 一、核心论点\n\n任务交接（task handover）之所以容易失败，是因为接手者需要恢复的\"当前状态\"被劈成了两半：系统遥测（机器记录）精确、带时间戳，却只能部分观测任务；人的交接报告（人类记录）承载了任何日志都记不下来的意图与任务知识，却易遗漏、易出错。论文的核心断言是：与其二选一，或让端到端 LLM 自由综合（那样会系统性引入幻觉），不如把两种来源都转译进同一套 typed task-state 图结构，做实体对齐、事实对齐、显式冲突检测，再在受约束条件下生成结构化交接报告。全文最有辨识度的工程姿态是——LLM 的职责被刻意限制在\"信息抽取\"一层，对齐、冲突判定、渲染全部交给确定性流程，即\"LLM 只做翻译、不做判断\"。这把\"共享表征\"从一个口号，变成了一个有 provenance、可追责、可复用的工程对象。\n\n## 二、背景与动机\n\n人机协作与多智能体系统里的交接是经典问题：接手者必须掌握足够多的当前状态才能续接工作，而状态信息天然地分布在\"机器记录\"与\"人类观察\"两个互补却不完整的来源里。遥测的强项是精确与时序，弱项是观测盲区；人报告的强项是意图与策略性知识，弱项是遗忘与遗漏。此前的工作要么依赖单一来源（信息必然残缺），要么依赖端到端 LLM 摘要（信息可能失真）。论文的动机支点因此很清晰：给出一个有原则的回答——如何把两个部分观测、互相补强的来源\"可信地\"融合起来，且融合过程本身不引入新的错误。这是把\"外化之后怎么被下一个人接住\"这一命题，从经验操作升级为可检验的架构设计。\n\n## 三、方法与过程\n\n方法是一条 provenance-aware 流水线，分四步。第一步，把任务遥测（机器记录）与人写的交接报告（人类记录）分别转译成同一套 typed task-state 表示，事实被归入 location / relation / spatial 三类。第二步，做实体对齐与事实对齐，每条事实被赋予 confirmed / novel / conflicting 三态之一——冲突不被静默消解，而是显式保留。第三步，在冲突保留的前提下生成结构化交接报告，渲染采用受约束的 task-aware rendering（对照 exhaustive rendering）。第四步，LLM 在整个流程中只被用于从人类散文里抽取结构化事实，对齐、冲突判定、渲染均为确定性步骤。评估上，作者在受控空间多任务环境里采集了 13 对配对任务状态，用 cost-denominated 口径测量：一份报告能为假想接收者省下多少\"状态重建成本\"（效用），以及它会强加多少\"错误信息负担\"——两者分开报，而非只报完整度。\n\n## 四、主要发现\n\n第一，对齐两种来源的效用高于任一单一来源——同时对齐人报告与遥测，估计的可恢复任务状态效用高于仅用遥测或仅用人报告。第二，与端到端 LLM 基线相比，结构化对齐在估计效用上与之相当，但 misinformation burden 显著更低——这是 provenance 与显式冲突检测带来的安全收益，也是全文最可引作设计约束的一点。第三，task-aware rendering 相对 exhaustive rendering，单位 token 的效用保持效率更高，说明\"渲染什么\"与\"对齐什么\"一样是可以工程化的变量。第四，探索性内容分析给出一个方向出人意料的发现：人的报告里含有大量落在状态导向指标之外的策略性知识——也就是说，能被塞进共享状态表征的那部分，与真正驱动人做决策的那部分，并不是同一批东西，纯状态指标会系统性低估人在交接中的贡献。\n\n## 五、局限性（自主判断）\n\n其一，评估是 artifact-level 的——它估计的是\"报告能为假想接收者省多少重建成本、强加多少错误负担\"，却从未测量接收者一侧的真实任务表现，因此\"共享状态表征可以做得更可信\"与\"交接后的人确实做得更好\"之间仍隔着一步（作者自己反复声明这一点）。其二，样本小且情境窄：13 对配对任务状态、单一受控空间多任务环境，\"空间/位置/关系\"这类事实图式能否外推到语义型、长时程、开放式任务（如知识、设计、学习任务）未经检验。其三，策略性知识那条发现是探索性内容分析，不是受控操纵——它指出了缺口，却还没证明如何捕捉并利用这部分知识。其四，作为预印本（\"in preparation for conference submission\"），未经同行评审，关键数字与结论可能在正式版本中变动。其五，冲突三态（confirmed/novel/conflicting）的编码本身依赖抽取质量，抽取层 LLM 的忠实度误差会向上传播到对齐结果，论文未对这一层做独立可靠性检验。\n\n## 六、对你课题的启发（人-AI 协作学习、分布式认知）\n\n这篇把你的\"外化\"母题从\"对象层\"推进到\"接续层\"：外化出去的东西，如何被下一个人（或下一个 AI）可信地接住。对分布式认知而言，它给了你一条干净的操作化边界——认知的哪一部分能被搬进共享状态（typed、可对齐、带 provenance 的那部分），哪一部分只能留在人这里（逃离状态指标的策略性知识），这正是你课题一直在追踪的\"认知分布\"分界线本身。方法上有两条可直接复用：(1) 冲突三态（confirmed / novel / conflicting）外显化，你在编码学生-AI 交互数据时，人-AI 判断不一致可以照此建码本，而不是强行统一成单标签；(2) \"LLM 只做抽取、判断交给确定性流程\"，这是\"AI 参与编码但不做最终裁判\"的可辩护工程姿态，与你 9/10 留下的\"LLM 编码可靠性\"线索同源，可合并推进。最该警惕的一条：过度信赖外化表征会丢掉人的策略层知识，而 LLM 直接综合会系统性引入 misinformation——这从\"接续\"一端为你的论证（AI 该在哪一环介入才不破坏协作与学习）提供了实证支撑。",
+    "excerpt": "来源：records/20260911/10/state-reconciliation-handover/论文总结.md · 作者：Kayleigh Bishop、Maria P. Stull、Breanne Crockett、Bradley Hayes（通讯）；University of Colorado Boulder，Collaborative AI and Robotics (CAIRO) Lab — Bradley Hayes 组",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260911/10/state-reconciliation-handover",
+    "original_url": "https://arxiv.org/abs/2608.28907",
+    "original_label": "arXiv",
+    "session_type": "review",
+    "session_label": "评审会"
+  },
+  {
+    "date": "2026-09-11 10:00",
+    "title": "野蔷薇-能力进化（2026-09-11）",
+    "content": "## 今日发现\n\n选题为 University of Colorado Boulder CAIRO Lab（Bradley Hayes 组）的 \"Structured State Reconciliation for Human-AI Task Handover\"——一个把任务遥测与人写交接报告转译成同一套 typed task-state 图、做实体/事实对齐、显式冲突检测、再受约束生成结构化交接报告的 provenance-aware 流水线。经 arXiv 摘要页（2608.28907，cs.HC 主分类 + cs.AI，2026-08-28 提交，状态 \"In preparation for conference submission\"）核实，题名、作者阵容（Kayleigh Bishop、Maria P. Stull、Breanne Crockett、Bradley Hayes）、预印本载体均与提议吻合。关键数字核实通过：typed 事实三分类 location/relation/spatial；冲突三态 confirmed/novel/conflicting；13 对配对任务状态、受控空间多任务环境；cost-denominated 双口径（状态重建成本效用 vs misinformation burden）；核心发现\"两源对齐优于任一单源\"\"结构化对齐效用与端到端 LLM 相当但错误信息显著更低\"\"task-aware rendering 单位 token 效用更高\"\"人报告含状态指标之外的策略性知识\"均与摘要一致。提议所述\"评估是 artifact-level、未测量接收者侧真实任务表现\"的边界标注判断准确。无数据偏差。\n\n## 决策理由\n\n入选，为本日两篇中的\"接续/交接层\"篇，与惠的 Orality（入端）构成\"入端—接续\"互补对。五条悟评价：(1) 它把\"共享表征\"从口号做成了带 provenance 的工程对象——typed task-state 图 + 冲突三态 + LLM 只做抽取不做判断的确定性流程，是一个可以直接搬用的\"LLM 不做判断、只做翻译\"架构范式，且把评估口径做成 cost-denominated（效用与 misinformation 分开报），比多数 HRI/HAI 论文只报主观量表干净得多；(2) 它补上你课题\"外化\"母题的\"接续层\"——库里已建的 ToMigo（意图）、ClearFairy（理由）、Graphionale（形态）都是\"外化出去之后\"的对象层，这篇讲的是\"外化出去的东西如何被下一个人可信地接住\"，是流程与可信度这一维的结构性缺口；(3) 反直觉发现值得收录——人的报告里大量策略性知识落在状态指标之外，即\"能被塞进共享表征的部分\"与\"真正驱动人决策的部分\"不是同一批东西，这是你课题\"认知分布边界\"的实证证据；(4) 载体虽为预印本（未上会），但来自稳定 HRI 实验室、方法干净、且去重通过，质量门槛达标。需点明的边界已写入论文总结第五节：artifact-level 评估、样本小、事实图式窄——\"共享状态可做得更可信\"≠\"交接后的人确实做得更好\"，后者恰是留给你课题机制层的缺口。\n\n## 明日方向指引\n\n沿两条线索推进。(1) \"接收者侧真实表现\"线：本篇停在 artifact-level，未测交接后接收者的真实任务表现，反向定位有没有论文把\"共享状态/交接报告质量\"与\"接手后的人的实际表现或学习结果\"直接挂钩——这是把\"交接/provenance 层\"从工程可信度升级为学习证据的关键一步，直接服务你课题\"外化表征是否真的改善下游认知\"的落点问题。(2) \"冲突三态 → 编码码本\"线：本篇的 confirmed/novel/conflicting 三态是现成模板，反向定位有没有人把它用到人-AI 交互数据编码（尤其判断不一致场景）并给出可靠性检验，与 9/10 留下的\"LLM 编码可靠性\"线索合并推进——这是你编码学生-AI 交互数据时可辩护的方法学基础。(3) 备选保留：提议里备注的 Transfiver（arXiv 2609.03797，shared editable state）是\"外化层\"最干净的架构表述但为纯概念稿、无用户实验，可作\"接续层\"概念的对照候补，待其有实验版本时再评估。",
+    "excerpt": "来源：records/20260911/10/state-reconciliation-handover/野蔷薇-能力进化.md · 选题为 University of Colorado Boulder CAIRO Lab（Bradley Hayes 组）的 \"Structured State Reconciliation for Human AI Task Handover\"——一个把任务遥测与人写交接报告转译成同一套 typed task state 图、做实体/事实对齐、显式冲突检测、再受约束生成结构化交接报告的 provenance aware 流水线。经 arXiv 摘要页（2608.28907，cs.HC 主分类 + cs.AI，2026 08 28 提交，状态 \"In preparation for conference submission\"）核实，题名、作者阵容（Kayleigh Bishop、Maria P. Stull、Breanne Crockett、Bradley Hayes）、预印本载体均与提议吻合。关键数字核实通过：typed 事实三分类 location/relation/spatial；冲突三态 confirmed/novel/conflicting；13 对配对任务状态、受控空间多任务环境；cost denominated 双口径（状态重建成本效用 vs misinformation burden）；核心发现\"两源对齐优于任一单源\"\"结构化对齐效用与端到端 LLM 相当但错误信息显著更低\"\"task aware rendering 单位 token 效用更高\"\"人报告含状态指标之外的策略性知识\"均与摘要一致。提议所述\"评估是 artifact level、未测量接收者侧真实任务表现\"的边界标注判断准确。无数据偏差。",
+    "file_name": "野蔷薇-能力进化.md",
+    "source_dir": "records/20260911/10/state-reconciliation-handover",
+    "original_url": "https://arxiv.org/abs/2608.28907",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-09-11 09:00",
+    "title": "五条悟-汇总（2026-09-11）",
+    "content": "## 今日采集决议\n\n**入选 2 篇，1 位采集员未提交。** 今日两篇在\"共享表征外化\"母题上形成\"入端—接续\"的互补对：**惠讲\"外化动作本身\"（入端：用什么介质外化、外化成什么结构），野蔷薇讲\"外化之后如何被下一个人可信地接住\"（接续/交接层：provenance 与可信度）**，加上库里已建的 ToMigo（意图）、ClearFairy（理由）、Graphionale（形态），母题从\"对象\"三段扩展到\"入端—对象—接续\"的完整闭环骨架。\n\n### 入选篇目\n\n**1. 野蔷薇：CU Boulder CAIRO Lab — \"Structured State Reconciliation for Human-AI Task Handover\"，把共享表征做成带 provenance 的工程对象（交接/接续层）**\n- 论文：Kayleigh Bishop、Maria P. Stull、Breanne Crockett、Bradley Hayes，arXiv 2608.28907（cs.HC，2026-08-28，In preparation for conference submission，预印本）。\n- 入选理由：把任务遥测与人写交接报告分别转成同一套 typed task-state 图（location/relation/spatial），做实体/事实对齐（confirmed/novel/conflicting 三态）、冲突保留、受约束渲染，LLM 只做抽取不做判断。核心发现是\"两源对齐优于任一单源、结构化对齐效用与端到端 LLM 相当但 misinformation 显著更低、task-aware rendering 单位 token 效用更高\"，以及那条反直觉的探索发现——人的报告里大量策略性知识落在状态指标之外，即\"能被塞进共享表征的部分\"与\"真正驱动人决策的部分\"不是同一批东西。这是你课题\"认知分布边界\"的直接实证，且补上\"外化出去之后怎么被可信接住\"这一流程/可信度维度的结构性缺口。边界已如实标注：artifact-level 评估、样本小、事实图式窄——\"共享状态更可信\"≠\"交接后的人做得更好\"，后者留给你课题机制层。\n\n**2. 惠：CityU 创意媒体学院 — CHI '26 \"Orality\"，把外化切到语音→语义画布的新介质，且得出\"AI 最高价值是提问与冲突检测而非给答案\"（入端/外化动作层）**\n- 论文：Wengxi Li、Jingze Tian、Can Liu，CHI 2026 正刊全文（DOI 10.1145/3772318.3791713，arXiv 2603.02544）。\n- 入选理由：库内\"外化/表征\"论文几乎全部落在图形化 AI 推理一带，Orality 换的是模态——语音→语义画布，是库内目前唯一一条语音线。12 人被试内研究发现 Orality 在\"澄清并推进思考\"上优于语音 ChatGPT 基线（8/12 偏好），而系统里评分最高的功能是 \"Ask Me Questions\"（引导性提问插入未展开主题）、其次是 \"Show Me Conflicts\"——即用户真正受益的是 AI 提的问题与发现的冲突，不是 AI 给的答案。这与库里\"AI 短接认知循环\"的负向发现构成正面对照，为\"AI 该在哪一环介入才不破坏学习\"提供正面证据。理论落点硬（extended cognition、双过程、元认知，四层模型改自 Pirolli & Card），是一套现成可搬的分层编码骨架。边界已如实标注：N=12、非学习非设计情境、结局是主观清晰度而非客观学习。\n\n### 未提交 / 未选中\n\n**悠仁：本日未提交提议**（09/ 目录与 .yujin-done 标记均不存在，仅 .bara-done、.megumi-done 到位）。非质量问题、无弃选篇目。五条悟反馈：设计案例线（悠仁的常驻方向）本日缺席，意味着\"入端—对象—接续\"闭环里\"对象/设计案例\"这一环今日无新进。请悠仁确认采集流程是否正常；若为主动空跑（宁缺毋滥），可接受；若为渠道/时间问题，需上报。\n\n## 方向指引\n\n今日两篇把\"外化\"母题从\"对象\"三段推进到\"入端—对象—接续\"完整骨架，一条贯穿结论正在收敛：**外化不是目的，外化之后\"保真\"与\"介质/形态匹配\"才是——人的思考先要有一个合适的介质外化出来（Orality：语音→语义画布，且 AI 最高价值是提问而非回答），外化出的状态要被下一个人可信地接住（State Reconciliation：对齐 + 冲突显式保留 + LLM 不做判断），而在这两端之间，AI 的错误介入（端到端综合、给答案）都会系统性引入失真。** 这条链直接服务你课题的核心命题：认知如何分布在人、AI 与人工制品之间，以及 AI 在哪一环介入才不短接学习。\n\n- **惠（入端/外化动作）**：证明外化介质与结构是变量，\"AI 提问/冲突检测 > AI 给答案\"。对应你课题\"AI 该在哪一环介入\"的正面证据，四层模型可作编码骨架。\n- **野蔷薇（接续/交接层）**：证明外化出的状态要靠\"对齐 + 冲突三态 + 确定性判断\"才能可信接住，且\"能被塞进共享表征的部分≠真正驱动决策的部分\"。对应你课题\"认知分布边界\"的实证，冲突三态可作你编码学生-AI 判断不一致的码本。\n\n两条可验证假设建议列为课题子问题：\n1. **外化介质/结构假设**：AI 脚手架外化的设计推理，其介质与结构必须匹配学习任务的结构——结构匹配则外化促进澄清与内化；结构不匹配则增加负荷、扭曲思考。Orality 在\"思考澄清\"域证明了介质是变量，但尚未在学习/创作域验证。\n2. **可信接续假设**：人-AI 协作中，外化出的共享表征能否被下一个人（或下一轮 AI）可信地接续，取决于 provenance 与冲突是否被显式保留——\"LLM 不做判断、只做抽取\"是保真的前提。State Reconciliation 在交接域证明了这条，但\"接收者侧真实学习表现是否随之改善\"仍未测。\n\n下个采集周期建议关注（三条反向定位线）：\n- \"入端→对象→接续闭环\"线：反向定位有没有一篇把三段串成闭环的实验（同一任务里同时操纵\"外化介质/结构\"并测\"下游对齐或学习结果\"），把母题从分层拼图升级为可检验机制。\n- \"提问/冲突 vs 回答\"消融线：反向定位有没有论文把\"AI 提问\"\"AI 冲突检测\"\"AI 给答案\"作为独立变量做对照，直接测其对学习/思考结果的影响——这是\"AI 该在哪一环介入\"最缺的因果证据。\n- \"接收者侧真实表现\"线：反向定位有没有论文把\"共享状态/交接报告质量\"与\"接手后的真实表现或学习结果\"直接挂钩——把交接层从工程可信度升级为学习证据。\n\n一条给三位采集员的共同提醒：今日两篇均通过去重关与外部核验关，但野蔷薇篇是预印本（未上会）、惠篇是正刊，载体硬度差异应在提议里如实标注（野蔷薇已如实标出\"尚未上会\"，正确）。当候选都达标时，排序依据仍是(1)与课题落点（人-AI 协作**学习**、分布式认知）的直接程度、(2)同日互补性、(3)载体硬度与 HCI 贡献度的乘积。另请悠仁确认采集线是否正常。\n\n## 数据完整性观察\n\n今日两份提议均通过去重检查（dedup_check.py 对 arXiv/DOI/标题多路均返回 [OK]，无历史重复），五条悟进一步做了外部核验（两篇均经 arXiv 摘要页核实）：野蔷薇篇 2608.28907 题名、四作者、cs.HC+cs.AI、13 对配对任务状态、冲突三态、cost-denominated 双口径、四条核心发现全部吻合；惠篇 2603.02544 题名、三作者（两共同一作 + Can Liu 通讯）、CHI '26 载体、DOI 10.1145/3772318.3791713、12 人被试内、对比语音 ChatGPT 基线、核心贡献全部吻合。采集员标记 .bara-done、.megumi-done 均已存在，.yujin-done 与 09/ 目录不存在（悠仁本日未提交）；五条悟标记 .gojo-done 本次执行前未存在、为首轮执行。无历史缺口复现，无需额外上报。",
+    "excerpt": "来源：records/20260911/09/five-daily-summary/五条悟-汇总.md · 入选 2 篇，1 位采集员未提交。 今日两篇在\"共享表征外化\"母题上形成\"入端—接续\"的互补对： 惠讲\"外化动作本身\"（入端：用什么介质外化、外化成什么结构），野蔷薇讲\"外化之后如何被下一个人可信地接住\"（接续/交接层：provenance 与可信度） ，加上库里已建的 ToMigo（意图）、ClearFairy（理由）、Graphionale（形态），母题从\"对象\"三段扩展到\"入端—对象—接续\"的完整闭环骨架。",
+    "file_name": "五条悟-汇总.md",
+    "source_dir": "records/20260911/09/five-daily-summary",
+    "original_url": "https://doi.org/10.1145/3772318.3791713",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-09-10 11:00",
     "title": "Graphionale: How Graph Visualizations of LLM Rationales Affect Human Decision Making",
@@ -12164,6 +12212,18 @@
     "original_label": "",
     "session_type": "review",
     "session_label": "评审会"
+  },
+  {
+    "date": "2026-04-13 11:15",
+    "title": "Orality: A Semantic Canvas for Externalizing and Clarifying Thoughts with Speech",
+    "content": "- 载体：CHI 2026 正刊全文（29 页），Session \"Interactive Prompting, Chaining, and LLM Orchestration Tools\"，2026-04-13 11:15，Barcelona；DOI 10.1145/3772318.3791713；arXiv 2603.02544（cs.HC）\n- 链接：https://doi.org/10.1145/3772318.3791713 ｜ https://arxiv.org/abs/2603.02544\n\n## 一、核心论点\n\n人们通过\"把话说出来\"来外化并澄清思考，但语音转写得到的逐字稿因口语的不连贯、重复与无结构而几乎不可读，于是转写本身并不能帮助思考。Orality 的核心断言是：与其让人去读转写稿，不如让 LLM 把口述内容抽取出来、做语义分析，组织成一张可交互的 node-link 画布，再让说话者用口头指令重排结构。全文最具辨识度的发现是那个反直觉的\"价值倒置\"：用户在系统里评分最高的不是任何生成能力，而是\"Ask Me Questions\"（把引导性提问插进尚未展开的主题里），其次是\"Show Me Conflicts\"（检测矛盾并以虚线边标出）——也就是说，AI 最高价值的介入是\"帮人想\"，而不是\"替人想\"。这把\"AI 该在哪一环介入认知循环\"从一个设计偏好，变成了有实验支撑的设计结论。\n\n## 二、背景与动机\n\n\"把想法说出来\"是广为人知的认知外化策略，语音转写又让它变得廉价，但转写无法帮助澄清思考，因为口述是断句、重复、无组织的。既有语音 AI 交互（对 ChatGPT 说话）把语音当作\"下指令/提问\"的通道，而非\"思考的介质\"——它给你答案，却不帮你把想法本身结构化。论文的动机支点因此落在理论层：extended cognition（认知被卸载到外部制品）、双过程理论、元认知（监控/控制）——主张 AI 应该在\"语义组织\"这一层介入，把思考的结构交给外部画布，而把思考的主动权留在人这一侧。这就把一个工程问题（怎么做语音思考工具）提升为一个认知科学问题（外化动作本身用什么介质、外化成什么结构、AI 在这一步该做什么）。\n\n## 三、方法与过程\n\n系统 Orality 分四步：从口述内容抽取关键信息；用 LLM 做语义分析，形成\"内容节点 → 主题节点\"的 node-link 图并落到交互画布上；用户可操作节点簇，并用口头指令（局部/全局）让系统重新抽取、重新组织内容；系统额外提供两类 AI 能力——引导性提问（\"Ask Me Questions\"，把提问作为新节点插入尚未展开的主题）与逻辑冲突检测（\"Show Me Conflicts\"，识别直接矛盾／逻辑不一致／策略冲突／假设冲突并以虚线边标出），并保留完整版本历史作为思维演化时间线。实证是一个 12 人被试内实验室研究，对比 Orality 与\"对 ChatGPT 语音说话\"基线，任务是被试自选话题的\"想清楚一件事\"；测量为 pre/post\"思维清晰度\"自评 + 工具偏好 + 访谈，分析框架是一个改自 Pirolli & Card sensemaking 模型的四层概念模型（外化 → 结构化/图式化 → 深化 → 反思与呈现）。\n\n## 四、主要发现\n\n第一，在\"澄清并推进思考\"上 Orality 优于语音 ChatGPT 基线，8/12 偏好 Orality 用于\"支持思考\"（1/12 偏好基线）。第二，系统里评分最高的功能是\"Ask Me Questions\"，其次是\"Show Me Conflicts\"——用户真正受益的是 AI 提出的问题与发现的冲突，而不是 AI 给的答案。第三，这一发现倒置了默认假设：语音 AI 工具的默认姿态是\"回答\"，而这里证据指向\"提问与冲突检测\"才是用户最需要的介入方式，AI 被定位为提问者／冲突检测者／组织者而非回答者。第四，论文明确区分了图形化澄清工具与对话式澄清工具的不同 affordance，并据此导出设计启示——表征介质不同，认知分布的方式就不同，这是可以直接引用的设计结论。\n\n## 五、局限性（自主判断）\n\n其一，N=12 的小样本被试内研究，任务是自选话题的\"想清楚一件事\"，既不是学习情境，也不是设计情境。其二，结局变量是主观\"思维清晰度\"自评，而非客观的学习、迁移或制品质量——它证明的是\"语音外化的表征方式会影响思考澄清的进程\"，不是\"它让人学得更好\"，两者不可混用。其三，\"提问优于回答\"这条发现虽干净，却是单系统内的相关性观察，研究没有把\"提问\"与\"回答\"作为独立变量做消融，因此\"提问 > 回答\"的因果主张仍是提示性的，而非隔离验证的。其四，语音→LLM→结构这条链路上，ASR 与语义抽取的误差会静默地重塑用户自己的思考内容，这一保真度风险论文可能评估不足。其五，没有长期测量——外化出的结构是否被用户事后内化、还是只是一次性的一次性制品，未被回答。\n\n## 六、对你课题的启发（人-AI 协作学习、分布式认知）\n\n这篇补上你\"外化\"母题的\"输入端\"：你库里近两周收的 ToMigo（意图）、ClearFairy（理由）、Graphionale（形态）、state-reconciliation（交接/provenance）讨论的都是\"外化出去之后\"怎么被对齐、被接住，Orality 是第一个讲\"外化动作本身\"的——用什么介质外化、外化成什么结构、AI 在这一步该做什么。它的四层概念模型（外化→图式化→深化→反思）是一套现成的\"AI 参与的认知循环\"分层编码骨架，可直接搬来编码学生-AI 交互转录。最可迁移的一条结论——\"AI 的最高价值在于提问与冲突检测，而非给答案\"——直接支撑你关于\"AI 该在哪一环介入才不短接学习\"的论证，与库里那批\"AI 短接认知循环\"的负向发现（hidden costs of ideation、cognitive offloading speedup illusion）构成正面对照。介质轴的贡献与 Graphionale 的形态轴平行，给你一个\"表征形式 × 表征介质\"的二维设计空间，正是你关心的\"表征形式如何改变认知分布\"的干净案例。边界需诚实标注：它是思考澄清、不是学习，\"外化是否真的带来学习\"这个缺口仍留给你去补。",
+    "excerpt": "来源：records/20260911/11/orality-semantic-canvas-speech/论文总结.md · 作者：Wengxi Li、Jingze Tian（共同一作）、Can Liu（通讯）；香港城市大学 创意媒体学院（School of Creative Media, City University of Hong Kong）",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260911/11/orality-semantic-canvas-speech",
+    "original_url": "https://doi.org/10.1145/3772318.3791713",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
   },
   {
     "date": "2026-04-12 14:00",

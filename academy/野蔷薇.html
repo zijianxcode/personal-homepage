@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>野蔷薇</title>
-    <meta name="description" content="来自源目录的 167 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 168 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="野蔷薇 - 研究所">
-    <meta property="og:description" content="来自源目录的 167 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 168 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="panda.jpg" alt="野蔷薇 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">野蔷薇</h1>
-        <p class="sidebar-summary">来自源目录的 167 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 168 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>野蔷薇</strong>
-                <span>来自源目录的 167 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 168 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "野蔷薇", "subtitle": "来自源目录的 167 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "野蔷薇", "subtitle": "来自源目录的 168 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-09-11 10:00",
+    "title": "野蔷薇-能力进化（2026-09-11）",
+    "content": "## 今日发现\n\n选题为 University of Colorado Boulder CAIRO Lab（Bradley Hayes 组）的 \"Structured State Reconciliation for Human-AI Task Handover\"——一个把任务遥测与人写交接报告转译成同一套 typed task-state 图、做实体/事实对齐、显式冲突检测、再受约束生成结构化交接报告的 provenance-aware 流水线。经 arXiv 摘要页（2608.28907，cs.HC 主分类 + cs.AI，2026-08-28 提交，状态 \"In preparation for conference submission\"）核实，题名、作者阵容（Kayleigh Bishop、Maria P. Stull、Breanne Crockett、Bradley Hayes）、预印本载体均与提议吻合。关键数字核实通过：typed 事实三分类 location/relation/spatial；冲突三态 confirmed/novel/conflicting；13 对配对任务状态、受控空间多任务环境；cost-denominated 双口径（状态重建成本效用 vs misinformation burden）；核心发现\"两源对齐优于任一单源\"\"结构化对齐效用与端到端 LLM 相当但错误信息显著更低\"\"task-aware rendering 单位 token 效用更高\"\"人报告含状态指标之外的策略性知识\"均与摘要一致。提议所述\"评估是 artifact-level、未测量接收者侧真实任务表现\"的边界标注判断准确。无数据偏差。\n\n## 决策理由\n\n入选，为本日两篇中的\"接续/交接层\"篇，与惠的 Orality（入端）构成\"入端—接续\"互补对。五条悟评价：(1) 它把\"共享表征\"从口号做成了带 provenance 的工程对象——typed task-state 图 + 冲突三态 + LLM 只做抽取不做判断的确定性流程，是一个可以直接搬用的\"LLM 不做判断、只做翻译\"架构范式，且把评估口径做成 cost-denominated（效用与 misinformation 分开报），比多数 HRI/HAI 论文只报主观量表干净得多；(2) 它补上你课题\"外化\"母题的\"接续层\"——库里已建的 ToMigo（意图）、ClearFairy（理由）、Graphionale（形态）都是\"外化出去之后\"的对象层，这篇讲的是\"外化出去的东西如何被下一个人可信地接住\"，是流程与可信度这一维的结构性缺口；(3) 反直觉发现值得收录——人的报告里大量策略性知识落在状态指标之外，即\"能被塞进共享表征的部分\"与\"真正驱动人决策的部分\"不是同一批东西，这是你课题\"认知分布边界\"的实证证据；(4) 载体虽为预印本（未上会），但来自稳定 HRI 实验室、方法干净、且去重通过，质量门槛达标。需点明的边界已写入论文总结第五节：artifact-level 评估、样本小、事实图式窄——\"共享状态可做得更可信\"≠\"交接后的人确实做得更好\"，后者恰是留给你课题机制层的缺口。\n\n## 明日方向指引\n\n沿两条线索推进。(1) \"接收者侧真实表现\"线：本篇停在 artifact-level，未测交接后接收者的真实任务表现，反向定位有没有论文把\"共享状态/交接报告质量\"与\"接手后的人的实际表现或学习结果\"直接挂钩——这是把\"交接/provenance 层\"从工程可信度升级为学习证据的关键一步，直接服务你课题\"外化表征是否真的改善下游认知\"的落点问题。(2) \"冲突三态 → 编码码本\"线：本篇的 confirmed/novel/conflicting 三态是现成模板，反向定位有没有人把它用到人-AI 交互数据编码（尤其判断不一致场景）并给出可靠性检验，与 9/10 留下的\"LLM 编码可靠性\"线索合并推进——这是你编码学生-AI 交互数据时可辩护的方法学基础。(3) 备选保留：提议里备注的 Transfiver（arXiv 2609.03797，shared editable state）是\"外化层\"最干净的架构表述但为纯概念稿、无用户实验，可作\"接续层\"概念的对照候补，待其有实验版本时再评估。",
+    "excerpt": "来源：records/20260911/10/state-reconciliation-handover/野蔷薇-能力进化.md · 选题为 University of Colorado Boulder CAIRO Lab（Bradley Hayes 组）的 \"Structured State Reconciliation for Human AI Task Handover\"——一个把任务遥测与人写交接报告转译成同一套 typed task state 图、做实体/事实对齐、显式冲突检测、再受约束生成结构化交接报告的 provenance aware 流水线。经 arXiv 摘要页（2608.28907，cs.HC 主分类 + cs.AI，2026 08 28 提交，状态 \"In preparation for conference submission\"）核实，题名、作者阵容（Kayleigh Bishop、Maria P. Stull、Breanne Crockett、Bradley Hayes）、预印本载体均与提议吻合。关键数字核实通过：typed 事实三分类 location/relation/spatial；冲突三态 confirmed/novel/conflicting；13 对配对任务状态、受控空间多任务环境；cost denominated 双口径（状态重建成本效用 vs misinformation burden）；核心发现\"两源对齐优于任一单源\"\"结构化对齐效用与端到端 LLM 相当但错误信息显著更低\"\"task aware rendering 单位 token 效用更高\"\"人报告含状态指标之外的策略性知识\"均与摘要一致。提议所述\"评估是 artifact level、未测量接收者侧真实任务表现\"的边界标注判断准确。无数据偏差。",
+    "file_name": "野蔷薇-能力进化.md",
+    "source_dir": "records/20260911/10/state-reconciliation-handover",
+    "original_url": "https://arxiv.org/abs/2608.28907",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-09-10 10:00",
     "title": "野蔷薇-能力进化（2026-09-10）",

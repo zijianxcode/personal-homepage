@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ML</title>
-    <meta name="description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 290 条。">
+    <meta name="description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 291 条。">
     <meta property="og:title" content="ML - 研究所">
-    <meta property="og:description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 290 条。">
+    <meta property="og:description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 291 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">ML</h1>
-        <p class="sidebar-summary">基于关键词自动归类的训练、优化与模型方法研究。 共 290 条。</p>
+        <p class="sidebar-summary">基于关键词自动归类的训练、优化与模型方法研究。 共 291 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>ML</strong>
-                <span>基于关键词自动归类的训练、优化与模型方法研究。 共 290 条。</span>
+                <span>基于关键词自动归类的训练、优化与模型方法研究。 共 291 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,8 +79,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "ML", "subtitle": "基于关键词自动归类的训练、优化与模型方法研究。 共 290 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "ML", "subtitle": "基于关键词自动归类的训练、优化与模型方法研究。 共 291 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-09-11 10:00",
+    "title": "Structured State Reconciliation for Human-AI Task Handover",
+    "content": "- 载体：arXiv 2608.28907（cs.HC 主分类，亦标 cs.AI），2026-08-28 提交，状态 \"In preparation for conference submission\"（预印本，尚未上会），CC BY 4.0\n- 链接：https://arxiv.org/abs/2608.28907 ｜ https://arxiv.org/html/2608.28907v1\n\n## 一、核心论点\n\n任务交接（task handover）之所以容易失败，是因为接手者需要恢复的\"当前状态\"被劈成了两半：系统遥测（机器记录）精确、带时间戳，却只能部分观测任务；人的交接报告（人类记录）承载了任何日志都记不下来的意图与任务知识，却易遗漏、易出错。论文的核心断言是：与其二选一，或让端到端 LLM 自由综合（那样会系统性引入幻觉），不如把两种来源都转译进同一套 typed task-state 图结构，做实体对齐、事实对齐、显式冲突检测，再在受约束条件下生成结构化交接报告。全文最有辨识度的工程姿态是——LLM 的职责被刻意限制在\"信息抽取\"一层，对齐、冲突判定、渲染全部交给确定性流程，即\"LLM 只做翻译、不做判断\"。这把\"共享表征\"从一个口号，变成了一个有 provenance、可追责、可复用的工程对象。\n\n## 二、背景与动机\n\n人机协作与多智能体系统里的交接是经典问题：接手者必须掌握足够多的当前状态才能续接工作，而状态信息天然地分布在\"机器记录\"与\"人类观察\"两个互补却不完整的来源里。遥测的强项是精确与时序，弱项是观测盲区；人报告的强项是意图与策略性知识，弱项是遗忘与遗漏。此前的工作要么依赖单一来源（信息必然残缺），要么依赖端到端 LLM 摘要（信息可能失真）。论文的动机支点因此很清晰：给出一个有原则的回答——如何把两个部分观测、互相补强的来源\"可信地\"融合起来，且融合过程本身不引入新的错误。这是把\"外化之后怎么被下一个人接住\"这一命题，从经验操作升级为可检验的架构设计。\n\n## 三、方法与过程\n\n方法是一条 provenance-aware 流水线，分四步。第一步，把任务遥测（机器记录）与人写的交接报告（人类记录）分别转译成同一套 typed task-state 表示，事实被归入 location / relation / spatial 三类。第二步，做实体对齐与事实对齐，每条事实被赋予 confirmed / novel / conflicting 三态之一——冲突不被静默消解，而是显式保留。第三步，在冲突保留的前提下生成结构化交接报告，渲染采用受约束的 task-aware rendering（对照 exhaustive rendering）。第四步，LLM 在整个流程中只被用于从人类散文里抽取结构化事实，对齐、冲突判定、渲染均为确定性步骤。评估上，作者在受控空间多任务环境里采集了 13 对配对任务状态，用 cost-denominated 口径测量：一份报告能为假想接收者省下多少\"状态重建成本\"（效用），以及它会强加多少\"错误信息负担\"——两者分开报，而非只报完整度。\n\n## 四、主要发现\n\n第一，对齐两种来源的效用高于任一单一来源——同时对齐人报告与遥测，估计的可恢复任务状态效用高于仅用遥测或仅用人报告。第二，与端到端 LLM 基线相比，结构化对齐在估计效用上与之相当，但 misinformation burden 显著更低——这是 provenance 与显式冲突检测带来的安全收益，也是全文最可引作设计约束的一点。第三，task-aware rendering 相对 exhaustive rendering，单位 token 的效用保持效率更高，说明\"渲染什么\"与\"对齐什么\"一样是可以工程化的变量。第四，探索性内容分析给出一个方向出人意料的发现：人的报告里含有大量落在状态导向指标之外的策略性知识——也就是说，能被塞进共享状态表征的那部分，与真正驱动人做决策的那部分，并不是同一批东西，纯状态指标会系统性低估人在交接中的贡献。\n\n## 五、局限性（自主判断）\n\n其一，评估是 artifact-level 的——它估计的是\"报告能为假想接收者省多少重建成本、强加多少错误负担\"，却从未测量接收者一侧的真实任务表现，因此\"共享状态表征可以做得更可信\"与\"交接后的人确实做得更好\"之间仍隔着一步（作者自己反复声明这一点）。其二，样本小且情境窄：13 对配对任务状态、单一受控空间多任务环境，\"空间/位置/关系\"这类事实图式能否外推到语义型、长时程、开放式任务（如知识、设计、学习任务）未经检验。其三，策略性知识那条发现是探索性内容分析，不是受控操纵——它指出了缺口，却还没证明如何捕捉并利用这部分知识。其四，作为预印本（\"in preparation for conference submission\"），未经同行评审，关键数字与结论可能在正式版本中变动。其五，冲突三态（confirmed/novel/conflicting）的编码本身依赖抽取质量，抽取层 LLM 的忠实度误差会向上传播到对齐结果，论文未对这一层做独立可靠性检验。\n\n## 六、对你课题的启发（人-AI 协作学习、分布式认知）\n\n这篇把你的\"外化\"母题从\"对象层\"推进到\"接续层\"：外化出去的东西，如何被下一个人（或下一个 AI）可信地接住。对分布式认知而言，它给了你一条干净的操作化边界——认知的哪一部分能被搬进共享状态（typed、可对齐、带 provenance 的那部分），哪一部分只能留在人这里（逃离状态指标的策略性知识），这正是你课题一直在追踪的\"认知分布\"分界线本身。方法上有两条可直接复用：(1) 冲突三态（confirmed / novel / conflicting）外显化，你在编码学生-AI 交互数据时，人-AI 判断不一致可以照此建码本，而不是强行统一成单标签；(2) \"LLM 只做抽取、判断交给确定性流程\"，这是\"AI 参与编码但不做最终裁判\"的可辩护工程姿态，与你 9/10 留下的\"LLM 编码可靠性\"线索同源，可合并推进。最该警惕的一条：过度信赖外化表征会丢掉人的策略层知识，而 LLM 直接综合会系统性引入 misinformation——这从\"接续\"一端为你的论证（AI 该在哪一环介入才不破坏协作与学习）提供了实证支撑。",
+    "excerpt": "来源：records/20260911/10/state-reconciliation-handover/论文总结.md · 作者：Kayleigh Bishop、Maria P. Stull、Breanne Crockett、Bradley Hayes（通讯）；University of Colorado Boulder，Collaborative AI and Robotics (CAIRO) Lab — Bradley Hayes 组",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260911/10/state-reconciliation-handover",
+    "original_url": "https://arxiv.org/abs/2608.28907",
+    "original_label": "arXiv",
+    "session_type": "review",
+    "session_label": "评审会"
+  },
   {
     "date": "2026-09-09 11:00",
     "title": "ToMigo: Interpretable Design Concept Graphs for Aligning Generative AI with Creative Intent",
