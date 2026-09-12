@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ML</title>
-    <meta name="description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 291 条。">
+    <meta name="description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 292 条。">
     <meta property="og:title" content="ML - 研究所">
-    <meta property="og:description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 291 条。">
+    <meta property="og:description" content="基于关键词自动归类的训练、优化与模型方法研究。 共 292 条。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -32,7 +32,7 @@
         <a class="sidebar-back" href="index.html">← 返回总览</a>
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">ML</h1>
-        <p class="sidebar-summary">基于关键词自动归类的训练、优化与模型方法研究。 共 291 条。</p>
+        <p class="sidebar-summary">基于关键词自动归类的训练、优化与模型方法研究。 共 292 条。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -50,7 +50,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>ML</strong>
-                <span>基于关键词自动归类的训练、优化与模型方法研究。 共 291 条。</span>
+                <span>基于关键词自动归类的训练、优化与模型方法研究。 共 292 条。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -79,8 +79,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "ML", "subtitle": "基于关键词自动归类的训练、优化与模型方法研究。 共 291 条。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "ML", "subtitle": "基于关键词自动归类的训练、优化与模型方法研究。 共 292 条。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-09-12 10:00",
+    "title": "Affective Tools for Thought: Towards Shared Attention and Affective Reorienting in AI-Supported Thinking",
+    "content": "- 载体：CHI 2026 Workshop on Tools for Thought（workshop 论文，7 页），2026-04-16 Barcelona；arXiv 2607.26731（cs.HC，2026-07 上传）\n- 链接：https://arxiv.org/abs/2607.26731\n\n## 一、核心论点\n\n本文的核心主张是：当前 AI\"思维工具\"（Tools for Thought，TfT）的主流设计只把情绪当作两种东西——要么是拖慢进度的\"摩擦\"（要被最小化），要么是可用来优化的\"信号\"（要被检测并利用），这两种立场都把情绪工具化、置于认知的从属地位。作者提出第三种立场：情绪是认知的构成性成分（constitutive of cognition），它重塑的不是思考的速度，而是思考的轨迹。据此全文界定两道缺口并提出三条设计策略：Shared Attention（在意地注意用户\"怎么\"投入任务，而非只监测他做了什么）、Affective Reorienting（把情绪强度当作开关新轨迹的支点，而非需要被平息的偏差），并把批判锋芒收束在\"Loop-in-the-Human\"这一对 Human-in-the-Loop 的正面质疑上。\n\n## 二、背景与动机\n\n\"把想法说出来/写下来\"这类思维工具的传统以\"外化 + 结构化\"为目标，情感维度长期缺席或被当作干扰。既有 TfT 的默认姿态是把人的认知过程折算成可量化的成本收益（Human-in-the-Loop 的隐喻），而作者指出这会把人的思考塑造成它所监督的算法系统的形状。作者的理论底座是 enactivism（Varela、Di Paolo、Thompson、Gallagher、Hutto & Myin 这一支），主张认知是具身的、情境的，情绪不是认知之外的干扰，而是认知得以发生的资源。这一批判性动机把\"AI 思维工具该怎么做\"从一个工程问题，提升为一个认知科学立场问题。\n\n## 三、方法与过程\n\n实证锚点是一项 Wizard-of-Oz 研究：一个\"触觉感知对话 agent\"（RepairBot）支持参与者做衣物修复（具身手作学习），由人（Wizard）完成共情调频。研究捕捉到参与者\"挫折→自我怀疑→赶工→更多错误→弃学\"的自增强级联，以及任务意义从\"我能学会这个吗\"滑向\"我是能做这件事的那类人吗\"的转变。作者据此反向归纳出三条设计策略：Affective Mirror（把系统对用户投入状态的解读反射回用户，作为反思材料而非诊断标签）、Chain of Emotion × Chain of Thought（让系统推理建立在用户情感投入的时间结构模型之上）、Prompted Reorienting（在情绪拐点停下，开启新轨迹而非把状态压回既定轨道）。三条策略均有临场参与者原话支撑，但作者在讨论章自认是\"反向从研究结果中读出的设计挑衅\"、尚未实现也未验证迁移。\n\n## 四、主要发现\n\n第一，把情绪当作\"摩擦\"或\"信号\"都是一种工具化——前者要消除它，后者要利用它，二者都把情绪置于认知的从属地位，而 enactivism 的立场是情绪构成认知本身。第二，\"共同注意\"（Shared Attention）的缺口在于系统只监测用户\"做了什么\"，而不在意用户\"怎么\"投入任务——参与者对真人导师的评价是\"不仅察觉关键点，还让这个动作被看见\"。第三，\"情感重定向\"（Affective Reorienting）的缺口在于系统对情绪拐点的回应是\"在既有轨迹内调参\"（loop-reinforcing，如检测到挫折就降难度），而非\"在拐点处开启新轨迹\"（reorienting）。第四，最具辨识度的是\"Loop-in-the-Human\"这一批判提法：当 Human-in-the-Loop 把人的目的性折算成可量化的成本收益，人的思考就会被塑造成它所监督的算法系统的形状——这与\"AI 提效\"叙事正好相反。\n\n## 五、局限性（自主判断）\n\n其一，载体是 CHI'26 Workshop 的挑衅性短稿（非正刊/长文），三条策略是从一项由人（Wizard）完成共情调频的 WoZ 研究中回溯命名的，迁移到自动化/纯文本 TfT 未被验证。其二，证据是临场参与者的原话与个案（P4、P7、P15 等），没有系统性的量化测量或对照条件，\"情感重定向优于轨迹内调参\"这条核心主张仍是概念性的，不是被隔离验证的。其三，\"情绪是认知的构成性成分\"这一哲学立场（enactivism）与其说是被实验证明的，不如说是被预设并用来组织观察的——它更适合做\"新轴提案 + 待验证假设\"的来源，而非经验证据。其四，样本场景单一（衣物修复、具身手作学习），\"情绪拐点\"在此类高挫折手作任务中尤为突出，是否推广到低挫折的认知任务（写作、编程、设计构思）尚存疑。\n\n## 六、对你课题的启发（人-AI 协作学习、分布式认知）\n\n第一，它补上站内最缺的一条轴——\"情感/具身轴\"：站内近期收录（ClearFairy 理由层、Graphionale 形态层、ToMigo 意图层、State Reconciliation 接续层、Orality 外化入端）几乎全在\"理性/表征\"这条轴上做外化对象，本文论证认知的分布不仅分布在表征之间，也分布在情感投入与共同注意之中。第二，它引用的 enactivism 传统与分布式认知同源，是你理论框架可直接接上的旁支——可据此追问：学习情境里的\"认知分布\"是否也应把情感调节算作被分布的一项，而非需要被消除的干扰。第三，\"Loop-in-the-Human\" 是一个可入方法章的批判判据：如果 AI 脚手架把学习者（人）的目的性折算成任务完成度与效率指标，它是否已经在把学习者的思考掰成指标的形状——这与站内已收的 DZPD（回答引擎 vs 学习伙伴）、Substitution→Scaffolding 构成一组\"反替代/反压缩\"判据簇，但本文是唯一从情感构成性切入的。第四，\"注意人怎么投入\"与\"在情绪拐点停下而非解决它\"两条机制，是把\"AI 匹配人的工作逻辑\"具体化为时点判断（何时介入、何时陪同）而非内容匹配，与你已收 Hedwig（自主权动态分配）互补。边界需诚实标注：它是框架章的\"新轴提案 + 待验证假设\"来源，不是经验证据来源。",
+    "excerpt": "来源：records/20260912/10/affective-tools-for-thought/论文总结.md · 作者：Yifu Liu、Raffaele Andrea Buono、Nadia Bianchi Berthouze；UCL Interaction Centre（UCLIC，伦敦大学学院交互中心）",
+    "file_name": "论文总结.md",
+    "source_dir": "records/20260912/10/affective-tools-for-thought",
+    "original_url": "https://arxiv.org/abs/2607.26731",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-09-11 10:00",
     "title": "Structured State Reconciliation for Human-AI Task Handover",
