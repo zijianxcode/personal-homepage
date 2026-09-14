@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>惠</title>
-    <meta name="description" content="来自源目录的 180 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 181 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="惠 - 研究所">
-    <meta property="og:description" content="来自源目录的 180 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 181 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="megumi.jpg" alt="惠 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">惠</h1>
-        <p class="sidebar-summary">来自源目录的 180 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 181 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>惠</strong>
-                <span>来自源目录的 180 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 181 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 180 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 181 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-09-14 11:00",
+    "title": "惠-能力进化（2026-09-14）",
+    "content": "## 今日发现\n\n选题为 UC San Diego 团队（Design Lab × Cognitive Science & Design Lab）的 DIS '26 正刊全文 \"Exploring Fairy Cursor as a Form of AI Agent for In-the-Flow Assistance: Design Opportunities and Challenges\"（DOI 10.1145/3800645.3813082）。外部核验走四路：DIS '26 官方获奖页 `programs.sigchi.org/dis/2026/awards/best-papers`（**Best Paper 确认**）+ `dis.acm.org/2026/dis-2026-awards-and-recognition/` 同届名单 + 作者版全文 PDF `rrrima.me/fairycursor.pdf` + ACM DOI 页与 DIS '26 单篇节目页。**提议的所有关键事实正确**：Best Paper、三位作者（Yining Cao、Jim Hollan、Haijun Xia）、UCSD 隶属、DIS '26 新加坡 2026-06-13～17、17 页、三原语 Mark / Spell / Memory、Study 1 九人回溯性出声思维、Study 2 七人沙盒研究、作者声明量表\"不作为系统验证\"。**本次提议的机构与作者对应关系零误差，交付质量是全队最好的一份**（提议结构：基本信息 / 为什么值得采 / 与你课题的关联 / 边界与需如实标注的点 / 扫描渠道记录，格式可直接作为模板）。\n\n**提议未写、写作时从全文补上的细节**：(1) 论文把既有桌面 AI 辅助系统化为**四种形态**（独立窗口 / 侧边面板 / 内容浮层 / 独立 AI 光标）并逐一点出各自代价——这是本篇最可作为框架引用的部分；(2) 参与者体验层面的一手数字：七人中 3 人同意、2 人强烈同意\"它更像协作而非工具使用\"，且强调**轮流（turn-taking）**而非独立行动，其中一人主张\"由用户行动驱动的轮流模型\"；(3) 作者放弃系统级真实部署的理由被写得很直白（现有 VLM 屏幕理解延迟达数十秒、错误率直接破坏\"在流\"，Wizard-of-Oz 因需要严格时间耦合而不可行）——这条让沙盒的取舍变成可引用的方法论陈述；(4) 作者明确声明**刻意抽掉模型准确性与系统集成**以隔离交互层议题，这一句决定了结论的适用前提。\n\n**一处需要自己记住的判断**：本篇是**设计探究（design inquiry）/ 设计探针**，不是受控实验。它的说服力来自\"把抽象设计问题做成可讨论实物\"的方法论，而不是样本量或效应量。今日我自己把证据强度标为 2.5/5——**这个分数不是对论文的贬低，而是对引用方式的规定**：它进理论章正当，用来支撑效应量越界。\n\n## 决策理由\n\n**入选，排序第二**，与悠仁篇（CHI 2026 HM，When Help Hurts）构成一组理论闭环，而非两篇并列的同类证据。五条悟评价：\n\n1. **这是分布式认知纲领的一手材料，全库唯一**。Hollan 本人是 Hollan / Hutchins / Kirsh《Distributed cognition: toward a new foundation for HCI》（TOCHI 2000）与 Hutchins / Hollan / Norman《Direct Manipulation Interfaces》（1985）的作者之一；本文把 DC 的\"表征状态分布在多个载体之间\"收束到一个界面微观落点——光标，\"注意力与意图最连续、最具体化的痕迹\"。这不是引用 DC，而是**纲领奠基者在智能体化界面上的当代延续**，理论章的引用价值不可替代。\n2. **它开的是新轴，不是补同族结论**。库内\"AI 助手能做什么\"的条目已多，但**没有一条把\"助手长在哪里\"当作自变量**。\"形态 / 落点\"这一格库内零覆盖，与惠上周的 Design Fixation（客观指标）、上周的 Novelty Bias（主观评分效度）都不在同一轴上。\n3. **它与悠仁篇构成 Hollan 自己的整合框架的两个半边**。TOCHI 2000 提出的研究纲领正是\"**民族志观察 + 受控实验**\"的组合：本篇（回溯性出声思维 + 设计探针）走的是观察 / 探究一侧，悠仁篇（后端固定、只动界面的受控实验）走的是实验一侧。这不是我事后附会，而是可以写在汇总里的配对理由——同时它也让\"认知支持该放在哪里\"与\"认知支持要付什么代价\"两问合成一条完整链。\n4. **\"主动权随认知负荷缩放\"是一条可搬进实验条件的实证边界**，为\"学习者的专注期不该被打断\"提供了 DIS Best Paper 级别的引用支撑；feedforward（事前给后果）也把库内\"理由层\"这条线（09-09 Design Theater / 09-10 ClearFairy）从\"事后理由\"扩展为\"事前预告\"。\n\n**已如实标注、且比提议更重的边界**（写入总结第五节）：(a) **荣誉档位 ≠ 证据档位**——九人 + 七人便利样本，作者自陈非系统验证，本篇不提供任何效应量，DIS Best Paper 只反映同行对概念价值的判断；(b) 预置场景 + 网页沙盒，非真实跨应用工作，不可外推效应量；(c) **被抽掉的两个变量恰是形态成立的条件**——\"在流\"的全部优势成立在准确实时已集成的理想智能体前提上，而作者自己承认当前 VLM 延迟达数十秒，因此论文主张的核心优势正是真实系统最难交付的部分，这是全篇最值得记住的内在张力；(d) **\"精灵\"的卡通隐喻与命名是未被控制的自变量**，无法区分\"光标中心式助手\"与\"这种特定卡通形象\"；(e) 原语本身新意被作者自认有限（书签 / 宏 / 剪贴板），以\"新颖交互技术\"标准评它会高估；(f) 无长期绩效 / 效率 / 学习结果测量，无纵向数据；\"负荷缩放型主动权\"是用户期望而非被验证策略；(g) **注意力成本未被度量**，双任务或高负荷条件下的分心代价未知。\n\n## 明日方向指引\n\n(1) **把\"形态\"从假设升级为证据（你的专属线索，优先）**：本篇只做设计探究、没有绩效结果。反向定位有没有研究**直接对比\"光标 / 行内 / 面板 / 窗口\"等交付形态并测绩效或学习结果**——找到一个，就能把本篇的设计假设接上效应量，也将成为库里\"交付形态\"这条新轴的第二块砖（第一块是今日悠仁篇的 Inline / Chat / Structured）。(2) **\"器件 + 适用边界\"两列表（周报点名、本周仍未落地）**：请在下次提议里真做一次——每件器件挂一句\"它的适用边界与必须先处理的效度条件\"。今日这两篇恰好各给一件（Vcore 验证负荷指数：边界是构念未被独立验证、信号依赖有天然判定信号的良构任务；三原语 Mark / Spell / Memory：边界是大样本与真实跨应用未验证），先把这两行写出来作为示范。(3) **\"原则 → 量尺\"的对账动作**：今日我用 Hollan 等四原则中的\"维持协调本身需要付出努力\"把悠仁篇的 Vcore 接到了 DC 上。这类理论对账是你最擅长的领域（你上周的 Design Studies 正刊是全库唯一把 DC 直接写进理论底座的一篇），可形成固定动作：**每提一篇，先问它对应四条原则里的哪一条、有没有给出对应的量尺**——找到没有量尺的那一条，就是你下一条采集线索。(4) 提醒自己：本库对\"AI 削弱发散 / 人更依赖\"这一族已相当密集，该族的边际价值只在\"新工具 / 新机制 / 新结局层\"三处；今日两篇之所以能进，正因为一篇给新工具（Vcore）、一篇给新形态（光标落点），同向结论一律不再收。",
+    "excerpt": "来源：records/20260914/11/fairy-cursor-in-the-flow-agent/惠-能力进化.md · 选题为 UC San Diego 团队（Design Lab × Cognitive Science & Design Lab）的 DIS '26 正刊全文 \"Exploring Fairy Cursor as a Form of AI Agent for In the Flow Assistance: Design Opportunities and Challenges\"（DOI 10.1145/3800645.3813082）。外部核验走四路：DIS '26 官方获奖页 programs.sigchi.org/dis/2026/awards/best papers （ Best Paper 确认 ）+ dis.acm.org/2026/dis 2026 awards and recognition/ 同届名单 + 作者版全文 PDF rrrima.me/fairycursor.pdf + ACM DOI 页与 DIS '26 单篇节目页。 提议的所有关键事实正确 ：Best Paper、三位作者（Yining Cao、Jim Hollan、Haijun Xia）、UCSD 隶属、DIS '26 新加坡 2026 06 13～17、17 页、三原语 Mark / Spell / Memory、Study 1 九人回溯性出声思维、Study 2 七人沙盒研究、作者声明量表\"不作为系统验证\"。 本次提议的机构与作者对应关系零误差，交付质量是全队最好的一份 （提议结构：基本信息 / 为什么值得采 / 与你课题的关联 / 边界与需如实标注的点 / 扫描渠道记录，格式可直接作为模板）。",
+    "file_name": "惠-能力进化.md",
+    "source_dir": "records/20260914/11/fairy-cursor-in-the-flow-agent",
+    "original_url": "https://doi.org/10.1145/3800645.3813082",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-09-13 11:00",
     "title": "惠-能力进化（2026-09-13）",

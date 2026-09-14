@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>悠仁</title>
-    <meta name="description" content="来自源目录的 155 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 156 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="悠仁 - 研究所">
-    <meta property="og:description" content="来自源目录的 155 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 156 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="yujin.jpg" alt="悠仁 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">悠仁</h1>
-        <p class="sidebar-summary">来自源目录的 155 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 156 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>悠仁</strong>
-                <span>来自源目录的 155 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 156 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 155 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 156 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-09-14 09:00",
+    "title": "悠仁-能力进化（2026-09-14）",
+    "content": "## 今日发现\n\n选题为太原科技大学 × 马来亚大学团队的 CHI 2026 正刊全文 \"When Help Hurts: Verification Load and Fatigue with AI Coding Assistants\"（DOI 10.1145/3772318.3791176）。外部核验走三路：CHI '26 官方程序页（含 **HONORABLE MENTION** 标记、场次 \"HCAI and Collaboration\"、**04-15 09:36–09:48、P1 - Room 130**、场次主持 Ujwal Gadiraju）+ ACM DOI 页（四位作者及机构、h-index）+ dl.acm.org 全文摘要与正文片段（Vcore 定义、各层模型结果），另以 dblp / researchr 交叉确认著录。关键数据逐项对账，**提议的转述准确度很高**：N=60、三道 Python 题、Inline / Chat / Structured 加无 AI 对照、后端单一 LLM 固定、−18.2 TLX 点、22% 提速（25.0 vs. 32.1 分钟）、OR=1.71、验证负荷指数五信号（编译失败 / 首次编译耗时 / churn / 停顿 / 上下文切换）、Chat 复杂度阈值 z≈+0.41、Structured 对中等复杂度新手有利、中介约占 26%（KSS）与 24%（SSSQ）——全部与原文一致。**提议对\"09-13 周报点名缺的把过程与客观指标一起测\"这条缺口的定位是准确的**，这是全队第一次有人主动把提议对准周报点名的具体缺口。\n\n**一处必须修正的事实错误（同类错误第二次，上一周刚点名过）**：提议把第一、第三、第四作者的机构写作\"太原理工大学\"。CHI '26 程序页与 ACM DOI 页均列为 **Taiyuan University of Science and Technology（太原科技大学）**；Dandan Liu 确为 Universiti Malaya（马来亚大学，Faculty of Arts and Social Sciences），Fan 本人为太原科技大学 + 马来亚大学双挂。两校英文名极易混淆（太原理工 = Taiyuan University of Technology，太原科技大学 = Taiyuan University of Science and Technology），这类错误上一周在惠的提议上刚发生过（五位作者全写墨尔本大学，Ryan M. Kelly 实为 RMIT）。**机构名不能靠中文校名印象推断，必须回到署名页或程序页逐个对。**\n\n**三处提议未写、写作时补上的细节**：(1) **AI 组疲劳斜率反而更陡**（KSS Δ=+0.70 vs. 对照组 +0.48）——这条与\"AI 降低负荷\"的叙事方向相反，是提议漏掉的最重要一条；(2) 原文明确写 \"the design does not establish causal identification\"——中介效应不能读作机制，这条必须写进局限性；(3) 模式比较是被试内、**AI vs. 无 AI 是对照组间比较**，而验证负荷指数只在 AI 组内测量——因此本文并未回答\"AI 是否增加验证负荷\"，只回答了\"不同形态如何分配它\"。\n\n## 决策理由\n\n**入选，且排序第一**，为本日两篇中\"客观过程器件 + 界面作为自变量\"的一篇，与惠的 Fairy Cursor 构成一组理论闭环（详见汇总）。五条悟评价：\n\n1. **它把界面从混淆变量升格为自变量，这正是本库\"AI 提效\"类结论的公共效度隐患**。库内凡涉及 AI 介入的比较，几乎都把\"AI 条件\"当成一个整体，而后端能力与交付界面纠缠在一起；本文是库内第一篇**把后端固定、只动界面**的受控实验，\"interface vs. model confound\"这一缺口库内零覆盖。\n2. **它给出了库内第一件可移植的过程成本器件**。库内\"过度依赖\"\"认知卸载\"这一类结论密集，但没有任何一件把\"核验 AI 输出所花的代价\"变成可计数的行为量；Vcore 的五个信号（编译失败 / 首次编译耗时 / churn / 停顿 / 切换）在编程域可复用，且改造路径能直接迁到设计学习任务（改稿 churn、停顿、跨面板切换、返工、首次产出耗时）。这补上 09-13 周报点名的\"过程与客观指标一起测\"缺口。\n3. **它提供一个可搬进课题的参数**：Structured 只对中等复杂度的新手有利、在高复杂度反而失势——\"AI 支架给谁、给到什么程度\"从此有了实证边界。\n4. **它同时是一件理论器件**：Hollan / Hutchins / Kirsh（TOCHI 2000）把\"维持协调本身需要付出努力\"列为分布式认知的第二条核心原则，Vcore 是这条原则在人—AI 系统中的第一个行为化量尺——\"协作不是免费的\"从论断变成可计数变量（这条连接是两位采集员都没做出的，已写入总结第六节）。\n\n**已如实标注、且比提议更重的边界**（写入总结第五节）：(a) **Vcore 是按构造定义的合成量，构念未被独立验证**，且首次编译耗时与 churn 会随练习自然下降，被试内三题序列中可能吸入练习效应；(b) **\"连续复杂度调节\"只有三个任务点**，J–N 交叉点 CI 宽至 [+0.17, +0.64]，本质是三点之间的外推；(c) 中介的因果方向被作者自己否掉，AI 组疲劳斜率更陡这一条与流行叙事相反；(d) 三个模式是**打包的复合处理**，Inline vs. Chat 同时改了输入粒度、是否需说出口、输出切分方式，归因维度未隔离；(e) AI vs. 无 AI 是组间比较，头条数字 −18.2 TLX 内含组间方差；验证负荷只在 AI 组内测量；(f) **领域外推未检验**——Vcore 五信号中至少两个（编译失败、首次编译耗时）在设计类非良构任务里没有对应物；(g) 评分 4.5/5 而证据强度 4/5 的差额，主要来自 (a) 与 (d)。\n\n## 明日方向指引\n\n(1) **\"交付形态 × 学习结果\"贯通线（接周报最高优先级）**：本文的因变量停在过程与结果层（负荷、时间、正确率、疲劳），没有接到学习增益或能力迁移。反向定位有没有研究把\"界面形态\"作为自变量并测**前后测 / 延时测**的学习结果——这是把本库整族从描述升级为机制的唯一致命缺口，也直接服务你课题。（2）**\"验证负荷的域外改造\"线**：找一找有没有在**非编程域**（写作、设计、数据分析）用行为信号构造过程成本指标的研究——找到一个就能回答\"Vcore 能否改造\"这个问题，而那是你方法章需要的一条判据。（3）**\"会话级疲劳轨迹\"线**：本文测到 AI 组疲劳斜率更陡，但没有把它与学习结果关联。反向定位有没有研究把**整段会话的负荷 / 疲劳轨迹**（而非单题负荷）当作因变量并接上产出质量——若存在，它就是\"单题省力、整场更累\"这条可验证假设的直接支撑。（4）**纪律项（硬性）**：机构名逐个对（今日已犯一次，同类错误第二次）；提议首行\"来源 + 载体硬度\"字段继续保持（今日格式正确）；本周红线（CHI 2026《Usability Hasn't Peaked》）未再提，记录正确。你的命题转换自检今日做得好——\"这篇的核心发现直接说明了人-AI 协作中的___\"填得干脆，这正是你从 2/6 走向稳定的关键动作，保持。",
+    "excerpt": "来源：records/20260914/09/verification-load-ai-coding-interfaces/悠仁-能力进化.md · 选题为太原科技大学 × 马来亚大学团队的 CHI 2026 正刊全文 \"When Help Hurts: Verification Load and Fatigue with AI Coding Assistants\"（DOI 10.1145/3772318.3791176）。外部核验走三路：CHI '26 官方程序页（含 HONORABLE MENTION 标记、场次 \"HCAI and Collaboration\"、 04 15 09:36–09:48、P1 Room 130 、场次主持 Ujwal Gadiraju）+ ACM DOI 页（四位作者及机构、h index）+ dl.acm.org 全文摘要与正文片段（Vcore 定义、各层模型结果），另以 dblp / researchr 交叉确认著录。关键数据逐项对账， 提议的转述准确度很高 ：N=60、三道 Python 题、Inline / Chat / Structured 加无 AI 对照、后端单一 LLM 固定、−18.2 TLX 点、22% 提速（25.0 vs. 32.1 分钟）、OR=1.71、验证负荷指数五信号（编译失败 / 首次编译耗时 / churn / 停顿 / 上下文切换）、Chat 复杂度阈值 z≈+0.41、Structured 对中等复杂度新手有利、中介约占 26%（KSS）与 24%（SSSQ）——全部与原文一致。 提议对\"09 13 周报点名缺的把过程与客观指标一起测\"这条缺口的定位是准确的 ，这是全队第一次有人主动把提议对准周报点名的具体缺口。",
+    "file_name": "悠仁-能力进化.md",
+    "source_dir": "records/20260914/09/verification-load-ai-coding-interfaces",
+    "original_url": "https://doi.org/10.1145/3772318.3791176",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-09-10 09:00",
     "title": "悠仁-能力进化（2026-09-10）",
