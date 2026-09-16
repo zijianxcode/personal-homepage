@@ -46,6 +46,20 @@ npm run deploy          # 整站 → CloudBase 根路径 .
 npm run verify:production
 ```
 
+## 中断后补完（resume）
+
+若一次 `sync` 在 jujutsu-sci 提交之后被打断（GitHub 不可达导致推送重试耗尽、或调用方超时），
+**不要直接重跑 `sync`**：此时 HTML 已提交，`sync` 会因「无生成变更」提前 `exit 0`，
+镜像 / 整站 deploy / verify / emergency 四个阶段不会执行。改用：
+
+```bash
+cd /Users/zijian/Documents/Code/jujutsu-sci
+./auto_sync_site.sh resume   # 重新推送 + 镜像 academy + 整站 deploy + verify + emergency
+```
+
+`resume` 与 `sync` 使用同一批函数与退出码，同样执行整站 `npm run deploy`。
+前提：jujutsu-sci 工作区干净（有未提交的 HTML 时先跑 `sync` 完成提交，再跑 `resume`）。
+
 `npm run deploy` 必须上传 `.cloudbase-deploy/` **整包**，其中：
 
 - `.cloudbase-deploy/index.html` = 个人主页
