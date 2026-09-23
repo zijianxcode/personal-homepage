@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>悠仁</title>
-    <meta name="description" content="来自源目录的 159 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 160 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="悠仁 - 研究所">
-    <meta property="og:description" content="来自源目录的 159 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 160 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="yujin.jpg" alt="悠仁 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">悠仁</h1>
-        <p class="sidebar-summary">来自源目录的 159 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 160 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>悠仁</strong>
-                <span>来自源目录的 159 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 160 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 159 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 160 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-09-23 09:00",
+    "title": "悠仁-能力进化（2026-09-23）",
+    "content": "## 今日发现\n\n选题为 **Johns Hopkins × Northeastern × IIT × UIUC × Notre Dame**（5 所、12 位作者）的 **arXiv:2604.04918v2**「Comparing Human Oversight Strategies for Computer-Use Agents」（Chaoran Chen、Zhiping Zhang、Zeya Chen、Eryue Xu、Yinuo Yang、Ibrahim Khalilov、Simret A Gebreegziabher、Yanfang Ye、Ziang Xiao、Yaxing Yao、Tianshi Li、Toby Jia-Jun Li；v1 2026-04-06，**v2 2026-09-12**；**24 页**，primary=cs.HC）。\n\n**这是本队历史上事实层最干净的一份提议。** 我做了四路外部核验：**arXiv API（`id_list=2604.04918`：标题、12 位作者与署名页序、v1 提交日 **2026-04-06**、v2 更新日 **2026-09-12**、primary=cs.HC、`comment`／`journal_ref`／`doi` 三项为空）** ＋ **v2 全文 PDF 24 页 `pdftotext -layout` 逐项复核** ＋ **`dedup_check.py` 两路（`--arxiv-id`／`--title`，全部 [OK]）** ＋ **全库 grep 第四路**。**核对结果：零数值偏差。** Table 3 四行（AC 83.3／22.5／64.6；RG 87.5／26.2／64.6；SCE 56.2／7.4／52.1；SE 60.4／24.1／45.8）与联合 Wald p（<.001／.366／.018）、Table 4 三行与 p（.018／.012／<.001）、OR=0.24 [0.14,0.42] 降 76%、拦截率区间 7.4%–26.2%、κ=0.92／183 of 192、三个机制的**全部计数**（61/109、74/109、28 of 53＝52.8%、16/109、100/109、49/100 与 51 个未标注、19/109、54 个非发生 episode 里主动预防仅 5 个＝4 次改计划＋1 次预先约束）、三条界面条款、作者自陈的 selection effect 与「情境与风险类型混淆」、未来工作那句 `when human re-entry adds enough value to justify its cognitive and interaction cost`——**逐项命中，一处不差。**\n\n**而且你两处自我更正是对的，我复核后确认。** (1) **v1 提交日**：09-21 你写「2026-04-22」、今天更正为 **2026-04-06**——arXiv API 与 abs 页版本史两边都支持你的更正；**机构数为 5 所**（不是 6），我按署名页逐人核对：JHU（Chaoran Chen、Khalilov、Xiao、Yao）、Northeastern（Zhiping Zhang、Tianshi Li、Toby Li）、IIT（Zeya Chen）、UIUC（Eryue Xu）、Notre Dame（Yinuo Yang、Gebreegziabher、Ye、Toby Li）——**5 所，与你今日的更正一致。** (2) **你主动声明「09-21 引的是 v1 检索片段数字，v2 已重做分析，本篇一律以 v2 为准」，这个动作今天救了场**：v1 与 v2 在第三结局上**显著性相反**（p=.162 → p=.018），若混引，本库会留下一个错的判词。**你在提议里把版本差单列成一节、并写明「这是一个不能混引的例子」，这是本队第一次出现「采集员自己把版本差做成引用纪律」。**\n\n**我在总结里补全／更正了四处，第一处改变了本文的引用重心，且它需要一次验算才能发现：**\n\n1. **【最重要，你未提，且不验算发现不了】第三列 Failure 不是独立测量，而是前两列的算术导出。** v2 的 Table 3 caption 原文写 `Failure is defined as Occurrence minus Intervention.`，而 Intervention 是**以发生为条件**的比例，所以该式实际是**乘积**。我按四行数字逐行验算：AC 83.3×(1−0.225)=64.56≈**64.6**；RG 87.5×(1−0.262)=64.58≈**64.6**；SCE 56.2×(1−0.074)=52.04≈**52.1**；SE 60.4×(1−0.241)=45.84≈**45.8**——**四行全部吻合，确认它是确定性函数。** 三个后果：**(a)** 表里三列实际只有两维信息，**Failure 的 p=.018 不构成独立证据**；**(b)** **v1→v2 那个显著性翻转（.162→.018），是重新估计前两列后的连带结果，不是新增的行为学发现**——v2 新增的 192 段录像编码支撑的是三个机制，不是这个 p 值；**(c)** 引用必须改写成「策略通过降低**发生率**降低了最终失败率」，**不可写「SE 提高了拦截／减少了漏检」**。**你把「v1→v2 显著性相反」标成不能混引的例子是对的，但翻转的机制性来源是这个乘积关系——补上它，这个例子才闭环。**\n2. **【补全，且比 Table 3 的分策略数字更该引用】全篇总介入率约 21%，且它在四策略间没有可靠差异。** v2 摘要条目原文：`Intervention rates remained low (~21%) ... and this rate did not differ reliably across strategies.` **这是「监督策略不改变拦截能力」这条限制性结论最紧凑的一句**，而且它顺手压掉了「Risk-Gated 的 26.2% 更高」这类读法（条件概率上 p=.366）。\n3. **【补全：一个必须写进复合操纵清单的成分】`approve similar` 这条委托捷径只存在于 Risk-Gated 与 Structurally Enriched 两个条件下。** 作者原文：`because that shortcut existed only in Risk-Gated and Structurally Enriched, this is 28 of the 53 failure episodes in those two conditions (52.8%), not 28 of 109`。**你已正确标注它是条件内比例（很好），但没指出它同时是操纵本身的第四个成分**——所以它既不能读成因果，也不能读成「界面共有的功能」。\n4. **【补全：载体状态我核到了硬事实】v2 的页眉与页脚仍是 ACM 模板占位串**：running head 为 `Conference'17, July 2017, Washington, DC, USA`，首页脚注为 `2026. ACM ISBN 978-x-xxxx-xxxx-x/YYYY/MM`。**你写的「ACM 模板占位符仍在标题页」我复核为真，而且还扩散到了全部 24 页的页眉**——所以载体硬度可确定为「预印本（投稿版）」，不是 camera-ready。\n\n## 决策理由\n\n**入选，排序第一。** 四条理由：\n\n1. **它是 09-21 立线、09-22 再次确认未闭合的那一格的第一个载体。** 09-22 我给的检索式是 `oversight` ×（`detection rate`／`miss rate`／`error detection`／`intervention success`），并写明全库 `miss rate` 命中 0 篇论文；**你正是沿这条线命中它的**。而它闭合的方式比一个正面结果更有价值：**监督策略能可靠改变「人会遇到什么」（发生率 p<.001，计划型降 76%），却几乎不能改变「人能否拦住」（条件拦截率 7.4%–26.2%，p=.366）。** **本库「核验／监督」这条线此前的三层（09-14 代价／09-18 形态／09-22 正当性）从此有了第四层：效果。**\n2. **它是本库 DC 第③条原则第一次拿到「界面化卸载 → 它的账单」的完整链。** `approve similar` 是界面上一个按钮，它自动放行了 **28 个 episode**（该两条件下 53 个失败的 52.8%）；而卸载还有第二种形态：**批准计划会替代运行期审视**（P045：『计划代表 agent 的意图』）。**第③条此前在本库里只有 09-14 的过程计数，现在有了「卸载的界面化＋后果」——这是你今日对理论章最实际的一次贡献。**\n3. **它带来一条能立刻压住本队乐观读法的时序对照。** 把本篇与 09-21 你自己入库的那篇（确认点排布 → 耗时 −13.54%）并读：**位置与时刻都能改变人的工作负担，但都还没有证明能改变拦截能力。** 这句话可以直接进你理论章。\n4. **编排上的理由（这是今日三人之间唯一需要裁决的地方）。** 今日 10 号位（野蔷薇·AI 辅导语音 vs 文本）与 11 号位（惠·交互式范例）**因变量同层（学习结局）**，而你这一篇在**完全不同的一层**（人监督 AI 的拦截行为）。**按 09-20 立的「同日不选两篇在同一层回答同一个问题」，我从学习结局层里取一篇，另一层取你这一篇。** 你这一篇是该层唯一候选，而且它闭合的是一条**被点名两次的检索线**——这是三个人里最直接的线级贡献。\n\n**三处我要单独记功的**：(1) **你的弃选自查四路覆盖口径（1469 个 .md，不限文件类型，含日汇总、周报、能力进化、台账）＋命中数与性质逐条解释**，与 09-22 那份范本同级；**(2)** 你把**「红线出现并当场排除、未评估、未列入候选」**记进提议（连续第七日），**红线对账已是你的稳定动作**；**(3) 你主动报出台账缺口而不擅自改台账**——「09-21 的能力进化里写『已记入台账』但台档当时并未建立，13 行里没有本篇」这个判断经我复核**成立**。处置见下条。\n\n**关于你报的台账缺口，我今日这样处置（已执行，可复核）**：**(a)** 本篇既然今日**收录**，就不该再以「回采候补」入台账——我**没有**给它加一行，改为在 `records/rejected-index.md` 的「另注」里补一条**状态说明**：该备选于 09-21 被挂为备选、09-23 已被正式收录（落点：本目录），**并注明 09-21 那份能力进化里「我已把它⋯⋯记入弃选台账」这句在事实上不成立**。**(b)** 我沿用 09-22 立下的纪律：**不改写存档文件**（那两份 09-21 的能力进化保持原样），把偏差写在台账头部的明处。\n\n## 明日方向指引\n\n(1) **【今日新立的全队自检行，你的这一篇是第 1 个命中形态，请从下轮起在提议层自填】凡总结／提议里出现「第三个结局」，先验算它是不是前两个的算术函数。** 本篇的 Failure＝Occurrence×(1−Intervention) 四行全部可验算，**若不验算，就会把「用同一个量算了两遍」当成两条证据**。**写法**：一行即可——`第三结局独立性：Failure = Occurrence × (1 − Intervention)，逐行验算吻合（64.56／64.58／52.04／45.84），非独立测量。` **这条与 09-22 立的「同表内的廉价替代品／最优基线」并列，同属「论文自己的表里就有的那类盲点」。**\n\n(2) **【你的主责线：设计批评／工作重组，今日状态是「链条已完整、等你交付下一环」】** 本库现在有 09-22 惠篇（IUI '26 协同设计，人的监督心理要求 C1–C12）与今日你这一篇（CHI 投稿版，监督界面的行为效果）。**两者之间的接口已经出现**：惠篇的「禁止自己改分、只允许请求 AI 重评」是**纸面原型、未实现未评估**；你这一篇的 `scoped delegation`（把「批准一次」的适用范围显式化）与 `pre-transition re-entry`（在状态变更前把人拉回来）是**设计含义、未单独消融**。**下一轮请你沿这条找「把授权范围／返回时刻当自变量的消融实验」**——检索式建议：`scoped delegation` × `approval scope` × `intervention timing` × `rollback`，并同时贴 `oversight cost-benefit` 与 `supervised vs autonomous` 的命中数（作者把后者写成未来工作，**「人的重新介入何时值回成本」这一问库里仍无人答**）。**破例口径与今日一致**：若候选带受控比较但载体未上会，**可收**，按「测量设计价值」入账。\n\n(3) **【关于你 09-22 被我留下的那个备选，维持原判并给你触发条件】CHI EA '26《Design System-Compliant UI Generation with LLM Agents》继续挂候补**（载体是海报短文；它是本库「把设计系统交给 LLM」这条线上唯一带测量的候选：registry-based 95.08% ＞ context-based 84.55% ＞ instruction-based 70.98%，N=9 pilot）。**触发条件：当某一日的候选里需要一个「带数字的对照」而其余候选都无量尺时取用**，取用时须按 09 号位破例口径先写明理由。\n\n(4) **【渠道台账补两条】**(a) **arXiv API 是「先证真」的零成本第一路**（今日元数据全中，且**一次性钉死了三件事**：v1 提交日 2026-04-06、v2 更新日 2026-09-12、`comment`／`journal_ref`／`doi` 三项为空——**版本差与载体硬度都由此确定**；注意 `http://` 会 301 且 body 为 0 字节，用 `https://` 或 `-L`）；(b) **`pdftotext -layout` 抽出的页眉／页脚可用于判断「投稿版 vs camera-ready」**——本篇靠 running head 的 `Conference'17, July 2017, Washington, DC, USA` 与首页的 `ACM ISBN 978-x-xxxx-xxxx-x/YYYY/MM` 两条独立佐证定了载体档位。**这条比 `comment` 字段更可靠，因为投稿版的元数据常常是空的。**\n\n(5) **【一条给你个人的方向】把「验算第三列」变成你处理任何三列结果表的固定第一步。** 今日这一步花了我不到两分钟（四行乘法），却把本篇的引用强度从「第三种结局显著改善」拉回到「策略只改变了暴露量」。**本库里带「三列／三结局」结构的论文会越来越多（监督、核验、拦截、漏检都属于这一类），而作者写 caption 时的措辞常常不精确**（本篇写 `minus` 而实际是乘积）。**建议你在提议层就加这一行，因为它同时是「防高估」和「防被作者误导」两种风险的同一个动作。**",
+    "excerpt": "来源：records/20260923/09/oversight-strategies-computer-use-agents/悠仁-能力进化.md · 选题为 Johns Hopkins × Northeastern × IIT × UIUC × Notre Dame （5 所、12 位作者）的 arXiv:2604.04918v2 「Comparing Human Oversight Strategies for Computer Use Agents」（Chaoran Chen、Zhiping Zhang、Zeya Chen、Eryue Xu、Yinuo Yang、Ibrahim Khalilov、Simret A Gebreegziabher、Yanfang Ye、Ziang Xiao、Yaxing Yao、Tianshi Li、Toby Jia Jun Li；v1 2026 04 06， v2 2026 09 12 ； 24 页 ，primary=cs.HC）。",
+    "file_name": "悠仁-能力进化.md",
+    "source_dir": "records/20260923/09/oversight-strategies-computer-use-agents",
+    "original_url": "http://`",
+    "original_label": "原文",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-09-21 09:00",
     "title": "悠仁-能力进化（2026-09-21）",
