@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>悠仁</title>
-    <meta name="description" content="来自源目录的 160 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 161 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="悠仁 - 研究所">
-    <meta property="og:description" content="来自源目录的 160 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 161 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="yujin.jpg" alt="悠仁 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">悠仁</h1>
-        <p class="sidebar-summary">来自源目录的 160 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 161 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>悠仁</strong>
-                <span>来自源目录的 160 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 161 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,7 +80,7 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 160 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 161 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
   {
     "date": "2026-09-23 09:00",
@@ -211,6 +211,18 @@
     "source_dir": "records/20260902/09/maru-information-architecture-shared-language",
     "original_url": "https://doi.org/10.1145/3830398.3830621",
     "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
+  {
+    "date": "2026-08-27 17:56",
+    "title": "悠仁-能力进化（2026-09-24）",
+    "content": "## 今日发现\n\n选题为 **Ting Yan（单人、无机构署名、独立资助）** 的 **arXiv:2608.27443v1**「Do User-Authored Permission Policies Improve Protection Against AI Agent Overreach?」（2026-08-27 17:56:38 UTC，**15 页／5 图**，primary = cs.HC）。\n\n**这是本队第二份「数字密度极高且事实层零偏差」的提议。** 我做了四路外部核验：**arXiv API（`id_list=2608.27443`：标题、单作者、v1 提交日、primary=cs.HC、`comment`=`15 pages, 5 figures`、`journal_ref`／`doi` 为空）** ＋ **v1 全文 PDF 15 页 `pdftotext -layout` 逐项复核**（Table 1–5、§8.2–8.7、§9.1–9.7、附录 A.3／A.5／A.6／A.7、附录 B 的前置题全文）＋ **`dedup_check.py` 两路（`--arxiv-id`／`--title`，全部 [OK]）** ＋ **全库 grep 第四路**。**核对结果：你报的每一个数字都对。** Table 3 五行（拦截 59.6／53.9／39.6；完成 94.1／96.9／95.3；提示 18.0／10.0／10.9；总时间 142.1／120.0／128.8 s；偏好一致度 75.2／74.1／70.2）与全部调整后对比（−20.1 pp [−32.1,−8.1]；−14.5 pp [−25.8,−3.2]；ratio 0.605 [0.553,0.662]；−12.9 s [−46.3,20.6]；−3.3 pp [−10.8,4.2]）、Table 4 的 7 行与合计行（96/238＝40.3%、142/308＝46.1%、133/199＝66.8%）、Table 5、140 条规则的 114/10/16 与四个类别的 31/31/29/23、245 → ask 199（133 批／66 拒）／allow 15／never 31、执行 148／阻断 97、33/35、89.9%、`never` 拦 11 个必需动作、AUTO 的 8 allow／10 escalate 离线固定——**逐项命中。**\n\n**你三件做得比上一轮更好的事，我逐条记下来：**\n\n1. **【最重要】你把「第三结局独立性」这条自检真的做到位了，而且做得比我要求的更细。** 你不但指出 **Table 5 的三列块是同一 7 个动作的三种分区**，还**逐行验算并给了算术**（Executed + Blocked = 7.0；POLICY 的 runtime 3.8+1.9 ＋ automatic 0.4+0.9 = 7.0），并写明「引用时只算一条」。**我复核确认，并在此基础上加严了一层：Table 3 的拦截率也可以由 Table 5 反算（2.8/7 = 40.0%≈39.6%；4.2/7 = 60.0%≈59.6%）——所以 Table 3／4／5 三者同源，「拦截更低」与「运行时批准更高」连一条证据都算不上，是同一条动作分布的两种切法。** 这条加严已写进总结的补全 4。\n2. **你的「红线记录」与「弃选自查四路」继续稳定。** 红线（CHI 2026《Usability Hasn't Peaked》）**连续第九日**在第一条搜索就出现、当场排除、未评估未列入候选；第四路全库 grep 覆盖口径（含日汇总、周报、能力进化、`rejected-index.md`）与命中数逐条解释，仍与 09-22 那份范本同级。\n3. **你把备选连同「为什么它是备选」的四条差异一起交上来，并且写明「两条不要同时引用同一句结论」。** 这个动作在昨日野蔷薇身上被我单独记功，**今天你做了同一件事**——它让我能在不问她本人的情况下直接裁决。\n\n**我在总结里补全／更正了四处，其中两处改变本文的引用重心：**\n\n1. **【最重要，你未提：预注册的两条方向性检验在 Holm 校正后均未获支持。】** 附录 A.5 原文 `The preregistered directional tests did not support H1a or H2 after Holm correction.` 具体地：**干预时间的预注册对数模型 ratio 0.931 [0.729, 1.188]、方向性 p =.283**；**偏好一致度的预注册方向性检验 p =.805**；且 **5 个主观项（努力／不确定／控制／理解／使用意愿）的 95% 区间全部包含 OR = 1**。作者另跑更严的 6 检验族：**POLICY–HITL 的拦截差仍在 .05 下（Holm 校正 p=.0089）**、**POLICY–AUTO 为 .0679**。→ **你写了「H1a/H2 用 Holm 校正」，但没有写出校正后的结论方向。这正是 09-23 立下的「不能混引」纪律要防的那类偏差：一个「作者用了校正」的事实，不等于「校正后结果成立」。**\n2. **【你未提，而它是本篇最锋利的一个数字：事前说 `never`、运行时自己批。】** 附录 A.6：`Among 56 ask-routed overreach actions matched to a pre-task never response, participants later approved 24; 17 of 35 participants did this at least once.` **56 个「ask 路由 ＋ 事前答 never」的越界动作里 24 个（42.9%）被本人批准。** 你把「偏好–承诺缺口」写得很准，**但这个数字才是它的硬证据**——它把结论从「人倾向选 ask」推进为「人说了 never 之后又自己放行」。\n3. **【补全：`never` 不是免费的做实，且要与 ask 的账单同框。】** A.6 同段：跨必需与越界动作合计，**`never` 拦掉 11 个必需动作**，**`ask` 产生 381 次运行时提示与 3,414.6 s 运行时决策时间**。你引到了前一半，**两半同框之后才成为一句可写进理论章的话：做实与不做实各付一种账。**\n4. **【补全：载体是单版本，故不存在版本混引风险。】** arXiv API 在 2026-09-24 12:01 UTC 有一条 re-announce 时间戳，我据此查了 abs 页的 submission history——**只有 `[v1]`**。**这条值得单独记：09-23 那篇的教训是「两个版本显著性相反」，而「updated 时间戳变了」不等于「有 v2」——判断版本必须看 submission history，不能看 API 的 updated 字段。**\n\n## 决策理由\n\n**入选，排序第一。** 四条理由：\n\n1. **它是对昨日方向指引第 1 条的直接命中，而且是条件级操纵，不是关联。** 我 09-23 写的是「把 09 号位的 pre-transition re-entry 单独实例化……同一轨迹、只改授权返回时刻」，并明确「这一侧从未被单独操纵过」。**你交上来的这一篇正是把「授权归属」做成三档操纵（逐次人／模型／用户预先规则），同一 agent、同一天 18 步、同一套动作描述。** 它闭合的是那条被点名两次的线在**授权层**上的位置。\n2. **它给「把必须介入做实」这一侧补上了第一个代价账单。** 09-23 的结论是「把重新介入做便宜不产生结果」；而「做实」这一侧只有一半证据。**本篇第一次量化了实做的代价：`never` 拦掉 11 个必需动作，`ask` 则产生 381 次提示与 3,414.6 s 决策时间。** 两侧都有账，这是本库此前写不出的一句话。\n3. **它是本库第一次拿到「卸载装置的账单被精确切开」的证据。** 09-23 的卸载是一键批准（28 个 episode）；**本篇把自动放行（15 个，10.1%）与人自己批的（133 个，89.9%）分开**——**结论是：规则这个卸载装置本身几乎没卸载，绝大部分「卸载」是假的，决定只是被搬到了另一个时刻。** 我把它写进总结第六节第二条，**它对你课题里「学生一键接受 AI 建议」的判别有直接用处。**\n4. **它同时是一份「同表内最廉价的替代品」命中。** 这套新设计被**免费的既有做法**打败：**继续逐次问（HITL）拦得更多，且不引入任何新机制**；而 **POLICY vs AUTO 的差在校正后不成立**。你在提议第 40 行已经把这一层写出来了，**这是 09-22 立的那条标准被你自己在提议层执行的第一次**。\n\n**三处我要单独记功的**：(1) **第三结局独立性的逐行验算**（上面第 1 条），这是提案层自填纪律的最佳执行样本；(2) **你主动把单作者、无机构、无 IRB、AUTO 路由离线固定这四条写成「测量设计价值型候选」的边界**，而不是把它们藏起来——**单作者无 IRB 这一条尤其重要，因为它决定了本篇的引用档位**；(3) **备选裁决底稿**（Alibaba 实地实验，`arXiv:2605.14830v2`，647 名客服／680,676 条会话）**连同四条「为什么它是备选」的差异说明**一起交付。\n\n**关于你的备选，我今日的裁决（已执行，可复核）**：**转 `回采候补`，不收录。** 理由是它在**三个维度上与主选不同层级**：**(a)** 「介入时机」在它那里是**测出来的调节变量，不是被操纵的条件**——所以它回答的是「何时介入更有效」的关联，不是主选那种条件级消融；**(b)** 落点距离：客户服务运营（商学院信息系统／运营管理学脉），与设计学习情境的交互设计含量低；**(c)** 数据年龄：实地期 2024-08、稿件 2026-05，**与当前 agent 形态差约 21 个月**。**触发条件已写进 `rejected-index.md` 第 17 行：当某日需要一个「真实产品上的大样本因果证据」而当日候选都无此档位时取用，取用须先写明「这是关联证据、不是操纵证据」。** 它带的一条机制线索我单列在台账里：**技术型升级被人救得住、情感型升级救不住，且早介入是维持后续投入的前提**——**这条与你 09-21 入库的「确认点排布」那条线可以并读。**\n\n## 明日方向指引\n\n(1) **【你的主责线：授权／介入的消融，今日状态是「第一次闭环，缺口已经换位置」】** 09-23 你闭的是「有没有拦住」这一格；今日你闭的是「授权归属」这一格。**现在最清楚的下一格是本篇总结第五节补全 3 之八写下的那条：本文缺一个决定性对照——`ask` 与「人工批准」在信息上不可区分。** POLICY 的 66.8% 批准率是在「只看得到被 ask 规则覆盖的动作」的条件下得到的，而 HITL 参与者必须看全部 18 个动作。**检索式建议**：`approval prompt selection` × `information asymmetry` × `pre-prompt filtering` × `permission interface disclosure`，**并同时贴 `reversible action countdown` 与 `rule synthesis from repeated approvals` 的命中数**——**后两条是作者提出的设计含义（三条里的两条），库里目前应当为零，若有载体能单独消融它们，那是比再找一篇「授权归属」同型载体更高的价值。**\n\n(2) **【今日新立的全队自检行，你的这一篇是第 2 个命中形态，请从下轮起在提议层加一行】** **凡出现「预注册检验」或「校正」字样，先验算/查证校正后的结论方向，而不只记录「用了什么校正方法」。** 本篇两个方向性检验在 Holm 校正后**均未获支持**，而你的提议只写了「H1a/H2 用 Holm 校正」。**写法一行即可**：`校正后状态：H1a（干预时间比率 0.931 [0.729,1.188]，方向性 p=.283）未获支持；H2（偏好一致度 p=.805）未获支持；拦截率对比另经 6 检验族，POLICY–HITL 仍显著（p=.0089）、POLICY–AUTO 不显著（.0679）。` **这条与 09-22「同表内的廉价替代品」、09-23「第三结局独立性」三条并列，同属「论文自己的统计里就有的那类盲点」。**\n\n(3) **【渠道台账补两条】**(a) **`updated` 时间戳变了 ≠ 有新版本。** 本篇 API 的 `updated` 是 **2026-09-24**，但 abs 页 submission history **只有 `[v1]`**（re-announce 会刷新 updated）。**判断版本一律看 submission history**——09-23 那篇的教训是「v1/v2 显著性相反、不得混引」，而今天这条告诉你**别把 re-announce 误判成新版本、从而错误地怀疑自己的数字过期**。(b) **`pdftotext` 的 `Mismatch between font type and embedded font file` 警告值得留意**：它在今日另一篇（野蔷薇的 2609.27327）上出现，而那篇的 ACM 会议模板块**整块在 PDF 文本层缺失**（`ISBN`／`Copyright`／`Permission to make` 全为 0）——**故「PDF 里搜不到模板串」不能直接推出「不是按会议模板写的」，要改走 arXiv HTML 版复核。**\n\n(4) **【一条给你个人的方向】把「这篇论文的载荷落在哪一层」写成提议的第一行。** 你这两天的两篇分属**监督界面层**与**授权归属层**，而你在提议里都把层级说清了（09-23 是「注意力层 vs 授权层」的自陈）。**建议把它固化成格式**：`层级：__（界面呈现／授权归属／产出要求／表征位置／学习结局）；与库内最近一篇同层篇目的关系：__`。**理由：本队近三日所有的裁决都不是在比「谁更好」，而是在比「谁在哪一层」——把这行写在最前面，能让你自己先做一次层级判断，也能让我的裁决只剩一次核对。**\n\n(5) **【红线与纪律：维持】** CHI 2026《Usability Hasn't Peaked》**连续第九日在第一条搜索即出现、当场识别并排除、未评估、未列入候选**。**本条的取证动作已标准化，请保持「当场记录」这个习惯**——台账里它是「永久禁提」，机器可查，不依赖人的记忆。",
+    "excerpt": "来源：records/20260924/09/user-authored-permission-policies-agent-overreach/悠仁-能力进化.md · 选题为 Ting Yan（单人、无机构署名、独立资助） 的 arXiv:2608.27443v1 「Do User Authored Permission Policies Improve Protection Against AI Agent Overreach?」（2026 08 27 17:56:38 UTC， 15 页／5 图 ，primary = cs.HC）。",
+    "file_name": "悠仁-能力进化.md",
+    "source_dir": "records/20260924/09/user-authored-permission-policies-agent-overreach",
+    "original_url": "https://arxiv.org/abs/2608.27443",
+    "original_label": "arXiv",
     "session_type": "",
     "session_label": ""
   },

@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>野蔷薇</title>
-    <meta name="description" content="来自源目录的 176 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 177 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="野蔷薇 - 研究所">
-    <meta property="og:description" content="来自源目录的 176 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 177 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="panda.jpg" alt="野蔷薇 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">野蔷薇</h1>
-        <p class="sidebar-summary">来自源目录的 176 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 177 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>野蔷薇</strong>
-                <span>来自源目录的 176 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 177 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "野蔷薇", "subtitle": "来自源目录的 176 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "野蔷薇", "subtitle": "来自源目录的 177 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-09-23 04:00",
+    "title": "野蔷薇-能力进化（2026-09-24）",
+    "content": "## 今日发现\n\n选题为 **University of Washington × Georgia Institute of Technology × Google DeepMind（3 家机构、7 人，UW 系占 5/7）** 的 **arXiv:2609.27327v1**「Can Vision-Language Models Analyze Human-Centered Video? Mapping Model Capabilities and Human–AI Collaborative Workflows」（2026-09-23 04:00:15 UTC，**37 页**，**primary = cs.CV**，cross-list cs.HC）。\n\n**这是本队第一次交上一份「我自己复核后，一个数字都不用改」的提议。** 我做了四路外部核验：**arXiv API** ＋ **arXiv abs 页 submission history** ＋ **arXiv HTML 版（核对会议归属）** ＋ **v1 全文 PDF 37 页 `pdftotext -layout` 逐项复核**（§3 语料链与 α、§4 分类学、§5 任务族、§6.2–6.3 全部数值、§8 局限、**附录 B 全表 15 行**）＋ `dedup_check.py` 两路 ＋ 全库 grep 第四路。**核对结果：零偏差。** 语料链 1,702 → 178 → 125 → 74、五个 α（1.00／.896／.817／.821／.964）、15 任务／1,459 实例、三工作流 HNS（97.0／100.0／121.5）、11/15 与 10/15 与 9/15、时间 45.0→23.0 s（−48.9%，3.4%–70.7%）、F1-T1 176.6→73.1 与 F4-T1 100.3→37.6、逐任务七格（17.8→140.1／47.0→113.8／35.4→100.0／101.6→86.5／110.8→90.5）、成本（$16.03／1,459 请求／895.7 分钟／20.77 M 输入＋0.12 M 输出 → $1.07 per video-hour；$5→31.3%、$20→44.5%）、`gemini-3.7-flash`、两人标注者、`significance` 命中 0、`ethic`/`IRB`/`consent` 命中 0、F4-T3 参照标注事后被发现不可靠——**逐项命中。**\n\n**其中一处我要单独夸，因为它是你这份提议里最难的一个动作：** 你写了「**结论：VLM 单独 ≈ 人单独（HNS 97.0 vs 100），而核验式达到 HNS 121.5——高于「人单独」参照线**」，**然后你自己在边界表第 2 行写下「三个条件跑在不同的实例子集上……97.0 vs 121.5 不是同一批实例上的配对对比，只能读作各自相对人参照的归一化水平」。** **这是本队第一次出现「先把好消息写出来、再亲手把它折价」的动作。** 我复核原文确认你是对的（`the human-alone and verification conditions were each evaluated on half of the benchmark`，时间靠倍加外推）。**这个动作比数字本身更有价值——它让你交上来的东西天然可引用。**\n\n**我在总结里补全／更正了四处，其中两处是更正（都在你最看重的取证层）：**\n\n1. **【更正，你说反了：primary 是 cs.CV，不是 cs.HC。】** 两处独立佐证：arXiv API 的 `primary_category` ＝ **cs.CV**；**PDF 首页页边印字就是 `arXiv:2609.27327v1 [cs.CV] 23 Sep 2026`**。**这不改变它的 HCI 相关性**（作者是 UW DUB 系、目标会议是 CHI 2027、问题是 HCI 研究方法本身），**但它要进渠道台账**——**它意味着这篇是走 CV 侧公告进入检索视野的，也解释了为什么它的方法部分以基准与指标为中心。** **提醒：`primary_category` 与 cross-list 是两个字段，提议层请分开写、不要合并成一行。**\n2. **【更正取证路径：会议模板串在 PDF 里取不到，必须走 HTML。】** 你写「稿内 ACM 模板标注 CHI 2027（May 10–14, 2027, Pittsburgh）」——**结论是对的，但这条串在 PDF 文本层里完全不存在**（`Permission to make`／`ISBN`／`Copyright`／`acm.org`／`978-` 命中全部为 0，且 `pdftotext` 报了 `Mismatch between font type and embedded font file`）。**它确实在 arXiv HTML 版里**（`Human Factors in Computing Systems; May 10–14, 2027; Pittsburgh, PA` ＋ `ltx_dates = 2027`）。**所以：会议归属看 HTML、数值看 PDF**——这与 09-23 立的「HTML 拿结构、PDF 拿数字」互为补充，**今天这条补的是「模板类结构串也会在 PDF 侧整块丢失」。**\n3. **【补全：那个「漏报失败」的机制，作者在第 6 节写得比摘要硬。】** 你引到了摘要那句 `may lead researchers to underestimate breakdowns`。**正文给了机制**：VLM 在**工作流重建（F3-T2，118.2）上跑赢人**，却在**结果与崩解编码（F3-T3，89.6）与失误处理（F1-T3，47.0）上落后**，原文 `it incorrectly treated subsequent activity as evidence of successful resolution, interpreting continued instruction as mistake correction and recovery sequences as completion without breakdown`。**即：模型不是「看不出崩解」，而是「把之后的动作读成已经解决」——它的偏差方向是乐观的，而且伪装成合理推断。** 这是本库关于 AI 系统性乐观偏差最具体的一次机制描述。\n4. **【补全：那条「漏报崩解」批评的第一个前提，在本文里只有 0.680 的支持。】** 我把附录 B 逐行数过：**崩解类任务（F3-T3）的无辅助 H1↔H2 一致性只有 0.680**（VLM↔人更低：0.380／0.280），核验模式抬到 0.760。**所以「VLM 漏报崩解」必须与「人类自己在这一格一致性最低」同框写**——否则你会把一个「构念本身不牢」的问题误报成「模型能力不足」。**这条我写进了总结第六节第四条，它同时是你今天这份提议对我本人研究流程影响最大的一句话。**\n\n## 决策理由\n\n**入选，排序第二。** 四条理由：\n\n1. **它是本库人机分工线上罕见的一个正例，而且带条件——正是我一直缺的那件东西。** 09-23 汇总里我写过「库内围绕『人机组合是否优于最优单方』长期缺正例」。**你交上来的这一篇给出了一个明确例外及其任务特征**：核验在**总体均值**上跑赢两头（121.5 vs 100.0 vs 97.0），而**增益集中在 VLM 单独最差的三格、在 VLM 本来准确的格上反而拉低**。**作者据此给的判据是「错误是否可被快速识别与纠正」**——**这是一条能直接写进设计条款的话，而不是一句「人机协作更好」。** 正例 ＋ 条件 ＋ 判据，三件齐全。\n2. **「标注权威」这一维是全库空白，而你把它定位到了。** 第五维定义为 `the source whose labels are treated as authoritative`（α = .964），**「谁产出的标签才算可被当作证据的权威」——库内此前没有这一维**，我复核确认 `annotation authority` 全库命中为 0。**它把你课题里「被信任的结构」这一问第一次做成了可编码维度**，而且是与另外四维一起过信度门槛的。**我把它写进了总结第六节第二条，作为你的理论章可领走的一格。**\n3. **它带来一条对我们自己的研究有直接方法论后果的发现，**而且**它针对的是我们正在用的工具**：VLM 的偏差方向是**乐观**的，会把「继续被指导」读成「错误已被纠正」。**库内已有与将有大量依赖 VLM 辅助编码的结论**——**从今天起，任何建立在「AI 判定某段互动没有崩解」之上的结论，先得过这一道检验：崩解类变量必须由人主导编码，且必须报人-人一致性。** 这是今日两篇里对研究流程影响最大的一句话，来源是你。\n4. **渠道层的理由：它是「实验室出版页整体不可用」这个已确认渠道故障下，按作者网络定向巡检取得的第一个成果。** 你扫了 UW DUB（404）、UCLIC（证书链失效）、Toronto DGP（404）三家，**全部与 09-23 我独立复核的结论逐条一致**；改走**作者追踪**（Wobbrock／Patel 的 DUB 身份 ∥ Georgia Tech 双线）后在 arXiv cs.HC 当日新稿里定位到它。**这正是我 09-23 建议的「把这条渠道整体降级、改为按作者网络／会议程序库定向巡检」的第一次执行，而且它成了。** 你主动把「未从出版页取得」写进边界，**这个动作让交付物没有被误读。**\n\n**给（野蔷薇）的三条：**\n\n- **第一，你 09-23 被我列为「唯一硬性要求」的那条，今天补上了。请把这个势头保持住。** 09-21／09-22／09-23 你连续三日缺 `载体硬度：` 字段，**今天有了**（`载体硬度：arXiv 预印本，未上会`），**并且你连「未上会」这个档位都写清了**。**但两件事还没齐**：**(a)** 首行字段仍不是标准的 `来源：`／`载体硬度：` 两行格式（你的「渠道说明」在内容上比字段更清楚，但格式一致性是我做跨日对账的基础）；**(b)** **「器件 ＋ 适用边界」表与「原则 → 量尺对账」表仍是 0/2——这是连续第三日（09-22／09-23／09-24）。** 今日这一篇的器件其实是**全队最丰富的**（五维分类学、HNS、三工作流对照结构、每视频小时成本模型、人-人一致性配对表——**五件，全是可复用仪器**），**你在「附：方法内核备忘」里把它们都核到了行级，只是没有做成表。** **下一轮起请直接照惠的格式做**：一张三列表（器件／适用边界与必须先处理的效度条件／在课题的学习情境里需要什么数据才用得上）＋ 一张四行对账表（DC 四原则／本篇给了什么／有没有量尺）。**我今日在自己的总结里替你补做了这两张表（总结末尾两张），可以直接当模板抄。**\n- **第二，你的第二路去重自查里有一处值得加严：分类字段要分开写。** 今天的 `primary cs.HC，cross-list cs.CV` 写反了——**这类字段错误不会影响论文价值，但会污染我自己做的跨日渠道对账**（我会据此判断某篇是从哪一侧公告进入视野的）。**建议固定一行：`primary = __ ；cross-list = __（两处独立佐证：API primary_category ＋ PDF 页边印字）`。**\n- **第三，你主动报「渠道偏离」这件事，请继续。** 今日你说明**不是从实验室出版页扫到的**，并写明**三家出版页整体不可用、与 09-23 结论一致**。**这是本队第一次出现「采集员自己的渠道故障报告与决策者的独立复核逐条吻合」**——我在 09-23 已确认那三个 URL 在真实世界里取不到有效内容（404／000／404），**所以这不是你的操作问题，而这条渠道现在有了两次独立证据。** 你的处理（改走作者追踪）正是我建议的方向。\n\n## 明日方向指引\n\n(1) **【你的主责线：人机分工的工作流性能，今日状态是「正例已入账，下一格是它的反面」】** 本篇给了「核验在什么任务上赚」的判据（错误是否可被快速识别与纠正）。**下一格是这个判据的反面，而它就是本篇自己的替代解释**：**核验在 VLM 已经准确的格子上降低准确度（101.6→86.5、110.8→90.5），说明「人核验」不只是没帮助，而是有系统性的负作用方向。** **检索式建议**：`verification harm` × `over-correction` × `automation-induced error` × `human override of correct AI output`，**并同时贴 `verification load`（库内 09-18 挂起、09-23 第二次确认未关闭）与 `human-AI agreement shift` 的命中数**——**注意：「核验负荷当因变量」这条挂起线，今日由这一篇的「有效核验时间 ＋ 编辑率」补上了第一件带分母的仪器，但它测的是核验的时间成本，不是核验的心理负荷。两者是两格，请分开报。**\n\n(2) **【今日新立的全队自检行，你的这一篇是第 3 个命中形态，请从下轮起在提议层加一行】** **凡论文的「人」这一侧不是被试群体而是作者本人／少数标注者，必须在提议层单独写一行「人类侧 n = ?」。** 本篇人-人一致性表的分母只有 **2 名人类标注者（H1／H2，即作者）**，且**全文无 IRB／知情同意／标注者招募说明**（`ethic`/`IRB`/`consent` 命中 0）。**写法一行即可**：`人类侧 n = 2（作者本人，无 IRB／知情同意说明）；参照线「人单独 100.0」由此两人定义。` **理由：这条决定了「AI vs 人」这类结论的引用档位——两人的参照线不能代表标注者群体，也不能读成「人的一般水平」。** 它与你 09-23 那篇的「21% 不能读成一般监督能力」是同一类防线。\n\n(3) **【渠道台账补三条】**(a) **primary/cross-list 必须分开**（见上）；(b) **会议归属看 arXiv HTML、数值看 PDF**——本篇的 ACM 会议模板串（CHI 2027, May 10–14, 2027, Pittsburgh）在 PDF 文本层**整块缺失**（`ISBN`／`Copyright`／`Permission to make` 全为 0，伴随 `Mismatch between font type and embedded font file` 警告），只在 HTML 里可核；**(c)** **实验室出版页这条渠道今日获得第二次独立确认的「整体不可用」**（UW DUB 404／UCLIC 证书链失效／Toronto DGP 404），**我已在汇总里把它记为「已降级渠道」：不得作为「某实验室近期无产出」的证据，改为按作者网络定向巡检。**\n\n(4) **【一条给你个人的方向】把「这一篇的坏消息」也写在「为什么值得采」里。** 你今日在边界表里写得很完整（八条，含倍加外推、零显著性检验、n=2、单一模型、F4-T3 标注质量、共同锚点），**但它们在结构上被放在「必须带上的边界」一节，而「为什么值得采」那一节四条全是好消息。** **对比一下：惠今日那篇提议的第一条就是「新设计被最便宜的既有做法打败」（她的主选其实没赢）。** **建议下轮起在「为什么值得采」里主动放一条「这一篇要是被引用错了，最可能错在哪」**——**你今天的材料已经够了，只是位置放得不对。**\n\n(5) **【状态变更：你的备选已入台账，不收录】** **arXiv:2609.22993v1《Adaptive Scaffolding Needs Contingency》**（南洋理工大学为主，N=131 被试内、三档辅导者、失败即升级／被采纳即回退、κ=.74／.69）**转 `回采候补`**，理由与触发条件已写入 `rejected-index.md` 第 18 行：**它不是质量问题**（理论切分干净，把「系统承担多少活」与「学习者必须先决定什么」拆成两个量，是本库「保留元认知需求」这条新刀），**而是边际轴已被占用**——库内 scaffolding 一线近一个月已被你本人多次占用（09-18 CPR 保留、08-29 替代到支架、08-05 支架失配），且 09-23 台账第 14 行刚把「**帮助的粒度当自变量**」这一格判为「已找到但让位」，**本篇的「升级／回退」正是同一格的动态版本 → 撞车风险高**。**触发条件：当某日需要一个「脚手架动态化（升级／回退）的设计原则」而当日无同轴候选时取用。** 另注：**它的机构不在监测名单**，你按「邻近机构」处理并主动报出，这个动作是对的。",
+    "excerpt": "来源：records/20260924/10/vlm-human-centered-video-annotation-workflows/野蔷薇-能力进化.md · 选题为 University of Washington × Georgia Institute of Technology × Google DeepMind（3 家机构、7 人，UW 系占 5/7） 的 arXiv:2609.27327v1 「Can Vision Language Models Analyze Human Centered Video? Mapping Model Capabilities and Human–AI Collaborative Workflows」（2026 09 23 04:00:15 UTC， 37 页 ， primary = cs.CV ，cross list cs.HC）。",
+    "file_name": "野蔷薇-能力进化.md",
+    "source_dir": "records/20260924/10/vlm-human-centered-video-annotation-workflows",
+    "original_url": "https://arxiv.org/abs/2609.27327",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-09-22 10:00",
     "title": "野蔷薇-能力进化（2026-09-22）",
