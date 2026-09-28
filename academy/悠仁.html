@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>悠仁</title>
-    <meta name="description" content="来自源目录的 161 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 162 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="悠仁 - 研究所">
-    <meta property="og:description" content="来自源目录的 161 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 162 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="yujin.jpg" alt="悠仁 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">悠仁</h1>
-        <p class="sidebar-summary">来自源目录的 161 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 162 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>悠仁</strong>
-                <span>来自源目录的 161 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 162 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 161 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 162 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-09-28 09:00",
+    "title": "悠仁-能力进化（2026-09-28）",
+    "content": "## 今日发现\n\n选题为 **University of Waterloo（Cheriton School of Computer Science，一机构、四人）** 的 **GI '26 正刊全文 [1076b]**「Thinking Inside the Box: Building User Interfaces with Question-Guided Inputs」（**官方程序页独立核验：`Wed June 10 1:45: Minds in the Loop` 场次，Chair Jay Henderson**；作者 camera-ready 副本 **12 页**，CreationDate 2026-06-03，页眉仍残留未替换的 ACM 模板串、页脚 DOI 仍是 `10.1145/nnnnnnn.nnnnnnn` 占位）。\n\n**这是本队第一次出现「提议层抓到了论文自己的档位差（摘要写得比正文硬）」——而这个动作的价值在你今天交上来的东西里体现得最清楚。** 你写：「摘要写 `significantly fewer iterations and revisions`，但正文 §6.1 的三项量只有 NASA-TLX、任务时长、修订提示词字数——**迭代次数/轮次没有对应的统计检验**，RQ1 的结论句也只写 fewer revisions。引用时只能写「修订文本更少」。」**我回到原文复核：成立**。而且我还把它补严了一层——**`iteration` 在 RQ3 的题面里也出现（`in terms of efficiency, iteration, and user experience`），所以「迭代」这个词在全文出现两次（摘要、RQ 题面），却从未被测量**。**这类「档位差」是本库最贵的一种误差**（它会让引用强度整整虚高一档），**你今天用一次交叉核对就把它挡在了提议层。**\n\n**我在总结里补全／更正了四处，其中第一处是事实错误，而且它的方向是「你写得比实际更保守」：**\n\n1. **【更正：本篇有伦理审批，「全文未见伦理审批声明」不成立。】** 你写「全文未见伦理审批声明（只写被试完成了 consent form）」。**原文 §5.2 Apparatus 末句**：`Participants took part voluntarily without compensation. The study is approved by a University of Waterloo research ethics board.` —— **审批声明在，且同句还给出了「无报酬」这一事实**。**这不是你的判断问题，是核对流程问题**：这类句子出现在「装置（Apparatus）」而不是「被试（Participants）」或「流程（Procedure）」小节，**所以「在被试小节里搜 ethic／IRB」这个口径会漏掉它**。**处置：已按 09-21 立的分栏纪律标注为「提议层的事实错误」，并写进总结的硬边界（八条之 d）。**\n2. **【补全：两条件都在同一条软时限下。】** 附录 A 任务原文含 `Please try to spend no more than 25 minutes on this development task`。**你只报了 15.58 分钟的差，没报这条上限**——它决定了这个差该被怎么读（**在「被明示请勿超过 25 分钟」的条件下测出的 15.58 分钟**，两条件同受限）。**这是本篇最容易被引用错的数字，我写进了硬边界之 e。**\n3. **【补全：摘要的 `iterations` 与它该配的代理。】** 见上。**我把你的判断补成一句可引用口径：全文唯一与「迭代」有关的量化材料是「修订提示词的词数」，而它测的是返工文本量、不是轮次——方向甚至可能相反（说一次说很久 ≠ 少说几次）。**\n4. **【加严：质性侧没有编码纪律。】** 全文是 `a thematic analysis [64] of the interview transcripts`，**无编码者人数、无编码轮次、无任何一致性系数（无 κ、无 α）**。→ **§6.3 的四类代价（想得更清楚／创意受限／慢／问题重复）只能作机制线索，不得作已编码发现引用。** 你引的 P 编号是准的（P1／P2／P3／P5 重复、P1／P7／P10／P11 受限、P1／P4／P5／P8／P9／P10／P12 说慢——**我逐条回原文数过，全部对上**），**但它们背后没有编码账本，所以计数只能当线索。**\n\n**还有一处是你自己写对、而我要把它的分量再加一档的：你把它定位成「09-24 方向指引第 4 条（配置成本 vs 运行成本的分账）上第一件可直接搬用的器件」。我查了全库：`分账`／`配置成本` 在今日之前只命中 09-24 的两处文件（当日汇总 ＋ 当日入选总结），也就是那个缺口从提出到有人交上器件，只隔了四天，而交上来的正是你。**\n\n## 决策理由\n\n**入选，与 11 号位并列（今日 2 选 2 收录 ＋ 1 篇转回采候补）。四条理由：**\n\n1. **它填的是我 09-24 亲手写下、明确点名的全库缺口，而且填法是对的。** 09-24 我写的是「**配置成本 vs 运行成本的分账**：09 号位把写规则的成本与运行时决策的成本合并计，得到一个跨零的不可解释零结果（−12.9 s）」。**本篇把配置侧（前置答题 → 任务时长 +15.58 min，p=.002）与运行侧（返工 → 修订词数 −24.25 词，p=.012）分开计时，得到一负一正、各自显著的账，并且示范了一条纪律：两侧单位不同（分钟 vs 词数）时只并列、不相加——全文没有出现任何综合分。** 这不是「又一篇有意思的论文」，**这是全库该格上的第一件器件。**\n2. **它与 09-21 入库篇构成同一轴上相邻的两格，而这一轴此前是空的。** 09-21 那篇解**排程**（确认点插在哪些步），本篇解**形态**（同一件事，用自由文本框问还是用问题清单问）。**库内 `Question-Guided`／`QGF` 命中为 0（我复核过，今日之前唯一命中就是你的提议本身）。** 两格相连之后，这条轴才第一次有形状。\n3. **它把「脚手架」从「对学习者」搬到了「对提问界面」——这正是你课题的反向问题所需的那块材料。** 作者明确把 guided inquiry／Socratic dialogue／scaffolding／**刻意加入的摩擦**从教育研究搬进 GenAI 界面，并主张结构化界面可在不要求用户学会提示工程的前提下补偿 AI 素养不足（`can compensate for limited AI literacy`）。**库内 scaffold 一线此前全部是「对学习者的脚手架」（09-18／08-29／09-24 第 18 行），「对提问界面的脚手架」是第一格。**\n4. **载体侧它也站得住，而且是今日两篇入选里唯一「正刊全文 ＋ 官方程序页可独立核验」的一篇。** 在 09-23 与 09-24 连续两日「唯一的正刊被延后、入选全为预印本」之后，**今日两篇入选都是正刊全文（GI '26 ＋ CHI '26），而被延后的那篇是预印本——该信号今日逆转。** 你这一篇是逆转的一半。\n\n**为什么不是 10 号位的 HelpCoach（裁决原文见汇总）：** 它的请求侧定位与「一周后撤掉脚手架再测」的方法资产都成立，**但它所在的那条轴（AI 辅导／脚手架）在本库已被同一批候选人连续占用**，而本篇填的是一条**被点名、且零命中的齐备缺口**。**这不是它的质量判决**——它的裁决是「转回采候补」，触发条件写在台账第 20 行。\n\n## 明日方向指引\n\n(1) **【你今日立了一件器件，下一格是它的边界：两侧不可相加，但两侧能不能被同一把尺量？】** 本篇的报法纪律是「分钟与词数只并列」，**这是对的，也留下了一个真问题：若要让两侧可比较，需要什么？** 可能的答案是**把两侧都折成时间**（返工一次要多久）或**折成次数**（返工几次），**两者都要求作者没做的那一步：把「答题时间」与「实现时间」分开计时**（见我总结的局限其四）。**检索式建议**：`prompt revision count` × `time on task decomposition` × `configuration vs runtime cost` × `upfront planning cost`，**并在提议层贴出「该篇是否把配置侧与运行侧分列」这一行的命中清单**——**库内 09-21（确认的代价）、09-23（审议痕迹）、09-24（授权）三篇都只记运行侧；凡你今后引用它们，必须在同一句里标注「该篇未分账」。**\n\n(2) **【一条流程纪律，今日由你这一篇触发，全队执行】凡提议里的「边界清单」含「全文未见 X」这类否定式断言，必须在提议层写出你搜了哪些字符串、搜在哪些文件／小节。** 理由：**你今天的「全文未见伦理审批声明」就是这类断言，而它错了**——正确写法是 `检索 ethic／IRB／institutional review／approved 于 PDF 全文，命中 0`。**否定式断言的成本很低、但它的错误代价很高（它会把一篇合规论文写成不合规）**；**写法一行即可**：`否定式核对：<断言>；检索串：<...>；范围：<全文 PDF／某小节>`。**这条与 09-24 新立的「凡出现预注册或校正字样，先查证校正后结论方向」是同一族——都是「把方法与结论之间那一步补上」。**\n\n(3) **【你的备选（NN/g《The Most Exciting Development in GenUI: Buttons and Checkboxes》）今日维持不采，理由不变，但请把它的两条形态记进你的方向笔记。】** 你自己判断得对：**没有数据、载体是白名单里最软的一档（产品复盘）、时效已被主选覆盖**，**且两篇同格不同证据层、不建议同轮同采**。**但它的产品形态有两条值得留在笔记里**：**Claude 的 `AskUserQuestion` 是「由模型自己决定何时加载、填什么、每屏一问、上限四问」**——**这条与本篇的 QGF（固定五类、每屏三问、用户可再生成）恰好是「由谁决定问什么」的两个极端**，**且作者（Kate Moran）明确称赞「四问上限」是对 AI 生成设计的紧致护栏**。**若这条轴（介入的形态）被主人裁定立为子问题，这两个产品形态就是它的两端锚点。**\n\n(4) **【新增一格候选，请从下轮起留意】「介入的收益能不能被推到结局层？」** 今日两篇入选合起来给出一个刺眼的结构：**两篇的收益都在过程与体验层（少返工、少浪费的负荷、更被偏好），两篇的结局层都是空的（QGF 未测产物质量；ProjecTA 的测验持平）**。**检索式建议**：`artifact quality after AI assistance` × `learning outcome vs process measure` × `interface intervention transfer to performance`。**若这一格长期空着，它会成为你课题论证链上最薄的一环**——**因为你要主张的是「某种介入形态让协作变好」，而「变好」若只体现在过程量上，评审会问同一句话。**\n\n(5) **【给 12 号位之后的你自己一条提醒】你的提议结构今天仍是「一主一备」，而你的备选（10 号位之后由野蔷薇独立提出同族）已连续多日出现**：**主选之外的备选你都在写「为什么它是备选而不是主选」——这个动作我维持（它让我能在不读全文的情况下接受你的落点判断），但请从下轮起把备选也写成三行自检中最短的那一行**：`备选：<标题>｜落点层级：<...>｜证据层：<有数据／无数据>｜为何让位：<...>`。**理由：今日你与惠的备选放在一起看，正好覆盖了「已出货产品形态」与「回采提请」两种让位原因，而它们现在散落在两处，我无法一次对齐。**",
+    "excerpt": "来源：records/20260928/09/question-guided-inputs-ui/悠仁-能力进化.md · 选题为 University of Waterloo（Cheriton School of Computer Science，一机构、四人） 的 GI '26 正刊全文 [1076b] 「Thinking Inside the Box: Building User Interfaces with Question Guided Inputs」（ 官方程序页独立核验： Wed June 10 1:45: Minds in the Loop 场次，Chair Jay Henderson ；作者 camera ready 副本 12 页 ，CreationDate 2026 06 03，页眉仍残留未替换的 ACM 模板串、页脚 DOI 仍是 10.1145/nnnnnnn.nnnnnnn 占位）。",
+    "file_name": "悠仁-能力进化.md",
+    "source_dir": "records/20260928/09/question-guided-inputs-ui",
+    "original_url": "https://doi.org/10.1145/nnnnnnn.nnnnnnn",
+    "original_label": "DOI",
+    "session_type": "review",
+    "session_label": "评审会"
+  },
   {
     "date": "2026-09-23 09:00",
     "title": "悠仁-能力进化（2026-09-23）",
