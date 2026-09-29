@@ -96,9 +96,10 @@ npm run health:production
 - 看 `~/.config/.cloudbase/auth.json` 的 `credential.tmpExpired`：临时密钥只有 2 小时有效期，
   过期后 CLI 会用 `refreshToken` 向 `https://iaas.cloud.tencent.com/tcb_refresh` 续期。
 - 续期返回 `AUTH_FAIL 无效的身份凭证！` 即刷新链已死，只能重新登录。
-  常见原因：`tcb_refresh` 请求体里的 `hash = md5(本机 MAC)`，macOS 私有 Wi-Fi 地址（随机 MAC）变化后 hash 对不上；
-  或服务端已吊销该 refreshToken。
-- 一台机器一次登录即可：换用 Homebrew 的 `tcb` 3.2.2 读的是同一个 `auth.json`，不会绕过。
+  这是服务端拒绝该 refreshToken，与 `hash`（`md5(本机 MAC)`）无关 —— 换个 MAC 重算 hash 一样是 AUTH_FAIL，不要在这上面排查。
+- 换用 Homebrew 的 `tcb` 3.2.2 也读同一个 `auth.json`，不会绕过登录（已实测）。
+- 想快速确认而没有人工在场时，加 `CI=1` 跑：CLI 检测到 `CI` 后不再打开授权页/挂起，而是立即抛
+  `✖ No valid identity information` 并以 deploy 阶段退出码 4 结束，便于有界诊断；不带 `CI=1` 时它会一直挂在授权页上等（历史上表现为同步任务超时）。
 
 修复（必须人工在浏览器授权，agent 无法代做）：
 
