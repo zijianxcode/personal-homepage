@@ -86,6 +86,31 @@ npm run health:production
 - `/academy/` 线上标题为 `研究所`
 - `site.css?v=` 版本与本地 `academy/index.html` 一致
 
+## deploy 失败 exit=4：CloudBase 登录态失效
+
+症状：`sync` / `resume` 走到第 4 阶段报 `✖ 无有效身份信息，请使用 cloudbase login 登录`，退出码 4。
+此时 HTML 已生成并 push，GitHub 侧正常，但 CloudBase 线上仍是旧内容（线上比本地少若干条记录）。
+
+自查（不需要登录）：
+
+- 看 `~/.config/.cloudbase/auth.json` 的 `credential.tmpExpired`：临时密钥只有 2 小时有效期，
+  过期后 CLI 会用 `refreshToken` 向 `https://iaas.cloud.tencent.com/tcb_refresh` 续期。
+- 续期返回 `AUTH_FAIL 无效的身份凭证！` 即刷新链已死，只能重新登录。
+  常见原因：`tcb_refresh` 请求体里的 `hash = md5(本机 MAC)`，macOS 私有 Wi-Fi 地址（随机 MAC）变化后 hash 对不上；
+  或服务端已吊销该 refreshToken。
+- 一台机器一次登录即可：换用 Homebrew 的 `tcb` 3.2.2 读的是同一个 `auth.json`，不会绕过。
+
+修复（必须人工在浏览器授权，agent 无法代做）：
+
+```bash
+tcb login                     # 浏览器点授权，写回 ~/.config/.cloudbase/auth.json
+cd /Users/zijian/Documents/Code/jujutsu-sci
+./auto_sync_site.sh resume    # 复用已提交的 HTML，重跑镜像 → 整站 deploy → verify → emergency
+```
+
+登录态失效期间，后续每日同步都会在同一个阶段失败（GitHub Pages 冷备照常更新），
+所以不要拖到下次定时任务；修好后跑一次 `resume` 即可补齐线上。
+
 ## 应急访问
 
 详见 [EMERGENCY-ACCESS.md](./EMERGENCY-ACCESS.md)。
