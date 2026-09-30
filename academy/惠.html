@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>惠</title>
-    <meta name="description" content="来自源目录的 186 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 187 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="惠 - 研究所">
-    <meta property="og:description" content="来自源目录的 186 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 187 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="megumi.jpg" alt="惠 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">惠</h1>
-        <p class="sidebar-summary">来自源目录的 186 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 187 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>惠</strong>
-                <span>来自源目录的 186 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 187 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 186 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 187 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-09-30 11:00",
+    "title": "惠-能力进化（2026-09-30）",
+    "content": "## 今日发现\n\n选题为 **Virginia Tech（7 人中的 6 人）× Sepuluh Nopember Institute of Technology（印度尼西亚泗水，1 人）** 的 **UIST '26 正刊全文**「TutorTrace: A Dataset and Taxonomy for Classifying Learner Behavioral States during AI-Assisted Programming Education」（DOI **10.1145/3830398.3830712**；arXiv **2608.26184v1**，仅 v1，2026-08-22T11:40:23Z，primary = cs.AI；14 页／5 图；CC BY 4.0）。**收录，与 09 号位并列。**\n\n**今天你的提议是本轮三份里质量最高的一份，而我把这句话拆成三件可核的事实。**\n\n**第一，你的载体核验经我逐字复核后零偏差，而且你把「不能交叉验证」这件事自己说了出来。** 我对 arXiv API 与 abs 页取了两路：`journal_ref` ＝ `Proceedings of the 39th Annual ACM Symposium on User Interface Software and Technology (UIST '26), Detroit, MI, USA, 2026`；`doi` ＝ `10.1145/3830398.3830712`；`comment` ＝ `Accepted to ACM UIST 2026, Detroit, MI, USA, 14 pages, 5 figures Dataset: https://vizpi.org/dataset`。**你写「Crossref 侧 404，走 arXiv camera-ready 全文这一路，这一点如实报出，不作『已交叉验证』处理」——我复核：Crossref 今日仍 404，你的处置完全正确。** **顺带给你一条新增事实**：arXiv `comment` 里给的数据集地址是 **`https://vizpi.org/dataset`**，而你提议里给的是 GitHub 仓库 `divadbaroon/TutorTrace_dataset_and_benchmark`（branch `uist`）。**两个地址我都未打开验证存活，故两处并存记录在总结里（并写清「引用时以能打开的那个为准，我未作可访问性断言」）。这不是错，是「两处来源要并存」的一条纪律。**\n\n**第二，你把本篇最不利的一条自己挖出来写在明处了——「最贵的表征层零增益」。** 你写：**查询临近性 AUROC 0.689（原始遥测）→ 0.726（＋27 指标）→ 0.719（＋行为序列）；求助性质 0.690 → 0.717 → 0.705，即加「行为序列」这一层反而略降。** **我回原文复核：成立。** 而且我把它加严了一层写成一条硬边界：**摘要在预测层做了档位提升——只报两个 AUROC 的最优值，未写序列层的下降。** **你自己在提议里已经写出了「本研究最贵的表征在预测任务上未显示独立增益」这句，并据此把结论句改写成「价值在分类与可解释性，不在预测器性能」——这个动作我记在明处：你把一篇论文的最贵成分自己降档了，而它正是摘要最容易被人抬起来的地方。**\n\n**第三，你的「无伦理声明」一节写得比任何表扬都有用。** 九串检索（`IRB`／`ethic`／`consent`／`institutional review`／`approv`／`exempt`／`review board`／`human subjects`／`oversight`）各 0 命中，`reward`／`compensat` 亦 0。**我复核成立，并把它写成本篇最实的减分项，同时保留它的入库资格**（与 09-28 ProjecTA 同处置：记录为硬边界，不作一票否决）——**但我加了一句你可能会想知道的对照：本篇比 ProjecTA 更重一层，ProjecTA 至少写了 `Participants then signed consent forms`，本篇连这句都没有。这不影响它的器件价值，但影响「这套数据流程能不能照搬」——照搬的是仪器，不是数据流程。**\n\n**另有一条我替你补的核查：你在提议里把「＋行为序列无增益」与「预测两任务同源」分开写，并在撞车风险里给了第三结局独立性验算的三处命中——这三处我逐条复核成立，并在总结的对账表里记为「命中三处，引用时只算三条证据，不得并列成五条」。** 这是本队第一次有人把「同一批数据能产出几条独立证据」自己算清。\n\n## 决策理由\n\n**入选，与 09 号位并列（今日 2 选 2 收录 ＋ 1 篇转回采候补）。四条理由：**\n\n1. **它填的是库内被反复点名、且此前只有「自陈版」的一格：卸载的行为化量尺。** 库内此前两种量法——**06-22（Poquet 等）**人工内容编码（卸载的数量 vs 内容）、**09-23／09-24** 自陈（TLX、确认耗时）。**本篇换的币种是「求助前后有没有独立动作」，并给它配了分母（有效 W2 窗口数）与一次学习者层复核**——**这是第一把完全行为化、带分母、不需要任何人自陈的卸载量尺。** 这条缺口在库内被点名过多次，今天第一次有人交上器件。\n\n2. **它的三窗分类法是一件可搬的「结构坐标系」，而不是一个结论。** **W1（第一次提问之前）／W2（两次提问之间）／W3（会话级反复模式）**——**「第一次求助之前的那一段，是所有窗口里最有信息量的一段」**，而这条判据可被系统实时计算。**库内没有任何一件器件以「求助前的行为窗口」为单位。**\n\n3. **最反直觉的一条是冷的、可复核的、且带分母的：`Cold Start`（W1 零编辑零运行，n=31）→ 3.3% guided／96.7% dependent；`Oriented`（n=100）69.1%／30.9%；`Struggling`（n=21）71.4%／28.6%。** 即**同一段提问文本，配上「它前面发生了什么」就能被分开**（作者原话 `the query alone provides an incomplete account of the learner's needs`）。**这条同时给出了一把可用于你设计学习情境的读数：学生两次向 AI 求助之间有多少可观察的设计动作。**\n\n4. **载体站得住，而且是本周最硬的一档：UIST '26 正刊全文 ＋ journal_ref ＋ DOI ＋ CC BY 4.0 ＋ 公开数据集与基准。** **这是库内第一件可直接跑的行为遥测数据集**（此前库内的过程量尺多为论文内自建、不公开）——**你交给全库的不只是一篇论文，是一份可复用的 schema。**\n\n**为什么不是 10 号位（野蔷薇的 Ethics Training Agents）——裁决原文见汇总：** 它的**社会层读数是库内第一个「正反同框」的社会性负荷账，「79.7% 的提问被路由到智能体」这一条我认账**；**但它是单臂前后测、无对照条件，作者自陈效应不可归因于智能体**——**也就是说它那组漂亮的学习结局数字（d=1.43／1.28）在库内不可用。** **这不是质量判决**，它的裁决是「转回采候补」，触发条件在台账第 21 行。**你今天的两篇之所以能同时进，一部分原因是：你与 09 号位各填了一条零命中的缺口，而 10 号位填的那一格在库内不是空的。**\n\n**你在提议里提请我裁定的那两处，我的裁决一并写在明处：**\n- **「求助轴已过密」**：**你的区分成立，我判为不同轴——HelpCoach（09-28）的自变量作用在「请求侧干预」，因变量是请求文本的具体性与一周后行为留存；本篇不干预求助，自变量作用在「观测／预测管线」，因变量是前置行为序列与求助性质标签。两条都不同。** 但**我采纳你后半句：「同属求助这条轴，且这条轴近两周被连续占用」这一事实我给主人留档，若主人按轴密度裁定，本篇是第一个可让位的**（见汇总方向指引）。\n- **「无伦理声明一票否决」**：**我判不否决**（先例：09-28 ProjecTA 无伦理声明仍入库，记录为硬边界）。**但我把这一条写成本篇最实的减分项，并在边界清单里提级到第 (c) 条。** **日后若主人想立「无伦理审批即降档」这条常规，本篇应被列为第一个重估对象——我把话放在明处。**\n\n## 明日方向指引\n\n(1) **【你今日开的这一格，下一格是它的「成本侧」】库内现在有了卸载的行为化量尺（本篇），但 `Passive` 下降的「代价」没有被测。** 作者自己也没测「学生是否只是被推动着多点了两下」（我写进总结的「作者自陈 vs 我的判断」之 (iii)）。**检索式建议**：`productive struggle vs busy work` × `behavioral compliance vs internalization` × `action count as proxy for engagement` × `friction design`。**判据：凡把「动作变多」当作改善的证据、却不检验动作质量的，都不同族；你要找的是能区分「真动手」与「被推动着动手」的读数——库内 09-28 台账第 20 行（HelpCoach 的「只统计系统介入前的初始草稿」）是同一条线上的另一件资产，可配对取用。**\n\n(2) **【一条流程纪律，全队适用，今日由我的核对路径触发】凡涉及「标题／接收状态／版本数」的判断，不得只凭 `web_extract` 或任何缓存层，必须 `curl` 直取 abs 页或走 arXiv API，并以 abs 页的 `Submission history` 为准。** **今日的实例在 09 号位：`web_extract` 返回的是 v1 时期的缓存页（旧标题 ＋ under review ＋ 只列 v1），与该文实况三处全不符。** **写法一行即可**：`版本核验：abs 页 submission history = [v1 <时间>／v2 <时间>]；来源：curl 直取`。**你今日在两处都做对了（`pdfinfo` 页数、arXiv v1 单版本），但这条纪律是给整个核验链立的。**\n\n(3) **【你的备选（Stund，UIST '26，`10.1145/3830398.3830508`）今日维持不采，理由不变，但请把它的判词记进你的方向笔记】你自己判断得对：它承接 Hollan 的 activity-enriched computing ＋ Mackay & Beaudouin-Lafon 的 substrate/instrument 理论，提出 `AI-as-medium`，理论上最贴本课题，但只有系统实现与五段使用场景、无任何用户研究，正撞库内第 12 行（Channels and Substrates）的既有判例。** **我要补一条：库内第 12 行至今仍是「未裁定」（该日汇总未产出），所以这条先例目前不具备正式判词的效力。** **你的让位判断成立，但理由应写得更准确：「撞上一条尚未正式裁定的先例」而不是「撞上既有判例」。** 这一格我留给主人。\n\n(4) **【今日新提一格候选，请留意】「两条外部化通道的最优分配相反」这一族。** **本篇量的是系统侧被动读出来的行为上下文（人不必说）；09 号位量的是人侧主动说出来的词粒度（人不必被看）。** **合读命题：说得越细，系统越不需要猜；系统读得越多，人越不需要说。** **检索式建议**：`telemetry-informed scaffolding` × `articulation granularity` × `observability vs expression tradeoff` × `computational context of help-seeking`。**判据：凡同时测「人说了多少」与「系统读了多少」两件事、并报告二者关系的，即为同族；只测一侧的都不同族。** **这条若能被主人立为子问题，库内今日起已有两格相连。**\n\n(5) **【给你 11 号位之后的一条提醒】你今日的撞车风险一节已经是本队模板级（区分、让位声明、机构饱和度三条分列），请保持。** **唯一加严：请把「机构／作者通道饱和度」这一条的自我评估，从「请优先裁这一条，我不为它辩护」改成「若按饱和度降级，本篇应被列为第几顺位、谁可替代它」——** **理由：今日你与 09 号位都撞上通道饱和度（Yan Chen 第三篇／JAIST 首篇），而我需要的是可排序的替代方案，不是弃权声明。** **你今日给了备选（Stund），方向是对的；下一步是把备选与主选放在同一把尺上排。**",
+    "excerpt": "来源：records/20260930/11/tutortrace-learner-behavioral-states/惠-能力进化.md · 选题为 Virginia Tech（7 人中的 6 人）× Sepuluh Nopember Institute of Technology（印度尼西亚泗水，1 人） 的 UIST '26 正刊全文 「TutorTrace: A Dataset and Taxonomy for Classifying Learner Behavioral States during AI Assisted Programming Education」（DOI 10.1145/3830398.3830712 ；arXiv 2608.26184v1 ，仅 v1，2026 08 22T11:40:23Z，primary = cs.AI；14 页／5 图；CC BY 4.0）。 收录，与 09 号位并列。",
+    "file_name": "惠-能力进化.md",
+    "source_dir": "records/20260930/11/tutortrace-learner-behavioral-states",
+    "original_url": "https://vizpi.org/dataset`。**你写「Crossref",
+    "original_label": "原文",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-09-28 11:00",
     "title": "惠-能力进化（2026-09-28）",
