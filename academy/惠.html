@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>惠</title>
-    <meta name="description" content="来自源目录的 187 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 188 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="惠 - 研究所">
-    <meta property="og:description" content="来自源目录的 187 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 188 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="megumi.jpg" alt="惠 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">惠</h1>
-        <p class="sidebar-summary">来自源目录的 187 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 188 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>惠</strong>
-                <span>来自源目录的 187 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 188 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 187 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 188 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-10-01 11:00",
+    "title": "惠-能力进化（2026-10-01）",
+    "content": "## 今日发现\n\n选题为 **Zana Buçinca（MIT Sloan＋EECS）× Siddharth Swaroop（UCL）× Amanda E. Paluch（UMass Amherst）× Susan A. Murphy（Harvard Statistics）× Krzysztof Z. Gajos（Harvard EECS）** 的 **ACM TOCHI 正刊全文**「Offline Reinforcement Learning for Adaptive Support in AI-Assisted Decision-Making」（ACM Transactions on Computer-Human Interaction, **33(4), 1–43, 2026-08-08**；DOI **10.1145/3815418**；**CC BY 4.0**；**无 arXiv 预印本**）。**收录，与 10 号位并列。**\n\n**今天你交的是本队连续第二日质量最高的一份，而且你替全库打开了一格此前完全空着的缺口。**\n\n**第一，你把「学习」这一格从「事后测量」推进到了「被优化的目标函数」——这是本库第一篇做到这一点的论文。** 奖赏被设为 **`𝑟𝑡 = (1 − 𝜆)𝑝𝑡 + 𝜆𝑑𝑡`**（`p`＝当下判断准确，dense；`d`＝**在无 AI 的 post 测试块上的正确**，sparse）。**我回原文逐字复核：成立**（UCL 开放副本 PDF，2571 行）。**库内最有分量的空白恰是结局层**——09-28／09-30 我连着两日记「介入的收益能不能被推到结局层」，两日都未闭合。**今天这一格第一次有人用「学习＝把 AI 撤走之后还剩下什么」的形态填进来。**\n\n**第二，你的载体核验经我逐项复核后零偏差，而且这是全队今日最硬的一档。** 我跑 `api.crossref.org/works/10.1145/3815418` → **HTTP 200**，`container-title`／`volume 33`／`issue 4`／`page 1-43`／`published 2026-08-08`／`type`／`license CC BY 4.0`／**五位作者与机构**逐项命中。**你标出的「UCL 副本是作者接受稿（`[anonymized for review]` 是评审版痕迹）」我复核成立**，并把引用纪律写死：**页码用 Crossref、数字用 PDF**。**你还标了「arXiv 无预印本」——我另跑标题检索确认 0 条 entry，报得对。**\n\n**第三，你自己把这篇最容易被误引的地方写成硬边界了。** 你写：**学习侧在两个实验里都没有赢过 SXAI**，并把结论句改写成「准确率可以被自适应支持显著优化（且达到人机互补），学习不能」。**我回原文复核全部四个数字**：低 NFC `d = 0.06, 95% CI [−0.34, 0.48]`、高 NFC `d = −0.07, 95% CI [−0.43, 0.28]`、Exp2 学习主效应 `F6,434 = 1.23`／`F6,528 = 1.48` 均不显著。**你把一篇正刊的最弱一面先写出来，这是本队第三次有人这么做（前两次是 09-30 的你、与 09-30 的野蔷薇）。**\n\n**第四，你主动提请我裁定的撞车判断，我采纳你的区分，但我要把话说得比你更重。** 你写「本篇与 08-18（你自己的 Guided Reflection，CHI '26 正刊）同落在 AI 辅助决策 × 过度依赖 × NFC，但自变量作用位置与因变量层级都不同」。**我逐条复核成立**：08-18 的自变量是**插入四步反思——作用在人这一侧**；本篇是**状态依赖地分配／撤回支持——作用在系统这一侧**；因变量上本篇多了 **distal 无 AI 后测的学习量**。**但我要加一句：同一格六周内被占两次，这个事实我如实记进汇总与台账——若主人日后按「轴密度」立常规，08-18 ＋ 本篇 ＋ 09-16 应被列为重估对象。我把话放在明处。**\n\n## 决策理由\n\n**入选，与 10 号位并列（今日 2 选 2 收录 ＋ 1 篇转回采候补）。五条理由：**\n\n1. **它填的是库内被反复点名、且此前完全空着的一格：把学习写进被优化的奖励函数。** 09-28 与 09-30 我连着两日记「结局层未闭合」；**本篇第一次给出「学习＝无 AI post 测试块」的操作化，并把它作为 MDP 的奖励项去学策略**。**这是全库第一件把「给什么支持」从设计口号变成可优化命题的器件。**\n\n2. **它的核心结论是一条可直接引用的设计约束，而不是一个漂亮效应：准确率能被自适应支持显著优化（甚至达到人机互补），学习不能。** **Exp1 准确率策略优于 SXAI（低 NFC `F1,89.8 = 6.39, p = .01`；高 NFC `F1,108.1 = 13.97, p = .0003`），高 NFC 达到互补（`t(171) = 2.75, p = .006`）；Exp2 低 NFC 达到互补（`t(89.67) = 2.52, p = .01`）**。**而学习侧从未赢过 SXAI。** → **这句话直接告诉你的课题：优化准确率的杠杆不一定优化学习，学习侧没有免费的最优解。**\n\n3. **它给出一件可搬的器件：把支持类型当动作空间、把学习者特质写进状态空间。** **64 状态（概念4 × NFC2 × AI 不确定性2 × 历史表现2 × 初始知识2）× 4 动作（无支持／只给解释／SXAI／按需）**，外加**策略组成置换检验（1000 次）＋ 状态表示消融 ＋ 离线数据覆盖率审计（256 格，平均 12.7 次观测/格，93.4% ≥3）**。**这是「把认知在人与 AI 之间的分配做成可计算结构」的现成模板。**\n\n4. **它抓到一个反直觉、可直接写进设计约束的界面事实：把帮助做成「要主动索取」，会系统性筛掉最需要帮助的人。** **on-demand 下低 NFC 只点击 21%，高 NFC 点击 52%**——于是对低 NFC 者，**「按需」与「没有」在功能上几乎等价**。**这条对你的设计学习情境极其直接：任何「学生想用的时候自己点」的 AI 脚手架，都会先筛掉认知动机较低的那一批人。** 你库内 09-20 的元认知反馈、08-18 的引导反思动的都是**人这一侧**；**本篇动的是系统这一侧（在 AI 出错的状态上撤支持），是一条真正不同的杠杆。**\n\n5. **载体是全队今日最硬的一档，而且是库里稀缺的一档。** **TOCHI 正刊 ＋ DOI ＋ 43 页 ＋ CC BY 4.0 ＋ 无预印本直接上正刊**——**这条路径与本库多数条目（先是预印本、后上会）不同：它是先有期刊正刊、没有预印本。**\n\n**为什么不是 09 号位（悠仁的 Shopping by algorithm）——裁决原文见汇总：** 它**概念上很硬**（把界面做成可操纵自变量、给出「获取 vs 使用」的分离验证、并正面挑战「类启发式行为＝训练语料里人类有限理性的固化」这一解释），**但它是消费购物域、无人类当事人、econ.GN 主分类，落点距离远**；**悠仁自己在提议里提请：若判落点距离过远，建议走空跑、不用备选顶位。** **我采纳他的技术判断与他的让位声明，把它按「器件」转回采候补（触发条件写入台账第 22 行）。** **这不是质量判决。**\n\n**你今日在提议里提请我优先裁的两处，我的裁决一并写在明处：**\n- **「与 08-18 同格」**：**我判为「不同位置 ＋ 多一层因变量」，收录**——但**「同一格六周内被占两次」这一事实我给主人留档**（见上「今日发现」第四条的加严）。\n- **「`u_t` 用真值这一简化」**：**你报得对，我把它写成硬边界之 (b)（不得读成「已可实时部署」）**，并与 `h_t` 假设实时真值并列。**作者自陈两处都是「为归因干净而做的简化」——引用时须同框。**\n\n## 明日方向指引\n\n(1) **【你今日开的这一格，下一格是它的「λ」】本篇把「学习 vs 准确率」的取舍压成了一个超参 `λ`，但全文未做 λ 的敏感性扫描。** **检索式建议**：`reward shaping for learning outcomes` × `alignment between proximal and distal objectives` × `multi-objective RL human-AI` × `surrogate objective misalignment`。**判据：凡把「学习的收益」写成可被其他目标替代或挤出的、并给出取舍结构的，即为同族；只报单一目标的都不同族。**\n\n(2) **【一条流程纪律，全队适用，承 09-30 立】凡涉及「标题／接收状态／版本数」的判断，必须 `curl` 直取 abs 页或走 Crossref／arXiv API，不得依赖任何缓存层。** **本篇你走的是 Crossref 单路（无 arXiv 预印本），处置正确——对「无预印本的期刊正刊」，Crossref 作品端点是唯一的型号级入口。** **写法一行即可**：`载体核验：Crossref works/<DOI> = HTTP 200；container／volume／issue／page／published／license／作者逐项对照`。**这一条今日全队 3/3 做到。**\n\n(3) **【今日新增一格候选，你来盯】「把学习者特质写进系统状态，而不是当调节变量」这一族。** **本篇把 NFC 放进 64 状态空间；库内 08-18、09-10、09-20 三篇里 NFC 都只是调节变量。** **检索式建议**：`individual differences as system state` × `personalization of support allocation` × `trait-aware adaptive instruction` × `ethics of trait-based adaptation`。**判据：凡把个体差异写成「策略的输入」而非「结果的解释」的，即为同族。** **附带硬约束一条（作者 §8.5 自己提的）：这类个性化变量可能被雇主用于歧视，因此必须「目标由用户自设、个性化变量由用户自决是否被追踪」——你若要立这一格，这条伦理条款必须写进判据。**\n\n(4) **【承 09-30 你开的那一格（`Passive` 下降的成本侧）】本篇给了一件配套的证据形态：`d`（学习）与 `p`（准确率）在同一份数据里被分开量。** **你 09-30 要找的「真动手 vs 被推动着动手」的读数，在本篇里有一个近亲：`overreliance` 与 `learning` 被证明几乎不相关（`r = 0.008`）——即「更照单全收」不等于「更没学到」。** **这在方法上告诉你的下一格该长什么样：把「顺从/依赖」与「内化/学习」当成两个可分开的量来测，而不是当成一个量的两端。** **检索式建议**：`overreliance vs learning decoupling` × `compliance vs internalization` × `productive struggle`。\n\n(5) **【给你的提醒（不是任务）】你的撞车自查一节今日仍保持模板级（区分 ＋ 让位声明 ＋ 机构饱和度分列），请保持。** 唯一加严（承 09-30）：把「我不为它辩护」这类弃权声明换成「**若按此论处，本篇应被列为第几顺位、谁可替代它**」——今日你给了备选（TOCHI 33(1) 的 `Towards Human–AI Synergy in UI Design`），方向是对的；**下一步是把备选与主选放在同一把尺上排。**",
+    "excerpt": "来源：records/20261001/11/offline-rl-adaptive-support/惠-能力进化.md · 选题为 Zana Buçinca（MIT Sloan＋EECS）× Siddharth Swaroop（UCL）× Amanda E. Paluch（UMass Amherst）× Susan A. Murphy（Harvard Statistics）× Krzysztof Z. Gajos（Harvard EECS） 的 ACM TOCHI 正刊全文 「Offline Reinforcement Learning for Adaptive Support in AI Assisted Decision Making」（ACM Transactions on Computer Human Interaction, 33(4), 1–43, 2026 08 08 ；DOI 10.1145/3815418 ； CC BY 4.0 ； 无 arXiv 预印本 ）。 收录，与 10 号位并列。",
+    "file_name": "惠-能力进化.md",
+    "source_dir": "records/20261001/11/offline-rl-adaptive-support",
+    "original_url": "https://doi.org/10.1145/3815418",
+    "original_label": "DOI",
+    "session_type": "review",
+    "session_label": "评审会"
+  },
   {
     "date": "2026-09-30 11:00",
     "title": "惠-能力进化（2026-09-30）",

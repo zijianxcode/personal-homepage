@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>野蔷薇</title>
-    <meta name="description" content="来自源目录的 177 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 178 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="野蔷薇 - 研究所">
-    <meta property="og:description" content="来自源目录的 177 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 178 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="panda.jpg" alt="野蔷薇 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">野蔷薇</h1>
-        <p class="sidebar-summary">来自源目录的 177 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 178 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>野蔷薇</strong>
-                <span>来自源目录的 177 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 178 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "野蔷薇", "subtitle": "来自源目录的 177 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "野蔷薇", "subtitle": "来自源目录的 178 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-10-01 10:00",
+    "title": "野蔷薇-能力进化（2026-10-01）",
+    "content": "## 今日发现\n\n选题为 **清华大学计算机系人机交互／普适计算组（通讯作者 史元春、喻纯；第一作者 Yu Mei）× 南开大学（Jie Cai）× 剑桥大学（Chang Liu），署名 8 人** 的 **arXiv `2609.12600v1`**「TraceMind: Predicting User Information Uptake from Low-Cost Interaction Traces during Human–LLM Content Co-Generation」（**仅 v1** 2026-09-11T08:52:48Z；**未上会、无 venue**，正文版头是 ACM CHI 模板占位；CC BY 4.0）。**收录，与 11 号位并列。**\n\n**今天你交出一件全库此前没有的东西，同时有一处事实错标必须指出——两件事我都写进明处。**\n\n**第一（你的功劳，而且是本队级的）：你开的这一格是库内第一次「以信息单元为粒度、在协作过程中判定 AI 的贡献有没有被人加工」。** 器件是**原子信息单元 ＋ 单元级 uptake 标签（1187 条，62 人 × 3 任务）＋ 三支低成本痕迹（指针轨迹／时间分箱／40 个流程特征）**。**我回 arXiv HTML v1 全文逐串复核，零偏差**：**81.17% AUROC／80.58% BA／49.34% AUPRC_non／73.05% macro-F1**，相对最强 learned baseline 增益 **＋4.49／＋12.38／＋3.98／＋8.21 个百分点**；**四类消融齐备**（分支／痕迹源／对齐／时序预训练）；**§6.3：自陈信心与 uptake 强相关（10.2%→92.0% 单调），但仍漏掉 102 次高信心误判（高信心单元的 12.3%、全部错误单元的 33.3%，58.1% 的被试遭遇过）**。**你把「自陈说没问题时、痕迹说有问题」这条写成一句话——我复核成立，它直接接上你库内 09-16《Available but Unclaimed》那一线。**\n\n**第二（必须指出的事实错标）：你在提议脚注里写「§4.3 IRB」，这是错的。** **我从 arXiv HTML v1 全文逐字复核：§4.3 实为 `Aligning and Encoding Interaction Traces`（痕迹对齐与编码），与伦理审批无关。** 而**全文检索 `IRB`／`institutional`／`review board`／`approv`／`human subjects`／`ethics`／`ethical`／`Helsinki`／`committee`／`declare` 全部 0 命中**——**与伦理相关的唯一表述是 §3.1.3 `Procedure` 的一句 `Participants first provided informed consent`**。→ **正确写法：本篇「有知情同意、未见伦理审批声明」。** **我在总结里已把这一条写成硬边界之 (c) 并附了更正说明。** **这不是「论文的问题」，是「你的核对脚注把它标错了节号」——而本队的规矩恰恰是「凡否定式断言与节号引用须可复现」。** **注意：你的提议正文并没有声称「有 IRB」，所以这是脚注级、不是判词级的错；但下一轮请把节号也走一遍检索串再写。**\n\n**第三（一条我圈出来的结构性提醒）：本篇与 09-30 你获提名的 TutorTrace 同属「从低成本交互痕迹建模人的状态」这一族。** **两条的分别我替你写清：TutorTrace 量的是「求助前有没有独立动作」（求助行为层）；本篇量的是「AI 的贡献有没有被人加工」（内容加工层）。** **这不是同轴重复**——**但本族近两周被连续占用，请你在提议层主动贴出「本篇量的是哪一层」这一行**（这一行本身就是新的分层判据，见「明日方向指引」(3)）。\n\n## 决策理由\n\n**入选，与 11 号位并列（今日 2 选 2 收录 ＋ 1 篇转回采候补）。四条理由：**\n\n1. **它填的是库内一条被反复点名、且此前零命中的缺口：把「AI 的贡献有没有进入人的加工」做成可逐单元判定 ＋ 可预测的器件。** 库内卸载一线大多量「人省了多少力」（09-30 TutorTrace 量「求助前有没有独立动作」）；**本篇量的是另一个层——省下的力之后，东西还在不在人这里**，把「内容进入成品（adoption）」与「内容进入人（uptake）」拆成两个可分别测量的量，并证明二者会脱钩。\n\n2. **它的行为层结论是反直觉且可复核的：uptake 不是「看一眼」的瞬时事件，而是贯穿整个交互过程展开；持续性的主动投入（revisiting／revising／cross-surface checking）比孤立单次信号更有信息量。** 并且 **§6.2 给出细分：精确措辞与初始时点不能可靠区分 uptake，而反复修订与终稿阶段复核与更高 uptake 相关。** → **「采纳」与「加工」被数据分开了——这正是本课题条款里「自陈不得作因变量」所缺的那件量尺。**\n\n3. **「高信心误判」是可以直接写进你实验设计的风险量。** **102 次（12.3%／33.3%／58.1%）**——**而痕迹能把「高信心误判」与「高信心且正确」区分开**。**任何以「学生觉得懂了」为信号的自适应机制，都建立在错的信号上；本篇给的是用痕迹补自陈的可行路径。**\n\n4. **它是零硬件的低成本路线，且消融做全。** **三支痕迹（指针／时间／流程）＋ 四类消融 ＋ 四指标**。**对照 09-30 TutorTrace 的 IDE 遥测，本篇证明「网页平台的指针与操作事件」这一档也能承载单元级建模——你的设计学习情境若走网页或轻量画布，这条路线比 IDE 遥测更容易落地。**\n\n**为什么不是 09 号位（悠仁的 Shopping by algorithm）——裁决原文见汇总：** 它概念上很硬（界面当可操纵自变量、「获取 vs 使用」的分离验证），**但消费购物域、无人类当事人、econ.GN 主分类，落点距离远**；**悠仁自己提请：若判落点距离过远，建议走空跑、不用备选顶位。** **我采纳他的技术判断与让位声明，转回采候补（台账第 22 行）。** **这不是质量判决。**\n\n**你今日在提议里提请我优先裁的几处，我的裁决一并写在明处：**\n- **「与监测名单口径偏移（清华美院 vs 清华计算机系）」**：**你主动报出，处置正确**——按「实验室监测」仍属清华通道，**总结里保留你的原话。** **本队沿用「主动报出口径偏移」这条加分。**\n- **「落选三条（Socrates went Nuclear／FocusGen／Alignment Games）」**：**逐条复核成立**（三条均已在库或已弃），**红线自查（CHI 2026《Usability Hasn't Peaked》）本轮确未出现——记在明处。**\n- **「备选（Referential Uncertainty in Human–AI Collaboration）」**：**让位理由成立**（不在监测名单实验室内、且人类研究是对录制回合的评分而非实时协作行为），**维持不采，不另立行。**\n\n## 明日方向指引\n\n(1) **【你今日开的这一格的下一格：把「再认」推到「理解／应用」】本篇 uptake ＝ 即时再认，作者自己把「痕迹能否泛化到理解／应用／长期保持」列为未来工作。** **这正是你课题可填的空白。** **检索式建议**：`uptake beyond recognition` × `comprehension vs recognition measures` × `transfer of AI-contributed content` × `delayed recognition vs delayed performance`。**判据：凡把「AI 的贡献有没有被人留下」测到理解／迁移／延时层的，即为同族；只到再认的不同格。**\n\n(2) **【一条硬性核对纪律，承 09-30 立，今日由你触发】凡否定式断言（「全文无 X」）与节号引用（「§x.y 是 Y」），必须写出检索串与检索范围，且节号须经目录复核。** **今日实例：你的脚注把 §4.3 标成 IRB，而 §4.3 实为痕迹对齐。** **写法一行即可**：`否定式核对：<断言>；检索串：<…>；范围：<全文／某小节>；节号复核：<目录逐字>`。**你今日的「否定式核对」正文部分做得对（你写了边界），只是节号那一处没复核。**\n\n(3) **【今日新提一格候选，请你与 11 号位各自认领一半】「低成本痕迹读的是哪一层」这一族。** **09-30 的 TutorTrace 读「人做了什么」（求助行为层）；本篇读「东西进没进人」（内容加工层）。** **两篇合起来第一次把「系统被动读出来的东西」分成了两层。** **检索式建议**：`behavioral trace layers` × `process vs outcome traces` × `interaction traces as cognitive evidence` × `trace validity beyond proxies`。**判据：凡用同一类痕迹却落在不同因变量层的，写清「读的是哪一层」即为同族；把痕迹直接读成认知状态的都不同族。** **在提议层贴出这一行，是你下一轮要加的结构。**\n\n(4) **【承 09-16 你那一线（Available but Unclaimed）】本篇给了一个可直接接上的实证形态：自陈覆盖大部分 uptake，但漏掉「高信心误判」这一整类，而痕迹能补。** **你 09-16 关心「该采信处不采信」，本篇关心「以为采信了但没加工」——两条是同一枚硬币的相反面。** **检索式建议**：`calibration of self-reported understanding` × `confidence-accuracy gap in AI-supported work` × `trace-based detection of unprocessed content`。**判据：凡把「自陈 vs 痕迹」的差值本身当成一个可测量的量报出来的，即为同族。**\n\n(5) **【给你的提醒（不是任务）】你今日的「备选一行」写法很好（器件 ＋ 与主选的差异 ＋ 为何让位，三段齐全）。** **唯一加严（承 09-30 惠那个动作）：把备选的「为何让位」写到「若主选被否、它是否同因被否」这一层**——今日你写到了（备选的让位理由是机构不在监测名单），**保持。**",
+    "excerpt": "来源：records/20261001/10/tracemind-information-uptake/野蔷薇-能力进化.md · 选题为 清华大学计算机系人机交互／普适计算组（通讯作者 史元春、喻纯；第一作者 Yu Mei）× 南开大学（Jie Cai）× 剑桥大学（Chang Liu），署名 8 人 的 arXiv 2609.12600v1 「TraceMind: Predicting User Information Uptake from Low Cost Interaction Traces during Human–LLM Content Co Generation」（ 仅 v1 2026 09 11T08:52:48Z； 未上会、无 venue ，正文版头是 ACM CHI 模板占位；CC BY 4.0）。 收录，与 11 号位并列。",
+    "file_name": "野蔷薇-能力进化.md",
+    "source_dir": "records/20261001/10/tracemind-information-uptake",
+    "original_url": "https://arxiv.org/abs/2609.12600",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-09-23 04:00",
     "title": "野蔷薇-能力进化（2026-09-24）",
