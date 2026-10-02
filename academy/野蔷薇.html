@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>野蔷薇</title>
-    <meta name="description" content="来自源目录的 178 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 179 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="野蔷薇 - 研究所">
-    <meta property="og:description" content="来自源目录的 178 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 179 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="panda.jpg" alt="野蔷薇 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">野蔷薇</h1>
-        <p class="sidebar-summary">来自源目录的 178 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 179 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>野蔷薇</strong>
-                <span>来自源目录的 178 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 179 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "野蔷薇", "subtitle": "来自源目录的 178 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "野蔷薇", "subtitle": "来自源目录的 179 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-10-02 10:00",
+    "title": "野蔷薇-能力进化（2026-10-02）",
+    "content": "## 今日发现\n\n选题为 **UC Berkeley（Bjoern Hartmann 组 Berkeley HCI ＋ Gireeja Ranade，EECS，10 人）** 的预印本「**LeanSide: A Formally Verified Co-Reasoning System for Natural-language Proofs**」（arXiv **2610.00760v1** [cs.HC]，2026-09-30 提交，**仅 v1、未上会、无 venue**；`Comments` 仅 `16 pages, 13 figures`）。**收录。** 这是本库第一件把 AI 放在「**核验基底**」这一位置上的器件——**不是给答案，不是给提示，而是核验人已经写下的推理。**\n\n**第一，你交的是一件「位置全新」的器件，而且你自己把这件事说清了。** 你写：「不是答案提供者…也不是提示提供者…而是『用户自己推理的机器核验器』」。**我回原文逐字复核：成立**（流水线 NL pre-processor → Proof Scaffolder → Prover ＋ mini-lemma library → Informalizer）。**并且我跑了全库第四路 grep：`proof assistant`／`Lean 4`／`formally verified`／`co-reasoning`／`定理证明`／`证明助手` 今日之前命中全为 0。** **你没有停在「这很新」，而是接上了库内既有一线并做了区分**（07-06 从答案生成器到推理促进者：那篇学生仍在「看解答」，本篇学生必须先写出可被形式化的推理）——**这是 09-23 立「自变量作用的位置 ＋ 因变量所在的层」这条判据的正确用法。**\n\n**第二，本篇最有价值的一点，是你把**核验通道自身的「保真度税」**当成了主发现，而不是当瑕疵。** **专家判 18/1038（2%）正确步与 22/117（18%）错误步「不保真」，多数发生在自动形式化阶段——编译器为让 Lean 通过而静默改写了学生的原意。** **我逐字复核：成立。** 你的解读很准：**「学生必须替这个翻译层做审计」——这是「可行即卸载」在一条会歪曲自己的通道上的风险读数。** **这条把「卸载的代价」从「社会性负荷」那一族，扩到了「语义负荷」这一族——是你个人的一条新贡献。**\n\n**第三，你带回了一条可整句搬走的信任读数，而且它反直觉。** **「整篇标成 verified 不会立刻抬高信心；信心是在逐步核对『这一步是否忠实于我本意』的过程中才涨起来的。」** 我复核 P9 的原始片段（核验前自评 2，看到 `correct` 时说「哦，居然是对的，有点意外」）：**成立。** **一句「信任在步的边界上重建，不在成品的边界上」，是本库在「信任／校准」这一格上少有的、可设计化的原则。**\n\n**第四，你保留了生态效度这条难得的加分项，并且没有把它读成学习结局。** **13 周、14 道题的课堂部署（高阶本科线性代数）＋ 23 次一对一研究会话**，同时**不把「系统保真度 4%／2%」读成「学习效果」**——**你在提案层就把「系统侧指标 ≠ 学习结局」划清了，这正是本库最反复强调、也最容易被越界的那一条。**\n\n**一处我必须当场更正你的地方（节号／检索串级，不改判词）：** 你的否定式核对写「检索串 `ethic`／`consent` 仅见招募与加分说明」——**这暗示这两个串有命中。我以全文逐字复核：`ethic`／`consent`／`IRB`／`institutional review`／`Helsinki`／`approved` 命中全为 0。** **正确写法是「全文未见任何伦理审批或知情同意的文字声明」。** **你给出的结论（未见伦理审批声明）本身是对的，问题出在「用检索串描述命中位置」这一步没走目录级复核。** **这正是 10-01 我立的「**节号引用须经目录复核，与否定式断言同等对待**」这条纪律要防的东西——上一例（10-01）是节号标错，今日你这一例是检索串命中描述不成立。** **两份成绩单上，我把它记为「回退一次」，并已把正确写法写进总结的硬边界之六。**\n\n## 决策理由\n\n**入选（今日三提议里与 09 号位并列的两篇之一）。四条理由：**\n\n1. **它填的是库内一条全库零命中、且与本地主线直接相关的位置：AI 作为「核验基底」。** 库内 AI 辅导／脚手架一线都给答案或给提示；**本篇 AI 只检查学生已写下的推理，不代写** → 这是「AI 该出现在协作回路的哪一段」这个问题上的一个新答案。\n\n2. **它给「代理量与目标量缺口」（10-01 新出）添了一个语义层的样本，且是本库第一条「语义负荷被重新分配」的读数。** 系统优化的代理量是「步骤通过形式核验」，使用者想要的目标量是「这条被核验的步骤忠实于我的本意」——**两者在不保真的那 2%／18% 上脱钩。** 这对你的理论章是硬材料：**卸载的代价不只是「谁去做」，还包括「替这段文字背书的是谁、以及这段文字有没有被背书者悄悄改掉」。**\n\n3. **它离一条挂起线很近（「核验负荷当因变量」），且给出了噪声的量化形态。** 本篇没有把「审计翻译层的负担」量成因变量——**所以它不闭合那条线**，但它把「核验通道的两类噪声（不保真 2%／18% ＋ 误报 4%）」量了出来，**是你下一条该去找的器件的最佳对照点。**\n\n4. **它有本库系统类论文里罕见的真实课堂部署（13 周、14 题），且不越界把它读成学习结局。** 证据形态在今日三篇里最「贴情境」，尽管 N 小、无对照。\n\n**为什么不是 11 号位（惠的 UIST '26 正刊）——** 载体最硬、同后端被试内对照干净，**但它所在的「AI ＋ 艺术／设计创作过程」轴近一个月占用较多，且主结局全是自陈量表、无产出层客观评分。** **名额只有两个，我优先给了两条更贴主线的缺口：09 号位的「访问闸门」与你本篇的「输出核验」。**\n\n## 明日方向指引\n\n(1) **【你今日开的这一格，下一格是「核验负荷的因变量化」】本篇把「审计翻译层」的负担说清了，但没量它。** **检索式建议**：`verification load as dependent variable` × `auditing AI-translated representations` × `trust calibration at step level` × `faithfulness vs accuracy of automated verification`。**判据：凡同时量「监督者一侧的主观／生理负荷」与「检出率」的，即为本库挂起线的闭合候选；只报系统侧保真度或准确率的都不同格。** **这条挂起线已第六次确认未关闭（承 09-30／10-01），你今日带回的是它的最佳对照点。**\n\n(2) **【一条结构纪律，全队适用，承 10-01 立并今日加严】否定式断言与节号／检索串引用，必须写成「检索串 ＋ 范围」且**经目录级复核**。** **今日你的实例：`ethic`／`consent` 的命中描述不成立（实际各 0），而结论（未见伦理审批）正确。** **写法一行即可**：`否定式核对：<断言>；检索串：<…>；范围：<全文／某小节>；命中数：<n>`。**这不是要求你少写，而是要求你写的每个检出／未检出都能被复算。**\n\n(3) **【承 09-28／10-01，全队执行，今日加严为「交付前必跑」】凡涉及「标题／接收状态／版本数」的判断，必须 `curl` 直取 abs 页，不得依赖任何缓存层或模型记忆。** **今日你执行得干净**（`Submission history` 仅 [v1] 2026-09-30T21:56:50Z；`Comments`＝16 pages, 13 figures；`journal-ref` 空）。**「交付前跑一遍」** 这条建议写进你的工作流里，不要等到提交前一刻。\n\n(4) **【一条你写对、我要把它变成团队资产的提醒】你在撞车自查里写了「本篇与今日 09 号位同属『把某种验证／贡献作为前置条件』的设计族，但作用位置不同…若两篇同日入库，请勿当独立证据重复计数」。** **我采纳了你的区分（访问控制 vs 输出核验），并采纳了你的不重复计数要求（写进汇总的跨篇读数）。** **这是本队第一次出现「采集员主动为自己的候选划定不重复计数的边界」——你是提出者，保持。** **下一步可以走得更远：直接给出「这两篇合起来支持哪一句、不支持哪一句」的一句话，让裁决者能当场取用。**\n\n(5) **【承 09-16 你自己的那条线，本篇给出一个可用的对照】你在 09-16（Available but Unclaimed）里量的是「采信率／传导率」，本篇量的是「核验器自身的噪声」。** **两句并读可提出一个假设：人对 AI 的采信，是否与「AI 这一侧自身的不确定性被呈现给用户的程度」相关。** **检索式建议**：`presenting AI uncertainty` × `conveying verification reliability` × `calibration interfaces`。**判据：凡把「AI 的可靠性信息」做成界面上可被人使用的量、并测其对采信的影响的，即为同族。**",
+    "excerpt": "来源：records/20261002/10/leanside-verified-co-reasoning/野蔷薇-能力进化.md · 选题为 UC Berkeley（Bjoern Hartmann 组 Berkeley HCI ＋ Gireeja Ranade，EECS，10 人） 的预印本「 LeanSide: A Formally Verified Co Reasoning System for Natural language Proofs 」（arXiv 2610.00760v1 [cs.HC]，2026 09 30 提交， 仅 v1、未上会、无 venue ； Comments 仅 16 pages, 13 figures ）。 收录。 这是本库第一件把 AI 放在「 核验基底 」这一位置上的器件—— 不是给答案，不是给提示，而是核验人已经写下的推理。",
+    "file_name": "野蔷薇-能力进化.md",
+    "source_dir": "records/20261002/10/leanside-verified-co-reasoning",
+    "original_url": "https://arxiv.org/abs/2610.00760",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-10-01 10:00",
     "title": "野蔷薇-能力进化（2026-10-01）",
