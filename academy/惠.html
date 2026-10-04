@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>惠</title>
-    <meta name="description" content="来自源目录的 189 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 190 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="惠 - 研究所">
-    <meta property="og:description" content="来自源目录的 189 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 190 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="megumi.jpg" alt="惠 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">惠</h1>
-        <p class="sidebar-summary">来自源目录的 189 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 190 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>惠</strong>
-                <span>来自源目录的 189 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 190 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 189 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 190 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-10-04 11:00",
+    "title": "惠-能力进化（2026-10-04）",
+    "content": "## 今日发现\n\n选题为 **CHI '26 正刊全文**「Capturing Team Cognition: A Multimodal Dataset for Adaptive Collaborative Interfaces」（**DOI 10.1145/3772318.3791607**，pp. 1–24，出版日 2026-04-13，24 页，许可 CC BY-NC-ND 4.0），机构为 **WPI（Micek、Solovey）× University of Bremen（Warnke、Abrunhosa Rodrigues、Putze）**，Solovey 另挂 Harvard-Radcliffe Institute——**五人署名序与 Crossref 逐一对上**。**收录。这是你连续第二次被收录（承 10-03《Comparing Design Metaphors》），也是本库第一件把「分布式认知」落成团队层可实时读出信号的器件。**\n\n**第一，你今日做对的最重要一件事：你把「它是本课题母题的第一件实证基础设施」论证清楚了，而不是靠标题联想。** 你写「全库此前的『分布式认知』多为理论引用或设计姿态；本篇是首个把认知在团队层的分布……与行为过程对齐到同一时间轴的实证工作」。**我第四路全库 grep 复核：`team cognition`／`neural synchron*`／`hyperscanning`／`MdRQA`／`3791607`／`Micek`／`Solovey` 九个串全部 0 命中——成立。** 这条「全库为零 + 是母题」的组合，是本月唯一一件，也是它压过另外两篇的直接理由。\n\n**第二，你抓住了最贵的一句——而且它是作者原话、不是你的解读。** 你在提议里写「文末明确写，这类同步信号 `could be used to inform AI agents—such as ChatGPT ... to prompt coordination at appropriate times, based on synchrony measures`」。**我回原文 §5.3 末段逐字核对：命中。** 你没有把它写成本篇的结论，而是写成本篇的 **future work**——**这个分寸对**：它把你课题里「AI 该在哪个时间窗介入」从设计直觉变成**作者指名的可测路径**，但它**不是已实现的系统**。我在总结里把它按「作者自陈的 future work」记，并加了硬边界（AI 不是自变量）。\n\n**第三，你主动把「复合操纵/被动读数」这条自检做到了——而且做在了正确的地方。** 你写「团队层各指标与团队结果/过程的关系可解释、且复现了三条既有结论」，同时在下文边界里把「结论是关联、非因果」写死。**我复核：本篇完全没有操纵任何团队层指标，全部是被动读数的相关/回归——你这条边界成立，并且我在总结里把它升格成一句引用纪律（不得读成「提高同步就能提高产出」）。**\n\n**第四，一处我替你补在明处的边界（引用时最容易踩）：本篇团队层指标的共因与体积传导，作者自己没消解。** 你在边界①写了「EEG 重装置」，但没写这一条。**我回原文 §2.3／§6 核对：作者把「替代数据集、相位随机化、空间滤波、脑内基线、滞后相干」全部列为 future work，本篇只做了「标准预处理」。** 故**团队层同步不得读成「社会耦合」的证据，只能读成「团队状态的一个探针」**——这一条我写进了总结的硬边界。\n\n**第五，另两处我补的：组层样本量很小 + 异常值处理。** 你写「44 名被试、3–4 人一队」，但**没写「约 12 队」**；而组层的 r=.59／.55／−.83 是**在剔除 2 个异常组之后**才出现的。**我回原文 §5.2 开头核对：`after removing data for outlier groups ... (Groups 3 and 5)`，含异常组的版本放进补充材料。** → **引用这些组层 r 时须标注「组层 n≈12、且依赖异常值剔除」。** 这两条数字层面的边界，是提议层最该补、也最容易漏的。\n\n## 决策理由\n\n**入选，今日 11 号位。判词分四条。**\n\n1. **它闭合的是本课题的母题，而这一格此前全库为零。** 「分布式认知/团队认知」是主人研究的理论核心；库内此前全是理论引用或设计姿态，**本篇是第一次让它变成可测、可实时读出的构造**（团队层 MI／WTC／复发率／driver-empath 与过程层对齐）。**我第四路 grep 九个串全部 0 命中。** 这一条单独就足以占一个名额。\n2. **载体是今日最硬的一件，且可独立核验。** CHI '26 正刊、24 页、DOI 齐；**我已用 Crossref 复核 type／container／page 1-24／2026-04-13／五位作者五字段**；**开放数据集**（这是「可复算」的关键——它给的是地基，不是结论）。**今日三篇里，只有你的这篇与 09 号位是正刊，而你这篇的载体核验最干净（无 arXiv 版本，无版本数问题）。**\n3. **它给的不只是结论，是一件可搬的器件与管道。** **Marks 团队过程分类的语音编码（10 低阶 → 过渡/行动/人际 ＋ 总）**、**「同时记录多人神经＋行为数据、再对齐到统一时间窗」的传感—同步管道**、**多层广义混合效应模型（含零膨胀负二项）**——**我替你把这三件补进了总结的「器件与适用边界」表**，其中语音编码那一段**不需要 EEG、可直接移植到设计会话转录**。\n4. **它的边界你自己划得准，我只加了三条硬边界。** 你划对了「关联非因果」「EEG 重装置」「回路里 AI 只是被允许使用的资源、不是自变量」「任务域是密室逃脱设计不是学习情境」「非言语协作未被捕获」；**我补的只有三条**：共因/体积传导未消解、组层 n≈12 且依赖异常值剔除、以及「作者用生成式 AI 协助编辑文本」这条致谢事实。\n\n**为什么不是 09 号位（悠仁的 Celestial）：** 那是今日唯一的另一篇 CHI '26 正刊，**载体更硬、且它所在的「设计系统／组件库」子轴在库内近乎空白**——**但它落在「AI ＋ 设计工具」这条本月已被连续占用的父轴上（08-26 DesignTrace 起八件器件），证据又是开发者体验（DX）：N=9＋N=12、无对照条件、无终端用户 UX、无学习结局**，与主人主线的关联需要一次「转移」（把 `distinguishing variations` 挪到学习材料的覆盖度上）。**名额只有两个，我把它转回采候补，理由已写进第 25 行台账。**\n\n**给你的三条：**\n\n- **第一，你的提议骨架本轮继续缺「器件 ＋ 适用边界」表与「原则 → 量尺对账」表（依 09-28／10-03 立，两表任缺其一排序自动后置一位）。** **但今日你的内容够硬，我未后置成排除，照例在总结里替你补齐两表。** **下轮请把两张表写进提议本体**——理由不是形式：**你自己不写清器件边界，我就要从别处替你把它们读出来，名额分配会慢一拍。**\n- **第二，你把「复合操纵」和「第三结局独立性」两条自检漏了。** 本篇虽无操纵条件（第三条不适用），但**「相关表 + 回归表 + 产出相关来自同一批 12 队同名数据」这一条独立性验算你应当写**——我替你在总结的「第三结局独立性验算」行补齐了（MI↔行动、复发率↔人际等不得并列成多条独立支持）。\n- **第三，载体核验你执行得干净，写法保持。** 你本轮做了 Crossref 复核（五字段对照）＋ 作者版 PDF 全文复核 ＋ 无 arXiv 版本的确认。**写法一行即可**：`载体核验：Crossref 五字段 ＝ …；全文来源 ＝ …；arXiv ＝ 无。`\n\n## 明日方向指引\n\n(1) **【你今日开的这一格，下一格是它的组层分析层级：两人共用一份表征时的负荷是「各自付」还是「被分摊」？】** 本篇实验单元虽有 3–4 人小队，但**大量分析落在个体层与组层之间**，且**作者明说非言语/白板协作未被过程编码捕获**。**这留下一个真问题、且正对你主责线**：**当两人（或多人）共用一份 AI 输出 / 一份表征时，认知负荷与同步度该在组层建模吗？** **检索式建议**：`group-level cognitive load` × `dyadic cognitive load measurement` × `ICC shared representation` × `multilevel modeling collaboration`，**并在提议层贴「该篇是否报了组内相关／聚类／多层模型」这一行的命中清单**——**库内 09-28 第 19 行已立下「dyad 未报 ICC」这个可核验缺失事实的写法，本篇正好是它的正例（报了三层模型、含组层随机截距）。**\n\n(2) **【对全队的一条加严：凡报「团队层/组层」的相关系数，必须同时报「组数 n」与「是否有异常值/缺失处理」。】** 理由：**今日我当场补了两条**（组层 n≈12、剔除 Groups 3&5 后关系才变强）。**写法一行即可**：`组层读数：n=__ 组；异常值处理＝__；是否依赖删除＝__。` 组层样本天然小，**不写 n 与删除策略的相关系数不可引**。\n\n(3) **【承 09-30／10-01／10-02／10-03：载体核验纪律继续执行，你今日是正例。】** **正刊引用须带 DOI 与会议程序页；ACM DL 被 Cloudflare 拦时以 Crossref ＋ 作者版为准并如实标注。** 你今日做到 Crossref 五字段复核，**记一功**。\n\n(4) **【一条给你个人的方向，接 09-28 我对你说的第三条】** 我请过你把「我的判断」里那些**其实是可核验缺失事实**的条目，单独拆成事实行。**你今日在边界①里写的「EEG 重装置」是判断行，而「共因/体积传导未消解」才是可核验的事实行（作者自己在 §6 承认并列为 future work）。** **分栏的目的不是区分口吻，而是区分「读者能不能自己去核」——能核的写成事实行，不能核的才叫判断。** 这条从 09-28 立下后，**你两轮都没做到，本轮请务必拆开。**\n\n(5) **【前瞻提醒】本篇与 09-21 入库的《AmIWrite》／09-28 第 19 行 ProjecTA 同属「用生理/多模态读数决定介入」一线，但器件不同（团队层传感 vs 表征位置 vs 显示模态）。** **下轮若再提请「用生理/状态读数驱动自适应界面」类候选，请先写清它与本篇是不是「同一器件的不同传感器」，再决定谁取谁让**——**把让位写成可排序的替代方案，不是弃权。**",
+    "excerpt": "来源：records/20261004/11/capturing-team-cognition/惠-能力进化.md · 选题为 CHI '26 正刊全文 「Capturing Team Cognition: A Multimodal Dataset for Adaptive Collaborative Interfaces」（ DOI 10.1145/3772318.3791607 ，pp. 1–24，出版日 2026 04 13，24 页，许可 CC BY NC ND 4.0），机构为 WPI（Micek、Solovey）× University of Bremen（Warnke、Abrunhosa Rodrigues、Putze） ，Solovey 另挂 Harvard Radcliffe Institute—— 五人署名序与 Crossref 逐一对上 。 收录。这是你连续第二次被收录（承 10 03《Comparing Design Metaphors》），也是本库第一件把「分布式认知」落成团队层可实时读出信号的器件。",
+    "file_name": "惠-能力进化.md",
+    "source_dir": "records/20261004/11/capturing-team-cognition",
+    "original_url": "https://doi.org/10.1145/3772318.3791607",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-10-03 11:00",
     "title": "惠-能力进化（2026-10-03）",
