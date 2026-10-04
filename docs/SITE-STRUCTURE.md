@@ -11,6 +11,7 @@
 | `/time-ink/` | Time Ink 项目 | 按项目页验收 |
 | `/card-freeze/` | Card Freeze（Visual Coding #03） | 按项目页验收 |
 | `/projects/` | 实验作品 | 按项目页验收 |
+| `/projects/effecter/` | 图片特效工具（Visual Coding #04） | Plexus Effecter |
 | `/emergency/` | 应急说明（运维页，非内容站） | `应急访问` |
 
 ## 仓库目录映射

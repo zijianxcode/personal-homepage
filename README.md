@@ -89,7 +89,8 @@ Root safety rule:
 ├── visual-coding.html          ← Visual Coding 子页面（卡片网格）
 ├── projects/                   ← 独立实验作品
 │   ├── floating-clock.html
-│   └── kinetic-typography-clock.html
+│   ├── kinetic-typography-clock.html
+│   └── effecter/                ← 图片特效工具；Visual Coding GIF 封面与体验入口
 ├── card-freeze/                ← Visual Coding #03 静态产物（源码见 zijianxcode/card-freeze）
 ├── Assets/
 │   ├── css/style.css           ← 全局样式 + CSS 变量
@@ -122,6 +123,7 @@ Root safety rule:
 - 移动优先响应式设计
 - Canvas 用于粒子系统和生成式视觉
 - 独立实验使用单 HTML 文件
+- Effecter 使用构建后的 React/Worker/WebGL 静态文件，发布于 `/projects/effecter/`；源码与发布步骤见 `/Users/zijian/Documents/ChatGPT/Vibe coding/plexus-studio/部署说明.md`。
 - 移动端适配不删除既有视觉动效；优先降低离屏、隐藏页、resize 和高 DPR 场景下的无效计算
 
 ## Naming

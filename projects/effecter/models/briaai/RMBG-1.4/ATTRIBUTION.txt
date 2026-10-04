@@ -1,0 +1,5 @@
+BRIA RMBG-1.4
+Model: https://huggingface.co/briaai/RMBG-1.4
+License: https://huggingface.co/briaai/RMBG-1.4#license
+Model files retrieved via hf-mirror.com; served unchanged.
+FP32 ONNX SHA-256: 8cafcf770b06757c4eaced21b1a88e57fd2b66de01b8045f35f01535ba742e0f

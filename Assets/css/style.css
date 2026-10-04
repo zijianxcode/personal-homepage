@@ -1841,6 +1841,14 @@ textarea:focus-visible {
     transform: scale(1.04);
 }
 
+.vc-card-media--effecter {
+    background: #000;
+}
+
+.vc-card-media--effecter img {
+    object-fit: contain;
+}
+
 /* Live iframe preview thumbnail */
 .vc-card-media--live {
     pointer-events: none;
