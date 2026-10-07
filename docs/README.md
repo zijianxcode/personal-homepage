@@ -4,6 +4,7 @@
 
 | 文档 | 用途 |
 |------|------|
+| [项目规范文档.txt](../项目规范文档.txt) | 项目注意事项及 Visual Coding 统一规则 |
 | [DEPLOYMENT-STABLE.md](./DEPLOYMENT-STABLE.md) | **唯一**生产发布 runbook |
 | [SITE-STRUCTURE.md](./SITE-STRUCTURE.md) | URL 结构不变量 |
 | [EMERGENCY-ACCESS.md](./EMERGENCY-ACCESS.md) | 应急备用入口 |

@@ -14,6 +14,10 @@ Updated on 2026-05-30 (`v1.6.1`):
 
 详见 [CHANGELOG.md](CHANGELOG.md) · [docs/DEPLOYMENT-STABLE.md](docs/DEPLOYMENT-STABLE.md)
 
+## 项目注意事项
+
+统一规则以 [项目规范文档.txt](项目规范文档.txt) 为准；Visual Coding 的作品倒序与体验页右上角返回入口见其中「Visual Coding 项目统一规则（强制）」。
+
 ## Run locally
 
 ```bash
@@ -92,6 +96,7 @@ Root safety rule:
 │   ├── kinetic-typography-clock.html
 │   └── effecter/                ← 图片特效工具；Visual Coding GIF 封面与体验入口
 ├── card-freeze/                ← Visual Coding #03 静态产物（源码见 zijianxcode/card-freeze）
+├── vibe-fiber/                 ← Visual Coding #05 完整织字与图案 Demo
 ├── Assets/
 │   ├── css/style.css           ← 全局样式 + CSS 变量
 │   ├── js/
@@ -124,6 +129,7 @@ Root safety rule:
 - Canvas 用于粒子系统和生成式视觉
 - 独立实验使用单 HTML 文件
 - Effecter 使用构建后的 React/Worker/WebGL 静态文件，发布于 `/projects/effecter/`；源码与发布步骤见 `/Users/zijian/Documents/ChatGPT/Vibe coding/plexus-studio/部署说明.md`。
+- Vibe Fiber 使用原生 Canvas 与本地图案提取 Worker，发布于 `/vibe-fiber/`。Visual Coding 封面为用户指定的 GIF；源码与发布记录见 `/Users/zijian/Documents/ChatGPT/Vibe coding/knit-type/部署说明.md`。
 - 移动端适配不删除既有视觉动效；优先降低离屏、隐藏页、resize 和高 DPR 场景下的无效计算
 
 ## Naming
