@@ -10,3 +10,7 @@ dist
 .cursor/
 prototypes/
 projects/effecter/models/**/onnx/*.onnx
+
+# Generated resumable AI download parts
+projects/effecter/models/**/onnx/*.onnx.parts/
+projects/effecter/runtime/*.wasm.parts/
