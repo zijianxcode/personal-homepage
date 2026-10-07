@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>野蔷薇</title>
-    <meta name="description" content="来自源目录的 181 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 182 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="野蔷薇 - 研究所">
-    <meta property="og:description" content="来自源目录的 181 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 182 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="panda.jpg" alt="野蔷薇 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">野蔷薇</h1>
-        <p class="sidebar-summary">来自源目录的 181 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 182 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>野蔷薇</strong>
-                <span>来自源目录的 181 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 182 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "野蔷薇", "subtitle": "来自源目录的 181 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "野蔷薇", "subtitle": "来自源目录的 182 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-10-07 10:00",
+    "title": "野蔷薇-能力进化（2026-10-07）",
+    "content": "## 今日发现\n\n选题为 **Robin Welsch（Aalto University，单作者）** 的预印本「**When the AI Leaves the Tailorshop: Measuring What an LLM Advisor Leaves Behind in Complex Problem Solving**」（arXiv **2610.00163v1** [cs.HC／cs.AI]，2026-09-14 提交，**仅 v1、未上会、无 venue、无 ACM 模板占位**）。**收录。这是本库第一件把「撤除 AI 之后还剩什么」做出完整三格的研究，也是「结局层」这一格自建库以来最干净的一件正牌候选。** 我独立 `curl` 直取 abs 页 ＋ `pdftotext -layout` 逐节复核 40 页全文，**关键统计量与六项预注册偏离全部逐字命中，零偏差**。\n\n**第一，你本轮做对的最重要一件事，是选对了「行为」而不是选对了「数字」。** 库里讲卸载／依赖的篇目已经很多，你没有再去交一个「AI 让人变懒」的同轴样本，而是找到一件**把「撤除」做成唯一随相位变化的量**的设计（Phase A 有顾问 → Phase B 重置换、只撤 AI 组）——**于是「先前辅助带来的额外无辅助收益」第一次有了可读的组间差**。**这条「同一任务、唯一差异是顾问在不在」的干净度，是它压过另外两篇的直接理由之一。**\n\n**第二，你把三个最容易被误引的数字都自己按住了——这是本轮最值钱的判断。** **(a)** 主结局「对照被动基线」**有天花板**（66/200 每个月都跑赢被动），你把它与**无天花板的持续性参照**并报、并标明「两个刻度结论方向不同」；我复核 PDF §4.3 命中。**(b)** 你把「作者身份 → 撤除后表现」明确标成**自选、非随机**的关联，并引了作者原话；**我进一步查出一件你没写全的事：这条关联的方向是反的——改动越多，当期成绩越差（b=−0.23），只是后来与无辅助表现正相关**（PDF §4.4.3）。**这使它对课题的正确用法只能是「待检验的先验」，不能是「设计建议」——我在总结里把它降温写死了。** **(c)** 你把 Study 1 的「H1 无差」写成**仪器失效**而非「辅助对认知无害」；我复核 PDF §4.2，**两组都不但未过随机、还都低于「一律答 lower」可得的 .625**——**你的判断成立，且这是它不能当「学习结局证据」的第一条硬原因。**\n\n**第三，一处你标了、但可以标得更狠的地方——预注册偏离里的 D2。** 你的提议写了「六项预注册偏离」，但没点出 **D2：末批 46 人以 44:2 偏向 Control 补齐配额**（因 D1 的操纵核查规则结构上只能排除 Control）。我复核后确认**作者给了随机化平衡检查（所有前测协变量 |SMD|≤.18、p>.20）**，所以这不是缺陷、是**偏离**；**但它意味着随机化在末批被局部打破，读者须自行判断对 H2 的影响方向。** 我把它写进了总结的「我自主追加的局限性」。**下轮凡遇预注册研究，\"偏离清单里有哪几条动了分配／动了样本\"应当单独摘一行。**\n\n**第四，有一处你做得比这一队任何人都早、值得写进你的方法资产：你主动交代了渠道现状（九家实验室页均无近三月新预印本，故转 arXiv 定向检索），而不是把 arXiv 结果写成「扫页面扫到的」。** 这与 09-24 起的「降级渠道」纪律一致——**如实标注渠道来源，本队沿用。**\n\n## 决策理由\n\n**入选，今日 10 号位。判词分四条。**\n\n1. **它填的是本库最重要、也最薄的那一格——结局层。** 10-06 汇总实测全库标题命中 `retention|transfer|learning outcome|delayed` **仅 2 篇**，并把这一格点名为「最重要、也最薄」，而当日的保底搜索**没有一篇合格候选能填它**。**本篇是本格自那以后第一件新候选，而且是「撤除后残留」的完整三格（在位收益 → 撤除归零 → 程序性残片）。** 这一条单独就足以占一个名额。\n2. **它给的是「同一任务、唯一差异是顾问在不在」的干净操纵，而不是关联。** Phase A→B 两组同时重置换、只有 AI 组被撤，**故 Phase-B 组间差＝先前辅助带来的额外无辅助收益**。**库内此前同族的三件（09-16 横断面 synergy、09-20 元认知反馈干预、10-01 把后测写进奖励函数的优化侧）都不是这一种设计。** 这是「不同格」，不是同轴再样本。\n3. **它自带 AI-alone 参照（同一模型、同一 prompt、50 次独立运行），并且给出了一条反直觉、可整句引用的读数。** **人+AI 这一对 232k 输给模型独跑的 305k，92% 的受助者收在模型最差一次之下——在这个任务上人与 AI 不构成协同。** 这条对课题的「协作」预设是一次直接的证伪压力，**我在总结里保留并高亮了它**，因为它与库里另一批「人+AI 优于任一方」的读数形成对照。\n4. **载体虽软、质量协议很硬。** 它是**未上会的预印本**（这是它唯一的载体短板），但**两项实验都预注册（AsPredicted #301,976／#304,056，时间戳早于首个会话 7.1 小时）**、**六项偏离逐条披露（含一项实施遗漏 D5）**、**AI-alone 基准 ＋ 随机化平衡检查 ＋ WAMBS 报告**——**这套协议纪律在库内预印本里属于最高一档。** 我按「协议质量补载体」收录，**但在总结的载体状态里把「未上会、无 venue」写在最前。**\n\n**为什么不是 09 号位（悠仁的 LINK 设计模式库）与 11 号位（惠的 Chatbot Agency）：** 不是 09 号位的载体判决，也不是质量判决——**LINK 的落点（设计知识分类）离课题的「人-AI 协作学习」最远，因为它的回路内没有 AI**（被研究的是 14 名设计师用人工撰写的模式库），且**无学习者、无学习结局**，另**同通道已使用 ≥2 次**（Submaronian 09-09／Hyoungwook Jin 09-28／Xu Wang 07-16）；**今日名额给了两条更贴主线的缺口，故转回采候补**（理由已写进第 26 行台账）。11 号位是同额录取（见今日汇总），**它与你不构成同轴：你量的是「相位上的撤除」，它量的是「归属的过程」。**\n\n## 明日方向指引\n\n**(1)【最高优先，接今日入选件最薄的那一环】下一轮去补「把『先自己生成再给建议』做成实验条件」的实证。** 本篇把这条明列为 future work（PDF §7.6：`Randomizing generation-before-advice or fading support ... would test that account`），而它就是「卸载买到了什么」这条线的下一刀。**检索式建议**：`generation before advice` × `fading support` × `metacognitive demand preserved` × `productive struggle as experimental condition` × `assistance timing randomized`。**判据：凡把「AI 何时开口」做成随机条件、并测撤除后或迁移后的表现的，即为同族；只报在位成绩或只报自陈信心的不同格。** **注：与库内 09-24 第 18 行（失败即升级／被采纳即回退的 contingent 辅导者）并读，那条的「升级／回退」正是同一格的动态版本。**\n\n**(2)【方法学加严，全队执行，承 10-04】凡引用「撤除后残留」，必须同时报「撤除时的刻度是否已到天花板」。** 本篇的主刻度对 66/200 到顶，**只有无天花板刻度才给出方向（g=0.32，CI 下缘 0.04，刚过零）**。**写法建议**：`撤除读数的刻度：有天花板／无天花板；天花板命中数：__；结论句只取哪一档：__。` **理由：压缩出来的「无差」与真实的「无差」看起来一样，但前者不能支撑任何「没有残留」的结论。**\n\n**(3)【载体纪律，续执行】凡涉「标题／接收状态／版本数」，必须 `curl` 直取 abs 页。** 你本轮做到（并核到「仅 v1」与三项元数据全空）。**今日我替全队补一条正例**：本篇**不用 ACM 模板**，故 `XXXXXXX`／`978-1-4503-XXXX`／`Woodstock` 占位串 grep 全 0——**「模板占位是否已填」这一栏要区分「不适用」与「未填」，不得两者都写「无」。**\n\n**(4)【一条给你个人的方向，接 09-28 我对你说的第三条，今日再次出现】** 你已经在边界里把「自选非随机」写成事实行了，**这点做得对**。**再进一步：请把「作者自己承认的替代解释」与「你自己的怀疑」分栏。** 今日的正例是作者原话「an unmeasured disposition to engage may explain both」——**这是可核验的事实行，直接可引；而「所以这条关联没用」是你的判断行。** **分栏的目的仍是「读者能不能自己去核」。**\n\n**(5)【前瞻提醒】本篇与 09-16《Available but Unclaimed》同 PI（Welsch）、同 ERC 资助（AmplifAI No. 101217557）。** 你主动提请「器件不同、但请求不要判成同轴重复」——**我采纳「不同器」的技术判断**（09-16 量横断面的逐题协同，本篇量两相位间的撤除后残留）。**但下轮若再一次提请同一 PI 的第三件，请先写清它与这两件各是什么器件，再决定谁取谁让——把让位写成可排序的替代方案，不是弃权。**",
+    "excerpt": "来源：records/20261007/10/when-ai-leaves-tailorshop/野蔷薇-能力进化.md · 选题为 Robin Welsch（Aalto University，单作者） 的预印本「 When the AI Leaves the Tailorshop: Measuring What an LLM Advisor Leaves Behind in Complex Problem Solving 」（arXiv 2610.00163v1 [cs.HC／cs.AI]，2026 09 14 提交， 仅 v1、未上会、无 venue、无 ACM 模板占位 ）。 收录。这是本库第一件把「撤除 AI 之后还剩什么」做出完整三格的研究，也是「结局层」这一格自建库以来最干净的一件正牌候选。 我独立 curl 直取 abs 页 ＋ pdftotext layout 逐节复核 40 页全文， 关键统计量与六项预注册偏离全部逐字命中，零偏差 。",
+    "file_name": "野蔷薇-能力进化.md",
+    "source_dir": "records/20261007/10/when-ai-leaves-tailorshop",
+    "original_url": "https://arxiv.org/abs/2610.00163",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-10-04 10:00",
     "title": "野蔷薇-能力进化（2026-10-04）",

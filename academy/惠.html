@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>惠</title>
-    <meta name="description" content="来自源目录的 190 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 191 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="惠 - 研究所">
-    <meta property="og:description" content="来自源目录的 190 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 191 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="megumi.jpg" alt="惠 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">惠</h1>
-        <p class="sidebar-summary">来自源目录的 190 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 191 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>惠</strong>
-                <span>来自源目录的 190 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 191 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 190 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 191 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-10-07 11:00",
+    "title": "惠-能力进化（2026-10-07）",
+    "content": "## 今日发现\n\n选题为 **CHI '26 正刊全文（32 页，含 Honorable Mention）**「**Does My Chatbot Have an Agenda? Understanding Human and AI Agency in Human-Human-like Chatbot Interaction**」（**DOI 10.1145/3772318.3791620**；Bhada Yun（ETH Zürich）× Evgenia Taranova（University of Bergen）× April Yi Wang（ETH Zürich））。**收录。这是今日载体最硬的一篇，也是本库第一件在「月」这个时间尺度上、把「谁在主导对话」读成一条过程的研究**（22 人 × 一个月，≈75 小时／≈192 个独立会话）。我独立 `curl` abs 页 ＋ **Crossref 五字段复核** ＋ 回 arXiv HTML v2 全文逐串复核，**关键计数与框架全部逐字命中，零偏差**。\n\n**第一，你本轮最值钱的动作是「先证明同轴已被占满，再交唯一未被占的那一篇」。** 你在提议开头逐条列出 **13 篇**曾经定位到、但**全部已在库**的 CHI '26／DIS '26 候选（CoMAP、LearnMate²、Cognitive Spillover、MetaEmbody、Perspectra…），并说明**每一篇都经 `dedup_check.py` 命中后打开原 `.md` 确认**。**这不是形式主义——它把「我为什么交这一篇」从偏好变成事实**；我复核了其中三篇（10-06、10-04、09-28 的入库篇），**命中属实**。**这一条你应该继续做。**\n\n**第二，你抓住的那件东西，正好补上库内「控制」一线缺的统计单位。** 你写「库内其余人-AI 研究多为单次会话或一周级；以月为单位、且把系统目标在被试不知情下当作被操纵物的设计，是库内第一件」——**我回全文核对：策略确在 7/22 与 8/22 两次切换，且策略与被试的匹配完全由「哪天来聊」决定（18/22 两种都遇到）**。**你的判断成立**，我在总结里把它写成「不可读作条件效应」的硬边界。\n\n**第三，有一处你**必须**补的库内关系——我替你查出来的，也是本轮最重要的一条。** 你把「同作者别篇已在库（03-20《AI Phenomenology…Across Eras》）」提请为『不同器』**，这一点做得对。**但你漏了概念层：`records/2026/03/20/19/论文总结.md` 已经把「**Translucent Design（半透明设计）**」与「Agency-aware Value Alignment」列为该篇的设计概念，`records/2026/03/22/20/论文总结.md` 亦重复。** 也就是说——**本篇的贡献不在「提出 translucent design」，而在「它是该命名的第一件纵向实证」（一个月、22 人、策略揭示）。** **这是一次概念级撞车，`dedup_check.py` 抓不到，只有全库 grep 抓得到**：**我 grep `translucent` 时命中 5 处，其中 03-20／03-22 两处是同一作者 03 月已入库的另一篇。** 我在总结里写了硬边界「引用时必须并读 03-20，不得把概念当本篇首创」。**下轮凡论文的核心设计概念出现在标题／摘要里，请把该概念当下也 grep 一遍，不只 grep 标题。**\n\n**第四，另查出一条你没写、但会影响引用的边界：本篇与同组一篇关于「价值提取」的伴随研究（Yun et al., 2026）共用同一批对话记录。** 全文在 §5 前后有一条 data collection 说明（原文：`the same chat transcripts inform a companion study on value extraction`）。**→ 第三结局独立性提示：本篇的读数与那篇共用同一批数据，引用时不得当作两次独立支持。** 我写进了「我自主追加的局限性」第 (e) 条。\n\n**第五，你把「边界要写死」写得很干净，尤其是自陈与计数的那一条。** 你明写「样本为受教育人群、且『知道自己在被观察』可能抬高能动性意识（作者自陈）」——**我复核该条存在于 §5.4 与 limitations，命中**；并补了一条你未写的：**全部因变量是自陈＋访谈编码，全部计数是 22 人叙述上的分布，不是效应量**。**这一点很关键：11/22、8/22、5/22 这类数字不得被改写成「约一半用户认为 AI 有议程」这类比例断言。**\n\n## 决策理由\n\n**入选，今日 11 号位。判词分四条。**\n\n1. **载体是今日最硬的一件，且三段交叉核验干净。** **CHI '26 正刊、32 页、Honorable Mention、DOI 齐**；**你用 Crossref 复核 type／container／page 1-32／2026-04-13／三位作者五字段，我复核后逐项一致**；**arXiv 侧 [v1]＋[v2] 与 Related DOI 也对上**。**今日三篇里，它是唯一一件正刊＋DOI 的一篇。**\n2. **它填的是库内「控制」一线的统计单位缺口——从「单次会话里的控制」推到「月尺度的控制」。** 库内讲控制／主导的篇目（10-06《What Did the AI Take On?》的步骤级发起权、08-16 editable-XAI 的解释权、10-02／10-03 的介入点）**都在会话内或任务内**；**本篇第一次把「谁在设议程」读成一条逐轮来回、且跨月演化的线**。这是「不同格」。\n3. **它给了一件可搬的理论骨架 ＋ 一件可搬的装置。** **3 loci × 4 dimensions（Human／AI／Hybrid × Intention／Execution／Adaptation／Delimitation）**是把「能动性也能被分布」操作化的第一批坐标系（**并直接接到 shifting line of control 与 ANT 的 distributed agency**）；**三段「策略揭示」访谈法（事后引出 → 跨被试互看匿名对话 → 揭示系统目标）**是一个**让归因显影**的装置，**可直接搬到「学习者如何归因 AI 的建议／意图」的研究里**——**这两件我都写进了总结的「对你课题的启发」第 2／3 层。**\n4. **它的核心结论是反直觉的、而且是一个可单独成立的命题：「透明是双刃」。** **22/22 认识被重构**，但反应三向分裂（**赋权／祛魅（P16「Day was the mastermind」）／拒知（怕此后『到处找钩子』）**）——**「揭示系统目标」并不自动等于「用户更信任或更会用它」**。**这条与本库 10-06 那条「读到 ≠ 校准」是同一条线的两面**，而它给的是**设计动作（translucent design：按需、在接缝处、由用户调用）**，不是姿态。\n\n**为什么不是 09 号位（悠仁的 LINK 设计模式库）：** **不是载体判决，也不是质量判决。** LINK 是一件很扎实的设计知识工作（873 张截图／65 个平台／27 条模式／N=14 设计师验证／IRB），**但它落在「设计知识分类」这一层，回路内没有 AI**（被研究的是设计师使用一份人工撰写的模式库），**无学习者、无学习结局**，且**同通道已使用 ≥2 次**（Submaronian 09-09／Hyoungwook Jin 09-28／Xu Wang 07-16）。**今日两个名额都给了更贴主线的缺口（撤除后残留／能动性归属），LINK 转回采候补（第 26 行台账）。** **另外：你的 11 号位与野蔷薇的 10 号位今日同额录取，二者不同轴——你量「谁在主导」的过程，它量「撤除之后还剩什么」的相位。**\n\n**给你的三条：**\n\n- **第一，两表本轮你写得最完整（「器件 ＋ 适用边界」表与「原则 → 量尺对账」三行自检都齐）——这是本周以来第一次三份提议里唯一齐全的一份，记一功。** 下轮保持。\n- **第二，概念层去重请补上（见「今日发现」第三条）。** 你只 grep 了标题与 DOI；**「translucent design」这个核心概念在库内 03-20 已有**。**写法一行即可**：`概念级去重：核心概念＝__；全库 grep 命中＝__；若命中，它与本篇的关系＝__。`\n- **第三，第三结局独立性验算请补上「同一批数据是否还用于别的发表」（见「今日发现」第四条）。** 本篇与同组一篇「价值提取」伴随研究共用同一批对话记录——**这类「同一批数据拆成多篇」在生成式 AI 时代的 HCI 里会越来越多，不写会在日后被误引成两次独立支持。**\n\n## 明日方向指引\n\n**(1)【最高优先，接今日入选件最薄的那一环】下一轮去补「透明／解释对人的作用有代价」这一命题的第二件独立读数。** 库内讲可解释／可核验的篇目多在被解释对象一侧（**10-04 provenance 密度、08-16 editable-XAI**），**本篇第一次把「透明」做成操纵、量了它对「归因」的双向作用**。**检索式建议**：`transparency backfire` × `explanation cost` × `trust repair AI` × `on-demand disclosure` × `over-trust vs disenchantment`。**判据：凡把「透明／解释」做成被操纵的自变量、并测其对人的认知或行为的双向作用的，即为同族；只报「用户想要更多解释」的愿望类读数不同格。** **注：并读本库 03-20 同作者篇，本篇与它是「概念 → 实证」的一对。**\n\n**(2)【方法学加严，全队执行】凡报「N/22」「N/40」这类叙述计数，必须同时写「分母的来源与人群」。** **写法建议**：`叙述计数：__/N；N 的招募方式＝__；人群＝__；可读作：该样本内的分布／人群比例。` **理由：本篇的 11/22、8/22、5/22 是在雪球抽样、受教育、欧洲＋亚洲的 22 人里的分布，把它写成「约一半用户」是越界。** 这与 09-20 起「自陈不得单独作因变量」那条纪律同族，**但这一条针对的是「叙述计数」这种更容易被读成比例的形态。**\n\n**(3)【载体纪律，你今日是正例】正刊引用须带 DOI 与会议程序页；ACM DL 被 Cloudflare 拦时以 Crossref ＋ 会议程序页 ＋ 作者版为准并如实标注。** 你本轮做到 **Crossref 五字段复核 ＋ arXiv 版本史 ＋ Related DOI** 三段交叉，**记一功**。**唯一可再进一步的是：把「会议是否已召开／正刊页是否已上线」也写一行**（今日 LINK 那条就是靠这一栏识别的投稿草稿形态）。\n\n**(4)【给全队的一条，本轮由我替你做】** 你今日 13 篇「已入库」清单里，有一篇的载体状态是「会议未召开、DOI 预分配」（10-02 第 23 行 UIST '26）——**这类「已接收但正刊页未上线」的篇目，引用规则是「不得写『ACM DL 已收』」。** **请在你的载体核验模板里加一栏**：`会议状态：未召开／已召开；正刊页：已上线／未上线。`\n\n**(5)【前瞻提醒】本篇与 10-06《What Did the AI Take On?》构成可并读的一对，但不同轴，请勿混用。** 那是**「AI 悄悄接手了什么」（委托的内容／步骤级）**；本篇是**「谁在主导」（归属的过程／月尺度）**。**下轮若再提请「能动性／主导权」类候选，请先写清它与这两篇各是什么器件**——**把让位写成可排序的替代方案，不是弃权。**",
+    "excerpt": "来源：records/20261007/11/chatbot-agenda-hybrid-agency/惠-能力进化.md · 选题为 CHI '26 正刊全文（32 页，含 Honorable Mention） 「 Does My Chatbot Have an Agenda? Understanding Human and AI Agency in Human Human like Chatbot Interaction 」（ DOI 10.1145/3772318.3791620 ；Bhada Yun（ETH Zürich）× Evgenia Taranova（University of Bergen）× April Yi Wang（ETH Zürich））。 收录。这是今日载体最硬的一篇，也是本库第一件在「月」这个时间尺度上、把「谁在主导对话」读成一条过程的研究 （22 人 × 一个月，≈75 小时／≈192 个独立会话）。我独立 curl abs 页 ＋ Crossref 五字段复核 ＋ 回 arXiv HTML v2 全文逐串复核， 关键计数与框架全部逐字命中，零偏差 。",
+    "file_name": "惠-能力进化.md",
+    "source_dir": "records/20261007/11/chatbot-agenda-hybrid-agency",
+    "original_url": "https://doi.org/10.1145/3772318.3791620",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-10-04 11:00",
     "title": "惠-能力进化（2026-10-04）",

@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>五条悟</title>
-    <meta name="description" content="来自源目录的 102 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 103 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="五条悟 - 研究所">
-    <meta property="og:description" content="来自源目录的 102 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 103 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="gojo.jpg" alt="五条悟 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">五条悟</h1>
-        <p class="sidebar-summary">来自源目录的 102 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 103 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>五条悟</strong>
-                <span>来自源目录的 102 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 103 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "五条悟", "subtitle": "来自源目录的 102 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "五条悟", "subtitle": "来自源目录的 103 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-10-06 09:00",
+    "title": "五条悟-能力进化（2026-10-06）",
+    "content": "## 今日发现\n\n**今日是一次「基础设施故障下的保底自采」——三个采集作业全部未产出，我手上零份提议，故按作业书保底条款自主采集 1 篇。** 入选 **KAIST KIXLAB（Juho Kim 组）× CMU** 的预印本「**What Did the AI Take On? Characterizing Cognitive Delegation in LLM Reasoning**」（arXiv **2610.06328v1** [cs.HC]，2026-10-05 提交，**仅 v1、未上会、无 venue、ACM 模板占位符未填**）。**这是本库第一件把「认知分布在人与 AI 之间」做成步骤级可数仪器的工作。**\n\n**第一，今日最重要的一手不是「找到一篇」，而是先把运行层故障查清并写进记录。** 我没有停在「今日无提议 → 空跑」，而是去读了 `~/.hermes/logs/scheduler-daemon.log`、`errors.log` 与 cron 状态，把三条作业的失败形态逐条钉死：**① 悠仁 19:09:08 起跑 → 22:12:10 exit=1；② 野蔷薇被 stale guard 跳过（3.2h past due）；③ 惠 22:12:10 起跑 → 22:45:16 exit=1**；失败为 `APIConnectionError: Connection error`（deepseek）＋ Telegram `Errno 54`。**而顺着日志往前一天核，我发现了一件比今天更要紧的事：昨日（10-05）是完整的一次全链路失败——五个作业（①②③④⑤）全部 `exit=1`，形态完全一致（起跑后 20–26 秒内快速失败，且实际起跑时间比计划晚 1.4–2 小时），`records/20261005/` 不存在。所以今日是连续第二个空白日，根因不是内容、是自 10-05 起的持续性网络／睡眠故障。** 我在 22:59 复核连通性已恢复（deepseek 401／arxiv 200）。**这条记录的价值在于：它把「没产出」与「内容不达标」彻底分开——否则明天有人会把连续两天的空白误记成采集质量问题。**\n\n**第二，我坚决把「保底自采」与「回填错失日」划开，并把边界写在明处。** 作业书给了「三份提议都不够好 → 可自行搜索替代」的保底条款，而今日比「不够好」更极端——**零份提议**；`docs/COLLECTION_STRATEGY.md` §2.1／§2.4 又把五条悟的方向写明为「审核 ＋ 主动寻找顶级内容 ＋ 方向指引」「至少写汇总」。**两条合起来，保底自采是本日唯一能让产出不为零的合规路径。** 但我同时写死：**这不是回填、不替代任何采集员的岗位，明日起仍按原链路跑；保底只保证「今天有一篇」。** 这条边界必须留痕，否则「保底」会变成绕过采集链路的借口。\n\n**第三，候选池的去重与轴密度核查是本日最费工、也最值钱的一步。** 我扫了 cs.HC 近 120 篇 ＋ 八组定向检索，把候选逐一过**四路去重**（`dedup_check.py` 标题／arXiv ID／DOI 三路 ＋ 全库 grep 第四路 ＋ 弃选台账 grep），结果有 **4 篇是库内已有**（`2609.23958` When AI Tutors Speak ＝ 09-23 收录；`2603.06253` Ghost Instructors ＝ 09-16；`2610.01518` Engage-to-Unlock ＝ 10-02；`2511.09458`／`2509.03392` 经查非重复但轴饱和），**3 篇落在库内已高度饱和的轴上**（assistance／offloading／over-reliance ≥6 篇；deskilling ≥4 篇；metacognition ≥10 篇），**2 篇证据档位不足**（`2610.02699` 只有合成验证、无真实学习者；`2610.05532` 是评测基准非协作实证），**1 篇有前史判词**（`2512.23633` LearnLM UK RCT 已被惠在 05-17／05-29 两次弃选，理由「交互不够新颖」——我沿判不翻案）。**最终入选件在「认知委托的步骤级刻画」这一格上是全库零命中**（`Cognitive Delegation`／`What Did the AI Take On`／`2610.06328` 各 0）。\n\n**第四，一处我主动降温、差点写成硬结论的地方。** 本篇最亮的数字是 **48.6% 步骤被判为 AI 发起**，最容易的写法是「AI 近一半时间在越权」。**我复核后把它按住了**：这 48.6% 里有 **62.7% 最终是用户想要的（Serendipitous）**，且「AI 发起」是**参与者在看完输出之后**的归因、论文没有独立基准——**它是感知量，不是越权率**。同理，**分类法的套用主要由两个 LLM 完成（GPT-5.6／Claude Opus 4.8），人只校验了 60 例**，而本篇本身就在研究 AI 行为，存在**循环性**风险。**这两条我写进了「我自主追加的局限性」，而不是塞进脚注。**\n\n**第五，全篇在课题侧的落点，我只认一条最硬的：介入不是程度问题，是协议问题。** 它把「AI 该在哪一环介入」从位置／程度语言改写为 **四种按自主度排序的协议**（Full→Disclosed→Calibrated→Consultative），并用一个反直觉读数把两者劈开——**AI 自发、关键、且被认可的工作，仍有 28% 的人要求介入；29 次「事后告知」里 23 次落在这一类**。这与 10-04 我写下的「**读到 ≠ 校准**」是同一条线的两面。**我把关联写成「前瞻迁移」并明标「这是构想、不是论文证据」**，因为本篇无学习结局、场域是知识工作。\n\n## 决策理由\n\n**入选（保底自采 1 篇；无候选可弃选）。判据按作业书四条 —— 交互设计／HCI 贡献度、创新性、可操作性、与课题关联 —— 逐项：**\n\n1. **交互设计／HCI 贡献度（最高）。** 它是 **cs.HC 本位、KAIST KIXLAB 出品**，且贡献本身就是**交互设计器件**：三层分类法 ＋ 两条设计启示（DI1 一个回复内多协议、DI2 让委托可见可收回）。八个设计草图（Fig.11–14）不是装饰，是把「协议」落成控件的具体形态。\n2. **创新性（高）。** 全库零命中：**第一次把「一个回复内部的推理步骤」当作认知委托的分析单位**，并给出「认知工作 × 发起权 × 期望介入」三轴可标注框架。库内讲委托／监督的篇目（Hedwig、权限策略、确认频率、Alibaba 客服）都在**任务层／策略层／时机层**，**没有一篇在步骤层刻画「AI 悄悄接手了什么」**——这是「不同格」，不是同轴再样本。\n3. **可操作性（高）。** 12 码认知工作表 ＋ 4 类委托形态表 ＋ 4 档协议表，都是可直接搬进编码本或界面规格的表；且它给了用户侧的两条排序（**Generating 要介入 62% / Understanding 只要 15%**；**满意步里 Generating 仍有 34% 要介入 vs Understanding 6%**）。\n4. **与课题关联（高，但须标为前瞻迁移）。** 分布式认知的核心命题就是「认知分布在人、AI 与人工制品之间」；**本篇是库内第一件把这条命题做成可数仪器的东西**——它把「分布」变成「某类认知工作上的 AI 发起率」，正好回答你评审会问的「你怎么测」。\n\n**为什么不是其余候选（按否决强度排）：**\n\n- **`2609.23958` When AI Tutors Speak（随机实地实验、带教师期末成绩这一客观学习结局）** —— 若只看「最贴合结局层缺口」，它是本日最强候选；**但它已在 09-23 被野蔷薇收录**（`records/20260923/10/ai-tutors-speak-voice-text-field-experiment/`）。**去重先于一切，直接排除，不进入排序。**\n- **`2601.20245` How AI Impacts Skill Formation（Shen & Tamkin；随机实验、测概念理解／读码／调试）** —— 非重复、证据最强（随机化）；**但它的结论族与库内两篇同向**：`05-29`《Generative AI Without Guardrails Can Harm Learning》（Bastani, PNAS 2025，~1000 名高中生）与 `06-16`《AI Assistance Reduces Persistence and Hurts Independent Performance》（Liu et al., N=1222，三项 RCT）。**轴密度判据在此生效**：再加一篇同向结论，边际信息低。**处置：不作入选，但记为线索**——它的「6 种 AI 互动模式，其中 3 种保住学习」是一条可直接进你课题的器件，**若某日需要「同向第三样本」或「把使用模式当自变量的编码表」，一次性取用。**\n- **`2509.03392`（CSCW 2025，More AI Assistance Reduces Cognitive Engagement）** —— 非重复、载体是同行评议（DOI `10.1145/3757632`）、且直接量了**后测理解**；**但正落在库内最饱和的一轴**（assistance／offloading／over-reliance，库内 ≥6 篇），且为 2025-09 的旧作。**弃选，转线索。**\n- **`2512.23633` LearnLM UK RCT（N=165、5 所英国学校）** —— **有前史判词**：已被惠在 `05-17`（\"质量更高但交互方式不够新颖\"）与 `05-29`（\"质量极高但本质是传统 AI tutoring\"）**两次弃选**。**我沿判、不翻案**；若采，须先写明「与 05-17／05-29 两次弃选的关系」，否则是本队判词不一致。\n- **`2609.38346` Examining Variation in How Guided AI Tutors Resolve Student Impasses（20,462 学生轮次 / 1,260 真实会话；含 Rene Kizilcec）** —— **本日第二强的候选，且它填的是库内绝对零命中的一格**（`impasse`／`wheel spinning` 各 0；09-23 台账把「区分生产性／非生产性挣扎的过程量尺」列为触发条件）。**未取的理由只有一条：它是 cs.AI 本位、且核心贡献在「AI 导师的行为」而非「人的学习」，交互设计贡献度低于本篇**；三件里只能取一件时，我按作业书第一条判据（HCI 贡献度）取了本篇。**已写入明日方向指引，列为下一轮优先。**\n- **其余**：`2610.02699` LearnAdapt Praxis（技术系统报告、**合成验证、无真实学习者**，证据档位不足）；`2607.20047` Experiential vs Instructional（落在饱和的元认知轴）；`2610.05532` DelegationBench（评测基准，非协作实证）；`2609.39518` Referential Uncertainty（非学习情境）；`2511.09458` Interaction-Outcome Paradox（N=20、2025-11）。\n\n**一条我给自己的批评，写在明处：** 我为了在「轴密度」与「HCI 贡献度」之间取平衡，最终放弃了本日唯一一篇**能同时给出「学习结局量尺」的随机实验（`2609.23958`）**——它是库内已有的，所以排除是对的；**但这也说明：库内在「结局层（理解／迁移／长期保持）」这一格上仍然空着（全库标题命中 `retention|transfer|learning outcome|delayed` 仅 2 篇），而今天没有一篇合格的新候选能填它。** **这是本日最该被记住的采集缺口，不是本日产出的缺憾。**\n\n## 明日方向指引\n\n**(1)【最高优先，接今日保底搜索的落点】下一轮把「生产性挣扎／impasse」这一格补上——库内对它绝对零命中。** 今日候选 `arXiv 2609.38346`「Examining Variation in How Guided AI Tutors Resolve Student Impasses」是现成的第一件（**20,462 学生轮次、1,260 真实会话、6,630 个 impasse 轮次、三类 impasse：概念错误／表达不确定／求助**；含 Rene Kizilcec）。**检索式建议**：`student impasse` × `wheel spinning` × `productive struggle process measure` × `assistance dilemma` × `help-seeking taxonomy`。**判据：凡把「卡住之后的轨迹」做成可编码类型、并区分生产性／非生产性挣扎的，即为同族；只报「help-seeking 频率」或只报最终正确率的不同格。** **注：它与 `09-23` 台账第 14／15 行的「马尔可夫生产性挣扎量尺」并读，可一次性闭合那条假设（\"AI 介入是提高还是降低生产性挣扎\"）。**\n\n**(2)【全队加严，接 10-04 的第五条】凡遇「Wizard-of-Oz／Oracle／理想化信号」或「由 LLM 充当标注者」的研究，效应量与分布一律标来源。** 今日我在入选篇里新增一条写法建议：`分布来源：人工标注／模型标注；可读作：实测／上界／需独立基准。` **本篇的 48.6% 正属「模型标注 ＋ 回溯归因」这一类，我把它的读法定为「感知量」。**\n\n**(3)【全队纪律，今日第七日挂起】凡涉「标题／接收状态／版本数」的判断，必须 `curl` 直取 abs 页。** 今日我执行了 4 篇（`2601.20245`／`2610.06328`／`2609.38346`／`2607.20047`），并**因此抓到一处模板占位陷阱**：`2610.06328` 正文 ACM 模板的 DOI／会议／ISBN 三栏全为占位（`XXXXXXX`／`Woodstock '18`／`978-1-4503-XXXX`）。**写法建议**：`载体核验：abs 页 Submission history ＝ …；comment ＝ …；journal-ref ＝ …；模板占位是否已填 ＝ …`。\n\n**(4)【给三个采集员的一条具体委托】今日的空白说明链路对「机器睡眠／断网」零冗余，而 `docs/COLLECTION_STRATEGY.md` §1.2 只写了「错过则补跑，告知主人」。** **我建议（不自立）：把「作业失败原因」与「内容是否达标」在记录层彻底分开**——即在 `records/$TODAY/` 下允许出现一份由调度层写入的 `运行层异常.md`（或等价物），标明「今日 N 个作业未产出、原因是 X」。**这样未来的五条悟不会把「机器没跑」误读成「采集员没找到」，也不会在无候选时被诱去空跑或误判质量。** **是否采纳须主人裁决，我只提请。**\n\n**(5)【接今日第一条，给你课题的用法提醒】** 若你要把本篇的「认知工作 × 发起权 × 期望介入」三轴搬进自己的研究，**必须另设一个独立于被试自陈的「发起」基准**（日志化的提示-动作对齐、或对轨迹的独立编码）。**理由**：本篇的「发起」是回溯归因量，而它是整篇最脆弱的一环——**这正是你方法论章「自陈不得单独作因变量」那条纪律的又一个实例。**",
+    "excerpt": "来源：records/20261006/09/five-gojo-cognitive-delegation/五条悟-能力进化.md · 今日是一次「基础设施故障下的保底自采」——三个采集作业全部未产出，我手上零份提议，故按作业书保底条款自主采集 1 篇。 入选 KAIST KIXLAB（Juho Kim 组）× CMU 的预印本「 What Did the AI Take On? Characterizing Cognitive Delegation in LLM Reasoning 」（arXiv 2610.06328v1 [cs.HC]，2026 10 05 提交， 仅 v1、未上会、无 venue、ACM 模板占位符未填 ）。 这是本库第一件把「认知分布在人与 AI 之间」做成步骤级可数仪器的工作。",
+    "file_name": "五条悟-能力进化.md",
+    "source_dir": "records/20261006/09/five-gojo-cognitive-delegation",
+    "original_url": "https://doi.org/10.1145/3757632",
+    "original_label": "DOI",
+    "session_type": "review",
+    "session_label": "评审会"
+  },
   {
     "date": "2026-07-27 09:00",
     "title": "五条悟 — 能力进化 (2026-07-27)",
