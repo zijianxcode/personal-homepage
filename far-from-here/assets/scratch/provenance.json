@@ -1,0 +1,32 @@
+{
+  "created": "2026-10-07",
+  "source": "Local procedural synthesis. Not sampled from user music or external effect recordings.",
+  "generator": "scripts/prepare_dj.py, deterministic NumPy seed 20261007",
+  "previewRenderer": "scripts/render-scratch-previews.js uses the production ScratchVoice class",
+  "files": [
+    {
+      "file": "bed-1.wav",
+      "sha256": "10271361f48ac08d6b3d67875523d0eb97e630e6ae5c6e37c6a4eac2f63d28da"
+    },
+    {
+      "file": "bed-2.wav",
+      "sha256": "e8049518d6322b21656d8505dced6e8e33878de8133c9336007984aab082bb24"
+    },
+    {
+      "file": "bed-3.wav",
+      "sha256": "bdebe06b7c9b0010d6b660413b0a523b9a019b5ddeabee273082fa9b19b0353c"
+    },
+    {
+      "file": "demo-1.wav",
+      "sha256": "be670ab2882bb3f5fbda2fc3cb788d9d99b52782fa9b5b0a7a20489e15725c4c"
+    },
+    {
+      "file": "demo-2.wav",
+      "sha256": "df05f5c80f4144d722053ed784c46116889c0e69501208d3aaaa74a3e521a9ea"
+    },
+    {
+      "file": "demo-3.wav",
+      "sha256": "18cfabddbe53398186eda9ff6c5c5a69f9635b86fcd83260c90db4ee543502b9"
+    }
+  ]
+}

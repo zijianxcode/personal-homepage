@@ -1,0 +1,101 @@
+{
+  "source": "https://farfromhere.emmitfenn.com/",
+  "retrieved": "2026-10-05",
+  "purpose": "Local study of the homepage 3D to 2D correspondence; rights remain with their respective creators.",
+  "assets": [
+    {
+      "path": "basis_transcoder.wasm",
+      "bytes": 447033,
+      "sha256": "3917fefc3fa2aa48c490b7c293b0274e5f79222edf9942e96deacce00bd4ca4b",
+      "source_url": "https://farfromhere.emmitfenn.com/assets/js/libs/basis_transcoder.wasm"
+    },
+    {
+      "path": "8K.basis",
+      "bytes": 3743420,
+      "sha256": "6f3fff0e753d02988f3204a2e4e82aceb78385e71d986703792bb9019b7a7bf0",
+      "source_url": "https://farfromhere.emmitfenn.com/assets/textures/8K.basis"
+    },
+    {
+      "path": "basis_transcoder.js",
+      "bytes": 62432,
+      "sha256": "7f7becc3148e0f487036f19ee2ac597f19248bbd51cf037f2b7919cf23a63731",
+      "source_url": "https://farfromhere.emmitfenn.com/assets/js/libs/basis_transcoder.js"
+    },
+    {
+      "path": "model.gltf",
+      "bytes": 1031125,
+      "sha256": "a2c31dff08952a09fe8346b1fcd20416acea78f0b536f42cdba52366b69c03c1",
+      "source_url": "https://farfromhere.emmitfenn.com/assets/models/12/model.gltf"
+    },
+    {
+      "path": "icons/until-we-leave-the-ground.svg",
+      "bytes": 847,
+      "sha256": "5500ea7610d9e5eaa3aaabe493f5dc6b51ba35d3b58857bce6b0026d907ffedd",
+      "source_url": "https://farfromhere.emmitfenn.com/assets/svg/sprite.svg#until-we-leave-the-ground",
+      "derivation": "Extracted corresponding symbol into a standalone SVG for the local study."
+    },
+    {
+      "path": "icons/light-that-shines-through.svg",
+      "bytes": 1100,
+      "sha256": "f61f6ec87741a02d852aa1ef2193a12a8849cd66064df59a1b2f097c866b4da4",
+      "source_url": "https://farfromhere.emmitfenn.com/assets/svg/sprite.svg#light-that-shines-through",
+      "derivation": "Extracted corresponding symbol into a standalone SVG for the local study."
+    },
+    {
+      "path": "icons/colors.svg",
+      "bytes": 4081,
+      "sha256": "e761559e0a49c86c483090d6684dcc77f7bc440309f38e0063230b2ef4cf8723",
+      "source_url": "https://farfromhere.emmitfenn.com/assets/svg/sprite.svg#colors",
+      "derivation": "Extracted corresponding symbol into a standalone SVG for the local study."
+    },
+    {
+      "path": "icons/moving-on.svg",
+      "bytes": 1585,
+      "sha256": "5bbd6de15da187d195e3ded0c15d0b54a6301f1cd71acaf64dd82a22c7f5fbe0",
+      "source_url": "https://farfromhere.emmitfenn.com/assets/svg/sprite.svg#moving-on",
+      "derivation": "Extracted corresponding symbol into a standalone SVG for the local study."
+    },
+    {
+      "path": "icons/we-could-have-it-all.svg",
+      "bytes": 23017,
+      "sha256": "9654fb025938ff990e543314b3a4820c4e884203fd2368f86298c82f097f99e1",
+      "source_url": "https://farfromhere.emmitfenn.com/assets/svg/sprite.svg#we-could-have-it-all",
+      "derivation": "Extracted corresponding symbol into a standalone SVG for the local study."
+    },
+    {
+      "path": "icons/closer-to-you.svg",
+      "bytes": 2605,
+      "sha256": "9008d01a0cd010131e9c4afd661c0d303fbe8b021f34cd566d50beb6055b5148",
+      "source_url": "https://farfromhere.emmitfenn.com/assets/svg/sprite.svg#closer-to-you",
+      "derivation": "Extracted corresponding symbol into a standalone SVG for the local study."
+    },
+    {
+      "path": "icons/far-from-here.svg",
+      "bytes": 1140,
+      "sha256": "bc427a866774b4092dcece60ba4ed263b20253b23519004cb69aeb1e694e8e66",
+      "source_url": "https://farfromhere.emmitfenn.com/assets/svg/sprite.svg#far-from-here",
+      "derivation": "Extracted corresponding symbol into a standalone SVG for the local study."
+    },
+    {
+      "path": "icons/the-table.svg",
+      "bytes": 392,
+      "sha256": "3f1c0167f4a148b7a2e75d8005e5faae4beeef6c5cc9a0ae41c22c19b81b99cc",
+      "source_url": "https://farfromhere.emmitfenn.com/assets/svg/sprite.svg#the-table",
+      "derivation": "Extracted corresponding symbol into a standalone SVG for the local study."
+    },
+    {
+      "path": "icons/where-i-went-wrong.svg",
+      "bytes": 6267,
+      "sha256": "7e57f0374c7346ed23b0604d6a953d04c4b2967d69d322440a82b687bf2b310f",
+      "source_url": "https://farfromhere.emmitfenn.com/assets/svg/sprite.svg#where-i-went-wrong",
+      "derivation": "Extracted corresponding symbol into a standalone SVG for the local study."
+    },
+    {
+      "path": "icons/edge-of-the-dark.svg",
+      "bytes": 899,
+      "sha256": "8cd014e6eb3f0abd8d45fd0151ef5734290decc6804e5cb7589da71e11e6ae03",
+      "source_url": "https://farfromhere.emmitfenn.com/assets/svg/sprite.svg#edge-of-the-dark",
+      "derivation": "Extracted corresponding symbol into a standalone SVG for the local study."
+    }
+  ]
+}

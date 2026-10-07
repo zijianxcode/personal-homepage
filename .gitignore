@@ -14,3 +14,6 @@ projects/effecter/models/**/onnx/*.onnx
 # Generated resumable AI download parts
 projects/effecter/models/**/onnx/*.onnx.parts/
 projects/effecter/runtime/*.wasm.parts/
+
+# Locally prepared music clips for the user-authorized hosted demonstration.
+far-from-here/assets/audio/

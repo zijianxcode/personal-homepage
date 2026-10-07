@@ -13,6 +13,7 @@
 | `/projects/` | 实验作品 | 按项目页验收 |
 | `/projects/effecter/` | 图片特效工具（Visual Coding #04） | Plexus Effecter |
 | `/vibe-fiber/` | 织字与图案工具（Visual Coding #05） | Vibe Fiber — 织字实验 |
+| `/far-from-here/` | Far From Here 学习演示（Visual Coding #06） | Far From Here — 3D / 2D Music Study |
 | `/emergency/` | 应急说明（运维页，非内容站） | `应急访问` |
 
 ## 仓库目录映射

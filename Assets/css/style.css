@@ -1841,6 +1841,10 @@ textarea:focus-visible {
     transform: scale(1.04);
 }
 
+.vc-card-media--far-from-here { background: #222; }
+.vc-card-media--far-from-here img { object-fit: contain; }
+.vc-card:hover .vc-card-media--far-from-here img { transform: none; }
+
 .vc-card-media--effecter {
     background: #000;
 }

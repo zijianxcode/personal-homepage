@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f4f4f4" />
+    <title>Far From Here — 3D / 2D Music Study</title>
+    <meta name="description" content="三维雕塑与二维图形的对应研究，结合独立音乐循环、DJ 打击垫与随机搓碟。图形参考 Emmit Fenn。" />
+    <meta property="og:title" content="Far From Here — 3D / 2D Music Study" />
+    <meta property="og:image" content="https://bananabox.plus/Assets/img/far-from-here-cover.png" />
+    <link rel="icon" type="image/svg+xml" href="/far-from-here/assets/icons/far-from-here.svg" />
+    <script type="module" crossorigin src="/far-from-here/assets/index-BRKlQB28.js"></script>
+    <link rel="modulepreload" crossorigin href="/far-from-here/assets/three-SRnqDszj.js">
+    <link rel="stylesheet" crossorigin href="/far-from-here/assets/index-BV2Tg8t1.css">
+  </head>
+  <body>
+    <div id="app">
+      <a class="visual-coding-back" href="/visual-coding.html" aria-label="返回 Visual Coding 作品列表" hidden>← VISUAL CODING</a>
+      <header class="header">
+        <div class="scene-actions">
+        <button id="home" class="home" aria-label="返回完整 3D" disabled hidden>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6" stroke="currentColor" stroke-width="1.2" /></svg>
+          <span>完整 3D</span>
+        </button>
+        <button id="assembly" class="assembly" aria-label="展开 3D 部件" aria-expanded="false" disabled>
+          <span id="assembly-symbol" aria-hidden="true">+</span><span id="assembly-label">展开</span>
+        </button>
+        </div>
+        <h1>FAR FROM HERE<span>3D / 2D · MUSIC STUDY</span></h1>
+        <div id="mode" class="mode" role="group" aria-label="展示方式" hidden>
+          <button id="solid" aria-pressed="false">立体</button>
+          <button id="flat" aria-pressed="true">平面</button>
+        </div>
+      </header>
+
+      <main id="stage" class="stage" aria-label="图形展示区"></main>
+
+      <div id="loading" class="loading" role="status" aria-live="polite">
+        <img src="/far-from-here/assets/icons/far-from-here.svg" width="54" height="54" alt="" />
+        <span id="loading-text">正在准备图形 · 0%</span>
+        <progress id="progress" max="1" value="0" aria-label="资源加载进度"></progress>
+        <button id="retry" hidden>重新加载</button>
+      </div>
+
+      <div class="caption" aria-live="polite">
+        <span id="artwork-number" class="artwork-number"></span>
+        <span id="artwork-title"></span>
+        <span id="hint" class="hint">拖动旋转 · 滚轮缩放</span>
+      </div>
+
+      <section class="audio-panel" aria-label="模块音乐播放器">
+        <div class="audio-heading">
+          <span id="audio-status" role="status">95 BPM · 点击模块，开始演奏</span>
+          <span class="audio-credit">Nujabes feat. Shing02</span>
+        </div>
+        <div class="audio-controls">
+          <button id="ensemble" class="ensemble" disabled><span aria-hidden="true">▶</span> 基础合奏</button>
+          <button id="transport" disabled>暂停</button>
+          <div class="listening-mode" role="group" aria-label="交互方式">
+            <button id="listen-mix" aria-pressed="true" disabled>打击垫</button>
+            <button id="listen-solo" aria-pressed="false" disabled>看图</button>
+          </div>
+          <button id="mix-clear" disabled>全部停止</button>
+          <span id="audio-time" class="audio-time">0:00</span>
+        </div>
+        <div class="clock-row"><div id="beat-clock" aria-hidden="true"><i></i><i></i><i></i><i></i></div><span id="bar-count">第 1 小节</span></div>
+        <p id="audio-error" class="audio-error" role="alert" hidden></p>
+      </section>
+
+      <footer class="footer">
+        <nav id="artworks" class="artworks" aria-label="选择对应的平面图形"></nav>
+        <div class="footer-note">
+          <span>图形参考：Emmit Fenn</span>
+          <span class="music-source">音乐采样：Luv(sic) Part 3 — Nujabes feat. Shing02</span>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

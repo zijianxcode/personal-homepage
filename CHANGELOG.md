@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-10-07 · Far From Here 学习演示
+
+- Visual Coding 新增第 06 项并放在首位，使用用户指定原 PNG，contain 完整显示，保留中英切换。
+- 正式入口 `/far-from-here/`：3D / 2D 对应、合拢展开、DJ 打击垫、九个循环片段和三种随机模拟搓碟；右上常驻返回作品列表。
+- 发布包原生支持子路径，只部署必需九个音乐片段，原 MP3 与研究处理文件不部署；音乐生成资产不进入 GitHub。
+- 五种屏幕宽度、线上模型 / 声音 / 搓碟 / 返回实测通过，主站与 academy 验收及健康检查通过。桌面 Lighthouse 性能 99，模拟移动网络 42，慢网首载优化仍待处理。
+- 源码与完整发布证据：`/Users/zijian/Documents/ChatGPT/Vibe coding/far-from-here-study/docs/部署说明.md`。
+
+
 ## v1.6.1 — 2026-05-30
 
 **主题：站点结构保护与发布验收加固**

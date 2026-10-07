@@ -97,6 +97,7 @@ Root safety rule:
 │   └── effecter/                ← 图片特效工具；Visual Coding GIF 封面与体验入口
 ├── card-freeze/                ← Visual Coding #03 静态产物（源码见 zijianxcode/card-freeze）
 ├── vibe-fiber/                 ← Visual Coding #05 完整织字与图案 Demo
+├── far-from-here/             ← Visual Coding #06，3D / 2D 与 DJ 音乐学习演示
 ├── Assets/
 │   ├── css/style.css           ← 全局样式 + CSS 变量
 │   ├── js/
@@ -138,3 +139,5 @@ Root safety rule:
 - CSS 类: 描述性命名，连字符分隔（如 `work-item--vc`）
 - JS: `camelCase` 变量，`PascalCase` 类
 - CSS 变量: `--` 前缀语义化命名（如 `--text-muted`, `--border`）
+
+Far From Here 的源码、素材出处与部署记录见 `/Users/zijian/Documents/ChatGPT/Vibe coding/far-from-here-study/docs/部署说明.md`。封面为用户指定 PNG，正式入口 `/far-from-here/`。音乐片段为本机生成的部署素材，不进入 Git。
