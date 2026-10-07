@@ -10,12 +10,18 @@
     "health:production": "node scripts/health-check.js",
     "health:production:sync": "node scripts/health-check.js; npm run deploy:emergency-status",
     "backup:enable-github-pages": "bash scripts/enable-github-pages-backup.sh",
-    "build": "npm run test:things-access && npm run test:site-integrity && mkdir -p dist && cp *.html dist/ && (test -f CNAME && cp CNAME dist/ || true) && (test -f .nojekyll && cp .nojekyll dist/ || true) && cp -r Assets projects documents academy time-ink card-freeze vibe-fiber far-from-here grid-poster dist/",
+    "build": "npm run test:things-access && npm run test:site-integrity && rm -rf dist && mkdir -p dist && cp *.html dist/ && (test -f CNAME && cp CNAME dist/ || true) && (test -f .nojekyll && cp .nojekyll dist/ || true) && cp -r Assets projects documents academy time-ink card-freeze vibe-fiber far-from-here grid-poster dist/",
     "verify:production": "node scripts/verify-production.js",
     "test:site-integrity": "node check-site-integrity.js",
-    "test:things-access": "node check-things-access.js"
+    "test:things-access": "node check-things-access.js",
+    "postbuild:cloudbase": "node scripts/protect-visual-coding.js .cloudbase-deploy",
+    "postbuild": "node scripts/protect-visual-coding.js dist",
+    "test:vc-protection": "node --test tests/visual-coding/protection.test.js"
   },
   "devDependencies": {
-    "@cloudbase/cli": "^2.12.2"
+    "@cloudbase/cli": "^2.12.2",
+    "javascript-obfuscator": "4.1.1",
+    "parse5": "7.3.0",
+    "terser": "5.44.0"
   }
 }

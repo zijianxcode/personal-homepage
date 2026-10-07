@@ -36,3 +36,17 @@ if (!/<title>\s*研究所\s*<\/title>/i.test(academy)) {
 }
 
 console.log('Deploy bundle structure OK: / → aspera ad astra, /academy/ → 研究所');
+
+const { projectPages } = require('./protect-visual-coding');
+const protection = JSON.parse(read('vc-protection.json'));
+for (const page of ['visual-coding.html', ...projectPages]) {
+  if (!read(page).includes(`data-vc-protection="${protection.version}"`)) {
+    fail(`Missing Visual Coding protection: ${page}`);
+  }
+}
+for (const script of protection.scripts) {
+  const hash = require('node:crypto').createHash('sha256').update(read(script)).digest('hex');
+  if (hash !== protection.scriptHashes[script]) fail(`Changed protected script: ${script}`);
+  if (fs.existsSync(path.join(bundleRoot, script + '.map'))) fail(`Public source map: ${script}`);
+}
+console.log(`Visual Coding protection OK: ${protection.pages.length} pages, ${protection.scripts.length} scripts`);

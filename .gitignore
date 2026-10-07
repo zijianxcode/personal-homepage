@@ -17,3 +17,7 @@ projects/effecter/runtime/*.wasm.parts/
 
 # Locally prepared music clips for the user-authorized hosted demonstration.
 far-from-here/assets/audio/
+
+# Browser verification artifacts
+.playwright-cli/
+output/playwright/

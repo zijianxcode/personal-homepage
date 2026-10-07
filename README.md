@@ -77,6 +77,13 @@ Root safety rule:
 
 ## Security Notes
 
+- Visual Coding production builds automatically bind the six projects and their
+  showcase page to the official domains. Vibe Fiber and the two clock scripts are
+  minified/obfuscated; existing application bundles retain their original code
+  after an obfuscated domain guard. This deters direct site copying and is not
+  authentication or HTTP download prevention. Source remains unchanged.
+  See [website copy protection](docs/engineering/visual-coding-copy-protection.md).
+
 - Do not place access codes, protected links, admin entry keys, or API secrets in tracked frontend files.
 - Public pages must not rely on client-side equality checks for access control.
 - Third-party script execution is prohibited by default; use local vendored assets or server-owned endpoints first.
