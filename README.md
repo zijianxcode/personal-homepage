@@ -141,3 +141,5 @@ Root safety rule:
 - CSS 变量: `--` 前缀语义化命名（如 `--text-muted`, `--border`）
 
 Far From Here 的源码、素材出处与部署记录见 `/Users/zijian/Documents/ChatGPT/Vibe coding/far-from-here-study/docs/部署说明.md`。封面为用户指定 PNG，正式入口 `/far-from-here/`。音乐片段为本机生成的部署素材，不进入 Git。
+
+Grid Poster 为网格海报编辑工具，正式入口 `/grid-poster/`。封面使用用户指定 PNG，作品按新增顺序位于 Visual Coding 列表首位。源码与发布记录见 `/Users/zijian/Documents/kimi/tasks/2026-10-03/22-46-18-1eb2d1a3/grid-poster/部署说明.md`。
