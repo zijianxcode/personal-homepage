@@ -1,0 +1,55 @@
+<!doctype html><meta charset="utf-8"><title>Vibe Fiber performance audit</title>
+<style>body{font:14px system-ui}canvas{width:900px;height:680px;position:fixed;left:-10000px;top:0}pre{white-space:pre-wrap}</style>
+<button id="run">Run comparison</button><pre id="results">Ready</pre>
+<canvas id="before"></canvas><canvas id="after"></canvas>
+<script src="../../vibe-fiber/surface-presets.js"></script><script src="../../vibe-fiber/motifs.js"></script><script src="../../vibe-fiber/weave-process.js"></script><script src="../../vibe-fiber/renderer.js"></script><script src="renderer-before.js"></script>
+<script>
+const summary=values=>{const sorted=[...values].sort((a,b)=>a-b);return {medianMs:sorted[Math.floor(sorted.length/2)],p95Ms:sorted[Math.min(sorted.length-1,Math.floor(sorted.length*.95))]};};
+const hash=canvas=>{const pixels=canvas.getContext('2d').getImageData(0,0,canvas.width,canvas.height).data;let h=2166136261;for(const value of pixels)h=Math.imul(h^value,16777619)>>>0;return h;};
+const geometry=r=>JSON.stringify([...r.cells].map(([id,c])=>[id,c.sourceIndex,c.x,c.y,c.band,c.color]));
+const wait=()=>new Promise(resolve=>requestAnimationFrame(resolve));
+const renderers=[new BaselineKnitRenderer(document.querySelector('#before'),()=>{}),new KnitRenderer(document.querySelector('#after'),()=>{})];
+for(const r of renderers){r.resizeObserver.disconnect();cancelAnimationFrame(r.raf);r.raf=0;r.wake=()=>{};r.reduced=true;r.buildBase();r.update({text:'warm up'});r.rebuildSettled(performance.now()+2000);}
+const scenarios=[
+ {name:'short text',text:'Vibe\nFiber',size:160,pitch:10},
+ {name:'short text on wide canvas',text:'Vibe Fiber',size:160,pitch:10,width:4096},
+ {name:'long text',text:'KNIT WEAVE '.repeat(70),size:160,pitch:7},
+ {name:'Chinese and blank lines',text:'\n\n织出自己的图案\n针织和机织\n\n',size:220,pitch:10},
+ {name:'accents and ligatures',text:'Ág fi ffi ﬃ\nấǺj عربي\nçp \u0301',size:240,pitch:7},
+ {name:'motifs and emoji',text:'♥🌲◆✳\n✿▣◇╳ 👩🏽‍💻',size:220,pitch:10},
+ {name:'whitespace only',text:'\n   \n',size:160,pitch:10},
+ {name:'edge-clipped tall text',text:('Ág\n').repeat(40),size:320,pitch:7}
+];
+async function run(){document.querySelector('#run').disabled=true;const results={scope:'Canvas JS timings in the actual in-app browser; not mobile-device or GPU timings',scenarios:[],pixels:[],dense:[],checks:[]};try{
+ for(const test of scenarios){const row={name:test.name};let expected=null;
+  for(let version=0;version<2;version++){const r=renderers[version],width=test.width||1482;if(r.width!==width){r.width=width;for(const layer of [r.base,r.mask,r.settled]){layer.width=width;layer.height=r.height;}r.geometryKey=null;r.buildBase();}
+   r.update({text:test.text,size:test.size,pitch:test.pitch,inputMode:'text',surface:'knit'});r.rebuildSettled(performance.now()+2000);
+   const pixels=hash(r.settled),cells=geometry(r);if(!version)expected={pixels,cells};else if(pixels!==expected.pixels||cells!==expected.cells)throw Error('Pixel/geometry mismatch: '+test.name);
+   const g=r.mask.getContext('2d'),original=g.getImageData;let bytes=0,fontCalls=0;const originalMeasure=g.measureText;g.measureText=function(...args){fontCalls++;return originalMeasure.apply(this,args);};g.getImageData=function(x,y,w,h,...rest){bytes+=w*h*4;return original.call(this,x,y,w,h,...rest);};const samples=[];
+   for(let warm=0;warm<4;warm++){r.geometryKey=null;r.layout();}bytes=0;fontCalls=0;
+   for(let i=0;i<12;i++){r.geometryKey=null;const start=performance.now();r.layout();samples.push(performance.now()-start);}
+   g.getImageData=original;g.measureText=originalMeasure;row[version?'after':'before']={...summary(samples),readbackBytes:bytes/12,fontCalls:fontCalls/12,stitches:r.cells.size}; await wait();
+  }results.scenarios.push(row);results.checks.push({name:test.name+' pixels and geometry',pass:true});
+ }
+ for(const surface of Object.keys(SurfacePresets.definitions)){
+  const hashes=[];for(const r of renderers){r.update({inputMode:'text',text:'Vibe\nFiber ♥🌲',size:220,pitch:10,surface,inlay:75,palette:'confetti'});r.rebuildSettled(performance.now()+2000);hashes.push(hash(r.settled));}
+  if(hashes[0]!==hashes[1])throw Error('Surface mismatch: '+surface);results.pixels.push({surface,equal:true});
+ }
+ for(const surface of ['knit','plain']){const row={surface};for(let version=0;version<2;version++){const r=renderers[version];r.update({inputMode:'pattern',surface,pitch:7,patternScale:90,inlay:75});const mask=new Uint8Array(512*512);mask.fill(1);r.setPattern({width:512,height:512,mask,count:mask.length,bounds:{minX:0,minY:0,maxX:511,maxY:511}});const times=[];for(let i=0;i<12;i++){const start=performance.now();r.rebuildSettled(performance.now()+2000);times.push(performance.now()-start);}row[version?'after':'before']={...summary(times),stitches:r.cells.size,hash:hash(r.settled)};await wait();}if(row.before.hash!==row.after.hash)throw Error('Dense mismatch');results.dense.push(row);}
+ const r=renderers[1];
+ for(const surface of ['knit','plain'])for(const inlay of [0,25,100]){
+  const hashes=[];for(const renderer of renderers){renderer.update({inputMode:'text',text:'针织 ♥🌲 ffi',surface,inlay,pitch:10});renderer.rebuildSettled(performance.now()+2000);hashes.push(hash(renderer.settled));}
+  if(hashes[0]!==hashes[1])throw Error('Inlay mismatch');results.checks.push({name:surface+' inlay '+inlay,pass:true});
+ }
+ for(const surface of ['knit','plain']){
+  r.update({inputMode:'text',text:'Vibe Fiber ♥🌲',surface,inlay:75,pitch:10});r.rebuildSettled(performance.now()+2000);const expected=hash(r.settled);
+  r.reduced=false;r.process.start();r.process.tick(100);r.process.tick(180);r.process.pause();const paused=r.process.index;r.process.tick(5000);if(r.process.index!==paused)throw Error('Pause advanced');r.process.resume();r.process.tick(5100);r.process.finish();
+  if(hash(r.settled)!==expected)throw Error('Playback finish mismatch');results.checks.push({name:surface+' pause/replay canonical pixels',pass:true});r.reduced=true;
+ }
+ r.update({inputMode:'pattern',surface:'knit',pitch:7,patternScale:90});r.rebuildSettled(performance.now()+2000);const expected=hash(r.settled);r.settledDirty=true;r.settledReset=true;let frames=0;while(r.paintLarge()){if(++frames>10000)throw Error('Batch never completed');}
+ if(hash(r.settled)!==expected)throw Error('Staged rendering mismatch');results.checks.push({name:'dense staged rendering canonical pixels',pass:true});
+ r.reduced=false;r.update({inputMode:'text',text:'Short',pitch:10},{replay:true});r.rebuildSettled(performance.now()+5000);r.frame(performance.now()+5000);const idle=r.metrics.frames;await wait();await wait();if(r.metrics.frames!==idle)throw Error('Idle frame loop continued');results.checks.push({name:'idle renderer stops scheduling frames',pass:true});
+ results.pass=true;
+ }catch(error){results.pass=false;results.error=error.stack;}document.querySelector('#results').textContent=JSON.stringify(results,null,2);document.querySelector('#run').disabled=false;}
+document.querySelector('#run').addEventListener('click',run);
+</script>

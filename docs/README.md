@@ -8,6 +8,7 @@
 | [DEPLOYMENT-STABLE.md](./DEPLOYMENT-STABLE.md) | **唯一**生产发布 runbook |
 | [SITE-STRUCTURE.md](./SITE-STRUCTURE.md) | URL 结构不变量 |
 | [EMERGENCY-ACCESS.md](./EMERGENCY-ACCESS.md) | 应急备用入口 |
+| [engineering/vibe-fiber-performance.md](./engineering/vibe-fiber-performance.md) | Vibe Fiber 性能审查、前后测量及复现 |
 | [engineering/release-governance-case-study.md](./engineering/release-governance-case-study.md) | v1.6 工程案例 |
 | [../CHANGELOG.md](../CHANGELOG.md) | 版本变更 |
 | [archive/](./archive/) | 历史记录归档 |

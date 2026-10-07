@@ -1,0 +1,286 @@
+{
+  "scope": "Canvas JS timings in the actual in-app browser; not mobile-device or GPU timings",
+  "scenarios": [
+    {
+      "name": "short text",
+      "before": {
+        "medianMs": 2.399999998509884,
+        "p95Ms": 2.5,
+        "readbackBytes": 6639360,
+        "fontCalls": 38,
+        "stitches": 545
+      },
+      "after": {
+        "medianMs": 0.5,
+        "p95Ms": 0.6000000014901161,
+        "readbackBytes": 496824,
+        "fontCalls": 17,
+        "stitches": 545
+      }
+    },
+    {
+      "name": "short text on wide canvas",
+      "before": {
+        "medianMs": 6.199999999254942,
+        "p95Ms": 7.5,
+        "readbackBytes": 18350080,
+        "fontCalls": 41,
+        "stitches": 599
+      },
+      "after": {
+        "medianMs": 0.7999999970197678,
+        "p95Ms": 2.5,
+        "readbackBytes": 371228,
+        "fontCalls": 18,
+        "stitches": 599
+      }
+    },
+    {
+      "name": "long text",
+      "before": {
+        "medianMs": 15.699999999254942,
+        "p95Ms": 21.399999998509884,
+        "readbackBytes": 6639360,
+        "fontCalls": 24641,
+        "stitches": 11091
+      },
+      "after": {
+        "medianMs": 9.899999998509884,
+        "p95Ms": 13.300000000745058,
+        "readbackBytes": 5252400,
+        "fontCalls": 4503,
+        "stitches": 11091
+      }
+    },
+    {
+      "name": "Chinese and blank lines",
+      "before": {
+        "medianMs": 2.800000000745058,
+        "p95Ms": 3,
+        "readbackBytes": 6639360,
+        "fontCalls": 288,
+        "stitches": 1181
+      },
+      "after": {
+        "medianMs": 0.9000000022351742,
+        "p95Ms": 1,
+        "readbackBytes": 1028840,
+        "fontCalls": 259,
+        "stitches": 1181
+      }
+    },
+    {
+      "name": "accents and ligatures",
+      "before": {
+        "medianMs": 3.300000000745058,
+        "p95Ms": 6.800000000745058,
+        "readbackBytes": 6639360,
+        "fontCalls": 95,
+        "stitches": 4678
+      },
+      "after": {
+        "medianMs": 2.600000001490116,
+        "p95Ms": 3.300000000745058,
+        "readbackBytes": 3888716,
+        "fontCalls": 42,
+        "stitches": 4678
+      }
+    },
+    {
+      "name": "motifs and emoji",
+      "before": {
+        "medianMs": 2.800000000745058,
+        "p95Ms": 3,
+        "readbackBytes": 6639360,
+        "fontCalls": 54,
+        "stitches": 1698
+      },
+      "after": {
+        "medianMs": 1.3999999985098839,
+        "p95Ms": 1.6000000014901161,
+        "readbackBytes": 2238180,
+        "fontCalls": 29,
+        "stitches": 1698
+      }
+    },
+    {
+      "name": "whitespace only",
+      "before": {
+        "medianMs": 2.199999999254942,
+        "p95Ms": 2.800000000745058,
+        "readbackBytes": 6639360,
+        "fontCalls": 17,
+        "stitches": 0
+      },
+      "after": {
+        "medianMs": 0,
+        "p95Ms": 0.10000000149011612,
+        "readbackBytes": 0,
+        "fontCalls": 8,
+        "stitches": 0
+      }
+    },
+    {
+      "name": "edge-clipped tall text",
+      "before": {
+        "medianMs": 3.5,
+        "p95Ms": 3.800000000745058,
+        "readbackBytes": 6639360,
+        "fontCalls": 3242,
+        "stitches": 488
+      },
+      "after": {
+        "medianMs": 0.8000000007450581,
+        "p95Ms": 0.9000000022351742,
+        "readbackBytes": 197120,
+        "fontCalls": 118,
+        "stitches": 488
+      }
+    }
+  ],
+  "pixels": [
+    {
+      "surface": "knit",
+      "equal": true
+    },
+    {
+      "surface": "rib",
+      "equal": true
+    },
+    {
+      "surface": "cable",
+      "equal": true
+    },
+    {
+      "surface": "crochet",
+      "equal": true
+    },
+    {
+      "surface": "plain",
+      "equal": true
+    },
+    {
+      "surface": "twill",
+      "equal": true
+    },
+    {
+      "surface": "satin",
+      "equal": true
+    },
+    {
+      "surface": "basket",
+      "equal": true
+    },
+    {
+      "surface": "cross",
+      "equal": true
+    }
+  ],
+  "dense": [
+    {
+      "surface": "knit",
+      "before": {
+        "medianMs": 34.69999999925494,
+        "p95Ms": 70.89999999850988,
+        "stitches": 29145,
+        "hash": 2659772078
+      },
+      "after": {
+        "medianMs": 30.799999997019768,
+        "p95Ms": 56.100000001490116,
+        "stitches": 29145,
+        "hash": 2659772078
+      }
+    },
+    {
+      "surface": "plain",
+      "before": {
+        "medianMs": 31.199999999254942,
+        "p95Ms": 71.30000000074506,
+        "stitches": 29145,
+        "hash": 4191108416
+      },
+      "after": {
+        "medianMs": 30.300000000745058,
+        "p95Ms": 68.89999999850988,
+        "stitches": 29145,
+        "hash": 4191108416
+      }
+    }
+  ],
+  "checks": [
+    {
+      "name": "short text pixels and geometry",
+      "pass": true
+    },
+    {
+      "name": "short text on wide canvas pixels and geometry",
+      "pass": true
+    },
+    {
+      "name": "long text pixels and geometry",
+      "pass": true
+    },
+    {
+      "name": "Chinese and blank lines pixels and geometry",
+      "pass": true
+    },
+    {
+      "name": "accents and ligatures pixels and geometry",
+      "pass": true
+    },
+    {
+      "name": "motifs and emoji pixels and geometry",
+      "pass": true
+    },
+    {
+      "name": "whitespace only pixels and geometry",
+      "pass": true
+    },
+    {
+      "name": "edge-clipped tall text pixels and geometry",
+      "pass": true
+    },
+    {
+      "name": "knit inlay 0",
+      "pass": true
+    },
+    {
+      "name": "knit inlay 25",
+      "pass": true
+    },
+    {
+      "name": "knit inlay 100",
+      "pass": true
+    },
+    {
+      "name": "plain inlay 0",
+      "pass": true
+    },
+    {
+      "name": "plain inlay 25",
+      "pass": true
+    },
+    {
+      "name": "plain inlay 100",
+      "pass": true
+    },
+    {
+      "name": "knit pause/replay canonical pixels",
+      "pass": true
+    },
+    {
+      "name": "plain pause/replay canonical pixels",
+      "pass": true
+    },
+    {
+      "name": "dense staged rendering canonical pixels",
+      "pass": true
+    },
+    {
+      "name": "idle renderer stops scheduling frames",
+      "pass": true
+    }
+  ],
+  "pass": true
+}

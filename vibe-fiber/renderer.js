@@ -120,13 +120,22 @@ class KnitRenderer {
     }
   }
   drawInlayStitch(g,cell,scale=1){
-    if(cell.image)this.drawSprite(g,cell.image,cell.x,cell.y,scale);else this.drawStitch(g,cell.x,cell.y,cell.color,cell.variant,scale,0,this.settings.surface,true);
-    // At a knit boundary, the existing loop above tucks over the new shoulders.
-    if(this.construction()!=='knit'||this.settings.surface==='cross'||scale<1||this.settings.inlay===0)return;
-    if(this.cells.has(cell.id-1000))return;
-    const p=this.settings.pitch,dy=p*.72,d=SurfacePresets.definitions[this.settings.surface],row=((cell.row-1)%d.rows+d.rows)%d.rows,col=(cell.col%d.columns+d.columns)%d.columns;
+    if(cell.image){
+      this.drawSprite(g,cell.image,cell.x,cell.y,scale);
+      // prepareCells already resolves which boundary loops need a covering stitch.
+      if(!cell.overImage||scale<1)return;
+    }else{
+      this.drawStitch(g,cell.x,cell.y,cell.color,cell.variant,scale,0,this.settings.surface,true);
+      if(this.construction()!=='knit'||this.settings.surface==='cross'||scale<1||this.settings.inlay===0||this.cells.has(cell.id-1000))return;
+    }
+    const p=this.settings.pitch,dy=p*.72;
     g.save();g.beginPath();g.rect(cell.x-p*.7,cell.y-dy*.70,p*1.4,dy*.27);g.clip();g.globalAlpha=this.settings.inlay/100;
-    if(cell.overImage)this.drawSprite(g,cell.overImage,cell.x,cell.y-dy);else this.drawStitch(g,cell.x,cell.y-dy,KnitRenderer.fabrics[this.settings.fabric],Math.floor(this.hash(row*171+col*13)*3));g.restore();
+    if(cell.overImage)this.drawSprite(g,cell.overImage,cell.x,cell.y-dy);
+    else{
+      const d=SurfacePresets.definitions[this.settings.surface],row=((cell.row-1)%d.rows+d.rows)%d.rows,col=(cell.col%d.columns+d.columns)%d.columns;
+      this.drawStitch(g,cell.x,cell.y-dy,KnitRenderer.fabrics[this.settings.fabric],Math.floor(this.hash(row*171+col*13)*3));
+    }
+    g.restore();
   }
   drawSurfacePreview(canvas){
     const g=canvas.getContext('2d'),p=this.settings.pitch,dy=p*.72,base=KnitRenderer.fabrics[this.settings.fabric];
@@ -202,46 +211,69 @@ class KnitRenderer {
     const g=this.mask.getContext('2d',{willReadFrequently:true}),{text,size,pitch,align}=this.settings;
     g.clearRect(0,0,this.width,this.height);
     let typeSize=size,lines=[];
+    const widths=new Map(),measureWidth=text=>{if(!widths.has(text))widths.set(text,g.measureText(text).width);return widths.get(text);};
     const makeFont=value=>`900 ${value}px "Helvetica Neue", "Arial", "PingFang SC", sans-serif`;
     const wrap=()=>{
-      g.font=makeFont(typeSize);lines=[];let characters=[],offset=0,lineStart=0,content='';
+      g.font=makeFont(typeSize);widths.clear();lines=[];let characters=[],offset=0,lineStart=0,content='';
       for(const char of Array.from(text)){
         if(char==='\n'){lines.push({characters,start:lineStart,end:offset});characters=[];content='';offset++;lineStart=offset;continue;}
-        if(characters.length&&g.measureText(content+char).width>this.width-20){lines.push({characters,start:lineStart,end:offset});characters=[];content='';lineStart=offset;}
+        if(characters.length&&measureWidth(content+char)>this.width-20){lines.push({characters,start:lineStart,end:offset});characters=[];content='';lineStart=offset;}
         characters.push({char,start:offset,end:offset+char.length});content+=char;offset+=char.length;
       }
       lines.push({characters,start:lineStart,end:offset});
     };
     wrap();while(lines.length*typeSize*1.28>this.height-130&&typeSize>32){typeSize-=4;wrap();}
     const lineHeight=typeSize*1.28,top=(this.height-lines.length*lineHeight)/2+lineHeight/2-8;
-    const longest=Math.max(...lines.map(line=>g.measureText(line.characters.map(c=>c.char).join('')).width));
+    const longest=Math.max(...lines.map(line=>measureWidth(line.characters.map(c=>c.char).join(''))));
     const blockLeft=(this.width-longest)/2,palette=KnitRenderer.palettes[this.settings.palette].colors;
     const colorFor=(sourceIndex,localRow=0)=>palette[(Math.floor(this.hash(sourceIndex+19)*palette.length)+Math.floor(Math.max(0,localRow)/12))%palette.length];
     g.textAlign='left';g.textBaseline='middle';g.fillStyle='#fff';this.caretPositions=new Map();
+    const characterMetrics=new Map();
+    let inkLeft=Infinity,inkTop=Infinity,inkRight=-Infinity,inkBottom=-Infinity;
+    const includeInk=(left,top,right,bottom)=>{inkLeft=Math.min(inkLeft,left);inkTop=Math.min(inkTop,top);inkRight=Math.max(inkRight,right);inkBottom=Math.max(inkBottom,bottom);};
     for(let lineIndex=0;lineIndex<lines.length;lineIndex++){
-      const line=lines[lineIndex],content=line.characters.map(c=>c.char).join(''),lineWidth=g.measureText(content).width;
+      const line=lines[lineIndex],content=line.characters.map(c=>c.char).join(''),metrics=g.measureText(content),lineWidth=metrics.width;
       const x=align==='left'?blockLeft:align==='right'?blockLeft+longest-lineWidth:(this.width-lineWidth)/2;
-      const y=top+lineIndex*lineHeight;let prefix='';line.x=x;line.y=y;line.spans=[];
+      const y=top+lineIndex*lineHeight;let prefix='',cursor=x;line.x=x;line.y=y;line.spans=[];
+      const bounds=[metrics.actualBoundingBoxLeft,metrics.actualBoundingBoxRight,metrics.actualBoundingBoxAscent,metrics.actualBoundingBoxDescent];
+      if(bounds.every(Number.isFinite)){
+        if(bounds[0]+bounds[1]>0&&bounds[2]+bounds[3]>0)includeInk(x-bounds[0],y-bounds[2],x+bounds[1],y+bounds[3]);
+      }else if(content.trim())includeInk(0,0,this.width,this.height);
       this.caretPositions.set(line.start,{x,y,color:colorFor(line.start),typeSize,sourceIndex:line.start});
       for(const character of line.characters){
-        const left=x+g.measureText(prefix).width;prefix+=character.char;const right=x+g.measureText(prefix).width;
-        const metrics=g.measureText(character.char);
+        const left=cursor;prefix+=character.char;const right=x+measureWidth(prefix);cursor=right;
+        if(!characterMetrics.has(character.char))characterMetrics.set(character.char,g.measureText(character.char));
+        const metrics=characterMetrics.get(character.char);
         line.spans.push({...character,left,right,top:KnitMotifs.byGlyph.has(character.char)?y-typeSize*.435:y-metrics.actualBoundingBoxAscent});this.caretPositions.set(character.end,{x:right,y,color:colorFor(character.start),typeSize,sourceIndex:character.start});
       }
       if(line.spans.some(span=>KnitMotifs.byGlyph.has(span.char))){
         let run='',runLeft=x;
+        const paintRun=()=>{
+          if(!run)return;g.fillText(run,runLeft,y);const m=g.measureText(run);
+          const box=[m.actualBoundingBoxLeft,m.actualBoundingBoxRight,m.actualBoundingBoxAscent,m.actualBoundingBoxDescent];
+          if(box.every(Number.isFinite))includeInk(runLeft-box[0],y-box[2],runLeft+box[1],y+box[3]);
+          else includeInk(0,0,this.width,this.height);
+        };
         for(const span of line.spans){
           if(KnitMotifs.byGlyph.has(span.char)){
-            if(run)g.fillText(run,runLeft,y);run='';KnitMotifs.draw(g,span.char,span.left,span.right,y,typeSize);runLeft=span.right;
+            paintRun();run='';KnitMotifs.draw(g,span.char,span.left,span.right,y,typeSize);runLeft=span.right;
+            // Mixed runs can have different shaping from the combined text measurement.
+            const extent=Math.min(typeSize*.87,(span.right-span.left)*.94),center=(span.left+span.right)/2;
+            includeInk(center-extent/2,y-extent/2,center+extent/2+.02,y+extent/2+.02);
           }else{if(!run)runLeft=span.left;run+=span.char;}
         }
-        if(run)g.fillText(run,runLeft,y);
+        paintRun();
       }else g.fillText(content,x,y);
     }
-    const data=g.getImageData(0,0,this.width,this.height).data,map=new Map(),dy=pitch*.72;
-    for(let row=0;row<this.height/dy;row++)for(let col=0;col<this.width/pitch;col++){
+    const map=new Map(),dy=pitch*.72;
+    // Read only occupied pixels; preserve world coordinates and grid sampling exactly.
+    const maskLeft=Math.max(0,Math.floor(inkLeft)-2),maskTop=Math.max(0,Math.floor(inkTop)-2);
+    const maskRight=Math.min(this.width,Math.ceil(inkRight)+2),maskBottom=Math.min(this.height,Math.ceil(inkBottom)+2);
+    if(maskRight<=maskLeft||maskBottom<=maskTop)return this.cacheGeometry(key,map);
+    const maskWidth=maskRight-maskLeft,data=g.getImageData(maskLeft,maskTop,maskWidth,maskBottom-maskTop).data;
+    for(let row=Math.max(0,Math.floor(maskTop/dy));row<maskBottom/dy;row++)for(let col=Math.max(0,Math.floor(maskLeft/pitch));col<maskRight/pitch;col++){
       const x=col*pitch+pitch/2,y=row*dy+dy/2,ix=Math.floor(x),iy=Math.floor(y);
-      if(ix>=this.width||iy>=this.height||data[(iy*this.width+ix)*4+3]<100)continue;
+      if(ix<maskLeft||iy<maskTop||ix>=maskRight||iy>=maskBottom||data[((iy-maskTop)*maskWidth+ix-maskLeft)*4+3]<100)continue;
       const lineIndex=Math.max(0,Math.min(lines.length-1,Math.round((y-top)/lineHeight))),line=lines[lineIndex];
       const glyph=line.spans.find(span=>x>=span.left-pitch*.4&&x<span.right+pitch*.4)||line.spans.at(-1);
       if(!glyph)continue;
