@@ -1,0 +1,152 @@
+{
+  "results": [
+    {
+      "path": "/vibe-fiber/",
+      "stitches": 831,
+      "pattern": 6536,
+      "worker": true
+    },
+    {
+      "path": "/projects/kinetic-typography-clock.html",
+      "canvas": 1
+    },
+    {
+      "path": "/projects/floating-clock.html",
+      "canvas": 1
+    },
+    {
+      "path": "/card-freeze/",
+      "canvas": 1
+    },
+    {
+      "path": "/far-from-here/",
+      "state": {
+        "scene": {
+          "ready": true,
+          "camera": 0,
+          "flat": false,
+          "expanded": true,
+          "assembly": {
+            "value": 1.0308522227268265e-05,
+            "parts": 53,
+            "clusters": 51,
+            "collisionSafe": true,
+            "maxDisplacement": 6.083514296781591
+          },
+          "animating": true,
+          "artwork": null,
+          "groups": [
+            {
+              "visibility": 1,
+              "shading": 1
+            },
+            {
+              "visibility": 1,
+              "shading": 1
+            },
+            {
+              "visibility": 1,
+              "shading": 1
+            },
+            {
+              "visibility": 1,
+              "shading": 1
+            },
+            {
+              "visibility": 1,
+              "shading": 1
+            },
+            {
+              "visibility": 1,
+              "shading": 1
+            },
+            {
+              "visibility": 1,
+              "shading": 1
+            },
+            {
+              "visibility": 1,
+              "shading": 1
+            },
+            {
+              "visibility": 1,
+              "shading": 1
+            },
+            {
+              "visibility": 1,
+              "shading": 1
+            }
+          ],
+          "position": [
+            10.80549091371259,
+            -4.435503297680381,
+            -10.969109994287445
+          ],
+          "quaternion": [
+            0.06382022718204956,
+            0.9209875349198826,
+            -0.17069493904411534,
+            0.34434310928107104
+          ],
+          "zoom": 0.09567968739538522,
+          "viewport": [
+            1200,
+            829
+          ],
+          "texture": {
+            "width": 8192,
+            "height": 8192,
+            "compressed": true
+          }
+        },
+        "audio": {
+          "status": "playing",
+          "position": 0,
+          "scheduledAt": 0.030333333333333334,
+          "bpm": 95.01580005745475,
+          "selected": [
+            1,
+            2,
+            5,
+            7
+          ],
+          "queued": [
+            1,
+            2,
+            5,
+            7
+          ],
+          "sounding": [],
+          "clips": [],
+          "savedHeads": [],
+          "scratch": {
+            "index": -1,
+            "active": false,
+            "rate": 0
+          },
+          "error": ""
+        }
+      }
+    },
+    {
+      "path": "/grid-poster/",
+      "editor": true
+    },
+    {
+      "path": "/projects/effecter/",
+      "uploadControl": true,
+      "bundleBehaviorPreserved": true
+    },
+    {
+      "cloneReturnedToOriginal": true,
+      "headGuardRemoved": true
+    }
+  ],
+  "errors": [
+    {
+      "page": "clone",
+      "message": "Please use the original site."
+    }
+  ],
+  "unexpected": []
+}

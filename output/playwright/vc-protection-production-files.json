@@ -1,0 +1,90 @@
+{
+  "version": "9d7e10667a98",
+  "files": [
+    {
+      "path": "visual-coding.html",
+      "protected": true
+    },
+    {
+      "path": "grid-poster/index.html",
+      "protected": true
+    },
+    {
+      "path": "far-from-here/index.html",
+      "protected": true
+    },
+    {
+      "path": "vibe-fiber/index.html",
+      "protected": true
+    },
+    {
+      "path": "projects/effecter/index.html",
+      "protected": true
+    },
+    {
+      "path": "card-freeze/index.html",
+      "protected": true
+    },
+    {
+      "path": "projects/kinetic-typography-clock.html",
+      "protected": true
+    },
+    {
+      "path": "projects/floating-clock.html",
+      "protected": true
+    },
+    {
+      "path": "vibe-fiber/app.js",
+      "protected": true
+    },
+    {
+      "path": "vibe-fiber/image-pattern.js",
+      "protected": true
+    },
+    {
+      "path": "vibe-fiber/motifs.js",
+      "protected": true
+    },
+    {
+      "path": "vibe-fiber/panel-layout.js",
+      "protected": true
+    },
+    {
+      "path": "vibe-fiber/pattern-algorithms.js",
+      "protected": true
+    },
+    {
+      "path": "vibe-fiber/pattern.worker.js",
+      "protected": true
+    },
+    {
+      "path": "vibe-fiber/renderer.js",
+      "protected": true
+    },
+    {
+      "path": "vibe-fiber/surface-presets.js",
+      "protected": true
+    },
+    {
+      "path": "vibe-fiber/weave-process.js",
+      "protected": true
+    },
+    {
+      "path": "grid-poster/assets/index-CQx7PiXb.js",
+      "protected": true
+    },
+    {
+      "path": "far-from-here/assets/index-BRKlQB28.js",
+      "protected": true
+    },
+    {
+      "path": "projects/effecter/assets/index-BKwG5Ms8.js",
+      "protected": true
+    },
+    {
+      "path": "card-freeze/assets/index-BpsqvMpk.js",
+      "protected": true
+    }
+  ],
+  "gridPosterCoverPreserved": true
+}

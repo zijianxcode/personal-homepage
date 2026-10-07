@@ -10,7 +10,7 @@
 源码：`/Users/zijian/Documents/kimi/tasks/2026-10-03/22-46-18-1eb2d1a3/grid-poster/`。
 主站仓库：`/Users/zijian/Documents/Code/personal-homepage/`。
 本次独立工作目录：`/Users/zijian/.config/superpowers/worktrees/personal-homepage/grid-poster/`，分支 `codex/publish-grid-poster`。
-GitHub 的 `main` 保存站点发布文件。主站当前另有复制保护改动未完成；更新主站目录前应先合并本次发布提交，保留那项工作。
+GitHub 的 `main` 保存站点发布文件。主站复制防护已接入统一发布链，自动识别作品列表中的项目。更新后先执行 `npm ci`，再沿用主站 `npm run deploy`，不要直接上传源码产物绕过发布处理。
 
 ## 更新发布
 

@@ -7,7 +7,7 @@ async (page) => {
   await page.context().route('**/projects/effecter/runtime/**', route => route.abort());
   let active = '';
   page.on('pageerror', error => errors.push({ page: active, message: error.message }));
-  const paths = ['/vibe-fiber/', '/projects/kinetic-typography-clock.html', '/projects/floating-clock.html', '/card-freeze/', '/far-from-here/', '/projects/effecter/'];
+  const paths = ['/vibe-fiber/', '/projects/kinetic-typography-clock.html', '/projects/floating-clock.html', '/card-freeze/', '/far-from-here/', '/grid-poster/', '/projects/effecter/'];
   for (const path of paths) {
     active = path;
     await page.bringToFront();
@@ -31,6 +31,9 @@ async (page) => {
       if (state.audio.error || state.audio.selected.length !== 4) throw new Error('Music scheduling failed');
       results.push({path, state});
       await page.locator('#transport').click();
+    } else if (path === '/grid-poster/') {
+      await page.waitForFunction(() => !!document.querySelector('canvas, svg'));
+      results.push({path,editor:true});
     } else if (path === '/projects/effecter/') {
       await page.getByRole('button', {name:'Upload image'}).waitFor();
       results.push({path,uploadControl:true,bundleBehaviorPreserved:true});

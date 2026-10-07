@@ -5,11 +5,19 @@ const JavaScriptObfuscator = require('javascript-obfuscator');
 const { minify } = require('terser');
 const { parse } = require('parse5');
 
-const projectPages = [
-  'vibe-fiber/index.html', 'far-from-here/index.html',
-  'projects/effecter/index.html', 'card-freeze/index.html',
-  'projects/kinetic-typography-clock.html', 'projects/floating-clock.html',
-];
+// The showcase is the source of truth. New local projects receive the same
+// production binding automatically, without maintaining a second project list.
+const projectPages = [];
+walk(parse(fs.readFileSync(path.join(__dirname, '..', 'visual-coding.html'), 'utf8')), node => {
+  if (node.tagName !== 'a') return;
+  const attrs = Object.fromEntries(node.attrs.map(a => [a.name, a.value]));
+  if (!attrs.class?.split(/\s+/).includes('vc-card') || !attrs.href) return;
+  const url = new URL(attrs.href, 'https://bananabox.plus/visual-coding.html');
+  if (url.origin !== 'https://bananabox.plus') return;
+  const relative = url.pathname.slice(1) + (url.pathname.endsWith('/') ? 'index.html' : '');
+  if (!relative.endsWith('.html')) throw new Error('Project needs an HTML entry: ' + relative);
+  if (!projectPages.includes(relative)) projectPages.push(relative);
+});
 const pages = ['visual-coding.html', ...projectPages];
 const guard = `(() => {
   const host = globalThis.location.hostname;
@@ -63,10 +71,11 @@ async function protectBundle(bundleRoot) {
   const externalScripts = new Set(
     fs.readdirSync(path.join(target, 'vibe-fiber')).filter(name => name.endsWith('.js')).map(name => 'vibe-fiber/' + name)
   );
-  for (const name of projectPages.slice(1, 4)) {
+  for (const name of projectPages) {
     const html = fs.readFileSync(path.join(target, name), 'utf8');
     walk(parse(html), node => {
       if (node.tagName !== 'script') return;
+      if (!node.attrs.some(a => a.name === 'type' && a.value === 'module')) return;
       const src = node.attrs.find(a => a.name === 'src')?.value;
       if (!src) return;
       const resolved = src.startsWith('/') ? src.slice(1) : path.posix.join(path.posix.dirname(name), src);

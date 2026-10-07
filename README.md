@@ -77,7 +77,7 @@ Root safety rule:
 
 ## Security Notes
 
-- Visual Coding production builds automatically bind the six projects and their
+- Visual Coding production builds automatically bind the local projects linked from the showcase and their
   showcase page to the official domains. Vibe Fiber and the two clock scripts are
   minified/obfuscated; existing application bundles retain their original code
   after an obfuscated domain guard. This deters direct site copying and is not
