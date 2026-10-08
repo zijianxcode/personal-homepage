@@ -6,7 +6,8 @@
 - 正式体验：`https://bananabox.plus/field-camo/`
 - 源码：`/Users/zijian/Documents/ChatGPT/Vibe coding/field-camo`
 - 主站运行目录：`field-camo/`。仅运行文件和本地素材，不复制测试、参考图或 Markdown 文档。
-- 封面：`Assets/img/field-camo-cover.png`，1008×1008，contain 完整显示，hover 不放大。SHA-256 `ee013c19c735284eb871c6effaf083edc53485edc2376af76c8c1df9ff6e6bb9`，与用户附件一致。
+- 当前封面：`Assets/img/field-camo-cover-hd.png`，1254×1254，通过内置 imagegen 修复线条清晰度；contain 完整显示，hover 不放大。SHA-256 `251a4de2346adeb35da0751e17fdbad52dce49f683fa642bad7f86ede2327ed2`。
+- 原附件 1008×1008、SHA-256 `ee013c19c735284eb871c6effaf083edc53485edc2376af76c8c1df9ff6e6bb9`，在源码 references/cover-original.png 保留；旧发布证据指的是该原版。
 
 ## 构建与功能
 
@@ -53,3 +54,9 @@ Product 现为原生 WebGL 程序化圆角立方体，使用三面纹理投影�
 核心测试 26/26，完整生成器浏览器流程 55/55；独立立方体交互本地与线上各 15 项通过，包括 8 个上限、逐个配色、选择不覆盖、移除后原图像像素一致、白模复原与手机布局。生产防护包 26 项、正式域名 25 项检查通过，未发生页面异常或新项目资源失败。发布从 GitHub 对齐基线组装整站包，只加入当前 FIELD 改动，其他同期已提交项目更新保留在最终整站版本。
 
 本地静态默认 Tile 审计：桌面性能 100（LCP 0.7 s，TBT 20 ms），模拟手机性能 64（LCP 3.3 s，TBT 300 ms）。审计仅代表初始视图与本次环境，未验证各手机显卡的 Product 渲染性能；不能把交互和布局通过当作慢网性能达标。旧玩具素材的历史性能结果保留为旧版本记录。证据在源码 output/playwright/cube-production-results.json、cube-production-stack-eight.png、cubes-lighthouse-desktop.json、cubes-lighthouse-mobile.json、cubes-production-files.json；主站发布日志为 output/playwright/field-camo-cubes-*.log。
+
+## 2026-10-08 · 封面清晰度修复
+
+用户指出原封面模糊，授权替换清晰修复版。使用内置 imagegen 清理线条边缘，保持黑白配色与原构图方向；本次涉及生成式边缘重绘，不再将修复版称为原附件字节一致。实际输出 1254×1254，未声称达到提示中请求的 2048。图库使用新的 field-camo-cover-hd.png，应用分享图使用 cover-hd.png，均更新真实尺寸；新地址避免旧缓存继续显示原图。提示词和资产来源见源码 references/cover-hd.md。
+
+封面更新验证：待发布包 26 项、正式域名 25 项浏览器检查通过；封面实际尺寸 1254×1254、完整展示、hover 不缩放。图库与分享图两个正式 PNG 均 HTTP 200，SHA-256 与选定 imagegen 输出一致。整站上传 290 个文件、失败 0，主页与 academy 生产验证及健康检查通过。证据：源码 output/playwright/hosting-production-cover.png、cover-hd-production-files.json；主站 output/playwright/field-camo-cover-*.log。
