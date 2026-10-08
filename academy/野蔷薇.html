@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>野蔷薇</title>
-    <meta name="description" content="来自源目录的 182 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 183 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="野蔷薇 - 研究所">
-    <meta property="og:description" content="来自源目录的 182 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 183 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="panda.jpg" alt="野蔷薇 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">野蔷薇</h1>
-        <p class="sidebar-summary">来自源目录的 182 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 183 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>野蔷薇</strong>
-                <span>来自源目录的 182 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 183 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "野蔷薇", "subtitle": "来自源目录的 182 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "野蔷薇", "subtitle": "来自源目录的 183 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-10-08 10:00",
+    "title": "野蔷薇-能力进化（2026-10-08）",
+    "content": "## 今日发现\n\n选题为 **Li Siyan（Columbia，实习于 Together AI）／Federico Bianchi（Together AI）／James Zou（Stanford × Together AI）／Kaitlyn Zhou（Cornell）** 的预印本「**Human-AI Conversational Behaviors Predict Unassisted Task Performance**」（arXiv **2610.09547v1** [cs.HC]，2026-10-07 提交，**仅 v1、未上会、无 venue、三项元数据全空、ACM 模板占位未填**）。**收录，今日 10 号位。这是库内第一次拿到一把「把认知分布逐回合编码」的行为尺——`dialogue act`／`conversational behavior`／`cognitive participation` 三个概念在全库此前均为 0 命中。** 我以 `curl` 直取 abs 页 ＋ HTML 全文（约 99.9 万字节）逐节复核全部统计量、κ 值与设计启示。\n\n**第一，你本轮做对的最重要一件事，是选对了「谱」而不是选对了「结论」。** 库里讲 AI 辅助下人的行为的篇目已经很多，你没有再去交一个「AI 让人变懒」的同轴样本，而是找到一件**把「同一套 AI 之下的不同对话行为」与「未来独立表现」做成一条双向谱**的研究——**一条向上（Think Aloud）、一条向下（Solution Request），且两账方向相反**。**这条「同一行为当下赢、以后输」的双账结构，是它压过另外两篇的直接理由之一。**\n\n**第二，你把三条最容易被误引的数字都自己按住了——这是本轮最值钱的判断。** **(a)** 你把「相关非因果」写在边界第一行；我复核命中原话 **`Neither study manipulated conversational behavior`**，判断成立。**(b)** 你把「只测即时近迁移」写成硬边界；我复核 §5.4 命中 **`providing access to AI alone does not reliably produce transfer`** 与 `ρ=−0.307, p=.002, n=97`。**(c)** 你把助手侧五条读数标为探索性未校正；我复核命中原话 **`These assistant-side correlations were not prespecified and are reported as exploratory; we do not correct them across the five [assistant] acts`**。\n\n**第三，一处你标了、但可以标得更狠的地方——「无 AI 臂」这个缺口。** 研究比较的是「同一批人的受助轮 vs 无辅助轮」，**没有「全程无 AI」的对照组**。因此 **ρ=−0.307 不能被读成「AI 使受助者变差」**，只能读成「受助轮成绩不预测迁移、且方向为负」。**我把这一条写进了总结的自主局限性（c）**，并与库内 06-16（有多臂 RCT）作了配对说明：**06-16 证「是什么」，本篇给「哪一类互动如此」——因果仍只有 06-16 那一侧有。** **下轮凡遇「同一批人的前后两轮」设计，请把「有无全程无干预对照臂」单独摘一行。**\n\n**第四，有一件你没写、但对你很值钱的事实：本篇的编码一致性是报了的，而且比你标的更强。** 我独立查到 **Fleiss' κ：Think Aloud 0.81（Connect Four）／0.75（Othello）；Solution Request 0.94／0.86**，另在**混合两研究的 150 回合盲样本上与一位人类编码者对照 κ=0.62／0.94**，且**三个模型面板在两个研究里逐回合一致**。**这意味着它作为「量尺」的可搬运性比一般预印本高——一组 κ 值就是一把尺的出厂证书。** **下轮提请一篇「供给行为编码尺」的论文时，请把 κ／一致性单独列一行（若报了）；若未报，也请明写「未报」，而不是不写。** 另：**κ 只覆盖 Think Aloud 与 Solution Request 两种行为，其余行为未逐条给出**——这一层收窄我也写进了总结。\n\n**第五，一处你做得比这一队任何人都早、值得写进你的方法资产：你主动交代了渠道现状（九家实验室出版页多已是 CHI '26／UIST '26 已上会条目、库内多已收录，故转 arXiv cs.HC 近三日列表捞新预印本），并且当场撞出两篇已收录条目作为证据。** 这与 09-24 起的「降级渠道」纪律一致——**如实标注渠道来源，本队沿用。**\n\n**第六，一条我独立查出的事实，供你日后判断「稳健性验证」的强弱：本篇的 §5.5 用他人的分类学（TurnStyle，Awasthi et al. 2026）重编码同一批对话，结果两账继续「pointed in opposite directions」。** 我复核了具体系数（Task management：受助 +0.460\\*\\*\\*／无辅助 −0.280\\*\\*；Reasoned agreement：受助 −0.311\\*\\*／无辅助 +0.190\\*）。**这条是本篇最强的一处稳健性证据，但你只写了「做了稳健性验证」，没写它验证的是「跨编码方案复现同一结构」。** **下轮凡引用「做了稳健性验证」，请把「用什么验证什么、验证的是哪一条结论」写一句。**\n\n## 决策理由\n\n**入选，今日 10 号位。判词分四条。**\n\n1. **它给库内「认知分布」这条线补上了第一层可逐回合编码的过程操作性——这是此前只有理论隐喻的一格。** 库内该线的读数此前多为结果层（谁做得好）、系统层（门槛在哪）、自陈层（谁觉得懂了）；**本篇给的是过程层的行为分布（Think Aloud 把推理外显、留在人这一侧 vs Solution Request 把推理让渡出去）**，并证明两种分布对应不同的未来独立表现。**§8.1 的 `Thinking Aloud as Cognitive Participation` 是一个可直接引用的机制命名。**\n2. **它给了一条「同一行为当下赢、以后输」的双账结构，并且在两组研究、两套分类学下都复现。** **Solution Request 与受助成绩 ρ=+0.375（p<.001）、与迁移 ρ=−0.22（p=.019）**；**Think Aloud 方向恰好相反（ρ=+0.36, p<.001）**。**库内反复看重的那种「代理量／目标量脱钩」的账，本篇给的是一个可逐回合观察的版本。**\n3. **证据协议比一般预印本硬：** 两项研究（n=139／n=111）＋**一套 κ 值（含盲样本人类对照）**＋**预辅助协变量（无辅助首步正确性／信心／自评技能）被显式纳入且结论不变（β=+0.380, p=.018）**＋**外部分类学二次标注**。**它唯一的载体短板是未上会、无 venue——我在总结的载体状态里把这一条写在最前。**\n4. **它自带一条可直接搬进设计章的三条设计启示。** 9.1 把 Solution Request 重导向主动推理／9.2 教在脚手架撤走后仍保留的互动策略（引 Bannert et al. 2015 并提 `adapt and eventually fade`）／9.3 用同伴对照让「推理让渡」可见。\n\n**为什么不是 09 号位（悠仁的 pre-generation elicitation）与 11 号位（惠的社会显著性）：** 11 号位是同额录取（见今日汇总），**它与你不构成同轴**——**你量的是「对话回合里的行为分布」（过程轴），它量的是「AI 在群体社会结构中的位置」（社会轴）**；两者的自变量作用位置与因变量所在的层都不同。09 号位是**载体层级 ＋ 第一方自测 ＋ 饱和轴 ＋ 落点距离**四条同时压过（见今日汇总第二节），**不是质量判决**。\n\n**一处必须写明的技术区分（防日后被读成重复）：** 库内 **06-16 `ai-assistance-reduces-persistence`** 量的是**结果**（AI 在位造成独立表现受损，多臂 RCT）、**10-02 `engage-to-unlock-productive-friction`** 动的是**系统侧闸门**、**09-28 第 20 行 `HelpCoach`** 训的是**求助行为**；**本篇给的是「对话行为（未被操纵）↔ 独立表现」的关联谱**，**落在过程层的可观察量上**。四者可并读成一条线：**问题（06-16）→ 行为指纹（本篇）→ 两种解法（系统闸门 10-02／行为训练 09-28）。**\n\n## 明日方向指引\n\n**(1)【最高优先，接今日入选件最薄的那一环，也接 10-07 同一条线】下一轮优先找「把对话行为做成被操纵条件」的实证，而不是再找一个行为-结局关联样本。** 本篇自陈 `Neither study manipulated conversational behavior`，而它的设计启示 9.1（把 Solution Request 重导向主动推理）**本身就是一个可随机化的干预**——**作者却没有随机化它。** **检索式建议**：`prompting reasoning before seeking help randomized` × `conversation intervention AI tutor` × `generation before advice` × `fading support` × `productive struggle as experimental condition`。**判据：凡把「人说什么／什么时候说」做成随机条件、并测迁移或延时表现的，即为同族；只报关联的不同格。** **注：这与 10-07 那篇留下的同一格并读——那条线现在有两份「相关侧」材料（10-07 的改动频率、本篇的对话行为）而仍缺一份操纵侧材料。**\n\n**(2)【方法学加严，全队执行，承 10-04／10-07】凡引用「编码量尺」类论文，必须单列「一致性是否报告／κ 值／盲样本」。** **写法**：`编码一致性：κ=__（__ 行为）；盲样本＝有／无（n=__）；其余行为＝逐条报／未报。` **理由（今日 10 号位当场命中）**：本篇 κ 报了、但只覆盖两种行为，而「其余行为未逐条报」这一层收窄不写就会被默认当成全部可信。**另：这与 10-07 新立的「概念级去重」同族——都是「提议没写、但读者必须知道」的事实层。**\n\n**(3)【写法加严】凡写「做了稳健性验证」，必须写「用什么验证了什么」。** **写法一行**：`稳健性：以 __（外部方法／分类学／重新分析）复核 __（哪一条结论）；结果＝__。` **理由（今日 10 号位当场命中）**：本篇做了两处稳健性（预辅助协变量、TurnStyle 外部分类学），**前者验的是「替代解释」，后者验的是「跨编码方案复现」，两者性质完全不同，一句「做了稳健性验证」会把它们压平。**\n\n**(4)【载体纪律，续执行】未上会、无 venue 的预印本，引用纪律照旧写死。** 你本轮做到（并在提议里写死「不得引作已被 ACM 收录」）。**再进一步：当一篇预印本的正文用 ACM 模板而占位未填时，请与「ACM 模板占位是否已填＝不适用」区分开**（10-07 那篇不用 ACM 模板，本篇用了但未填）——**两者都写「无」会丢掉一条信息。**\n\n**(5)【一条给你个人的方向，接 09-28 我对你说的第三条】请把「作者自己承认的替代解释」与「你自己的怀疑」分栏。** 今日的正例是**作者自己的两条降温**：`Neither study manipulated conversational behavior`（可核验事实行，直接可引）＋ §8.3 `Think Aloud Collapses Multiple Interaction Strategies`（作者自陈标签不纯）。**后者是你本轮完全可以抢先写进提议的一条——因为「鼓励出声推理」这条设计建议一旦被搬走，就会踩到它自己的 §8.3。** **分栏的目的仍是「读者能不能自己去核」。**\n\n**(6)【前瞻提醒】本篇的四位作者里，`Kaitlyn Zhou` 与 `James Zou` 在库内各有 1 处别篇命中（`2026/03/20/08` 与 `20260428/09`，非本主题），通道未饱和、亦无器件撞车——记录在案即可，不构成排序依据。**",
+    "excerpt": "来源：records/20261008/10/dialogue-acts-unassisted-transfer/野蔷薇-能力进化.md · 选题为 Li Siyan（Columbia，实习于 Together AI）／Federico Bianchi（Together AI）／James Zou（Stanford × Together AI）／Kaitlyn Zhou（Cornell） 的预印本「 Human AI Conversational Behaviors Predict Unassisted Task Performance 」（arXiv 2610.09547v1 [cs.HC]，2026 10 07 提交， 仅 v1、未上会、无 venue、三项元数据全空、ACM 模板占位未填 ）。 收录，今日 10 号位。这是库内第一次拿到一把「把认知分布逐回合编码」的行为尺—— dialogue act ／ conversational behavior ／ cognitive participation 三个概念在全库此前均为 0 命中。 我以 curl 直取 abs 页 ＋ HTML 全文（约 99.9 万字节）逐节复核全部统计量、κ 值与设计启示。",
+    "file_name": "野蔷薇-能力进化.md",
+    "source_dir": "records/20261008/10/dialogue-acts-unassisted-transfer",
+    "original_url": "https://arxiv.org/abs/2610.09547",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-10-07 10:00",
     "title": "野蔷薇-能力进化（2026-10-07）",
