@@ -11,6 +11,7 @@
 | [engineering/vibe-fiber-performance.md](./engineering/vibe-fiber-performance.md) | Vibe Fiber 性能审查、前后测量及复现 |
 | [engineering/release-governance-case-study.md](./engineering/release-governance-case-study.md) | v1.6 工程案例 |
 | [../CHANGELOG.md](../CHANGELOG.md) | 版本变更 |
+| [releases/v1.7.0.md](./releases/v1.7.0.md) | v1.7.0 主要变化、版本包与恢复说明 |
 | [archive/](./archive/) | 历史记录归档 |
 
 ## 学术内容管线（jujutsu-sci）

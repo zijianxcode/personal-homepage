@@ -6,11 +6,13 @@ Static personal homepage (Work / Info / Things). Dark theme, particle background
 
 ## Latest Update
 
-Updated on 2026-05-30 (`v1.6.1`):
+Updated on 2026-10-08 (`v1.7.0`):
 
-- **结构保护**：`/`=个人主页、`/academy/`=研究所，默认不变；见 [docs/SITE-STRUCTURE.md](docs/SITE-STRUCTURE.md)
-- **发布加固**：部署包本地验收 + 线上根路径/academy 双验收，防止主页再次被覆盖
-- **v1.6.0**：CloudBase 生产迁移、单命令发布链、三层应急备用
+- **作品扩展**：Visual Coding 共七个项目，近期接入 Card Freeze、Effecter、Vibe Fiber、Far From Here、Grid Poster，统一倒序展示和返回入口。
+- **性能优化**：Vibe Fiber 减少像素读取、字体重复测量和针目绘制开销。
+- **复制防护**：生产构建自动覆盖作品列表与项目入口，增加域名校验、脚本压缩/混淆和缓存版本标记。
+- **安全加固**：六类 Things 课程统一服务端鉴权，主域强制 HTTPS，发布流程与 CI 增加权限测试。
+- **版本包**：[v1.7.0 Release](https://github.com/zijianxcode/personal-homepage/releases/tag/v1.7.0) 提供完整生产静态包和 SHA-256 校验文件；见 [版本说明](docs/releases/v1.7.0.md)。
 
 详见 [CHANGELOG.md](CHANGELOG.md) · [docs/DEPLOYMENT-STABLE.md](docs/DEPLOYMENT-STABLE.md)
 
@@ -105,6 +107,7 @@ Root safety rule:
 ├── card-freeze/                ← Visual Coding #03 静态产物（源码见 zijianxcode/card-freeze）
 ├── vibe-fiber/                 ← Visual Coding #05 完整织字与图案 Demo
 ├── far-from-here/             ← Visual Coding #06，3D / 2D 与 DJ 音乐学习演示
+├── grid-poster/               ← Visual Coding #07，网格海报编辑器
 ├── Assets/
 │   ├── css/style.css           ← 全局样式 + CSS 变量
 │   ├── js/
