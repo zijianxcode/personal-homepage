@@ -1,0 +1,14 @@
+# 来源
+
+原始网站：TypeBlast — Explosive Typing Game，SABUM，© 2025 SABUM. All rights reserved.
+
+- 页面：https://typeblast.sabum.kr/
+- 公开渲染脚本：https://typeblast.sabum.kr/assets/index-QGnf5PNv.js
+- 本项目沿用公开脚本的 Canvas 绘制和游戏机制，整理为可读代码，并替换英文输入和排行榜部分。原作者标识保留在代码注释与本文件中。
+- 英文字体来自原站使用的 Google Fonts 字体文件；文件存于 `public/assets/fonts/`。
+- Google Fonts 的字体许可原文取自 https://github.com/google/fonts ，保存在 `public/assets/fonts/licenses/`。Satisfy、Permanent Marker、Special Elite 为 Apache 2.0，其余内置字体为 SIL Open Font License 1.1。
+
+原站与字体的权利分别属于各自权利人；此项目没有将原站作品声明为独立原创。
+# 性能版字体
+
+实际加载的字体已转换为 WOFF2 英文子集。原始 TTF 保存在 `docs/evidence/fonts-original/`；既有字体许可仍在 `public/assets/fonts/licenses/`。转换保留源字体名称与许可信息。`scripts/optimize-fonts.py` 验证保留字符的轮廓与水平度量，避免更改字形。

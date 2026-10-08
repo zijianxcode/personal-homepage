@@ -1842,6 +1842,33 @@ textarea:focus-visible {
 }
 
 .vc-card-media--far-from-here { background: #222; }
+.vc-card-media--typeblast { background: #111; contain: layout paint style; }
+.vc-card-media--typeblast img { object-fit: contain; image-rendering: pixelated; }
+.vc-card:hover .vc-card-media--typeblast img { transform: none; }
+.pixel-key-layer { position: absolute; inset: 0; pointer-events: none; }
+.pixel-key-tile { position: absolute; width: 20%; height: 20%; overflow: hidden; background: #111; }
+.pixel-key {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-size: 500% 500%;
+    background-repeat: no-repeat;
+    image-rendering: pixelated;
+    animation: pixel-key-tap 6s steps(1, end) infinite;
+    animation-delay: var(--pixel-delay);
+    animation-play-state: paused;
+}
+.pixel-cover-running .pixel-key { animation-play-state: running; }
+@keyframes pixel-key-tap {
+    0%, 82%, 94%, 100% { transform: translate(0, 0); opacity: 1; }
+    84%, 88% { transform: translate(0, -2px); opacity: 1; }
+    90% { transform: translate(2px, 0); opacity: 0.78; }
+    92% { transform: translate(0, 0); opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .pixel-key-layer { display: none; }
+    .pixel-key { animation: none; }
+}
 .vc-card-media--field img { object-fit: contain; }
 .vc-card:hover .vc-card-media--field img { transform: none; }
 

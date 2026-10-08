@@ -1,0 +1,135 @@
+<!-- Local study of TypeBlast, © 2025 SABUM. Source attribution retained. -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <title>TypeBlast — English</title>
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Explosive English typing. Build combos and beat the clock."
+    />
+    <link rel="icon" type="image/svg+xml" href="/typeblast/assets/favicon.svg" />
+    <meta property="og:title" content="TypeBlast · English Typing" />
+    <meta property="og:description" content="Break the letters, build your combo. A TypeBlast study with day and night modes." />
+    <meta property="og:image" content="https://bananabox.plus/typeblast/assets/typeblast-cover.png" />
+    <meta property="og:url" content="https://bananabox.plus/typeblast/" />
+    <meta property="og:type" content="website" />
+    <link
+      rel="preload"
+      href="/typeblast/assets/fonts/anton.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/typeblast/assets/fonts/fredoka.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="/typeblast/assets/fonts/fonts.css" />
+    <script type="module" crossorigin src="/typeblast/assets/index-DI8mPLO0.js"></script>
+    <link rel="stylesheet" crossorigin href="/typeblast/assets/index-BOzImh8r.css">
+  </head>
+  <body>
+    <a id="showcaseBack" class="showcase-back" href="/visual-coding.html" hidden>← VISUAL CODING</a>
+    <button
+      id="themeToggle"
+      class="theme-toggle"
+      type="button"
+      aria-label="Switch to day mode"
+      aria-pressed="false"
+    >
+      DAY MODE
+    </button>
+    <canvas id="canvas"></canvas
+    ><output id="currentWord" class="sr-only" aria-live="polite"></output>
+
+    <div
+      class="nickname-modal"
+      id="nicknameModal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="nicknameTitle"
+    >
+      <div class="nickname-title" id="nicknameTitle">🏆 Enter Your Name</div>
+      <div class="nickname-subtitle">for local ranking</div>
+      <input
+        type="text"
+        class="nickname-input"
+        id="nicknameInput"
+        aria-label="Nickname"
+        placeholder="NICKNAME"
+        maxlength="12"
+        autocomplete="off"
+        autocapitalize="characters"
+        autocorrect="off"
+        spellcheck="false"
+        inputmode="text"
+        enterkeyhint="go"
+      />
+      <button class="nickname-btn" id="nicknameBtn" disabled>START GAME</button>
+      <button class="nickname-skip" id="nicknameSkip">play as guest</button>
+    </div>
+
+    <div class="live-ranking" id="liveRanking">
+      <div class="live-ranking-header">
+        <div class="live-dot"></div>
+        <span class="live-title">Local Top 5</span>
+      </div>
+      <div class="live-ranking-list" id="liveRankingList">
+        <div class="live-empty">Loading...</div>
+      </div>
+    </div>
+
+    <div class="lang-selector">
+      <span class="lang-btn active" aria-label="English">EN</span>
+    </div>
+
+    <div class="game-hud">
+      <div class="hud-item">
+        <span class="hud-label">Time</span>
+        <span class="hud-value time" id="timeDisplay">30.0</span>
+      </div>
+      <div class="hud-item">
+        <span class="hud-label">Score</span>
+        <span class="hud-value score" id="scoreDisplay">0</span>
+      </div>
+      <div class="hud-item">
+        <span class="hud-label">Combo</span>
+        <span class="hud-value combo" id="comboDisplay">0</span>
+      </div>
+      <div class="hud-item">
+        <span class="hud-label">WPM</span>
+        <span class="hud-value wpm" id="wpmDisplay">0</span>
+      </div>
+    </div>
+
+    <button class="intro-start-btn" id="introStartBtn">GAME START</button>
+    <div class="intro-description" id="introDescription">
+      <div class="intro-guide">
+        Click the button above to start<br />
+        Type fast · Build combos · Beat the clock
+      </div>
+    </div>
+
+    <button class="mobile-restart-btn" id="mobileRestartBtn">PLAY AGAIN</button>
+    <input
+      type="text"
+      class="hidden-input"
+      id="hiddenInput"
+      aria-label="Type the displayed English word"
+      autocomplete="off"
+      autocapitalize="off"
+      autocorrect="off"
+      spellcheck="false"
+      inputmode="text"
+    />
+  </body>
+</html>

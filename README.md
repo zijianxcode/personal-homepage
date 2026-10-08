@@ -6,6 +6,8 @@ Static personal homepage (Work / Info / Things). Dark theme, particle background
 
 ## Latest Project
 
+2026-10-09：TypeBlast 英文打字复刻接入 Visual Coding 首位，当前共九个项目。用户指定像素钥匙 PNG 完整展示，封面加入离屏暂停、减少动态效果降级的像素跳动。正式入口 `/typeblast/`；发布记录见 [TypeBlast 接入](docs/engineering/typeblast.md)。
+
 2026-10-08：FIELD 接入 Visual Coding，当前共八个项目。使用用户指定黑白 PNG 封面，提供照片取色与轮廓编译、连续迷彩、圆角立方体叠放预览及 PNG/SVG 导出。正式入口为 `/field-camo/`；发布记录见 [FIELD 接入](docs/engineering/field-camo.md)。
 
 ## Latest Update

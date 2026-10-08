@@ -1,0 +1,155 @@
+@font-face {
+  font-family: 'Anton';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(./anton.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Bebas Neue';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(./bebas-neue.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Black Ops One';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(./black-ops-one.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Bungee';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(./bungee.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Cabin Sketch';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(./cabin-sketch.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Creepster';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(./creepster.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Fascinate';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(./fascinate.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Fredoka';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: normal;
+  font-display: swap;
+  src: url(./fredoka.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Lobster';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(./lobster.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Monoton';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(./monoton.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(./orbitron.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Pacifico';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(./pacifico.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Permanent Marker';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(./permanent-marker.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(./playfair-display.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Press Start 2P';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(./press-start-2p.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Righteous';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(./righteous.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Rubik Mono One';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(./rubik-mono-one.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Satisfy';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(./satisfy.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Special Elite';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(./special-elite.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Staatliches';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(./staatliches.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'VT323';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(./vt323.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Zilla Slab Highlight';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(./zilla-slab-highlight.woff2) format('woff2');
+}
