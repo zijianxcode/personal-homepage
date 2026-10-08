@@ -3,12 +3,12 @@ export class ScratchVoice {
   constructor(rate=44100) { this.outputRate=rate;this.beds=[];this.previews=[];this.index=0;this.head=0;this.rate=0;this.target=0;this.gain=0;this.active=false;this.age=0;this.sinceMove=0; }
   message(message) {
     if(message.type==='load'){this.beds=message.beds;this.previews=message.previews;return;}
-    if(message.type==='stop'){this.active=false;this.preview=false;return;}
+    if(message.type==='stop'){this.active=false;this.preview=false;this.sustain=false;return;}
     if(message.type==='move'){this.target=Math.max(-4,Math.min(4,Number.isFinite(message.rate)?message.rate:0));this.sinceMove=0;return;}
-    if(['start','preview'].includes(message.type)){
+    if(['start','preview','sustain'].includes(message.type)){
       if(!this.beds[message.index])return;
       this.index=message.index;this.head=this.beds[this.index].samples.length*.45;
-      this.preview=message.type==='preview';this.active=true;this.age=0;this.sinceMove=0;this.rate=0;this.target=1;
+      this.preview=message.type==='preview';this.sustain=message.type==='sustain';this.active=true;this.age=0;this.sinceMove=0;this.rate=0;this.target=1;
     }
   }
   render(output) {
@@ -17,9 +17,9 @@ export class ScratchVoice {
     const smoothing=1-Math.exp(-1/(this.outputRate*.006));
     for(let i=0;i<output.length;i++){
       this.age+=1/this.outputRate;this.sinceMove+=1/this.outputRate;
-      if(this.preview){
+      if(this.preview || this.sustain){
         this.target=Math.sin(2*Math.PI*[3.6,5.5,1.8][this.index]*this.age)*[2.2,2.8,1.5][this.index];
-        if(this.age>=this.previews[this.index]){this.active=false;this.preview=false;}
+        if(this.preview && this.age>=this.previews[this.index]){this.active=false;this.preview=false;}
       } else if(this.sinceMove>.14)this.target=0;
       this.rate+=(this.target-this.rate)*smoothing;
       if(Math.abs(this.rate)<1e-8)this.rate=0;
