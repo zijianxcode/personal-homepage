@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5f5f2" />
+    <title>FIELD — Camouflage Generator</title>
+    <meta name="description" content="Turn photo colors and contours into seamless camouflage. Explore the pattern on toy models and export PNG or SVG." />
+    <meta property="og:title" content="FIELD — Camouflage Generator" />
+    <meta property="og:description" content="Photo to camouflage. Seamless patterns and toy product previews." />
+    <meta property="og:image" content="https://bananabox.plus/field-camo/cover.png" />
+    <meta property="og:image:width" content="1008" />
+    <meta property="og:image:height" content="1008" />
+    <meta property="og:url" content="https://bananabox.plus/field-camo/" />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="/field-camo/favicon.svg" />
+    <script type="module" crossorigin src="/field-camo/assets/index-BF50oKWA.js"></script>
+    <link rel="stylesheet" crossorigin href="/field-camo/assets/index-90vZsB-3.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="./" aria-label="Home"
+          ><svg width="29" height="29" viewBox="0 0 32 32" aria-hidden="true">
+            <path
+              d="M5 6c8-6 8 5 15 1s12 5 6 10-1 13-10 10-16 3-13-6S-2 11 5 6Z"
+              fill="currentColor"
+            />
+            <path
+              d="M9 14c4-6 4 2 9-1s5 5 1 6-4 6-7 2-6-1-3-7Z"
+              fill="#ffffff"
+            /></svg
+          ><span class="wordmark"
+            >FIELD</span
+          ></a
+        >
+        <span class="tagline">Photo to camouflage</span>
+        <span id="local-status" class="app-status"
+          ><span class="local-dot"></span> Local workspace</span
+        >
+        <a id="back-to-work" class="back-to-work" href="/visual-coding.html" hidden>← VISUAL CODING</a>
+      </header>
+      <div class="workspace">
+        <aside class="controls" aria-label="Pattern settings">
+          <div class="controls-scroll">
+            <section class="control-section source-section">
+              <div class="section-heading">
+                <h2><span class="step">01</span> Source image</h2>
+                <button id="upload" class="action-btn">Replace ↗</button>
+              </div>
+              <input
+                id="image-file"
+                type="file"
+                accept="image/png,image/jpeg,image/webp,image/avif,image/gif,image/bmp"
+                hidden
+              />
+              <div class="source-panel">
+                <div id="source-frame" class="source-frame">
+                  <canvas
+                    id="source-canvas"
+                    aria-label="Source image; enable crop and drag to select a region"
+                  ></canvas
+                  ><canvas id="source-overlay" aria-hidden="true"></canvas>
+                  <div id="crop-box" hidden></div>
+                  <div id="source-empty">
+                    Upload a nature photo<br /><small
+                      >Flowers, leaves, rocks, or landscapes</small
+                    >
+                  </div>
+                  <span class="photo-tag">SOURCE IMAGE</span>
+                </div>
+                <div class="source-info">
+                  <div class="source-meta">
+                    <span id="source-name">Loading sample…</span
+                    ><span id="source-dimensions">—</span>
+                  </div>
+                  <div class="source-tools">
+                    <button
+                      id="crop-toggle"
+                      class="secondary-btn"
+                      aria-pressed="false"
+                    >
+                      ⌗ Crop</button
+                    ><button id="crop-reset" class="action-btn" hidden>
+                      Reset crop
+                    </button>
+                    <div class="samples">
+                      <button
+                        data-sample="flower"
+                        aria-label="Use cosmos sample"
+                        title="Cosmos sample"
+                      >
+                        <img src="/field-camo/samples/flower.jpg" alt="" /></button
+                      ><button
+                        data-sample="meadow"
+                        aria-label="Use meadow sample"
+                        title="Meadow sample"
+                      >
+                        <img src="/field-camo/samples/meadow.jpg" alt="" /></button
+                      ><button
+                        data-sample="tulips"
+                        aria-label="Use tulips sample"
+                        title="Tulips sample"
+                      >
+                        <img src="/field-camo/samples/tulips.jpg" alt="" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <details class="extraction-options">
+                <summary>Extraction settings <span>+</span></summary>
+                <div class="extract-grid">
+                  <label class="extract-method"
+                    >Extraction mode<select id="extract-mode">
+                      <option value="element">Silhouettes</option>
+                      <option value="region">Color regions</option>
+                    </select></label
+                  ><label
+                    >Color count<select id="color-count">
+                      <option>4</option>
+                      <option>5</option>
+                      <option selected>6</option>
+                      <option>7</option>
+                      <option>8</option>
+                    </select></label
+                  ><label
+                    >Fragment filter <output id="filter-value">0.15%</output
+                    ><input
+                      id="filter"
+                      type="range"
+                      min="1"
+                      max="20"
+                      value="3"
+                      aria-label="Fragment filter"
+                  /></label>
+                </div>
+                <p>Use silhouettes for simple backgrounds or color regions for complex textures. Crop first to isolate a subject.</p>
+              </details>
+            </section>
+            <section
+              class="control-section motif-section"
+              aria-label="Contour selection"
+            >
+              <div class="motif-heading">
+                <div>
+                  <h2>Extracted contours <span id="motif-count">—</span></h2>
+                  <p>Click to select · Hover to locate</p>
+                </div>
+                <button id="select-all" class="action-btn">Select all</button>
+              </div>
+              <div id="motifs" class="motifs"></div>
+            </section>
+
+            <section class="control-section">
+              <div class="section-heading">
+                <h2><span class="step">02</span> Palette</h2>
+                <button id="palette-reset" class="action-btn">Reset</button>
+              </div>
+              <div
+                id="palette"
+                class="palette"
+                aria-label="Extracted colors"
+              ></div>
+              <div class="palette-presets" role="group" aria-label="Palette presets">
+                <button data-palette="source" aria-pressed="true">Source</button
+                ><button data-palette="bloom" aria-pressed="false">Floral</button
+                ><button data-palette="forest" aria-pressed="false">Forest</button
+                ><button data-palette="ocean" aria-pressed="false">Ocean</button
+                ><button data-palette="sand" aria-pressed="false">Sand</button>
+              </div>
+              <div class="contrast-tools">
+                <button id="auto-contrast" class="secondary-btn" aria-pressed="true" title="Balance light, mid, and dark tones in the source palette">Auto contrast</button>
+                <span>Light · Mid · Dark</span>
+              </div>
+              <details class="weights-options">
+                <summary>Color weights <span>+</span></summary>
+                <div id="weights"></div>
+              </details>
+            </section>
+            <section class="control-section compose-section">
+              <div class="section-heading">
+                <h2><span class="step">03</span> Composition</h2>
+                <button id="settings-reset" class="action-btn">Reset</button>
+              </div>
+              <div class="style-switch" role="group" aria-label="Pattern style">
+                <button data-style="element" aria-pressed="false">
+                  Source shapes</button
+                ><button data-style="organic" aria-pressed="true">
+                  Organic shapes
+                </button>
+              </div>
+              <label class="range-row"
+                ><span>Shape retention <output id="preserve-value">12%</output></span
+                ><input
+                  id="preserve"
+                  type="range"
+                  min="0"
+                  max="100"
+                  value="12"
+                /><span class="range-ends"
+                  ><small>Abstract</small><small>Original</small></span
+                ></label
+              >
+              <label class="range-row"
+                ><span>Shape size <output id="size-value">18</output></span
+                ><input id="size" type="range" min="8" max="35" value="18"
+              /></label>
+              <label class="range-row"
+                ><span>Density <output id="density-value">92</output></span
+                ><input id="density" type="range" min="20" max="100" value="92"
+              /></label>
+              <label class="range-row" title="Balance even spacing with random offsets"
+                ><span>Structure <output id="structure-value">55</output></span
+                ><input id="structure" type="range" min="0" max="100" value="55"
+                /><span class="range-ends"
+                  ><small>Free</small><small>Ordered</small></span
+                ></label>
+              <details class="advanced-options">
+                <summary>Advanced settings <span>+</span></summary>
+                <label class="range-row"
+                  ><span>Size variation <output id="variation-value">65</output></span
+                  ><input
+                    id="variation"
+                    type="range"
+                    min="0"
+                    max="100"
+                    value="65" /></label
+                ><label class="range-row"
+                  ><span>Rotation <output id="rotation-value">100</output></span
+                  ><input
+                    id="rotation"
+                    type="range"
+                    min="0"
+                    max="100"
+                    value="100" /></label
+                ><label class="seed-row"
+                  >Seed
+                  <input
+                    id="seed"
+                    type="number"
+                    min="0"
+                    max="999999"
+                    value="4821"
+                /></label>
+              </details>
+              <button id="shuffle" class="shuffle-btn" disabled>
+                <span>↻</span> Shuffle <kbd>R</kbd>
+              </button>
+            </section>
+            <section class="control-section preview-section">
+              <div class="section-heading">
+                <h2><span class="step">04</span> Preview</h2>
+              </div>
+              <div class="view-tools">
+                <label class="seams-label" hidden
+                  ><input id="seams" type="checkbox" /> Show seams</label
+                >
+                <div class="view-switch" role="group" aria-label="Preview mode">
+                  <button data-view="tile" aria-pressed="false">Tile</button
+                  ><button data-view="repeat" aria-pressed="false">
+                    Repeat
+                  </button><button data-view="product" aria-pressed="true">
+                    Product
+                  </button>
+                </div>
+                <button
+                  id="fullscreen"
+                  class="icon-btn"
+                  aria-label="Fullscreen"
+                  title="Fullscreen"
+                >
+                  ⛶
+                </button>
+              </div>
+              <label id="product-options" class="product-options">
+                <input id="product-white" type="checkbox" /> White model
+              </label>
+            </section>
+            <details class="help">
+              <summary>Tips for better patterns</summary>
+              <p>
+                Choose a photo with a simple background and clear outlines. Crop to isolate a subject, then select the contours to use. Lower shape retention for more abstract camouflage, or increase shape size for a bolder pattern. Use Product to see the pattern on the toys, or Repeat to check the tiling. Exports contain one seamless square tile.
+              </p>
+            </details>
+          </div>
+          <footer class="controls-footer">
+            <div class="export-heading">
+              <span>Export</span><span>Seamless tile</span>
+            </div>
+            <div class="export-actions">
+              <label class="resolution-label"
+                ><span class="sr-only">Export size</span
+                ><select id="resolution" aria-label="Export size">
+                  <option value="1024">1024 px</option>
+                  <option value="2048" selected>2048 px</option>
+                  <option value="4096">4096 px</option>
+                </select></label
+              ><button id="export-svg" class="quiet-btn" disabled>
+                SVG</button
+              ><button id="export-png" class="primary-btn" disabled>
+                <span>↓</span> Export PNG
+              </button>
+            </div>
+            <span class="local-note"
+              ><span class="local-dot"></span> Images processed locally</span
+            >
+          </footer>
+        </aside>
+        <main class="studio">
+          <div class="canvas-toolbar">
+            <div>
+              <p class="canvas-eyebrow">PATTERN STUDIO</p>
+              <h1>Camouflage</h1>
+              <span id="canvas-meta">Upload a photo to create a pattern</span>
+            </div>
+            <span class="preview-state"><i></i>Live preview</span>
+          </div>
+          <section id="stage" class="stage" aria-label="Camouflage preview">
+            <div class="ruler ruler-top"></div>
+            <div class="ruler ruler-left"></div>
+            <div id="pattern-wrap" class="pattern-wrap">
+              <canvas id="pattern-canvas" aria-label="Generated camouflage pattern" hidden></canvas>
+              <canvas id="product-canvas" aria-label="Camouflage on the toy models"></canvas>
+              <div id="product-loading" class="product-loading" role="status">Preparing product…</div>
+              <div id="repeat-preview" hidden></div>
+              <div id="seam-overlay" hidden></div>
+              <div id="loading" class="loading">
+                <span class="spinner"></span
+                ><span id="loading-text">Extracting contours…</span>
+              </div>
+              <div id="empty-pattern" hidden>
+                <span>Start with a photo</span>
+                <p>Upload an image, select contours, and generate camouflage.</p>
+              </div>
+            </div>
+            <span class="stage-label"
+              ><span id="stage-label-title">PRODUCT PREVIEW</span> / <span id="stage-view">01</span></span
+            ><span class="stage-size">1 : 1</span>
+          </section>
+          <div class="canvas-foot">
+            <span id="status" role="status" aria-live="polite">Preparing…</span
+            ><span class="foot-note">Composed from source contours</span>
+          </div>
+        </main>
+      </div>
+    </div>
+    <div id="toast" role="alert" hidden></div>
+    <div id="drop-overlay" hidden>
+      Drop a photo to extract contours<span>JPG · PNG · WEBP</span>
+    </div>
+  </body>
+</html>
