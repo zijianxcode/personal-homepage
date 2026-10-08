@@ -6,7 +6,7 @@ Static personal homepage (Work / Info / Things). Dark theme, particle background
 
 ## Latest Project
 
-2026-10-08：FIELD 接入 Visual Coding，当前共八个项目。使用用户指定黑白 PNG 封面，提供照片取色与轮廓编译、连续迷彩、玩具白模预览及 PNG/SVG 导出。正式入口为 `/field-camo/`；发布记录见 [FIELD 接入](docs/engineering/field-camo.md)。
+2026-10-08：FIELD 接入 Visual Coding，当前共八个项目。使用用户指定黑白 PNG 封面，提供照片取色与轮廓编译、连续迷彩、圆角立方体叠放预览及 PNG/SVG 导出。正式入口为 `/field-camo/`；发布记录见 [FIELD 接入](docs/engineering/field-camo.md)。
 
 ## Latest Update
 
@@ -112,7 +112,7 @@ Root safety rule:
 ├── vibe-fiber/                 ← Visual Coding #05 完整织字与图案 Demo
 ├── far-from-here/             ← Visual Coding #06，3D / 2D 与 DJ 音乐学习演示
 ├── grid-poster/               ← Visual Coding #07，网格海报编辑器
-├── field-camo/                ← Visual Coding #08，迷彩生成与玩具表面预览
+├── field-camo/                ← Visual Coding #08，迷彩生成与立方体叠放预览
 ├── Assets/
 │   ├── css/style.css           ← 全局样式 + CSS 变量
 │   ├── js/

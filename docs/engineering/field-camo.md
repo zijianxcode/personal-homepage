@@ -10,9 +10,9 @@
 
 ## 构建与功能
 
-源码执行 `npm run build -- --base=/field-camo/`，复制 dist 至主站同名目录。所有动态示例照片与白模 PNG 使用 Vite BASE_URL；Worker 与 HTML 图像由构建原生生成子路径。线上常驻 `← VISUAL CODING`，移动端滚动仍保留在右上角。生产入口自动沿用主站域名防护，开发源码不受限制，不发布 source map。
+源码执行 `npm run build -- --base=/field-camo/`，复制 dist 至主站同名目录。所有动态示例照片使用 Vite BASE_URL；Worker 与 HTML 图像由构建原生生成子路径。线上常驻 `← VISUAL CODING`，移动端滚动仍保留在右上角。生产入口自动沿用主站域名防护，开发源码不受限制，不发布 source map。
 
-默认 Tile 展示迷彩展开图，Repeat 检查连续平铺。用户选择 Product 后才加载白模素材并显示玩具图像预览，保留表面光影，既有参数实时映射；White model 对比原白模。预览是固定视角图像映射，不是可旋转三维模型。PNG/SVG 导出仍为迷彩图案单元。照片提取在浏览器 Worker 中执行，没有图片上传接口或新增外部运行依赖。
+默认 Tile 展示迷彩展开图，Repeat 检查连续平铺。用户选择 Product 后才初始化圆角立方体渲染，支持 1–8 个独立图案立方体叠放；既有参数更新所选立方体，其余保留各自图案。White model 比较整个白模场景。预览由浏览器 WebGL 程序化渲染，以固定透视展示圆角、三面纹理与接触阴影；不再下载玩具素材。PNG/SVG 导出仍为迷彩图案单元。照片提取在浏览器 Worker 中执行，没有图片上传接口或新增外部运行依赖。
 
 ## 发布与回滚
 
@@ -45,3 +45,11 @@ CloudBase 整站上传成功，284 个文件，失败 0。正式域名的浏览�
 ## 2026-10-08 · 默认视图调整
 
 默认展开图，初次打开不请求或准备玩具素材。选择 Product 后才加载并展示玩具，准备期间切回 Tile 仍保持展开图，后续 Product 切换复用已准备素材。核心测试 25/25，待发布包 23 项、正式域名 22 项浏览器检查通过，涵盖初始状态、延迟素材加载、切换、白模比较、配色、五类宽度和平铺导出，资源错误与页面异常均为 0。整站再次上传 284 个文件，失败 0；主页与 academy 生产验证、健康检查通过。当前默认展开图截图为源码 output/playwright/hosting-production-tile.png。
+
+## 2026-10-08 · 圆角立方体替换与叠放
+
+Product 现为原生 WebGL 程序化圆角立方体，使用三面纹理投影、柔和光照与接触阴影。左侧 Add cube / Remove 控制 1–8 个自动叠放立方体，数字按钮选择编辑对象；其他立方体保留已应用纹理。White model 比较整个白模场景，Tile 仍为默认视图，PNG/SVG 仍导出单块迷彩。旧玩具 PNG 从运行目录移除，源码 references/previous-product 保存旧资产。无新增运行依赖，无远程模型下载，无持续动画循环。
+
+核心测试 26/26，完整生成器浏览器流程 55/55；独立立方体交互本地与线上各 15 项通过，包括 8 个上限、逐个配色、选择不覆盖、移除后原图像像素一致、白模复原与手机布局。生产防护包 26 项、正式域名 25 项检查通过，未发生页面异常或新项目资源失败。发布从 GitHub 对齐基线组装整站包，只加入当前 FIELD 改动，其他同期已提交项目更新保留在最终整站版本。
+
+本地静态默认 Tile 审计：桌面性能 100（LCP 0.7 s，TBT 20 ms），模拟手机性能 64（LCP 3.3 s，TBT 300 ms）。审计仅代表初始视图与本次环境，未验证各手机显卡的 Product 渲染性能；不能把交互和布局通过当作慢网性能达标。旧玩具素材的历史性能结果保留为旧版本记录。证据在源码 output/playwright/cube-production-results.json、cube-production-stack-eight.png、cubes-lighthouse-desktop.json、cubes-lighthouse-mobile.json、cubes-production-files.json；主站发布日志为 output/playwright/field-camo-cubes-*.log。

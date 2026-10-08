@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#f5f5f2" />
     <title>FIELD — Camouflage Generator</title>
-    <meta name="description" content="Turn photo colors and contours into seamless camouflage. Explore the pattern on toy models and export PNG or SVG." />
+    <meta name="description" content="Turn photo colors and contours into seamless camouflage. Explore the pattern on rounded cubes and export PNG or SVG." />
     <meta property="og:title" content="FIELD — Camouflage Generator" />
-    <meta property="og:description" content="Photo to camouflage. Seamless patterns and toy product previews." />
+    <meta property="og:description" content="Photo to camouflage. Seamless patterns and rounded cube previews." />
     <meta property="og:image" content="https://bananabox.plus/field-camo/cover.png" />
     <meta property="og:image:width" content="1008" />
     <meta property="og:image:height" content="1008" />
     <meta property="og:url" content="https://bananabox.plus/field-camo/" />
     <meta property="og:type" content="website" />
     <link rel="icon" href="/field-camo/favicon.svg" />
-    <script type="module" crossorigin src="/field-camo/assets/index-D3hNg6Va.js"></script>
-    <link rel="stylesheet" crossorigin href="/field-camo/assets/index-90vZsB-3.css">
+    <script type="module" crossorigin src="/field-camo/assets/index-B7_hY2cf.js"></script>
+    <link rel="stylesheet" crossorigin href="/field-camo/assets/index-DQqdWgIU.css">
   </head>
   <body>
     <div class="app-shell">
@@ -273,14 +273,21 @@
                   ⛶
                 </button>
               </div>
-              <label id="product-options" class="product-options" hidden>
-                <input id="product-white" type="checkbox" /> White model
-              </label>
+              <div id="product-options" class="product-options" hidden>
+                <div class="cube-heading"><span>Cube stack</span><span id="cube-count">1 / 8</span></div>
+                <div id="cube-list" class="cube-list" role="group" aria-label="Select a cube"></div>
+                <div class="cube-actions">
+                  <button id="cube-add" class="secondary-btn" disabled>＋ Add cube</button>
+                  <button id="cube-remove" class="secondary-btn" disabled>Remove</button>
+                </div>
+                <p class="cube-hint">Select a cube, then edit the pattern to apply it.</p>
+                <label class="white-model-label"><input id="product-white" type="checkbox" /> White model</label>
+              </div>
             </section>
             <details class="help">
               <summary>Tips for better patterns</summary>
               <p>
-                Choose a photo with a simple background and clear outlines. Crop to isolate a subject, then select the contours to use. Lower shape retention for more abstract camouflage, or increase shape size for a bolder pattern. Use Product to see the pattern on the toys, or Repeat to check the tiling. Exports contain one seamless square tile.
+                Choose a photo with a simple background and clear outlines. Crop to isolate a subject, then select the contours to use. Lower shape retention for more abstract camouflage, or increase shape size for a bolder pattern. Use Product to see the pattern on rounded cubes, or Repeat to check the tiling. Exports contain one seamless square tile.
               </p>
             </details>
           </div>
@@ -321,7 +328,7 @@
             <div class="ruler ruler-left"></div>
             <div id="pattern-wrap" class="pattern-wrap">
               <canvas id="pattern-canvas" aria-label="Generated camouflage pattern"></canvas>
-              <canvas id="product-canvas" aria-label="Camouflage on the toy models" hidden></canvas>
+              <canvas id="product-canvas" aria-label="Camouflage on rounded cubes" hidden></canvas>
               <div id="product-loading" class="product-loading" role="status" hidden>Preparing product…</div>
               <div id="repeat-preview" hidden></div>
               <div id="seam-overlay" hidden></div>
