@@ -86,12 +86,12 @@ Root safety rule:
 
 - Do not place access codes, protected links, admin entry keys, or API secrets in tracked frontend files.
 - Public pages must not rely on client-side equality checks for access control.
+- All six Things course pages use server-side permit resources; keep codes and content in CloudBase environment configuration.
+- CI and production deployment run `npm run test:security` and `npm run test:things-access`.
+- Production custom domains enforce HTTPS and basic security response headers. Inspect or restore settings with `scripts/harden-hosting-security.js`; its backup stays local.
 - Third-party script execution is prohibited by default; use local vendored assets or server-owned endpoints first.
 - New external dependencies require a security review and a concrete rollback path.
-- Visitor analytics is currently running in shadow mode:
-  - `busuanzi` remains temporarily enabled for comparison.
-  - CloudBase self-hosted UV counting runs in parallel via `Assets/js/analytics.js`.
-  - Remove the third-party counter only after the two data sources are verified to be stable enough for replacement.
+- CloudBase self-hosted UV counting runs via `Assets/js/analytics.js`; legacy counter DOM identifiers remain in use.
 
 ## Structure
 

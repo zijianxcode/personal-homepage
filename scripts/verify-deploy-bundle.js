@@ -37,6 +37,15 @@ if (!/<title>\s*研究所\s*<\/title>/i.test(academy)) {
 
 console.log('Deploy bundle structure OK: / → aspera ad astra, /academy/ → 研究所');
 
+for (const page of fs.readdirSync(bundleRoot).filter((name) => /^things-.*\.html$/.test(name))) {
+  const html = read(page);
+  if (!/data-things-resource="[a-z0-9-]+"/.test(html) || !html.includes('Assets/js/things-page.js')) {
+    fail(`Missing server-side permit access: ${page}`);
+  }
+  if (/\b(?:PERMIT_CODE|contentItems)\s*=/.test(html)) fail(`Embedded permit secrets/content: ${page}`);
+}
+console.log('Protected course pages use server-side permit access');
+
 const { projectPages } = require('./protect-visual-coding');
 const protection = JSON.parse(read('vc-protection.json'));
 for (const page of ['visual-coding.html', ...projectPages]) {

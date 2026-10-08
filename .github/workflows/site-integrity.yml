@@ -6,6 +6,9 @@ on:
       - main
   pull_request:
 
+permissions:
+  contents: read
+
 jobs:
   site-integrity:
     runs-on: ubuntu-latest
@@ -16,7 +19,13 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
       - name: Check site integrity
         run: npm run test:site-integrity
+
+      - name: Check protected course access
+        run: npm run test:things-access
+
+      - name: Check API access boundaries
+        run: npm run test:security

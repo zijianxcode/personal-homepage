@@ -47,6 +47,10 @@
     </style>
 </head>
 <body
+    data-things-resource="hci-prototyping"
+    data-things-description="输入许可代码后继续访问人机交互与原型设计。"
+    data-things-placeholder="代码为本节课的开课日期"
+    data-things-index="03"
     data-things-context="HCI &amp; Prototyping"
 >
     <main class="things-subpage-wrap">
@@ -63,105 +67,6 @@
     <script src="Assets/js/config.js"></script>
     <script src="Assets/js/analytics.js?v=20260319-cloudbase-uv"></script>
     <script src="Assets/js/permit-modal.js?v=20260413-things-multi-resource"></script>
-    <script>
-        (function () {
-            'use strict';
-
-            var PERMIT_CODE = '20260507';
-            var contentItems = [
-                {
-                    name: '交互原型与原型设计 5.25',
-                    url: 'https://my.feishu.cn/file/Cg4ZbKIp1ozh5TxF0rycn36inEg'
-                },
-                {
-                    name: '人机交互与原型设计 5.21',
-                    url: 'https://my.feishu.cn/file/HTmfbdtIMo758SxIsmhcNWGinTi'
-                },
-                {
-                    name: '人机交互与原型设计 5.11',
-                    url: 'https://my.feishu.cn/file/SZL3bpwCwozW7Fx78GFcrlfBnOe'
-                },
-                {
-                    name: '人机交互与原型设计 5.8',
-                    url: 'https://my.feishu.cn/file/XlhjbPtSXo4gNKxXzvJclPXEnsh'
-                },
-                {
-                    name: '人机交互与原型设计 5.7',
-                    url: 'https://my.feishu.cn/file/SCDgbyPNuoItWjxg4arcRLEgnie'
-                },
-                {
-                    name: '课程预告',
-                    url: 'https://my.feishu.cn/file/CBamb2sejorT7sxKppschaKXnig'
-                },
-                {
-                    name: '教材 2-设计心理学',
-                    url: 'https://my.feishu.cn/file/AmCkb2LS4oSxDnxsYzzcfLJnnVc'
-                },
-                {
-                    name: '教材 1-关键设计报告',
-                    url: 'https://my.feishu.cn/drive/folder/LXVLfaodDlHT6XddpG7cd3jPnOb?from=space_personal_filelist'
-                }
-            ];
-
-            function escapeHtml(value) {
-                var div = document.createElement('div');
-                div.textContent = value == null ? '' : String(value);
-                return div.innerHTML;
-            }
-
-            function setStatus(message) {
-                var note = document.getElementById('things-status');
-                if (note) note.textContent = message;
-            }
-
-            function renderItems(items) {
-                var list = document.getElementById('things-list');
-                if (!list) return;
-
-                list.innerHTML = '';
-                items.forEach(function (item) {
-                    var anchor = document.createElement('a');
-                    anchor.className = 'things-link';
-                    anchor.href = item.url;
-                    anchor.target = '_blank';
-                    anchor.rel = 'noopener noreferrer';
-                    anchor.innerHTML =
-                        '<span class="things-link-name">' + escapeHtml(item.name) + '</span>' +
-                        '<span class="things-link-arrow">→</span>';
-                    list.appendChild(anchor);
-                });
-            }
-
-            function promptCode() {
-                if (!window.PermitCodeModal || !window.PermitCodeModal.openPermitCodeModal) return;
-
-                window.PermitCodeModal.openPermitCodeModal({
-                    contextLabel: 'HCI & Prototyping',
-                    contextIndex: '03',
-                    title: '许可代码',
-                    description: '输入许可代码后继续访问人机交互与原型设计。',
-                    placeholder: '代码为本节课的开课日期',
-                    errorMessage: '许可代码错误，请重试。',
-                    validate: function (value) {
-                        return {
-                            ok: value === PERMIT_CODE
-                        };
-                    },
-                    onSuccess: function () {
-                        renderItems(contentItems);
-                        setStatus('已通过许可代码验证，以下为内容入口。');
-                    },
-                    onCancel: function () {
-                        window.location.replace('index.html#things');
-                    }
-                });
-            }
-
-            document.addEventListener('DOMContentLoaded', function () {
-                setStatus('请输入许可代码后查看内容。');
-                promptCode();
-            });
-        })();
-    </script>
+    <script src="Assets/js/things-page.js?v=20261008-server-permit"></script>
 </body>
 </html>

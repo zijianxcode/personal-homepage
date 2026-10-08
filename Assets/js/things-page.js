@@ -21,6 +21,7 @@
             resource: resource,
             storageKey: root.getAttribute('data-things-storage-key') || getStorageKey(resource),
             contextLabel: root.getAttribute('data-things-context') || 'Digital & Experience',
+            contextIndex: root.getAttribute('data-things-index') || '01',
             description: root.getAttribute('data-things-description') || '输入许可代码后继续访问。',
             placeholder: root.getAttribute('data-things-placeholder') || '请输入许可代码'
         };
@@ -127,6 +128,7 @@
 
         window.PermitCodeModal.openPermitCodeModal({
             contextLabel: getThingsPageConfig().contextLabel,
+            contextIndex: getThingsPageConfig().contextIndex,
             title: '许可代码',
             description: getThingsPageConfig().description,
             placeholder: getThingsPageConfig().placeholder,

@@ -21,3 +21,6 @@ far-from-here/assets/audio/
 # Browser verification artifacts
 .playwright-cli/
 output/playwright/
+output/security/
+# Local audit findings; keep the full risk report outside public Git history.
+.security-audit/

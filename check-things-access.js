@@ -16,7 +16,7 @@ function assert(condition, message) {
 const index = read("index.html");
 const uxEntryPosition = index.indexOf('data-permit-resource="ux-design-innovation"');
 const cultureEntryPosition = index.indexOf('data-permit-resource="cultural-brand-innovation"');
-const hciEntryPosition = index.indexOf('href="things-hci-prototyping.html?v=20260507-hci-permit"');
+const hciEntryPosition = index.indexOf('href="things-hci-prototyping.html?v=20261008-hci-server-permit"');
 const aiEntryPosition = index.indexOf('data-permit-resource="ai-innovative-design"');
 const digitalEntryPosition = index.indexOf('data-permit-resource="things"');
 const compositionEntryPosition = index.indexOf('data-permit-resource="composition-and-form"');
@@ -54,8 +54,16 @@ const hciPagePath = path.join(root, "things-hci-prototyping.html");
 assert(fs.existsSync(hciPagePath), "缺少人机交互与原型设计受限子页面");
 const hciPage = read("things-hci-prototyping.html");
 assert(hciPage.includes("人机交互与原型设计"), "HCI 子页面缺少标题");
-assert(hciPage.includes("20260507"), "HCI 子页面缺少访问码配置");
-assert(hciPage.includes("课程预告"), "HCI 子页面缺少课程预告链接名称");
+assert(hciPage.includes('data-things-resource="hci-prototyping"'), "HCI 子页面必须通过服务端资源鉴权");
+assert(hciPage.includes("Assets/js/things-page.js"), "HCI 子页面需要使用共享内容加载逻辑");
+
+for (const file of fs.readdirSync(root).filter((name) => /^things-.*\.html$/.test(name))) {
+  const html = read(file);
+  assert(!/\b(?:PERMIT_CODE|contentItems)\s*=/.test(html), `${file} 不得包含许可码或受限链接列表`);
+  assert(!/\bvalue\s*===?\s*["'][^"']+["']/.test(html), `${file} 不得使用前端常量鉴权`);
+  assert(/data-things-resource="[a-z0-9-]+"/.test(html), `${file} 缺少服务端资源标记`);
+  assert(html.includes("Assets/js/things-page.js"), `${file} 必须通过共享脚本请求受限内容`);
+}
 
 const aiPagePath = path.join(root, "things-ai-innovative-design.html");
 assert(fs.existsSync(aiPagePath), "缺少人工智能与创新设计受限子页面");
