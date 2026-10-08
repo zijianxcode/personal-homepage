@@ -14,8 +14,8 @@
     <meta property="og:url" content="https://bananabox.plus/field-camo/" />
     <meta property="og:type" content="website" />
     <link rel="icon" href="/field-camo/favicon.svg" />
-    <script type="module" crossorigin src="/field-camo/assets/index-B7_hY2cf.js"></script>
-    <link rel="stylesheet" crossorigin href="/field-camo/assets/index-DQqdWgIU.css">
+    <script type="module" crossorigin src="/field-camo/assets/index-D4arS8bY.js"></script>
+    <link rel="stylesheet" crossorigin href="/field-camo/assets/index-DOSWhyY9.css">
   </head>
   <body>
     <div class="app-shell">
@@ -42,7 +42,43 @@
       </header>
       <div class="workspace">
         <aside class="controls" aria-label="Pattern settings">
+            <section class="control-section preview-section">
+              <div class="section-heading">
+                <h2>Preview</h2>
+              </div>
+              <div class="view-tools">
+                <label class="seams-label" hidden
+                  ><input id="seams" type="checkbox" /> Show seams</label
+                >
+                <div class="view-switch" role="group" aria-label="Preview mode">
+                  <button data-view="tile" aria-pressed="true">Tile</button
+                  ><button data-view="repeat" aria-pressed="false">
+                    Repeat
+                  </button><button data-view="product" aria-pressed="false">
+                    Product
+                  </button>
+                </div>
+                <button
+                  id="fullscreen"
+                  class="icon-btn"
+                  aria-label="Fullscreen"
+                  title="Fullscreen"
+                >
+                  ⛶
+                </button>
+              </div>
+            </section>
           <div class="controls-scroll">
+              <section id="product-options" class="control-section product-options" hidden>
+                <div class="cube-heading"><span>Cube stack</span><span id="cube-count">1 / 8</span></div>
+                <div id="cube-list" class="cube-list" role="group" aria-label="Select a cube"></div>
+                <div class="cube-actions">
+                  <button id="cube-add" class="secondary-btn" disabled>＋ Add cube</button>
+                  <button id="cube-remove" class="secondary-btn" disabled>Remove</button>
+                </div>
+                <p class="cube-hint">Select a cube, then edit the pattern to apply it.</p>
+                <label class="white-model-label"><input id="product-white" type="checkbox" /> White model</label>
+              </section>
             <section class="control-section source-section">
               <div class="section-heading">
                 <h2><span class="step">01</span> Source image</h2>
@@ -247,42 +283,6 @@
               <button id="shuffle" class="shuffle-btn" disabled>
                 <span>↻</span> Shuffle <kbd>R</kbd>
               </button>
-            </section>
-            <section class="control-section preview-section">
-              <div class="section-heading">
-                <h2><span class="step">04</span> Preview</h2>
-              </div>
-              <div class="view-tools">
-                <label class="seams-label" hidden
-                  ><input id="seams" type="checkbox" /> Show seams</label
-                >
-                <div class="view-switch" role="group" aria-label="Preview mode">
-                  <button data-view="tile" aria-pressed="true">Tile</button
-                  ><button data-view="repeat" aria-pressed="false">
-                    Repeat
-                  </button><button data-view="product" aria-pressed="false">
-                    Product
-                  </button>
-                </div>
-                <button
-                  id="fullscreen"
-                  class="icon-btn"
-                  aria-label="Fullscreen"
-                  title="Fullscreen"
-                >
-                  ⛶
-                </button>
-              </div>
-              <div id="product-options" class="product-options" hidden>
-                <div class="cube-heading"><span>Cube stack</span><span id="cube-count">1 / 8</span></div>
-                <div id="cube-list" class="cube-list" role="group" aria-label="Select a cube"></div>
-                <div class="cube-actions">
-                  <button id="cube-add" class="secondary-btn" disabled>＋ Add cube</button>
-                  <button id="cube-remove" class="secondary-btn" disabled>Remove</button>
-                </div>
-                <p class="cube-hint">Select a cube, then edit the pattern to apply it.</p>
-                <label class="white-model-label"><input id="product-white" type="checkbox" /> White model</label>
-              </div>
             </section>
             <details class="help">
               <summary>Tips for better patterns</summary>

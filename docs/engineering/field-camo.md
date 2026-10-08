@@ -60,3 +60,11 @@ Product 现为原生 WebGL 程序化圆角立方体，使用三面纹理投影�
 用户指出原封面模糊，授权替换清晰修复版。使用内置 imagegen 清理线条边缘，保持黑白配色与原构图方向；本次涉及生成式边缘重绘，不再将修复版称为原附件字节一致。实际输出 1254×1254，未声称达到提示中请求的 2048。图库使用新的 field-camo-cover-hd.png，应用分享图使用 cover-hd.png，均更新真实尺寸；新地址避免旧缓存继续显示原图。提示词和资产来源见源码 references/cover-hd.md。
 
 封面更新验证：待发布包 26 项、正式域名 25 项浏览器检查通过；封面实际尺寸 1254×1254、完整展示、hover 不缩放。图库与分享图两个正式 PNG 均 HTTP 200，SHA-256 与选定 imagegen 输出一致。整站上传 290 个文件、失败 0，主页与 academy 生产验证及健康检查通过。证据：源码 output/playwright/hosting-production-cover.png、cover-hd-production-files.json；主站 output/playwright/field-camo-cover-*.log。
+
+## 2026-10-08 · Product 入口可见性修复
+
+用户未找到立方体功能。正式域名复现证明：1440×900 初始画面中 Product 按钮 top=1159、bottom=1189，左侧滚动可视区 bottom=746，入口完全在可视区之外；实际点击后立方体渲染正常，productPhase=ready、无页面异常。根因是 Preview 被排在所有参数末尾。
+
+修复将 Preview 切换放到左侧滚动区外的常驻顶部，仍保留初始 Tile。Product 控件放到滚动区的第一段，选择 Product 会返回该段。添加、删除、数字选择及每块独立纹理继续使用既有逻辑，无新增功能。修复前可见性断言失败；待发布包三个尺寸（1440×900、1024×768、390×844）的 27 项入口、滚动、叠放、配色和切换检查通过。证据在源码 output/playwright/preview-entry-before.json、preview-entry-local.json 及 preview-entry-local-*.png。
+
+正式域名的同一 27 项入口检查通过，添加、移除及不同立方体配色实际运行正常，无页面异常。整站上传 290 个文件、失败 0；主页与 academy 生产验证和健康检查通过。线上入口截图为源码 output/playwright/preview-entry-production-1440.png，结果为 preview-entry-production.json；发布日志为主站 output/playwright/field-camo-preview-*.log。
