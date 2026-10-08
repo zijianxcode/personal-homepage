@@ -12,7 +12,7 @@
 
 源码执行 `npm run build -- --base=/field-camo/`，复制 dist 至主站同名目录。所有动态示例照片与白模 PNG 使用 Vite BASE_URL；Worker 与 HTML 图像由构建原生生成子路径。线上常驻 `← VISUAL CODING`，移动端滚动仍保留在右上角。生产入口自动沿用主站域名防护，开发源码不受限制，不发布 source map。
 
-默认 Product 图像预览保留玩具白模光影，既有参数实时映射；White model 对比原白模，Tile/Repeat 检查平铺。预览是固定视角图像映射，不是可旋转三维模型。PNG/SVG 导出仍为迷彩图案单元。照片提取在浏览器 Worker 中执行，没有图片上传接口或新增外部运行依赖。
+默认 Tile 展示迷彩展开图，Repeat 检查连续平铺。用户选择 Product 后才加载白模素材并显示玩具图像预览，保留表面光影，既有参数实时映射；White model 对比原白模。预览是固定视角图像映射，不是可旋转三维模型。PNG/SVG 导出仍为迷彩图案单元。照片提取在浏览器 Worker 中执行，没有图片上传接口或新增外部运行依赖。
 
 ## 发布与回滚
 
@@ -41,3 +41,7 @@ CloudBase 整站上传成功，284 个文件，失败 0。正式域名的浏览�
 正式运行文件与封面共 11 个，HTTP 200 且 SHA-256 全部匹配待发布包。指定封面 SHA-256 与原附件一致。主站 `/`、`/academy/` 生产验证与健康检查通过。
 
 线上证据保存在源码项目 `output/playwright/hosting-production-results.json`、`hosting-production-files.json`、`hosting-production-cover.png`、`hosting-production-390.png`、`hosting-production-1440.png`、`hosting-production-export.png` 和 `hosting-production-export.svg`。整站上传、结构与健康日志保存在主站 `output/playwright/field-camo-*.log`。模拟手机性能 64 的限制仍保留，不把布局检查当作性能达标。
+
+## 2026-10-08 · 默认视图调整
+
+默认展开图，初次打开不请求或准备玩具素材。选择 Product 后才加载并展示玩具，准备期间切回 Tile 仍保持展开图，后续 Product 切换复用已准备素材。核心测试 25/25，待发布包 23 项、正式域名 22 项浏览器检查通过，涵盖初始状态、延迟素材加载、切换、白模比较、配色、五类宽度和平铺导出，资源错误与页面异常均为 0。整站再次上传 284 个文件，失败 0；主页与 academy 生产验证、健康检查通过。当前默认展开图截图为源码 output/playwright/hosting-production-tile.png。

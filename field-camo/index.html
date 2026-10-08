@@ -14,7 +14,7 @@
     <meta property="og:url" content="https://bananabox.plus/field-camo/" />
     <meta property="og:type" content="website" />
     <link rel="icon" href="/field-camo/favicon.svg" />
-    <script type="module" crossorigin src="/field-camo/assets/index-BF50oKWA.js"></script>
+    <script type="module" crossorigin src="/field-camo/assets/index-D3hNg6Va.js"></script>
     <link rel="stylesheet" crossorigin href="/field-camo/assets/index-90vZsB-3.css">
   </head>
   <body>
@@ -257,10 +257,10 @@
                   ><input id="seams" type="checkbox" /> Show seams</label
                 >
                 <div class="view-switch" role="group" aria-label="Preview mode">
-                  <button data-view="tile" aria-pressed="false">Tile</button
+                  <button data-view="tile" aria-pressed="true">Tile</button
                   ><button data-view="repeat" aria-pressed="false">
                     Repeat
-                  </button><button data-view="product" aria-pressed="true">
+                  </button><button data-view="product" aria-pressed="false">
                     Product
                   </button>
                 </div>
@@ -273,7 +273,7 @@
                   ⛶
                 </button>
               </div>
-              <label id="product-options" class="product-options">
+              <label id="product-options" class="product-options" hidden>
                 <input id="product-white" type="checkbox" /> White model
               </label>
             </section>
@@ -320,9 +320,9 @@
             <div class="ruler ruler-top"></div>
             <div class="ruler ruler-left"></div>
             <div id="pattern-wrap" class="pattern-wrap">
-              <canvas id="pattern-canvas" aria-label="Generated camouflage pattern" hidden></canvas>
-              <canvas id="product-canvas" aria-label="Camouflage on the toy models"></canvas>
-              <div id="product-loading" class="product-loading" role="status">Preparing product…</div>
+              <canvas id="pattern-canvas" aria-label="Generated camouflage pattern"></canvas>
+              <canvas id="product-canvas" aria-label="Camouflage on the toy models" hidden></canvas>
+              <div id="product-loading" class="product-loading" role="status" hidden>Preparing product…</div>
               <div id="repeat-preview" hidden></div>
               <div id="seam-overlay" hidden></div>
               <div id="loading" class="loading">
@@ -335,7 +335,7 @@
               </div>
             </div>
             <span class="stage-label"
-              ><span id="stage-label-title">PRODUCT PREVIEW</span> / <span id="stage-view">01</span></span
+              ><span id="stage-label-title">SEAMLESS PATTERN</span> / <span id="stage-view">01</span></span
             ><span class="stage-size">1 : 1</span>
           </section>
           <div class="canvas-foot">

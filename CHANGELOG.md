@@ -1,3 +1,7 @@
+## 2026-10-08 · FIELD 默认展开图
+
+- FIELD 默认展示 Tile 迷彩展开图；选择 Product 后才加载并展示玩具，白模比较控件随 Product 显示。
+
 # Changelog
 
 ## 2026-10-08 · FIELD 接入（v1.7.0 之后）
