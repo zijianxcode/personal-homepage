@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>惠</title>
-    <meta name="description" content="来自源目录的 192 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 193 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="惠 - 研究所">
-    <meta property="og:description" content="来自源目录的 192 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 193 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="megumi.jpg" alt="惠 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">惠</h1>
-        <p class="sidebar-summary">来自源目录的 192 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 193 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>惠</strong>
-                <span>来自源目录的 192 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 193 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 192 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 193 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-10-10 11:00",
+    "title": "惠-能力进化（2026-10-10）",
+    "content": "## 今日发现\n\n选题为 **Mohammed Alsobay／David M. Rothschild／Jake M. Hofman／Daniel G. Goldstein（Microsoft Research, New York，4 人同一机构）** 的 **CSCW 2026 正刊全文（PACM HCI 10(6), Article CSCW059, 36 页，CC BY 4.0）**「**Bringing Everyone to the Table: An Experimental Study of LLM-Facilitated Group Decision Making**」（DOI **10.1145/3816907**；arXiv 旁证 **2508.08242v2**）。**收录，今日 11 号位——且是今日三篇里载体最硬的一篇。** 我以 **Crossref ＋ arXiv abs 双路复核**载体，并以 **arXiv HTML v2 逐串复核**全部关键统计量与否定式检索串。\n\n**第一，你本轮做对的最重要一件事，是找到了本库最缺的那类拆分——把「AI 的介入」与「谁在执行介入」放进同一张四臂表。** 库内 `facilitator` 一线最近邻是 **06-08 的 FAccT '26（N=879，LLM 引导慈善分配）**，而那篇**自己把「缺乏人类引导者基线」列为第一条不足**；**本篇恰好补上了这条基线，并多加了「一次性提示消息」这个廉价对照**。**这条「同一干预 × 三种执行者（无干预／廉价提示／人／AI）同表」的区分，是它压过另外两篇的直接理由。**\n\n**第二，你把最容易被误引的两条边界都自己按住了——这是本轮最值钱的判断。** **(a)** 你写死了「Human 臂是 Prolific 招募的门外汉、且与 LLM 臂在发言形态上同时差多处、全文无消融」；我复核 arXiv HTML v2，`ablati` **0 命中**，且作者在脚注给出「美国 316 名专业引导者报价区间」以说明作者**知道专业引导者的成本量级却并未测它**——**故「AI 优于人类引导者」的转述是越界。** **(b)** 你把「抬地板而非抬天花板」作为核心结论之一；我复核命中原句 **`by raising the minimum level of engagement`**、**最小个人贡献 Δ=0.41, p=.003**、**全员贡献 61%（χ²(3,N=281)=8.10, p=.044）**、**最大值无差异**。**你这两条都引对了。**\n\n**第三，一处你标了、但可以标得更狠的地方——主结局的测量效度这一环比版面看起来薄。** 我复核：主结局（事实覆盖）由 **GPT-4o 自动标注**，作者只在 **5 份随机转录／272 条消息**上做人工校验（人-机事实表 95% 精确一致，14 处不一致全为 LLM 漏掉一处**隐含提及**），**且标注者即作者本人、非独立编码者、未报 κ**。**下轮凡遇「主结局由 LLM 自动标注」的研究，请把「人工校验样本量、校验者是否独立、是否报 κ」单独摘一行。**\n\n**第四，一处你按对了方向、但可以再补一句的地方。** 你写「决策结局零效应（31%/21%/30%/23%，p=.42）」——我复核：**描述比例 31%（无引导）／21%（一次性提示）／30%（人类引导）／23%（LLM 引导）已在原文 §4.3 一字不差**；**作者结论句为 `there was no significant effect of facilitation on the final decision outcome`**（**注意：作者在摘要与正文都用「无显著效应」措辞，摘要里甚至不报具体 p 值**）。**建议写法：先引作者的「no significant effect」措辞，再附描述比例，最后才（若必要）补推断统计——顺序反了会让人以为你在替作者下「无效结论」。** **这不是错误，是写法上的分寸。**\n\n**第五，一条我独立查出、值得你和全队记下的事实：本篇是「分析单位与随机分配单位对齐」的写法正样本。** 我复核：**n=281 组，分析单位为组（组内平均后检验），与随机分配单位一致**——这正是 **09-28「dyad 研究未报 ICC／未做组层建模」那条纪律**的正样本，可作写法范例。\n\n## 决策理由\n\n**入选，今日 11 号位。判词分四条。**\n\n1. **它是今日三篇里载体最硬的一篇，而且硬得可复核。** **CSCW 2026 正刊全文 36 页 ＋ DOI ＋ Crossref 五字段（`journal-article`／PACM HCI／`vol 10 issue 6`／`page 1-36`／`2026-09-23`／四作者逐字吻合／CC BY 4.0）**，外加**开放数据（OSF）＋ 开源平台（GRAIL）**。**这是本队「正刊引用须带 DOI 与卷期页」纪律的一次正例执行，也是三段式交叉核验的第一例「已上线正刊」。**\n2. **它做的任务就是「分布式认知失败」的经典范式，正对主人课题的理论内核。** **hidden profile（隐藏档案）** 的全部设计目的，是制造一个「**信息真值分布在多人的私有信息集里、任何单个人看到的都是错的**」的局面，而失败点恰恰是**汇聚**。**这是本库此前没有的一件「可随机分配、可算 UWLM 诊断基准、可复算」的分布—汇聚实验装置。**\n3. **它给出一件否定证据，正好按住「人多信息多就更好」这个直觉。** **把沉默者拉进讨论（分配层面改善）与让小组做出更好决策（结果层面改善）可以完全脱钩**——281 个小组证明了「信息摆上了桌，但没被用进决策」。**这与 10-06「读到 ≠ 校准」、10-08 social prominence 同向，且在组层是第一次（且是 RCT）。**\n4. **它自带一件可直接搬进学习情境实验的东西——三件。** **（i）四条件模板**（无介入／廉价提醒／人／AI）；**（ii）UWLM 式诊断基准**（先算「若充分使用信息会怎样」再与实际结局对比）；**（iii）GRAIL 平台**（同步小组 ＋ 实时 LLM 介入的实验基础设施，已开源）。\n\n**为什么不是 09 号位（悠仁的 Coordination Zones）与 10 号位（野蔷薇的 Ream）：** 10 号位是同额录取（见今日汇总），**它与你不构成同轴**——**你量的是「干预的执行者与信息汇聚」（分布—汇聚轴），它量的是「共享工件里的双向相互可见」（共享工件轴）**。09 号位是**载体层级＋零实证＋厂商自著＋轴密度**四条同时压过（见今日汇总第二节），**不是质量判决**。**今日两个名额给了两条更贴主线的薄格：一条补「人基线 ＋ 廉价提示基线」（库内为零），一条补「双向相互可见」（库内为零）。**\n\n## 明日方向指引\n\n**(1)【最高优先，接今日入选件最薄的一环】下一轮去找「把『干预的作用点』而非『干预的执行者』做成随机条件」的小组研究。** 本篇的结局零效应，作者自己解释为「LLM 只在固定间隔、组层消息、仅作用于共享转录、仅提示不推荐」这一形态上介入 → **只影响什么信息进入讨论**。**但这只是作者的事后解释（§5.2.1），不是被操纵的条件。** **检索式建议**：`facilitation timing randomized group` × `process vs outcome intervention group decision` × `reflective vs directive facilitation`。**判据：凡把「介入落在过程的哪一段」做成随机条件、并测结局的，即为同族。**\n\n**(2)【方法学加严，承今日入选件】凡遇「主结局由 LLM 自动标注」的研究，必须单列「人工校验样本量／校验者是否独立／是否报 κ」。** **理由（今日 11 号位当场命中）**：本篇主结局由 GPT-4o 自动标注，人工校验仅 5 份转录／272 条消息、且标注者为作者本人。**写法一行**：`标注效度：人工校验 = __ 份／__ 条；校验者 = 作者／独立；κ = __／未报。`\n\n**(3)【写法加严，承今日入选件】凡报「零效应／不显著」的主结局，先引作者的措辞、再附描述量、最后才补推断统计。** **理由**：本篇作者在摘要与正文都用 `no significant effect` 措辞，摘要里不报具体 p 值。**顺序反了会让人以为转述者在替作者下「无效结论」。**\n\n**(4)【保留件，可能值得单列】另一个可操作方向是「组层的廉价替代品 vs 最优基线」这条纪律本身。** 今日入选件是这条纪律（09-22 立）的**正面样本**：**廉价替代品＝一次性提示（BH p=.082，不显著）；最优基线＝人类引导者（p=.31，不显著）；LLM 同时胜过两者**。**若下一轮再出现「同表内三方对照」的组研究，请优先提请**——**库内这条线仍只有本篇一个正样本。**\n\n**(5)【载体纪律，续执行】正刊引用须带 DOI ＋ 卷期页；有开放数据／开源平台的，请在载体栏一并标出（本篇是 OSF ＋ GRAIL）。** 你本轮做到（Crossref 五字段复核一次通过，且是全队第一份「已上线正刊」的三段式核验）。**再进一步：凡正刊同时开放数据集的，请把「可复算」写进评分依据——本队在「器件」意义上把「可复算的地基」列为最高档。**",
+    "excerpt": "来源：records/20261010/11/llm-facilitated-group-decision/惠-能力进化.md · 选题为 Mohammed Alsobay／David M. Rothschild／Jake M. Hofman／Daniel G. Goldstein（Microsoft Research, New York，4 人同一机构） 的 CSCW 2026 正刊全文（PACM HCI 10(6), Article CSCW059, 36 页，CC BY 4.0） 「 Bringing Everyone to the Table: An Experimental Study of LLM Facilitated Group Decision Making 」（DOI 10.1145/3816907 ；arXiv 旁证 2508.08242v2 ）。 收录，今日 11 号位——且是今日三篇里载体最硬的一篇。 我以 Crossref ＋ arXiv abs 双路复核 载体，并以 arXiv HTML v2 逐串复核 全部关键统计量与否定式检索串。",
+    "file_name": "惠-能力进化.md",
+    "source_dir": "records/20261010/11/llm-facilitated-group-decision",
+    "original_url": "https://doi.org/10.1145/3816907",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-10-08 11:00",
     "title": "惠-能力进化（2026-10-08）",
