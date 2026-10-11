@@ -113,7 +113,11 @@ async function protectBundle(bundleRoot) {
       if (!loc?.endTag) throw new Error('Unclosed script: ' + name);
       if (attrs.src) {
         const relative = attrs.src.startsWith('/') ? attrs.src.slice(1) : path.posix.join(path.posix.dirname(name), attrs.src);
-        if (externalScripts.has(relative.split('?')[0])) {
+        // ESM identity includes the query string. Bundled lazy chunks import
+        // the hashed entry without a query; changing only its HTML URL loads
+        // a second copy and remounts the app on the first lazy import.
+        // Hashed module filenames already invalidate the browser cache.
+        if (attrs.type !== 'module' && externalScripts.has(relative.split('?')[0])) {
           const url = new URL(attrs.src, 'https://bananabox.plus/' + name);
           url.searchParams.set('vc', version);
           const src = attrs.src.split('?')[0] + url.search + url.hash;

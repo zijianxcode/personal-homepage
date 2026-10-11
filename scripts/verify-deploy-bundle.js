@@ -66,3 +66,7 @@ for (const script of protection.scripts) {
   if (fs.existsSync(path.join(bundleRoot, script + '.map'))) fail(`Public source map: ${script}`);
 }
 console.log(`Visual Coding protection OK: ${protection.pages.length} pages, ${protection.scripts.length} scripts`);
+
+require('node:child_process').execFileSync(process.execPath,
+  ['--test', path.join(root, 'tests/visual-coding/module-entry.test.cjs')],
+  { cwd: root, env: { ...process.env, VC_BUNDLE: bundleRoot }, stdio: 'inherit' });
