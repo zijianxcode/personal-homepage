@@ -49,6 +49,60 @@
     swatches.append(button);
   }
   const pressed=(selector,chosen)=>document.querySelectorAll(selector).forEach(b=>{const active=b===chosen;b.classList.toggle('selected',active);b.setAttribute('aria-pressed',String(active));});
+  const colorStorage='vibe-fiber-yarn-v1',defaultColors=['#3ca081','#f5dea3','#b1302b','#528daa','#d3789a','#c6ab4f','#284f3c','#af6b4d'];
+  let colorMode='single',singleColor=defaultColors[0],multiColors=defaultColors.slice(0,3),colorFrame=0,savedPalette='confetti';
+  try{
+    const saved=JSON.parse(localStorage.getItem(colorStorage));
+    if(saved?.version===1){
+      const single=KnitRenderer.normalizeColors([saved.single]),multi=KnitRenderer.normalizeColors(saved.colors);
+      if(single)singleColor=single[0];if(multi?.length>=2)multiColors=multi;
+      if(saved.mode==='multi')colorMode='multi';
+      if(saved.palette==='custom'||Object.hasOwn(KnitRenderer.palettes,saved.palette))savedPalette=saved.palette;
+    }
+  }catch{}
+  const customColors=()=>colorMode==='single'?[singleColor]:[...multiColors];
+  const saveColors=()=>{try{localStorage.setItem(colorStorage,JSON.stringify({version:1,mode:colorMode,single:singleColor,colors:multiColors,palette:renderer.settings.palette}));}catch{}};
+  const updateColorPreview=()=>{const colors=customColors();byId('custom-color-preview').style.background=colors.length===1?colors[0]:`linear-gradient(90deg,${colors.map((color,i)=>`${color} ${i/colors.length*100}% ${(i+1)/colors.length*100}%`).join(',')})`;};
+  const showCustomColors=()=>{
+    const active=renderer.settings.palette==='custom';byId('custom-palette').hidden=!active;
+    byId('custom-palette-toggle').setAttribute('aria-expanded',String(active));updateColorPreview();
+  };
+  const applyCustomColors=()=>{
+    colorFrame=0;renderer.update({palette:'custom',customColors:customColors()});
+    pressed('[data-palette]',byId('custom-palette-toggle'));showCustomColors();saveColors();
+  };
+  const queueColors=()=>{updateColorPreview();if(!colorFrame)colorFrame=requestAnimationFrame(applyCustomColors);};
+  const selectPalette=palette=>{
+    cancelAnimationFrame(colorFrame);colorFrame=0;
+    renderer.update({palette,customColors:customColors()});
+    pressed('[data-palette]',document.querySelector(`[data-palette="${palette}"]`));showCustomColors();saveColors();
+  };
+  const renderColorInputs=()=>{
+    pressed('[data-color-mode]',document.querySelector(`[data-color-mode="${colorMode}"]`));
+    const list=byId('custom-color-list');list.replaceChildren();const colors=customColors();
+    colors.forEach((color,index)=>{
+      const row=document.createElement('div');row.className='custom-color-row';
+      const picker=document.createElement('input');picker.type='color';picker.value=color;picker.setAttribute('aria-label',`选择第 ${index+1} 个纱线颜色`);
+      const hex=document.createElement('input');hex.type='text';hex.value=color;hex.maxLength=7;hex.spellcheck=false;hex.autocomplete='off';hex.setAttribute('aria-label',`第 ${index+1} 个颜色 HEX`);hex.placeholder='#FFFFFF';
+      const update=value=>{if(colorMode==='single')singleColor=value;else multiColors[index]=value;queueColors();};
+      picker.addEventListener('input',()=>{hex.value=picker.value;hex.removeAttribute('aria-invalid');update(picker.value);});
+      hex.addEventListener('input',()=>{
+        const normalized=KnitRenderer.normalizeColors([hex.value]);hex.setAttribute('aria-invalid',String(!normalized));
+        if(normalized){picker.value=normalized[0];update(normalized[0]);}
+      });
+      hex.addEventListener('blur',()=>{hex.value=customColors()[index];hex.removeAttribute('aria-invalid');});
+      hex.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();hex.blur();}});
+      const remove=document.createElement('button');remove.type='button';remove.textContent='×';remove.setAttribute('aria-label',`移除第 ${index+1} 个颜色`);remove.hidden=colorMode==='single';remove.disabled=colors.length<=2;
+      remove.addEventListener('click',()=>{multiColors.splice(index,1);renderColorInputs();queueColors();});
+      row.append(picker,hex,remove);list.append(row);
+    });
+    byId('add-yarn-color').hidden=colorMode==='single';byId('add-yarn-color').disabled=multiColors.length>=8;
+  };
+  document.querySelectorAll('[data-color-mode]').forEach(button=>button.addEventListener('click',()=>{colorMode=button.dataset.colorMode;renderColorInputs();queueColors();}));
+  byId('add-yarn-color').addEventListener('click',()=>{if(multiColors.length>=8)return;multiColors.push(defaultColors[multiColors.length]);renderColorInputs();queueColors();});
+  // Restore before the first render; changing colors never invalidates text/image geometry.
+  Object.assign(renderer.settings,{palette:savedPalette,customColors:customColors()});
+  renderColorInputs();pressed('[data-palette]',document.querySelector(`[data-palette="${savedPalette}"]`));showCustomColors();
   const groups=new Map();
   for(const [id,definition] of Object.entries(SurfacePresets.definitions)){
     let group=groups.get(definition.group);if(!group){group=document.createElement('optgroup');group.label=definition.group;groups.set(definition.group,group);byId('surface').append(group);}
@@ -71,7 +125,7 @@
   renderer.onProcessChange=updateProcess;updateProcess(renderer.process.snapshot());
   byId('play-weave').addEventListener('click',()=>renderer.process.start());byId('pause-weave').addEventListener('click',()=>renderer.process.state==='paused'?renderer.process.resume():renderer.process.pause());byId('finish-weave').addEventListener('click',()=>renderer.process.finish());
   const queueSliders=()=>{cancelAnimationFrame(queued);queued=requestAnimationFrame(()=>renderer.update({size:Number(byId('size').value)*10,fuzz:Number(byId('halo').value),strays:Number(byId('strays').value),pitch:Number(byId('pitch').value),patternScale:Number(byId('pattern-scale').value),inlay:Number(byId('inlay').value)}));};
-  document.querySelectorAll('[data-palette]').forEach(button=>button.addEventListener('click',()=>{pressed('[data-palette]',button);renderer.update({palette:button.dataset.palette});focusEditor();}));
+  document.querySelectorAll('[data-palette]').forEach(button=>button.addEventListener('click',()=>{selectPalette(button.dataset.palette);if(button.dataset.palette!=='custom')focusEditor();}));
   document.querySelectorAll('[data-align]').forEach(button=>button.addEventListener('click',()=>{pressed('[data-align]',button);renderer.update({align:button.dataset.align});focusEditor();}));
   document.querySelectorAll('[data-space]').forEach(button=>button.addEventListener('click',()=>{pressed('[data-space]',button);spaceMode=button.dataset.space;focusEditor();}));
   document.querySelectorAll('[data-fabric]').forEach(button=>button.addEventListener('click',()=>{pressed('[data-fabric]',button);renderer.update({fabric:button.dataset.fabric});focusEditor();}));
@@ -82,7 +136,7 @@
   }
   const setSlider=(id,value)=>{byId(id).value=value;byId(id+'-value').value=value;};
   document.querySelectorAll('[data-reset]').forEach(button=>button.addEventListener('click',()=>{
-    if(button.dataset.reset==='yarn'){setSlider('halo',46);setSlider('strays',34);pressed('[data-palette]',document.querySelector('[data-palette="confetti"]'));renderer.update({fuzz:46,strays:34,palette:'confetti'});}
+    if(button.dataset.reset==='yarn'){setSlider('halo',46);setSlider('strays',34);selectPalette('confetti');renderer.update({fuzz:46,strays:34});}
     if(button.dataset.reset==='type'){setSlider('size',16);spaceMode='space';pressed('[data-align]',document.querySelector('[data-align="center"]'));pressed('[data-space]',document.querySelector('[data-space="space"]'));renderer.update({size:160,align:'center'});}
     if(button.dataset.reset==='fabric'){renderer.process.cancel();setSlider('pitch',10);setSlider('inlay',75);pressed('[data-fabric]',document.querySelector('[data-fabric="cream"]'));renderer.update({pitch:10,fabric:'cream',surface:'knit',inlay:75});renderer.resetView();}
   }));

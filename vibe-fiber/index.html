@@ -7,7 +7,7 @@
   <title>Vibe Fiber — 织字实验</title>
   <meta name="description" content="在织物上输入文字、导入图案，体验针织与机织动画，自定义纱线、材质和面板布局。">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2322221d'/%3E%3Cpath d='M12 15Q18 40 32 50Q46 40 52 15' fill='none' stroke='%23ddd6c8' stroke-width='8'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="style.css?v=20261007-back-nav">
+  <link rel="stylesheet" href="style.css?v=20261011-colors1">
 </head>
 <body>
   <a class="visual-coding-back" href="/visual-coding.html" aria-label="返回 Visual Coding 作品列表">← VISUAL CODING</a>
@@ -49,6 +49,12 @@ Fiber</textarea>
       <header class="panel-head"><span>纱线</span><button class="reset" data-reset="yarn" aria-label="Reset yarn" title="Reset yarn">↻</button><button class="fold" aria-label="Collapse yarn" aria-expanded="true" aria-controls="yarn-body">⌄</button></header>
       <div id="yarn-body" class="panel-body">
         <div class="swatches" role="group" aria-label="Yarn colors"></div>
+        <button id="custom-palette-toggle" class="custom-palette-toggle" data-palette="custom" aria-pressed="false" aria-expanded="false" aria-controls="custom-palette"><span id="custom-color-preview" aria-hidden="true"></span>自定义颜色</button>
+        <div id="custom-palette" hidden>
+          <div class="color-modes" role="group" aria-label="自定义颜色模式"><button data-color-mode="single" aria-pressed="true" class="selected">单色</button><button data-color-mode="multi" aria-pressed="false">多色</button></div>
+          <div id="custom-color-list"></div>
+          <button id="add-yarn-color" type="button">＋ 添加颜色</button>
+        </div>
         <div class="slider"><label for="halo">绒毛</label><input id="halo" type="range" min="0" max="100" value="46"><output id="halo-value" for="halo">46</output></div>
         <div class="slider"><label for="strays">散线</label><input id="strays" type="range" min="0" max="100" value="34"><output id="strays-value" for="strays">34</output></div>
       </div>
@@ -94,6 +100,6 @@ Fiber</textarea>
     <button id="reset-layout" type="button" title="恢复布局"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 5a5 5 0 1 1-.4 5M3 2v3h3"/></svg>恢复布局</button>
     <p id="layout-help" class="sr-only">拖动面板标题移动，拖动右下角调整大小。聚焦移动或缩放控件后，方向键微调，Shift 加速。</p>
   </main>
-  <script src="pattern-algorithms.js"></script><script src="image-pattern.js"></script><script src="surface-presets.js"></script><script src="weave-process.js?v=20261006-sequence5"></script><script src="motifs.js"></script><script src="renderer.js?v=20261007-performance1"></script><script src="panel-layout.js"></script><script src="app.js?v=20261006-sequence5"></script>
+  <script src="pattern-algorithms.js"></script><script src="image-pattern.js"></script><script src="surface-presets.js"></script><script src="weave-process.js?v=20261006-sequence5"></script><script src="motifs.js"></script><script src="renderer.js?v=20261011-colors1"></script><script src="panel-layout.js"></script><script src="app.js?v=20261011-colors1"></script>
 </body>
 </html>

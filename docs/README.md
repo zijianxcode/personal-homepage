@@ -9,6 +9,7 @@
 | [SITE-STRUCTURE.md](./SITE-STRUCTURE.md) | URL 结构不变量 |
 | [EMERGENCY-ACCESS.md](./EMERGENCY-ACCESS.md) | 应急备用入口 |
 | [engineering/field-camo.md](./engineering/field-camo.md) | FIELD 接入、封面与生产验收 |
+| [engineering/vibe-fiber-custom-colors.md](./engineering/vibe-fiber-custom-colors.md) | Vibe Fiber 自定义单色 / 多色及验证 |
 | [engineering/vibe-fiber-performance.md](./engineering/vibe-fiber-performance.md) | Vibe Fiber 性能审查、前后测量及复现 |
 | [engineering/release-governance-case-study.md](./engineering/release-governance-case-study.md) | v1.6 工程案例 |
 | [../CHANGELOG.md](../CHANGELOG.md) | 版本变更 |

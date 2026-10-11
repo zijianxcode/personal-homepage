@@ -14,10 +14,20 @@ class KnitRenderer {
     forest: {name:'墨绿',colors:['#284f3c']},
     rainbow: {name:'Rainbow yarn',colors:['#d3636a','#d8a149','#cfcd64','#6caa79','#6d9fbb','#a879b1']}
   };
+  static normalizeColors(colors){
+    if(!Array.isArray(colors)||!colors.length||colors.length>8)return null;
+    const normalized=[];
+    for(const value of colors){
+      if(typeof value!=='string'||!/^#(?:[\da-f]{3}|[\da-f]{6})$/i.test(value.trim()))return null;
+      const hex=value.trim().toLowerCase();normalized.push(hex.length===4?'#'+[...hex.slice(1)].map(char=>char+char).join(''):hex);
+    }
+    return normalized;
+  }
+  colors(){return this.settings.palette==='custom'?this.settings.customColors:(Object.hasOwn(KnitRenderer.palettes,this.settings.palette)?KnitRenderer.palettes[this.settings.palette]:KnitRenderer.palettes.confetti).colors;}
   static fabrics = {cream:'#ded9cb',white:'#ece8df',rose:'#d7bab0',dark:'#454b42',blue:'#94aab5',clay:'#b96543'};
   constructor(canvas,onStatus){
     this.canvas=canvas;this.ctx=canvas.getContext('2d');this.width=960;this.height=1120;
-    this.onStatus=onStatus;this.settings={text:'',size:160,pitch:10,fuzz:46,strays:34,palette:'confetti',fabric:'cream',font:'sans',align:'center',inputMode:'text',patternScale:70,surface:'knit',inlay:75};
+    this.onStatus=onStatus;this.settings={text:'',size:160,pitch:10,fuzz:46,strays:34,palette:'confetti',customColors:['#3ca081'],fabric:'cream',font:'sans',align:'center',inputMode:'text',patternScale:70,surface:'knit',inlay:75};
     this.metrics={geometryBuilds:0,baseBuilds:0,frames:0,spriteBuilds:0,spriteBytes:0};this.geometryKey=null;this.geometryCells=null;this.pattern=null;this.patternVersion=0;
     this.cells=new Map();this.particles=[];this.threadAnchors=[];this.sprites=new Map();this.groundColors=new Map();
     this.base=this.createCanvas();this.settled=this.createCanvas();this.mask=this.createCanvas();
@@ -165,7 +175,7 @@ class KnitRenderer {
   }
   geometryStamp(){const s=this.settings;return JSON.stringify([s.inputMode,s.text,s.size,s.pitch,s.align,s.patternScale,this.width,this.height,this.patternVersion]);}
   recolor(cells){
-    const colors=KnitRenderer.palettes[this.settings.palette].colors;
+    const colors=this.colors();
     for(const cell of cells.values())cell.color=colors[(Math.floor(cell.seed*colors.length)+cell.band)%colors.length];
     for(const caret of this.caretPositions.values())caret.color=colors[Math.floor(this.hash(caret.sourceIndex+19)*colors.length)];
     return cells;
@@ -194,7 +204,7 @@ class KnitRenderer {
       if(x1<=x0||y1<=y0)continue;
       const occupied=integral[y1*stride+x1]-integral[y0*stride+x1]-integral[y1*stride+x0]+integral[y0*stride+x0];if(!occupied)continue;
       const id=row*1000+col,seed=this.hash(Math.floor(col/9)+Math.floor(row/13)*41),band=0;
-      const colors=KnitRenderer.palettes[this.settings.palette].colors;
+      const colors=this.colors();
       map.set(id,{id,x,y,row,col,sourceIndex:-1,seed,band,color:colors[Math.floor(seed*colors.length)],variant:Math.floor(this.hash(id)*3),born:0});
     }
     return map;
@@ -202,7 +212,7 @@ class KnitRenderer {
   layout(){
     const key=this.geometryStamp();
     if(key===this.geometryKey){
-      const colors=KnitRenderer.palettes[this.settings.palette].colors;this.caretPositions=new Map();
+      const colors=this.colors();this.caretPositions=new Map();
       for(const [id,caret] of this.geometryCarets)this.caretPositions.set(id,{...caret,color:colors[Math.floor(this.hash(caret.sourceIndex+19)*colors.length)]});
       return this.recolor(this.geometryCells);
     }
@@ -225,7 +235,7 @@ class KnitRenderer {
     wrap();while(lines.length*typeSize*1.28>this.height-130&&typeSize>32){typeSize-=4;wrap();}
     const lineHeight=typeSize*1.28,top=(this.height-lines.length*lineHeight)/2+lineHeight/2-8;
     const longest=Math.max(...lines.map(line=>measureWidth(line.characters.map(c=>c.char).join(''))));
-    const blockLeft=(this.width-longest)/2,palette=KnitRenderer.palettes[this.settings.palette].colors;
+    const blockLeft=(this.width-longest)/2,palette=this.colors();
     const colorFor=(sourceIndex,localRow=0)=>palette[(Math.floor(this.hash(sourceIndex+19)*palette.length)+Math.floor(Math.max(0,localRow)/12))%palette.length];
     g.textAlign='left';g.textBaseline='middle';g.fillStyle='#fff';this.caretPositions=new Map();
     const characterMetrics=new Map();
@@ -283,6 +293,11 @@ class KnitRenderer {
     return this.cacheGeometry(key,map);
   }
   update(patch,{replay=false,removedRange=null}={}){
+    if(Object.hasOwn(patch,'customColors')){
+      const colors=KnitRenderer.normalizeColors(patch.customColors),current=this.settings.customColors;
+      patch={...patch,customColors:!colors||colors.join(',')===current.join(',')?current:colors};
+    }
+    if(patch.palette&&patch.palette!=='custom'&&!Object.hasOwn(KnitRenderer.palettes,patch.palette))patch={...patch,palette:'confetti'};
     if(patch.surface&&!SurfacePresets.definitions[patch.surface])patch={...patch,surface:'knit'};
     const previous={...this.settings};Object.assign(this.settings,patch);
     if(this.initialized&&!replay&&!removedRange&&Object.keys(patch).every(key=>previous[key]===this.settings[key])&&this.geometryStamp()===this.geometryKey)return;
@@ -292,7 +307,7 @@ class KnitRenderer {
     const inlayChanged=previous.inlay!==this.settings.inlay;
     const geometryChanged=previous.pitch!==this.settings.pitch;
     if(materialChanged)this.buildBase();
-    const layoutChanged=this.geometryStamp()!==this.geometryKey,paletteChanged=previous.palette!==this.settings.palette;
+    const layoutChanged=this.geometryStamp()!==this.geometryKey,paletteChanged=previous.palette!==this.settings.palette||(this.settings.palette==='custom'&&previous.customColors!==this.settings.customColors);
     const next=layoutChanged?this.layout():paletteChanged?this.recolor(this.cells):this.cells,now=performance.now();
     if(removedRange&&!replay&&!geometryChanged&&!this.reduced){
       const removed=[...this.cells.values()].filter(cell=>cell.sourceIndex>=removedRange.start&&cell.sourceIndex<removedRange.end&&(!visibleDuringProcess||visibleDuringProcess.has(cell.id)));
@@ -425,3 +440,5 @@ class KnitRenderer {
     return new Promise((resolve,reject)=>c.toBlob(blob=>blob?resolve(blob):reject(new Error('图像导出失败')),'image/png'));
   }
 }
+
+if(typeof module!=='undefined'&&module.exports)module.exports=KnitRenderer;

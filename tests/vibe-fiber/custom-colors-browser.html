@@ -1,0 +1,38 @@
+<!doctype html><meta charset="utf-8"><title>Custom yarn regression</title>
+<button id="run">Run color checks</button><pre id="results">Ready</pre><iframe id="app" src="../../vibe-fiber/index.html" style="width:960px;height:720px;position:absolute;left:-10000px"></iframe>
+<script>
+const key='vibe-fiber-yarn-v1',frame=document.querySelector('#app'),out=document.querySelector('#results');
+const pause=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+const load=()=>new Promise(resolve=>{frame.onload=resolve;frame.src='../../vibe-fiber/index.html?color-test='+Date.now();});
+document.querySelector('#run').addEventListener('click',async()=>{
+ const checks=[],saved=localStorage.getItem(key);const check=(name,pass)=>{checks.push({name,pass});if(!pass)throw Error(name);};
+ const click=selector=>frame.contentDocument.querySelector(selector).click();
+ const edit=(index,value)=>{const input=frame.contentDocument.querySelectorAll('.custom-color-row input[type=text]')[index];input.value=value;input.dispatchEvent(new Event('input',{bubbles:true}));};
+ let result;try{
+  const r=frame.contentWindow.knitDemo.renderer;r.reduced=true;r.process.finish();await pause(80);
+  click('#custom-palette-toggle');const cells=r.cells,geometry=r.metrics.geometryBuilds,base=r.metrics.baseBuilds;
+  click('[data-color-mode="single"]');edit(0,'#164a39');await pause(80);
+  check('single color recolors every text stitch',r.settings.palette==='custom'&&[...r.cells.values()].every(c=>c.color==='#164a39'));
+  check('color edits reuse cell geometry and fabric',r.cells===cells&&r.metrics.geometryBuilds===geometry&&r.metrics.baseBuilds===base);
+  edit(0,'#xx');await pause(40);check('invalid HEX preserves last valid artwork',r.colors()[0]==='#164a39');
+  click('[data-color-mode="multi"]');edit(0,'#3ca081');edit(1,'#f5dea3');edit(2,'#b1302b');await pause(80);
+  check('multicolor uses all selected yarn colors',new Set([...r.cells.values()].map(c=>c.color)).size===3);
+  click('#add-yarn-color');await pause(40);check('adding a color extends the palette',r.colors().length===4);
+  click('[aria-label="移除第 4 个颜色"]');await pause(40);check('removing a color updates the palette',r.colors().length===3);
+  for(let i=0;i<8;i++)click('#add-yarn-color');await pause(60);check('palette is bounded at eight colors',r.colors().length===8&&frame.contentDocument.querySelector('#add-yarn-color').disabled);
+  click('[data-color-mode="single"]');await pause(40);check('single choice is retained across mode switches',r.colors()[0]==='#164a39');
+  for(const surface of ['knit','rib','cable','crochet','plain','twill','satin','basket','cross']){r.update({surface});await pause(25);check(surface+' supports custom yarn',r.cells.size>0&&[...r.cells.values()].every(c=>c.color==='#164a39'));}
+  click('[data-color-mode="multi"]');await pause(40);r.update({inputMode:'pattern'});const mask=new Uint8Array(64*64);mask.fill(1);r.setPattern({width:64,height:64,mask,count:mask.length,bounds:{minX:0,minY:0,maxX:63,maxY:63}});await pause(80);
+  check('image patterns use custom yarn',r.cells.size>0&&[...r.cells.values()].every(c=>r.colors().includes(c.color)));
+  r.update({inputMode:'text',surface:'knit'});await pause(80);r.reduced=false;r.process.start();r.process.finish();await pause(80);check('custom colors support needle replay',r.process.state==='complete');
+  r.update({surface:'plain'});r.process.start();r.process.finish();await pause(80);check('custom colors support loom replay',r.process.state==='complete');
+  const expected=JSON.stringify(r.colors());await load();await pause(80);const restored=frame.contentWindow.knitDemo.renderer;check('reload restores the custom palette',restored.settings.palette==='custom'&&JSON.stringify(restored.colors())===expected);
+  click('[data-palette="ivory"]');await pause(40);check('preset remains selectable',restored.settings.palette==='ivory');
+  click('#custom-palette-toggle');await pause(40);check('preset switching retains custom colors',JSON.stringify(restored.colors())===expected);
+  click('[data-reset="yarn"]');await pause(40);check('yarn reset returns to the original preset',restored.settings.palette==='confetti'&&frame.contentDocument.querySelector('#custom-palette').hidden);
+  localStorage.setItem(key,'{broken');await load();await pause(80);check('malformed saved settings do not crash the app',frame.contentWindow.knitDemo.renderer.settings.palette==='confetti');
+  result={pass:true,checks};
+ }catch(error){result={pass:false,checks,error:error.stack};}finally{if(saved===null)localStorage.removeItem(key);else localStorage.setItem(key,saved);}
+ out.textContent=JSON.stringify(result,null,2);
+});
+</script>
