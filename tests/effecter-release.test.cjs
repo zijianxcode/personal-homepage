@@ -15,7 +15,7 @@ test('published Effecter retains the first-upload loading fixes', () => {
   assert.ok(code.includes('RETRY'), 'a failed first load must be retryable without another image');
   const worker = code.match(/"([^"\n]*\/segment\.worker-[^"\n]+\.js)"/)[1];
   const workerCode = fs.readFileSync(path.join(root, worker), 'utf8');
-  for (const feature of ['shader-f16', 'model_fp16.onnx', '.parts/', 'effecter-ai-assets-v1']) {
+  for (const feature of ['shader-f16', 'model_fp16.onnx', '.parts/', 'effecter-ai-assets-v1', 'concurrency:3']) {
     assert.ok(workerCode.includes(feature), `AI worker is missing ${feature}`);
   }
 });
