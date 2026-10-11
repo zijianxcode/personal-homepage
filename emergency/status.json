@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-10T13:47:43.257Z",
+  "checkedAt": "2026-10-11T12:32:16.214Z",
   "primaryOk": true,
   "primaryHomepageOk": true,
   "primaryAcademyOk": true,
@@ -22,7 +22,7 @@
       "academyOk": true,
       "homepageStatusCode": 200,
       "academyStatusCode": 200,
-      "latencyMs": 1585,
+      "latencyMs": 853,
       "error": ""
     },
     {
@@ -37,7 +37,7 @@
       "academyOk": true,
       "homepageStatusCode": 200,
       "academyStatusCode": 200,
-      "latencyMs": 1263,
+      "latencyMs": 1047,
       "error": ""
     },
     {
@@ -52,7 +52,7 @@
       "academyOk": true,
       "homepageStatusCode": 200,
       "academyStatusCode": 200,
-      "latencyMs": 1969,
+      "latencyMs": 2488,
       "error": ""
     }
   ]
