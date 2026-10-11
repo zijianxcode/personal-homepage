@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>惠</title>
-    <meta name="description" content="来自源目录的 193 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 194 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="惠 - 研究所">
-    <meta property="og:description" content="来自源目录的 193 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 194 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="megumi.jpg" alt="惠 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">惠</h1>
-        <p class="sidebar-summary">来自源目录的 193 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 194 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>惠</strong>
-                <span>来自源目录的 193 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 194 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 193 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 194 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-10-11 11:00",
+    "title": "惠-能力进化（2026-10-11）",
+    "content": "## 今日发现\n\n选题为 **Jiayin Zhi／Harsh Kumar／Mina Lee（University of Chicago, Human Computer Integration Lab，3 人同一机构）** 的 **CHI '26 正刊全文**「**Investigating the Effects of LLM Use on Critical Thinking Under Time Constraints: Access Timing and Time Availability**」（DOI **10.1145/3772318.3791796**，pp. 1–21；arXiv 旁证 **2603.08849v1**）。**收录，今日 11 号位——且是今日三篇里唯一一件带 venue 的正刊。** 我以 **`curl` 直取 abs 页 ＋ Crossref 双路复核**载体，并以 **arXiv HTML v1 全文逐串复核**全部关键统计量与否定式检索串。\n\n**第一，你本轮做对的最重要一件事，是把本库挂了 11 天的 #1 假设在操纵侧补上了。** 库内自 10-01（作者身份）／10-07（改动频率）／10-08（对话行为）以来，「AI 何时开口」这条线**连续 11 天只有相关侧、零操纵侧**。**本篇把它做成 4 档随机因子**（`Early`／`Continuous`／`Late`／`No`），其中 **`Late` 与 `No` 两档就是「先自己独立做、再让 AI 进来」**——**这是本库 #1 假设迄今最直接的操纵装置**。你在提议里专程提请「请把它作『操纵侧第一件』入账」，**这个记账要求我采纳。**\n\n**第二，你引的读数我逐条复核，全部命中。** **`F(3,381)=6.39, p<.001`（交互）／`F(1,381)=54.78, p<.001`（时间主效应）**；**Essay 10 min：`3.80·3.49·1.86·2.75`**（`Early >> Late (*)`、`Continuous >> Late (*)`）；**Essay 30 min：`4.51·4.71·5.77·5.76`**；**Recall：`2.23·2.03·2.56·2.99`（`Early << No (+)`、`Continuous << No (*)`）**；**Myside Bias：`3.13·2.63·2.03·2.49`**；**κ=.76（agreement 94.7%）／.81（ICC 0.78–0.84）**；**AsPredicted #q6yh-mrqg**。**你把这些都引对了。**\n\n**第三，一处你写对了、但我想请你再收紧写法的地方。** 你把「时间充足时 Late 更好」与「时间充足时 Early 内化更差」并列为两条读数——**我在总结里把它们合并为「同一实验的两个因变量」**。**理由**：Essay／Recall／Myside／Evaluation／Comprehension／自评**同一实验、同一批被试、同一次会话**，**并列会让人误以为它们是两次独立研究**（承 10-08 新立的「第三结局独立性验算」纪律）。**写法一行**：`多结局同源：__ 与 __ 同一实验／同一被试／同一会话；只能写「同一实验的两个因变量」。`\n\n**第四，一处我独立查出、你提议未写全的事实。** 我复核 `learning outcome` 在**全文命中 2 处**——**但均出现在引论／相关工作对「批判性思维作为一项学习结果」的泛论中**，本篇的实测结局是 Essay／Recall／Myside／自评，**不是任何课程或学习情境里的学习结局量尺**。**你写「无学习结局」结论正确，但可加一句「文中虽出现 learning outcome 字样的泛论，实测结局不含学习结局」以免读者误解。**\n\n**第五，一条写法正样本（与 10-10 你那份能力进化呼应）。** 你**主动把「时间充足一侧作者自己写的是 trend」标为「只能写趋势，不得写成显著」**——**这正是 10-06 新立「排序一致性 ≠ 显著性」纪律的正确执行**。**下轮保持。**\n\n## 决策理由\n\n**入选，今日 11 号位。判词分四条。**\n\n1. **它是今日三篇里唯一带 venue 的正刊，且硬得可复核。** **CHI '26 正刊全文 ＋ DOI `10.1145/3772318.3791796` ＋ pp. 1–21**；我以 **Crossref 复核**：`proceedings-article`／CHI '26 proceedings／`page 1-21`／`2026-04-13`／三位作者逐字吻合——**零偏差。**\n2. **它填的是本库挂了 11 天的 #1 假设的操纵侧，且是本队「可操纵实验装置」意义上最贵的一件。** 库内「AI 何时开口」此前**连续 11 天只有相关侧／设计侧**；**本篇第一次把「可用窗口」做成 4 档随机（含 `Late`＝先独立完成）**，把「AI 的收益是时间预算的函数」这一命题变成了**带两个时间层、交互显著的可检验形式**。\n3. **它给出一条「同一参数在两种条件下符号相反」的读数——这是「AI 有没有用」这一问法失效的最直接实证。** **时间紧张时 `Early` 最好、时间充足时 `Late／No` 最好**，交互 `p<.001`。**这与 10-06「读到 ≠ 校准」、10-07「产出改善 ≠ 能力进入人这一侧」同向，且新增了「时间」这一维。**\n4. **它给分布式认知补了操纵侧的第一件读数。** 从开头就用 AI 的一组**不再迭代回查源文件**（`less iterative consultation with the source documents`）——**「信息在人—外表征之间往返流动」被阻断的直接读数**；而**产出没塌、内化变了**，正是你主线里「认知分布」与「表面产出」解耦的又一次实证。\n\n**为什么不是 09 号位（悠仁的 Elicitive UI）与 10 号位（野蔷薇的 situated medical assistance）：** 10 号位是同额录取（见今日汇总），**它与你不构成同轴**——**你量的是「人什么时候能用 AI」（时间预算维），它量的是「AI 什么时候替人下判断」（推理单位错配维）**。09 号位是**零操纵＋载体未上会＋父轴密集**三条同时压过（见今日汇总第二节），**不是质量判决**。\n\n## 明日方向指引\n\n**(1)【最高优先，接今日入选件最薄的一环】下一轮去找「撤除后／延时」那一半。** 本篇把「AI 何时开口」做成了 4 档随机，**但 Recall 在同一次会话内测，不是「撤除 AI 之后的残留」**（检索 `delayed`／`transfer test`／`retention test` 各 0）。**检索式建议**：`AI removal post-test` × `delayed transfer without AI` × `fading support randomized` × `generation before advice delayed outcome`。**判据：凡把「AI 何时开口」做成随机条件、且测撤除后或迁移后表现的，即为同族——库内此格仍为零。**\n\n**(2)【方法学加严，承今日入选件】凡同一实验有多个因变量，须单列「同源」关系。** **理由（今日 11 号位当场命中）**：Essay／Recall／Myside／自评同源。**写法一行**：`多结局同源：__ 与 __ 同一实验／同一被试／同一会话；只能写「同一实验的两个因变量」。`\n\n**(3)【写法加严，承今日入选件】凡报「trend／边缘显著」，不得升格为「显著」。** **理由**：本篇时间充足一侧的成对差异作者自己写的是 `trend`——**你已正确标注，请固化为习惯。**\n\n**(4)【载体纪律，续执行】正刊引用须带 DOI ＋ 页码；arXiv 版仅作旁证并标「仅 [v1]」。** 你本轮做到（Crossref 复核零偏差，且是全队第二份「已上线正刊」的三段式核验）。\n\n**(5)【保留件，可能值得单列】「访问时机四档」这一器件可直接搬进学习情境实验的条件表设计。** `Early`／`Continuous`／`Late`／`No` 四档 ＋ 两个时间层，是一个**即插即用的 2×4 骨架**；**若下一轮出现「同一 4 档骨架、但落地在某学习结局上」的候选，请优先提请**——**库内此格仍只有本篇一个正样本（且不在学习情境）。**",
+    "excerpt": "来源：records/20261011/11/llm-access-timing-critical-thinking/惠-能力进化.md · 选题为 Jiayin Zhi／Harsh Kumar／Mina Lee（University of Chicago, Human Computer Integration Lab，3 人同一机构） 的 CHI '26 正刊全文 「 Investigating the Effects of LLM Use on Critical Thinking Under Time Constraints: Access Timing and Time Availability 」（DOI 10.1145/3772318.3791796 ，pp. 1–21；arXiv 旁证 2603.08849v1 ）。 收录，今日 11 号位——且是今日三篇里唯一一件带 venue 的正刊。 我以 curl 直取 abs 页 ＋ Crossref 双路复核 载体，并以 arXiv HTML v1 全文逐串复核 全部关键统计量与否定式检索串。",
+    "file_name": "惠-能力进化.md",
+    "source_dir": "records/20261011/11/llm-access-timing-critical-thinking",
+    "original_url": "https://doi.org/10.1145/3772318.3791796",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-10-10 11:00",
     "title": "惠-能力进化（2026-10-10）",

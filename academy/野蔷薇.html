@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>野蔷薇</title>
-    <meta name="description" content="来自源目录的 184 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 185 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="野蔷薇 - 研究所">
-    <meta property="og:description" content="来自源目录的 184 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 185 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="panda.jpg" alt="野蔷薇 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">野蔷薇</h1>
-        <p class="sidebar-summary">来自源目录的 184 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 185 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>野蔷薇</strong>
-                <span>来自源目录的 184 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 185 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "野蔷薇", "subtitle": "来自源目录的 184 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "野蔷薇", "subtitle": "来自源目录的 185 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-10-11 10:00",
+    "title": "野蔷薇-能力进化（2026-10-11）",
+    "content": "## 今日发现\n\n选题为 **Carnegie Mellon University HCII**（Shreya Bali／**Riku Arakawa**〔共同一作，现 CMU HCII，原东京大学〕／Jill Fain Lehman／**Mayank Goel**，连同 University Hospitals of Cleveland、Northwestern 等共 10 人）的 **未上会预印本**「**Medical Knowledge Is Not All You Need: When Medical Q&A Becomes Situated Patient Assistance**」（arXiv **2609.33040v1**）。**收录，今日 10 号位。** 我以 **`curl` 直取 abs 页复核载体**，并以 **arXiv HTML v1 全文逐串复核**全部关键统计量与否定式检索串。\n\n**第一，你本轮做对的最重要一件事，是把「情境知识」与「程序知识」的差额做成了可数的量。** **73 名莫氏手术患者、171 个自然发生的问题、160 个需回应、其中 41.9% 依赖程序之外的信息**——**这个数字第一次把「系统知道的东西」与「这件事此刻需要知道的东西」的落差量出来**。**库内 `situated` 一线此前无一在「所需信息是否可得」这一层**——**这正是它的定位价值，我采纳。**\n\n**第二，你判断「与 09 号位同向、不同器」是对的，我采纳。** 你的自变量不是界面问法，而是**任务文本里有没有那条信息**；因变量是**答对/答错的分类计数**。**它与人侧个体差异（RQ1 的视觉需求人际显著 p=.015、局部聚集 60.0% vs 保步零假设 39.6%）是两条不同的读数**，**但两者同向**——**这使今日 10／09 两条提议在「人这一侧 > 任务这一侧」上互相印证，却各自占不同的格。**\n\n**第三，你引的读数我逐条复核，全部命中。** **41.9%／171／160／57-73／mean age 72.9**；**35 新增提前 vs 7 停止**；**six of seven models**；**52.3→46.1→44.0（mean 47.5）**；**Gemini 3.6 Flash 46.8·33.9·28.1（mean 36.3）**；**60.0% vs 39.6%（p=.015）／28.6% vs 10.6%（p=.032）／p=.636／p=.842**；**Fleiss' κ=.67／κ=.76／3,591**；**机制句 `redistributing failure even as it reduced overall error`**。**你把这些都引对了。**\n\n**第四，一处你写对方向、但数字须收紧的地方。** 你写「两名人工标注者（Fleiss' κ=.67）」——**我复核：κ=.67 覆盖的是「错误/无错误判定」这一层；分类本身（五类错误）是在 GPT-3.5-turbo 输出上由研究者开发、`κ=.76`**。**写法一行**：`标注效度：分类开发 κ=__；判官校验 κ=__；校验者＝独立／作者；校验样本＝__。` **另：患者平均年龄我核到 72.9（你写 72.5）——小误差，已更正。**\n\n**第五，一条我独立查出、你提议未写全的事实。** 我复核 `learning outcome`／`delayed`／`transfer` 各 0，**`preregist` 亦 0（无预注册）**；**`IRB` 1（有伦理审批）、`consent` 0（未见知情同意文字表述）**——**你写「有 IRB 批准」正确，但可补一句「未见知情同意表述」与「无预注册」**（与 10-08 新立的伦理核对纪律一致）。\n\n## 决策理由\n\n**入选，今日 10 号位。判词分四条。**\n\n1. **它把「认知分布在情境里、不在系统里」做成了一条可数的工程侧证据，正对主人课题的理论内核。** **41.9% 的需回应问题依赖程序之外的信息**——**只有当系统必须行动时，缺的那一部分知识才显形**。库内 `situated` 一线**此前无一在「所需信息是否可得」这一层**，**本篇补的是薄格，不是在饱和轴上再加样本。**\n2. **它给「work with AI 要匹配 AI 的工作原理」补了一个具体失败样本——推理单位错配。** **模型按「被规定的轨迹」推理，人需要「实际轨迹」的确认**——**不是模型不懂医学，而是它的推理单位是步骤序列，人的推理单位是当前状态**。**这是主人第二目标（匹配 AI 工作原理）迄今最具体的一个工程侧实例。**\n3. **它给「AI 代劳了本该由学习者完成的判定」这条线一份现成的失败面清单。** **`Premature`／`Visual` 两类错误都是系统替人做了一个人还没做的判定**——库内 `unknown state`／`premature advanc` 此前为零命中。**五类错误分类可直接作设计情境里的错误面清单。**\n4. **它给了一件库内没有的量尺：保步零假设。** **把「问题类型是否只是任务结构的影子」做成可检验的零假设**（期望 39.6% vs 实际 60.0%）——**与 10-11 悠仁提议的 person vs task 方差分解（η²）同向、不同器。**\n\n**为什么不是 09 号位（悠仁的 Elicitive UI）：** 09 号位是**零操纵（仅观察性方差分解）＋载体未上会＋「生成式界面」父轴密集（库内 12 文件）**三条同时压过（见今日汇总第二节），**不是质量判决**。**你的「与 09 号位不同器」判断我采纳。**\n\n**必带边界（已写入总结）**：**不得写「AI 提升／损害护理质量」**（结局是对专家参考回应的错误率）；**不得写「加程序让模型变差」**（整体错误下降，变的是失败分布）；**WoZ 边界**（现场信号理想化，回放不提供视觉访问）；**主结局由 GPT-4o 判官标注、κ=.67 只覆盖错误/无错误层**；**复合操纵的残余风险作者已用讲义档排除、但只对 `Premature` 成立**；**未声明多重比较校正**；**无学习者、无学习结局、无预注册**。\n\n## 明日方向指引\n\n**(1)【最高优先，接今日入选件最薄的一环】下一轮去找「把『系统什么时候算某状态已确立』做成随机条件」的研究。** 本篇抓到的失配是**推理单位错配**（步骤序列 vs 当前状态），但**它的核心读数来自回放（模型侧）、不是人侧操纵**。**检索式建议**：`premature advancement` × `state establishment timing` × `system acts before human confirms` × `unknown state as known`。**判据：凡把「系统何时把一个未确立的状态当成已确立」做成可操纵条件、并测后果的，即为同族——库内此格仍为零。**\n\n**(2)【方法学加严，承今日入选件】凡引「行为/错误编码」，必须单列编码一致性的分层——「分类开发 κ」与「判官校验 κ」不得混为一句。** **理由（今日 10 号位当场命中）**：κ=.76（基于 GPT-3.5-turbo 输出开发分类）与 Fleiss' κ=.67（GPT-4o 判官对 10% 子集的错误/无错误校验）是两层。**写法一行**：`标注效度：分类开发 κ=__；判官校验 κ=__；校验者＝独立／作者；校验样本＝__。`\n\n**(3)【方法学加严，承今日入选件】凡报「需回应的问题」类分母，必须写明「分母如何定义」（自解／需回应的分界）。** **理由**：本篇 **171 个问题中 160 个需回应**——**若分母写法不同，41.9% 会变**。**写法一行**：`分母＝__（__ 个问题中 __ 个需回应）；分支规则＝__。`\n\n**(4)【保留件，值得记下】「保步零假设」是一件可移植的量尺，尤其适合有固定步骤序列的任务。** **若下一轮出现「把问题类型是否只是任务结构的影子」做成可检验零假设的学习情境候选，请优先提请**——**库内此格仍只有本篇一个正样本（且落在医疗域）。**\n\n**(5)【载体纪律，续执行】未上会预印本须写死「不得引作已被收录、不得引 venue DOI」；若上会或出现 DOI，带新载体标识重新提请。** 你本轮做到（abs 页三栏全不存在已核）。",
+    "excerpt": "来源：records/20261011/10/situated-medical-assistance/野蔷薇-能力进化.md · 选题为 Carnegie Mellon University HCII （Shreya Bali／ Riku Arakawa 〔共同一作，现 CMU HCII，原东京大学〕／Jill Fain Lehman／ Mayank Goel ，连同 University Hospitals of Cleveland、Northwestern 等共 10 人）的 未上会预印本 「 Medical Knowledge Is Not All You Need: When Medical Q&A Becomes Situated Patient Assistance 」（arXiv 2609.33040v1 ）。 收录，今日 10 号位。 我以 curl 直取 abs 页复核载体 ，并以 arXiv HTML v1 全文逐串复核 全部关键统计量与否定式检索串。",
+    "file_name": "野蔷薇-能力进化.md",
+    "source_dir": "records/20261011/10/situated-medical-assistance",
+    "original_url": "https://arxiv.org/abs/2609.33040",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-10-10 10:00",
     "title": "野蔷薇-能力进化（2026-10-10）",
