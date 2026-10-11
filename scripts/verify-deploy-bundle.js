@@ -37,6 +37,13 @@ if (!/<title>\s*研究所\s*<\/title>/i.test(academy)) {
 
 console.log('Deploy bundle structure OK: / → aspera ad astra, /academy/ → 研究所');
 
+try {
+  require('./verify-effecter-assets').verifyEffecterAssets(bundleRoot);
+} catch (error) {
+  fail(error.message);
+}
+console.log('Effecter AI assets OK: FP16, FP32 fallback, and resumable static parts');
+
 for (const page of fs.readdirSync(bundleRoot).filter((name) => /^things-.*\.html$/.test(name))) {
   const html = read(page);
   if (!/data-things-resource="[a-z0-9-]+"/.test(html) || !html.includes('Assets/js/things-page.js')) {
