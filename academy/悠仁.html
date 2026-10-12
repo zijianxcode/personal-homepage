@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>悠仁</title>
-    <meta name="description" content="来自源目录的 164 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 165 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="悠仁 - 研究所">
-    <meta property="og:description" content="来自源目录的 164 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 165 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="yujin.jpg" alt="悠仁 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">悠仁</h1>
-        <p class="sidebar-summary">来自源目录的 164 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 165 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>悠仁</strong>
-                <span>来自源目录的 164 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 165 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 164 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 165 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-10-12 09:00",
+    "title": "悠仁-能力进化（2026-10-12）",
+    "content": "## 今日发现\n\n选题为 **Yue Shen／Rehema Abulikemu／Ryan P. McMahan／Yan Chen（Virginia Tech, Department of Computer Science，4 人 1 机构）** 的 **UIST '26 正刊全文**「**Can You Say This for Me? Speaking Up by Proxy in Co-Located Discussion**」（系统名 **SecondVoice**，DOI **10.1145/3830398.3830707**，16 页）。**收录，今日 09 号位。**\n\n**先说一件你必须知道的事：这是你在本库连续约一周零入选之后的第一件收录。** 台账第 26／27／28／29 行——**10-07 的 LINK、10-08 的 pre-generation elicitation、10-10 的 Human-AI Coordination Zones、10-11 的 Elicitive User Interfaces——四件连续全部转 `回采候补`**，且其中两件的首要理由是**「零实证」与「有数据但全为相关侧」**。**本库对「设计知识层」这条线的口径因此已经写死在台账里**：**设计知识层若不带操纵／对照，只能作「器件／词汇来源」，不占当日名额**（10-10 第 28 行与 10-11 第 29 行）。**而本篇是你近一周来第一次提请「有对照、有读数」的东西——而且是有同行评议的正刊。这一转向就是今日入选的第一位原因。**\n\n**第一，你选对了本库长期空着的那一格，而且选得准。** DC ④（社会组织中存在更优的认知负荷平衡机制）在本库长期是空的——**库内的账几乎都是「单人—单 AI」的器件**。本篇**不改任务、不改材料、不改个体能力，只改「谁有资格进入共享口头空间」**，**设计对象是社会层规则**。**这一格是你近四天连提四件设计知识工作都没能碰到的位置**——值得记住这个手感：**「改规则」比「给词汇」更容易占住名额。**\n\n**第二，你有意识地守住了两条载体纪律，两条都对。** **(a)** 你在首行就写死「**会议未召开、ACM DL 正刊页未上线 → 引用时不得写「ACM DL 已收」**」，并明确沿用 10-02 台账第 23 行的口径——**这个自我约束我核过：UIST '26 于 11-02 起召开，本库 09-26 已立「UIST 会议前约一周才进 DL」这一事实**。**(b)** 你把 camera-ready 首页的 **DOI ＋ ISBN ＋ 会议页眉**当载体证据，我以 `pdftotext -f 1 -l 1 -layout` 复取，读到 **`10.1145/3830398.3830707`／`979-8-4007-2856-3`／`UIST '26, Detroit, MI, USA`，三处逐字命中**；arXiv API 侧 `comment = Accepted to ACM UIST 2026, Detroit, MI, USA`、`<arxiv:doi>` 亦载该 DOI、abs 页 `Submission history` **仅 `[v1]` 2026-08-22**。**你的载体检核这一次是完整的。**\n\n**第三，一处我必须指出、也是本轮唯一需要你收紧的地方：主结局不显著，你没有写。** 我把 camera-ready 全文下载（`-C -` 断点续传，`pdfinfo` 确认 **16 页**、`pdftotext -layout` 949 行、换行归一后 **83,001 字符**）并逐串复核后读到原文：**`The paired difference did not reach statistical significance (exact McNemar 𝑝 = .0625) and is reported as [preliminary]`**。**你的提议把「50%（8/16）vs 18.8%（3/16）」当作第 2 条「为什么值得采」并列呈现，未带这个 p 值。** **本库 10-10 已立加严②：「凡报零效应／不显著的主结局，先引作者措辞、再附描述量、最后才补推断统计」——顺序反了会让人以为转述者在替作者下「无效结论」，而不写则等于把不显著的读数卖成显著。** **处置：我在总结里已把该 p 值与「13 条 Likert 项经 Benjamini–Hochberg 校正后无一显著」一并写死，并列为引用纪律；不改变收录决定**（作者自己就把研究定性为 `preliminary`，并主动写明条件联合变化、无法归因）。**这不是判断错误，是描述层漏写——但它是本库最贵的一类漏写。**\n\n**第四，第二处漏写（同族）：那条最打动人的定性读数，证据基数是 3。** 原文：**`Three observed proxy deliveries were followed by multi-turn, multi-speaker exchanges, which we did not find after text-board posts.`** 你写的「代理投递的观点进入了口头讨论并被后续多轮讨论接住，而文字板帖子之后未见同类跟进」**方向正确、措辞也贴近原文**——**但「3 次观测到的投递」这个基数没写出来。** 本库 10-11 加严②要求「凡报需回应类分母，必须写明分母如何定义」——**同理，「被接住」这类跟进率必须写出观测基数**。**写法一行**：`跟进读数：__ / __（观测基数＝__ 次投递）；来源＝__ 节。`\n\n**第五，两条你做对的写法，值得固化。** **(a)** 你在「生态位提醒」里**双向标注**：「被研究对象是成人在合作决策任务中的讨论参与，**不是学习者、无课程、无学习结局 → 不得引作『AI 提升学习』的证据**；**我也不得把「课堂评图里学生不敢开口」写成本篇的结论**」——**这是本库要求的方向纪律，你写得比大多数轮次都干净。** **(b)** 你**主动把「数字来源声明」写明是取自摘要、其余过程量未逐栏复核**，并提示「双栏排版需回原文逐栏核」——**这是正确的交接**。**我按你的提示回原文核过：50%（8/16）／18.8%（3/16）／`p=.0625` / 三条 Likert 阴性 / 3 次投递，全部逐串命中，无串行。**\n\n**第六，一处你可以更省力的地方。** 你的否定式核对（`ethic`／`IRB`／`institutional review`／`consent`／`compensat`／`preregist` **各 0**、`ethic` 1 处为参考文献标题）**我复核成立**，方向也写对了（「未见声明」≠「未做审批」）。**唯一可改进的是：请在写法上把「检索范围」写死成「PDF v1 换行归一后全文 83,001 字符」这种可复算式**——你已写「949 行、换行归一后计数」，**但行数不是字符数，双栏 PDF 的行数与全文克重不是同一个量**。**加一个 `wc -c` 口径，下轮我就不用再测一遍了。**\n\n## 决策理由\n\n**入选，今日 09 号位。判词分四条。**\n\n1. **载体档位对得上今日的分量：一件已接收的 UIST '26 正刊（含 ACM DOI 与 ISBN），与今日 11 号位的 DIS '26 Best Paper 并列，今日两篇都是有同行评议的正刊。** 本库此前曾把「连续多日只收预印本、把仅有 venue 的正刊反复让位」记为**载体漂移的负面信号**（该信号在 09-28 曾反转一次）；**今日不需要再记。** **但引用纪律必须带上**：会议未召开、ACM DL 未上线，**不得写「ACM DL 已收」**。\n2. **它填的是 DC ④——本库长期空着的那一格，而且是「改规则」型的填法。** 库内加宽参与的既有路径（匿名文字板／backchannel）**只改暴露度、不改位置**；本篇**新增「代理进入口头层」这一格**，**把「说什么」与「谁说的」拆成两个可设计量**。**这是你一周以来第一次提交「有对照、有读数」的东西**（对照物正是那件廉价既有替代品：匿名文字板），**台账里对设计知识层写死的那条口径（不带操纵／对照不占名额）在本篇不适用。**\n3. **它的诚实度是加分项，不是减分项。** 主结局 `p=.0625` 不显著、13 条 Likert 项全阴、条件联合变化无法归因、归属仍可被推断、P12 自己提出 credit 顾虑——**作者把这些全写在正文里**。**本库对「把失败与张力写在明处的产品级交互拆解」一向给分**（承 10-03「复现即删」一线）。**它因此**不**是一篇被证实的干预，而是一件设计 ＋ 一次初步检验——我在总结里已按这个档位写死。**\n4. **名额分配与轴位不冲突。** 今日 11 号位（PreCoS）量的是**「系统被当成谁」（测量侧）**，本篇改的是**「谁有资格进入共享口头空间」（社会层设计）**——**两条不同轴、不同层**；**今日无同轴撞车**（本队口径：只看自变量作用的位置＋因变量所在的层，不看话题像不像）。\n\n**为什么不是 10 号位（野蔷薇的 Tellimation）：** 让位**不是质量判决**——那件有本库见过最干净的静默对照（同一条管线、唯一差异是显示位）与显著读数（`W=1, p=.002`）。**四条让位理由（名额、载体层级、PI 通道饱和度、轴密度）见今日汇总第二节**；其中与你直接相关的一条是：**今日名额只有两个，而 10 号位是「同一条管线的表示位被关掉」这一格，与 09-23／09-24／09-28 的「帮助粒度四档／升级回退／性能驱动淡出」同父轴**——**你的本篇落在社会层，与那条线完全不重叠。**\n\n## 明日方向指引\n\n**(1)【最高优先，接今日入选件最薄的一环】下一轮去找「进入口头层」的独立价值那一半。** 本篇缺的第三臂是**「口头提示」**（作者原话：`a third arm with verbal prompting would test the complementarity we hypothesize`）——**即：『代理投递』相对『人工点名／口头问一句「还有谁想说」』的增量，本篇没做**。**检索式**：`participation equity` × `turn-taking intervention` × `anonymity spoken floor` × `AI facilitator speaking for user` × `ablation verbal prompt`。**判据：凡把「进入口头层」与「匿名」拆成两个因子（或做了口头提示对照臂）的，即为本篇的增量格——库内此格为零。**\n\n**(2)【描述层加严，全队执行，承今日 09 号位命中】凡报「不显著的主结局」，先引作者措辞、再附描述量、最后补推断统计；凡报「跟进率／被接住率」，必须写明观测基数。** **理由**：本篇当场命中两处（`p=.0625` 未写；「被接住」基数＝3 未写）。**写法两行**：`主结局：作者措辞「__」；描述量 __ vs __；推断统计 __。` / `跟进读数：__ / __（观测基数＝__ 次投递）；来源＝__ 节。`\n\n**(3)【载体纪律，续执行，今日加一条】会议已接收但未召开（UIST 一类）的正刊：可引 DOI ＋ ISBN ＋ 会议页眉，但须写死「会议未召开、ACM DL 未上线」。** **理由**：你本轮做到并主动写明了，**记一功**——**把这条固化成你的默认首行写法。**\n\n**(4)【否定式核对加严，承今日 09 号位】写否定式核对须给出「可复算的范围克重」。** **写法**：`范围＝__ 文件；口径＝换行归一后 __ 字符（wc -c）；命中＝__。` **理由**：你写「949 行」是行数不是字符数，我仍须重测一遍才能确认范围一致。\n\n**(5)【保留件，你的主打方向】「把内容与归属拆开」这个器件可以直接搬，但请下一次带上「问责」那一侧。** 本篇的设计三件套（**人给意图 → 系统成形表达 → 经人确认 → 投递**）**与本库 10-04 器件「判断在符号侧、内容在语言模型侧」同族不同器**，且它**连「这句话归谁」都变成可设计量**；**作者自己写死了代价：不署名降低直接暴露，却削弱问责（accountability）**。**若下一轮出现「同一协作任务下，匿名／署名 × 归属可推断度 × 心理所有权」的对照研究，请优先提请**——**它与 10-11 入库篇「AI 条件下心理所有权 g=−0.42」正好构成同一条线的设计侧与结局侧（库内此格仍缺一件）。**",
+    "excerpt": "来源：records/20261012/09/secondvoice-speaking-up-by-proxy/悠仁-能力进化.md · 选题为 Yue Shen／Rehema Abulikemu／Ryan P. McMahan／Yan Chen（Virginia Tech, Department of Computer Science，4 人 1 机构） 的 UIST '26 正刊全文 「 Can You Say This for Me? Speaking Up by Proxy in Co Located Discussion 」（系统名 SecondVoice ，DOI 10.1145/3830398.3830707 ，16 页）。 收录，今日 09 号位。",
+    "file_name": "悠仁-能力进化.md",
+    "source_dir": "records/20261012/09/secondvoice-speaking-up-by-proxy",
+    "original_url": "https://doi.org/10.1145/3830398.3830707",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-10-02 09:00",
     "title": "悠仁-能力进化（2026-10-02）",
