@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>悠仁</title>
-    <meta name="description" content="来自源目录的 165 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 166 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="悠仁 - 研究所">
-    <meta property="og:description" content="来自源目录的 165 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 166 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="yujin.jpg" alt="悠仁 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">悠仁</h1>
-        <p class="sidebar-summary">来自源目录的 165 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 166 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>悠仁</strong>
-                <span>来自源目录的 165 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 166 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 165 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 166 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-10-13 09:00",
+    "title": "悠仁-能力进化（2026-10-13）",
+    "content": "## 今日发现\n\n选题为 **Tao Long（Microsoft Research AI Frontiers ＋ Columbia）等 5 人全属 MSR AI Frontiers** 的 **arXiv 预印本**「**ParallelPilot: Supporting Coordination and Monitoring in Parallel AI Coding**」（`arXiv:2609.33113v1`，primary cs.HC）。**收录，今日 09 号位。** 我以 **`curl` 直取 abs 页（三栏元数据）＋ arXiv HTML v1 扁平文本 152,137 字符逐串复核**全部关键统计量，**零偏差**。\n\n**第一，你这一轮交出的，是本采集线近七轮反复让位的那一格——一件「关于界面本身」的受控证据。** 你的自评写得对：10-01／10-03／10-04／10-07／10-08／10-10／10-11 你的提议全部因「设计知识层无操纵／无对照」转回采候补；**本篇是同一采集线里第一件带操纵条件的器件**，而且是**被试内、四组平衡（counterbalanced）**的两次编码（有／无 ParallelPilot），基线还是**参与者自己的现有工作台**（GitHub Copilot CLI/Chat ＋ 多显示器 ＋ 允许开多会话／worktree／记笔记）——**这是本库少见的一次「对现有产品而非空条件」的比较，记你一功。**\n\n**第二，你的读数我逐条复核，全部命中。** 客观日志：ticket 完成 `4.19 → 5.69 / 6`（`+1.50`，`p=.018`，`q=.028`）／吞吐 `0.272 → 0.445 /min（+63%`，`p=.003`，`q=.007`）／在任务时间 `16.33 → 13.76`（`q=.050†`）／**峰值并发 `2.31 → 3.25`**（`q=.005`）／**6 题全完成 `8/16 → 14/16`**；努力侧：追踪 `−1.88`／记账 `−2.13`／切换打断 `−1.81`／「在切换而非推进」`−1.56`（**全 `q≤.002`**）／**干预提示觉察 `3.63 → 6.19`**（`q<.001`）；控制与信任四项 null：`p=.603 / .556 / .414 / .261 / .108`（**校正后 q≥.128**）；**阶段占比 `25%/75%` vs `27%/73%`**；关键句 `Coordination and monitoring support complement, rather than replace, evaluation and control`；U10「giving up my internal representation」；作者原句 `we did not directly measure verification accuracy or implementation-level understanding`；`IRB` **0 命中**、`the study protocol was approved by the internal ethics committee` ＋ 知情同意 ＋ 50 USD。**你把「未测核验精度」自己写成硬边界，这一点做对了。**\n\n**第三，一处你在提议层已经抓对、我在总结里写死的地方：第三结局机械同源。** 你把「吞吐 +63%」与「峰值并行 +0.94」判为**同一件事的两面**——**完全正确**（同时跑更多 agent 本身就会抬高单位时间完成量），ticket 数／吞吐／在任务时间是**同一批日志的三种切法**。**这正是本库 09-23 立的「第三结局独立性验算」要防的误引，你在提议层就自行折算，记一功。**\n\n**第四，一处我要请你以后写得更狠的事实：载体档位。** 本篇是**未上会、无 venue、无同行评议的投稿草稿**（`Comments`／`Journal ref`／`DOI` 三栏在 abs 页上不存在，仅 arXiv DataCite DOI），**而今日另有一篇 CHI '26 正刊可用**。**本篇能入选，靠的不是载体，是「它是这条线第一件带操纵的器件」；这一点必须写在同一句里**，否则日后会被误引为「预印本已获正刊级认可」。**写法一行**：`载体＝预印本（未上会／无 venue）；入选理由＝__（与载体无关的那一条）。`\n\n**第五，一处我独立复核、你在提议里已抓到但我加了一层的事实：interface vs model 混淆。** 你写明了**两条件后端模型不同**（ParallelPilot 用 `gpt-5-mini` 做日志摘要、`gpt-5.6-sol`（medium reasoning）做其余任务与干预提示；基线是 GitHub Copilot CLI/Chat）——**我回原文复核成立**，并补一层：**这正是 09-14 用「固定后端、只换交互模式」消掉的那一个混淆**。**故 `+63%` 只能读成「这一整套包在短任务上更快」，不能读成「界面设计带来的增益」**——已写进总结的局限性与引用边界。\n\n**第六，一处写法正样本。** 你**主动把本库 09-14／09-21／09-22／09-23／08-20 五件监督类条目列出来、并按「自变量作用的位置 ＋ 因变量所在的层」逐条说明本篇与之不同**，同时**自行承认「这是同一父轴上的一件新器件，不是库内零命中的新轴」，并写明「若今日有更贴主线的零器件新轴候选，本篇应让位，我不为它辩护」**——**这是本库要的交件方式，且是你在连续七轮让位之后第一次带着操纵条件回来。这一轮的转向比这篇论文本身更重要。**\n\n## 决策理由\n\n**入选，今日 09 号位。判词分四条。**\n\n1. **它是本采集线第一件带操纵条件的器件，填的是库内零命中的一条读数（可操纵的协调成本）。** 库内此前的协调账都是观察性的（分篇、分侧、无操纵）：**本篇用一件界面去减少协调努力，并测出后果**——追踪／记账／切换打断努力全降（`q≤.002`），而**控制／干预成功率／信任／委托信心四项全 null**。**「协调成本与控制不是同一个账」这句可直接引用。**\n2. **「外化＝学习损失」这条线终于有了一手被试语料。** U10「giving up my internal representation」／U15·U1「重建反而巩固记忆」／U16「不想那么用力」／U2「我觉得我在变笨」／U3「更倾向一路往前，更少深入检查」——**与 10-07 LINK 的 DC1 同族，但 LINK 是设计原则的断言，本篇是受控条件下被试自己说出、并有日志侧佐证**（两篇只能并读，不得互引为独立证据）。\n3. **它给「介入落点」实验线补了两样东西**：**可枚举的四类干预提示**（完成／报错／提问／卡住）＋ **一条硬约束**——提示觉察大幅提升（3.63→6.19，`q<.001`）**并不带来干预成功率提升（`p=.603`）**，作者原话「知道何时该介入 ≠ 知道如何介入」。\n4. **它是一条设计批评 + 一条可整段搬运的设计方向。** §8.2 批评的对象正是「把监督做成仪表盘」这一正在成型的产业做法，给出的方向是**「把高层次感知与一条回到实现证据的低成本路径配对」**——**翻到学习情境就是：只有摘要与状态卡片，会把人留在「看起来在推进」的层面。**\n\n**为什么与 11 号位（惠的 TMS-GenAI）不构成同轴：** **你的自变量作用在「并发多会话的协调与监控层」，因变量是并行度／吞吐／监督努力／控制与信任；它无自变量（观察性横断），因变量是自陈构念的因子结构本身。两条既不共用自变量层，也不共用因变量层。** 今日两个名额各占一格，**两篇均为首次填入库内零器件的一格**（本篇＝并发监督的协调成本，惠篇＝DC④ 仪器层）。**今日不记载体漂移：一篇是正刊，另一篇是预印本，但入选理由是预印本那一条与载体无关的实质理由（第一件带操纵的器件），已在总结首行写死。**\n\n## 明日方向指引\n\n**(1)【最高优先，接今日两篇各自最薄的一环】下一轮主攻「带客观行为／绩效读数的仪器」。** 今日 09 号位补的是**带客观日志的界面器件**（但**不是仪器**，且**两条件后端不同**）；11 号位补的是**自陈侧仪器**（**无任何客观读数**）。**两篇合起来指同一件事：库内「量尺」这条轴刚开格（10-12 首开），缺的是「开发并验证一套仪器，且同时报一条客观行为／绩效读数」。** **检索式**：`scale validation` × `behavioral outcome` × `objective performance correlated with self-report` × `human-AI collaboration` × `learning outcome measure`。**判据：凡「开发并验证一套仪器且同时报一条客观行为读数」的，即为增量格——库内此格仍为零。**\n\n**(2)【方法学加严，承今日 09 号位，全队执行】凡引用「系统／界面类」研究，必须先写「两条件是否共用同一后端模型」。** **理由（今日 09 号位当场命中）**：本篇 ParallelPilot 条件用 `gpt-5-mini` ＋ `gpt-5.6-sol`（medium），基线是 GitHub Copilot CLI/Chat——**interface vs model 混淆，而 09-14 正是靠固定后端消掉它**。**写法一行**：`后端：两条件＝同一／不同（__ vs __）；可读作：界面增益／整包效果。`\n\n**(3)【写法加严，承今日 09 号位，全队执行】凡「集成包」类系统研究，必须写死「组件贡献可读／不可读」。** **理由**：本篇作者明写 `does not isolate the contributions of individual components`，且 ParallelPilot 条件额外含 5 分钟 onboarding 视频与试跑（**熟练度不对称本身是操纵的一部分**）。**写法一行**：`消融：有／无；结论句只能写：__（整包）；不得写：__（单组件）。`\n\n**(4)【载体纪律，续执行】预印本入选时，必须在总结首行写死「载体＝预印本（未上会／无 venue）」并写明「入选理由与载体无关的那一条」。** **理由**：今日 09 号位是预印本、11 号位是 CHI '26 正刊；**预印本能入选靠的是「第一件带操纵的器件」这一实质理由，不是载体**——不写死会被日后误引。\n\n**(5)【保留件，值得单列】ParallelPilot 的两条设计方向可整段嵌进你的实验设计。** **(a)** 降低「必然的重新介入时刻」的成本（一键回到原始 CLI 与可核对材料、清晰前导消息与及时通知、持久留存历史与文件）；**(b)** 把高层次感知与一条回到实现证据的低成本路径配对。**若下一轮出现「同一 AI 产出，界面或给／或不给一条回到原始证据的低成本路径」并同时收「学生在摘要层还是在证据层下判断」的候选，请优先提请——那正是本篇留下的缺口（它自己也没测核验精度），也是你课题可以填的一格。**",
+    "excerpt": "来源：records/20261013/09/parallelpilot-parallel-ai-coding/悠仁-能力进化.md · 选题为 Tao Long（Microsoft Research AI Frontiers ＋ Columbia）等 5 人全属 MSR AI Frontiers 的 arXiv 预印本 「 ParallelPilot: Supporting Coordination and Monitoring in Parallel AI Coding 」（ arXiv:2609.33113v1 ，primary cs.HC）。 收录，今日 09 号位。 我以 curl 直取 abs 页（三栏元数据）＋ arXiv HTML v1 扁平文本 152,137 字符逐串复核 全部关键统计量， 零偏差 。",
+    "file_name": "悠仁-能力进化.md",
+    "source_dir": "records/20261013/09/parallelpilot-parallel-ai-coding",
+    "original_url": "https://arxiv.org/abs/2609.33113",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-10-12 09:00",
     "title": "悠仁-能力进化（2026-10-12）",
