@@ -6,7 +6,7 @@
 - 正式体验：`https://bananabox.plus/field-camo/`
 - 源码：`/Users/zijian/Documents/ChatGPT/Vibe coding/field-camo`
 - 主站运行目录：`field-camo/`。仅运行文件和本地素材，不复制测试、参考图或 Markdown 文档。
-- 当前封面：`Assets/img/field-camo-cover-hd.png`，1254×1254，通过内置 imagegen 修复线条清晰度；contain 完整显示，hover 不放大。SHA-256 `251a4de2346adeb35da0751e17fdbad52dce49f683fa642bad7f86ede2327ed2`。
+- 当前封面：`Assets/img/field-camo-cover-640.webp`，640×640、61,598 字节。由清晰修复版缩小并以 WebP quality 90 编码，完整 contain 展示，hover 不放大。SHA-256 `1ffa4436799d51972c57957b2419f880523c0dd25752c39437e07c7f90298573`。
 - 原附件 1008×1008、SHA-256 `ee013c19c735284eb871c6effaf083edc53485edc2376af76c8c1df9ff6e6bb9`，在源码 references/cover-original.png 保留；旧发布证据指的是该原版。
 
 ## 构建与功能
@@ -68,3 +68,11 @@ Product 现为原生 WebGL 程序化圆角立方体，使用三面纹理投影�
 修复将 Preview 切换放到左侧滚动区外的常驻顶部，仍保留初始 Tile。Product 控件放到滚动区的第一段，选择 Product 会返回该段。添加、删除、数字选择及每块独立纹理继续使用既有逻辑，无新增功能。修复前可见性断言失败；待发布包三个尺寸（1440×900、1024×768、390×844）的 27 项入口、滚动、叠放、配色和切换检查通过。证据在源码 output/playwright/preview-entry-before.json、preview-entry-local.json 及 preview-entry-local-*.png。
 
 正式域名的同一 27 项入口检查通过，添加、移除及不同立方体配色实际运行正常，无页面异常。整站上传 290 个文件、失败 0；主页与 academy 生产验证和健康检查通过。线上入口截图为源码 output/playwright/preview-entry-production-1440.png，结果为 preview-entry-production.json；发布日志为主站 output/playwright/field-camo-preview-*.log。
+
+## 2026-10-13 · 封面尺寸与传输体积优化
+
+用户指出封面文件过大导致读取慢，授权缩小现有封面。将 1254×1254 的 PNG 缩为 640×640 WebP，quality 90 / method 6；1,337,539 → 61,598 字节，减少 95.39%。已检查黑白线条与完整构图。图库 src、HTML 固有尺寸及应用 OG 分享图均切换新文件；不改变卡片显示面积、顺序或应用功能。高清母版只在源码 references/cover-hd-master.png 归档，不再进入运行目录。原图像素内容来自已生成母版，本次仅缩放和编码。
+
+尺寸与文件体积数据：源码 output/cover-optimization/metrics.json。历史清晰度修复中的 1254 尺寸与 PNG 校验指此前版本。此次减少的是封面请求字节，不将其当作整个页面的加载时间测量。
+
+本地生产包与正式域名各 15 项封面检查通过，覆盖五种视口（375/390/430/768/1440）、实际 640×640 解码、完整展示、不放大、现有卡片顺序、轻量 URL、OG 元数据和默认 Tile / Product。正式浏览器实际请求 61,598 字节，未加载此前的大 PNG。图库与分享图两个正式 WebP 均 HTTP 200、image/webp，SHA-256 与本地文件一致。整站上传 347 文件、失败 0；主站 / 与 /academy/ 验证和健康检查通过。证据：源码 output/playwright/cover-small-production.json、cover-small-production-1440.png、output/cover-optimization/production-files.json；主站 output/playwright/field-camo-cover-small-*.log。
