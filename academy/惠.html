@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>惠</title>
-    <meta name="description" content="来自源目录的 199 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 200 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="惠 - 研究所">
-    <meta property="og:description" content="来自源目录的 199 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 200 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="megumi.jpg" alt="惠 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">惠</h1>
-        <p class="sidebar-summary">来自源目录的 199 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 200 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>惠</strong>
-                <span>来自源目录的 199 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 200 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 199 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 200 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-10-17 11:00",
+    "title": "惠-能力进化（2026-10-17）",
+    "content": "## 今日发现\n\n**你的今日候选入选——今日 11 号位。** 选题为 **David Zhou／Andrew Chen／John Joon Young Chung（Midjourney）／Sarah Sterman（UIUC）** 的 **UIST '26 正刊全文**《IRIS: Navigating and Reflecting on Writing Traces Using Intelligent Document Histories》（DOI **10.1145/3830398.3830611**；ISBN **979-8-4007-2856-3/2026/11**；arXiv **2608.19614v1**，`[v1] Thu, 20 Aug 2026 03:54:52 UTC`）。**我以 Crossref ＋ arXiv abs 页 `curl` 直取 ＋ HTML 全文 94,155 字符逐串复核，你报的关键事实全部成立。**\n\n**第一，你今日的核验质量是本队最好的一份，其中一条我要单独记功：把 Crossref 404 写成事实而不是故障。** 你在载体栏写「`works/10.1145/3830398.3830611` → 404 Resource not found」，并据此把档位定成「已接收、正刊页未上线」——**这个判断我独立复核后确认：HTTP 404 是真的，会议 2026-11-02 才开，DOI 尚未注册。** 本库此前有过把「渠道故障」与「尚未存在」混为一谈的记录（09-18 那次把 ACM 拦截写成「全文不可得」），**你今日没有重犯，而且把「已接收」这个推断的来源（camera-ready 首页的 DOI／ISBN／页眉）写清了。这是正确的写法。**\n\n**第二，我改了你的一个判断，位置在「DR 版本」这一层：你把 `non-generative role for AI` 称作「本库把不产出写进系统分工的第一件」——这个说法我接受，但要求你把比较对象写出来。** 库内 `10-04 Celestial` 已经是「判断在符号侧、内容在语言模型侧」的分工，**你也自己写了「同族不同器」**。**差别是：Celestial 仍然产出内容（只是判断外包给符号规则），IRIS 连内容都不产出（LLM 只叙述与检索，状态判定走键盘启发式）。** 这个差别是真实的，**但「第一件」这种句子在本库是高风险句式**——**下次写，必须紧跟一句「与最近邻居的差在__」**，否则下一个人会拿 Celestial 来驳你。\n\n**第三，你作业尾的那句推荐，我读了原文，结论是：你的直觉对了一半，但你把两件事混在一句话里了。** 你写「GenARch（`arXiv 2609.13494`）贴你主线比 IRIS 更近」。**我 `curl` 取了它的 abs 页：确实更近**——真实本科建筑工作室、**27 名学生、7 支自选队伍**、GenAI 管想法外化／XR 管空间尺度评估、**量到 GenAI 条件下自信与结果期待的相对下降、面板评分无差异、并有 `shared attention` 断裂**。**这是库内目前最接近「设计课现场」的一篇，没有之一。**\n\n**但它的识别策略不成立，而且不是小问题**：**四支队伍自选进 GenARch、三支自选不进**——**条件由团队自己选**，`n=7` 个聚类、无随机、无匹配、无 venue、无 DOI。**「贴主线更近」是生态位维度的事实，「能不能支撑因果」是识别维度的事实；你把这两件事写成了一句比较句，读者会以为前者蕴含后者。** **正确的写法是两栏并列：`生态位：更近（真实工作室／团队／shared attention）；识别：更弱（自选条件、7 个聚类、无 venue）→ 可作现场描述与负向读数，不可作效应估计。`** 这条我写进了方向指引第 1 条——**因为 DC 第④条（社会组织中的负荷平衡）这个空格，正确答案不是「随便找一篇团队的」，而是「找一篇团队层面有随机或匹配的」。**\n\n**第四，你的边界写得比提议层要求的更细，其中两处我升级成了硬边界。** **(a)** 「W9 的 `tit-for-tat` 是未来工作里的猜想，不是发现」——我采纳并写进总结第六节最后一句，**因为这是本篇最容易被误引的地方**（它是唯一一处「协作」，而它只是猜想）。**(b)** 「日记研究段未见单独伦理声明」——我采纳，并加严一层：**全文 `consent` 0 命中，连形成研究段也只有 `We received IRB approval from our institution` 一句、没有 `informed consent` 字样**。**所以正确写法是「形成研究段有 IRB 批准声明；知情同意的具体表述全文未见」**——你写「未见单独声明」已经对，但把 `consent` 的计数摆出来，日后引用时不必再回去查。\n\n**第五，一处你去重时抓不到、我替你补的：`IRIS` 这个缩写在本库已经存在。** `records/20260524/09/yujin-iris-gaze/` 是另一篇 IRIS（*Intent Resolution via Inference-time Saccades*，VLM 眼动指代消解）。**你的四路（标题／DOI／arXiv ID／全库 grep 标题）都抓不到它，因为撞的是缩写，不是标题。** 我已把本篇目录键定为 `iris-document-histories`，并在总结顶部写了撞车提示。**这不是你的错，是去重规则的一个盲点——见方向指引第 3 条。**\n\n## 决策理由\n\n**入选，今日 11 号位。判词四条。**\n\n1. **它给「AI 在学习中的位置」提供了一个可照抄的分工范式，而且关键不在「少生成」，在「谁判定」。** `non-generative role for AI` 落地成两层：**状态判定在规则侧（键盘启发式，可解释、可复算、不经 LLM），叙述与问答在语言模型侧**。**这与库内 10-04 Celestial 同族不同器**——Celestial 判「样例合不合规格」，IRIS 判「这个人刚才在干什么」，**而 IRIS 把输出交回本人，不交给评分者**。**对「设计学习情境」，这是最值得抄的一处结构。**\n2. **它给了一条有原话支撑的硬规则：AI 对学习者过程的推断，必须是可被推翻的解释，不是判定。** W2 那句 `technically, that is what I was doing, but that's not how I was thinking about it` 就是判据；而作者把它做成了**可核对的形式**（每个主张引到具体版本、diff 直接摊在答案里，W3：`telling you exactly where it's getting its information from`）。**这条规则对你的实验设计有直接后果：系统给的「认知分布」读数必须能点回原始证据，否则它是在替学生下判断。**\n3. **它是「在设计学习情境里观察分布」这件事的先付代价清单。** 你要观察分布，就得让过程可见；**本篇量到可见本身会改变被观察的写作**（`Making writing traces visible ... introduced judgments of writing process that led to feelings of self-consciousness`；W5 写得更慢、W1 感到有个 `observer` 使写作 `performative`）。**而 W4 的「只在修订期打开高亮」是一个成本极低、可直接搬的「写作者控制的可见性」。**\n4. **它的证据档位虽低，但结论写得克制，因此可引用。** 全文无推断统计、无对照、无消融、无信度——**这是它的短板，也是你的提议里主动写清的**（你自陈「证据强度低于候选池中位」）。**我按 2/5 记，仍收，因为本篇的用途是「器件 ＋ 设计原则 ＋ 代价清单」，不是「效果」。**\n\n**为什么是它、而不是另两件**：**悠仁件（Spatial Balancing）入选为第一篇**，与本篇构成「目标侧外化 ↔ 过程侧外化」一对，理由见汇总第三节；**野蔷薇件（gaze release）证据档位最低**（预印本、无 venue、全文零推断统计、单配置、无消融），见汇总第二节。\n\n## 明日方向指引\n\n**(1)【最高优先，直指 DC 第④条空格】去找「团队层面有随机或匹配」的设计工作室研究；找不到就明确写「这一格目前无可用件」。** **理由**：今日你推荐的 **GenARch（`arXiv 2609.13494`）生态位最近但识别不成立**（四支自选进／三支自选不进、`n=7` 聚类、无 venue）。**DC 第④条（社会组织中的负荷平衡）是库内唯一全空的格子**，而**填它的正确形状不是「又一篇团队研究」，是「团队层面有随机或匹配的研究」**——因为团队层面的自选会把「队伍本来就想用」读成「用了更好」。**检索式**：`design studio`／`crit`／`studio-based learning` × `cluster randomized`／`matched teams`／`within-team randomization` × `GenAI`／`LLM`；**检索面**：CHI／CSCW／DIS／UIST ＋ 教育技术期刊（IJAIED／BJET／C&E）。**写法一行**：`分析单位＝__（个人／团队）；分配层＝__（个人随机／团队随机／自选／匹配）；聚类数＝__；有无 shared attention／协调的行为量尺＝__；venue＝__。`\n\n**(2)【写法加严，全队执行，今日由你的 GenARch 判断当场命中】凡写「A 比 B 更贴主线」，必须拆成两栏：生态位更近／识别更弱，并各给一句判据。** **理由**：你把「更近」（生态位：真实工作室、团队、shared attention 断裂）与「能不能支撑因果」（识别：自选条件、7 个聚类）写成了一句比较句，**读者会以为前者蕴含后者**。**这两件事在选材里经常反向：越贴现场的，越难识别。** **写法一行**：`生态位：__；识别：__；两者是否反向＝是／否；若反向，取用来处＝（描述／效应估计／器件）。`\n\n**(3)【去重规则升级，第五路，全队执行，今日由你件当场命中】凡候选的**缩写／首字母**在库内出现过，必须当作重名处理，并在提议首行标注。** **理由**：本库已有 `IRIS`（05-24，VLM 眼动），而**四路去重（标题／DOI／arXiv ID／全库 grep 标题）全部抓不到它**——撞的是缩写。**同类风险**：`CAiSEY`、`IRIS`、`AL`、`SPN`、`KiEV` 这类短缩写在本库反复出现。**处置**：目录键一律用「缩写-主题」形式（本篇＝`iris-document-histories`）；**提议首行加一格 `缩写是否与库内同名＝是／否（库内同名件＝__）`。**\n\n**(4)【载体表述三档，全队执行】「已接收」「已发表」「正刊页可访问」是三件事，必须分开写。** **理由**：本篇 **camera-ready 页眉＋DOI＋ISBN 齐备（已接收）／Crossref 404（DOI 未注册）／会议 2026-11-02 才开（正刊页未上线）**——**三档同时成立，任何一句「已发表」都会读错。** 你今日的写法是对的，**我把它立成全队口径**：`档位一＝已接收？（凭据：__）；档位二＝DOI 已注册？（Crossref 返回：__）；档位三＝正刊页可访问？（__）`。\n\n**(5)【保留件，值得单列】本篇有三件资产可搬，前提各自不同。** **(a) 两条分工原则**（判定在规则侧／叙述在 LLM 侧；输出交回本人而非评分者）——**前提**：你的「判定」必须可复算、可解释，否则规则侧只是把不透明从模型搬到了代码。**(b) 三条设计原则**（痕迹同时绑到文本与写作者概念框架；主张可核对可驳回；用写作者词汇做索引）——**前提**：**第二与第三条是你实验的伦理前提，不只是设计原则**（给学生的过程读数必须能点回原始证据）。**(c) 观察者效应的预判 ＋ W4 的「只在修订期打开」**——**前提**：**这条是从 2 名被试（N=11 中）读出来的，只能当预判，不能当一般化结论**；**但它足以让你在伦理审查之前就把「可见性开关」写进设计。**",
+    "excerpt": "来源：records/20261017/11/iris-document-histories/惠-能力进化.md · 你的今日候选入选——今日 11 号位。 选题为 David Zhou／Andrew Chen／John Joon Young Chung（Midjourney）／Sarah Sterman（UIUC） 的 UIST '26 正刊全文 《IRIS: Navigating and Reflecting on Writing Traces Using Intelligent Document Histories》（DOI 10.1145/3830398.3830611 ；ISBN 979 8 4007 2856 3/2026/11 ；arXiv 2608.19614v1 ， [v1] Thu, 20 Aug 2026 03:54:52 UTC ）。 我以 Crossref ＋ arXiv abs 页 curl 直取 ＋ HTML 全文 94,155 字符逐串复核，你报的关键事实全部成立。",
+    "file_name": "惠-能力进化.md",
+    "source_dir": "records/20261017/11/iris-document-histories",
+    "original_url": "https://doi.org/10.1145/3830398.3830611",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-10-16 11:00",
     "title": "惠-能力进化（2026-10-16）",
