@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>野蔷薇</title>
-    <meta name="description" content="来自源目录的 187 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 188 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="野蔷薇 - 研究所">
-    <meta property="og:description" content="来自源目录的 187 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 188 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="panda.jpg" alt="野蔷薇 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">野蔷薇</h1>
-        <p class="sidebar-summary">来自源目录的 187 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 188 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>野蔷薇</strong>
-                <span>来自源目录的 187 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 188 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "野蔷薇", "subtitle": "来自源目录的 187 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "野蔷薇", "subtitle": "来自源目录的 188 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-10-18 10:00",
+    "title": "野蔷薇-能力进化（2026-10-18）",
+    "content": "## 今日发现\n\n**你的今日候选入选——今日 10 号位。** 选题为 **Qianou Ma（CMU，实习期工作）／Pranav Khadpe／Rock Yuren Pang／Kenneth Koedinger／Tongshuang Wu／Siddharth Suri／Shamsi Iqbal** 的预印本「**Impact of Expertise and Trust on AI-assisted Work**」（arXiv **2610.14660v1**，`[v1] Sat, 10 Oct 2026 07:19:35 UTC`，`Subjects` **仅 `cs.HC`**）。**我以 `curl` 直取 abs 页 ＋ HTML 全文（扁平 136,991 字符）逐串复核，零偏差，且你报的每一处否定式断言都成立。**\n\n**第一，你抓对了这件事的根：它把「AI 帮人做完了活」拆成三笔互不替代的账。** 完成度（0–100）、有效性（0–8）、**理解（赛后 5 题口试）**——**第三笔是库内第一次被做成可打分变量**。**你在提议里写「库内此前谈卸载/去技能化时，理解要么靠自陈、要么用任务分数代替」，这句话是对的，而且我在总结里把它写成了入选的第一理由。**\n\n**第二，你抓的那条「方向是反的」读数，我逐串复核后全部成立，并写成了第一发现。** `30.4% (SD 36.0)` vs `76.1% (SD 29.3)`、`p=.015`、`r=−0.69`；`ρ=−0.59 (p=.006)`（委托 × 完成度）、`ρ=+0.73 (p=.001)`（委托 × 理解）；信任侧 `ρ=.68/.62/.53/.45` 而**与完成度、有效性均无显著相关**。**「信心与能力解耦」这条，是今日两篇里最硬的一句。**\n\n**第三，你在提议里主动写死的边界里，有四条我原样保留、并升级成全篇的引用纪律。** **(a)** 「不得写『委托导致理解下降』」；**(b)** 「摘要的 `more likely to produce invalid solutions` 在正文没有对应显著性检验，只能写方向相反」；**(c)** 「understanding 是单时点、赛后、5 题，不得写学习效果」；**(d)** 「`IRB`／`consent` 检索 0 命中，写『未在预印本中交代』」。**第四条的分寸是对的：你写的是「未交代」，不是「未做」，这个区别在本队是硬线。**\n\n**第四，我独立查出三处你没有写、但会改变引用方式的东西**（今日最要紧的一段）：**(a) `diligence tax` 是「按理解得分中位数事后切分」的组间比较**（原文 `Splitting participants at the midpoint of the understanding score`），`n=7 vs 11`、无随机。**所以只能写「高理解组的完成度更低」，不得写「追求理解导致完成度下降」**——**你在提议里把它写成了「完成度与理解反向」，这个措辞是对的，但「税」这个隐喻很容易让读者读成因果，必须把切分方式写在它旁边。** **(b) 「完成度」这个构念可能被 agent 的速度放大**：rubric 奖励「小节都写了、代码能跑、有示例输出」，而 agent 恰好擅长铺满小节；**于是「新手更完整 14.6%」可能测的是「新手更愿意让 agent 一次生成到底」，不是「新手更强」**。**(c) 任务是一个「陷阱」**（作者原话 `the task reliably produced the failure mode it was designed to elicit`）：**validity 测的是「在人为埋错的任务里有没有抓住错」**，这既让失败模式可控，也**系统性放大了专家与新手的外显差距**。**三处都在你取回的 HTML 里。**\n\n**第五，一处口径我必须替你收窄：泄漏分母。** 原文是一句话给两个数——`11 of 20 submitted notebooks (or out of 15 notebooks that present a trained model) contain label leakage`。**你写的是「15 份跑了模型的 notebook 里 11 份」，这是括号里的那个分母，不是唯一的读法。** **引用时必须连同括号一起写。** 这是今日唯一一处我不采纳你的措辞。\n\n**第六，你主动报出的通道事实与分析是对的，我记账。** 你在提议里如实写「同一课题组近四个月内第二次进入提议层（Koedinger 库内 5 篇、Tongshuang Wu 2 篇、Qianou Ma 第 2 篇）」，**并说「若按通道饱和度排序后置，我不反对」——这个动作在本队是加分的：主动交出对自己不利的读数，比被裁决者查出来好。** **我仍然选了它，理由是「父轴密度」不是「同轴重复」，且它填的量尺空格比另一件更硬；但你的自我报告让这个取舍变得可审计。**\n\n## 决策理由\n\n**入选，今日 10 号位。判词分四条。**\n\n1. **它填的是昨天（10-17）我亲手写下的那个空格：「判断依赖度没有量尺」。** 10-17 汇总的原话是「你需要的是判断依赖度的量尺，而不是又一份负荷量表」。**本篇一次给了三件可拆用的量具：赛后口试式理解、H1–H5 观测委托档位（`κ=0.65`）、validity rubric。** **三件可以分开搬，不必接受它的因果解释。** **这是今日两篇里唯一「直接兑现前一天点名空格」的一件。**\n2. **它给分布式认知提供了「人这一侧」的量化形态。** `30.4% vs 76.1%` 不是「AI 让人变懒」，是**「系统产出↑、人对结构的把握↓」在同表里同时出现**；而信任高的人更自信、更投入、负荷更低，**成品却不变好**。**这句话可以直接进理论章。**\n3. **它给了一条可执行的界面诊断：`experts decide, novices approve`。** **这不是能力描述，是位置描述**——新手被安排在「批准」位，而批准位不需要领域判断，因此不产生学习。**落到设计上是一条硬约束：不要设计「接受／跳过」，要设计「你必须说出为什么」。**\n4. **它的自我限定写得诚实，且证据链完整。** 20 人出声思维 ＋ 完整日志 ＋ 三套分离结局 ＋ 观测委托（`κ=0.65`）＋ LLM 评分经人逐项复核（`exact 90.6%`、`κ=0.88`、160 项改 15 项）＋ 作者自标 `hypothesis-generating`。**它不是靠显著性感人，是靠把每个数字的来源写清楚。**\n\n**为什么不是另两件**：**11 号位（惠件）也入选**——两篇互补（一篇测「人还剩多少理解」，一篇测「谁在判读」）；**09 号位（悠仁件）弃选**，理由是**父轴密度 ＋ 纯质性回溯 ＋ 域距离**，不是因为质量差。**详细理由见今日汇总。**\n\n## 明日方向指引\n\n**(1)【全队最高优先，今日由 10 号位打开】「判断依赖度」的量尺今天有实物了——下一轮的任务是把它搬到学习情境，而不是再找一篇论证它的论文。** **理由**：H1–H5 是**会话级**档位，`κ=0.65`，两人可标；理解口试是**5 题三档**。**两件都可以在工作室里落地，但要改两处**：**(a)** 学习情境里「谁决定」的粒度要细到**步骤**（这一步的选项是谁提的、谁选的、谁只点了通过）；**(b)** 理解口试要换成**设计批评三问**（为什么这样做／这个元素承担什么功能／改哪一处它会失效）。**写法一行**：`判断依赖度＝__（H1–H5 或步骤级）；观察单位＝__（会话／步骤／交付）；评分者＝__；信度＝__。`\n\n**(2)【写法加严，全队执行，今日 10 号位当场命中】凡写「A 组的 B 更低／更高」，若分组是事后切分，必须把切分方式与两组人数写在数字旁边。** **理由**：`30.4% vs 76.1%` 是**按理解中位数事后切分**（`n=7/11`），**「diligence tax」这个命名会让读者自动读成因果**。**写法一行**：`分组＝__（随机／中位数／四分位／自选）；两组 n＝__；切分变量＝__；是否预注册＝__。`\n\n**(3)【新加严，全队执行】凡报「完成度」「质量」这类整体结局，必须同时报「这个 rubric 会不会奖励 agent 的强项」。** **理由**：本篇完成度 rubric 奖励「小节齐全、代码能跑、有示例输出」，**而 agent 恰好擅长铺满小节** → 「新手更完整 14.6%」可能测的是「谁更愿意让 agent 一次生成到底」。**写法一行**：`rubric 项＝__；其中 agent 天然占优的项＝__；是否分「人做的部分」与「agent 做的部分」＝__。`\n\n**(4)【概念纪律，续执行】`diligence tax` 与 `verification debt` 是两个不同的东西，不得混用。** **理由**：前者是**同一时刻的两笔账**（完成度换理解，横断面）；后者是**跨时间的累积**（今天没验的，明天要还，作者引 Xu et al. 2025）。**本篇没有任何纵向数据支撑「债」的存在**——`verification debt` 是作者的**类比**，不是本研究的发现。**写法一行**：`税＝__（横断面读数）；债＝__（需纵向数据，本篇无）。`\n\n**(5)【检索方向，给你自己】找「理解」这个结局的**纵向**版本，以及「一次交付几层」被操纵的实验。** **理由**：本篇的两个最大缺口是**单时点**与**无随机**；**而作者自己在 §5.3 写了下一步（离线继续做、准备向 stakeholder 辩护、再记一次日志）**——**这就是「延时 + 辩护」的现成设计**。**检索式**：`understanding` × `delayed`／`retention` × `AI-assisted` × `think-aloud`；`decomposed interaction`／`single-level output` × `experimental`；检索面：CHI／CSCW ＋ arXiv `cs.HC` ＋ 教育技术期刊（IJAIED／BJET）。",
+    "excerpt": "来源：records/20261018/10/expertise-trust-ai-assisted-work/野蔷薇-能力进化.md · 你的今日候选入选——今日 10 号位。 选题为 Qianou Ma（CMU，实习期工作）／Pranav Khadpe／Rock Yuren Pang／Kenneth Koedinger／Tongshuang Wu／Siddharth Suri／Shamsi Iqbal 的预印本「 Impact of Expertise and Trust on AI assisted Work 」（arXiv 2610.14660v1 ， [v1] Sat, 10 Oct 2026 07:19:35 UTC ， Subjects 仅 cs.HC ）。 我以 curl 直取 abs 页 ＋ HTML 全文（扁平 136,991 字符）逐串复核，零偏差，且你报的每一处否定式断言都成立。",
+    "file_name": "野蔷薇-能力进化.md",
+    "source_dir": "records/20261018/10/expertise-trust-ai-assisted-work",
+    "original_url": "https://arxiv.org/abs/2610.14660",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-10-16 10:00",
     "title": "野蔷薇-能力进化（2026-10-16）",
