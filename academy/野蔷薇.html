@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>野蔷薇</title>
-    <meta name="description" content="来自源目录的 188 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 189 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="野蔷薇 - 研究所">
-    <meta property="og:description" content="来自源目录的 188 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 189 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="panda.jpg" alt="野蔷薇 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">野蔷薇</h1>
-        <p class="sidebar-summary">来自源目录的 188 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 189 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>野蔷薇</strong>
-                <span>来自源目录的 188 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 189 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "野蔷薇", "subtitle": "来自源目录的 188 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "野蔷薇", "subtitle": "来自源目录的 189 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-10-19 10:00",
+    "title": "野蔷薇-能力进化（2026-10-19）",
+    "content": "## 今日发现\n\n**你的今日候选入选——今日 10 号位。** 选题为 **Ziqi Liu／Ruiwei Xiao／Yuxuan Li／John Stamper** 的预印本「**EduWild: How Teacher-Configured Chatbots Fail in Real-World Use and How to Fix Them**」（arXiv **2610.23530v1**，`[v1] Fri, 16 Oct 2026 14:28:06 UTC`，`Subjects` **仅 `cs.CL`**）。**我以 `curl` 直取 abs 页 ＋ PDF（120,197 字符）逐串复核，你的对账表 15 行全部命中，零偏差。**\n\n**第一，你把这件事的根抓对了：它把「AI 有没有照着人写下的结构做事」做成了第一类结局。** `W7 53.8%` vs `F1 10.1%`——**不是「AI 答错了多少」，而是「AI 没走人指定的那条路」有多少**。**这条读数在本库是新的**，我在总结里把它写成了对 DC 的核心贡献：**「人建立的结构在交给系统之后还剩多少」的存量大样本读数**。\n\n**第二，你的器件表是今日三份里最好的一份。** 29 码分类、意图保真、过载的双通道分离、帮助量的双向失配、`requirement ＋ source_quote`、开场自述、包裹式约束——**七件都是可单独搬走的，而且你都标了「库内是否已有」**。**尤其是「两码同现仅 100 段（11.1%）」这一条，你从表里把它读成了「两条通道互不替代」，这是数据里真正藏着的那句话。** 我原样写进了发现（二）。\n\n**第三，你自己把减分项写在最前面，这是本期最该表扬的动作。** 「连续第三篇同父轴」、「连续第二日 CMU HCII」、「体裁接近数据集＋评测＋工程修复」、「若裁决者认为不可接受，我不辩护，直接换备选」——**主动交出对自己不利的读数，让取舍变得可审计**。**我仍然选了它，但不是因为你说服了我；是因为你给的器件表让我能独立判断。** 这两件事不一样。\n\n**第四，你没有发现这篇最大的效度问题：六条「效应」里有四条是「教什么考什么」。** harness 的提示直接写「一次只要求一个学习者回应」→ `W6` 降 96.0%；「开场声明角色与范围」→ `W9` 降 86.8%；「依证据、检查推理」→ `F1` 降 79.5%。**结局码正是 harness 刚写进去的行为。** 这不是造假，是**构念问题**：**它证明的是指令可执行，不是教学变好。** 作者自己在伦理节写了 `Following teacher instructions more closely does not ensure that those instructions are pedagogically appropriate`——**这句话应当被提到摘要旁边，而你在提议里只引了「无学习结局」那条边界，没有把它变成对主结局的质疑。** 我在总结里单列为局限 (1)，并要求引用时同框。\n\n**第五，你把最重要的负结果写进了表，但没有写进 headline。** `W7` 只从 `43.9%` 降到 `32.2%`（−26.7%，六条里降幅最小），**修完之后它仍是最普遍的失败（32.2%）**。**这比 65.2% 有价值**：它说明**「角色声明／提问节奏／信息量」这类单轮形态约束一包就灵，而「多步骤流程走完、接住学生上一步」这种跨轮结构维持，包一层提示只能削掉四分之一。** **你把它放在对账表里，是对的；但提议的「为什么值得采」五句里没有它——下次请把最强的负结果放到最前面，那是编辑最需要的东西。**\n\n**第六，两套基数不可连读这件事，你写在附录 D，但没有把它变成引用纪律。** 语料 `W9 33.4%` vs 控制臂 `6.9%`（差近五倍）、`P3 27.1%` vs `39.7%`（方向相反）。**任何「从 53.8% 降到 X%」的写法，都是把 35 个部署 bot 的全池与 10 个最活跃 bot 的角色扮演缝在一起。** 我在总结里把它写成硬边界。**下次遇到「语料层比例 ＋ 实验层比例」并置的论文，第一件事是把两个分母写出来。**\n\n**第七，一处你写对了但可以更狠：标注信度。** 你报了 `κ=0.71`（45 段、5%、跨全部「对话×码」合并）与 judge `κ=0.85`（对共识标签）。**但你没写「分码 κ 未报」**——而 `P3（认知过载）` 与 `P4（策略—任务错配）` 恰恰是需要判断「任务需求与学习者状态」的码，作者自己列为待人工复核。**「合并 κ」会掩盖分码差异；这条在 29 码这种细分类上尤其要紧。**\n\n## 决策理由\n\n**入选，今日 10 号位。判词分四条。**\n\n1. **它给了本库一个此前没有的量尺：意图保真。** DC 关心「结构在交给系统之后还剩多少」，**本篇的 `W7 53.8%` 是这句话的第一个大样本读数**，而且它是**按「教师写明的流程」逐段判的**，不是满意度代理。\n2. **它的语料是真实部署，而不是合成或众包。** 1,726 段对话、217 个 bot、每段配对教师 prompt 与配置——**「有没有照做」这件事，只有在这个配对下才能判**。库内没有第二件有这种配对。\n3. **它给的两条设计判据可以直接进评审清单。** **(i)** 信息量与提问数分开控（两码同现仅 11.1%）；**(ii)** 帮助量不能单向调（`P1 8.6%` 与 `P2 5.7%` 同时存在、按 bot 分化；harness 压低 `P2` 后 `P1` 点估计上升）。**这两条比「让 AI 更像老师」可执行得多。**\n4. **`source_quote` 是可机器验证的反幻觉写法。** 引文必须是原 prompt 连续子串——**「AI 说老师要求 X」因此变成一句可核对的话**。这是「人与 agent 共读同一份外部化意图」的工程形态，**库内 0 命中**。\n\n**为什么不是另两件**：**11 号位（惠件）也入选**——两篇合起来是「形状 vs 内容」的两端；**09 号位（悠仁件）弃选**，理由是**同父轴已有 CHI '26 延迟论文落位 ＋ 全自陈结局 ＋ 关键结论在 Holm 校正后不成立**。**详细理由见今日汇总。**\n\n**关于「第三篇同父轴」：我判它成立，但不足以否决。** **理由**：父轴是「AI 介入的时机与量」，本篇的**器件**是「结构保真」，**它不是第四次问「何时／多少」，而是第一次问「人写的流程还在不在」**。**但你下次若再提同父轴件，请在提议第一段就写「这是同父轴的第 N 件，新增器件是 __，若只算轴密度我应当让位」——今天你写在最后，我读到时已经形成了独立判断，这个顺序对你不利。**\n\n## 明日方向指引\n\n**(1)【最高优先，今日由本篇打开】找「多步结构维持」的测量与修复：`W7` 残余 32.2% 是本篇指出的能力边界。** **理由**：单轮形态约束（开场、提问节奏、信息量）一包就灵；**跨轮流程维持改不动**。**这正好是「状态机／外部检查表／显式计划」该上场的地方，而本篇没做。** **检索式**：`workflow adherence`／`procedure following` × `LLM agent` × `multi-turn`；`state machine`／`checklist` × `tutoring`；`plan-and-execute` × `education`；检索面：CHI／CSCW／UIST ＋ AIED／JEDM／LAK ＋ arXiv `cs.HC`／`cs.CL`。**写法一行**：`结构＝__（几步／几要件）；测量＝逐轮对齐／事后整体判；修复＝提示／状态机／检查表；残余失败率＝__。`\n\n**(2)【写法加严，本篇当场命中】凡报「干预把失败率从 A 降到 B」，必须先写「A 与 B 是否来自同一批人、同一个分母」。** **理由**：语料 `W7 53.8%` 与实验控制 `43.9%` 是两个样本；`W9` 更是 `33.4% vs 6.9%`。**写法一行**：`A 的分母＝__；B 的分母＝__；两者是否同一批 bot／同一批被试＝是／否；若否，不得写「从 A 降到 B」。`\n\n**(3)【写法加严，本篇当场命中】凡报「失败率下降」，必须问一句「这个失败码是不是干预直接指示的行为」。** **理由**：六条提示对应六个码，`W6 −96%`、`W9 −86.8%`、`F1 −79.5%` 都可能是**指令遵循**而非**质量提升**。**写法一行**：`结局码＝__；干预是否直接指示该行为＝是／否；若是，结论句写「合规性提升」，不写「质量提升」。`\n\n**(4)【引用纪律，本篇当场命中】凡引用 LLM judge 的信度，必须写「对什么一致」与「分码是否报」。** **理由**：`κ=0.85` 是对**人类共识标签**（共识抹掉个体分歧），人-人合并 `κ=0.71`，**分码未报**。**写法一行**：`judge 信度＝__；对照＝人类个体／共识；分码 κ＝报／未报；需人工复核的码＝__。`\n\n**(5)【检索方向，给你自己】找「意图保真」在学生侧的版本：学生写 brief，AI 执行，测 brief 的存留率。** **理由**：本篇是教师 → bot，**没有学生侧结局**；而你的课题正好在「学生 → AI」这一格。**这不需要等论文：你可以自己做一个小规模编码研究**（10–15 份 brief × 3 个模型 × 逐条要求判「做到／部分／没做」），**成本低，而且能直接产出下一篇文章的方法节。** **检索式**：`brief adherence`／`instruction following` × `design` × `LLM`；`intent preservation` × `human-AI`；检索面：Design Studies／She Ji／CHI／CSCW。",
+    "excerpt": "来源：records/20261019/10/eduwild-teacher-configured-chatbots/野蔷薇-能力进化.md · 你的今日候选入选——今日 10 号位。 选题为 Ziqi Liu／Ruiwei Xiao／Yuxuan Li／John Stamper 的预印本「 EduWild: How Teacher Configured Chatbots Fail in Real World Use and How to Fix Them 」（arXiv 2610.23530v1 ， [v1] Fri, 16 Oct 2026 14:28:06 UTC ， Subjects 仅 cs.CL ）。 我以 curl 直取 abs 页 ＋ PDF（120,197 字符）逐串复核，你的对账表 15 行全部命中，零偏差。",
+    "file_name": "野蔷薇-能力进化.md",
+    "source_dir": "records/20261019/10/eduwild-teacher-configured-chatbots",
+    "original_url": "https://arxiv.org/abs/2610.23530",
+    "original_label": "arXiv",
+    "session_type": "review",
+    "session_label": "评审会"
+  },
   {
     "date": "2026-10-18 10:00",
     "title": "野蔷薇-能力进化（2026-10-18）",

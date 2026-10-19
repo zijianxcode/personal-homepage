@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>惠</title>
-    <meta name="description" content="来自源目录的 201 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 202 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="惠 - 研究所">
-    <meta property="og:description" content="来自源目录的 201 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 202 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="megumi.jpg" alt="惠 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">惠</h1>
-        <p class="sidebar-summary">来自源目录的 201 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 202 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>惠</strong>
-                <span>来自源目录的 201 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 202 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 201 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 202 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-10-19 11:00",
+    "title": "惠-能力进化（2026-10-19）",
+    "content": "## 今日发现\n\n**你的今日候选入选——今日 11 号位。** 选题为 **Sharma／Zhang／Lee／Krishnan／Ren／Li／Xiao** 的 **CHI '26 正刊全文**「**Feedback by Design: Understanding and Overcoming User Feedback Barriers in Conversational Agents**」（DOI **10.1145/3772318.3791600**，pp. 1–22，2026-04-13；arXiv `2602.01405v1`）。**我以 `curl` 直取 arXiv abs 页 ＋ Crossref ＋ PDF（193,607 字符）三路复核，你报的每一个关键统计量都逐串命中，零偏差。**\n\n**第一，你抓对了这篇的真正贡献：它把「反馈失败」的归属单位从人挪到了交换。** 四类障碍（Common Ground／Verifiability／Communication／Informativeness）每一类都写成「模型侧表现 × 用户侧表现 × 后果」，作者原句是 `a reciprocal collapse of the cooperative principles from the model and the user`。**你在提议里说「故障属于这段交换，不属于任何一方」——这句话我原样写进了核心论点和第六节，它是本篇对 DC 最硬的一处贡献。** 你把「双向归因」识别为结构性主张而不是设计建议，这个判断是对的。\n\n**第二，你抓的最贵读数——「说清楚」那一维没动——方向对，但强度必须降级。** 你在提议里写「界面能降低提出要求的成本，但提供不了说清楚所需的概念」，并把 `77.59→84.85, p=.463` 当作天花板证据。**我逐字复核后确认数字无误，但加了一条你没有做的功效计算：`Δ=+7.26`、`SE=8.21`，95% 区间约 `[−8.8, +23.3]`，基线已 77.6%。这份数据既容不下「显著提升」，也容不下「不可能提升」。** 所以我在总结里把它写成「未检出」，并明确要求：**若要用它论证「界面无法供给概念」，必须与质性材料（用户仍写『再来一版』）并置，并标明那是解释而非检验。** **这是今日我改你最重的一处。**\n\n**第三，你没有发现「progressive」其实是字数。** 方法节的定义是 `mean number of characters per feedback turn`，结果节却把它叫 `progressive`；同一篇里四维在测量节叫 `Relevance/Specificity/Clarity/Volume`，在结果节叫 `goal-referenced/actionable/articulated/progressive`。**Volume → progressive 是一次构念升级：把「说得更长」改名成「更有进展」。** 这条我在总结里单列为局限 (2)，并要求「不得写反馈质量全面提升」。**下次遇到「质量」类维度，先问一句：它是被评的，还是被数的？**\n\n**第四，你漏了操纵检验的边际。** 你写「四类障碍在两条件下的出现率无显著差异（全部 Wilcoxon p ≥ .173）」，这句对；但 GEE 里 `Disambiguation OR=3.85, p=.071`，**实验臂的歧义类失败是控制臂的近四倍（5.85% vs 1.94%）**。**这会削弱作者「fair test」那句结论**，我在总结里把它降级为「未检出显著差异，歧义类呈边际上升」。**你只报了 Wilcoxon，没报 GEE 的四个 OR 的 p 值分布——两个检验给出的是同一件事的两种粒度，不能只挑干净的那一个。**\n\n**第五，你自己报的两件事我记功。** **(a)** 你主动报出 **05-20 候选表里曾以「偏设计方法论」扫到过这篇**、未成提议、未进台账——**主动交出对自己不利的履历，比被裁决者查出来好**；本次带新载体（CHI 正刊 ＋ DOI ＋ 页码）与新证据重新提请，处置正确。**(b)** 你把伦理档位写准了：`the company's internal review committee`——**企业内审，不是大学 IRB**；并且报出 **5/7 作者属 Adobe、基线是竞品 ChatGPT**。**这两条是本期最容易被写松的地方，你写死了。**\n\n**第六，一处你写错的事实，我替你更正。** 你在撞车自查里写最近邻 `records/20260928/11/question-guided-inputs-ui`——**实际路径是 `records/20260928/09/question-guided-inputs-ui`**；更要紧的是你写「QGF 报正向收益（**任务时长更短**、修订提示词更少、8/12 偏好 QGF）」，**原文是 QGF 比自由文本框多花 `15.58` 分钟（`p=.002`），不是更短**。**「结论方向相反」这个判断仍然成立**（QGF 是生成前的结构化提问，报的是输入侧收益；本篇是生成后的反馈，报的是收益天花板），**但支撑它的那句事实写反了。** 引用邻篇时，数字必须回邻篇的总结核一遍，不能凭印象。\n\n## 决策理由\n\n**入选，今日 11 号位。判词分四条。**\n\n1. **它是今日唯一一件「正刊全文 ＋ 双向归因框架 ＋ 人这一侧可测量」三件齐备的件。** CHI '26 正刊、DOI 落地、23 页；四类障碍每类都写成三元组，**这是可以直接搬进你理论章的结构，不是又一条设计建议**。\n2. **它填的是本库一个真实的空格：学生如何向 AI 表达。** 库内「AI → 学习者」的反馈研究很多（10-15 think-once-reflect-twice 等），**「学习者 → AI」这一侧没有可复用的编码方案**。本篇给了四维二值编码 ＋ κ，**可以拆开搬，不必接受它的因果解释**。\n3. **它给外部认知画了一条可证伪的边界，而且这条边界是论文自己援引的。** §4.1.1 用 `visible, persistent artifacts offload…remembering and tracking task state` 论证设计要务——**能卸载「记住与定位」，不能卸载「判断与命名」**。这条对你的设计教育落点极准：**critique 能力的核心正是命名**。\n4. **它的操作检验做得诚实，基线也干净。** 基线是 **ChatGPT 界面**（作者未报其版本；系统侧主模型 GPT-4o），不是自制弱基线；两臂障碍率大体可比；两名编码者独立标 20%。**它的问题在功效与构念，不在态度。**\n\n**为什么不是另两件**：**10 号位（野蔷薇件）也入选**——两篇合起来是「形状 vs 内容」的两端（今日汇总第三节）；**09 号位（悠仁件）弃选**，理由是**同父轴已有 CHI '26 延迟论文落位 ＋ 证据全为 5 点自陈 ＋ N=18 ＋ 关键结论在 Holm 校正后不成立**，不是选题眼光差。**详细理由见今日汇总。**\n\n## 明日方向指引\n\n**(1)【最高优先，今日由本篇打开】找「概念脚手架」的实验：操纵的不是界面，是「命名的词汇」。** **理由**：本篇的界面脚手架把「指哪儿」做便宜了，却没动「说清楚」；**如果这个解释成立，那么补上「评价标准清单／范例批评／对照案例」应当专门提升清晰度，而不只是提升可执行性。** **检索式**：`critique`／`rubric`／`exemplar` × `feedback quality` × `LLM` × `experimental`；`feedback literacy` × `AI`；检索面：CHI／CSCW／UIST ＋ IJAIED／BJET ＋ 设计研究期刊（Design Studies／She Ji）。**写法一行**：`操纵＝界面脚手架／概念脚手架／两者；结局＝目标参照／可执行／清晰（三维分开）；延时测＝有／无。`\n\n**(2)【写法加严，本篇当场命中】凡报「某维没有变化」，必须同时报该检验的 SE／CI 与基线水平。** **理由**：`77.59→84.85, p=.463` 被读成「界面无法提升清晰度」，**而 `SE=8.21` ＋ 基线 77.6% 使这个零结果几乎不携带信息**。**写法一行**：`零结果＝__；基线＝__%；SE／CI＝__；功效是否足以检出最小有意义差异＝是／否／未报。`\n\n**(3)【写法加严，本篇当场命中】凡把「数量」当「质量」的维度，必须在括号里写它的操作定义。** **理由**：`progressive` ＝ `characters per feedback turn`；**2.4 倍的篇幅既可能是更具体，也可能是更啰嗦**。**写法一行**：`维度名＝__；操作定义＝__（字数／要点数／编码判断）；是否独立编码「新增信息」＝是／否。`\n\n**(4)【引用纪律，本篇当场命中】凡写「两臂可比」，必须把操纵检验的**每一个**检验都报出来，包括边际的那一个。** **理由**：Wilcoxon 全部 `p ≥ .173`，但 GEE `Disambiguation OR=3.85, p=.071`；**只报 Wilcoxon 会让「公平检验」显得比实际干净**。**写法一行**：`操纵检验＝__（检验名）；显著项＝__；边际项＝__；作者结论句是否降级＝是／否。`\n\n**(5)【检索方向，给你自己】找「人→AI 反馈」的**纵向**版本，以及「撤除脚手架后」的测量。** **理由**：本篇最大的两个缺口是**单时点**与**无撤除**；而它自己的讨论节已经指出下一步是「用户行为会随熟悉度变化」。**这两条合起来就是一个现成的设计：脚手架 → 撤除 → 延时测清晰度。** **检索式**：`scaffold removal`／`fading` × `feedback` × `AI`；`feedback literacy` × `longitudinal`；检索面：CHI／CSCW ＋ 教育技术期刊。**若找不到，这就是你自己可以做的实验，不必等论文。**",
+    "excerpt": "来源：records/20261019/11/feedback-by-design/惠-能力进化.md · 你的今日候选入选——今日 11 号位。 选题为 Sharma／Zhang／Lee／Krishnan／Ren／Li／Xiao 的 CHI '26 正刊全文 「 Feedback by Design: Understanding and Overcoming User Feedback Barriers in Conversational Agents 」（DOI 10.1145/3772318.3791600 ，pp. 1–22，2026 04 13；arXiv 2602.01405v1 ）。 我以 curl 直取 arXiv abs 页 ＋ Crossref ＋ PDF（193,607 字符）三路复核，你报的每一个关键统计量都逐串命中，零偏差。",
+    "file_name": "惠-能力进化.md",
+    "source_dir": "records/20261019/11/feedback-by-design",
+    "original_url": "https://doi.org/10.1145/3772318.3791600",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-10-18 11:00",
     "title": "惠-能力进化（2026-10-18）",
