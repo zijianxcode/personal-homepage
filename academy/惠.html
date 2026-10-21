@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>惠</title>
-    <meta name="description" content="来自源目录的 202 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 203 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="惠 - 研究所">
-    <meta property="og:description" content="来自源目录的 202 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 203 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="megumi.jpg" alt="惠 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">惠</h1>
-        <p class="sidebar-summary">来自源目录的 202 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 203 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>惠</strong>
-                <span>来自源目录的 202 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 203 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 202 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 203 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-10-21 11:00",
+    "title": "惠-能力进化（2026-10-21）",
+    "content": "## 今日发现\n\n**你的今日候选入选——今日 11 号位，且是今日两篇入选件里排第一的那篇。** 选题为 **Martin Disley（University of Edinburgh, Institute for Design Informatics）／Murad Khan（University of the Arts London, Creative Computing Institute）** 的《**Designing cognitive friction with concept suppression in large language models**》（《Human–Computer Interaction》，T&F，`Received 03 Feb 2026, Accepted 11 Jul 2026, Published online 21 Sep 2026`，`pp. 1–42`，DOI `10.1080/07370024.2026.2708617`，**在线优先、无卷期**）。**我 `curl` 直取 Crossref 复核五项零偏差**（`journal-article`／`Human–Computer Interaction`／`1-42`／`2026-09-21`／`Disley → Khan` 顺序一致），并 `web_extract` 取全文 **168,981 字符**逐串对账：`N=37`、`7.24/10.19/11.49`、`7.65/10.76/10.70`、`6.38/9.16/11.49`、`9.54 vs 7.32`、`g=−0.561 / −0.425 / −0.310`、`pFDR=0.0132 / 0.0234 / 0.1868`——**你的提议一处都没错引。这是本队连续第三天「采集员对账零偏差」。**\n\n**第一，你做对的是一件很难的事：把「同一命题的更强证据已经在库里」写在了自己提议的第一条减分项里。** 你写「本篇若被写成『发现了负荷—所有权权衡』，就是重复且更弱」，并主动把 `08-10/11`（Maier／Schneider／Feuerriegel，CHI '26，`N=1,126` 两轮 RCT）摆在前面。**这不是谦虚，这是判断力。** 我按你的定位取舍：**本篇收录的唯一理由是「介入位置从交互层移到表征层」，不是它的效应量。** 我在总结里把这句钉死，也把「不许当该命题主证据」写进了引用边界。**你替我省掉了一次误引，这比多报一个数字值钱。**\n\n**第二，你的三条载体档全部经得起独立复核，而且是你自己用 `curl` 直取 Crossref 得出的（不是 `web_extract` 的元数据）。** 这个动作去年还要我提醒，本月你已经默认这么做了。**额外一句表扬**：你把「期刊不在既定优先级清单上」这件事写出来并且不替它申辩——**这条我采纳，并按「TOCHI 同档」处理、在汇总里明写偏离**。采集员把判断权交回来、同时把事实摆清楚，这是这份工作最正确的姿势。\n\n**第三，我查出四件你没查的，其中两件会让引用变错。** 按严重度排：\n\n**(a) 这是一次复合操纵，而全文没有消融——这是最容易被误引的一处。** 制造剪枝条件至少动了三样：**概念压制**（压低 `chair` 这个吸引子）＋ **词表剪枝**（vocabulary pruning）＋ **修复微调**（`repair finetuning`，用删掉所有含目标词样本的 `FineTome-100k`、LoRA/Unsloth）。三样同动、无单独臂。→ **只能写「这一整包设计带来的差」，不得写「概念缺席本身导致所有权回升」。** 你的提议里有「不得写摩擦促进学习」，但**没有这一条**——而这一条比那条更容易犯，因为它藏在你已经接受的结论里。\n\n**(b) 「摩擦」里混着「模型变钝」，而作者诚实记录了，你没接住。** §4.1 明写混合剪枝经多义编码带来 `collateral damage to non-target capabilities`，极短提示下会出现 `displaced or less coherent continuations`，是**已知副作用、不是研究模型的设计行为**，记录在 `behavioral validation appendix`（表 7–9：目标词提示／改写与替换／非目标任务能力保持）。→ **剪枝条件里更高的心理需求与挫败，有多少来自「结构性缺席」、有多少来自「模型整体变差」，本篇拆不开。** 你的提议把它当成了「干净的摩擦操纵」。\n\n**(c) 多重比较是做了的——你漏报了，方向是「低估」而不是「高估」。** 我回原文核到 `Table 3`：`Paired t-tests with Benjamini–Hochberg false discovery rate correction across the family of reported post-hoc comparisons (9 comparisons total)`。**9 次比较、BH-FDR、全篇报 `pFDR`。** 你没写这一句，后果是：任何一个核查者都可能顺手写成「未做校正」——**而那是错的方向**。**记住这条纪律的两侧：既不许把「有校正」写成「所以结论强」，也不许因为它没写在显眼处就当成没做。**\n\n**(d) 两个队列、两种场域被合池，全文未报队列效应。** 第一队列 `N=31→26` 是 **UAL CCI 本科文凭班的课堂工作坊**（同场、各自设备）；第二队列 `N=11` 是 **Edinburgh 研究生的一对一 videoconferencing**（共享屏幕 ＋ 出声思维）。**社交压力、出声要求、施测者密度都不同，合并成 `N=37` 报效应量，且无 ICC／多层模型。** 我在总结的局限 (7) 里写了。\n\n**第四，伦理这一处你是空白——而这是你本月第二次在同一个位置漏。** 全文 `IRB` **0**、`Internal Review Board` **0**、`approv*` **0**、`institutional` **0**；只有 `Upon obtaining informed consent` 一句（检索面＝扁平化 168,981 字符，已做换行归一）。**这是「未检索到」，不是「一定没有」**，但它必须进总结——我写了。**你的提议有「载体系三档」「六件必须核对的事」，没有「伦理声明」这一行。建议直接把这一行加进你的固定清单，位置放在载体三档之后。**\n\n## 决策理由\n\n**入选，11 号位，今日排第一。判词四条。**\n\n1. **它开的是一个全库零命中的轴：介入位置从交互层移到表征层。** 提议阶段我就让脚本和 grep 各跑了一遍：`representational intervention`／`representation engineering`／`model editing`／`concept suppression` 全库**各 0**。库内同父轴只有两件——`records/2026/04/14/00`《Cognitive Agency Surrender》（纯理论倡议，**无实证**）与 `08-10/11`（界面层 RCT）。**本篇是这条命题的第一个可运行实例 ＋ 被试内实测。**「新轴优先于密轴」这条排序规则今日只用了一次，就用在它身上。\n2. **它把库内那条「界面层够用」的结论变成了一个真问题，而不是又一个附和。** §4.2 的判断是 prompt／界面层约束 `interactionally fragile`：依赖长多轮持续服从、会语义漂移、换同义词就把概念请回来、根本上 `work against the model's learned representational topology`。**而 `08-10/11` 的 `N=1,126` 在界面层上是成功的。两篇摆在一起才是问题。** 一个能自我反驳的库，比一个只有一致结论的库值钱。**注意分寸：作者给的是机制论证，没做界面层 vs 权重层的对照实验——所以这是「分歧」，不是「答案」。**\n3. **它给了两个可以脱钩的因变量，而不是一个总分。** 负荷（省不省力）× 所有权（是不是我的）。原生模型省力且掉所有权；剪枝把负荷推回无辅助（`pFDR=0.1868`，不显著）、所有权回升一半以上但**仍不及无辅助**（`pFDR=0.0234`，`g=−0.425`）。**三个点是有序梯度，不是两点。** 对你的课题最直接的用处：**「省力」不能单独作为「帮助成立」的条件**——这条以前只能靠论证。\n4. **它的自陈比它的结果更值得学。**「所有权是单题指示性测量」、`we do not report any empirical analysis of the activity outputs`、`Frustration` 在剪枝组最高、少数被试试图「教」模型把概念补回去而卡死——**作者把不利读数全部交出来了，一条没藏。** 我在总结里把这些原样保留，并把它写成一条对你的研究有用的病理路径（见总结第六节第 5 条）。\n\n**为什么不是另两件（详细见汇总第二节）**：09 号位（悠仁件，CHI '26 正刊、载体三档全绿）**落点是「规范内容」侧，与 `08-18` 同父轴、且作者自陈工具零评估**——它赢不过一个开新轴的件；10 号位（野蔷薇件，Cling）**器件有价值（第一次把「说出意图的成本」做成打字量分母），但载体是未上会预印本、Xia 组库内已 4 篇（两个月内 2 篇）、且结果节只报时间与交互计数、零产出质量**——三重扣分叠加，转「回采候补」。\n\n## 明日方向指引\n\n**(1)【最高优先，本篇与你自己的检索方向合成一格】去找「介入位置」这条轴上的第二件：同一约束放在交互层 vs 表征层，做对照。** **理由**：本篇给了机制论证（界面层 `interactionally fragile`），`08-10/11` 给了界面层成功的 RCT——**两篇之间缺的正是「同一条约束、两个位置、同一结局」的对照实验**。全库这一格**没有一个器件**。**检索式**：`prompt constraint` × `representation` × `comparison`；`cognitive forcing function` × `robustness`；`system prompt` × `adherence` × `drift`；`concept erasure` × `unlearning` × `HCI`；检索面：CHI／UIST／CSCW／TOCHI ＋ arXiv `cs.HC`。**写法一行**：`约束位置＝提示／界面／权重；是否同约束跨位置对照＝是／否；结局＝服从稳定性 ＋ 负荷 ＋ 所有权。`\n\n**(2)【写法加严，本篇当场命中，只对你】凡收录「改了模型」的论文，核对清单必须多三行：复合操纵、附带能力损伤、能否移植。** **理由**：本篇三样同动无消融（概念压制＋词表剪枝＋修复微调）、有作者自陈的 `collateral damage`、且要求开放权重。**这三项决定了它的结论能不能被搬到你的教学场景——而三行都不在你的现有清单里。** **写法一行**：`操纵件＝__（几样同动／有无消融）；附带损伤＝作者报否（哪张表）；可移植性＝开放权重／闭源 API 只能搬原则。`\n\n**(3)【固定清单新增一行】载体三档之后，加「伦理声明」一行：`IRB／approv*／institutional／consent` 四串各几命中、检索面多少字符、结论是「有」还是「未检索到」。** **理由**：你本月第二次在这个位置空白（上次是 10-20 的 Design Studies 件）。**这一行的成本是四条 grep，收益是避免把一篇合规论文写成不合规、或把不合规论文写成合规。**\n\n**(4)【检索方向，给你，本周内】「所有权」这个因变量在库内已经三处占位（08-10／09-06／10-15 备选件），但它从来没有一个行为读数。** **理由**：本篇的所有权是单题自评、作者自己降级为 `indicative`；`08-10` 的所有权是量表；10-15 那件是「愿不愿署名」类。**全库缺的是「撤除后是否继续深化」这种行为层所有权。** **检索式**：`psychological ownership` × `behavioral` × `AI`；`authorship` × `continuation` × `removal`；`creative ownership` × `persistence`。**写法一行**：`所有权测量＝单题自评／量表／行为（撤除后是否继续）；三者是否同向＝__。`\n\n**(5)【概念桥】把「摩擦」和「故障」分开，这是本篇留给你的一块空地。** **理由**：少数被试把约束当 bug 去修，卡在修复循环里——作者判为「无法教会、停在不满」，并说即便补上缺口「也不提供任何正向可供性」。**在学生身上这大概率是常态而不是少数派。** 而全库关于「AI 出错时人怎么反应」只有分散读数，**没有一件把「刻意阻抗」与「真故障」做成可区分的条件**。**检索式**：`error attribution` × `AI` × `learning`；`trust repair` × `deliberate failure`；`desirable difficulty` × `attribution`。**写法一行**：`阻抗性质＝刻意／故障；学生归因＝__；是否影响是否继续投入＝__。`",
+    "excerpt": "来源：records/20261021/11/concept-suppression-cognitive-friction/惠-能力进化.md · 你的今日候选入选——今日 11 号位，且是今日两篇入选件里排第一的那篇。 选题为 Martin Disley（University of Edinburgh, Institute for Design Informatics）／Murad Khan（University of the Arts London, Creative Computing Institute） 的《 Designing cognitive friction with concept suppression in large language models 》（《Human–Computer Interaction》，T&F， Received 03 Feb 2026, Accepted 11 Jul 2026, Published online 21 Sep 2026 ， pp. 1–42 ，DOI 10.1080/07370024.2026.2708617 ， 在线优先、无卷期 ）。 我 curl 直取 Crossref 复核五项零偏差 （ journal article ／ Human–Computer Interaction ／ 1 42 ／ 2026 09 21 ／ Disley → Khan 顺序一致），并 web extract 取全文 168,981 字符 逐串对账： N=37 、 7.24/10.19/11.49 、 7.65/10.76/10.70 、 6.38/9.16/11.49 、 9.54 vs 7.32 、 g=−0.561 / −0.425 / −0.310 、 pFDR=0.0132 / 0.0234 / 0.1868 —— 你的提议一处都没错引。这是本队连续第三天「采集员对账零偏差」。",
+    "file_name": "惠-能力进化.md",
+    "source_dir": "records/20261021/11/concept-suppression-cognitive-friction",
+    "original_url": "https://doi.org/10.1080/07370024.2026.2708617",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-10-19 11:00",
     "title": "惠-能力进化（2026-10-19）",
