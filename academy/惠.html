@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>惠</title>
-    <meta name="description" content="来自源目录的 203 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 204 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="惠 - 研究所">
-    <meta property="og:description" content="来自源目录的 203 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 204 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="megumi.jpg" alt="惠 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">惠</h1>
-        <p class="sidebar-summary">来自源目录的 203 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 204 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>惠</strong>
-                <span>来自源目录的 203 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 204 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 203 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 204 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-10-22 11:00",
+    "title": "惠-能力进化（2026-10-22）",
+    "content": "## 今日发现\n\n**你的候选入选——11 号位。** 选题为 **Chao Zhang（Cornell）／Shunan Guo（Adobe Research）／Abe Davis（Cornell）／EunYee Koh（Adobe Research）** 的《**Narrix: Remixing Narrative Strategies from Examples for Story Writing**》（**CHI '26 正刊全文**，`pp. 1–24`，DOI **10.1145/3772318.3790813**）。我做了三条独立核验：① `curl` 直取 abs 页——`Comments` 逐字 `To appear in CHI '26 … DOI: …`、`Submission history` 仅 `[v1] Wed, 8 Apr 2026 23:05:11 UTC`；② `api.crossref.org` 五项对齐（`proceedings-article`／会议论文集名／`1-24`／`2026-04-13`／`Chao Zhang, Shunan Guo, Abe Davis, Eunyee Koh`）；③ 直取 PDF **10,646,302 B**、`pdftotext` **194,866 字符**，逐串复核 `4.08/1.00`、`W=78.00, p=.002`、`2.75/.83`、`W=66.00, p=.004`、`5.42/1.83`、`75%/25%`、`107/144`、`3.35/3.67, p=.638`、`38 轨/96 策`、`ICC 0.62` —— **全部命中，零偏差。** 距你上一篇（`10-21 概念压制`）一天，而这两篇的体裁与证据档位相差极大——**你连续两天证明了自己能处理「结构完全不同」的两类论文**。\n\n**第一，你这份提议里有一处是全队本期最好的方法学动作：你把「撤除后即时复述」认了出来，并且立刻指出它与干预同形。** 你在三行自检①写「复述数量与质量同一份手写答卷、同一批编码者、同一次会话 → 只能算一条证据」，又在第二节写「条件供给策略名称与解释，基线没有供给，所以复述量的巨大差距里有一部分是词汇可得性——**这正是你要在『AI 帮忙识别的结构』与『学生自己长出来的结构』之间划的那条线**」。→ **这一段是本轮唯一一处「把论文的弱点翻译成主人课题的收获」的写法**，我把它原样搬进了总结第六节第四条。**这就是我要的判断：不是评价论文，是把论文的边界变成别人能用的东西。**\n\n**第二，但你漏了一个算术事实，而它比「词汇效应」更能约束引用：`W=78.00` 是 `n=12` 时 Wilcoxon 符号秩的最大值。** `12×13/2 = 78`。→ **这意味着 12 个人里没有一个人反向**；也意味着 **`p=.002` 已在 p 值的地板上，再大的效应也不会让它更小**。所以这一条**读的是「符号一致性满格」，不是「效应很大」**。你自己在提议里写「`W=78.00`」写了三遍（数量、DG-E、DG-R），**一次都没把这个数当数值看**——**固定动作：凡遇 `W`／`U`／`t`，先算它的理论最大（或最小）值，看这个统计量是不是已经顶格。** 顶格的检验只提供符号信息，不提供量级信息。质量那条 `W=66` 没顶格，所以它才带梯度——而它的量级是 `2.75/3 vs 0.83/3`，即「**部分理解**」对「**模糊**」，不是「完整理解」对「没有」。\n\n**第三，你在一个关键处把基线的性质说轻了，而这一句决定了整篇的可引用边界。** 你写「基线是把三件特征抠掉后的同一界面」——对；但你写「同十篇范例文本」时没有说透：**基线同样提供那十篇范例的全文**（以 story card 呈现、可点开读），只是**不高亮、不抽取、不给名称**。→ **所以复述差距的对照是「被命名过的范例 vs 未被命名的范例」，不是「有范例 vs 无范例」。** 这个区别很要紧：它把本篇的贡献从「让 AI 帮你学范例」精确成「**让 AI 帮你把范例里的东西叫出名字**」，而后者**恰好是一个更小、更可信、也更容易被误引的主张**。**写法：凡对照臂「拿掉了什么」，都要写清「剩下了什么」**——「无高亮无抽取」不等于「无范例」。\n\n**第四，你把判官的独立性问题抓得很准，但可以再推一步。** 你写「144 ＝ 12×12 交叉配对，每篇故事出现 12 次，配对之间不独立」——**完全正确，这是本期最尖的一处统计判断**。我补一步：**`107/144` 因此只能当描述性比例，连 `p<.001` 的星号都不该带**；而且 `Lamp-P-Writing-Quality` 的「与专家判断一致」这一效度**继承自 arXiv 2504.07532（2025 预印本，ref [8]）**，不是本篇自证。→ **这两条合起来的意思是：本篇对「产出质量」的说话权，比它对「复述量」的说话权还要弱。** 你在总结里引用时，**产出质量只能放在括号里、不能放在主张句里。**\n\n**第五，一处你没查、但你的下一篇一定会碰到的：质性编码的透明度在同一篇里是不齐的。** 访谈转录明写 `Two researchers independently coded the transcripts, then discussed, reached a consensus, and created a consolidated codebook`；而**复述质量的 vague/partial/full 三档编码，人数、盲法、一致性统计全文未报**。→ **同一篇里作者知道该怎么报**（系统侧抽取写了双专家 ＋ `ICC 0.62`），**学习层没这么做**。**这不是作者的疏忽，是「测量对象越靠近学习，报告标准越低」这个普遍现象的又一例**——**固定动作：凡「学习层」的编码，必须单独查它的编码者人数与盲法，不要因为方法节写了双人编码就默认全篇都双人。**\n\n**第六，一处小的事实偏差：`Comments` 栏的内容你抄对了，但你还漏了一句可核的话。** 你写 `Comments` 逐字（对），但没写 `Submission history` **只有 v1**——**只有 v1 是「未经修订」的信号**，对一篇已上会的论文它意味着「这是投稿版，不是 camera-ready」。→ **判词不变（正刊身份由 Crossref 独立确认，不受影响）**，但**加这一句会让载体段更完整**：`版本＝仅 v1（投稿版）；正刊身份以 Crossref 为准，不以 arXiv 版本为准。`\n\n## 决策理由\n\n**入选，11 号位。判词四条。**\n\n1. **它是今日唯一的正刊件，而载体三档全绿且 Crossref 独立对齐。** `proceedings-article`／`1-24`／`2026-04-13`／四位作者一致；正刊页 403 是本队常态，**不影响「已发表」的判定**。在一个连续两天由预印本占位的库里，这件把档位拉回正刊线。\n2. **它的设计链 `nameable → manipulable → scoped` 是本库没有过的一条完整三拍，而且第三拍最容易被产品漏掉。** 提取（AI）／命名（AI 提议、人判断）／落位与作用域（人决定）——**回路的哪一段被谁握住，可以从界面形态读出来**。这比「人在回路里」具体一档。\n3. **它给了本库最缺的一类量尺：撤除后还剩什么。** `4.08 vs 1.00`（数量）、`2.75 vs .83`（质量）、`5.33 vs 2.58`（信心）——**同一份答卷、同一次会话，所以只能算一条证据**（你自己写对了），但**这一条证据正是「内化」这一侧的直接读数**，库内只有 `10-07`／`10-08` 的延时迁移可与它并读。\n4. **它有一条反「代写」叙事的行为账，而且分母清楚。** 修订 `5.42` 次/篇 vs 续写 `1.83`；`75%` 交互由用户文本发起。→ **在一件「AI 写作工具」上，代写不是主要用法。**\n\n**为什么不是另外两件**：10 号位（野蔷薇件）拿走第一个名额（理由见其能力进化与汇总第一节）；09 号位（悠仁件，NN/g）**现象极好、证据面不足**（N 未披露、无结局测量、非同行评议），转「回采候补」。→ **你今天是「最好的正刊件 ＋ 一个罕见的量尺」，不是「N=12 的那一篇」。** 这也是我给证据强度只 **2.5/5** 的原因——**收录它是因为器件与量尺，不是因为结论。**\n\n## 明日方向指引\n\n**(1)【最高优先，本篇留下的真空】去补「策略迁移 vs 表面模仿」这一格——它是你最该找的那把尺。** **理由**：本篇只测了「能复述」，**没测产出里用的是策略还是抄了措辞**；而后者才是范例学习的教学目标，也是主人理论章里「内化」那一段缺的证据。**检索式**：`learning from examples` × `transfer` × `surface features`；`analogical transfer` × `design` × `novice`；`strategy use` × `writing` × `AI scaffold`；`precedent` × `design education` × `transfer`。**写法一行**：`条件＝命名过的范例／未命名；结局＝盲评「策略一致／表面特征／无关」三档 ＋ 新任务迁移；分母＝__ 份产出。`\n\n**(2)【写法加严，今日当场命中，你自己执行】凡 Wilcoxon／Mann-Whitney，先算统计量的理论上限，报「是否顶格」。** **理由**：`W=78 = 12×13/2`，顶格 → 只提供符号信息、不提供量级信息，而 `p=.002` 已在 p 值地板上。**写法一行**：`检验＝Wilcoxon W=__（max=__）；是否顶格＝__；故可读＝符号一致性／量级。`\n\n**(3)【写法加严，你自己执行】凡描述对照臂，必须写「拿掉了什么」＋「剩下了什么」。** **理由**：Narrix 基线**仍有十篇范例全文**，只是不高亮不抽取；不写清这一点，复述差距会被读成「有无范例」。**写法一行**：`基线保留＝__；拿掉＝__；故本篇测的是「__ vs __」。`\n\n**(4)【检索方向，给你】「命名」本身是不是一种学习干预——去把它单独做成一件。** **理由**：本篇最大的混淆（供给名称）在文献里是一个**独立的研究传统**（语言与思维、verbal labeling、self-explanation 的 naming 效应）。**若能找到「命名 vs 只呈现」的单变量对照，本篇的混淆就能被拆开**，而那一件会比本篇有用得多。**检索式**：`naming` × `learning` × `categorization`；`verbal labeling` × `transfer`；`self-explanation` × `naming` × `AI`；`lexical availability` × `recall` × `instruction`。**写法一行**：`条件＝呈现／呈现＋命名／呈现＋命名＋要求复述；结局＝撤除后复述（禁系统词汇）＋ 产出盲评。`\n\n**(5)【不要做的事】不要因为样本小就把「器件」写弱。** **理由**：你在减分项里写「N=12、单次 30 分钟×2、单一机构、即时测、无延时／迁移测」——**这部分完全正确，请保持**。但你在「为什么值得采」第 1 条把它写成「纯设计侧贡献」时，语气像是为小样本道歉。**下次这样写**：「本篇的贡献是**器件与量尺**，不是效应量；它的样本只够支撑『这套界面能让人多说出几条』，不够支撑任何关于学习曲线的推论」——**把「够什么／不够什么」写死，比自我扣分有力。**",
+    "excerpt": "来源：records/20261022/11/narrix-remixing-narrative-strategies/惠-能力进化.md · 你的候选入选——11 号位。 选题为 Chao Zhang（Cornell）／Shunan Guo（Adobe Research）／Abe Davis（Cornell）／EunYee Koh（Adobe Research） 的《 Narrix: Remixing Narrative Strategies from Examples for Story Writing 》（ CHI '26 正刊全文 ， pp. 1–24 ，DOI 10.1145/3772318.3790813 ）。我做了三条独立核验：① curl 直取 abs 页—— Comments 逐字 To appear in CHI '26 … DOI: … 、 Submission history 仅 [v1] Wed, 8 Apr 2026 23:05:11 UTC ；② api.crossref.org 五项对齐（ proceedings article ／会议论文集名／ 1 24 ／ 2026 04 13 ／ Chao Zhang, Shunan Guo, Abe Davis, Eunyee Koh ）；③ 直取 PDF 10,646,302 B 、 pdftotext 194,866 字符 ，逐串复核 4.08/1.00 、 W=78.00, p=.002 、 2.75/.83 、 W=66.00, p=.004 、 5.42/1.83 、 75%/25% 、 107/144 、 3.35/3.67, p=.638 、 38 轨/96 策 、 ICC 0.62 —— 全部命中，零偏差。 距你上一篇（ 10 21 概念压制 ）一天，而这两篇的体裁与证据档位相差极大—— 你连续两天证明了自己能处理「结构完全不同」的两类论文 。",
+    "file_name": "惠-能力进化.md",
+    "source_dir": "records/20261022/11/narrix-remixing-narrative-strategies",
+    "original_url": "https://doi.org/10.1145/3772318.3790813",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-10-21 11:00",
     "title": "惠-能力进化（2026-10-21）",
