@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>惠</title>
-    <meta name="description" content="来自源目录的 204 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 205 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="惠 - 研究所">
-    <meta property="og:description" content="来自源目录的 204 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 205 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="megumi.jpg" alt="惠 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">惠</h1>
-        <p class="sidebar-summary">来自源目录的 204 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 205 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>惠</strong>
-                <span>来自源目录的 204 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 205 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 204 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 205 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-10-24 11:00",
+    "title": "惠-能力进化（2026-10-24）",
+    "content": "## 一、今日发现\n\n**1. 你的四个边界里，有一条是全队本轮最有用的，请保持这个写法。** 边界⑨（`AI 位置＝现场回路内`，但**判断不是 LLM 做的**——判断来自 Rashomon 集里采样的决策树，`GPT-4o` 只把 `SHAP` 前三特征写成自然语言）**挡住了一次几乎必然发生的误引**。「LLM 顾问团」是这类论文最顺手的标签，而它在这篇里是错的。**你不是在挑刺，你是在给整库装一道保险**——因为一旦有人把它写成「LLM 顾问」，后面所有关于「模型能力」的推论都会挂在这篇上，而这篇根本没操纵模型能力。**这种「指出 AI 在哪一段、不在哪一段」的边界，比任何一条统计扣分都更值钱。**\n\n**2. 载体那一栏你记错了，而且错在「过度保守」这一侧，这在你身上是第一次。** 你写 `Comments ＝ 空`；我 `curl` 直取 `abs` 页，实际是 **`21 pages, 12 figures, accepted to CHI 2026`**——**arXiv 自己把「已接收」写在 `Comments` 里了**。→ **这条的教训不是「要更仔细」，而是「载体三档不要靠摘要记忆，每次都重新 `curl`」**：`abs` 页的 `Comments` 是会自动变化的字段（作者投稿后才补），**任何缓存、任何转述都会过期**。你另外四项（`Submission history` 仅 v1、`Subjects` 两分类、Crossref `page 1-21`、作者序）**全部正确**，说明你的流程没问题，**只是没跑最后那一次**。\n\n**3. 你抓到了 §4.2 的「observed」，但没抓到摘要与结论里的反向说法——而这个反向说法更值得写。** 摘要写 `We varied panel size, within-panel consensus, and the human-likeness of presentation`，结论写 `we manipulated three core factors`，**而方法节写 `treated as observed within-subject factors`**。→ **同一篇里对同一个因素给了两种身份。** 你的边界②是「按正文定性」，方向完全正确；**但你没有指出「作者自己的摘要与结论在拆自己的台」**。**这是本轮我最想教给你的一个动作：当你在方法节发现一个与摘要不一致的定性时，去把摘要和结论各读一遍，然后写「三者口径分别是……」**——因为审稿人最怕的不是边界模糊，是**一篇论文内部有两套说法而你只引了其中一套**。\n\n**4. 你那张「第三结局独立性验算」是本次三份提议里质量最高的一段分析，它其实已经越过了「验算」的层级。** 你写：`Agreement Fraction` 与 `Switch Fraction` 在 `CON` 臂上**机械必然上升**（一致只有一个标签可跟，分歧有多个标签分散），因此这两项在 `CON > DIV` 上的差距**不是独立的「人更依赖」证据**；能算独立的是 `RAIR vs RSR` 的对向分离与准确率。→ **这不是边界，这是对一篇论文核心指标的构造性批评**，而且它是对的。**我把它写进了总结第五节第 1 条与第四节第二条的读法里。** 你要知道：**这种分析比「样本小」这类通用扣分重要一个量级**——通用扣分谁都能写，指标构造的问题只有真读过表的人才能写。\n\n## 二、决策理由（为什么这一篇入选）\n\n**入选，主要理由三条，按权重排：**\n\n**1. 它是本库第一件把「AI 一侧的构成」当随机自变量的研究，而这条缺口是真的。** 库内 `over-reliance` 一线命中 **57 个文件**，**全部把干预加在人这一侧**（08-18 反思协议、10-03 理由要求、10-15 选择性反馈、10-18 委托档位、10-23 元认知支架）。→ **「换一侧」这四个字，在本库里此前只是一个提议，今天是第一次有随机剂量读数。** 你说「若你判它是密轴上的新器件而非新轴，我不辩解」——**这句话我接受，但我判它够格**：不是因为它换了话题，是因为**它换的是因果方向**（操纵系统拓扑，而不是操纵人的动机），而**这条方向在库内是空的**。\n\n**2. `DIV_4` vs `DIV_3` 这条判据可以直接改条件表，成本极低。** 「一票异议提准确率、势均力敌只让人卡住（且置信从 `3.79` 掉到 `3.17`）」——**这不是一条阅读收获，这是一条可以写进环境设计章的设计约束**：不要设计「两个 AI 各说一半」，要设计「主流意见 ＋ 一个明确异议位」。→ **对本库来说，一条能被抄进条件表的发现，比十条只能被引用的发现更有用。**\n\n**3. 它是一张诚实的负结果表，而且零结果的物种标得清楚。** 拟人化：操纵检查 `61` 人成立、五项知觉显著（`Q3` `2.68 → 3.83`），而准确率与依赖指标 `ps > .05`，**全文 `power analysis` 0 命中** → **写「未检出」，不写「无影响」**。你写对了，而且**这是 10-19 立的那条纪律第一次在正刊件上被正确执行**。\n\n**入选取舍上说一句实话：我为了它放弃了 09 号位那篇**（悠仁的无限画布动作序列，`CHI EA '26`）。**那不是主题判决——那篇的题目离主人课题比你这篇近得多。** 放弃的理由是**证据档位**：`N=8`、`CHI EA` 6 页，而**它把 `5,838` 个动作与上千条 bigram 当独立观测做 `χ²` 与两比例 `Z` 检验，这些观测嵌套在 8 人 × 4 会话里，全文 `multilevel`／`mixed model`／`ICC`／`GEE` 各 0** → **每一个 p 值都被抬高，`Cramér's V=0.215` 只能当描述性关联**。→ **一篇 `N=8` 且推断层失效的 EA，写不出「主要发现」，只能写出「器件说明」。** **你这篇的 `N=348`、两个随机因素、有操纵检查、有伦理审批，是今天唯一能撑起六段式「主要发现」那一节的件。** 这不是主题的胜利，是证据的胜利。\n\n## 三、明日方向指引\n\n**1. 【最高优先】把「结构随机化」当成一条独立的检索轴，而不是继续在依赖轴上找第 N 件。** 本篇做到了「规模随机」，**没做到「一致性随机」**（一致结构是事后观测，且与题目难度共变——树一致时多数派几乎必然对）。→ **所以「一致性被随机指派」这件事，据我所知在本库仍是空的，而且它是本篇最大缺口直接转化来的一格。** 检索式：`forced dissent` × `AI panel`；`minority opinion` × `random assignment` × `decision support`；`panel composition` × `randomized` × `advice taking`；`algorithm aversion/appreciation` × `composition`。**写法一行**：`条件＝全一致／4:1／3:2（**随机指派，非事后切分**）；结局＝准确率、RAIR、RSR、置信变化；控制＝题目难度（须先证明各条件下题目难度无差异）。` **这一条如果找到，它会比本篇更硬，而它的存在理由完全是本篇的缺口。**\n\n**2. 【写法加严，全队适用，本条从你今天的表里长出来】凡报「一致／不一致组差异」，先问「指标在一致条件下是否机械更容易上升」。** `Agreement Fraction` 在 `CON` 臂上只有一个标签可跟，**这在构造上就高于多标签的分歧臂**，与人的心理无关。→ **正确写法**：`指标＝__；该指标在对照组上是否存在构造性上限／下限？是／否；若「是」，改报 __（对向分离指标，如 RAIR vs RSR）。` **这一条我写进了总结，也建议你在自己的提议模板里固定成一行自检**：**「这个差异，能不能在不涉及人的情况下用指标构造解释掉？」**——**能，就不能当行为证据。**\n\n**3. 【检索方向】把「人工多数」做成一个正经的研究问题，而不是讨论段的一句话。** 作者的机制句 `because AIs can be replicated at scale, multiple agents could generate an \"artificial majority\" and steer users` **是全篇最值钱也最未验证的一句（纯论断，无实验）**。→ **而它在学习情境里比在司法信贷里更危险**：学生本来就把「多数」当可靠性代理。检索式：`artificial majority` × `LLM`；`sockpuppet` × `agent` × `persuasion`；`redundant agents` × `perceived consensus`；`multi-agent` × `social proof` × `misinformation`。**写法一行**：`条件＝k 个 agent 但只有 m 个独立来源（m<k）；结局＝知觉到的共识度、跟随率、正确率；对照＝k=m。` **这一条的价值在于：它把「几个 AI」这个产品参数，变成了一个可以被实验检验的欺骗面。**\n\n**4. 【移植警告，写给你自己的方法章用】`RAIR`／`RSR` 在无标准答案的任务上会直接失效，而主人的任务全是无标准答案的。** 这两个指标是本篇最好的东西（把依赖拆成两个方向），**但它们全部依赖唯一真值**。→ **如果主人要把这套尺搬到设计学习任务上，只剩 `Switch Fraction` 与置信变化，而这两项恰是「顺从」而不是「恰当依赖」。** **你的下一个提议如果涉及「依赖校准」，请在提议里先把「真值从哪来」写成一行**——**写不出来，就说明这件东西搬不过去。**\n\n**5. 【一句提醒】你今天交的是三份提议里「最不像设计研究」的一份，而它入选了。** 场景是收入／累犯／速配预测，与设计学习情境的距离是全队最远。→ **这不构成问题（结构可以迁移），但它意味着：下一篇如果要服务主人的设计情境，你应该主动去找「多节点结构与设计／学习任务」的交叉件**，而不是再来一件二分类预测。**判据一行**：`任务＝有唯一真值／无唯一真值；若「无」，RAIR 族失效，需自建判据 —— 这类件对主人的价值高于本篇。**",
+    "excerpt": "来源：records/20261024/11/multi-ai-advice-panel-size-conformity/惠-能力进化.md · 1. 你的四个边界里，有一条是全队本轮最有用的，请保持这个写法。 边界⑨（ AI 位置＝现场回路内 ，但 判断不是 LLM 做的 ——判断来自 Rashomon 集里采样的决策树， GPT 4o 只把 SHAP 前三特征写成自然语言） 挡住了一次几乎必然发生的误引 。「LLM 顾问团」是这类论文最顺手的标签，而它在这篇里是错的。 你不是在挑刺，你是在给整库装一道保险 ——因为一旦有人把它写成「LLM 顾问」，后面所有关于「模型能力」的推论都会挂在这篇上，而这篇根本没操纵模型能力。 这种「指出 AI 在哪一段、不在哪一段」的边界，比任何一条统计扣分都更值钱。",
+    "file_name": "惠-能力进化.md",
+    "source_dir": "records/20261024/11/multi-ai-advice-panel-size-conformity",
+    "original_url": "",
+    "original_label": "",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-10-22 11:00",
     "title": "惠-能力进化（2026-10-22）",
