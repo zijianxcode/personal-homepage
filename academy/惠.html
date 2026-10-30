@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>惠</title>
-    <meta name="description" content="来自源目录的 207 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 208 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="惠 - 研究所">
-    <meta property="og:description" content="来自源目录的 207 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 208 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="megumi.jpg" alt="惠 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">惠</h1>
-        <p class="sidebar-summary">来自源目录的 207 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 208 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>惠</strong>
-                <span>来自源目录的 207 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 208 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 207 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 208 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-10-30 11:00",
+    "title": "惠-能力进化（2026-10-30）",
+    "content": "## 一、今日发现（你做对的三件，都记在明处）\n\n**1. 你今天的提议是本队历史上「载体核验」做得最完整的一份，而且你自己标出了一处失败。** 三道核验里两道成功、一道失败，你照实写：SIGCHI 程序页实读（Best Paper、Papers、12 min、时段、场次、地点）、ACM DL 被 Cloudflare 拦、**arXiv `totalResults = 0`**，并且写死「**我没有 DOI，也不拼造 DOI**」，还主动指出 `10.1145/3830398.*` 是预分配前缀不得据此拼。→ **我今日独立复核：程序页渲染后逐字有 `BEST PAPER`、`Papers`、`12 min`、`Thu, 5 Nov 10:15–10:27`、`Structure and Liveness in Programming`、`Columbus`；奖项页写 `Best Papers (6)` 且本篇列首位。** → **你报的全部成立。** → **这是本库第一次有人把「载体核验失败」也写进正文而不是略过——这一点比你今天找到的论文更值钱。**\n\n**2. 你把自己的档位判对了，而且判得比我还早：「器件件，不是发现件」。** 你写「它被操纵的不是人，而是『声明什么』与『补全什么』之间的分界」，并主动说「若判离主线太远，请直接排除；但若留下，请记成器，别记成证」。→ **我留下它，正是按你给的口径记成「器」。** → **这条自判很重要：如果按「发现件」写，它的 N=13、单臂、单次暴露会立刻把它判死；按「器件件」写，它的价值（一个授权层的架构 + 一笔带刻度的负担账）才立得住。**\n\n**3. 你抓到了那个真正值钱的读法，而且是从一段容易被人跳过的附录里抓的。** 「自动化搬走的是几何与时序，留下的是枚举可达状态——而留下那一件更难」——**这句话是本篇唯一能进框架章的东西**，而它在原文里散落在 §8.3 的三个引语与一个性能脚注里。→ **你把它们拼成了一句话，这就是编辑工作里最难的那一半。**\n\n## 二、三处必须订正\n\n**1. 附录 C 的对照实验，两臂的资源权限是不对称的——你只记了其中一半，而漏掉的那一半方向相反。** 你写「Dragology 条件额外给了一份 `AGENTS.md`（作者自陈可能过拟合）」。→ **完整的条件原文是：`In non-Dragology conditions, the agent was allowed to access whatever resources it wished. In the Dragology condition, we instructed the agent not to access any resources outside of the Dragology library itself (including its types and documentation), and an \"AGENTS.md\" file we prepared`。** → **也就是说：Dragology 臂被**禁止**访问库外资源（连类型定义与文档都不许看），同时被塞了一份作者手写的坑位清单；而另外六臂**可以自由上网**。** → **后果：这不是「抽象层 vs 无抽象层」，是「受限 ＋ 被教练」vs「不受限」。两个方向无法分离。** → **规则（今日起执行）：凡写「A 比 B 好」的对照实验，必须逐臂写出**信息与资源的可得性**，并把两臂的差异列成一张两行表。差异不止一个时，结论只能写「这个组合赢了」，不能写「这个组件起作用了」。**\n\n**2. 「反身性主题分析」是加上去的，原文没有这个方法名。** 全文 `Reflexive` **0 命中**；原文只写 `Codes were clustered into candidate themes and refined through discussion`，局限节写 `standard limitations for qualitative interview research`。→ **可写「主题分析式编码、未报编码一致性」；不可写「反身性主题分析」。** → **`kappa`／`inter-coder`／`intercoder`／`reliab` 各 0 命中——这一半你核对正确。** → **规则：方法名也是引号级断言，与「作者称之为 X」同一条纪律。**\n\n**3. 「13 人动手访谈」缺两个会让读者误判现场的事实。** 会话是**视频会议、90–120 分钟**（不是现场、也不是短时），且是**单次暴露的引导式教程**。→ **前者影响生态效度（远程、无实体拖拽手感），后者影响学习结论（作者自陈 `offering limited evidence of independent learning processes`）。** → **规则：写 `N=__ 的访谈研究` 时，同句写清**在哪做、多久、几次**——这三件决定了它能被引作什么。**\n\n## 三、你漏掉的三处\n\n**1. 「手感更好」全靠开发者判断，全文零终端用户。** P06 `feels very fancy ... like someone paid money to sit down and carefully hand-roll`、`this one is like smooth`（对照自己手写的 `really jumpy`）、P01 `feels very nice as a user`。→ **但 `feels X as a user` 是一个开发者在猜用户。** → **本篇的核心承诺是「更高质量的手感」，而唯一的质量判据来自写代码的人——这不是小瑕疵，这是主张与证据的层级错配。** → **你在提议里写「无终端用户实验，只有演示」，对；但没写它的后果：这一篇的标题级承诺（D2 → 更好的拖拽）在本篇内没有被测。**\n\n**2. 性能边界与认知悬崖是同一个量。** 你写「初始化成本随状态数二次增长（512 状态 >1500 ms），逐帧 <15 ms」——数对。→ **但你没把两件事连起来：可达状态数既是性能瓶颈（二次初始化），也是认知瓶颈（列集合）。** → **后果：作者把悬崖写进「可学性」一节，读起来像上手问题；实际上它更像结构性上限——任务再复杂一点，引擎跑不动、人也列不完，这与熟练度无关。** → **这是本篇最该被追问、最容易被「brain-twisting」这种生动措辞盖住的地方。**\n\n**3. 三个可视化器的学习作用，参与者一句原话都没有。** 你写「三个可视化器是调试表征，作者未测其学习作用」。→ **我复核：全文确有三个可视化器（Overlay／Drop Zones／Spec Tree）的描述，但**没有任何一条参与者原话提到它们帮了忙**。** → **这条对你的判断其实是有利的（作者自己承认未测），但你应当把它写成「零原话」，而不是「未测」——前者是证据状态，后者是作者的措辞。**\n\n## 四、我替你走的一步\n\n**你把「悬崖」读成了学习曲线，我把它读成了任务复杂度的函数——这一步差在哪里？** 你的写法是「P12 说 brain-twisting、P7 说 brain-breaking、P03 说幻觉碎了」，然后写「只对跨过门槛的人成立」。→ **这只描述了难度，没有解释难度的来源。** → **来源是可达状态集合的组合爆炸：reorderable list 的可达状态是重排级别（n! 量级），而这正是投机渲染要枚举的东西。** → **所以「门槛」不是一道（跨过去就好了），是**与任务规模同向增长的一堵墙**。** → **规则（对你以后每一篇都成立）：作者用生动引语描述一个难点时，去查这个难点有没有一个**可量的来源**（状态数、维度数、组合数）。有，就写来源；没有，才写引语。**\n\n## 五、明日方向指引\n\n**1.【最高优先】你这条「授权层」的轴今天开了一个新格，缺的是「同一任务、两种授权层」的成对读数。** 本篇只有一种授权层，所以它的收益与代价都是单臂自陈。→ **要的形状**：**同一份交互规格、同一批开发者、两组分别用声明式与过程式实现，测**首版时间、卡点位置、误枚举次数、维护改动成本**。** → **检索式**：`specification language` × `user interface` × `study`；`declarative` × `interaction technique` × `developer study`；`model-driven UI` × `programmer` × `cost`；`direct manipulation` × `abstraction` × `authoring`。→ **注意别和 09-15 弃选的《Words to Widgets》撞车**：那件是 prompt → widget 的生成，你要的是**授权层的位移**。\n\n**2.【次高】「接口要能被 agent 写」这一侧，库里只有 Affora（09-18）与本篇各一半。** → **缺的是**同一任务、同一 agent、多层抽象的一次系统对照**（不是 7 个库的一发命中，而是 3 层抽象 × 多个任务 × 有反馈迭代）。→ **检索式**：`agent-compatible` × `API design`；`abstraction level` × `LLM code generation` × `success rate`；`documentation` × `coding agent` × `first-shot`。→ **这一格如果能成，它会直接支撑你「人-AI 协作的中间表征」那一节。**\n\n**3.【第三】设计教育的角度你一直没敢提，但今天这篇给了你一个合法的入口。** 本篇的「what／how 分离 → 探索变便宜」与「工具成本删掉整类交互」两条，**都是课堂现象**（学生不是想不到，是做不出来就不想了）。→ **要的形状**：**设计课里给学生一套「先定规格、再让引擎补实现」的工具，测**探索的方案数与多样性**，而不是测最终作品质量。** → **检索式**：`design education` × `computational tool` × `exploration`；`specification` × `novice designer` × `iteration`；`lowering the floor` × `design studio`。\n\n**4.【写法，明日生效】三条硬纪律：**\n   - **对照实验 → 逐臂写信息与资源可得性**，差异多于一个就只写「组合赢了」。\n   - **方法名也是引号级断言** → 必须 grep 命中。\n   - **`N=__ 的访谈` → 同句写在哪做、多久、几次。**\n\n**5.【一处必须承认的运气】** 你今天交的是一件 UIST Best Paper，载体是硬的、全文是拿得到的、演示是开源的。→ **别把这当基准。** 你真正的能力体现在：**当载体只有一页海报、或者连 PDF 都拿不到时，你还能不能把「这道坎在哪」写清楚。** 09-15 那件（Words to Widgets，你自己判的弃选）才是你的基准线——而今天这篇恰好证明了你当时那条判词是对的：**「边际轴被占住」比「质量不够」更常见。**",
+    "excerpt": "来源：records/20261030/11/declarative-dragging-d2/惠-能力进化.md · 1. 你今天的提议是本队历史上「载体核验」做得最完整的一份，而且你自己标出了一处失败。 三道核验里两道成功、一道失败，你照实写：SIGCHI 程序页实读（Best Paper、Papers、12 min、时段、场次、地点）、ACM DL 被 Cloudflare 拦、 arXiv totalResults = 0 ，并且写死「 我没有 DOI，也不拼造 DOI 」，还主动指出 10.1145/3830398. 是预分配前缀不得据此拼。→ 我今日独立复核：程序页渲染后逐字有 BEST PAPER 、 Papers 、 12 min 、 Thu, 5 Nov 10:15–10:27 、 Structure and Liveness in Programming 、 Columbus ；奖项页写 Best Papers (6) 且本篇列首位。 → 你报的全部成立。 → 这是本库第一次有人把「载体核验失败」也写进正文而不是略过——这一点比你今天找到的论文更值钱。",
+    "file_name": "惠-能力进化.md",
+    "source_dir": "records/20261030/11/declarative-dragging-d2",
+    "original_url": "https://doi.org/10.1145/3830398",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-10-27 11:00",
     "title": "惠-能力进化（2026-10-27）",
