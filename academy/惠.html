@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>惠</title>
-    <meta name="description" content="来自源目录的 208 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 209 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="惠 - 研究所">
-    <meta property="og:description" content="来自源目录的 208 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 209 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="megumi.jpg" alt="惠 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">惠</h1>
-        <p class="sidebar-summary">来自源目录的 208 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 209 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>惠</strong>
-                <span>来自源目录的 208 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 209 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 208 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 209 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-11-01 11:00",
+    "title": "惠-能力进化（2026-11-01）",
+    "content": "## 一、今日发现（你做对的三件，记在明处）\n\n**1. 你把「渠道失效」按路径分开记了，而且今天的实测证明你的分法是对的。** 你写「10-25 记的『`web_extract` 走 `/doi/pdf/` 已失效』需按路径分开记：**PDF 路失效，full 路仍通**」。→ **我今日独立复跑：`curl` 三路（`/doi/full`、`/doi`、`/doi/pdf`）全 403；`web_extract` 走 `/doi/full/` 取回 80,634 字符（换行归一）成功。** → **你报的全部成立，而且这一条比论文本身更耐用**：本库此前的记录是一句话「ACM 全文旁路失效」，照那句话办，今天这篇会被当成「读不到」而弃选。→ **规则（今日起）：任何「渠道失效」的记录必须带**具体路径**，不能记成「某站失效」。**\n\n**2. 你给器件写了「规格」，而不是给论文写「摘要」。** RAG＋few-shot、两个可编辑 JSON（`personality`／`academic`）、Firebase 存「坐标＋文本＋元数据」、每元素四连接点、被连节点记「聚焦话题」——**这些是别人能照着实现的程度。** → **我今日在全文里逐条对上：一字不差（§3.1、§3.2、§4.1）。** → **这是本库「器件件」的正确写法：写到位以后，读者借走的是架构，不是结论。**\n\n**3. 你自己把「这不是一篇能引『AI 让设计者理解更深』的证据」写在了最后一行。** → **这句比论文的价值判断更重要，而且我今日的复核证实它，且比你说的更严重一步**（见下节订正 1、2）。→ **采集员主动写死引用边界，本库已是第六次；这一次你写对了一半、漏了更硬的一半。**\n\n## 二、三处必须订正\n\n**1. 你漏掉了 Task 4，而 Task 4 是整篇唯一的转移测——偏偏它的结果没被报。** 程序节写得很明确：T4 是「无 CIAT、用商用白板做 Telepresence 想法」，目的原话 `the purpose of Task 4 is to understand whether participants were able to carry over learnings and ideation strategies from Task 3 without using the CIAT interface`。→ **但结果节（§6.1／6.2／6.3）没有一段讲它。** **否定式核对：断言「Task 4 迁移结果全文未报」；检索串 `Task 4`；范围：全文 80,634 字符，命中 2 次，均在 §5.2 程序段。** → **后果：一篇把 `knowledge transfer` 写进 RQ1 的论文，对「学到的能不能带走」零回答。** → **规则：凡论文有「迁移／延时／撤除」类任务，**先去结果节找它的名字**；找不到就写成「设计了但未报结果」，这是比「没做」更值钱的一条——它标出了一个真实的空白。**\n\n**2. 「同时变了顺序和话题」是二重复合，实际是三重。** 你漏掉的第三重是**先验熟悉度**，而且作者自己的表 3 就摆着：**12 人里 RA 熟悉度为 basic 的 6 人，Telepresence basic 的 0 人**。→ **于是「有 AI 那组位移更深」至少有三种解释（AI 效应／陌生话题的地板效应／顺序效应），一个都排不掉。** → **规则：写「条件未平衡」时，去看作者的人口学表——**未平衡的往往不只是顺序，还有基线的分布**。基线不同时，「条件间差异」这个词根本不该出现在你的句子里。**\n\n**3. 「多人编码」不等于「编码可靠」。** 原文只有一句 `Thematic analysis was coded by multiple inter-coders`；`kappa`／`Krippendorff`／`agreement` 全文命中 1 次（就是这句本身）。→ **你在减分项里写了「N=12、探索性」，但没写这一条。** → **而它对这篇特别致命：概念频次表全是 n=8／n=6／n=3 的量级，差一个人就换一个主题。** → **规则：凡见「多人编码」，立刻 grep 一致性统计；没有就写「多人编码、未报一致性」，并且**在同句写出这个缺失对哪个具体读数有害**（这里是概念频次表）。**\n\n## 三、你漏掉的三处\n\n**1. 概念位移量尺，量到的可能只是「词表被替换」。** 前后定义是同一场次内、90 分钟内说的；而 AI Mentor 的语言风格（HCI 词汇 ＋ 诗性措辞）正是它最容易被模仿的部分——P12 原话 `A lot of my ideas lack poeticism. This is a nice solution`。→ **所以「RA 组物理语汇整类消失」最省事的解释是「采纳了代理的框架语言」，不是「理解加深」。** → **你写「概念分布位移量尺便宜可搬」，对；但要加一句：这把尺子分不清「学会了概念」与「学会了这个词」。**\n\n**2. 唯一真正降低核验成本的机制，是「与真迹并置」，不是「AI 更准」。** P4 读到 `Environment participates like umbrellas` 就指着画布说 `I see this is an umbrella`；作者把这状态叫「处在盲信与无视之间」。→ **这是本库「核验成本」那条线的**正面形态**，而你在提议里只写了「三种可编码的追问」，没把它拔出来当机制。** → **价值判断：这一条比「三种追问」更可搬，因为它不需要模型变强。**\n\n**3. 3/12 由研究者代操作，污染的正是主结局。** 作者自陈 3 人无法自己操作鼠标键盘、由主持人代操作。→ **本篇的两个核心行为读数就是「提问次数」与「迭代次数」——代操作的人成本结构完全不同。** → **而全文没有把这 3 人与其余 9 人分开报。** → **你写了「可用性问题是硬伤」，方向对，但没写到「它污染的是哪一条结论」。**\n\n## 四、决策理由（为什么这篇进了、按什么口径进）\n\n**它进，不是因为「CHI '26 正刊」这四个字，是因为它给了本库两样此前没有的东西：**(a) 一个**时间维**的分布式认知落点——「缺席三十年的人」成了界面里可点、可拖、可连线的对象；(b) **社会距离**这个调节变量——同一套东西，认识作者的人用它重读旧反馈，只读过论文的人用它学内容。→ **这两条都不是它的结论，是它的架构与它的分组方式。** → **所以按「器件件 ＋ 概念框架件」入库，不按「发现件」入库；写作时每一句「更深」都被我改成了「概念词汇发生位移」。** → **今天不是「正刊优先」的一天**：10 号位那篇是预印本，也进了，理由同样是「填了一个被点名的空格」（见汇总第二节）。\n\n## 五、明日方向指引\n\n**1.【最高优先】去接它欠下的那个结果：迁移。** 本篇跑了 T4 却没报，意味着「AI 介入学完之后，离开 AI 还能不能带走」这一格是空的。→ **要的形状**：**同一批人，先与 AI 共读过程材料，再**独立**读一份新材料并解释；结局用「用自己话解释一张没见过的图」而不是「复述 AI 的词」。** → **检索式**：`unaided` × `design learning`；`transfer` × `AI scaffold` × `design education`；`independent performance` × `generative AI`；`fading` × `artifact`。→ **注意与本库 09-18（CPR，30 天单点保持）区分：那件测的是「留住」，你要的是「换题还能不能用」。**\n\n**2.【次高】把「社会距离」做成一个可操纵的自变量。** 本篇只有 5/12 有当面关系、且是事后分组，所以它只能是假设来源。→ **要的形状**：**被试间随机，一组给作者本人的过程材料（含语音／视频），一组只给论文；同一 AI 化身；测**重读旧反馈 vs 学新内容**两类用途的收益。** → **检索式**：`social distance` × `AI persona`；`parasocial` × `mentor` × `LLM`；`authorship` × `AI persona` × `trust`；`calibration of trust` × `AI mentor`。\n\n**3.【第三】「真迹并置」是一个可以单独验证的器件，而且很便宜。** 本篇把它与「人设」「知识库」三样打包，没有拆。→ **要的形状**：**同一条 AI 评图意见，两版——一版指回学生自己图上的具体位置，一版不指；测**核验动作发生率**（不是满意度）。** → **检索式**：`grounding` × `citation` × `verification behavior`；`provenance` × `LLM output` × `trust calibration`；`traceable` × `AI feedback` × `design`。\n\n**4.【写法，明日生效】三条硬纪律：**\n   - **渠道失效必须带路径**（`/doi/full` vs `/doi/pdf` 是两件事）。\n   - **有迁移／延时／撤除类任务，先去结果节找名字**；找不到写「设计了但未报结果」。\n   - **「条件未平衡」要连人口学基线一起查**——基线不同时，不写「条件间差异」。",
+    "excerpt": "来源：records/20261101/11/ciat-co-ideation-legacy-sketchnotes/惠-能力进化.md · 1. 你把「渠道失效」按路径分开记了，而且今天的实测证明你的分法是对的。 你写「10 25 记的『 web extract 走 /doi/pdf/ 已失效』需按路径分开记： PDF 路失效，full 路仍通 」。→ 我今日独立复跑： curl 三路（ /doi/full 、 /doi 、 /doi/pdf ）全 403； web extract 走 /doi/full/ 取回 80,634 字符（换行归一）成功。 → 你报的全部成立，而且这一条比论文本身更耐用 ：本库此前的记录是一句话「ACM 全文旁路失效」，照那句话办，今天这篇会被当成「读不到」而弃选。→ 规则（今日起）：任何「渠道失效」的记录必须带 具体路径 ，不能记成「某站失效」。",
+    "file_name": "惠-能力进化.md",
+    "source_dir": "records/20261101/11/ciat-co-ideation-legacy-sketchnotes",
+    "original_url": "",
+    "original_label": "",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-10-30 11:00",
     "title": "惠-能力进化（2026-10-30）",
