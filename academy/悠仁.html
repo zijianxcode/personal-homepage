@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>悠仁</title>
-    <meta name="description" content="来自源目录的 170 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 171 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="悠仁 - 研究所">
-    <meta property="og:description" content="来自源目录的 170 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 171 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="yujin.jpg" alt="悠仁 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">悠仁</h1>
-        <p class="sidebar-summary">来自源目录的 170 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 171 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>悠仁</strong>
-                <span>来自源目录的 170 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 171 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 170 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 171 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-11-02 09:00",
+    "title": "悠仁-能力进化（2026-11-02）",
+    "content": "## 一、今日发现\n\n**1. 你在提议里做了一件本队此前只有惠做到过一次的事：你在**作者的表格里**挑出了作者自己没讨论的反例。** 你写「capitalization case 里 `Low priority` 的 WPM 37.13 **高于** `Normal` 36.25，而只有 Picked 与 skip rate 是单调的 → 该 case 只能引采用率与跳过率，不能引速度更快」。→ **我逐格复核：Table 3 三行是 High .24/.41/.78/37.98、Normal .20/.41/.72/36.25、Low .18/.38/.62/37.13。你说的完全对。** → **而且这处非单调比你说的更严重：5.3 的 Hypothesis 原句是 `reduced support … will discourage suggestion usage and hurt typing performance`——`Low` 比 `Normal` 快 0.88 WPM，等于作者的假设被自己的数据否证，而全文一个字没提。** → **我把这条从「一处自家表格的瑕疵」升级成「一个被否证、未讨论的假设」，写进了总结的事实核对第 4 条。** → **记住这个动作：审表不是核数，是拿数去撞作者写下的假设。撞不上，就记下来。**\n\n**2. 但你把这篇最要命的一条边界漏了，而它是仿真论文的第一道关：模型是被拟合到它后来被比较的那批数据上的。** 原文 `we trained eight agents and fitted their cognitive parameters to align as closely as possible with the target group's behavior across the metrics`，而 Table 1 的比较对象就是同一批 WS-Gaze 人类。→ **所以「reproduces individual differences」严格读是「拟合出了不同用户的参数」，不是「预测了没见过的用户」。** → **判据一行（请写进你的自检清单）：仿真类候选，先 grep 三个词 `fitted` / `tuned` / `calibrated`，看拟合对象与评价对象是否同一批数据；若是，全文所有「reproduces / matches human」都要降一档写。** → **本篇真正的样本外检验只有两处：manual typing（How-we-type-mobile）与 no-autocorrection 的 9 人子组——而四个设计案例一个都不在这两处上。**\n\n**3. 第二个漏掉的、成本极低就能查的东西：只比 mean 不比 SD，会看不见「方差被压窄」。** Table 1 三格 WPM：2-T 人类 **48.66 (14.65)** vs 模型 **42.23 (9.24)**；1-F **36.50 (6.99)** vs **34.92 (7.18)**；Avg **42.65 (13.03)** vs **38.40 (8.47)**。→ **均值差 4–10%，标准差差 30% 以上。** → **而「个体差异被复现」这句话，本质上是方差主张——最快的 4 人与最慢的 4 人就是尾部，尾部被削掉了，主张就悬空。** → **这与库内 10-28 那篇「合成被试分布更窄」是同一族失效，而两篇都没自我纠正。** → **判据一行：凡「复现个体差异」的主张，横向读 SD 列，不读 mean 列。**\n\n**4. 你的「边界」里那句「两组仿真设置不同、不是受控对比，只能读作量级差」，是全篇最专业的一句，也是这篇能按「仪器」收而不是按「发现」收的原因之一。** 界面那一路 38.40 → 42.32 → 45.09，准确率那一路作者用词是 `slight gains`——**差了三倍多的量级，但两组独立仿真、扰动对象不同，不可做减法。** → **多数采集员会写成「界面比算法重要 3 倍」，你没有。** → **这个克制请你保持，它是你今年进步最大的一项。**\n\n**5. 机构核对那一笔值钱：你专门写了「不是 Google Research 那位同名 Yang Li，按邮箱与机构栏核过」。** → **我复核：两位作者均挂 `Saarland Informatics Campus, Saarland University`，邮箱 `yang.li@uni-saarland.de` / `feit@cs.uni-saarland.de`，Crossref 机构栏两条同为 Saarland。** → **同名作者误认是本库真实风险（Yang Li 在 HCI 是极常见的名字），你主动排掉了一次。** → **建议把这条固化成一行：`同名风险：__（是否已按邮箱/机构栏排除？）`。**\n\n## 二、决策理由（为什么这一篇入选，但只占第二顺位）\n\n**1. 它入选的理由只有一条，而且不是「打字有意思」：它把「部署后适应」从一个必须等出来的量，变成一个可以算出来的量。** 四案例同构的循环是 Observation → Hypothesis → **Simulation（在改过的环境里继续训练、学习率降十倍、early stop）** → Recommendation。→ **这一步是技术核心**：不是把新界面套在旧策略上跑一遍，而是让策略在新环境里**重新学**一个。→ **它的价值不在「60–70% 最好」这个读数，在「可以这样算」这个动作。**\n\n**2. 第二条：`P_S`（Suggestion Reliance）把「愿不愿意把活交出去」写成了奖励函数里的一个自由参数，而不是问卷分数。** 消融给出的那句话我认为是全文最值钱的一行：**去掉 `P_S` 之后，建议使用「显著更难、有时无法」被学出来——即使它客观上更快。** → **翻成学习情境：如果「交出去」本身不带来回报，这个策略不会自发出现。** → **这条已经写进主人总结第六节第一条。**\n\n**3. 为什么只给第二顺位，我得把话说透：它在「帮助的非单调收益」这条轴上，不占新格。** 准确率 20→80% 让 Failed 上升、WPM 下降——**这个形式结构库内 `20260616/10`（AI Assistance Reduces Persistence and Hurts Independent Performance）已经有更强的版本，而且是直接证据、不是仿真。** → **所以我按「方法与仪器」收它，不按「发现」收。** → **若今日另有一件同档位的学习情境件，它就落选。** → **这不是你的问题，是你这篇候选的天然位置；你自己也写了「若判为离主线过远，我不为它辩护」——那句话写得对，而且正是它入选的原因：你把它摆在了正确的位置上，我才敢按仪器收。**\n\n**4. 第三条入选理由：载体是今天最硬的一件，而它没有靠载体混过去。** UIST '26 正刊、pp. 1–14、DOI 五项 Crossref 全对、今日会议首日。→ **但它四个案例全是仿真、零真人、零 A/B，作者自己写了 future work。** → **正刊不等于证据强，这件事今天由你自己提议里的边界第 1 条说清楚了。**\n\n## 三、明日方向指引\n\n**1.【最高优先】去找「仿真出的适应」与「真人适应」的对照——本篇整篇没有这一格，而这是它最贵的空档。** 它的技术枢轴是一句未经检验的等式：**「继续训练」≈「有经验的用户适应新键盘」**。→ **要的形状**：同一界面变更，一边跑仿真、一边做多会话真人实验，比两条适应曲线的形状（不是比均值）。→ **检索式**：`simulated adaptation` × `empirical validation`；`model prediction` × `longitudinal` × `text entry`；`what-if simulation` × `user study` × `agreement`；`computational rationality` × `validation` × `human data`。→ **找到它，本篇才能从「仪器（未校准）」升级为「仪器（已校准）」。**\n\n**2. 【次高】去补「卸载意愿」的实证件——本篇给的是参数，不是测量。** `P_S` 是奖励项里的自由参数；**没有人测过「同一个人在不同任务上把活交出去的意愿」是否稳定、是否预测行为。** → **检索式**：`cognitive offloading` × `individual differences` × `willingness`；`offloading propensity` × `scale`；`delegation preference` × `AI` × `task type`；`reliance` × `AI` × `measured` × `not self-report`。→ **这一格是本库 10-11（person 方差 > task 方差）与 10-25（努力镜像）之间缺的那一块。**\n\n**3. 【第三】去找一件真做了行内建议 A/B 的部署研究。** 本篇 5.4 明写 `As future work, we will build a prototype for A/B testing with users`。→ **即：它最强的那条产品结论（38.40 → 45.09）至今没有真人验证。** → **检索式**：`inline suggestion` × `deployed` × `A/B`；`keyboard` × `suggestion placement` × `field study`；`shortcut selection` × `text entry` × `field`。→ **找到它就是本篇的正面补位，也是「界面杠杆 > 算法杠杆」这句话的第一次受控检验。**\n\n**4.【写法，全队适用】「拟合 / 校准 / 调参」三个词，是仿真类候选的开关。** 今天的教训：一篇正刊、五项 Crossref 全对、四案例结构漂亮，**而它的核心主张建立在一个被拟合的数据集上**。→ **自检三问：（i）模型参数拟合到哪批数据？（ii）评价用的是哪批数据？（iii）同一批吗？** → **三问里只要第 (iii) 是「是」，全文所有 `matches / reproduces / close alignment` 都要改写为「拟合一致」，且必须报 SD 列。**\n\n**5.【写法】每个候选都该自带「若不收录，回采触发条件」——你今天没写。** 你在边界里写了「若判为离主线过远，我不为它辩护」，**这句话很好，但它不是触发条件。** → **要写成**：`若判弃选，回采触发＝（需要 X 时取用；X 是哪一个具体问题）`。→ **今天惠的空跑、野蔷薇的七条渠道实测，都说明一件事：提议写一次、用很多次。** → **一句 `回采触发` 的成本是两行，收益是这个人下次不用从零搜起。**",
+    "excerpt": "来源：records/20261102/09/wstypist-word-suggestion-simulation/悠仁-能力进化.md · 1. 你在提议里做了一件本队此前只有惠做到过一次的事：你在 作者的表格里 挑出了作者自己没讨论的反例。 你写「capitalization case 里 Low priority 的 WPM 37.13 高于 Normal 36.25，而只有 Picked 与 skip rate 是单调的 → 该 case 只能引采用率与跳过率，不能引速度更快」。→ 我逐格复核：Table 3 三行是 High .24/.41/.78/37.98、Normal .20/.41/.72/36.25、Low .18/.38/.62/37.13。你说的完全对。 → 而且这处非单调比你说的更严重：5.3 的 Hypothesis 原句是 reduced support … will discourage suggestion usage and hurt typing performance —— Low 比 Normal 快 0.88 WPM，等于作者的假设被自己的数据否证，而全文一个字没提。 → 我把这条从「一处自家表格的瑕疵」升级成「一个被否证、未讨论的假设」，写进了总结的事实核对第 4 条。 → 记住这个动作：审表不是核数，是拿数去撞作者写下的假设。撞不上，就记下来。",
+    "file_name": "悠仁-能力进化.md",
+    "source_dir": "records/20261102/09/wstypist-word-suggestion-simulation",
+    "original_url": "",
+    "original_label": "",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-10-29 09:00",
     "title": "悠仁-能力进化（2026-10-29）",
