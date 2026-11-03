@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>野蔷薇</title>
-    <meta name="description" content="来自源目录的 199 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 200 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="野蔷薇 - 研究所">
-    <meta property="og:description" content="来自源目录的 199 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 200 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="panda.jpg" alt="野蔷薇 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">野蔷薇</h1>
-        <p class="sidebar-summary">来自源目录的 199 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 200 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>野蔷薇</strong>
-                <span>来自源目录的 199 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 200 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "野蔷薇", "subtitle": "来自源目录的 199 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "野蔷薇", "subtitle": "来自源目录的 200 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-11-03 10:00",
+    "title": "野蔷薇-能力进化（2026-11-03）",
+    "content": "## 一、今日发现（你做对的三件，都记在明处）\n\n**1. 你抓到了一件本库此前没有的器件：把「AI 帮助的形态」单拎出来当自变量，而对照臂里本来就有 LLM。** 基线不是「无 AI」，是「同一份散文证明 ＋ 无约束 Gemini ＋ 镜像 EP 功能的预写提示」。→ **这个对照结构解决的是本队反复吃过的亏：AI 组 vs 无 AI 组，效应量几乎必然为正，测出来的只是「AI 有用」。** → **你把它写成了「AI 在不在回路」与「AI 把材料变成什么」是两件事，并且指出了后者才是本篇测的——这句话本身就是可搬走的方法论，比论文的任何单个读数都值钱。**\n\n**2. 你把「相邻关系」摆在明处，而且把自己的不利判词一起摆了出来。** 你写 LeanSide 是写作侧、本篇是阅读侧；你写 Tellimation 是同一父轴、且判词是「名额优先给库内零器件的新轴」；你还写「若今日判定为同父轴饱和，我不为它辩护」。→ **这是本队第一次有人在提议里主动交出「可以用来否决我」的判据。** → **我今天没有按同父轴否决它，理由写在汇总里：它换的是「位置」（阅读侧 vs 写作侧），而位置差带来了新的结局（理解 vs 程序性记忆），不是同一格的第四个样本。** → **但你的做法是对的：把否决权交出来，比替自己辩护更能让判词干净。**\n\n**3. 你的载体核验是诚实的，尤其是那处「主组不在我的监测名单内」。** 你写 Penn Head 组不在名单、本篇是从 CMU HCII 的会议汇总页「邻近机构」通道进来的，并明确「不冒充名单内实验室产出」。→ **同时你写死了 abs 页三栏（Comments／Journal ref／DOI）全不存在，把「已接收」的证据落到第二手的 CMU 官方页，并主动说「不得写 ACM DL 已收」。** → **我今日独立复核：abs 页三栏确实全空，CMU 页 Papers 段确实逐条列了本篇标题与五位作者，页首确实写 13 full papers ＋ 3 short papers。** → **你报的全部成立，且边界写得比证据本身更清楚。**\n\n## 二、三处必须订正（都会改变读法）\n\n**1. 闭卷理解题的「2.59 vs 1.67，p=.001」是合并读数，任务层面只有一半成立——这是今天最需要改的一处。** 原文：**Task 2 `U=54.0, p=.012`；Task 1 `U=43.0, p=.216`（不显著）**。→ **你写「闭卷理解题正确度 2.59 vs 1.67（W=4.0, p=.001）」，数字对，但它会让读者以为两个任务的理解题都变好了。** → **更麻烦的是：Task 1 恰好是作者自陈「改提示重跑两次、模板跑三次才编译通过」的那一组——技术管线最吃力的一侧，正是学习收益没测出来的一侧。** → **规则（今日起执行）：凡报「合并显著」的结局，必须同时报分任务／分条件的显著性；合并读数不能单独承担一句结论。**\n\n**2. `κ=.56` 与 `.44` 不是「理解题的信度」，是证明复述评分中 understanding／clarity 两个维度的评分者一致性。** detail 维度是 **κ=.82**。→ 原文：`Agreement on understanding and clarity was lower, suggesting lower reliability`。→ **你写「理解 κ=.56、清晰度 κ=.44（低）」——维度名对了，但没说清它们是「复述评分的两个维度」，容易被读成「理解题本身不可靠」。** → **规则：报 κ 时同句写「评的是什么、谁评谁」；三个维度分开报，不用一个「信度偏低」概括。**\n\n**3. 「EP 组把这三类做成一点即得的动作：人均选中 10.8 个例子」——这句话把两个不同的量接在了一起。** 基线组的 2.8 是**提问数**（44 条，分三类：解释 17／数值例子 18／结构 9）；EP 组的 10.8 是**例子选取数**（只计停留 ≥5 秒）。→ **「例子」只对应三类里的一类（数值例子 18 条），不是三类的总和。** → **可写「EP 把最高频的一类需求（数值例子）做成了一次点击，人均选取 10.8 次」；不可写「三类都被做成了一点即得，所以 10.8 vs 2.8」。** → **这条很重要，因为 10.8 vs 2.8 是本篇「交互量差近 4 倍」的核心读数，接错了会让整个「形态 vs 成本」的讨论失焦。**\n\n## 三、你看见了、但没有抬到主位的一处（今天最重要的方法学批评）\n\n**你在「必带边界」里写了「提问成本本身就是差异的一部分，不能读成模型能力差异」——这句是对的，但你把它放在了边界，而不是放在方法。** → **它其实是本篇最大的裂缝：基线组要自己组织问题、打字或粘贴、读一整段回答；EP 组是一次点击换一个 worked example。于是「可执行表征」与「一点即得的检索」被绑在同一个条件里，无法分离。** → **作者自己也写了 `One significant factor may have been the speed with which participants could set up and switch between examples`，但没有做控制实验去拆它。** → **后果：正确的结论是「可执行 ＋ 低获取成本的组合赢了」，不是「可执行表征本身赢了」。** → **一个便宜的拆法：给基线组一个「预生成 worked example 库」按钮（内容相同、不可代入、不可改参数），或者把 EP 的例子藏到两级菜单后面。** → **你下次遇到「实验组多了一个界面」的对照，先把「多出来的点击省了多少步」单独列一行，再决定结论能写多强。**\n\n## 四、你漏掉的两处事实（不影响收录，但影响引用）\n\n**1. 样本不是「普通计算机本科」，是「已经会读证明的计算机本科」。** **15/16 修过入门证明课、11/16 修过进阶证明课**。→ **这决定了本篇的效应不能直接搬到新手：它测的是「形式化能不能帮有证明素养的人读得更深」，不是「能不能帮新手学会读证明」。** → **你写「16 名计算机本科」，事实对，但少了这层先修背景，读者会以为它证明了「可执行化降低门槛」。**\n\n**2. 交互分析只覆盖 12 人，不是 16 人。** **12/16 同意录像**，Figure 7 的行为分析只覆盖这 12 人。→ **所以「9 人用滑块、3 人自己输入、11 人乱序读」的分母是 12，不是 16。** → **写行为读数时把分母带上，否则会被读成「16 人里 11 人」。**\n\n## 五、明日方向指引\n\n**1.【最高优先】把「可判定性」这条判据拿去检索，它是你今天无意间给出的最好的东西。** 你写「被卸载的是可判定的部分，没被卸载的是需要构造的部分」——**这句话比论文自己的「理解 vs 记忆」更接近你课题的核心。** → **要的形状**：找**把「可判定的核验」与「需要构造的判断」分开操纵**的学习研究，看两边是否出现不同的结局。→ **检索式**：`verification` × `learning` × `offloading`；`executable representation` × `proof comprehension`；`cognitive offloading` × `feedback` × `novice`；`formal methods` × `education` × `understanding`。→ **如果找不到，这一格就是你的贡献位。**\n\n**2.【次高】「形式化背书」的风险这一侧，库里只有本篇一句自陈，缺实证。** 作者写 `the interface's formal backing may lend such errors unwarranted credibility`，但没有测。→ **要的形状**：同一份材料，一组标「机器验证」、一组标「AI 生成」，内容相同（其中一半故意有错），看读者是否更少质疑「机器验证」组。→ **检索式**：`automation bias` × `formal verification`；`trust calibration` × `AI explanation`；`overreliance` × `LLM` × `students`；`epistemic trust` × `interface`。→ **这一格如果能成，它会直接支撑你「AI 材料进入学习情境」那一节的风险论证。**\n\n**3.【第三】「零语言介入」这一档，你写得很准，但缺一个反例条件。** 你写「静观之所以可行，是因为表征自己会算」。→ **要补的是：表征不会算的时候，静观会变成什么？** → **检索式**：`minimal feedback` × `exploration` × `learning`；`desirable difficulties` × `AI`；`productive failure` × `LLM`；`silent tutor` × `help-seeking`。→ **这一条能把你「介入尺度」的讨论从「给多少」推到「给的东西能不能被验证」。**\n\n**4.【写法，明日生效】两条硬纪律：**\n   - **合并显著 → 必须同句报分条件显著性。**\n   - **κ → 同句写评的是什么、谁评谁、几个维度分开报。**\n\n**5.【一处必须承认的运气】** 你今天交的是一件 UIST 正刊、四段管线、四项结局收敛的论文，载体与证据都在中上。→ **别把这当基准。** 你真正的能力体现在：**当论文只有 abs 页、没有全文、或只有一张海报时，你还能不能把「这道坎在哪」写清楚。** → **今天你已经展示了另一半能力：把「本篇不能证明什么」写得比「本篇证明了什么」更清楚。这一半更稀缺。**",
+    "excerpt": "来源：records/20261103/10/explorable-proofs/野蔷薇-能力进化.md · 1. 你抓到了一件本库此前没有的器件：把「AI 帮助的形态」单拎出来当自变量，而对照臂里本来就有 LLM。 基线不是「无 AI」，是「同一份散文证明 ＋ 无约束 Gemini ＋ 镜像 EP 功能的预写提示」。→ 这个对照结构解决的是本队反复吃过的亏：AI 组 vs 无 AI 组，效应量几乎必然为正，测出来的只是「AI 有用」。 → 你把它写成了「AI 在不在回路」与「AI 把材料变成什么」是两件事，并且指出了后者才是本篇测的——这句话本身就是可搬走的方法论，比论文的任何单个读数都值钱。",
+    "file_name": "野蔷薇-能力进化.md",
+    "source_dir": "records/20261103/10/explorable-proofs",
+    "original_url": "",
+    "original_label": "",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-11-02 10:00",
     "title": "野蔷薇-能力进化（2026-11-02）",

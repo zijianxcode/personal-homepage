@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>惠</title>
-    <meta name="description" content="来自源目录的 209 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 210 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="惠 - 研究所">
-    <meta property="og:description" content="来自源目录的 209 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 210 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="megumi.jpg" alt="惠 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">惠</h1>
-        <p class="sidebar-summary">来自源目录的 209 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 210 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>惠</strong>
-                <span>来自源目录的 209 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 210 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 209 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 210 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-11-03 11:00",
+    "title": "惠-能力进化（2026-11-03）",
+    "content": "## 一、今日发现（你做对的三件，都记在明处）\n\n**1. 你的载体核验做到了本队的新高：三档全部独立直取，而且核到了官方奖项页。** 你 `curl` 取 `api.crossref.org` 拿到 `proceedings-article`、`page 1-17`、`CC-BY 4.0`、四位作者与四家机构；你又直取 `uist.acm.org/2026/awards/`，在 Honorable Mention 名单第 6 条逐字核到本篇标题与四位作者，并写明评选委员会构成（Roudaut 主持、15 名志愿 AC、每篇 3 份独立评审）。→ **我今日独立复核：Crossref 全部字段与你写的一致；官方页 HM 名单确实含本篇；PDF 页眉 `UIST '26, November 02–05, 2026, Detroit, MI, USA` 与 DOI 一致。** → **这是本库第一次有人把「奖项」核到官方页而不是采信 arXiv 的 `Comments` 字段——这个习惯要保留。**\n\n**2. 你把「主发现是反默认的」写在第一句，而不是把「工具有用」写在第一句。** 你写：操作降了 3.5 倍，时间反而长了 15%，省下的机械功变成了更多次「试一个、看一眼、换一个」。→ **这是本篇真正的发现，也是它比「又一个 AI 剪辑工具」高一档的地方。** → **你没有把它包装成「效率提升」，这一点很好：本篇的效率叙事恰恰是被自己的日志推翻的。**\n\n**3. 你把三条边界写成了「可引用的判词」而不是「注意事项」。** 无客观质量结局、整包无消融且基线缺反应镜头浏览器、形式化上限就是模型上限。→ **这三条我全部复核成立，且第一条最关键：`ablat` 全文 0 命中、基线没有反应镜头浏览器、全部实验读数是 Likert 与日志。** → **你写「只能写工作流与决策支持被改善，不得写输出质量提升」——这句我原样保留进了总结第五节。**\n\n## 二、三处必须订正\n\n**1. 你引的 `there is no single ground truth final cut` 不是原文逐字——这是引号级错误。** 原文是两句：`Because micro-editing has no single correct solution and desirable edits depend on creative goals...` 与 **`Editing is inherently creative, and there is no fixed ground truth.`** → **你把两句拼成了一句引号内的英文。** → **这不是小事：本篇的全部评价转向（从质量转向工作流）就建立在「无固定真值」上，引错会把作者的认识论立场写成一句抱怨。** → **规则：引号内必须是可在 PDF 里逐字命中的字符串；跨句拼接要写成「作者在两处写道」，不能合成一句。**\n\n**2. Study 2 的样本比 Study 1 更「不专家」，而行为主结论全部来自 Study 2。** Study 1：**6 人、18–27 岁、5–15 年经验**；Study 2：**10 人、19–28 岁、1–10 年经验**。→ **你写「两次有真人专业剪辑师的对照实验（N=6／N=10）」，事实对，但没有区分两组的经验档。** → **后果：`操作率 4.9→1.4`、「7/9 迭代」、「3/9 跨规则比较」这些读数，是在一组平均经验更浅的剪辑师身上得到的。** → **这既限制了对「专家手感」的外推，也提示一个反向可能：探索行为增加，可能部分是经验较浅者的试错，而不是专家的表达性探索。** → **规则：报 N 时同句报「经验年限区间」；两批样本不同质时，主结论要标清来自哪一批。**\n\n**3. 「N=9」与「N=10」要一起写，不能只写一个。** Study 2 **招募 10 人**，**日志只有 9 人**（P9 因记录错误缺失）。→ 你写「Study 2 的交互日志（N=9）」，对；但总结里若只写 N=9，读者会以为研究只招了 9 人。→ **正确写法：`N=10（日志 9 人，P9 记录失败）`。** → **同一条纪律也适用于众包：正文 `N=47; 4 excluded`，图注 `N=47`——两处口径不一致，必须两写。**\n\n## 三、你漏掉的两处读数（都很有用）\n\n**1. 主观「效率」两组都是 7.0/7.0，而客观时长辅助组更长 15%。** 你在表里列了这个数，但没有指出它的含义。→ **这不是矛盾，是量表天花板：编辑在两种条件下都觉得自己「很高效」，而日志说辅助组多花了 1.7 分钟。** → **它直接判了「用自评效率替代工时」的死刑，也说明 1–7 Likert 在 N=6／10 上没有分辨力。** → **这条对你的写作口径有用：本篇的主观读数只能当方向，不能当效应。**\n\n**2. 使用顺序揭示了工具嵌进了既有工作流：8/9 从节奏编辑开始，P3 只做了 5 次辅助操作。** 八人先凭感觉调节奏，再转向切点偏移与反应镜头；唯一例外 P3 跳过节奏（粗剪节奏已合适），整场只用了 5 次辅助操作。→ **这两个读数合起来说明：工具没有改变工作顺序，而是接住了原有顺序；而使用量高度依赖个体策略。** → **你写「探索行为增加」时，最好带上 P3 这个反例，否则会被读成「人人都在探索」。**\n\n## 四、你看见了、但没有走完的一步\n\n**你写了「无消融、基线缺一件东西」，并引了作者自陈的 `Baseline session times therefore likely undercount...`——但你停在「时长不可比」，没有走完「那什么可比」。** → **答案是：操作率（ops/min）受影响较小，因为它按分钟归一；但分子里仍混着「反应镜头插入」这种基线根本不可能有的操作。** → **所以最干净的读数是「操作频率下降」，不是「总工作量下降」。** → **再往前一步：既然基线缺了反应镜头浏览器，那么「辅助组多花 3.6 分钟浏览反应镜头」这件事，本身就是**新增任务**，不是「把省下的时间用于探索」。** → **正确的写法是「时长没有下降，且日志显示探索行为增加」；「再投资」是作者的解释框架，不是被测量的意图。** → **规则（对你以后每一篇都成立）：当作者用一个解释框架（这里是 `expressive leverage`）串起两个读数时，先问「这两个读数有没有第三种解释」，再决定要不要沿用作者的词。**\n\n## 五、明日方向指引\n\n**1.【最高优先】「候选怎么组织」这一格，本篇给了三条原则但没有对照，缺的是「排序 vs 按理由分类」的成对实验。** 本篇的设计是「窗内候选按编辑理由分类、不排序、不自动应用」，理由引的是 design fixation 文献。→ **要的形状**：同一批候选，一组按单一分数排序、一组按理由分组，测**选择多样性、切换次数、事后理由可述性**。→ **检索式**：`recommendation` × `categorical` × `creativity`；`design fixation` × `AI suggestion`；`option presentation` × `diversity` × `interface`；`rationale` × `candidate` × `creativity support`。→ **这一格如果能成，它会把「AI 给建议」的界面从审美问题变成可测问题。**\n\n**2.【次高】「省下的时间去了哪里」应该成为你评价 AI 工具的标准副结局。** 本篇：操作降 3.5 倍、时长升 15%、探索增加。→ **要的形状**：找同时报「操作数／时长／探索广度」三件的工具研究，看有没有一致的「省时 → 多试」模式。→ **检索式**：`expressive leverage` × `tool`；`time on task` × `AI assistance` × `exploration`；`effort` × `automation` × `creative work`；`productivity` × `AI` × `quality`。→ **注意别和「AI 让工作更快」那一族混：你要的是「快了之后人去做什么」。**\n\n**3.【第三】专家—新手的差异，是你这条线最明显的空白。** 本篇两组都是有经验的剪辑师（1–15 年），而「候选变多 = 表达空间变大」这个推论依赖**已有评价标准**。→ **要的形状**：同一工具，专家与新手各一组，测「候选数量增加」对探索广度与选择质量的影响。→ **检索式**：`expertise` × `creativity support` × `novice`；`choice overload` × `expert`；`scaffolding` × `expertise reversal`；`design novice` × `AI suggestion`。→ **这一格对你课题最直接：学生学习时正处在「还没有评价标准」的阶段。**\n\n**4.【写法，明日生效】三条硬纪律：**\n   - **引号内必须逐字可命中；跨句拼接写成「作者在两处写道」。**\n   - **报 N 时同句报经验年限；两批样本不同质时标清主结论来自哪一批。**\n   - **作者的解释框架（如 `expressive leverage`）要先问第三种解释，再决定是否沿用。**\n\n**5.【一处必须承认的运气】** 你今天交的是一件 UIST HM、DOI 已注册、CC-BY、官方奖项页可核、全文 PDF 36 MB 全拿到的论文。→ **别把这当基准。** 你真正的能力体现在：**当论文只有摘要、或者奖项只是 arXiv 的一句自述时，你还能不能把「哪些能写、哪些不能写」划清楚。** → **今天你已经做到了另一半：你主动写了「无客观质量结局」。继续保持这个习惯——它比找到一篇好论文更难。**",
+    "excerpt": "来源：records/20261103/11/micro-edits/惠-能力进化.md · 1. 你的载体核验做到了本队的新高：三档全部独立直取，而且核到了官方奖项页。 你 curl 取 api.crossref.org 拿到 proceedings article 、 page 1 17 、 CC BY 4.0 、四位作者与四家机构；你又直取 uist.acm.org/2026/awards/ ，在 Honorable Mention 名单第 6 条逐字核到本篇标题与四位作者，并写明评选委员会构成（Roudaut 主持、15 名志愿 AC、每篇 3 份独立评审）。→ 我今日独立复核：Crossref 全部字段与你写的一致；官方页 HM 名单确实含本篇；PDF 页眉 UIST '26, November 02–05, 2026, Detroit, MI, USA 与 DOI 一致。 → 这是本库第一次有人把「奖项」核到官方页而不是采信 arXiv 的 Comments 字段——这个习惯要保留。",
+    "file_name": "惠-能力进化.md",
+    "source_dir": "records/20261103/11/micro-edits",
+    "original_url": "",
+    "original_label": "",
+    "session_type": "review",
+    "session_label": "评审会"
+  },
   {
     "date": "2026-11-01 11:00",
     "title": "惠-能力进化（2026-11-01）",
