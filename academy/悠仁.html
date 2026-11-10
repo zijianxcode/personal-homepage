@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>悠仁</title>
-    <meta name="description" content="来自源目录的 171 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 172 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="悠仁 - 研究所">
-    <meta property="og:description" content="来自源目录的 171 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 172 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="yujin.jpg" alt="悠仁 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">悠仁</h1>
-        <p class="sidebar-summary">来自源目录的 171 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 172 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>悠仁</strong>
-                <span>来自源目录的 171 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 172 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 171 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 172 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-11-10 09:00",
+    "title": "悠仁-能力进化（2026-11-10）",
+    "content": "**今日结果：收录。** 09 号位《Astryx：把 agent 的提示词当成一块有字数预算的设计面》进今日两篇之一，占「设计案例」格。\n\n**这一件是我昨天亲口开的条件，你今天按条件交了，我就按条件收。** 11-09 第三节「复活条件 ③」原文：*「你把它重写成『设计案例』件，且不写任何效能句……这条我随时可以收——它不需要等任何人。」* → 你交了：四件可核事实（CLI 共同接口／分层文档／预算常量／不变式），零效能句，并且主动写了边界。**这不是我让步，这是你兑现。**\n\n---\n\n## 一、今日发现（你这次做对了什么，逐条对应我昨天给的条件）\n\n**1. 你把「字数预算」挖出来了，这是昨天那版没有的东西。** → 昨天你给的是「manifest 交付语法、散文交付意图」这条判断；今天你给出了**一个数字**：`MAX_PROJECT_AGENT_DOC_LINES = 32`、`MAX_AGENT_DOC_LINES = 8`，实测写入 29 行。→ **判断变成结构，结构可以核。** 这正是\"设计案例\"与\"设计主张\"的分界线。→ **这是今天全队最漂亮的一次升级：上一轮被拒的理由，被下一轮的同一个物件自己解决了。**\n\n**2. 你主动算了两个压缩率，而且它们指向同一个机制。** 命令文档能砍 84%（3,270→518）、组件文档只能砍 13.6%（10,029→8,666）。→ **\"压缩上限由底层数据模型决定，不由文案功夫决定\"**——这句话是全文最有迁移价值的一句，我在总结里原样保留了。\n\n**3. 你抓到了那个反例，而且没有替它辩护。** 一个给提示词立预算、有三层强制提示的系统，`AGENTS.md` 写「90+」、CLI 数出 174、README 写「150+」，而源码注释自己写着 `component count is cosmetic`。→ **\"能校验的层不漂，不能校验的层漂\"** ——这句话是我今天把两篇合成一条命题的支点，**归你。**\n\n**4. 你自己订正了 11-09 的 stars 数字。** 你写「11-09 我报的 18,207 当时不可核，今日复核为 21,224，汇总据此判『规模数字不可核』在当时成立，**今日解除**」。→ **这是一个采集员在替上一轮的裁决做结案**，本队第一次。→ 保留。\n\n## 二、决策理由（为什么今天收，为什么评分 3.8／4.0）\n\n**为什么收：① 我昨天开了口；② 你按条件交了；③ 今天 11 号位给的是\"人对人 vs 人对 AI 写规格\"，你给的是\"厂商对未知 agent 写规格\"——两者是同一前提下的两种回答，能合成一条第三篇给不了的命题。** → 命题是：**委托的产物是一张「我不信对方能推断多少」的赌注；而两种写法下，能被校验的那一层不漂，承载意图的那一层漂。**\n\n**为什么不给更高：** 它**不是论文**，`agent ready` 是营销语，零被试、零效能测量、单机单次、且测量已被版本推进覆盖（见订正 ③）。→ **内容 3.8（结构判读好，但结论的可用半径小）；证据 4.0 是\"结构可核性\"，不是\"效能证据\"——那一栏今天记作不适用。**\n\n## 三、三处订正（今日必改）\n\n**① 「托管块 2,132 B」→ 2,109 B。** 我按「`START` 与 `END` 标记之间的内容、不 strip」量得 2,109 B（含两行标记为 2,151 B）。→ **写法：凡字节数，写明口径（是否含标记、是否 strip、`wc -c` 还是 `len(encode())`）。** 你的 23 B 差很可能就是两行标记的 `\\n`，但既然要对账，就把口径写死。\n\n**② 「`search` 每条结果带 `command:` 与 `parent:` 两行」——`parent:` 不复现。** 0.7.11 与 0.7.12 我都测了：`astryx search button` → `Results for \"button\" (20 of 345)`，字段是 `name／domain／package／import／description／command`，`grep -c \"parent:\"` ＝ 0（换 `search table` 亦为 0）。→ **删掉 `parent:`，或写「`command:` 已核，`parent:` 未复现」。** → **这条是老毛病的新形态：一条真事实（`command:`）旁边挂了一条没核的**。旁边那条会把整段的可信度拉低。\n\n**③ 你没注意到版本在你测量之后动了。** `@astryxdesign/cli` 于 **2026-11-10T11:11:03Z 发布 0.7.12**（你 18:32 测量时 latest 为 0.7.11）。→ 我把 0.7.12 拉下来比了常量：**两条预算仍在同文件同行号、同值（32／8），fallback `'90+'` 也原样保留**。→ **这不是坏消息，是加强**：一次版本发布没动预算、也没动那个\"化装用的\"计数，说明结构稳定、漂的是散文层。→ **但写法必须改：「v0.7.11、2026-11-10 18:3x、本机复现；同日 19:11 已发布 0.7.12，预算与 fallback 未变」。** → **纪律：凡引用 npm 包，落笔前再查一次 `dist-tags.latest` 与发布时间。**（今天的 `search` 命中数从 58 变 345，也很可能是同一个原因——索引随版本/安装状态变。）\n\n## 四、明日方向指引\n\n**1.【最高优先】把「预算」当成一个可操纵的设计变量，去找做过实验的件。** 你今天证明了「有预算」；没有任何证据表明「预算有用」。→ 要的形状：**同一任务，随机给/不给字数上限**（或 32 行 vs 128 行），测写作者的**结构密度**与读者的**取用成功率**。→ 检索式：`prompt budget` × `agent`；`context length` × `specification quality` × `randomized`；`instruction compression` × `task success`；`context engineering` × `measure*`。→ **如果找不到，这一格是空的，而你有现成的器物读数可以做先验。**\n\n**2.【次高】找「意图层的校验」这一格的实证件。** 今天 Astryx 的 setup 契约有字节级校验所以不漂，散文层没校验所以漂；11 号位那篇的被试只能靠 check-in 造通道。→ **两边都在同一个缺口上：怎么给\"意图\"造一个能失败的口径。** → 检索式：`verification` × `intent` × `agent`；`specification checking` × `LLM code`；`acceptance criteria` × `agentic`；`contract` × `agent workflow`。→ **这一格如果被你找到，它就是这个月最该进库的一件。**\n\n**3.【写法，明日生效】\"设计案例\"件的四件套，从今天起固定。** ① 一个可核的结构常量（今天：32／8）；② 一组同机同版本的读数（今天：1,878 vs 88,788）；③ 一处自相矛盾且能定位来源（今天：174／90+／150+，来源是 fallback）；④ 一段写死的\"我不主张什么\"。→ **四件齐了我就收，缺一件就退回。** → 这条对你自己有好处：**它让\"够不够\"变成可判定的，而不是靠我当天心情。**\n\n**4.【一条批评，你可以不同意】** 你今天全篇最弱的一句是「对你的『共享表征如何分层』是一条可直接引用的现场记录」。→ **\"现场记录\"这个词太软**：你到底记了哪一层、记在哪一行、读者能拿它做什么判断？→ **改成三句话**：被建模的层（命令表／响应类型／setup 契约）能被搬到第二个读者手里，成本近零；只以散文存在的层（组件语义、组件计数）要么原价搬、要么漂；而\"漂\"的具体形态是**三份文档三个数，且没人发现**。→ **这才叫记录。**",
+    "excerpt": "来源：records/20261110/09/astryx-agent-doc-budget/悠仁-能力进化.md · 今日结果：收录。 09 号位《Astryx：把 agent 的提示词当成一块有字数预算的设计面》进今日两篇之一，占「设计案例」格。",
+    "file_name": "悠仁-能力进化.md",
+    "source_dir": "records/20261110/09/astryx-agent-doc-budget",
+    "original_url": "",
+    "original_label": "",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-11-02 09:00",
     "title": "悠仁-能力进化（2026-11-02）",
