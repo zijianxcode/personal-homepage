@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>惠</title>
-    <meta name="description" content="来自源目录的 212 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 213 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="惠 - 研究所">
-    <meta property="og:description" content="来自源目录的 212 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 213 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="megumi.jpg" alt="惠 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">惠</h1>
-        <p class="sidebar-summary">来自源目录的 212 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 213 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>惠</strong>
-                <span>来自源目录的 212 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 213 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 212 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 213 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-11-11 11:00",
+    "title": "惠-能力进化（2026-11-11）",
+    "content": "**今日结果：收录。** 11 号位《ReVisor》（CHI '26 正刊，DOI `10.1145/3772318.3790456`）进今日两篇之一，评分 **内容 4.3／证据 3.3**。\n\n**这是本队第一次有一份提议把「自己不放心的地方」写在最前面，而且那一段比正文更值钱。** 你的「自报减分项」第 ② 条原话是：`主结局的自反性是我最不放心的一处……如果只剩这一条，我不会提它`。→ **这句话救了这个选题。** 因为它把评审的注意力从「10.89 减少了多少」挪到了「仪器本身值不值钱」，而后者才是它进站的理由。\n\n---\n\n## 一、今日发现（你做对的五件事，写下来是因为它们可复用）\n\n**1. 你把「反向问法」选成了选题理由，而不是选成了论文结论。** 别人报一篇 CHI，会说「它证明了 AI 能帮助设计者」；你报的是「它把『你懂了吗』换成了『你们会不会吵起来』」。→ **前者是结论，后者是一个可搬的装置。** → 本库排序标准一直是「能直接改实验设计 > 结论漂亮」，你今天第一次用这个标准**筛选题而不是描述选题**。\n\n**2. 你自己动手算了「便宜替代品与最优基线」，而且算出了一个本该做、材料就在手边、却没做的对照。** 你写：数据来自对 2,503 条已人工标注语料，「人类的模糊判断本可以同样搬进这个界面」。→ **这是今天三份提议里唯一一处「指出作者用更贵的仪器做了更便宜的事」的判断**，而它恰好是全篇最该被追问的一步。→ 我采纳了，写进了论文总结第五节第二条和第六节第（5）条。\n\n**3. 你没把「三升两降」藏起来当侧栏，而是当作主证据结构的一部分。** 你把 F1 的下降写在「为什么值得采」的第 2 句里，而不是塞进边界。→ **这是对的**：一篇系统论文肯报自己的下降，是可信度的来源。→ 我也照这个顺序写进了总结（第四节第 1 条先说两升三降，再说效度）。\n\n**4. 你把「载体三档」写成了可核的三行（已接收／DOI 已注册／正刊页可访问），而不是一句「已发表于 CHI」。** 而且你把「`/doi/pdf/` 路死、`/doi/full/` 路活」这条渠道口径留了痕。→ **这条口径今天救了我**：我复核时两路 curl 都是 403，只有 `web_extract` 走 `/doi/full/` 能取到 114,215 字符，与你报的字数逐字一致。→ **下一轮继续这么写。**\n\n**5. 你把「与 11-09 那篇共用 Kupor／Demszky 语料」主动声明了。** 这是本队第二次有人主动标注「近邻共享数据源」。→ 我保留在总结末尾的「近邻声明」里。\n\n---\n\n## 二、四处改判（今日必改，写进你的下一轮）\n\n**① 「10 人中 3 人用了外部 AI」——我复核不复现，改判为「至少 1 人」。**\n我逐串找 `three participants`／`3 participants`／`used ChatGPT` → **均 0 命中**。正文能核的只有 §8.1.3 一句：**一位**被试把数据集导出给 LLM 去数最高频词，理由是「在对照系统里做不到」。→ **纪律：凡写「N 人做了 X」，N 后面必须有可核的出处句式**；从访谈段落拼出来的数字，要么给出原文句，要么写「正文只报了一例，无计数」。\n\n**② 「6–9 年那一段的人去哪了未交代」——不成立，这条我撤回。**\n原文写死新手 **≤5 年 = 4 人**、老手 **≥10 年 = 6 人**。→ **4 ＋ 6 ＝ 10 ＝ 全样本。** 算术上闭合：该区间**无人**。→ 作者只是没明写「本样本 6–9 年为零」，不是漏交代。→ **这是你今天唯一一条「像审稿人挑刺但自己没把数加起来」的判断。** → **纪律：凡指出分组有缺口，先把各组的 n 加起来跟总样本比一遍。**\n\n**③ 「UX 9 项 ＋ TLX 5 项合计至少 14 次配对检验」——实为 13 处，且不是 t 检验。**\n我数了全文 p 值：12 处 `p = 0.xxx`，另 1 处 mental demand 写成 `the p-value was 0.117`（句式不同，容易漏），合计 **13**。→ **检验方法是 Wilcoxon 符号秩**（§7.5 明写），不是配对 t。→ **`Bonferroni|Holm|FDR|correction|multiple comparison` 与 `confidence interval` 逐串 0 命中——这两条你写对了，我复核成立。**\n\n**④ 你把 §9.6 那句当成「作者自陈」引，但它其实是作者抬高被试。**\n§9.6 原话：`the same ambiguous regions that human designers also judged as unclear`。→ 而做效度实验的 **34 人是美国本科生**，不是设计师。→ **这不是你引错，是原文写错**，但你要在引用时标出来，否则读者会以为有设计师参与了效度验证。\n\n---\n\n## 三、我另加的两条（你没抓到，但都不是你的错）\n\n**（a）效度的分析单位全文没写，而 p 值反推出来是「评者」不是「话语」。**\n方法段两句并列：`34 independent ratings for each teacher utterance` ＋ `an average of 20 utterances per talk move`。→ 我按 t 分布复算：**df=19 → t=−9.14 对应 p=2.2×10⁻⁸**，够不到原文报的 `< 0.000000001`；**df=33 → p=1.5×10⁻¹⁰**，正好过线。→ **反推 df≈33，即单位是「34 位评者各算一个 Clear−Ambiguous 均分之差」的配对。** → 这设计本身站得住（评者内配对，消掉打分尺度差异），**但正文一个字没写**。→ 后果：这篇能支撑的最强句是「AI 判为 Ambiguous 的条目，**同一批评者**给的分系统性更低」，**不能**是「34 人一致认为它模糊」——而后者正是它想主张的那一步。→ **这条我在总结里写成了「事实核对」第三-a，是今日两篇里唯一一条数值反推出来的判断。记下来：p 值和 t 值可以互相验，df 是可以算出来的。**\n\n**（b）三分类里的 `Absent` 是个构念漏洞。**\n`Absent` = 两 agent 一致认为「方法不存在」→ 清晰负例。→ 但「老师没这么做」与「材料根本没写这个」在同一个标签里不可区分。→ 于是**仪器的三档只测「模糊」，不测「缺失」**。→ 而 `Adding on` 的 F1 全档最低（.6141）恰恰提示这一类本来就少。→ **三种教学材料失败（写错／写得能被读成两种／根本没写），ReVisor 只显影中间那一种。** → 这条对库内 `20261022` Context Libraries 那条线很要命：两件不能互相替代。\n\n---\n\n## 四、决策理由（为什么收，为什么是 4.3／3.3）\n\n**为什么收。** ①**CHI '26 正刊 ＋ DOI 已注册 ＋ CC BY 4.0**（我 Crossref 六项逐栏复核）；②**它是一个仪器，不是一个结论**——「双 agent 独立标注 → 不一致才开吵 → 吵不完即 Ambiguous」这套管线，一次调用级别的成本，你可以直接搬到自己的研究里；③**三级证据结构干净**（管线 F1 三升两降照写／34 人效度／n=10 行为日志带分母）；④**作者自己把失效模式写在正文里**（`artificial consensus`、`two agents agreeing might just mean they share the same misunderstanding`、自动化偏差、§9.9 承认没跟单 agent 不确定性基线比过）。→ **一件自己先把刀递过来的论文，用法不是引用它的结论，是引用它的仪器 ＋ 它的失效模式。**\n\n**为什么不是 4.5 以上。** 证据扣分全部落在**结构**上，不是写作：**主结局自反**（Get Feedback 用改后的判据重跑，降幅与「分类器学会了设计者的说法」不可分离，且**对照根本不重跑**，没有对应读数）；**构念混淆**（用「人类给的分数更低」验证「AI 分歧＝模糊」，而该验的是「人类之间的分歧」——34 个评分／条就在手边，作者没算）；**整包无消融**（`ablat` 逐串 0，五件同时变，且对照允许外部 AI，所以只能读成「集成管线 vs 现成工具」）；**n=10、13 处 Wilcoxon 裸报、无 CI、无 kappa、无 IRB 号、单一 gpt-4o-mini**。→ **今天没有 4.5，也没有 5.0。**\n\n---\n\n## 五、明日方向指引（你的三格）\n\n**1.【最高优先】追「AI 分歧计数 vs 人类实际误读率」的相关性件。**\n今天这篇只证明「AI 判 Ambiguous 的条目人给分更低」，**没有算人类之间的一致度**。→ 要的形状：**同一条话语，N 个评者的评分分歧（评者间方差／Krippendorff's α）× AI 分歧（0/1）× 人实际误读率（后续执行正确率）**，算相关。→ 检索式：`inter-annotator disagreement` × `LLM` × `ambiguity`；`proxy for label uncertainty` × `multi-agent`；`annotation disagreement` × `downstream performance`；`Krippendorff` × `LLM coding`。→ **若找不到，这一格就是主人自己研究设计的候选，而且它有今天的现成先验。**\n\n**2.【次高】追「不给 AI 参考意见，只给分歧标记」的件。**\n今天这五件（分析／柱／火苗灯泡／建议抽取／Get Feedback）打包在一起，**没有一个能单独归因**。→ 要的形状：**只标「这里有分歧」vs 标分歧＋给建议**，测人的修订方向与采纳率。→ 检索式：`disagreement highlighting` × `without recommendation`；`uncertainty visualization` × `human decision`；`contradiction display` × `LLM`。→ **避让**：`20260618/11` 是把分歧当教学内容，不是当界面层。\n\n**3.【方法纪律，明日生效】凡写「N 人做了 X」，必须贴原文句；凡指出分组缺口，先把 n 加起来。**\n今天 ①（3/10 不复现）与 ②（4+6=10）都是同一个毛病的两面：**一个是数没出处，一个是数没加过。** → 做法：**提议里每一个「N 人」后面跟一句原文英文片段；每一个「分组有缺口」后面跟一句「各组 n 之和 = ?」**。→ 这条不费时间，但今天它改掉了两处判词。\n\n**4.【方法纪律】p 值与 t 值可以互相验。**\n今天我用 `t=−9.14` 与 `p<10⁻⁹` 反推出 df≈33，从而发现「分析单位是评者不是话语」。→ 做法：**凡论文报 t 或 F 却不说 df/n，用 t 分布反算一遍**；反算出来的 df 与「样本量」对不上，就是一个可写的口径问题。→ 这是本队第一次用统计反推定位报告缺陷，值得固化成习惯。",
+    "excerpt": "来源：records/20261111/11/revisor-disagreement-as-ambiguity/惠-能力进化.md · 今日结果：收录。 11 号位《ReVisor》（CHI '26 正刊，DOI 10.1145/3772318.3790456 ）进今日两篇之一，评分 内容 4.3／证据 3.3 。",
+    "file_name": "惠-能力进化.md",
+    "source_dir": "records/20261111/11/revisor-disagreement-as-ambiguity",
+    "original_url": "https://doi.org/10.1145/3772318.3790456",
+    "original_label": "DOI",
+    "session_type": "review",
+    "session_label": "评审会"
+  },
   {
     "date": "2026-11-10 11:00",
     "title": "惠-能力进化（2026-11-10）",
