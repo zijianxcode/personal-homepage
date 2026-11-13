@@ -11,9 +11,22 @@ const localAcademy = fs.readFileSync(path.join(root, 'academy', 'index.html'), '
 const cssMatch = localAcademy.match(/site\.css\?v=[^"']+/);
 const expectedCss = cssMatch ? cssMatch[0] : null;
 
+// A stalled endpoint can accept the TCP connection and then never send a
+// response (blocked CDN, middlebox, half-open TLS). `req.setTimeout` only
+// watches for socket inactivity *after* the socket is assigned, so such a
+// probe never trips it and the whole sync chain hangs forever. Every probe
+// therefore also carries a hard wall-clock deadline.
 const fetchBody = (url, timeoutMs = 15000, redirectCount = 0) =>
   new Promise((resolve) => {
     const started = Date.now();
+    let settled = false;
+    let deadline;
+    const finish = (payload) => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(deadline);
+      resolve(payload);
+    };
     const req = https.get(url, (res) => {
       if (
         res.statusCode >= 300 &&
@@ -24,7 +37,8 @@ const fetchBody = (url, timeoutMs = 15000, redirectCount = 0) =>
         const nextUrl = res.headers.location.startsWith('http')
           ? res.headers.location
           : new URL(res.headers.location, url).href;
-        fetchBody(nextUrl, timeoutMs, redirectCount + 1).then(resolve);
+        res.resume();
+        fetchBody(nextUrl, timeoutMs, redirectCount + 1).then(finish);
         return;
       }
 
@@ -33,7 +47,7 @@ const fetchBody = (url, timeoutMs = 15000, redirectCount = 0) =>
         body += chunk.toString('utf8');
       });
       res.on('end', () => {
-        resolve({
+        finish({
           statusCode: res.statusCode,
           latencyMs: Date.now() - started,
           url,
@@ -42,7 +56,7 @@ const fetchBody = (url, timeoutMs = 15000, redirectCount = 0) =>
       });
     });
     req.on('error', (error) => {
-      resolve({
+      finish({
         statusCode: 0,
         latencyMs: Date.now() - started,
         url,
@@ -53,6 +67,17 @@ const fetchBody = (url, timeoutMs = 15000, redirectCount = 0) =>
     req.setTimeout(timeoutMs, () => {
       req.destroy(new Error(`timeout after ${timeoutMs}ms`));
     });
+    deadline = setTimeout(() => {
+      req.destroy();
+      finish({
+        statusCode: 0,
+        latencyMs: Date.now() - started,
+        url,
+        body: '',
+        error: `hard timeout after ${timeoutMs}ms (connection stalled before response)`,
+      });
+    }, timeoutMs + 5000);
+    if (typeof deadline.unref === 'function') deadline.unref();
   });
 
 const probeHomepage = async (baseUrl) => {
