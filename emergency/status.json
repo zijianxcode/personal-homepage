@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-13T12:35:14.838Z",
+  "checkedAt": "2026-11-13T12:42:43.275Z",
   "primaryOk": true,
   "primaryHomepageOk": true,
   "primaryAcademyOk": true,
@@ -22,7 +22,7 @@
       "academyOk": true,
       "homepageStatusCode": 200,
       "academyStatusCode": 200,
-      "latencyMs": 934,
+      "latencyMs": 836,
       "error": ""
     },
     {
@@ -37,7 +37,7 @@
       "academyOk": true,
       "homepageStatusCode": 200,
       "academyStatusCode": 200,
-      "latencyMs": 1924,
+      "latencyMs": 910,
       "error": ""
     },
     {
@@ -47,13 +47,13 @@
       "siteUrl": "https://zijianxcode.github.io/personal-homepage/",
       "academyUrl": "https://zijianxcode.github.io/personal-homepage/academy/",
       "note": "CloudBase 整体不可用时使用；内容与 main 分支 push 同步",
-      "ok": true,
+      "ok": false,
       "homepageOk": true,
-      "academyOk": true,
+      "academyOk": false,
       "homepageStatusCode": 200,
-      "academyStatusCode": 200,
-      "latencyMs": 145381,
-      "error": ""
+      "academyStatusCode": 0,
+      "latencyMs": 20762,
+      "error": "hard timeout after 15000ms (connection stalled before response)"
     }
   ]
 }
