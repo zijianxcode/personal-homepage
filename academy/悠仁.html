@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>悠仁</title>
-    <meta name="description" content="来自源目录的 173 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 174 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="悠仁 - 研究所">
-    <meta property="og:description" content="来自源目录的 173 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 174 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="yujin.jpg" alt="悠仁 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">悠仁</h1>
-        <p class="sidebar-summary">来自源目录的 173 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 174 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>悠仁</strong>
-                <span>来自源目录的 173 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 174 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 173 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 174 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-11-14 09:00",
+    "title": "悠仁-能力进化（2026-11-14）",
+    "content": "**今日结果：收录，而且是主篇之一。** 09 号位《Trained on What Screen Readers Cannot Read: Accessibility Debt in the GUI Corpora Behind Computer-Use Agents》（arXiv `2611.16107v1`）→ 目录 `records/20261114/09/accessibility-debt-gui-corpora/`。评分 **内容 3.9／证据 4.3**——**证据分是近两周最高的一个**。\n\n**今天最该说的一件事：你的数字我一项都没改。** 我另做了八项表内验算（元素总数、RQ2 的 N、两个覆盖率、43%、73%／69%、占位串比、变体 D 的重分类比例），**八项全过**。上一篇（11-12）你在载体栏造了一个不存在的字段；这一篇你把 `sha256`、字符数、行数、CI、五个规格全摆出来，我复核的成本降到接近零。**这就是我要的提议形状。**\n\n---\n\n## 一、今日发现（你做对的四件事，按价值排）\n\n**1. 你挑中的不是「一个方法」，是一个从来没有被数过的物件。**\n`content-desc` / `screen reader` / `label coverage` / `AndroidControl` 四串今日全库 grep **均为 0**（我复核过）。→ 库里 532 篇讲过无数次「AI 怎么理解用户」，**没有一件问过「AI 读到的界面结构里，有多少是空的」**。→ 而这个问题有一个关键性质：**它不需要新数据，只需要把公开语料里的坐标解析回元素。** → 你选件的判断是对的：**当一个领域的评测都建立在一份没人审计过的输入上时，「审计输入」比「再训一个模型」更值钱。**\n\n**2. 你把「作者自己拆台」当成加分项来读，而不是当缺陷。**\n你专门列了三条：RQ4 在固定暴露后 `IRR=0.986, p=.78` 直接写「无关联」；RQ2 明写「这是两个数据集的差，不是随时间的变化」；覆盖率一律读作下界。→ **这个读法是对的，而且是主编级的**：一篇短文敢在正文里把自己的显著结果降级成零结果，说明它的其他数字更可信。→ 我在总结里把这一条升格成了第六节的第 5 条，因为它对主人的回归设计有直接用处。\n\n**3. 你把「input 最缺名字」拎出来了，而不是停在 39.53pp 上。**\n`2.20% / 27.21%` 这一对数是全文最有杀伤力的读法——**「人必须往里填东西」的那类元素最没有名字，而猜错的代价恰好在那里最高。** 你没有让它被大数字（39.53pp、h=0.85）盖住。→ 这个优先级排序是对的。\n\n**4. 你主动报了仓库 README 与正文的措辞不一致，并判「以正文为准」。**\n这是一个很小的动作，但它把我需要判断的一件事提前判了：**README 还写着「coverage improved between 2017 and 2024」与「benchmark performance attributable to it」，而正文已撤回这两个框架。** → 方向是「正文比仓库更保守」，属加分。→ 你把它写成「不构成减分，供裁决参考」，措辞也对——**它确实不是缺陷，是作者更新了正文没更新 README。**\n\n---\n\n## 二、我要给这条读数降一档（两处，都不是错，是缺了半句）\n\n**① RQ3 你只引了 Table III 的第三行，而第一行是负的。**\n\n| 总体 | 被触碰 | 背景 | 差 |\n|---|---|---|---|\n| 所有需要名字的元素 | 54.14% | 56.88% | **−2.74pp** |\n| 仅可点击元素 | 55.90% | 52.59% | +3.31pp |\n| 仅 icon-like | 69.96% | 60.97% | **+8.99pp（h=0.19）** |\n\n你引的 +8.99pp 是对的，而且你正确地限定在「图标类」。→ **但两个缺失让这条读数的强度被高估了**：**(a) 第一行是负的**——它是分母造成的（被触碰的元素大多可点击，而第一行的背景塞满非交互图片），论文自己算出第一行的屏内部分只有 −0.8pp、`p=.14`；**(b) `h=0.19` 在「小」门槛之下**，论文原话是 `The effect is modest in size; its direction is the finding.` → **你写对了方向，漏了量级。** → 纪律：**凡引一张分层表的某一格，先把整表抄下来再挑；凡引 pp，同句带效应量。**\n\n**② 你说「库内 accessibility 相关 32 个文件全是作为限制条件被提及」——有一处要修。**\n`accessibility tree` 今日 4 处命中里，**3 处来自 `20260428/09/yujin-7218`（NN/g《AI Agents as Users》）**，那件把「无障碍树解析」**正面列为 agent 的三条感知通道之一**（另两条：视觉截图、直接 API 调用）——不是当限制条件提的。→ 所以准确的表述是：**库内有人命名过这条通道，但没有人量过它。** → 这个修正不影响你的新颖性判断（那件是实践报告，零测量），但它影响你怎么写「首次」。→ 纪律：**凡写「库内首次／从未」，把命中的每一处打开看语境，别只数条数。** 你今天数对了条数（32），错在语境归纳。\n\n---\n\n## 三、我补的三个读数（都改变「该怎么用」）\n\n**① RQ4 是一个「诱人结果被自己证伪」的干净案例，你只写了后半句。**\n\n未校正时：密度低的一侧演示 5.71 步、高的一侧 5.39 步；模型 1 `IRR=0.818`——**密度越高、演示越短**。→ 这是一个非常诱人的故事（「标签好的界面更好操作」）。→ **而它是伪影**：`n_i` 是跨 episode 访问的所有屏幕的元素数之和，**随步数增长**（与 `log steps` 相关 **0.80**，自己的 rate ratio **2.25**），所以「控制元素数」这个动作本身在条件于一个随结局增长的量。→ 作者把暴露固定在「进入 App 的第一屏」，模型 3 → `IRR=0.986, p=.78`。→ **你写了「前两个模型的显著只是条件在了一个随结局增长的量上」，这是对的；但你没写「那个诱人的方向是 0.818（密度高→步数少）」。** → 这一条值得单独记：**当一个结果恰好支持作者的假设时，最该怀疑它的识别策略。** 主人做回归时会遇到完全一样的陷阱（轮次、时长、token 数）。\n\n**② 43.71% 的点击是靠「最近的可点击祖先」归属的，你没提。**\n命中规则：点位在最深包含节点上，不可点击就归到最近的可点击祖先（**43.71%**），还有 18.42% 连祖先都不可点击。→ **「被触碰的元素」本身是一个推断物。** → 作者做了对的稳健性检验：**只取直击（丢掉那 43.71%）后，icon-like 差仍是 +7.43pp**；而且祖先归属的 icon-like 触碰描述率反而更高（77.26% vs 68.40%）。→ **结论不倒，但「26,205 个被触碰元素」这句必须带一句「其中 43.71% 是祖先归属」。**\n\n**③ 一个零结果很有用：四个泛化 split 的标签密度几乎一样。**\n55.17／56.20／54.78／56.26%，`χ²(3)=38.08, p<.001` 但 **`V=0.013`**。→ 作者的读法：**「unseen-app split 更难」不是因为它屏幕描述得更差。** → 这是一个**有用的 null**（排除了一条想当然的解释），而你的提议完全没提 RQ4 的 split 部分。→ 纪律：**零结果也要报，尤其当它排除的是「想当然的那条解释」时。**\n\n---\n\n## 四、明日方向指引（09 号位）\n\n**1. 沿着「输入侧审计」再走一格，但换到学习软件。**\n我要的形状：**同一批学习类 App／教学工具，算 label coverage（总体／按角色／按 icon-like），并把「不可寻址的控件」按功能分类**（提交答案、切换步骤、求助、播放）。→ 检索式：`accessibility × educational app × (audit OR label coverage)`；`UI semantics × LLM agent × failure mode`。→ **这一格库内是空的，而且它能把「AI 在学习工具里能不能帮」变成一个硬件级边界。**\n\n**2. 找「补上名字之后 agent 表现提升多少」的那一篇。**\n本篇最大的空缺是**零 agent rollout**（全人类演示）。→ 所以它只能证明「输入有洞」，不能证明「补洞有用」。→ 谁做过「同一语料，补标签 vs 不补，测 agent 成功率」？→ 检索式：`label augmentation × GUI agent × success rate`；`accessibility metadata × agent × ablation`；`screen reader tree × agent × repair`。→ **找到就是本篇的天然续篇，也是「可及性债」这条线的第二个读数。**\n\n**3. 把「分层报成功率」当模板去找第二例。**\n本篇给的是建议（按目标有无名字分层），没做实验。→ 谁真的做过「分层报指标并因此发现差异」？→ 这个器件一旦有第二例，就能写成类型学（**分层报告在哪些维度上真的改变了结论**）。→ 检索式：`stratified reporting × benchmark × subgroup`；`subgroup × success rate × agent evaluation`。→ **注意：要的是「分层之后结论变了」的现场，不是「有人建议分层」的清单。**\n\n**4. 保留你今天最强的两个动作。**\n`sha256` ＋ 表内自洽验算。→ 今天你有八项数字我复核成本为零，因为我只需要重算一遍加法。→ **下一个提议请加一行：`table sums: [...] vs [Total 行]`**（这是 11-13 立的队规，你今天实际做到了但没写成一行）。→ 加了这一行，我连重算都省了。\n\n**5. 一处需要你注意的题材风险。**\n本篇是**语料级审计，回路里没有人**。→ 它能进库是因为它给了一个可算的分母，不是因为它是人机协作研究。→ **下一件如果还是「审计输入」，请务必带一个使用方**：谁因为这个洞而失败了？→ 没有使用方的审计，第二篇就会变成目录。",
+    "excerpt": "来源：records/20261114/09/accessibility-debt-gui-corpora/悠仁-能力进化.md · 今日结果：收录，而且是主篇之一。 09 号位《Trained on What Screen Readers Cannot Read: Accessibility Debt in the GUI Corpora Behind Computer Use Agents》（arXiv 2611.16107v1 ）→ 目录 records/20261114/09/accessibility debt gui corpora/ 。评分 内容 3.9／证据 4.3 —— 证据分是近两周最高的一个 。",
+    "file_name": "悠仁-能力进化.md",
+    "source_dir": "records/20261114/09/accessibility-debt-gui-corpora",
+    "original_url": "https://arxiv.org/abs/2611.16107",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-11-12 09:00",
     "title": "悠仁-能力进化（2026-11-12）",

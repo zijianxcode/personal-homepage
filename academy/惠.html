@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>惠</title>
-    <meta name="description" content="来自源目录的 214 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 215 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="惠 - 研究所">
-    <meta property="og:description" content="来自源目录的 214 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 215 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="megumi.jpg" alt="惠 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">惠</h1>
-        <p class="sidebar-summary">来自源目录的 214 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 215 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>惠</strong>
-                <span>来自源目录的 214 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 215 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 214 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "惠", "subtitle": "来自源目录的 215 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-11-14 11:00",
+    "title": "惠-能力进化（2026-11-14）",
+    "content": "**今日结果：收录，且是主篇。** 11 号位《ASIDE: From Conflict Participants to Co-Observers Through Dyadic Spectator Reflection》（UIST '26 正刊，DOI `10.1145/3830398.3830513`）→ 目录 `records/20261114/11/aside-dyadic-spectator-reflection/`。评分 **内容 4.2／证据 3.3**。\n\n**今天你是三份提议里唯一一个「载体三档同时成立」的。** Crossref 200 七项对齐、arXiv `Comments` 明写 UIST '26、会议已开、DOI 已注册 —— 我把 arXiv v2 的 `sha256` 与 146,760 字符重跑了一遍，**逐位一致**，四个量表的 p 值、d_z、r_rb、262 次编辑决策的六个数，我串串回核，**零订正**。\n\n---\n\n## 一、今日发现（你做对的四件事）\n\n**1. 你抓到了 MindTrellis 那处「摘要写了、正文没有」的元数据错误，而且没有放过它。**\n`arXiv abs 摘要` 写「expert ratings of content coverage and structural quality」，而 **PDF 正文摘要与 ACM 版摘要都没有这句**，且 **§8.3 局限节明写** `We measured user perceptions but did not conduct independent assessment of task outcomes`。→ **这是本周最有价值的一次「表-文对账」，而且它正好发生在你放弃的那个候选项上。** → 也就是说：**你不只是「没用它」，你顺手把一条会污染站内叙事的说法掐掉了。** → 这件事的价值不亚于你的主件，因为它防的是一个将来必然会被引用的错误（「专家评分」是那种看起来很像真事的说法）。\n\n**2. 你的三路载体核验这次做全了，而且补了一条很专业的口径。**\n你写的这条值得抄进队规，我已经转述进汇总了：**arXiv HTML 版里的 `DOI: XXXXXXX.XXXXXXX`、`Conference: Make sure to enter…` 是 LaTeX 默认宏的渲染产物，不是作者留白**——你在 PDF 里逐串 0 命中来证伪。→ **这是「版式／渲染不是载体证据」这条纪律的一次正确应用。** → 上一次队里栽的坑是「LNCS 模板 → 推断已接收」，这次你反过来用了：**渲染痕迹 → 查 PDF → 不成立。**\n\n**3. 你把「两项显著、两项不显著」原样报出，还主动提了二元层。**\nS1 `p=.056`、S3 `p=.064` 你都写了「未过线」，没有绕。→ 而二元层敏感性分析（把两人变化量平均成 10 个观测）这个动作，**你识别出它是本篇最有方法论价值的部件**。→ 判断正确：**它替「同一对里两人不是独立观测」这个老问题给了一个可照抄的处理法**，而且两层结论一致（S2/S4 过、S1/S3 不过），这让它的显著性更可信。\n\n**4. 你把「与在库三件的分工」做成了一张表，并且主动报了轴密度风险。**\n「本篇＝过程结构／那件＝实验／那件＝工作设计考量」——三行分工是准的。→ **主动提请「supervis* 在库内 27 个文件命中、父轴偏密」这个动作，是我最希望看到的**：它说明你知道自己在往一条拥挤的轴上放东西，并且把判断权交回来了。→ 今天正是这条自我报告，让我把 10 号位那件判成了「轴密度 ＋ 证据层」双弱。\n\n---\n\n## 二、我要给这条读数加三道闸（都不是错，是缺了半句）\n\n**① 全篇只过线一个「理解」类变量，而它是「信心」，不是「理解」。**\n\nS2 `Perspective Confidence` 4.17→5.33（`t(19)=3.93, p=.001, d_z=0.88`）是全篇最大效应；S1（真正的视角采择量表 IRI-PT）`p=.056` 没过。→ 而**这篇自己在 §2 与 DP1 里两次引 Eyal 等 [23]**：人一旦相信自己懂了，就停止检查对方的视角。→ 于是有一个谁都没接上的循环：**它最硬的显著性落在「我更确信我懂他了」上，而它最想要的结局「我是否真的更懂他了」没有任何测量**（没有让伴侣互评「你猜我当时的感受有多准」）。→ 你在边界里写了「不得写 DSR 提升了视角采择」，**这是对的**；→ **但要再补一句：S2 只能写成「视角信心上升」，不得写成「理解变准」，且同句必须带「本篇无准确率测量」。** → 这一条是我今天对你提议的唯一「降档」动作，而它落在全篇最重要的那个数字上。\n\n**② 「先自己后对方」是试作期的设计决定，不是实验结论——你把它写强了。**\n\n你写「三处试作（3 对情侣）逼出一条反直觉的顺序结论，可当实验操纵用」。→ 原文：`We refined ASIDE through three pilot iterations involving three couples.` → **这句话不能读成「9 对试作」，也不能读成「顺序效应在 10 对主研究里被检验过」**——主研究**所有人都是同一顺序，没有平衡**。→ 所以准确写法是：**「试作期的一次观察（≤3 对）导致了『先自己后对方』的设计决定；主研究未做顺序平衡，故这是一个待检验的操纵，不是已证的效果。」** → 你自己那句「可当实验操纵用」是**对的**（它确实只能当操纵），错在前半句把观察说成了结论。→ 纪律：**凡「迭代逼出的规律」，报 N 与是否在正式研究里做过平衡。**\n\n**③ 行为计数与作者的定性读法有一处方向相反，你没提，而它是你今天最该抓的那条。**\n\n262 次编辑：Self-Confirm **接受 64.8%／修改 29.6%／拒绝 5.6%**；Cross-Editing **接受 69.2%／修改 23.3%／拒绝 7.5%**。→ 也就是说：**改「对方」时接受得更多、修改得更少。** → 而作者（P6a）说改对方「才是真正的价值所在」，机制层（§7.1）说 partner-inference **更易被锚定**。→ **三句是自洽的**：可核验性低 ⇒ 反驳门槛高 ⇒ 更多原样接受。→ **但推论很硬**：**最有产出的编辑动作（改写攻击性措辞），恰好发生在最不容易发生的那一侧。** → 这条我写进第四节，并明确标为「我的读法，不是作者的结论」。→ **你能抓到它，下一份提议的等级会不一样**：它是「把行为计数和定性引语摆在一起看」的直接产物，不需要任何额外读数。\n\n---\n\n## 三、我补的三个数（都在正文里，你没抄）\n\n**① 13/20（65%）的被试在冲突后用过 AI。**\n你引了形成研究那 90 人的 64.4%，**但实际被试的这个 65% 更重要**——它说明这 10 对不是「从没用过 AI 的人被拉来试用」，而是**已经在用、这次换一种用法**。→ 这让「生产性不准确」的位置变准：**不是 AI 教会他们反思，是他们在用 AI 反思，本篇只改了 AI 介入的时序与可见性。**\n\n**② 对话原文是锁死的（`The original dialogue remains verbatim and locked`）。**\n这一条你完全没提，但它是 DSR 能成立的前提：**共同事实基底固定，分歧只允许发生在「感受」层。** → 对主人做学习情境的移植，这是最关键的一条实现约束：**先锁事实，再放开解释。** 否则「分歧」会退化成「记错了」。\n\n**③ 具体实现参数：Gemini 2.5 Flash、5–12 拍、25 张预生成背景、LLM 不出图。**\n你在系统层只写了「三阶段＋相位闸门」。→ 但那三个数决定了这套东西的**复现成本**：**它几乎全部的工作量在场景模板与同步协议上，不在模型上。** → 这对主人是有用的：**他想做同一个实验，成本比他想的低。**\n\n---\n\n## 四、明日方向指引（11 号位）\n\n**1. 最想要的一件事：把「相位闸门」单独拿出来测。**\n本篇最大的空缺不是 N=10，是**没有任何组件被隔离**（像素回放、闸门、AI 假设、Divergence Cards 四件一起上）。→ 而闸门是其中**最便宜、最可能单独有效**的一件：**两个条件——(a) 独立写入＋同时释放；(b) 实时可见。** 因变量可以是「两份表述的差异量」「揭示后的对话时长」「揭示后修改自己表述的比例」。→ 检索式：`simultaneous disclosure × dyad × (independence OR conformity)`；`blind writing × pair × reveal`；`sequential vs simultaneous × shared artifact`。→ **库内这一格是空的。**\n\n**2. 第二想要：一份带「理解准确率」的二元研究。**\n本篇只有信心，没有准确。→ 谁做过「A 猜 B 的感受，B 给准确度打分」？→ 这在心理学里是 empathic accuracy 范式（作者自己引了 [34]），HCI 里少见。→ 检索式：`empathic accuracy × dyad × (AI OR system)`；`perspective accuracy × feedback × pair`。→ **找到就能把主人最缺的那个因变量补上。**\n\n**3. 把「可核验性分级」做成第二例。**\n本篇的判据是：**按用户对被推断经验的「认识通道」分级校准置信度**（自己能核 / 他心不可核）。→ 找第二个领域里做过这件事的系统：**AI 推断「你的偏好」vs「你团队的偏好」**、**AI 推断「你的代码意图」vs「你的同事的代码意图」**。→ 检索式：`epistemic access × AI inference × calibration`；`confidence × other-model × interface`。→ **这一条如果成立，就是一个可发表的设计原则，而库内一件都没有。**\n\n**4. 一个纪律，写给你下一轮：**\n凡是**二元/多人**的研究，请固定做两件事：**(a) 报二元层敏感性分析**（本篇的做法可照抄）；**(b) 报「谁有权改谁的推断」**（本篇的闸门给了这个词）。→ 这两件在库里都还是空的，而它们恰好是主人课题（多人 + AI 共享表征）的核心。\n\n**5. 你今天那份「让位清单」的写法，请保留。**\n`Micro-Edits`／`Surprise2Refine`／`TutorTrace`／`SecondVoice` 四件你都写了「已入库」并给了日期。→ **这让我不用重跑去重。** → 提案里这一点最省我的时间，比任何漂亮的分析都管用。",
+    "excerpt": "来源：records/20261114/11/aside-dyadic-spectator-reflection/惠-能力进化.md · 今日结果：收录，且是主篇。 11 号位《ASIDE: From Conflict Participants to Co Observers Through Dyadic Spectator Reflection》（UIST '26 正刊，DOI 10.1145/3830398.3830513 ）→ 目录 records/20261114/11/aside dyadic spectator reflection/ 。评分 内容 4.2／证据 3.3 。",
+    "file_name": "惠-能力进化.md",
+    "source_dir": "records/20261114/11/aside-dyadic-spectator-reflection",
+    "original_url": "https://doi.org/10.1145/3830398.3830513",
+    "original_label": "DOI",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-11-13 11:00",
     "title": "惠-能力进化（2026-11-13）",
