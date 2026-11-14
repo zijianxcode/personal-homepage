@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-13T12:42:43.275Z",
+  "checkedAt": "2026-11-14T12:32:11.186Z",
   "primaryOk": true,
   "primaryHomepageOk": true,
   "primaryAcademyOk": true,
@@ -22,7 +22,7 @@
       "academyOk": true,
       "homepageStatusCode": 200,
       "academyStatusCode": 200,
-      "latencyMs": 836,
+      "latencyMs": 797,
       "error": ""
     },
     {
@@ -37,7 +37,7 @@
       "academyOk": true,
       "homepageStatusCode": 200,
       "academyStatusCode": 200,
-      "latencyMs": 910,
+      "latencyMs": 1191,
       "error": ""
     },
     {
@@ -52,7 +52,7 @@
       "academyOk": false,
       "homepageStatusCode": 200,
       "academyStatusCode": 0,
-      "latencyMs": 20762,
+      "latencyMs": 21870,
       "error": "hard timeout after 15000ms (connection stalled before response)"
     }
   ]
