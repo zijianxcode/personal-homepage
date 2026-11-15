@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>悠仁</title>
-    <meta name="description" content="来自源目录的 174 条能力进化记录，按时间倒序排列。">
+    <meta name="description" content="来自源目录的 175 条能力进化记录，按时间倒序排列。">
     <meta property="og:title" content="悠仁 - 研究所">
-    <meta property="og:description" content="来自源目录的 174 条能力进化记录，按时间倒序排列。">
+    <meta property="og:description" content="来自源目录的 175 条能力进化记录，按时间倒序排列。">
     <meta property="og:image" content="logo.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -33,7 +33,7 @@
         <img class="sidebar-cover" src="yujin.jpg" alt="悠仁 封面" loading="lazy">
         <div class="section-kicker">Source Driven</div>
         <h1 class="sidebar-heading">悠仁</h1>
-        <p class="sidebar-summary">来自源目录的 174 条能力进化记录，按时间倒序排列。</p>
+        <p class="sidebar-summary">来自源目录的 175 条能力进化记录，按时间倒序排列。</p>
         <div class="sidebar-metas">
             <span class="meta-chip" id="latestMeta">最新记录</span>
             <span class="meta-chip" id="totalMeta">0 条记录</span>
@@ -51,7 +51,7 @@
         <div class="mobile-bar">
             <div class="mobile-bar-copy">
                 <strong>悠仁</strong>
-                <span>来自源目录的 174 条能力进化记录，按时间倒序排列。</span>
+                <span>来自源目录的 175 条能力进化记录，按时间倒序排列。</span>
             </div>
             <div class="mobile-actions">
                 <button class="menu-toggle" id="menuToggle" type="button">目录</button>
@@ -80,8 +80,20 @@
     </main>
 
     <script>
-        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 174 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
+        var pageConfig = {"title": "悠仁", "subtitle": "来自源目录的 175 条能力进化记录，按时间倒序排列。", "obsidian": {"vault": "", "folder": ""}};
         var entries = [
+  {
+    "date": "2026-11-15 09:00",
+    "title": "悠仁-能力进化（2026-11-15）",
+    "content": "**今日结果：收录，而且是主篇。** 09 号位《Spatial Organization Is Accessibility Structure: Hierarchical Screen Reading of Mobile UIs》（arXiv `2611.02410v1`）→ 目录 `records/20261115/09/hierarchical-screen-reading-seer/`。评分 **内容 4.1／证据 4.0**——这是你连续第二天把「可复核」做成默认动作。\n\n**先说结论：你的数字我一项都没改。** 我在同一份 PDF 上（`sha256 6641e1b9…f0a`，8,626,633 B，`pdftotext -layout` 得 122,788 字符／1,326 行，与你的读数逐位一致）重新 grep 了 20 余处：1,858／535（28.8%）／161（12.2%）／17 of 50（34.0%）／18.7／8.8／52.7%／W=108.5／9.8［4.9, 15.0］／0.996／0.711／0.769／196（14.8%）／58.2／38.3／17.9／9.7／45.8%／34/37→36/37／5.8 ms／3.4 s／2,535.4＋273.8／<CNY 0.01——**全部对得上**。你甚至连 `W = 108.5` 和 bootstrap CI 这种不显眼的位置都抄准了。\n\n**两处 framing 需要改，都不是算错。**\n\n---\n\n## 一、今日发现（你做对的四件事，按价值排）\n\n**1. 你把「结构缺失」和「标签缺失」分开了，这个切分是你今天最大的贡献。**\n11-14 那篇量的是**名字层**（17.74% vs 57.27%），这篇量的是**关系层**（34% 的页面连分组都被打断）。→ 你没有把两篇混成「无障碍都很差」，而是写成**同一根轴上的两层，可并读、不可互代**。→ 这个切分让我在总结里能写出「它有名字，且这些名字挂在正确的单元上」这句——**而这句话是你能给主人的最有用的东西，因为它把「AI 能读懂一个界面」拆成了两个可分别审计的分母。**\n\n**2. 你把「作者自己拆台」读成了可信度的证据，这是第三天连续做对。**\nprecision 0.996 很容易写成吹点，你反手抓住了 **recall 0.711 是刻意的**、**196/1,324（14.8%）漏得比基线更多**、**8/50 目标更费步**。→ 我在总结第 5 节把这三条并成了一条：**「结构补上」与「动作漏得更多」是同一套设计的两面。** → 你写对了，而且写在了正确的段落位置（「为什么值得采」而不是「局限」）——**把代价写在卖点里，比写在局限里更有说服力。**\n\n**3. 成本结构那一段是今天全库最可操作的读数。**\n`5.8 ms 构造 vs 3.4 s 命名` 这个三个数量级的差，你自己在提议末尾点了一句「能不能拆成两条延迟预算」。→ 我把它升格进了总结第 6 节第 3 条，并和今日另一篇（KC 抽取固定启动 19.6 分钟）拼成了一条**三档成本阶梯：规则构造（毫秒）→ 单次 LLM 调用（秒）→ 批处理认知建模（十分钟级）**。→ **只有第一档能进课堂当场。** 这条阶梯不是我硬造的，是你那句「拆成两条延迟预算」直接推出来的。\n\n**4. 去重四路实跑，并且把 `SeeR` 的 9 个命中逐条打开看了。**\n`SeeR` 大部分是 `Seering` 人名子串——**这个动作你做对了**。上一个月的教训是「数对了条数、错在语境归纳」（11-14 你自己踩过），今天你反过来把语境也查了。→ 我复核确认：全库无 SeeR、无 2611.02410、`functional unit` 0 命中、`TalkBack` 仅 2 处（11-14 那篇作为限制条件提及）。\n\n---\n\n## 二、两处要改的 framing\n\n**① 你说「10 人复用形成性访谈同一批样本（熟悉度污染）」——方向写反了。**\n\n原文（§6.1）：`The formative interviews were completed before participants had any hands-on experience with SeeR, so their formative responses were not influenced by prototype use.`\n\n→ 作者防的是「**用过原型之后回头美化访谈**」。→ 而真正的威胁不是熟悉度，是**设计污染**：系统的单元划分与命名方式是从这 10 人的抱怨里长出来的，评估时他们认的是**自己的词汇**——这是 demand characteristics，不是 familiarity。\n\n→ **作者的反驳与真正的威胁不是同一个。** 你的批评仍然成立，但如果你按「熟悉度污染」去写，作者一句原文就能把你驳回（他们会说：形成性访谈在原型之前）。→ 纪律：**挑一篇论文的局限时，先找到它自己写的那句防守，然后判断这句话防的是不是你担心的那个机制。** 防错了机制的防守，比没有防守更能说明问题。\n\n**② 「全文无伦理审批」——只能写「无伦理审批声明」。**\n`IRB`／`ethic`／`institutional review` 全 0（我复核过），但 `written informed consent` 在 §3.2 与 §6.1 都有。→ **没写 ≠ 没做。** → 你在提议里写的是「全文无伦理审批／IRB 声明」，加「声明」二字就对了，但你括号里的解释写成「仅 §6.1 写 written informed consent」，容易被读成「只做了同意没做审批」。→ 纪律：**载体与伦理两栏，一律区分「事实缺失」与「报告缺失」。**\n\n---\n\n## 三、你漏掉的三个读数（都改变「该怎么用」）\n\n**① 「−82.1%」的分母变了，而且没报。**\n82 个停靠点占 5.1% → 反推 SeeR 自己的停靠点总数约 **1,608**，而 TalkBack 是 **1,858**。聚合把元素并进单元，本来就减少了「可以被判为非信息」的位置数。→ 所以这不是「原来 28.8% 的噪声被清掉 82%」，而是**两个不同分母上的比例之差**，其中 SeeR 那个分母论文根本没写。→ 我把它写成了引用纪律：**只能写「SeeR 自己的播报里 5.1% 非信息性」。** → **这是你今天唯一一个会让站内叙事出错的地方**，而且它出错的方式很典型：**大百分比 ＋ 分母悄悄换了。**\n\n**② 用户研究只覆盖 2 个 App、4 个单页任务，而且目标都在当前页。**\n审计段是 10 App／50 页；评估段缩到**美团＋京东**，四个任务都是**单页、目标在场、电商**（最近影院、饮品加料、最便宜商品、售后入口）。→ 这比「N=10」严重得多：它限制的不是统计功效，是**外部效度**。→ 而它恰好在你最需要的地方是空的：学习软件是**跨页、目标模糊、需要探索**的，那正是论文自己承认会变贵的 `target was already known` 的反面。→ **这一条我写进了总结第 6 节第 4 条，并且把它变成了一个 2×2 条件（目标明确度 × 结构提供者）。**\n\n**③ 统一设备这一条你没提，但它决定了结论的边界。**\n所有被试都用同一台 **Xiaomi 13 / Android 16**，TalkBack 用默认设置、语速统一。→ 这是**控制**（消除了设备差异），也是**限制**（真实用户用的是自己那台、自己调过语速的机器，而语速与遍历习惯会直接改变 18.7 次前滑的体验）。→ 引用「任务时间 −34.2%」时值得带一句。\n\n---\n\n## 四、明日方向指引（09 号位）\n\n**1. 去做你 11-14 就想做、但今天又被绕过去的那一篇：学习软件的 label coverage。**\n今天这篇是「关系层」，11-14 是「名字层」，**两层都还没有在学习软件上做过**。→ 我要的形状：同一批学习类 App／教学工具，算 **label coverage（总体／按角色／icon-like）＋ 功能单元完整率**，并把不可寻址的控件按功能分类（提交答案、切换步骤、求助、播放）。→ 检索式：`accessibility × educational app × (audit OR label coverage)`；`learning interface × semantics × screen reader`。→ **这一格库内是空的，而且它能把「AI 在学习工具里能不能帮」变成一个硬件级边界。**\n\n**2. 「补上结构 → agent／人的表现提升多少」的那篇，今天仍然空着。**\n本篇给了「补结构 → 人的成本下降」（−45.8% 节点、−34.2% 时间），**但没有 agent rollout**；11-14 那篇给了「输入有洞」但零 rollout。→ 你要的是**消融**：同一批页面，补结构 vs 不补，测 agent 成功率或人的完成率。→ 检索式：`label augmentation × GUI agent × success rate`；`hierarchy augmentation × ablation × agent`。→ 注意今天这篇的一个好榜样：**它把步数（纯层级效应）与非信息性（层级＋LLM 包效应）分开报了**，虽然它自己没做消融。**你要找的就是有人真的把这两条件拆开做过。**\n\n**3. 找一件「分层报告改变了结论」的现场。**\n本篇的 8/50 更费步、196 漏失，都是**分层之后才看见的**。→ 谁真的因为分层报指标而改变了设计或结论？→ 检索式：`stratified reporting × interface × subgroup`。→ **要的是「分层之后结论变了」的现场，不是「有人建议分层」的清单。**\n\n**4. 保留你的 `sha256 ＋ 字符数 ＋ 页数 ＋ 行数` 四件套。**\n今天我的复核成本是零，因为我只需要重跑一遍 grep。→ 下一个提议请再加一行：**`table sums: [...] vs [Total 行]`**（11-13 立的队规，你今天实际做到了——Table 1 的分类目我加过一遍，合计正确——但没写成一行）。\n\n**5. 一处题材风险，跟上一次同型。**\n本篇是**审计 ＋ 10 人评估**，加了一个使用方，比 11-14 好；但**回路里仍然没有 agent**，也没有学习场景。→ 它能进库是因为它给了一个可算的结构成本，不是因为它是人机协作研究。→ **下一件如果还是「结构／可寻址性」，请务必带一个「谁因此失败」的具体场景**——最好就是学习工具。否则第三篇会退化成同一份审计的第三个语料。",
+    "excerpt": "来源：records/20261115/09/hierarchical-screen-reading-seer/悠仁-能力进化.md · 今日结果：收录，而且是主篇。 09 号位《Spatial Organization Is Accessibility Structure: Hierarchical Screen Reading of Mobile UIs》（arXiv 2611.02410v1 ）→ 目录 records/20261115/09/hierarchical screen reading seer/ 。评分 内容 4.1／证据 4.0 ——这是你连续第二天把「可复核」做成默认动作。",
+    "file_name": "悠仁-能力进化.md",
+    "source_dir": "records/20261115/09/hierarchical-screen-reading-seer",
+    "original_url": "https://arxiv.org/abs/2611.02410",
+    "original_label": "arXiv",
+    "session_type": "",
+    "session_label": ""
+  },
   {
     "date": "2026-11-14 09:00",
     "title": "悠仁-能力进化（2026-11-14）",
